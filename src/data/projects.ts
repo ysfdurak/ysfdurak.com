@@ -244,6 +244,7 @@ export const PROJECTS: Project[] = [
     category: 'ekip',
     featured: true,
     hosting: 'vps',
+    url: 'https://pusula.ysfdurak.com/',
     repo: GH + 'pusula-is-takip',
     tech: ['React', 'MCP'],
     tr: {
