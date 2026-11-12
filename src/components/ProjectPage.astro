@@ -74,7 +74,7 @@ const jsonLd = {
 
     <section class="note">
       <h2>{t('project.feedback')}</h2>
-      <p>{t('project.feedbackText')} <a href={`mailto:${SITE.email}?subject=${encodeURIComponent(p.name)}`}>{SITE.email}</a></p>
+      <p>{t('project.feedbackText')} <a href={`mailto:${SITE.email[lang]}?subject=${encodeURIComponent(p.name)}`}>{SITE.email[lang]}</a></p>
     </section>
 
     {

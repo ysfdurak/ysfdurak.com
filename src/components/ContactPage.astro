@@ -14,7 +14,7 @@ const other: Lang = lang === 'tr' ? 'en' : 'tr';
     <h1>{t('contact.title')}</h1>
     <p class="lead">{t('contact.lead')}</p>
     <ul class="contact-list">
-      <li><span>E-posta</span><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+      <li><span>{lang === 'tr' ? 'E-posta' : 'Email'}</span><a href={`mailto:${SITE.email[lang]}`}>{SITE.email[lang]}</a></li>
       <li><span>GitHub</span><a href={SITE.github}>{SITE.github.replace('https://', '')}</a></li>
       {SITE.linkedin && <li><span>LinkedIn</span><a href={SITE.linkedin}>{SITE.linkedin.replace('https://', '')}</a></li>}
     </ul>

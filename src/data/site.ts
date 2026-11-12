@@ -4,7 +4,8 @@ export const SITE = {
   url: 'https://ysfdurak.com',
   // TODO: Gerçek adını yaz (ör. "Ad Soyad"). Şimdilik kullanıcı adı duruyor.
   name: 'ysfdurak',
-  email: 'iletisim@ysfdurak.com',
+  // Türkçe sayfalarda iletisim@, İngilizce sayfalarda contact@ görünür (ikisi de aynı Gmail'e yönlenir).
+  email: { tr: 'iletisim@ysfdurak.com', en: 'contact@ysfdurak.com' },
   github: 'https://github.com/ysfdurak',
   // TODO: LinkedIn profil adresini ekle.
   linkedin: '',
