@@ -2,13 +2,11 @@
 // tüm sayfalar bu dosyayı okur.
 export const SITE = {
   url: 'https://ysfdurak.com',
-  // TODO: Gerçek adını yaz (ör. "Ad Soyad"). Şimdilik kullanıcı adı duruyor.
-  name: 'ysfdurak',
+  name: 'Yusuf Durak',
   // Türkçe sayfalarda iletisim@, İngilizce sayfalarda contact@ görünür (ikisi de aynı Gmail'e yönlenir).
   email: { tr: 'iletisim@ysfdurak.com', en: 'contact@ysfdurak.com' },
   github: 'https://github.com/ysfdurak',
-  // TODO: LinkedIn profil adresini ekle.
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/yusuf-durak',
   kesit: 'https://ysfdurak.github.io/',
   title: {
     tr: 'Operasyon, veri ve karar destek uygulamaları',
