@@ -1,0 +1,89 @@
+---
+// Proje sayfası şablonu. TR ve EN sayfaları bu bileşeni kullanır.
+import Base from '../layouts/Base.astro';
+import ProjectCard from './ProjectCard.astro';
+import { CATEGORIES, HOSTING_LABEL, byCategory, projectPath, type Lang, type Project } from '../data/projects';
+import { NAV, useT } from '../i18n/ui';
+import { SITE } from '../data/site';
+
+interface Props {
+  project: Project;
+  lang: Lang;
+}
+const { project: p, lang } = Astro.props;
+const t = useT(lang);
+const text = p[lang];
+const other: Lang = lang === 'tr' ? 'en' : 'tr';
+const related = byCategory(p.category)
+  .filter((x) => x.slug !== p.slug)
+  .slice(0, 3);
+const path = projectPath(p, lang);
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: p.name,
+  description: text.tagline,
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: p.hosting === 'desktop' ? 'Windows' : 'Web',
+  url: new URL(path, SITE.url).href,
+  author: { '@type': 'Person', name: SITE.name, url: SITE.url },
+  inLanguage: lang,
+};
+---
+
+<Base
+  lang={lang}
+  title={p.name}
+  description={text.tagline}
+  path={path}
+  altPath={projectPath(p, other)}
+  jsonLd={jsonLd}
+>
+  <article class="wrap project">
+    <p class="crumb"><a href={NAV[lang].projects}>{t('project.back')}</a> / {CATEGORIES[p.category][lang]}</p>
+    <h1>{p.name}</h1>
+    <p class="lead">{text.tagline}</p>
+
+    <div class="actions">
+      {
+        p.url ? (
+          <a class="btn primary" href={p.url}>{t('project.try')}</a>
+        ) : (
+          <span class="btn disabled" aria-disabled="true">{t('project.soon')}</span>
+        )
+      }
+      {p.repo && <a class="btn" href={p.repo}>{t('project.code')}</a>}
+      <span class="tag">{HOSTING_LABEL[p.hosting][lang]}</span>
+    </div>
+
+    <section>
+      <h2>{t('project.problem')}</h2>
+      <p>{text.problem}</p>
+    </section>
+
+    <section>
+      <h2>{t('project.solution')}</h2>
+      <ul>{text.solution.map((s) => <li>{s}</li>)}</ul>
+    </section>
+
+    <section>
+      <h2>{t('project.tech')}</h2>
+      <p class="chips">{p.tech.map((x) => <span class="tag">{x}</span>)}</p>
+    </section>
+
+    <section class="note">
+      <h2>{t('project.feedback')}</h2>
+      <p>{t('project.feedbackText')} <a href={`mailto:${SITE.email}?subject=${encodeURIComponent(p.name)}`}>{SITE.email}</a></p>
+    </section>
+
+    {
+      related.length > 0 && (
+        <section>
+          <h2>{t('project.related')}</h2>
+          <div class="grid">{related.map((r) => <ProjectCard project={r} lang={lang} />)}</div>
+        </section>
+      )
+    }
+  </article>
+</Base>

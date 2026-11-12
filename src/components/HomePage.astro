@@ -1,0 +1,50 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from './ProjectCard.astro';
+import { CATEGORIES, byCategory, featured, type Category, type Lang } from '../data/projects';
+import { NAV, useT } from '../i18n/ui';
+import { SITE } from '../data/site';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useT(lang);
+const other: Lang = lang === 'tr' ? 'en' : 'tr';
+const cats = Object.keys(CATEGORIES) as Category[];
+const projectsHref = NAV[lang].projects;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: SITE.name,
+  url: SITE.url,
+  sameAs: [SITE.github, SITE.linkedin].filter(Boolean),
+  knowsAbout: ['Warehouse operations', 'Data analysis', 'Power BI', 'SQL', 'Python', 'Lean'],
+};
+---
+<Base lang={lang} title={SITE.title[lang]} description={SITE.description[lang]} path={NAV[lang].home} altPath={NAV[other].home} jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">{t('home.kicker')}</p>
+      <h1>{SITE.title[lang]}</h1>
+      <p class="lead">{t('home.lead')}</p>
+      <p><a class="btn primary" href={projectsHref}>{t('home.cta')}</a></p>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <h2>{t('home.featured')}</h2>
+    <div class="grid">{featured().map((p) => <ProjectCard project={p} lang={lang} showCategory />)}</div>
+  </section>
+
+  <section class="wrap">
+    <h2>{t('home.categories')}</h2>
+    <div class="grid cats">
+      {cats.map((c) => (
+        <a class="card cat" href={`${projectsHref}#${lang === 'tr' ? CATEGORIES[c].trSlug : CATEGORIES[c].enSlug}`}>
+          <h3>{CATEGORIES[c][lang]}</h3>
+          <p class="card-meta">{byCategory(c).length} {lang === 'tr' ? 'proje' : 'projects'}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

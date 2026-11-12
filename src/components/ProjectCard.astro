@@ -1,0 +1,19 @@
+---
+import { CATEGORIES, HOSTING_LABEL, projectPath, type Lang, type Project } from '../data/projects';
+
+interface Props {
+  project: Project;
+  lang: Lang;
+  showCategory?: boolean;
+}
+const { project: p, lang, showCategory = false } = Astro.props;
+---
+
+<article class="card">
+  <p class="card-meta">
+    {showCategory && <span>{CATEGORIES[p.category][lang]} · </span>}
+    <span>{HOSTING_LABEL[p.hosting][lang]}</span>
+  </p>
+  <h3><a href={projectPath(p, lang)}>{p.name}</a></h3>
+  <p>{p[lang].tagline}</p>
+</article>

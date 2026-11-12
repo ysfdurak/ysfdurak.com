@@ -1,0 +1,21 @@
+---
+import '../styles/global.css';
+import { UI } from '../i18n/ui';
+---
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>404 | ysfdurak</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <main class="wrap prose" style="padding-top:4rem">
+      <h1>{UI.tr['404.title']}</h1>
+      <p>{UI.tr['404.text']} <a href="/tr/">{UI.tr['nav.home']}</a></p>
+      <p lang="en">{UI.en['404.title']}. {UI.en['404.text']} <a href="/en/">{UI.en['nav.home']}</a></p>
+    </main>
+  </body>
+</html>

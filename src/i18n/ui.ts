@@ -1,0 +1,73 @@
+// Arayüz metinleri. Sayfalarda t('anahtar') ile kullanılır.
+import type { Lang } from '../data/projects';
+
+export const UI = {
+  tr: {
+    'nav.home': 'Ana sayfa',
+    'nav.projects': 'Projeler',
+    'nav.about': 'Hakkımda',
+    'nav.contact': 'İletişim',
+    'lang.switch': 'English',
+    'home.kicker': 'Operasyon · Veri · Karar destek',
+    'home.lead':
+      'Depo ve operasyon sahasında karşılaştığım problemleri, veri ve yazılımla çözen uygulamalara dönüştürüyorum. Projelerin çoğunu tarayıcıda hemen deneyebilirsiniz.',
+    'home.featured': 'Öne çıkan projeler',
+    'home.categories': 'Tüm kategoriler',
+    'home.cta': 'Tüm projeleri gör',
+    'project.try': 'Dene',
+    'project.soon': 'Canlı sürüm yakında',
+    'project.code': 'Kaynak kod',
+    'project.problem': 'Problem',
+    'project.solution': 'Çözüm ve temel kararlar',
+    'project.tech': 'Teknik özet',
+    'project.feedback': 'Geri bildirim',
+    'project.feedbackText': 'Bir geliştirme fikriniz mi var? Yazın, her öneriyi okuyorum.',
+    'project.related': 'Aynı kategoriden',
+    'project.back': 'Tüm projeler',
+    'projects.title': 'Projeler',
+    'projects.lead': 'Kategoriye göre tüm projeler. Her kartta projenin nasıl çalıştığı yazar.',
+    'contact.title': 'İletişim',
+    'contact.lead': 'İş birliği, geri bildirim ya da projeler hakkında soru için yazabilirsiniz.',
+    'footer.kesit': 'Kesit öğrenme uygulamaları',
+    '404.title': 'Sayfa bulunamadı',
+    '404.text': 'Aradığınız sayfa taşınmış ya da hiç var olmamış olabilir.',
+  },
+  en: {
+    'nav.home': 'Home',
+    'nav.projects': 'Projects',
+    'nav.about': 'About',
+    'nav.contact': 'Contact',
+    'lang.switch': 'Türkçe',
+    'home.kicker': 'Operations · Data · Decision support',
+    'home.lead':
+      'I turn problems I meet on the warehouse and operations floor into tools built with data and software. Most projects can be tried right in your browser.',
+    'home.featured': 'Featured projects',
+    'home.categories': 'All categories',
+    'home.cta': 'See all projects',
+    'project.try': 'Try it',
+    'project.soon': 'Live version coming soon',
+    'project.code': 'Source code',
+    'project.problem': 'Problem',
+    'project.solution': 'Solution and key decisions',
+    'project.tech': 'Tech summary',
+    'project.feedback': 'Feedback',
+    'project.feedbackText': 'Have an improvement idea? Write to me, I read every suggestion.',
+    'project.related': 'In the same category',
+    'project.back': 'All projects',
+    'projects.title': 'Projects',
+    'projects.lead': 'All projects by category. Each card shows how the project runs.',
+    'contact.title': 'Contact',
+    'contact.lead': 'Write for collaboration, feedback or questions about the projects.',
+    'footer.kesit': 'Kesit learning apps',
+    '404.title': 'Page not found',
+    '404.text': 'The page you are looking for may have moved or never existed.',
+  },
+} as const;
+
+export type UIKey = keyof (typeof UI)['tr'];
+export const useT = (lang: Lang) => (key: UIKey) => UI[lang][key];
+
+export const NAV = {
+  tr: { home: '/tr/', projects: '/tr/projeler/', about: '/tr/hakkimda/', contact: '/tr/iletisim/' },
+  en: { home: '/en/', projects: '/en/projects/', about: '/en/about/', contact: '/en/contact/' },
+} as const;

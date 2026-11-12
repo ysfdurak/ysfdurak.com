@@ -1,0 +1,50 @@
+---
+// TODO: Bu metni kendi ağzından gözden geçir; özellikle deneyim yılı, şirket türü ve eğitim bilgisi eklenebilir.
+import Base from '../layouts/Base.astro';
+import { NAV, useT } from '../i18n/ui';
+import { SITE } from '../data/site';
+import type { Lang } from '../data/projects';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useT(lang);
+const other: Lang = lang === 'tr' ? 'en' : 'tr';
+const desc = lang === 'tr'
+  ? 'Depo operasyonundan gelip veri ve yazılımla karar destek uygulamaları geliştiren biri.'
+  : 'Coming from warehouse operations, building decision-support tools with data and software.';
+---
+<Base lang={lang} title={t('nav.about')} description={desc} path={NAV[lang].about} altPath={NAV[other].about}>
+  <article class="wrap prose">
+    <h1>{t('nav.about')}</h1>
+    {lang === 'tr' ? (
+      <>
+        <p class="lead">Operasyonun içinden geliyorum. Depo, sevkiyat ve vardiya raporları her günümün parçası; projelerimin çoğu da oradan çıkıyor.</p>
+        <p>Bir süreç tekrar tekrar elle yapılıyorsa, karar sezgiyle veriliyorsa ya da bir yatırımın etkisi önceden görülemiyorsa, onu küçük ve kullanılabilir bir araca dönüştürmeye çalışıyorum. Excel ve Power BI ile başlayan bu iş, bugün Python, web uygulamaları ve yapay zekâ destekli geliştirmeyle devam ediyor.</p>
+        <h2>Nasıl çalışıyorum</h2>
+        <ul>
+          <li><strong>Sahadan başlıyorum:</strong> Önce problemi ve kısıtları netleştiriyorum. Veri erişimi yoksa kural tabanlı, internet yoksa çevrimdışı çözüm kuruyorum.</li>
+          <li><strong>Kullanıcıyı düşünüyorum:</strong> Ölçümü olmayan bir yöneticinin birkaç parametreyle sonuç görebilmesi, ayrıntılı bir ekrandan daha değerli.</li>
+          <li><strong>Yalın bakış:</strong> Öneri sistemleri ve kaizen, geliştirdiğim araçların da çıkış noktası.</li>
+          <li><strong>Yapay zekâyla üretiyorum:</strong> Kodu yapay zekâyla birlikte yazıyor, kararları ve mimariyi kendim veriyorum.</li>
+        </ul>
+        <h2>Araçlar</h2>
+        <p>Excel, Power BI ve DAX, SQL, Python (pandas, Streamlit, PySide6), web uygulamaları, MCP.</p>
+      </>
+    ) : (
+      <>
+        <p class="lead">I come from inside operations. Warehousing, shipping and shift reports are part of my daily work, and most of my projects start there.</p>
+        <p>When a process is done by hand again and again, when decisions rest on gut feeling, or when the effect of an investment cannot be seen in advance, I try to turn it into a small, usable tool. This started with Excel and Power BI and now continues with Python, web apps and AI-assisted development.</p>
+        <h2>How I work</h2>
+        <ul>
+          <li><strong>Start from the floor:</strong> I clarify the problem and constraints first. No data access means rule-based; no internet means offline.</li>
+          <li><strong>Think of the user:</strong> A manager seeing results from a few parameters is worth more than a detailed screen.</li>
+          <li><strong>Lean mindset:</strong> Suggestion systems and kaizen are where many of my tools begin.</li>
+          <li><strong>Build with AI:</strong> I write code together with AI, and make the decisions and architecture myself.</li>
+        </ul>
+        <h2>Tools</h2>
+        <p>Excel, Power BI and DAX, SQL, Python (pandas, Streamlit, PySide6), web apps, MCP.</p>
+      </>
+    )}
+    <p><a class="btn" href={NAV[lang].contact}>{t('nav.contact')}</a> <a class="btn" href={SITE.github}>GitHub</a></p>
+  </article>
+</Base>

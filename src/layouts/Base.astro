@@ -1,0 +1,82 @@
+---
+// Tüm sayfaların ortak iskeleti: <head> içindeki SEO etiketleri, üst menü, alt bilgi.
+import '../styles/global.css';
+import { SITE } from '../data/site';
+import { NAV, useT } from '../i18n/ui';
+import type { Lang } from '../data/projects';
+
+interface Props {
+  lang: Lang;
+  title: string; // sayfa başlığı (60 karakter altı hedef)
+  description: string; // arama sonucundaki açıklama (155 karakter altı hedef)
+  path: string; // bu sayfanın yolu, ör. /tr/projeler/
+  altPath: string; // diğer dildeki karşılığı, ör. /en/projects/
+  jsonLd?: Record<string, unknown>;
+}
+
+const { lang, title, description, path, altPath, jsonLd } = Astro.props;
+const t = useT(lang);
+const nav = NAV[lang];
+const canonical = new URL(path, SITE.url).href;
+const trUrl = new URL(lang === 'tr' ? path : altPath, SITE.url).href;
+const enUrl = new URL(lang === 'en' ? path : altPath, SITE.url).href;
+const fullTitle = title === SITE.name ? title : `${title} | ${SITE.name}`;
+const current = Astro.url.pathname;
+const isActive = (href: string) => (href === nav.home ? current === href : current.startsWith(href));
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="tr" href={trUrl} />
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="x-default" href={trUrl} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang === 'tr' ? 'tr_TR' : 'en_US'} />
+    <meta name="twitter:card" content="summary" />
+
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <a class="skip" href="#main">{lang === 'tr' ? 'İçeriğe geç' : 'Skip to content'}</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="brand" href={nav.home}>{SITE.name}</a>
+        <nav aria-label={lang === 'tr' ? 'Ana menü' : 'Main menu'}>
+          <a href={nav.projects} aria-current={isActive(nav.projects) ? 'page' : undefined}>{t('nav.projects')}</a>
+          <a href={nav.about} aria-current={isActive(nav.about) ? 'page' : undefined}>{t('nav.about')}</a>
+          <a href={nav.contact} aria-current={isActive(nav.contact) ? 'page' : undefined}>{t('nav.contact')}</a>
+          <a class="lang" href={altPath} hreflang={lang === 'tr' ? 'en' : 'tr'}>{t('lang.switch')}</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-row">
+        <span>© {new Date().getFullYear()} {SITE.name}</span>
+        <span class="footer-links">
+          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+          <a href={SITE.github} rel="me">GitHub</a>
+          {SITE.linkedin && <a href={SITE.linkedin} rel="me">LinkedIn</a>}
+          <a href={SITE.kesit}>{t('footer.kesit')}</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import { NAV, useT } from '../i18n/ui';
+import { SITE } from '../data/site';
+import type { Lang } from '../data/projects';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useT(lang);
+const other: Lang = lang === 'tr' ? 'en' : 'tr';
+---
+<Base lang={lang} title={t('contact.title')} description={t('contact.lead')} path={NAV[lang].contact} altPath={NAV[other].contact}>
+  <div class="wrap prose">
+    <h1>{t('contact.title')}</h1>
+    <p class="lead">{t('contact.lead')}</p>
+    <ul class="contact-list">
+      <li><span>E-posta</span><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+      <li><span>GitHub</span><a href={SITE.github}>{SITE.github.replace('https://', '')}</a></li>
+      {SITE.linkedin && <li><span>LinkedIn</span><a href={SITE.linkedin}>{SITE.linkedin.replace('https://', '')}</a></li>}
+    </ul>
+  </div>
+</Base>

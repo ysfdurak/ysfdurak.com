@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import ProjectCard from './ProjectCard.astro';
+import { CATEGORIES, byCategory, type Category, type Lang } from '../data/projects';
+import { NAV, useT } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useT(lang);
+const other: Lang = lang === 'tr' ? 'en' : 'tr';
+const cats = Object.keys(CATEGORIES) as Category[];
+const desc = lang === 'tr'
+  ? 'Depo, operasyon, veri ve öğrenme projeleri: WDL, Sorter Studio, ShiftFlow, Pusula ve diğerleri.'
+  : 'Warehouse, operations, data and learning projects: WDL, Sorter Studio, ShiftFlow, Pusula and more.';
+---
+<Base lang={lang} title={t('projects.title')} description={desc} path={NAV[lang].projects} altPath={NAV[other].projects}>
+  <div class="wrap">
+    <h1>{t('projects.title')}</h1>
+    <p class="lead">{t('projects.lead')}</p>
+    {cats.map((c) => (
+      <section id={lang === 'tr' ? CATEGORIES[c].trSlug : CATEGORIES[c].enSlug}>
+        <h2>{CATEGORIES[c][lang]}</h2>
+        <div class="grid">{byCategory(c).map((p) => <ProjectCard project={p} lang={lang} />)}</div>
+      </section>
+    ))}
+  </div>
+</Base>
