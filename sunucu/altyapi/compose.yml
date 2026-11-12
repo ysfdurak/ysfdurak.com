@@ -8,7 +8,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    env_file: .env
+    environment:
+      CF_API_TOKEN: ${CF_API_TOKEN}
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
       - caddy_data:/data
@@ -16,10 +17,33 @@ services:
     networks:
       - web
 
+  # Ortak PostgreSQL: her proje kendi veritabanını ve kullanıcısını alır.
+  # Dışarıya port açılmaz; yalnızca "db" ağındaki konteynerler erişir.
+  postgres:
+    image: postgres:18-alpine
+    container_name: postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql
+    networks:
+      - db
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U admin"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
 networks:
   web:
     name: web
+  db:
+    name: db
+    internal: true
 
 volumes:
   caddy_data:
   caddy_config:
+  pgdata:

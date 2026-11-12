@@ -46,3 +46,17 @@ bash kurulum-2-docker.sh
 - **Caddy**, sunucunun tek giriş kapısıdır: 80/443'ü yalnızca o dinler, gelen isteği alt alan adına göre doğru uygulamaya iletir.
 - Sertifikayı Cloudflare DNS doğrulamasıyla alır; token sunucuda `sunucu/altyapi/.env` dosyasında durur, GitHub'a girmez.
 - Projeler `web` adlı Docker ağına katılır ve dışarıya port açmaz; böylece güvenlik duvarının dışında kalan bir kapı oluşmaz.
+
+## 3. aşama: PostgreSQL ve gece yedeği (kurulum-3-veritabani.sh)
+
+Önce Cloudflare R2'de: bir bucket (ör. `ysfdurak-yedek`, konum Avrupa) ve yalnızca o bucket'a "Object Read & Write" yetkili bir API token.
+
+```bash
+ssh ysf
+bash ~/ysfdurak.com/sunucu/kurulum-3-veritabani.sh
+```
+
+- **PostgreSQL 18** tek konteynerde çalışır; her proje kendi veritabanını ve kullanıcısını alır: `bash ~/ysfdurak.com/sunucu/db-olustur.sh pusula`
+- Veritabanı `db` adlı **iç ağda** durur: internete hiç açılmaz, yalnızca bu ağa katılan proje konteynerleri bağlanabilir.
+- **Yedek:** her gece 03:30'da tüm veritabanları sıkıştırılır, bütünlüğü kontrol edilir, R2'ye gönderilir. Sunucuda 7 gün, R2'de 30 gün saklanır. Elle çalıştırmak: `sudo ysf-yedek`
+- **Geri yükleme:** `zcat dosya.sql.gz | docker exec -i postgres psql -U admin`
