@@ -1,0 +1,25 @@
+# Sunucudaki ortak altyapı. Şimdilik yalnızca Caddy (giriş kapısı, otomatik HTTPS).
+# Projeler kendi compose dosyalarında "web" ağına katılır; dışarıya port açmazlar.
+services:
+  caddy:
+    build: ./caddy
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file: .env
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - web
+
+networks:
+  web:
+    name: web
+
+volumes:
+  caddy_data:
+  caddy_config:

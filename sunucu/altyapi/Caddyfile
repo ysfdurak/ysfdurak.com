@@ -1,0 +1,16 @@
+# Tüm alt alan adları burada tanımlanır. Yeni proje = yeni bir blok.
+{
+	email iletisim@ysfdurak.com
+	acme_dns cloudflare {env.CF_API_TOKEN}
+}
+
+# Test adresi: sunucu ayakta mı?
+app.ysfdurak.com {
+	header Content-Type "text/plain; charset=utf-8"
+	respond "ysfdurak.com sunucusu çalışıyor" 200
+}
+
+# Örnek (ileride):
+# pusula.ysfdurak.com {
+# 	reverse_proxy pusula:3000
+# }

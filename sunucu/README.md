@@ -32,3 +32,17 @@ Bitince root penceresini kapatmadan yeni pencerede `ssh yusuf@SUNUCU_IP` ile tes
 ssh yusuf@SUNUCU_IP
 ```
 Yönetici komutları `sudo` ile çalışır ve `yusuf` şifresini sorar.
+
+## 2. aşama: Docker ve Caddy (kurulum-2-docker.sh)
+
+Önce Cloudflare'de: `app` için A kaydı (proxy açık), SSL/TLS modu **Full (strict)**, "Edit zone DNS" yetkili API token.
+
+```bash
+ssh yusuf@SUNUCU_IP
+curl -fsSL https://raw.githubusercontent.com/ysfdurak/ysfdurak.com/main/sunucu/kurulum-2-docker.sh -o kurulum-2-docker.sh
+bash kurulum-2-docker.sh
+```
+
+- **Caddy**, sunucunun tek giriş kapısıdır: 80/443'ü yalnızca o dinler, gelen isteği alt alan adına göre doğru uygulamaya iletir.
+- Sertifikayı Cloudflare DNS doğrulamasıyla alır; token sunucuda `sunucu/altyapi/.env` dosyasında durur, GitHub'a girmez.
+- Projeler `web` adlı Docker ağına katılır ve dışarıya port açmaz; böylece güvenlik duvarının dışında kalan bir kapı oluşmaz.
