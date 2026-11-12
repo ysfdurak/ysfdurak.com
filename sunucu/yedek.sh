@@ -14,7 +14,12 @@ docker exec postgres pg_dumpall -U admin | gzip -9 > "$DOSYA"
 gzip -t "$DOSYA"
 zgrep -q "CREATE ROLE" "$DOSYA" || { echo "Yedek beklenen içeriği taşımıyor: $DOSYA" >&2; exit 1; }
 
-rclone copy "$DOSYA" "r2:$R2_BUCKET/postgres/" --s3-no-check-bucket
+# --s3-no-head: R2, yüklemeden sonra rclone'un yaptığı "versionId" kontrolünü desteklemiyor (501).
+# Bu kontrol yerine dosyanın R2'deki boyutunu aşağıda kendimiz doğruluyoruz.
+rclone copy "$DOSYA" "r2:$R2_BUCKET/postgres/" --s3-no-check-bucket --s3-no-head
+YEREL=$(stat -c %s "$DOSYA")
+UZAK=$(rclone size "r2:$R2_BUCKET/postgres/$(basename "$DOSYA")" --json --s3-no-check-bucket | grep -o '"bytes":[0-9]*' | cut -d: -f2)
+[[ "$YEREL" == "$UZAK" ]] || { echo "R2'deki dosya boyutu tutmuyor ($YEREL / $UZAK)" >&2; exit 1; }
 
 # Sunucuda 7 gün, R2'de 30 gün sakla
 find "$YER" -name '*.sql.gz' -mtime +7 -delete
