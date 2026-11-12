@@ -11,7 +11,7 @@ const tr = lang === 'tr';
 const path = tr ? '/tr/gizlilik/' : '/en/privacy/';
 const alt = tr ? '/en/privacy/' : '/tr/gizlilik/';
 const email = SITE.email[lang];
-const updated = '12.11.2026';
+const updated = '13.11.2026';
 ---
 <Base lang={lang} title={tr ? 'Gizlilik politikası' : 'Privacy policy'}
   description={tr ? 'ysfdurak.com ve uygulamalarında hangi verilerin, ne amaçla ve ne kadar süre işlendiği.' : 'Which data ysfdurak.com and its apps process, why, and for how long.'}
@@ -42,13 +42,21 @@ const updated = '12.11.2026';
           <li><strong>Claude bağlantısı (isteğe bağlı):</strong> Pusula'yı Claude'a bağlarsanız, Claude yalnızca sizin izin verdiğiniz araçlarla ve sizin yetkilerinizle verinize erişir. Bağlantıyı istediğiniz an kaldırabilirsiniz.</li>
         </ul>
 
-        <h2>4. Verinin tutulduğu yer</h2>
+        <h2>4. Destek Merkezi (destek.ysfdurak.com)</h2>
+        <ul>
+          <li><strong>Giriş yok:</strong> Hesap, e-posta veya ad istenmez. "Örnek verilerle dene" ile size ait, kurgusal verili bir alan açılır; alana tarayıcınızdaki bir oturum çereziyle dönülür.</li>
+          <li><strong>Süre:</strong> Alan, son kullanımdan <strong>3 gün sonra</strong> içeriğiyle birlikte tümüyle silinir. Yedeği alınmaz.</li>
+          <li><strong>Ölçüm:</strong> Yalnızca gün başına adet tutulur (açılan alan, geri dönüş, işlem sayısı). IP adresiniz yalnızca kötüye kullanımı sınırlamak için kısa süre bellekte tutulur, kaydedilmez.</li>
+          <li>Demo alanına gerçek kişi veya şirket verisi girmeyin.</li>
+        </ul>
+
+        <h2>5. Verinin tutulduğu yer</h2>
         <p>Uygulama sunucusu Almanya'da (Contabo), yedekler Avrupa Birliği içinde (Cloudflare R2, AB bölgesi) tutulur. Bu nedenle veriler Türkiye dışına aktarılır. Yedekler 30 gün sonra silinir.</p>
 
-        <h2>5. Paylaşım</h2>
+        <h2>6. Paylaşım</h2>
         <p>Veriler üçüncü kişilere satılmaz veya pazarlama amacıyla paylaşılmaz. Yalnızca hizmeti sağlayan altyapı sağlayıcıları (Cloudflare, Contabo, Google giriş hizmeti) işleyebilir.</p>
 
-        <h2>6. Haklarınız</h2>
+        <h2>7. Haklarınız</h2>
         <p>6698 sayılı KVKK kapsamında verilerinize erişme, düzeltilmesini veya silinmesini isteme ve işlenmesine itiraz etme haklarınız vardır. Talepleriniz için <a href={`mailto:${email}`}>{email}</a> adresine yazabilirsiniz; en geç 30 gün içinde yanıtlanır.</p>
       </>
     ) : (
@@ -76,13 +84,21 @@ const updated = '12.11.2026';
           <li><strong>Claude connection (optional):</strong> If you connect Pusula to Claude, Claude can access your data only through the tools you allow and with your permissions. You can disconnect at any time.</li>
         </ul>
 
-        <h2>4. Where data is stored</h2>
+        <h2>4. Destek Merkezi (destek.ysfdurak.com)</h2>
+        <ul>
+          <li><strong>No sign-in:</strong> No account, email or name is requested. "Try with sample data" opens your own workspace with fictional data; you return to it through a session cookie in your browser.</li>
+          <li><strong>Retention:</strong> The workspace and everything in it is deleted <strong>3 days after last use</strong>. It is not backed up.</li>
+          <li><strong>Measurement:</strong> Only daily counts are kept (workspaces opened, returns, actions). Your IP address is held briefly in memory to limit abuse and is never stored.</li>
+          <li>Please do not enter real personal or company data into the demo.</li>
+        </ul>
+
+        <h2>5. Where data is stored</h2>
         <p>The application server is in Germany (Contabo); backups are kept in the European Union (Cloudflare R2, EU jurisdiction) and deleted after 30 days.</p>
 
-        <h2>5. Sharing</h2>
+        <h2>6. Sharing</h2>
         <p>Data is not sold or shared for marketing. Only the infrastructure providers that deliver the service (Cloudflare, Contabo, Google sign-in) may process it.</p>
 
-        <h2>6. Your rights</h2>
+        <h2>7. Your rights</h2>
         <p>You may request access to, correction or deletion of your data, or object to its processing, by writing to <a href={`mailto:${email}`}>{email}</a>. Requests are answered within 30 days.</p>
       </>
     )}
