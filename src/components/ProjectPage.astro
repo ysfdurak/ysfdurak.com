@@ -39,6 +39,7 @@ const jsonLd = {
   path={path}
   altPath={projectPath(p, other)}
   jsonLd={jsonLd}
+  image={p.og}
 >
   <article class="wrap project">
     <p class="crumb"><a href={NAV[lang].projects}>{t('project.back')}</a> / {CATEGORIES[p.category][lang]}</p>
@@ -55,7 +56,17 @@ const jsonLd = {
       }
       {p.repo && <a class="btn" href={p.repo}>{t('project.code')}</a>}
       <span class="tag">{HOSTING_LABEL[p.hosting][lang]}</span>
+      {p.mcp && <span class="tag">MCP · {p.mcp.tools} {t('project.claudeTools')}</span>}
     </div>
+
+    {
+      p.shots && p.shots.length > 0 && (
+        <figure class="shot hero-shot">
+          <img src={p.shots[0].src} width={p.shots[0].w} height={p.shots[0].h} alt={p.shots[0].alt[lang]} fetchpriority="high" />
+          <figcaption>{p.shots[0].alt[lang]}</figcaption>
+        </figure>
+      )
+    }
 
     <section>
       <h2>{t('project.problem')}</h2>
@@ -66,6 +77,51 @@ const jsonLd = {
       <h2>{t('project.solution')}</h2>
       <ul>{text.solution.map((s) => <li>{s}</li>)}</ul>
     </section>
+
+    {
+      p.demo && (
+        <section>
+          <h2>{t('project.demo')}</h2>
+          <p>{p.demo[lang]}</p>
+        </section>
+      )
+    }
+
+    {
+      p.mcp && (
+        <section class="claude-box">
+          <h2>{t('project.claude')}</h2>
+          <p>{t('project.claudeLead')}</p>
+          <div class="claude-grid">
+            <div>
+              <ol>{t('project.claudeSteps').split('|').map((x) => <li>{x}</li>)}</ol>
+              <p class="mcp-url"><span>MCP</span><code>{p.mcp.url}</code></p>
+              <h3>{t('project.claudeTry')}</h3>
+              <ul class="prompts">{p.mcp.prompts[lang].map((x) => <li>“{x}”</li>)}</ul>
+            </div>
+            {p.shots && p.shots[1] && (
+              <figure class="shot">
+                <img src={p.shots[1].src} width={p.shots[1].w} height={p.shots[1].h} alt={p.shots[1].alt[lang]} loading="lazy" />
+                <figcaption>{p.shots[1].alt[lang]}</figcaption>
+              </figure>
+            )}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      p.shots && p.shots.length > 2 && (
+        <section class="gallery">
+          {p.shots.slice(2).map((sh) => (
+            <figure class="shot">
+              <img src={sh.src} width={sh.w} height={sh.h} alt={sh.alt[lang]} loading="lazy" />
+              <figcaption>{sh.alt[lang]}</figcaption>
+            </figure>
+          ))}
+        </section>
+      )
+    }
 
     <section>
       <h2>{t('project.tech')}</h2>

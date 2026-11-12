@@ -125,3 +125,20 @@ main { padding-bottom: 4rem; }
 
 /* Bölümlere kayarken üst menü altında kalmasın */
 section[id] { scroll-margin-top: 1rem; }
+
+/* Proje görselleri ve Claude bölümü */
+.project { max-width: 980px; }
+.shot { margin: 1.5rem 0; }
+.shot img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); display: block; background: var(--bg-soft); }
+.shot figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.4rem; }
+.hero-shot { margin-top: 1.2rem; }
+.claude-box { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.4rem 1.4rem 1rem; margin-top: 2.2rem; }
+.claude-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+.claude-grid .shot { margin: 0; }
+.claude-box h3 { font-size: 1rem; margin: 1.2rem 0 0.4rem; }
+.mcp-url { display: flex; gap: 0.6rem; align-items: center; flex-wrap: wrap; }
+.mcp-url span { font-size: 0.75rem; font-weight: 700; color: #fff; background: var(--accent); border-radius: 4px; padding: 0.1rem 0.45rem; }
+.mcp-url code { font-size: 0.9rem; background: var(--bg); border: 1px solid var(--line); border-radius: 6px; padding: 0.25rem 0.5rem; word-break: break-all; }
+.prompts { list-style: none; padding-left: 0 !important; }
+.prompts li { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 0.45rem 0.7rem; margin-bottom: 0.45rem; font-size: 0.95rem; }
+@media (max-width: 760px) { .claude-grid { grid-template-columns: 1fr; } }
