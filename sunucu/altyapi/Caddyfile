@@ -10,7 +10,8 @@ app.ysfdurak.com {
 	respond "ysfdurak.com sunucusu çalışıyor" 200
 }
 
-# Örnek (ileride):
-# pusula.ysfdurak.com {
-# 	reverse_proxy pusula:3000
-# }
+# Pusula: iş ve ekip takibi + MCP (github.com/ysfdurak/pusula-is-takip)
+pusula.ysfdurak.com {
+	encode zstd gzip
+	reverse_proxy pusula:8080
+}

@@ -21,8 +21,21 @@ YEREL=$(stat -c %s "$DOSYA")
 UZAK=$(rclone size "r2:$R2_BUCKET/postgres/$(basename "$DOSYA")" --json --s3-no-check-bucket | grep -o '"bytes":[0-9]*' | cut -d: -f2)
 [[ "$YEREL" == "$UZAK" ]] || { echo "R2'deki dosya boyutu tutmuyor ($YEREL / $UZAK)" >&2; exit 1; }
 
+# SQLite kullanan uygulamalar: kendi aldıkları en yeni yedeği de R2'ye gönder
+for UYG in pusula; do
+  docker ps --format '{{.Names}}' | grep -qx "$UYG" || continue
+  SON=$(docker exec "$UYG" sh -c "ls -1 /data/backups/$UYG-*.db 2>/dev/null | tail -1")
+  [[ -n "$SON" ]] || { echo "$UYG: yedek bulunamadı" >&2; continue; }
+  HEDEF="$YER/${UYG}_$ZAMAN.db.gz"
+  docker exec "$UYG" cat "$SON" | gzip -9 > "$HEDEF"
+  gzip -t "$HEDEF"
+  rclone copy "$HEDEF" "r2:$R2_BUCKET/$UYG/" --s3-no-check-bucket --s3-no-head
+  rclone delete "r2:$R2_BUCKET/$UYG/" --min-age 30d --s3-no-check-bucket
+  echo "$UYG yedeği: $(basename "$HEDEF") ($(du -h "$HEDEF" | cut -f1))"
+done
+
 # Sunucuda 7 gün, R2'de 30 gün sakla
-find "$YER" -name '*.sql.gz' -mtime +7 -delete
+find "$YER" \( -name '*.sql.gz' -o -name '*.db.gz' \) -mtime +7 -delete
 rclone delete "r2:$R2_BUCKET/postgres/" --min-age 30d --s3-no-check-bucket
 
 echo "$(date -Is) yedek tamam: $(basename "$DOSYA") ($(du -h "$DOSYA" | cut -f1))"
