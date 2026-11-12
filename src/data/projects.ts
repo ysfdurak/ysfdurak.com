@@ -103,16 +103,38 @@ export const PROJECTS: Project[] = [
     category: 'operasyon',
     featured: true,
     hosting: 'vps',
-    tech: ['Node.js', 'Access istemcisi'],
+    url: 'https://destek.ysfdurak.com/',
+    repo: GH + 'destek-merkezi',
+    tech: ['React', 'Node.js', 'SQLite', 'Excel (SheetJS)', 'Access istemcisi', 'Docker', 'Caddy'],
+    shots: [
+      { src: '/img/destek-merkezi/genel-bakis.webp', w: 1400, h: 950, alt: { tr: 'Destek Merkezi genel bakış: kesinleşen ve onay bekleyen destekler, bölümler arası dağılım', en: 'Destek Merkezi overview: finalised and pending supports, distribution between departments' } },
+      { src: '/img/destek-merkezi/dashboard.webp', w: 1440, h: 1000, alt: { tr: 'Destek Merkezi dashboard: 50 bölümlük işletmede kim kime destek verdi, gün ve bölüm takvimi', en: 'Destek Merkezi dashboard: who supported whom and a day-by-department calendar for a 50-department site' } },
+      { src: '/img/destek-merkezi/toplu-giris.webp', w: 1400, h: 950, alt: { tr: 'Toplu giriş: kişileri sabitle, birkaç günü vardiyayla tek seferde gir', en: 'Bulk entry: pin people and enter several days at once by shift' } },
+      { src: '/img/destek-merkezi/hiyerarsi.webp', w: 1110, h: 1110, alt: { tr: 'Hiyerarşi tanımı: düzey adlarını ve derinliği işletme belirler', en: 'Hierarchy setup: the business names its own levels and depth' } },
+    ],
+    demo: {
+      tr: 'Giriş gerekmez: kurgusal bir depo organizasyonuyla dolu, yalnızca sana ait bir alan açılır. Üstteki seçiciyle yönetici, bölüm yetkilisi ve izleyici rollerini deneyebilirsin. Alan son kullanımdan 3 gün sonra silinir.',
+      en: 'No sign-in: you get your own workspace with a fictional warehouse organisation. Use the selector at the top to try the admin, department manager and viewer roles. It is deleted 3 days after last use.',
+    },
     tr: {
-      tagline: 'Departmanlar arası işgücü desteğini kaydeden ve adam-saat verimliliğini gösteren sistem.',
-      problem: 'Departmanlar arası personel desteği kayıt dışı kalınca adam-saat ve verimlilik hesapları bozulur.',
-      solution: ['Destek kayıtları ve geri alma', 'Uyumsuz kayıtların takibi', 'Verimlilik ve adam-saat paneli'],
+      tagline: 'Bölümler arası işgücü desteğini kaydeden, karşı bölüme onaylatan ve puantajla karşılaştıran sistem.',
+      problem:
+        'Vardiyalı operasyonlarda bir bölüm diğerine personel verir; talep WhatsApp\'tan gelir, kayıt ertesi gün ya da sonraki hafta girilir. Kim kime ne kadar destek verdi belirsiz kalır, puantajla çelişen kayıtlar fark edilmez.',
+      solution: [
+        'Vardiyadan gelen sabit süreler, toplu ve geriye dönük giriş, aynı gün tekrar giriş engeli',
+        'Karşı bölüm onayı, geri çekme ve puantajla çelişen desteklerin takibi',
+        'İşletmenin belirlediği hiyerarşiye göre dashboard ve Excel/PDF raporları',
+      ],
     },
     en: {
-      tagline: 'Tracks inter-department workforce support and shows man-hour productivity.',
-      problem: 'When staff support between departments goes unrecorded, man-hour and productivity figures break.',
-      solution: ['Support records with withdrawal', 'Mismatch tracking', 'Productivity and man-hour dashboard'],
+      tagline: 'Records inter-department workforce support, gets it approved by the receiving department and checks it against attendance.',
+      problem:
+        'In shift-based operations one department lends staff to another; the request comes over WhatsApp and the record is entered the next day or week. Who supported whom stays unclear and records that contradict attendance go unnoticed.',
+      solution: [
+        'Fixed durations from shifts, bulk and retroactive entry, same-day duplicate block',
+        'Receiving-department approval, withdrawal and tracking of supports that contradict attendance',
+        'Dashboard and Excel/PDF reports by the business\'s own hierarchy',
+      ],
     },
   },
   {
