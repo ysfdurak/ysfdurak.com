@@ -9,7 +9,8 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useT(lang);
 const other: Lang = lang === 'tr' ? 'en' : 'tr';
-const cats = Object.keys(CATEGORIES) as Category[];
+// Projesi olmayan kategori gösterilmez.
+const cats = (Object.keys(CATEGORIES) as Category[]).filter((c) => byCategory(c).length > 0);
 const projectsHref = NAV[lang].projects;
 
 const jsonLd = {

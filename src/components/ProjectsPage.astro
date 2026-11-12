@@ -8,10 +8,11 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = useT(lang);
 const other: Lang = lang === 'tr' ? 'en' : 'tr';
-const cats = Object.keys(CATEGORIES) as Category[];
+// Projesi olmayan kategori gösterilmez.
+const cats = (Object.keys(CATEGORIES) as Category[]).filter((c) => byCategory(c).length > 0);
 const desc = lang === 'tr'
-  ? 'Depo, operasyon, veri ve öğrenme projeleri: WDL, Sorter Studio, ShiftFlow, Pusula ve diğerleri.'
-  : 'Warehouse, operations, data and learning projects: WDL, Sorter Studio, ShiftFlow, Pusula and more.';
+  ? 'Operasyon, ekip ve öğrenme projeleri: Pusula, Destek Merkezi, İvme, Kesit ve diğerleri.'
+  : 'Operations, teamwork and learning projects: Pusula, Destek Merkezi, İvme, Kesit and more.';
 ---
 <Base lang={lang} title={t('projects.title')} description={desc} path={NAV[lang].projects} altPath={NAV[other].projects}>
   <div class="wrap">

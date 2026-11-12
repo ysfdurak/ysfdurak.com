@@ -10,7 +10,7 @@ export const UI = {
     'lang.switch': 'English',
     'home.kicker': 'Operasyon · Veri · Karar destek',
     'home.lead':
-      'Depo ve operasyon sahasında karşılaştığım problemleri, veri ve yazılımla çözen uygulamalara dönüştürüyorum. Projelerin çoğunu tarayıcıda hemen deneyebilirsiniz.',
+      'Depo ve operasyon sahasında karşılaştığım problemleri, veri ve yazılımla çözen uygulamalara dönüştürüyorum. Canlı olan projeleri tarayıcıda hemen deneyebilirsiniz.',
     'home.featured': 'Öne çıkan projeler',
     'home.categories': 'Tüm kategoriler',
     'home.cta': 'Tüm projeleri gör',
@@ -46,7 +46,7 @@ export const UI = {
     'lang.switch': 'Türkçe',
     'home.kicker': 'Operations · Data · Decision support',
     'home.lead':
-      'I turn problems I meet on the warehouse and operations floor into tools built with data and software. Most projects can be tried right in your browser.',
+      'I turn problems I meet on the warehouse and operations floor into tools built with data and software. Live projects can be tried right in your browser.',
     'home.featured': 'Featured projects',
     'home.categories': 'All categories',
     'home.cta': 'See all projects',

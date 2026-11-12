@@ -13,7 +13,7 @@ export const SITE = {
     en: 'Operations, data and decision-support tools',
   },
   description: {
-    tr: 'Depo ve operasyon sahasından gelen problemler için veri ve yazılımla karar destek uygulamaları. Projeleri tarayıcıda deneyin.',
-    en: 'Decision-support tools built with data and software for real warehouse and operations problems. Try the projects in your browser.',
+    tr: 'Depo ve operasyon sahasından gelen problemler için veri ve yazılımla karar destek uygulamaları. Canlı projeleri tarayıcıda deneyin.',
+    en: 'Decision-support tools built with data and software for real warehouse and operations problems. Try the live ones in your browser.',
   },
 } as const;
