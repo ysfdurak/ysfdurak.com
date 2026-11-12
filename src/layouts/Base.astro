@@ -74,6 +74,7 @@ const isActive = (href: string) => (href === nav.home ? current === href : curre
           <a href={`mailto:${SITE.email[lang]}`}>{SITE.email[lang]}</a>
           <a href={SITE.github} rel="me">GitHub</a>
           {SITE.linkedin && <a href={SITE.linkedin} rel="me">LinkedIn</a>}
+          <a href={lang === 'tr' ? '/tr/gizlilik/' : '/en/privacy/'}>{lang === 'tr' ? 'Gizlilik' : 'Privacy'}</a>
           <a href={SITE.kesit}>{t('footer.kesit')}</a>
         </span>
       </div>

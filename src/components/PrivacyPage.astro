@@ -1,0 +1,90 @@
+---
+// Gizlilik politikası. Yeni bir uygulama kişisel veri toplamaya başladığında buraya bölüm ekle.
+// NOT: Bu metin hukuki danışmanlık yerine geçmez; yayından sonra bir uzmana gözden geçirtilmesi önerilir.
+import Base from '../layouts/Base.astro';
+import { SITE } from '../data/site';
+import type { Lang } from '../data/projects';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = lang === 'tr';
+const path = tr ? '/tr/gizlilik/' : '/en/privacy/';
+const alt = tr ? '/en/privacy/' : '/tr/gizlilik/';
+const email = SITE.email[lang];
+const updated = '12.11.2026';
+---
+<Base lang={lang} title={tr ? 'Gizlilik politikası' : 'Privacy policy'}
+  description={tr ? 'ysfdurak.com ve uygulamalarında hangi verilerin, ne amaçla ve ne kadar süre işlendiği.' : 'Which data ysfdurak.com and its apps process, why, and for how long.'}
+  path={path} altPath={alt}>
+  <article class="wrap prose">
+    {tr ? (
+      <>
+        <h1>Gizlilik politikası</h1>
+        <p class="lead">Bu site ve uygulamaları kişisel bir portföy projesidir. Yalnızca çalışmaları için gereken en az veriyi işler, veriyi satmaz ve reklam amacıyla kullanmaz.</p>
+        <p>Veri sorumlusu: {SITE.name}, <a href={`mailto:${email}`}>{email}</a>. Son güncelleme: {updated}.</p>
+
+        <h2>1. Site ziyaretleri (ysfdurak.com)</h2>
+        <ul>
+          <li>Ziyaret sayıları <strong>Cloudflare Web Analytics</strong> ile ölçülür. Çerez kullanılmaz, ziyaretçi kişi olarak tanınmaz; yalnızca sayfa, ülke, tarayıcı ve yönlendiren site gibi toplu bilgiler görülür.</li>
+          <li>Site Cloudflare altyapısında yayınlanır; güvenlik ve hizmetin çalışması için Cloudflare IP adresi gibi teknik bilgileri işler.</li>
+        </ul>
+
+        <h2>2. Tarayıcıda çalışan araçlar</h2>
+        <p>Sorter Studio, WDL, Ölçü Eleği, Örtü ve benzeri araçlarda girdiğiniz veriler tarayıcınızda işlenir ve sunucuya gönderilmez.</p>
+
+        <h2>3. Pusula (pusula.ysfdurak.com)</h2>
+        <ul>
+          <li><strong>Giriş:</strong> Google ile girişte yalnızca e-posta adresiniz, adınız ve Google hesap kimliğiniz alınır. Parolanız Pusula'ya hiç ulaşmaz.</li>
+          <li><strong>Amaç:</strong> Sizi tanımak, çalışma alanınızı size göstermek ve güvenlik kaydı (kim, ne zaman, hangi işlemi yaptı) tutmak.</li>
+          <li><strong>Demo alanları:</strong> Ziyaretçi olarak girdiğinizde size ait, kurgusal verili bir alan açılır ve <strong>7 gün sonra</strong> içeriği, oturumları ve Claude bağlantısıyla birlikte tümüyle silinir.</li>
+          <li><strong>Kullanım ölçümü:</strong> Yalnızca demo ziyaretçileri için, e-posta yerine takma bir kimlikle ve içerik olmadan ölçülür ("iş oluşturdu" kaydedilir, işin adı kaydedilmez). Kayıtlar 180 gün sonra silinir.</li>
+          <li><strong>Geri bildirim:</strong> Anonimdir; e-postanız yalnızca "bana dönebilirsiniz" seçeneğini işaretlerseniz kaydedilir.</li>
+          <li><strong>Claude bağlantısı (isteğe bağlı):</strong> Pusula'yı Claude'a bağlarsanız, Claude yalnızca sizin izin verdiğiniz araçlarla ve sizin yetkilerinizle verinize erişir. Bağlantıyı istediğiniz an kaldırabilirsiniz.</li>
+        </ul>
+
+        <h2>4. Verinin tutulduğu yer</h2>
+        <p>Uygulama sunucusu Almanya'da (Contabo), yedekler Avrupa Birliği içinde (Cloudflare R2, AB bölgesi) tutulur. Bu nedenle veriler Türkiye dışına aktarılır. Yedekler 30 gün sonra silinir.</p>
+
+        <h2>5. Paylaşım</h2>
+        <p>Veriler üçüncü kişilere satılmaz veya pazarlama amacıyla paylaşılmaz. Yalnızca hizmeti sağlayan altyapı sağlayıcıları (Cloudflare, Contabo, Google giriş hizmeti) işleyebilir.</p>
+
+        <h2>6. Haklarınız</h2>
+        <p>6698 sayılı KVKK kapsamında verilerinize erişme, düzeltilmesini veya silinmesini isteme ve işlenmesine itiraz etme haklarınız vardır. Talepleriniz için <a href={`mailto:${email}`}>{email}</a> adresine yazabilirsiniz; en geç 30 gün içinde yanıtlanır.</p>
+      </>
+    ) : (
+      <>
+        <h1>Privacy policy</h1>
+        <p class="lead">This site and its apps are a personal portfolio project. They process only the minimum data needed to work, never sell data and never use it for advertising.</p>
+        <p>Controller: {SITE.name}, <a href={`mailto:${email}`}>{email}</a>. Last updated: {updated}.</p>
+
+        <h2>1. Site visits (ysfdurak.com)</h2>
+        <ul>
+          <li>Visits are measured with <strong>Cloudflare Web Analytics</strong>. No cookies are used and visitors are not identified; only aggregate data such as page, country, browser and referrer is visible.</li>
+          <li>The site is served on Cloudflare, which processes technical data such as IP addresses for security and delivery.</li>
+        </ul>
+
+        <h2>2. Browser-based tools</h2>
+        <p>In tools such as Sorter Studio, WDL, Ölçü Eleği and Örtü, the data you enter is processed in your browser and never sent to a server.</p>
+
+        <h2>3. Pusula (pusula.ysfdurak.com)</h2>
+        <ul>
+          <li><strong>Sign-in:</strong> With Google sign-in, only your email address, name and Google account ID are received. Your password never reaches Pusula.</li>
+          <li><strong>Purpose:</strong> To identify you, show your workspace and keep a security log (who did what, when).</li>
+          <li><strong>Demo workspaces:</strong> Visitors get their own workspace with fictional data, which is deleted entirely after <strong>7 days</strong>, including sessions and any Claude connection.</li>
+          <li><strong>Usage measurement:</strong> Only for demo visitors, under a pseudonymous ID instead of email and without content ("created a task" is recorded, the task's title is not). Records are deleted after 180 days.</li>
+          <li><strong>Feedback:</strong> Anonymous; your email is stored only if you tick "you may contact me".</li>
+          <li><strong>Claude connection (optional):</strong> If you connect Pusula to Claude, Claude can access your data only through the tools you allow and with your permissions. You can disconnect at any time.</li>
+        </ul>
+
+        <h2>4. Where data is stored</h2>
+        <p>The application server is in Germany (Contabo); backups are kept in the European Union (Cloudflare R2, EU jurisdiction) and deleted after 30 days.</p>
+
+        <h2>5. Sharing</h2>
+        <p>Data is not sold or shared for marketing. Only the infrastructure providers that deliver the service (Cloudflare, Contabo, Google sign-in) may process it.</p>
+
+        <h2>6. Your rights</h2>
+        <p>You may request access to, correction or deletion of your data, or object to its processing, by writing to <a href={`mailto:${email}`}>{email}</a>. Requests are answered within 30 days.</p>
+      </>
+    )}
+  </article>
+</Base>
