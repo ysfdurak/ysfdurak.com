@@ -150,6 +150,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'vps',
     url: 'https://destek.ysfdurak.com/',
+    langParam: true,
     repo: GH + 'destek-merkezi',
     tech: ['React', 'Node.js', 'SQLite', 'Excel (SheetJS)', 'Access istemcisi', 'Docker', 'Caddy'],
     shots: [
@@ -160,7 +161,7 @@ export const PROJECTS: Project[] = [
     ],
     demo: {
       tr: 'Giriş gerekmez: kurgusal bir depo organizasyonuyla dolu, yalnızca sana ait bir alan açılır. Üstteki seçiciyle yönetici, bölüm yetkilisi ve izleyici rollerini deneyebilirsin. Alan son kullanımdan 3 gün sonra silinir.',
-      en: 'No sign-in: you get your own workspace with a fictional warehouse organisation. Use the selector at the top to try the admin, department manager and viewer roles. It is deleted 3 days after last use.',
+      en: 'No sign-in. The app opens in English from this page: you get your own workspace with a fictional warehouse organisation, with English sample data. Use the selector at the top to try the admin, department manager and viewer roles. It is deleted 3 days after last use.',
     },
     tr: {
       tagline: 'Bölümler arası işgücü desteğini kaydeden, karşı bölüme onaylatan ve puantajla karşılaştıran sistem.',
@@ -170,6 +171,7 @@ export const PROJECTS: Project[] = [
         'Vardiyadan gelen sabit süreler, toplu ve geriye dönük giriş, aynı gün tekrar giriş engeli',
         'Karşı bölüm onayı, geri çekme ve puantajla çelişen desteklerin takibi',
         'İşletmenin belirlediği hiyerarşiye göre dashboard ve Excel/PDF raporları',
+        'Türkçe ve İngilizce arayüz; raporlar ve demo verisi de seçilen dilde',
       ],
     },
     en: {
@@ -180,6 +182,7 @@ export const PROJECTS: Project[] = [
         'Fixed durations from shifts, bulk and retroactive entry, same-day duplicate block',
         'Receiving-department approval, withdrawal and tracking of supports that contradict attendance',
         'Dashboard and Excel/PDF reports by the business\'s own hierarchy',
+        'English and Turkish interface; reports and demo data follow the chosen language',
       ],
     },
   },
@@ -241,6 +244,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'vps',
     url: 'https://pusula.ysfdurak.com/',
+    langParam: true,
     repo: GH + 'pusula-is-takip',
     tech: ['React', 'Node.js', 'SQLite', 'Google OAuth', 'MCP', 'MCP Apps', 'Docker', 'Caddy'],
     og: '/img/pusula/og.jpg',
@@ -251,7 +255,7 @@ export const PROJECTS: Project[] = [
     ],
     demo: {
       tr: 'Google hesabınla gir; sana ait, kurgusal bir depo ekibiyle dolu bir çalışma alanı açılır. Alan 7 gün sonra tümüyle silinir; gerçek kimseye e-posta gitmez.',
-      en: 'Sign in with Google and you get your own workspace with a fictional warehouse team. It is deleted entirely after 7 days and no email is sent to anyone.',
+      en: 'Sign in with Google and you get your own workspace with a fictional warehouse team; from this page the app and its sample data open in English. It is deleted entirely after 7 days and no email is sent to anyone.',
     },
     mcp: {
       url: 'https://pusula.ysfdurak.com/mcp',
@@ -272,10 +276,11 @@ export const PROJECTS: Project[] = [
         "Claude'a bağlanınca 13 araçla iş açılır, durum değiştirilir; pano sohbetin içinde tıklanabilir arayüz olarak açılır",
         'Google ile giriş, OAuth 2.1 ile Claude yetkilendirmesi; üye yönetimi, silme ve ekler bilerek yapay zekâya açılmadı',
         'Ziyaretçilere kişiye özel, süreli demo alanı; kullanım ölçümü takma kimlikle ve içerik olmadan',
+        'Türkçe ve İngilizce web arayüzü; demo alanı seçilen dilde açılır',
       ],
     },
     en: {
-      tagline: 'A Turkish task and team tracker, usable from the web and from inside a Claude chat.',
+      tagline: 'A task and team tracker for operations teams, usable from the web and from inside a Claude chat. English and Turkish.',
       problem:
         "In operations teams, work is scattered across email, chat and Excel; nobody sees who is busy with what or what is running late. Off-the-shelf tools are either too complex or not suited to Turkish-speaking teams.",
       solution: [
@@ -285,6 +290,7 @@ export const PROJECTS: Project[] = [
         'Connected to Claude, 13 tools create and update tasks, and the board opens as a clickable UI inside the chat',
         'Google sign-in and OAuth 2.1 for Claude; member management, deletion and attachments are deliberately not exposed to AI',
         'Visitors get a personal, time-limited demo workspace; usage is measured under a pseudonym and without content',
+        'English and Turkish web interface; the demo workspace opens in the chosen language (Claude tools are in Turkish)',
       ],
     },
   },
