@@ -55,6 +55,7 @@ const jsonLd = {
         )
       }
       {p.repo && <a class="btn" href={p.repo}>{t('project.code')}</a>}
+      {p.repos?.map((r) => <a class="btn" href={r.url}>{t('project.code')} · {r.label}</a>)}
       <span class="tag">{HOSTING_LABEL[p.hosting][lang]}</span>
       {p.mcp && <span class="tag">MCP · {p.mcp.tools} {t('project.claudeTools')}</span>}
     </div>

@@ -27,6 +27,8 @@ export interface Project {
   /** Canlı uygulama adresi. Boşsa "Dene" butonu "Canlı sürüm yakında" yazar. */
   url?: string;
   repo?: string;
+  /** Birden çok depo varsa (ör. Kesit paketi): her biri ayrı "Kaynak kod · <ad>" düğmesi olur. */
+  repos?: { label: string; url: string }[];
   tech: string[];
   tr: ProjectText;
   en: ProjectText;
@@ -270,7 +272,12 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'external',
     url: 'https://ysfdurak.github.io/',
-    repo: GH + 'kesit-istatistik',
+    repos: [
+      { label: 'SQL', url: GH + 'kesit-sql' },
+      { label: 'Power BI', url: GH + 'kesit-powerbi' },
+      { label: 'Python', url: GH + 'kesit-python' },
+      { label: 'İstatistik', url: GH + 'kesit-istatistik' },
+    ],
     tech: ['SQL', 'Power BI', 'Python', 'İstatistik'],
     tr: {
       tagline: 'SQL, Power BI, Python ve istatistiği uygulamalı öğreten uygulama paketi.',
@@ -288,6 +295,8 @@ export const PROJECTS: Project[] = [
     name: 'İngilizce Atölyesi',
     category: 'ogrenme',
     hosting: 'static',
+    url: 'https://ysfdurak.github.io/ingilizce-ogrenme-atolyesi/',
+    repo: GH + 'ingilizce-ogrenme-atolyesi',
     tech: ['Tarayıcı uygulaması'],
     tr: {
       tagline: 'Kelime ve kullanım odaklı İngilizce öğrenme uygulaması.',
