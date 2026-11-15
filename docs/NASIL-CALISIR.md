@@ -27,6 +27,7 @@ Sunucu, veritabanı veya giriş yok. Bu yüzden ücretsiz, hızlı ve bakım ger
 ## Sık yapılacak işler
 
 - **Proje eklemek:** `projects.ts` içine bir kayıt ekle (`slug`, `name`, `category`, `hosting`, TR ve EN metinleri). Canlı adresi olunca `url` alanını doldur; "Dene" butonu kendiliğinden açılır.
+- **İngilizce görseller:** Uygulama İngilizce de açılıyorsa ekran görüntülerine `srcEn`, kayda `ogEn` ekle; EN sayfada bunlar gösterilir.
 - **Uygulama iki dilliyse:** Kayda `langParam: true` ekle; “Dene” bağlantısı sayfanın diline göre `?lang=tr` veya `?lang=en` ile açılır.
 - **Windows indirme düğmesi:** Masaüstü sürümü olan projede kayda `download` alanını ekle (ör. GitHub'daki `releases/latest` adresi); proje sayfasında “Windows için indir” düğmesi çıkar.
 - **Vitrine almak:** Kayda `featured: true` ekle.

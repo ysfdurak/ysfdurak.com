@@ -13,6 +13,8 @@ export interface ProjectText {
 
 export interface Shot {
   src: string;
+  /** İngilizce arayüzle çekilmiş görüntü (EN sayfada gösterilir). Yoksa src kullanılır. */
+  srcEn?: string;
   w: number;
   h: number;
   alt: { tr: string; en: string };
@@ -36,6 +38,8 @@ export interface Project {
   shots?: Shot[];
   /** Paylaşım önizlemesi (1200x630). LinkedIn/WhatsApp'ta görünür. */
   og?: string;
+  /** İngilizce paylaşım görseli (EN sayfada). Yoksa og kullanılır. */
+  ogEn?: string;
   /** Projenin MCP adresi varsa "Claude'a bağla" bölümü gösterilir. */
   mcp?: { url: string; tools: number; prompts: { tr: string[]; en: string[] } };
   /** Ziyaretçi demosu varsa kısa açıklaması. */
@@ -81,11 +85,12 @@ export const PROJECTS: Project[] = [
     download: GH + 'video-zaman-etudu/releases/latest',
     tech: ['JavaScript', 'IndexedDB', 'C#', 'WPF', '.NET 8', 'SQLite', 'Excel (OpenXML)', 'Cloudflare Workers', 'GitHub Actions'],
     shots: [
-      { src: '/img/video-zaman-etudu/olcum.webp', w: 1440, h: 900, alt: { tr: 'Video ve ölçüm ekranı: ölçüm video zamanından alınır, her Ölç bir sonraki adımın başlangıcı olur', en: 'Video and measurement screen: times come from the video position, each Measure starts the next step' } },
-      { src: '/img/video-zaman-etudu/analiz.webp', w: 1440, h: 900, alt: { tr: 'Analiz: adım bazında gözlem yeterliliği, baz, normal ve standart süre, çevrimlerin geçen süresi ve iş yükü', en: 'Analysis: per-step sample sufficiency, base, normal and standard time, cycle elapsed time and workload' } },
-      { src: '/img/video-zaman-etudu/calismalar.webp', w: 1440, h: 900, alt: { tr: 'Çalışmalar: etütler tarayıcıda saklanır; .vzetud paketiyle içe ve dışa aktarılır', en: 'Studies: kept in the browser; imported and exported as .vzetud packages' } },
+      { src: '/img/video-zaman-etudu/olcum.webp', srcEn: '/img/video-zaman-etudu/olcum-en.webp', w: 1440, h: 900, alt: { tr: 'Video ve ölçüm ekranı: ölçüm video zamanından alınır, her Ölç bir sonraki adımın başlangıcı olur', en: 'Video and measurement screen: times come from the video position, each Measure starts the next step' } },
+      { src: '/img/video-zaman-etudu/analiz.webp', srcEn: '/img/video-zaman-etudu/analiz-en.webp', w: 1440, h: 900, alt: { tr: 'Analiz: adım bazında gözlem yeterliliği, baz, normal ve standart süre, çevrimlerin geçen süresi ve iş yükü', en: 'Analysis: per-step sample sufficiency, base, normal and standard time, cycle elapsed time and workload' } },
+      { src: '/img/video-zaman-etudu/calismalar.webp', srcEn: '/img/video-zaman-etudu/calismalar-en.webp', w: 1440, h: 900, alt: { tr: 'Çalışmalar: etütler tarayıcıda saklanır; .vzetud paketiyle içe ve dışa aktarılır', en: 'Studies: kept in the browser; imported and exported as .vzetud packages' } },
     ],
     og: '/img/video-zaman-etudu/og.jpg',
+    ogEn: '/img/video-zaman-etudu/og-en.jpg',
     demo: {
       tr: 'Hesap ve kurulum gerekmez. Uygulamayı açıp “Demo etüdü aç” bağlantısına tıklayın: üç çevrimlik sentetik depo videosu ve hazır ölçümler yüklenir, analiz ekranında sonuçlar görünür. Kendi videonuzla yeni etüt de başlatabilirsiniz; etütler yalnızca tarayıcınızda saklanır, video hiçbir sunucuya yüklenmez. Windows sürümü aynı etüt paketini (.vzetud) açar.',
       en: 'No account or install needed. Open the app and click “Demo etüdü aç” (open demo study): a three-cycle synthetic warehouse video and ready measurements load, and the analysis screen shows the results. You can also start a study with your own video; studies stay in your browser and the video is never uploaded. The Windows version (Turkish interface) opens the same study package (.vzetud). The browser app opens in English from this page; the demo’s step names and video labels are in Turkish.',

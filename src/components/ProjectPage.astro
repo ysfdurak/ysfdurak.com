@@ -18,6 +18,8 @@ const related = byCategory(p.category)
   .filter((x) => x.slug !== p.slug)
   .slice(0, 3);
 const path = projectPath(p, lang);
+// EN sayfada İngilizce arayüz görüntüsü varsa onu göster.
+const shotSrc = (sh: { src: string; srcEn?: string }) => (lang === 'en' && sh.srcEn ? sh.srcEn : sh.src);
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -39,7 +41,7 @@ const jsonLd = {
   path={path}
   altPath={projectPath(p, other)}
   jsonLd={jsonLd}
-  image={p.og}
+  image={lang === 'en' && p.ogEn ? p.ogEn : p.og}
 >
   <article class="wrap project">
     <p class="crumb"><a href={NAV[lang].projects}>{t('project.back')}</a> / {CATEGORIES[p.category][lang]}</p>
@@ -64,7 +66,7 @@ const jsonLd = {
     {
       p.shots && p.shots.length > 0 && (
         <figure class="shot hero-shot">
-          <img src={p.shots[0].src} width={p.shots[0].w} height={p.shots[0].h} alt={p.shots[0].alt[lang]} fetchpriority="high" />
+          <img src={shotSrc(p.shots[0])} width={p.shots[0].w} height={p.shots[0].h} alt={p.shots[0].alt[lang]} fetchpriority="high" />
           <figcaption>{p.shots[0].alt[lang]}</figcaption>
         </figure>
       )
@@ -103,7 +105,7 @@ const jsonLd = {
             </div>
             {p.shots && p.shots[1] && (
               <figure class="shot">
-                <img src={p.shots[1].src} width={p.shots[1].w} height={p.shots[1].h} alt={p.shots[1].alt[lang]} loading="lazy" />
+                <img src={shotSrc(p.shots[1])} width={p.shots[1].w} height={p.shots[1].h} alt={p.shots[1].alt[lang]} loading="lazy" />
                 <figcaption>{p.shots[1].alt[lang]}</figcaption>
               </figure>
             )}
@@ -118,7 +120,7 @@ const jsonLd = {
         <section class="gallery">
           {p.shots.slice(p.mcp ? 2 : 1).map((sh) => (
             <figure class="shot">
-              <img src={sh.src} width={sh.w} height={sh.h} alt={sh.alt[lang]} loading="lazy" />
+              <img src={shotSrc(sh)} width={sh.w} height={sh.h} alt={sh.alt[lang]} loading="lazy" />
               <figcaption>{sh.alt[lang]}</figcaption>
             </figure>
           ))}
