@@ -48,6 +48,8 @@ export interface Project {
   download?: string;
   /** Uygulama TR/EN destekliyorsa "Dene" bağlantısına sayfanın dili ?lang=tr|en olarak eklenir. */
   langParam?: boolean;
+  /** Uygulama yalnızca Türkçe konuşanlar için (arayüz ve içerik Türkçe). EN sayfada etiket ve bu açıklama gösterilir. */
+  turkishOnly?: { en: string };
 }
 
 export const CATEGORIES: Record<Category, { tr: string; en: string; trSlug: string; enSlug: string }> = {
@@ -343,6 +345,9 @@ export const PROJECTS: Project[] = [
     slug: 'kesit',
     name: 'Kesit (SQL, Power BI, Python, İstatistik)',
     category: 'ogrenme',
+    turkishOnly: {
+      en: 'Built for Turkish speakers: Kesit’s whole point is teaching data skills in Turkish, so the apps, lessons and exercises are in Turkish only. This page describes them in English.',
+    },
     featured: true,
     hosting: 'external',
     url: 'https://ysfdurak.github.io/',
@@ -397,6 +402,9 @@ export const PROJECTS: Project[] = [
     slug: 'ingilizce-atolyesi',
     name: 'İngilizce Atölyesi',
     category: 'ogrenme',
+    turkishOnly: {
+      en: 'Built for Turkish speakers learning English: explanations, feedback and the exam prep (YDS, e-YDS, YÖKDİL) are in Turkish, so the app has a Turkish interface only. This page describes it in English.',
+    },
     hosting: 'static',
     url: 'https://ingilizce-atolyesi.ysfdurak.com/',
     repo: GH + 'ingilizce-ogrenme-atolyesi',

@@ -47,6 +47,7 @@ const jsonLd = {
     <p class="crumb"><a href={NAV[lang].projects}>{t('project.back')}</a> / {CATEGORIES[p.category][lang]}</p>
     <h1>{p.name}</h1>
     <p class="lead">{text.tagline}</p>
+    {lang === 'en' && p.turkishOnly && <p class="tr-only"><strong>Turkish interface.</strong> {p.turkishOnly.en}</p>}
 
     <div class="actions">
       {
@@ -60,6 +61,7 @@ const jsonLd = {
       {p.repo && <a class="btn" href={p.repo}>{t('project.code')}</a>}
       {p.repos?.map((r) => <a class="btn" href={r.url}>{t('project.code')} · {r.label}</a>)}
       <span class="tag">{HOSTING_LABEL[p.hosting][lang]}</span>
+      {lang === 'en' && p.turkishOnly && <span class="tag">For Turkish speakers</span>}
       {p.mcp && <span class="tag">MCP · {p.mcp.tools} {t('project.claudeTools')}</span>}
     </div>
 
