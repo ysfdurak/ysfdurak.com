@@ -352,16 +352,45 @@ export const PROJECTS: Project[] = [
       { label: 'Python', url: GH + 'kesit-python' },
       { label: 'İstatistik', url: GH + 'kesit-istatistik' },
     ],
-    tech: ['SQL', 'Power BI', 'Python', 'İstatistik'],
+    tech: ['JavaScript', 'SQLite (sql.js)', 'Pyodide', 'DAX benzetim motoru', 'PWA'],
+    og: '/img/kesit/og.jpg',
+    shots: [
+      { src: '/img/kesit/sql-alistirma.webp', w: 1280, h: 800, alt: { tr: 'Kesit SQL: tarayıcıdaki veritabanında yazılan sorgu anında denetlenir; görev, örnek tablo ve sonuç yan yana', en: 'Kesit SQL: a query written against the in-browser database is checked instantly; task, sample table and result side by side' } },
+      { src: '/img/kesit/powerbi-rapor.webp', w: 1280, h: 760, alt: { tr: 'Kesit Power BI: adım adım anlatılan örnek finansal performans raporu, yer işaretleri ve alan parametreleriyle', en: 'Kesit Power BI: a sample financial performance report explained step by step, with bookmarks and field parameters' } },
+      { src: '/img/kesit/python-kod.webp', w: 1280, h: 800, alt: { tr: 'Kesit Python: tarayıcıda çalışan gerçek Python ile kod editörü ve çıktı', en: 'Kesit Python: code editor and output running real Python in the browser' } },
+      { src: '/img/kesit/istatistik-vaka.webp', w: 1366, h: 860, alt: { tr: 'Kesit İstatistik: ortak kurgusal veriyle vaka; sonucu okuma ve iş kararına çevirme adımları', en: 'Kesit Statistics: a case on the shared fictional data; reading the result and turning it into a business decision' } },
+    ],
+    demo: {
+      tr: 'Hesap ve kurulum yok: Kesit sayfasından bir uygulama seç, seviye testini çöz ya da rolüne uygun öğrenme yolundan başla. İlerleme yalnızca tarayıcında saklanır, Profil’den dosyaya yedeklenip başka cihazda yüklenebilir; site bir kez açıldıktan sonra internetsiz de çalışır.',
+      en: 'No account or setup: pick an app on the Kesit page, take the placement test or start the learning path for your role. Progress stays in your browser and can be backed up to a file and loaded on another device; after the first visit the apps also work offline. The interface is in Turkish.',
+    },
     tr: {
-      tagline: 'SQL, Power BI, Python ve istatistiği uygulamalı öğreten uygulama paketi.',
-      problem: 'Veri becerileri pratik yapılmadan oturmaz; kurulum gerektirmeyen bir çalışma alanı gerekir.',
-      solution: ['Tarayıcıda çalışan alıştırmalar', 'Kendi veri setleri', 'Konu konu ilerleme'],
+      tagline: 'Veri işinin dört temel becerisini (SQL, Power BI, Python, istatistik) Türkçe ve yaparak öğreten, tarayıcıda çalışan eğitim paketi.',
+      problem:
+        'Veri alanına geçmek isteyenler araçları dağınık, çoğu İngilizce kaynaklardan öğreniyor; kurulum ve hesap engeline takılıyor, yazdıkları kodun doğru olup olmadığını göremiyor. Dört aracı aynı iş senaryosu üzerinde birbirine bağlayan bir çalışma alanı da yok.',
+      solution: [
+        'Kesit SQL: 295 ders ve 1.944 alıştırma; tarayıcıda çalışan veritabanı, altı SQL türünün yazımı (SQL Server, PostgreSQL, MySQL, Oracle, BigQuery, SQLite), SQL Arena ve dedektif vakaları',
+        'Kesit Power BI: 150 ders ve 1.250 alıştırma; DAX’ı benzeten 206 fonksiyonlu motor, adım adım anlatılan 24 örnek rapor, PL-300 ve DP-600 hazırlığı',
+        'Kesit Python: 156 ders ve 3.240 alıştırma; tarayıcıda gerçek Python (Pyodide), otomasyondan makine öğrenmesine ve LLM uygulamalarına, 250 Arena problemi',
+        'Kesit İstatistik: 30 modülde 120 ders; formülden önce veri, sonucu iş kararına çevirme, her açılışta yeni sayı üreten alıştırma atölyesi',
+        'Dört uygulamada ortak kurgusal veri setleri (Anadolu Market, Ilgaz Bank, Kanat Havayolları, Lezzet Kurye, Pusula İK, Pedal İzmir); aynı soru farklı araçlarla çözülür',
+        'Role göre öğrenme yolları, seviye testi, aralıklı tekrar, sınavlar ve mülakat soruları',
+        'Sunucu ve hesap yok: ilerleme tarayıcıda, dosyaya yedeklenir; çevrimdışı çalışır. Alıştırma çözümleri otomatik denetimlerle doğrulanır',
+      ],
     },
     en: {
-      tagline: 'A suite that teaches SQL, Power BI, Python and statistics hands-on.',
-      problem: 'Data skills only stick with practice, and learners need a workspace with no setup.',
-      solution: ['Exercises that run in the browser', 'Built-in datasets', 'Topic-by-topic progress'],
+      tagline: 'A browser-based training suite that teaches the four core data skills (SQL, Power BI, Python, statistics) hands-on, in Turkish.',
+      problem:
+        'People moving into data roles learn the tools from scattered, mostly English sources, get stuck on setup and sign-ups, and cannot tell whether their code is right. There is also no workspace that ties the four tools together on the same business scenario.',
+      solution: [
+        'Kesit SQL: 295 lessons and 1,944 exercises; an in-browser database, six SQL dialects (SQL Server, PostgreSQL, MySQL, Oracle, BigQuery, SQLite), SQL Arena and detective cases',
+        'Kesit Power BI: 150 lessons and 1,250 exercises; a DAX-emulating engine with 206 functions, 24 sample reports explained step by step, PL-300 and DP-600 prep',
+        'Kesit Python: 156 lessons and 3,240 exercises; real Python in the browser (Pyodide), from automation to machine learning and LLM apps, 250 Arena problems',
+        'Kesit Statistics: 120 lessons in 30 modules; data before formulas, turning results into business decisions, a practice workshop that generates new numbers each time',
+        'Shared fictional datasets across all four apps (Anadolu Market, Ilgaz Bank, Kanat Airlines, Lezzet Kurye, Pusula HR, Pedal İzmir); the same question is solved with different tools',
+        'Role-based learning paths, placement tests, spaced review, exams and interview questions',
+        'No server or account: progress stays in the browser, backs up to a file and works offline. Exercise solutions are verified by automated checks',
+      ],
     },
   },
   {
