@@ -93,7 +93,7 @@ export const PROJECTS: Project[] = [
     ogEn: '/img/video-zaman-etudu/og-en.jpg',
     demo: {
       tr: 'Hesap ve kurulum gerekmez. Uygulamayı açıp “Demo etüdü aç” bağlantısına tıklayın: üç çevrimlik sentetik depo videosu ve hazır ölçümler yüklenir, analiz ekranında sonuçlar görünür. Kendi videonuzla yeni etüt de başlatabilirsiniz; etütler yalnızca tarayıcınızda saklanır, video hiçbir sunucuya yüklenmez. Windows sürümü aynı etüt paketini (.vzetud) açar.',
-      en: 'No account or install needed. Open the app and click “Demo etüdü aç” (open demo study): a three-cycle synthetic warehouse video and ready measurements load, and the analysis screen shows the results. You can also start a study with your own video; studies stay in your browser and the video is never uploaded. The Windows version (Turkish interface) opens the same study package (.vzetud). The browser app opens in English from this page; the demo’s step names and video labels are in Turkish.',
+      en: 'No account or install needed. The app opens in English from this page: click “Open demo study” and a three-cycle synthetic warehouse video with ready measurements loads; the analysis screen shows the results. You can also start a study with your own video; studies stay in your browser and the video is never uploaded. The Windows version (Turkish interface) opens the same study packages (.vzetud).',
     },
     tr: {
       tagline: 'Videodan iş adımlarını ölçen, standart süreyi hesaplayan ve Excel’e aktaran zaman etüdü aracı. Tarayıcıda ve Windows’ta çalışır.',
