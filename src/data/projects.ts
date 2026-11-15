@@ -42,6 +42,8 @@ export interface Project {
   demo?: { tr: string; en: string };
   /** İndirilebilir masaüstü sürümü varsa "Windows için indir" düğmesi gösterilir. */
   download?: string;
+  /** Uygulama TR/EN destekliyorsa "Dene" bağlantısına sayfanın dili ?lang=tr|en olarak eklenir. */
+  langParam?: boolean;
 }
 
 export const CATEGORIES: Record<Category, { tr: string; en: string; trSlug: string; enSlug: string }> = {
@@ -74,6 +76,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'desktop',
     url: 'https://zaman-etudu.ysfdurak.com/',
+    langParam: true,
     repo: GH + 'video-zaman-etudu',
     download: GH + 'video-zaman-etudu/releases/latest',
     tech: ['JavaScript', 'IndexedDB', 'C#', 'WPF', '.NET 8', 'SQLite', 'Excel (OpenXML)', 'Cloudflare Workers', 'GitHub Actions'],
@@ -85,7 +88,7 @@ export const PROJECTS: Project[] = [
     og: '/img/video-zaman-etudu/og.jpg',
     demo: {
       tr: 'Hesap ve kurulum gerekmez. Uygulamayı açıp “Demo etüdü aç” bağlantısına tıklayın: üç çevrimlik sentetik depo videosu ve hazır ölçümler yüklenir, analiz ekranında sonuçlar görünür. Kendi videonuzla yeni etüt de başlatabilirsiniz; etütler yalnızca tarayıcınızda saklanır, video hiçbir sunucuya yüklenmez. Windows sürümü aynı etüt paketini (.vzetud) açar.',
-      en: 'No account or install needed. Open the app and click “Demo etüdü aç” (open demo study): a three-cycle synthetic warehouse video and ready measurements load, and the analysis screen shows the results. You can also start a study with your own video; studies stay in your browser and the video is never uploaded. The Windows version opens the same study package (.vzetud). The interface is in Turkish.',
+      en: 'No account or install needed. Open the app and click “Demo etüdü aç” (open demo study): a three-cycle synthetic warehouse video and ready measurements load, and the analysis screen shows the results. You can also start a study with your own video; studies stay in your browser and the video is never uploaded. The Windows version (Turkish interface) opens the same study package (.vzetud). The browser app opens in English from this page; the demo’s step names and video labels are in Turkish.',
     },
     tr: {
       tagline: 'Videodan iş adımlarını ölçen, standart süreyi hesaplayan ve Excel’e aktaran zaman etüdü aracı. Tarayıcıda ve Windows’ta çalışır.',
@@ -99,6 +102,7 @@ export const PROJECTS: Project[] = [
         'Paralel işlerde çevrimin geçen süresi ile toplam iş yükü ayrı hesaplanır',
         'Beş sayfalık Excel raporu ve etüdü başka bilgisayara taşıyan .vzetud paketi; video ve klasör yolu paylaşılmaz',
         'İki sürüm, tek kural seti: sunucusuz tarayıcı sürümü ve Windows masaüstü. Ortak test dosyası (61 hesap örneği, 86 paket senaryosu) her gönderimde iki sürümün aynı sonucu verdiğini doğrular',
+        'Tarayıcı sürümü Türkçe ve İngilizce; Excel raporu da seçilen dilde üretilir',
       ],
     },
     en: {
@@ -113,6 +117,7 @@ export const PROJECTS: Project[] = [
         'For parallel work, a cycle’s elapsed time and total workload are calculated separately',
         'Five-sheet Excel report and a .vzetud package to move a study to another computer; the video and folder paths are never shared',
         'Two versions, one rule set: a serverless browser version and a Windows desktop app. A shared test file (61 calculation cases, 86 package scenarios) checks on every push that both give the same results',
+        'The browser version is in English and Turkish; the Excel report follows the chosen language',
       ],
     },
   },
