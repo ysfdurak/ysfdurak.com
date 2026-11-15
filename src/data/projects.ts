@@ -40,6 +40,8 @@ export interface Project {
   mcp?: { url: string; tools: number; prompts: { tr: string[]; en: string[] } };
   /** Ziyaretçi demosu varsa kısa açıklaması. */
   demo?: { tr: string; en: string };
+  /** İndirilebilir masaüstü sürümü varsa "Windows için indir" düğmesi gösterilir. */
+  download?: string;
 }
 
 export const CATEGORIES: Record<Category, { tr: string; en: string; trSlug: string; enSlug: string }> = {
@@ -52,7 +54,7 @@ export const CATEGORIES: Record<Category, { tr: string; en: string; trSlug: stri
 export const HOSTING_LABEL: Record<Hosting, { tr: string; en: string }> = {
   static: { tr: 'Tarayıcıda çalışır', en: 'Runs in the browser' },
   vps: { tr: 'Sunucuda çalışır', en: 'Runs on a server' },
-  desktop: { tr: 'Masaüstü + tarayıcı demosu', en: 'Desktop app + browser demo' },
+  desktop: { tr: 'Tarayıcı + Windows masaüstü', en: 'Browser + Windows desktop' },
   repo: { tr: 'Kaynak kod ve vaka', en: 'Source code and case study' },
   external: { tr: 'Ayrı sitede', en: 'Separate site' },
 };
@@ -70,16 +72,47 @@ export const PROJECTS: Project[] = [
     name: 'Video Zaman Etüdü',
     category: 'operasyon',
     hosting: 'desktop',
-    tech: ['C#', 'WPF'],
+    url: 'https://zaman-etudu.ysfdurak.com/',
+    repo: GH + 'video-zaman-etudu',
+    download: GH + 'video-zaman-etudu/releases/latest',
+    tech: ['JavaScript', 'IndexedDB', 'C#', 'WPF', '.NET 8', 'SQLite', 'Excel (OpenXML)', 'Cloudflare Workers', 'GitHub Actions'],
+    shots: [
+      { src: '/img/video-zaman-etudu/olcum.webp', w: 1440, h: 900, alt: { tr: 'Video ve ölçüm ekranı: ölçüm video zamanından alınır, her Ölç bir sonraki adımın başlangıcı olur', en: 'Video and measurement screen: times come from the video position, each Measure starts the next step' } },
+      { src: '/img/video-zaman-etudu/analiz.webp', w: 1440, h: 900, alt: { tr: 'Analiz: adım bazında gözlem yeterliliği, baz, normal ve standart süre, çevrimlerin geçen süresi ve iş yükü', en: 'Analysis: per-step sample sufficiency, base, normal and standard time, cycle elapsed time and workload' } },
+      { src: '/img/video-zaman-etudu/calismalar.webp', w: 1440, h: 900, alt: { tr: 'Çalışmalar: etütler tarayıcıda saklanır; .vzetud paketiyle içe ve dışa aktarılır', en: 'Studies: kept in the browser; imported and exported as .vzetud packages' } },
+    ],
+    og: '/img/video-zaman-etudu/og.jpg',
+    demo: {
+      tr: 'Hesap ve kurulum gerekmez. Örnek depo etüdü ve 35 saniyelik sentetik video, kaynak koddaki demo klasöründedir: uygulamada “Etüdü içe al” ile paketi, “Videoyu yeniden seç” ile videoyu açın; analiz ekranında sonuçlar hazırdır. Etütler yalnızca tarayıcınızda saklanır, video hiçbir sunucuya yüklenmez. Windows sürümü aynı etüt paketini açar.',
+      en: 'No account or install needed. A sample warehouse study and a 35-second synthetic video are in the demo folder of the source code: use “Import study” for the package and “Re-select video” for the video; the analysis screen is ready. Studies stay in your browser and the video is never uploaded. The Windows version opens the same study package. The interface is in Turkish.',
+    },
     tr: {
-      tagline: 'Video üzerinden zaman etüdü yapan Windows uygulaması.',
-      problem: 'Kronometreyle zaman etüdü yavaştır ve tekrar izlenemez.',
-      solution: ['Video üzerinde adım işaretleme', 'Çevrim süresi analizi', 'Raporlama'],
+      tagline: 'Videodan iş adımlarını ölçen, standart süreyi hesaplayan ve Excel’e aktaran zaman etüdü aracı. Tarayıcıda ve Windows’ta çalışır.',
+      problem:
+        'Kronometreyle yapılan zaman etüdünde kaçan bir an tekrar izlenemez; paralel işler ve beklemeler ayrıştırılamaz, kaç gözlemin yeterli olduğu çoğu zaman tahminle söylenir. Sonuçlar elle Excel’e geçirilirken hata da eklenir.',
+      solution: [
+        'Ölçüm video zamanından alınır: Başla → Ölç → Ölç. Duraklatma ve yavaş oynatma süreyi bozmaz; adım sınırı kare kare ince konumlamayla bulunur',
+        'Adımlar VA / SVA / NVA olarak sınıflanır; beklemeler “kapsam dışı” işaretlenir, ham listede kalır ama hesaba girmez',
+        'Student-t ile adım bazında gözlem yeterliliği (varsayılan %95 güven, ±%5 hata); baz süre ortalamadan veya en sık tekrar eden süreden',
+        'Tempo ve toleransla normal ve standart süre; her N çevrimde bir yapılan işlerin çevrime katkısı',
+        'Paralel işlerde çevrimin geçen süresi ile toplam iş yükü ayrı hesaplanır',
+        'Beş sayfalık Excel raporu ve etüdü başka bilgisayara taşıyan .vzetud paketi; video ve klasör yolu paylaşılmaz',
+        'İki sürüm, tek kural seti: sunucusuz tarayıcı sürümü ve Windows masaüstü. Ortak test dosyası (61 hesap örneği, 86 paket senaryosu) her gönderimde iki sürümün aynı sonucu verdiğini doğrular',
+      ],
     },
     en: {
-      tagline: 'A Windows app for video-based time studies.',
-      problem: 'Stopwatch time studies are slow and cannot be replayed.',
-      solution: ['Mark steps on the video', 'Cycle-time analysis', 'Reporting'],
+      tagline: 'A time-study tool that measures work steps from video, calculates standard time and exports to Excel. Runs in the browser and on Windows.',
+      problem:
+        'In stopwatch time studies a missed moment cannot be replayed, parallel work and waiting cannot be separated, and whether there are enough observations is usually a guess. Copying results into Excel by hand adds errors.',
+      solution: [
+        'Times come from the video position: Start → Measure → Measure. Pausing and slow playback do not distort durations; step boundaries are found with frame-level nudging',
+        'Steps are classified VA / SVA / NVA; waiting is marked “out of scope”, kept in the raw list but excluded from calculations',
+        'Per-step sample sufficiency with Student-t (default 95% confidence, ±5% error); base time from the mean or the most frequent duration',
+        'Normal and standard time with pace rating and allowance; contribution of tasks done once every N cycles',
+        'For parallel work, a cycle’s elapsed time and total workload are calculated separately',
+        'Five-sheet Excel report and a .vzetud package to move a study to another computer; the video and folder paths are never shared',
+        'Two versions, one rule set: a serverless browser version and a Windows desktop app. A shared test file (61 calculation cases, 86 package scenarios) checks on every push that both give the same results',
+      ],
     },
   },
   {

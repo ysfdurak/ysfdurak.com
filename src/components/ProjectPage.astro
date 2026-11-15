@@ -25,7 +25,7 @@ const jsonLd = {
   name: p.name,
   description: text.tagline,
   applicationCategory: 'BusinessApplication',
-  operatingSystem: p.hosting === 'desktop' ? 'Windows' : 'Web',
+  operatingSystem: p.hosting === 'desktop' ? 'Windows, Web' : 'Web',
   url: new URL(path, SITE.url).href,
   author: { '@type': 'Person', name: SITE.name, url: SITE.url },
   inLanguage: lang,
@@ -54,6 +54,7 @@ const jsonLd = {
           <span class="btn disabled" aria-disabled="true">{t('project.soon')}</span>
         )
       }
+      {p.download && <a class="btn" href={p.download}>{t('project.download')}</a>}
       {p.repo && <a class="btn" href={p.repo}>{t('project.code')}</a>}
       {p.repos?.map((r) => <a class="btn" href={r.url}>{t('project.code')} · {r.label}</a>)}
       <span class="tag">{HOSTING_LABEL[p.hosting][lang]}</span>
