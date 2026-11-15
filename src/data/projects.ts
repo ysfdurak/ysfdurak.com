@@ -154,10 +154,10 @@ export const PROJECTS: Project[] = [
     repo: GH + 'destek-merkezi',
     tech: ['React', 'Node.js', 'SQLite', 'Excel (SheetJS)', 'Access istemcisi', 'Docker', 'Caddy'],
     shots: [
-      { src: '/img/destek-merkezi/genel-bakis.webp', w: 1400, h: 950, alt: { tr: 'Destek Merkezi genel bakış: kesinleşen ve onay bekleyen destekler, bölümler arası dağılım', en: 'Destek Merkezi overview: finalised and pending supports, distribution between departments' } },
-      { src: '/img/destek-merkezi/dashboard.webp', w: 1440, h: 1000, alt: { tr: 'Destek Merkezi dashboard: 50 bölümlük işletmede kim kime destek verdi, gün ve bölüm takvimi', en: 'Destek Merkezi dashboard: who supported whom and a day-by-department calendar for a 50-department site' } },
-      { src: '/img/destek-merkezi/toplu-giris.webp', w: 1400, h: 950, alt: { tr: 'Toplu giriş: kişileri sabitle, birkaç günü vardiyayla tek seferde gir', en: 'Bulk entry: pin people and enter several days at once by shift' } },
-      { src: '/img/destek-merkezi/hiyerarsi.webp', w: 1110, h: 1110, alt: { tr: 'Hiyerarşi tanımı: düzey adlarını ve derinliği işletme belirler', en: 'Hierarchy setup: the business names its own levels and depth' } },
+      { src: '/img/destek-merkezi/genel-bakis.webp', srcEn: '/img/destek-merkezi/genel-bakis-en.webp', w: 1400, h: 950, alt: { tr: 'Destek Merkezi genel bakış: kesinleşen ve onay bekleyen destekler, bölümler arası dağılım', en: 'Destek Merkezi overview: finalised and pending supports, distribution between departments' } },
+      { src: '/img/destek-merkezi/dashboard.webp', srcEn: '/img/destek-merkezi/dashboard-en.webp', w: 1440, h: 1000, alt: { tr: 'Destek Merkezi dashboard: 50 bölümlük işletmede kim kime destek verdi, gün ve bölüm takvimi', en: 'Destek Merkezi dashboard: filters by period, location, shift and hierarchy, totals and a daily chart of support records' } },
+      { src: '/img/destek-merkezi/toplu-giris.webp', srcEn: '/img/destek-merkezi/toplu-giris-en.webp', w: 1400, h: 950, alt: { tr: 'Toplu giriş: kişileri sabitle, birkaç günü vardiyayla tek seferde gir', en: 'Bulk entry: pin people and enter several days at once by shift' } },
+      { src: '/img/destek-merkezi/hiyerarsi.webp', srcEn: '/img/destek-merkezi/hiyerarsi-en.webp', w: 1110, h: 1110, alt: { tr: 'Hiyerarşi tanımı: düzey adlarını ve derinliği işletme belirler', en: 'Hierarchy setup: the business names its own levels and depth' } },
     ],
     demo: {
       tr: 'Giriş gerekmez: kurgusal bir depo organizasyonuyla dolu, yalnızca sana ait bir alan açılır. Üstteki seçiciyle yönetici, bölüm yetkilisi ve izleyici rollerini deneyebilirsin. Alan son kullanımdan 3 gün sonra silinir.',
@@ -249,9 +249,9 @@ export const PROJECTS: Project[] = [
     tech: ['React', 'Node.js', 'SQLite', 'Google OAuth', 'MCP', 'MCP Apps', 'Docker', 'Caddy'],
     og: '/img/pusula/og.jpg',
     shots: [
-      { src: '/img/pusula/ekip-panosu.webp', w: 1440, h: 900, alt: { tr: 'Pusula ekip panosu: açık, geciken, bugün teslim ve tamamlanan işler', en: 'Pusula team board: open, overdue, due today and completed tasks' } },
+      { src: '/img/pusula/ekip-panosu.webp', srcEn: '/img/pusula/ekip-panosu-en.webp', w: 1440, h: 900, alt: { tr: 'Pusula ekip panosu: açık, geciken, bugün teslim ve tamamlanan işler', en: 'Pusula team board: open, overdue, due today and completed tasks' } },
       { src: '/img/pusula/claude-panom.webp', w: 1392, h: 1100, alt: { tr: "Claude sohbetinin içinde açılan Pusula panosu: Başla, Tamamla ve Ayrıntı düğmeleri", en: 'Pusula board opened inside a Claude chat, with Start, Complete and Details buttons' } },
-      { src: '/img/pusula/benim-panom.webp', w: 1440, h: 900, alt: { tr: 'Benim panom: kişinin bugünkü gündemi ve hızlı iş ekleme', en: 'My board: personal agenda for today and quick task entry' } },
+      { src: '/img/pusula/benim-panom.webp', srcEn: '/img/pusula/benim-panom-en.webp', w: 1440, h: 900, alt: { tr: 'Benim panom: kişinin bugünkü gündemi ve hızlı iş ekleme', en: 'My board: personal agenda for today and quick task entry' } },
     ],
     demo: {
       tr: 'Google hesabınla gir; sana ait, kurgusal bir depo ekibiyle dolu bir çalışma alanı açılır. Alan 7 gün sonra tümüyle silinir; gerçek kimseye e-posta gitmez.',
