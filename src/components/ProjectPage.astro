@@ -111,9 +111,10 @@ const jsonLd = {
     }
 
     {
-      p.shots && p.shots.length > 2 && (
+      // shots[1] MCP kutusunda gösterilir; MCP yoksa galeride yer alır.
+      p.shots && p.shots.length > (p.mcp ? 2 : 1) && (
         <section class="gallery">
-          {p.shots.slice(2).map((sh) => (
+          {p.shots.slice(p.mcp ? 2 : 1).map((sh) => (
             <figure class="shot">
               <img src={sh.src} width={sh.w} height={sh.h} alt={sh.alt[lang]} loading="lazy" />
               <figcaption>{sh.alt[lang]}</figcaption>
