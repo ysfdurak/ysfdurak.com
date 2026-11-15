@@ -77,3 +77,13 @@ Yeni bir alt alan adı için önce Cloudflare DNS'te A kaydı açılır (sunucu 
 - Demo modunda gerçek veri tutmaz. Bu yüzden gece yedeğine eklenmedi.
 - Demo sayaçları: `sudo docker exec destek node server/demo-istatistik.mjs`
 - Ayrıntı: github.com/ysfdurak/destek-merkezi → `docs/SUNUCU_KURULUMU.md`
+
+## Kayıt (log) sınırı
+
+Docker kayıtları konteyner başına en fazla 3 × 10 MB tutulur. Ayar `/etc/docker/daemon.json` dosyasındadır. Yeni bir sunucuda Docker kurulduktan sonra bir kez çalıştırılır:
+
+```bash
+bash ~/ysfdurak.com/sunucu/kayit-siniri.sh
+```
+
+Docker yeniden başlatıldığı için tüm uygulamalar 10-30 saniye kesilir.
