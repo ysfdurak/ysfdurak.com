@@ -325,7 +325,7 @@ export const PROJECTS: Project[] = [
     name: 'İngilizce Atölyesi',
     category: 'ogrenme',
     hosting: 'static',
-    url: 'https://ysfdurak.github.io/ingilizce-ogrenme-atolyesi/',
+    url: 'https://ingilizce.ysfdurak.com/',
     repo: GH + 'ingilizce-ogrenme-atolyesi',
     tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],
     og: '/img/ingilizce-atolyesi/og.jpg',
