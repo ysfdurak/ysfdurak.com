@@ -85,6 +85,29 @@ const jsonLd = {
     </section>
 
     {
+      p.video && (!p.video.lang || p.video.lang === lang) && (
+        <section>
+          <h2>{t('project.video')}</h2>
+          <figure class="shot video">
+            <video controls preload="none" playsinline poster={p.video.poster} width={p.video.w} height={p.video.h} aria-label={p.video.caption[lang]}>
+              <source src={p.video.src} type="video/mp4" />
+            </video>
+            <figcaption>{p.video.caption[lang]}</figcaption>
+          </figure>
+        </section>
+      )
+    }
+
+    {
+      p.decisions && (
+        <section>
+          <h2>{t('project.decisions')}</h2>
+          <ul>{p.decisions[lang].map((s) => <li>{s}</li>)}</ul>
+        </section>
+      )
+    }
+
+    {
       p.demo && (
         <section>
           <h2>{t('project.demo')}</h2>

@@ -50,6 +50,10 @@ export interface Project {
   langParam?: boolean;
   /** Uygulama yalnızca Türkçe konuşanlar için (arayüz ve içerik Türkçe). EN sayfada etiket ve bu açıklama gösterilir. */
   turkishOnly?: { en: string };
+  /** Tasarım kararları ve nedenleri (sayfada ayrı bölüm). */
+  decisions?: { tr: string[]; en: string[] };
+  /** Kısa tanıtım videosu (altyazısı videoya işlenmiş). `lang` verilirse yalnız o dildeki sayfada gösterilir. */
+  video?: { src: string; poster: string; w: number; h: number; lang?: Lang; caption: { tr: string; en: string } };
 }
 
 export const CATEGORIES: Record<Category, { tr: string; en: string; trSlug: string; enSlug: string }> = {
@@ -295,18 +299,19 @@ export const PROJECTS: Project[] = [
     name: 'Aday Atölyesi',
     category: 'ekip',
     turkishOnly: {
-      en: 'Built for candidates applying to jobs in Turkey: the aptitude tests (including verbal reasoning in Turkish), 20 company cases with Word/Excel files and the HR review are in Turkish, so the app has a Turkish interface only. This page describes it in English.',
+      en: 'Built for candidates applying to jobs in Turkey: the aptitude tests (including verbal reasoning in Turkish), 20 company cases with Word/Excel files and the HR review are in Turkish, so the app stays in Turkish. “Try it” opens an English guide that explains every screen, and one sample case (Koru Distribution) is fully in English.',
     },
     hosting: 'vps',
     url: 'https://aday.ysfdurak.com/',
+    langParam: true,
     repo: GH + 'aday_atolyesi',
     tech: ['JavaScript', 'Cloudflare Workers', 'D1 (SQLite)', 'R2'],
     og: '/img/aday-atolyesi/og.jpg',
     shots: [
-      { src: '/img/aday-atolyesi/vaka-calismasi.webp', w: 1440, h: 900, alt: { tr: 'Vaka çalışması: solda kurgusal şirket belgeleri, sağda çıktı bazında cevap alanları, kelime sayacı ve süre tutucu', en: 'Case exercise: fictional company documents on the left, answer fields per output on the right with word count and timer' } },
-      { src: '/img/aday-atolyesi/hazirlik-plani.webp', w: 1440, h: 900, alt: { tr: 'Hazırlık planı: hedef pozisyona göre bugün yapılacak tek adım ve günün bütün adımları', en: 'Preparation plan: the one next step for today and the full day plan for the target role' } },
+      { src: '/img/aday-atolyesi/vaka-calismasi.webp', srcEn: '/img/aday-atolyesi/vaka-calismasi-en.webp', w: 1440, h: 900, alt: { tr: 'Vaka çalışması: solda kurgusal şirket belgeleri, sağda çıktı bazında cevap alanları, kelime sayacı ve süre tutucu', en: 'The English sample case (Koru Distribution) with the English guide open: company file on the left, numbered outputs on the right; English labels sit under the Turkish menus and headings' } },
+      { src: '/img/aday-atolyesi/hazirlik-plani.webp', srcEn: '/img/aday-atolyesi/hazirlik-plani-en.webp', w: 1440, h: 900, alt: { tr: 'Hazırlık planı: hedef pozisyona göre bugün yapılacak tek adım ve günün bütün adımları', en: 'Preparation plan for a warehouse operations role: one next step for today, then the full day plan; the guide explains how the plan is built' } },
       { src: '/img/aday-atolyesi/olcutlu-degerlendirme.webp', w: 1440, h: 900, alt: { tr: 'İK değerlendirme formu: her ölçüt için 0–3 seviye ve seviye tanımı', en: 'HR review form: a 0–3 level per criterion with the level description' } },
-      { src: '/img/aday-atolyesi/giris.webp', w: 1440, h: 900, alt: { tr: 'Canlı demo girişi: aday, İK değerlendiricisi ya da pilot yöneticisi olarak şifresiz deneme', en: 'Live demo sign-in: try as candidate, HR reviewer or pilot admin, no password' } },
+      { src: '/img/aday-atolyesi/giris.webp', srcEn: '/img/aday-atolyesi/giris-en.webp', w: 1440, h: 900, alt: { tr: 'Canlı demo girişi: aday, İK değerlendiricisi ya da pilot yöneticisi olarak şifresiz deneme', en: 'Live demo sign-in: pick candidate, HR reviewer or pilot admin, no password; the guide says what each role can try' } },
     ],
     demo: {
       tr: 'Hesap ve ayarlar → Giriş yap ile bir rol seç (aday, İK değerlendiricisi ya da pilot yöneticisi), şifre yok. Örnek teslimler yüklü; aday olarak dosya teslim edebilir, değerlendirici olarak ölçütlü geri bildirim yazabilirsin. Gerçek kişisel bilgi içeren dosya yükleme: dosyalar ortak değerlendirici hesabında görünür ve her gece silinir.',
@@ -339,6 +344,37 @@ export const PROJECTS: Project[] = [
         'Submissions open on screen; blind review, waiting time and target-time alerts, bulk assignment',
         'No AI calls; work stays in the browser and can be saved to an account automatically',
       ],
+    },
+    decisions: {
+      tr: [
+        'Arayüz Türkçe kaldı: sözel sorular Türkçe dil bilgisine, vakalar Türkiye’deki işe alım bağlamına dayanır. İngilizce okuyan ziyaretçi için ekranları anlatan bir rehber ve tamamen İngilizce bir örnek vaka eklendi.',
+        'Tek puan yok: sınav performansı, kendi beyanına dayalı tercihler ve senaryo seçimleri farklı türde kanıttır. Birleştirmek, verinin taşımadığı bir kesinlik iddia eder. İK da her ölçütü 0–3 düzeyle ve yazılı dayanakla değerlendirir.',
+        'Referans çözüm teslimden sonra açılır ve tek “doğru” cevap yerine savunulabilir alternatifleri gösterir. Vakalar akıl yürütmeyi ölçer: Koru Dağıtım’da toplam dakika yeter görünür, darboğaz paketlemededir.',
+        'Her belgenin kodu var (D01, D02…): aday cevabını belgeye dayandırır, değerlendirici dayanağı kontrol eder.',
+        'Yapay zekâ çağrısı yok, kayıt önce tarayıcıda: hesap açmadan çalışılır, aday metni bir modele gönderilmez, kullanıcı başına maliyet yoktur.',
+        'İK’nın iki sorunu önyargı ve geciken geri bildirimdi: kör değerlendirme kimliği gizler; kuyruk en eskiden başlar, bekleme süresini ve hedef süre aşımını gösterir.',
+        'Doğrulanmamış içerik etiketlenir: Rol Atölyesi’ndeki 187 senaryonun puan anahtarları “uzman incelemesi bekleyen taslak” olarak gösterilir.',
+      ],
+      en: [
+        'The interface stays in Turkish: verbal items rely on Turkish grammar and the cases follow the Turkish hiring context. For English-speaking visitors there is a guide that explains each screen and one sample case that is fully in English.',
+        'No single score: test performance, self-reported preferences and scenario choices are different kinds of evidence. Combining them would claim a precision the data does not have. HR also rates each criterion on a 0–3 level with a written, evidence-based note.',
+        'The reference solution opens only after submission and shows defensible alternatives rather than one “right” answer. The cases test reasoning: at Koru Distribution total person-minutes look sufficient, but packing is the bottleneck.',
+        'Every document has a code (D01, D02 …), so candidates tie their answers to evidence and reviewers can check it.',
+        'No AI calls, and work is saved in the browser first: no account needed to start, candidate text is never sent to a model, and there is no per-user cost.',
+        'HR’s two problems were bias and slow feedback: blind review hides the candidate’s identity; the queue starts with the oldest file and shows waiting time and target-time overruns.',
+        'Unvalidated content is labelled: the scoring keys of the 187 scenarios in the role workshop are shown as drafts awaiting expert review.',
+      ],
+    },
+    video: {
+      src: '/video/aday-atolyesi-en.mp4',
+      poster: '/video/aday-atolyesi-en.webp',
+      w: 1280,
+      h: 800,
+      lang: 'en',
+      caption: {
+        tr: 'Yaklaşık 1,5 dakikalık tur (İngilizce altyazılı): aday İngilizce örnek vakayı çözer ve dosyasını teslim eder, İK değerlendiricisi ölçütle inceler.',
+        en: 'An 84-second walkthrough with English captions: a candidate solves the English sample case and submits the workbook, then an HR reviewer rates it criterion by criterion.',
+      },
     },
   },
 
