@@ -327,16 +327,45 @@ export const PROJECTS: Project[] = [
     hosting: 'static',
     url: 'https://ysfdurak.github.io/ingilizce-ogrenme-atolyesi/',
     repo: GH + 'ingilizce-ogrenme-atolyesi',
-    tech: ['Tarayıcı uygulaması'],
+    tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],
+    og: '/img/ingilizce-atolyesi/og.jpg',
+    shots: [
+      { src: '/img/ingilizce-atolyesi/bugunku-plan.webp', w: 1440, h: 900, alt: { tr: 'Bugün ekranı: seviyeye ve hedefe göre hazırlanan günlük plan, kelime dersi, ünite adımı ve sınav hazırlığı', en: 'Today screen: a daily plan built from level and goal, with a vocabulary lesson, a unit step and exam prep' } },
+      { src: '/img/ingilizce-atolyesi/dilbilgisi-dersi.webp', w: 1440, h: 900, alt: { tr: 'Dilbilgisi dersi: Türkçe konu anlatımı, tablo ve sesli örnek cümleler', en: 'Grammar lesson: explanation in Turkish, a table and example sentences with audio' } },
+      { src: '/img/ingilizce-atolyesi/aralikli-tekrar.webp', w: 1440, h: 900, alt: { tr: 'Tekrar ekranı: yanlış yapılan sorular ve öğrenilen kelimeler 10 dakika, 1, 3, 7 ve 21 gün sonra yeniden sorulur', en: 'Review screen: missed questions and learned words come back after 10 minutes, then 1, 3, 7 and 21 days' } },
+      { src: '/img/ingilizce-atolyesi/kesfet.webp', w: 1440, h: 900, alt: { tr: 'Keşfet ekranı: kelimeler, kalıplar, kelime aileleri, deyimler, dilbilgisi ve sık hatalar', en: 'Explore screen: words, collocations, word families, idioms, grammar and common mistakes' } },
+    ],
+    demo: {
+      tr: 'Hesap gerekmez: aç, bir dakikalık tanışmada hedefini (genel, sınav, iş, seyahat, okul), günlük süreni ve seviyeni seç; günlük plan hemen hazırlanır. İlerleme yalnızca tarayıcında saklanır, Profil’den dosyaya yedeklenebilir.',
+      en: 'No account needed: open it, pick your goal (general, exam, work, travel, school), daily time and level in a one-minute intro, and the daily plan is ready. Progress stays in your browser and can be backed up to a file from Profile. The interface is in Turkish.',
+    },
     tr: {
-      tagline: 'Kelime ve kullanım odaklı İngilizce öğrenme uygulaması.',
-      problem: 'Kelime ezberi bağlam olmadan kalıcı olmuyor.',
-      solution: ['Bağlam içinde kelime çalışması', 'Tekrar sistemi', 'İlerleme takibi'],
+      tagline: 'Türkçe konuşanlar için A1–C2 İngilizce öğrenme ve YDS, e-YDS, YÖKDİL hazırlık uygulaması.',
+      problem:
+        'İngilizce öğrenenler seviyelerine uygun içeriği dağınık kaynaklarda arıyor, kelimeleri bağlamsız ezberleyip unutuyor ve ilerlemelerini göremiyor. Hataların neden yapıldığı da çoğu zaman Türkçe açıklanmıyor.',
+      solution: [
+        'Hedefe, günlük süreye ve seviyeye göre her gün hazırlanan kısa plan; tek düğmeyle derse başlama',
+        'A1–C2 müfredatı: 75 tema ünitesi ve 193 dilbilgisi konusu, Türkçe konu anlatımı ve alıştırmalar',
+        '15.000’den fazla kelime ve kalıp; 155 hikâye, 175 diyalog ve dinleme etkinlikleri ile bağlam içinde çalışma',
+        'Aralıklı tekrar: yanlışlar ve öğrenilen kelimeler 10 dakika, 1, 3, 7 ve 21 gün sonra yeniden sorulur',
+        'Türklerin en sık yaptığı hatalar, deyimler ve kelime aileleri için ayrı bölümler',
+        'YDS, e-YDS ve YÖKDİL için özgün denemeler ve 4.702 kayıtlı sınav sözlüğü',
+        'Hesap ve sunucu yok: ilerleme tarayıcıda saklanır, dosyaya yedeklenir; telefona uygulama gibi kurulabilir (PWA)',
+      ],
     },
     en: {
-      tagline: 'An English learning app focused on vocabulary and usage.',
-      problem: 'Vocabulary does not stick without context.',
-      solution: ['Vocabulary in context', 'Spaced review', 'Progress tracking'],
+      tagline: 'An A1–C2 English learning and YDS, e-YDS, YÖKDİL exam prep app for Turkish speakers.',
+      problem:
+        'English learners hunt for level-appropriate material across scattered sources, memorise words without context and forget them, and cannot see their progress. Why a mistake was made is rarely explained in Turkish.',
+      solution: [
+        'A short plan built each day from goal, daily time and level; start the lesson with one button',
+        'A1–C2 curriculum: 75 themed units and 193 grammar topics, explained in Turkish with exercises',
+        'Over 15,000 words and collocations; learning in context with 155 stories, 175 dialogues and listening activities',
+        'Spaced review: mistakes and learned words return after 10 minutes, then 1, 3, 7 and 21 days',
+        'Separate sections for the mistakes Turkish speakers make most, idioms and word families',
+        'Original practice tests for YDS, e-YDS and YÖKDİL, plus a 4,702-entry exam glossary',
+        'No account or server: progress stays in the browser and backs up to a file; installable on a phone (PWA)',
+      ],
     },
   },
 ];
