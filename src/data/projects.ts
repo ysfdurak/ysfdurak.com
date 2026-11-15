@@ -71,6 +71,7 @@ export const PROJECTS: Project[] = [
     slug: 'video-zaman-etudu',
     name: 'Video Zaman Etüdü',
     category: 'operasyon',
+    featured: true,
     hosting: 'desktop',
     url: 'https://zaman-etudu.ysfdurak.com/',
     repo: GH + 'video-zaman-etudu',
@@ -83,8 +84,8 @@ export const PROJECTS: Project[] = [
     ],
     og: '/img/video-zaman-etudu/og.jpg',
     demo: {
-      tr: 'Hesap ve kurulum gerekmez. Örnek depo etüdü ve 35 saniyelik sentetik video, kaynak koddaki demo klasöründedir: uygulamada “Etüdü içe al” ile paketi, “Videoyu yeniden seç” ile videoyu açın; analiz ekranında sonuçlar hazırdır. Etütler yalnızca tarayıcınızda saklanır, video hiçbir sunucuya yüklenmez. Windows sürümü aynı etüt paketini açar.',
-      en: 'No account or install needed. A sample warehouse study and a 35-second synthetic video are in the demo folder of the source code: use “Import study” for the package and “Re-select video” for the video; the analysis screen is ready. Studies stay in your browser and the video is never uploaded. The Windows version opens the same study package. The interface is in Turkish.',
+      tr: 'Hesap ve kurulum gerekmez. Uygulamayı açıp “Demo etüdü aç” bağlantısına tıklayın: üç çevrimlik sentetik depo videosu ve hazır ölçümler yüklenir, analiz ekranında sonuçlar görünür. Kendi videonuzla yeni etüt de başlatabilirsiniz; etütler yalnızca tarayıcınızda saklanır, video hiçbir sunucuya yüklenmez. Windows sürümü aynı etüt paketini (.vzetud) açar.',
+      en: 'No account or install needed. Open the app and click “Demo etüdü aç” (open demo study): a three-cycle synthetic warehouse video and ready measurements load, and the analysis screen shows the results. You can also start a study with your own video; studies stay in your browser and the video is never uploaded. The Windows version opens the same study package (.vzetud). The interface is in Turkish.',
     },
     tr: {
       tagline: 'Videodan iş adımlarını ölçen, standart süreyi hesaplayan ve Excel’e aktaran zaman etüdü aracı. Tarayıcıda ve Windows’ta çalışır.',
