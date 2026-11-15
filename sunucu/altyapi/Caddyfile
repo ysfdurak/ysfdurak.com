@@ -15,3 +15,9 @@ pusula.ysfdurak.com {
 	encode zstd gzip
 	reverse_proxy pusula:8080
 }
+
+# Destek Merkezi: bölümler arası işgücü desteği, ziyaretçi demo modu (github.com/ysfdurak/destek-merkezi)
+destek.ysfdurak.com {
+	encode zstd gzip
+	reverse_proxy destek:8080
+}

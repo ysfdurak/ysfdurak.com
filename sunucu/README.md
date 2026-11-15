@@ -60,3 +60,20 @@ bash ~/ysfdurak.com/sunucu/kurulum-3-veritabani.sh
 - Veritabanı `db` adlı **iç ağda** durur: internete hiç açılmaz, yalnızca bu ağa katılan proje konteynerleri bağlanabilir.
 - **Yedek:** her gece 03:30'da tüm veritabanları sıkıştırılır, bütünlüğü kontrol edilir, R2'ye gönderilir. Sunucuda 7 gün, R2'de 30 gün saklanır. Elle çalıştırmak: `sudo ysf-yedek`
 - **Geri yükleme:** `zcat dosya.sql.gz | docker exec -i postgres psql -U admin`
+
+## Projeler
+
+Her proje kendi deposunda durur. Konteyneri `web` ağına katılır, dışarıya port açmaz. Caddy, `altyapi/Caddyfile` içindeki alt alan adı bloğuyla isteği konteynere iletir.
+
+| Proje | Adres | Kurulum / güncelleme | Veri |
+|---|---|---|---|
+| Pusula | pusula.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-pusula.sh` | SQLite, gece R2'ye yedeklenir |
+| Destek Merkezi | destek.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-destek.sh` | Ziyaretçi demo alanları (SQLite, 72 saatte silinir, yedek yok) |
+
+Yeni bir alt alan adı için önce Cloudflare DNS'te A kaydı açılır (sunucu IP'si, proxy açık). Ardından `altyapi/Caddyfile` dosyasına bir blok eklenir.
+
+**Destek Merkezi**
+
+- Demo modunda gerçek veri tutmaz. Bu yüzden gece yedeğine eklenmedi.
+- Demo sayaçları: `sudo docker exec destek node server/demo-istatistik.mjs`
+- Ayrıntı: github.com/ysfdurak/destek-merkezi → `docs/SUNUCU_KURULUMU.md`
