@@ -385,11 +385,12 @@ export const PROJECTS: Project[] = [
     name: 'Kesit (SQL, Power BI, Python, İstatistik)',
     category: 'ogrenme',
     turkishOnly: {
-      en: 'Built for Turkish speakers: Kesit’s whole point is teaching data skills in Turkish, so the apps, lessons and exercises are in Turkish only. This page describes them in English.',
+      en: 'Built for Turkish speakers: Kesit’s whole point is teaching data skills in Turkish, so the apps, lessons and exercises stay in Turkish. “Try it” opens an English guide that explains each app and screen; it stays on across all four apps.',
     },
     featured: true,
     hosting: 'external',
     url: 'https://ysfdurak.github.io/',
+    langParam: true,
     repos: [
       { label: 'SQL', url: GH + 'kesit-sql' },
       { label: 'Power BI', url: GH + 'kesit-powerbi' },
@@ -442,10 +443,11 @@ export const PROJECTS: Project[] = [
     name: 'İngilizce Atölyesi',
     category: 'ogrenme',
     turkishOnly: {
-      en: 'Built for Turkish speakers learning English: explanations, feedback and the exam prep (YDS, e-YDS, YÖKDİL) are in Turkish, so the app has a Turkish interface only. This page describes it in English.',
+      en: 'Built for Turkish speakers learning English: explanations, feedback and the exam prep (YDS, e-YDS, YÖKDİL) are in Turkish, so the app stays in Turkish. “Try it” opens an English guide that explains each section, with small English labels under the menus.',
     },
     hosting: 'static',
     url: 'https://ingilizce-atolyesi.ysfdurak.com/',
+    langParam: true,
     repo: GH + 'ingilizce-ogrenme-atolyesi',
     tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],
     og: '/img/ingilizce-atolyesi/og.jpg',
