@@ -294,6 +294,9 @@ export const PROJECTS: Project[] = [
     slug: 'aday-atolyesi',
     name: 'Aday Atölyesi',
     category: 'ekip',
+    turkishOnly: {
+      en: 'Built for candidates applying to jobs in Turkey: the aptitude tests (including verbal reasoning in Turkish), 20 company cases with Word/Excel files and the HR review are in Turkish, so the app has a Turkish interface only. This page describes it in English.',
+    },
     hosting: 'vps',
     url: 'https://aday.ysfdurak.com/',
     repo: GH + 'aday_atolyesi',
