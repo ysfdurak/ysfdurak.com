@@ -187,13 +187,13 @@
         "tr": "Doğru soru sorma, geri bildirim verme ve liderlik konuşmalarını senaryolarla çalıştırır. Kullanıcı bir yöneticinin yerine geçer, cevaplarına göre konuşma şekillenir ve sonunda değerlendirme alır.",
         "en": "Practises asking the right questions, giving feedback and leadership conversations through scenarios. The user plays a manager, the conversation adapts to their answers and ends with an assessment."
       },
-      "durum": "gelistiriliyor",
+      "durum": "pilot",
       "yayinda": true,
       "repo": "ysfdurak/diyalog-atolyesi",
       "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "Yapım aşamasında; Aday Atölyesi'ne bağlı ayrı bir uygulama olacak",
-        "en": "Being built; a separate app linked to Aday Atölyesi"
+        "tr": "Pilot aşamasında; Aday Atölyesi'ne bağlı ayrı bir uygulama",
+        "en": "In pilot; a separate app linked to Aday Atölyesi"
       },
       "ozel_not": "Yapay zekâ kredisi bitince/azalınca ziyaretçi ve ben bilgilendirilmeli."
     },
@@ -207,12 +207,12 @@
         "tr": "Kilit kişiye bağımlılık riskini haritalar: biri ayrılırsa hangi iş aksar, kim yedeklenmeli, çapraz eğitim nasıl planlanmalı. Sistem destek çağrılarını geçmiş çözümlerden öğrenerek doğru kişiye yönlendirir, bazılarını onayla kendisi çözer.",
         "en": "Maps key-person dependency risk: what breaks if someone leaves, who needs a backup and how to plan cross-training. Routes system support calls to the right person by learning from past solutions, and resolves some itself with approval."
       },
-      "durum": "gelistiriliyor",
+      "durum": "pilot",
       "yayinda": true,
       "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "İlk sürüm hazır; otomasyonlar ve risk tespiti ekleniyor",
-        "en": "First version ready; automations and risk detection being added"
+        "tr": "Pilot aşamasında; otomasyonlar ve risk tespiti genişletiliyor",
+        "en": "In pilot; automations and risk detection being extended"
       },
       "ozel_not": "Henüz GitHub'da ve sunucuda değil. Usta adı kesinleşmedi."
     },
@@ -341,12 +341,12 @@
         "tr": "Veriyi yapay zekâya göndermeden önce seçilen hücre ve sütunları maskeler, cevap geldikten sonra isteğe bağlı olarak eski haline getirir. Kişisel olmayan ama hassas operasyon verisi için de kullanılır.",
         "en": "Masks chosen cells and columns before data is sent to AI, and can restore them once the answer comes back. Also works for operational data that is sensitive without being personal."
       },
-      "durum": "pilot",
+      "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-03",
+      "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "İlk sürüm test ediliyor",
-        "en": "First version being tested"
+        "tr": "İlk sürüm hazır; geliştirme sürüyor",
+        "en": "First version ready; development ongoing"
       },
       "ozel_not": ""
     },
@@ -360,12 +360,12 @@
         "tr": "Eldeki tablodan hazır pano ve grafikler üretir; aynı formattaki Excel dosyalarını birleştirir. Excel eklentisi olarak, sık kullanılan formüllerdeki eşleşme hatalarını (boşluk, Türkçe karakter) bulup düzeltmeyi de önerir.",
         "en": "Builds ready-made dashboards and charts from a table and merges same-format Excel files. As an Excel add-in it also finds and offers to fix lookup mismatches (spaces, Turkish characters) in common formulas."
       },
-      "durum": "pilot",
+      "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-03",
+      "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "HTML sürümü ve Excel eklentisi test ediliyor",
-        "en": "HTML version and Excel add-in being tested"
+        "tr": "HTML sürümü ve Excel eklentisi geliştiriliyor",
+        "en": "HTML version and Excel add-in in development"
       },
       "ozel_not": ""
     },
@@ -474,12 +474,12 @@
         "tr": "Power BI raporlarında hiçbir yerde kullanılmayan ölçüleri bulur; böylece gereksizler silinip model sadeleşir ve kafa karışıklığı azalır.",
         "en": "Finds measures that are not used anywhere in Power BI reports, so the unneeded ones can be removed and the model stays clean."
       },
-      "durum": "pilot",
+      "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-04",
+      "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "İlk sürüm test ediliyor",
-        "en": "First version being tested"
+        "tr": "İlk sürüm hazır; geliştirme sürüyor",
+        "en": "First version ready; development ongoing"
       },
       "ozel_not": ""
     },
@@ -512,12 +512,12 @@
         "tr": "Yüklenen kitap ve notları ünitelere ayırır; tüm içerikten soru havuzu oluşturup her seferinde değişen deneme sınavları ve bilgi grafikleri hazırlar. Yanlış cevaplar aralıklarla tekrar sorulur.",
         "en": "Splits uploaded books and notes into units, builds a question pool from all the content, and creates ever-changing mock exams and infographics. Wrong answers come back at intervals."
       },
-      "durum": "pilot",
+      "durum": "gelistiriliyor",
       "yayinda": true,
       "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "Pilot aşamasında",
-        "en": "In pilot"
+        "tr": "Geliştirme sürüyor",
+        "en": "Development ongoing"
       },
       "ozel_not": ""
     },
