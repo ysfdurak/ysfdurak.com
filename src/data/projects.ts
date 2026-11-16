@@ -188,6 +188,8 @@ export const PROJECTS: Project[] = [
       { title: 'OWAS nedir? Duruş kodları ve eylem kategorileri', url: '/tr/rehber/owas-nedir/' },
       { title: 'Ofis ergonomisi ve ROSA yöntemi', url: '/tr/rehber/ofis-ergonomisi-rosa/' },
       { title: 'Fine-Kinney risk analizi nasıl yapılır?', url: '/tr/rehber/fine-kinney-risk-analizi/' },
+      { title: 'Gürültü maruziyeti nasıl hesaplanır?', url: '/tr/rehber/gurultu-maruziyeti-hesaplama/' },
+      { title: 'Isı stresi ve WBGT nasıl hesaplanır?', url: '/tr/rehber/isi-stresi-wbgt/' },
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'Electron', 'ExcelJS', 'pdfmake'],
     og: '/img/durus/og.jpg',
@@ -411,6 +413,7 @@ export const PROJECTS: Project[] = [
     url: 'https://aday.ysfdurak.com/',
     langParam: true,
     repo: GH + 'aday_atolyesi',
+    guides: [{ title: 'STAR tekniği ve yetkinlik bazlı mülakat soruları', url: '/tr/rehber/star-teknigi-yetkinlik-mulakati/' }],
     tech: ['JavaScript', 'Cloudflare Workers', 'D1 (SQLite)', 'R2'],
     og: '/img/aday-atolyesi/og.jpg',
     shots: [
