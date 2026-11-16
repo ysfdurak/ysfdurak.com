@@ -5,6 +5,7 @@ export const UI = {
   tr: {
     'nav.home': 'Ana sayfa',
     'nav.projects': 'Projeler',
+    'nav.rota': 'Rota',
     'nav.about': 'Hakkımda',
     'nav.contact': 'İletişim',
     'lang.switch': 'English',
@@ -40,6 +41,9 @@ export const UI = {
     'project.back': 'Tüm projeler',
     'projects.title': 'Projeler',
     'projects.lead': 'Kategoriye göre tüm projeler. Her kartta projenin nasıl çalıştığı yazar.',
+    'rota.title': 'Rota',
+    'rota.lead': 'Projelerimin güncel durumu: hangisi yayında, hangisi yapım aşamasında, hangisi bekliyor. Bitmiş projelerin ayrıntılı sayfaları Projeler bölümünde.',
+    'rota.updated': 'Son güncelleme:',
     'contact.title': 'İletişim',
     'contact.lead': 'İş birliği, geri bildirim ya da projeler hakkında soru için yazabilirsiniz.',
     'footer.kesit': 'Kesit öğrenme uygulamaları',
@@ -49,6 +53,7 @@ export const UI = {
   en: {
     'nav.home': 'Home',
     'nav.projects': 'Projects',
+    'nav.rota': 'Roadmap',
     'nav.about': 'About',
     'nav.contact': 'Contact',
     'lang.switch': 'Türkçe',
@@ -84,6 +89,9 @@ export const UI = {
     'project.back': 'All projects',
     'projects.title': 'Projects',
     'projects.lead': 'All projects by category. Each card shows how the project runs.',
+    'rota.title': 'Roadmap',
+    'rota.lead': 'Where my projects stand: what is live, what is being built and what is on hold. Finished projects have detailed pages under Projects.',
+    'rota.updated': 'Last updated:',
     'contact.title': 'Contact',
     'contact.lead': 'Write for collaboration, feedback or questions about the projects.',
     'footer.kesit': 'Kesit learning apps',
@@ -96,6 +104,6 @@ export type UIKey = keyof (typeof UI)['tr'];
 export const useT = (lang: Lang) => (key: UIKey) => UI[lang][key];
 
 export const NAV = {
-  tr: { home: '/tr/', projects: '/tr/projeler/', about: '/tr/hakkimda/', contact: '/tr/iletisim/' },
-  en: { home: '/en/', projects: '/en/projects/', about: '/en/about/', contact: '/en/contact/' },
+  tr: { home: '/tr/', projects: '/tr/projeler/', rota: '/tr/rota/', about: '/tr/hakkimda/', contact: '/tr/iletisim/' },
+  en: { home: '/en/', projects: '/en/projects/', rota: '/en/roadmap/', about: '/en/about/', contact: '/en/contact/' },
 } as const;

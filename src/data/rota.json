@@ -1,0 +1,222 @@
+{
+  "son_tarama": "2026-11-16",
+  "projeler": [
+    {
+      "id": "video-zaman-etudu",
+      "proje": "video-zaman-etudu",
+      "ad": { "tr": "Video Zaman Etüdü", "en": "Video Time Study" },
+      "aciklama": { "tr": "Videodan zaman etüdü; tarayıcı ve Windows", "en": "Time study from video; browser and Windows" },
+      "durum": "canli",
+      "yayinda": true,
+      "canli_url": "https://zaman-etudu.ysfdurak.com/",
+      "repo": "ysfdurak/video-zaman-etudu",
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Kullanıcı gözüyle yapılan inceleme bulguları uygulandı; Claude bağlantısı (MCP) planlanıyor", "en": "Findings from a user-eyes review implemented; Claude connection (MCP) being planned" },
+      "ozel_not": "Sıradaki: yerel, salt okunur MCP (Seviye 1). Kullanım sınırı fikri sonra."
+    },
+    {
+      "id": "durus",
+      "proje": "durus-ergonomi-analizi",
+      "ad": { "tr": "Duruş – Ergonomi Analizi", "en": "Duruş – Ergonomics Analysis" },
+      "aciklama": { "tr": "Videodan ergonomi analizi; REBA, RULA, NIOSH ve diğerleri", "en": "Ergonomics analysis from video; REBA, RULA, NIOSH and more" },
+      "durum": "canli",
+      "yayinda": true,
+      "canli_url": "https://durus.ysfdurak.com/",
+      "repo": "ysfdurak/durus-ergonomi",
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Türkçe ve İngilizce yayında", "en": "Live in Turkish and English" },
+      "ozel_not": "MCP gerekmiyor kararı; senaryo (what-if) özellikleri uygulamanın içine."
+    },
+    {
+      "id": "destek-merkezi",
+      "proje": "destek-merkezi",
+      "ad": { "tr": "Destek Merkezi", "en": "Destek Merkezi" },
+      "aciklama": { "tr": "Bölümler arası işgücü desteği takibi", "en": "Inter-department workforce support tracking" },
+      "durum": "canli",
+      "yayinda": true,
+      "canli_url": "https://destek.ysfdurak.com/",
+      "repo": "ysfdurak/destek-merkezi",
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Kendi sunucumda yayında", "en": "Live on my own server" },
+      "ozel_not": "Proje hâkimiyet rehberi konuşulacak."
+    },
+    {
+      "id": "ivme",
+      "proje": "ivme-oneri-kaizen",
+      "ad": { "tr": "İvme – Öneri ve Kaizen Merkezi", "en": "İvme – Suggestion and Kaizen Hub" },
+      "aciklama": { "tr": "Çalışan öneri ve kaizen sistemi", "en": "Employee suggestion and kaizen system" },
+      "durum": "canli",
+      "yayinda": true,
+      "canli_url": "https://ivme.ysfdurak.com/",
+      "repo": "ysfdurak/ivme-oneri-kaizen",
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Canlı demo yayında; İngilizce sürüm hazırlanıyor", "en": "Live demo; English version in progress" },
+      "ozel_not": "EN sürüm ayrı sohbette. Para birimi ayardan seçilebilir olacak."
+    },
+    {
+      "id": "pusula",
+      "proje": "pusula",
+      "ad": { "tr": "Pusula", "en": "Pusula" },
+      "aciklama": { "tr": "İş ve ekip takibi; Claude'a bağlanabilir", "en": "Work and team tracking; connects to Claude" },
+      "durum": "canli",
+      "yayinda": true,
+      "canli_url": "https://pusula.ysfdurak.com/",
+      "repo": "ysfdurak/pusula-is-takip",
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Google ile giriş ve Claude bağlantısıyla yayında", "en": "Live with Google sign-in and Claude connection" },
+      "ozel_not": "Demo alanı, kullanım analitiği ve uygulama içi geri bildirim isteniyor."
+    },
+    {
+      "id": "aday-atolyesi",
+      "proje": "aday-atolyesi",
+      "ad": { "tr": "Aday Atölyesi", "en": "Aday Atölyesi" },
+      "aciklama": { "tr": "İş görüşmesine hazırlık", "en": "Job interview preparation" },
+      "durum": "canli",
+      "yayinda": true,
+      "canli_url": "https://aday.ysfdurak.com/",
+      "repo": "ysfdurak/aday_atolyesi",
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Canlı demo yayında", "en": "Live demo" },
+      "ozel_not": ""
+    },
+    {
+      "id": "kesit",
+      "proje": "kesit",
+      "ad": { "tr": "Kesit", "en": "Kesit" },
+      "aciklama": { "tr": "SQL, Power BI, Python ve istatistik öğrenme uygulamaları", "en": "SQL, Power BI, Python and statistics learning apps" },
+      "durum": "canli",
+      "yayinda": true,
+      "canli_url": "https://ysfdurak.github.io/",
+      "repo": "ysfdurak/kesit-sql",
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Yayında; kullanıcı hesapları planlanıyor", "en": "Live; user accounts being planned" },
+      "ozel_not": "Hesap öncelikleri: cihazlar arası ilerleme ve kullanım istatistikleri."
+    },
+    {
+      "id": "ingilizce-atolyesi",
+      "proje": "ingilizce-atolyesi",
+      "ad": { "tr": "İngilizce Atölyesi", "en": "İngilizce Atölyesi" },
+      "aciklama": { "tr": "Türkçe konuşanlar için İngilizce öğrenme", "en": "English learning for Turkish speakers" },
+      "durum": "canli",
+      "yayinda": true,
+      "canli_url": "https://ingilizce-atolyesi.ysfdurak.com/",
+      "repo": "ysfdurak/ingilizce-ogrenme-atolyesi",
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Kendi adresinde yayında", "en": "Live at its own address" },
+      "ozel_not": ""
+    },
+    {
+      "id": "diyalog-atolyesi",
+      "ad": { "tr": "Diyalog Atölyesi", "en": "Diyalog Atölyesi" },
+      "aciklama": { "tr": "Doğru soru sorma ve liderlik pratiği", "en": "Practice asking the right questions and leading" },
+      "durum": "gelistiriliyor",
+      "yayinda": true,
+      "repo": "ysfdurak/diyalog-atolyesi",
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Yapım aşamasında; Aday Atölyesi'ne bağlı ayrı bir uygulama olacak", "en": "Being built; a separate app linked to Aday Atölyesi" },
+      "ozel_not": "Yapay zekâ kredisi bitince/azalınca ziyaretçi ve ben bilgilendirilmeli."
+    },
+    {
+      "id": "emanet",
+      "ad": { "tr": "Emanet", "en": "Emanet" },
+      "aciklama": { "tr": "Kilit kişi bağımlılığı risk haritası ve destek çağrısı yönlendirme", "en": "Key-person dependency risk map and support-call routing" },
+      "durum": "gelistiriliyor",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "İlk sürüm hazır; otomasyonlar ve risk tespiti ekleniyor", "en": "First version ready; automations and risk detection being added" },
+      "ozel_not": "Henüz GitHub'da ve sunucuda değil. Usta adı kesinleşmedi."
+    },
+    {
+      "id": "liman-kulesi",
+      "ad": { "tr": "Liman Kulesi", "en": "Liman Kulesi" },
+      "aciklama": { "tr": "Gemi trafiği (AIS) verisiyle depo varışlarını öngören lojistik analiz", "en": "Logistics analysis linking ship traffic (AIS) to warehouse arrivals" },
+      "durum": "gelistiriliyor",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-15",
+      "durum_notu": { "tr": "Yapım aşamasında", "en": "Being built" },
+      "ozel_not": ""
+    },
+    {
+      "id": "termin-olasiligi",
+      "ad": { "tr": "Termin Olasılığı", "en": "Termin Olasılığı" },
+      "aciklama": { "tr": "Monte Carlo ile olasılıklı proje bitiş tarihi", "en": "Probabilistic project finish dates with Monte Carlo" },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Kapsam belgesi hazırlandı", "en": "Scope document drafted" },
+      "ozel_not": "Pusula'ya isteğe bağlı bağlantı."
+    },
+    {
+      "id": "rampa-krizi",
+      "ad": { "tr": "Rampa Krizi", "en": "Rampa Krizi" },
+      "aciklama": { "tr": "Depoda geçen, yalın düşünceyi öğreten oyun", "en": "A warehouse game that teaches lean thinking" },
+      "durum": "beklemede",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-16",
+      "durum_notu": { "tr": "Hikâyeyi baştan kendim yazana kadar duraklatıldı", "en": "Paused until I write the story from scratch myself" },
+      "ozel_not": "Bütün projeler bitince hikâye yazılacak, oyun ondan üretilecek."
+    },
+    {
+      "id": "shiftflow",
+      "ad": { "tr": "ShiftFlow Data Studio", "en": "ShiftFlow Data Studio" },
+      "aciklama": { "tr": "Tekrarlanan Excel raporlarını tek tıkla üreten masaüstü uygulaması", "en": "Desktop app that rebuilds recurring Excel reports in one click" },
+      "durum": "gelistiriliyor",
+      "yayinda": false,
+      "son_guncelleme": "2026-11-10",
+      "durum_notu": { "tr": "Pilot denemeler sürüyor", "en": "Pilot trials in progress" },
+      "ozel_not": "Pilot bitince yayınlanacak."
+    },
+    {
+      "id": "butce-sapma",
+      "ad": { "tr": "Bütçe Sapma Raporlama", "en": "Budget Variance Reporting" },
+      "aciklama": { "tr": "Bütçe sapması ve ay sonu kapanış raporu otomasyonu", "en": "Budget variance and month-end closing report automation" },
+      "durum": "gelistiriliyor",
+      "yayinda": false,
+      "repo": "ysfdurak/butce-sapmasi-rapor-otomasyonu",
+      "son_guncelleme": "2026-11-13",
+      "durum_notu": { "tr": "Makrosuz Power Query sürümü hazırlanıyor", "en": "Macro-free Power Query version in progress" },
+      "ozel_not": "Sitede yer alıp almayacağı ayrıca konuşulacak."
+    },
+    {
+      "id": "mal-kabul-rezervasyon",
+      "ad": { "tr": "Mal Kabul Rezervasyon", "en": "Goods Receipt Reservation" },
+      "aciklama": { "tr": "Mal kabul randevu ve kapasite yönetimi", "en": "Goods receipt appointment and capacity management" },
+      "durum": "beklemede",
+      "yayinda": false,
+      "son_guncelleme": "2026-11-15",
+      "durum_notu": { "tr": "Prototip aşamasında", "en": "At prototype stage" },
+      "ozel_not": "Prototip beklenen gibi değil; esnek kural yapısı ile yeniden ele alınacak."
+    },
+    {
+      "id": "ortu",
+      "ad": { "tr": "Örtü", "en": "Örtü" },
+      "aciklama": { "tr": "Yapay zekâya göndermeden önce veri maskeleme", "en": "Mask data before sending it to AI" },
+      "durum": "gelistiriliyor",
+      "yayinda": false,
+      "son_guncelleme": "2026-11-03",
+      "durum_notu": { "tr": "Ayrıntılı çalışma gerekiyor", "en": "Needs detailed work" },
+      "ozel_not": ""
+    },
+    {
+      "id": "otopano",
+      "ad": { "tr": "Otopano", "en": "Otopano" },
+      "aciklama": { "tr": "Veriden hazır pano ve grafik üreten Excel eklentisi", "en": "Excel add-in that builds ready-made dashboards from data" },
+      "durum": "gelistiriliyor",
+      "yayinda": false,
+      "son_guncelleme": "2026-11-03",
+      "durum_notu": { "tr": "Sitede yer alıp almayacağı konuşulacak", "en": "Whether it goes on the site is still open" },
+      "ozel_not": ""
+    },
+    {
+      "id": "kivilcim",
+      "ad": { "tr": "Kıvılcım", "en": "Kıvılcım" },
+      "aciklama": { "tr": "50 oyunlu zihin oyunları", "en": "Mind games, 50 games" },
+      "durum": "beklemede",
+      "yayinda": false,
+      "repo": "ysfdurak/kivilcim-zihin-oyunlari",
+      "son_guncelleme": "2026-11-09",
+      "durum_notu": { "tr": "Şimdilik kapatıldı; kullanıcı hesapları sunucuya geçişte ele alınacak", "en": "Closed for now; user accounts to be revisited on the server" },
+      "ozel_not": ""
+    }
+  ]
+}

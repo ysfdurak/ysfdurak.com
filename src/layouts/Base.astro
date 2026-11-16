@@ -62,6 +62,7 @@ const isActive = (href: string) => (href === nav.home ? current === href : curre
         <a class="brand" href={nav.home}>{SITE.name}</a>
         <nav aria-label={lang === 'tr' ? 'Ana menü' : 'Main menu'}>
           <a href={nav.projects} aria-current={isActive(nav.projects) ? 'page' : undefined}>{t('nav.projects')}</a>
+          <a href={nav.rota} aria-current={isActive(nav.rota) ? 'page' : undefined}>{t('nav.rota')}</a>
           {lang === 'tr' && <a href="/tr/rehber/" aria-current={current.startsWith('/tr/rehber/') ? 'page' : undefined}>Rehber</a>}
           <a href={nav.about} aria-current={isActive(nav.about) ? 'page' : undefined}>{t('nav.about')}</a>
           <a href={nav.contact} aria-current={isActive(nav.contact) ? 'page' : undefined}>{t('nav.contact')}</a>

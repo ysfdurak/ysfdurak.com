@@ -1,0 +1,67 @@
+---
+// Rota: projelerin güncel durum listesi. Veri: src/data/rota.json
+import Base from '../layouts/Base.astro';
+import { PROJECTS, projectPath, type Lang } from '../data/projects';
+import { DURUM_ETIKET, SON_TARAMA, rotaGruplari, tarihYaz } from '../data/rota';
+import { NAV, useT } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = useT(lang);
+const other: Lang = lang === 'tr' ? 'en' : 'tr';
+const gruplar = rotaGruplari();
+const bySlug = new Map(PROJECTS.map((p) => [p.slug, p]));
+const desc = lang === 'tr'
+  ? 'Projelerimin güncel durumu: yayında olanlar, geliştirilenler, bekleyenler ve sıradaki fikirler.'
+  : 'Where my projects stand: live, in development, on hold and ideas up next.';
+---
+<Base lang={lang} title={t('rota.title')} description={desc} path={NAV[lang].rota} altPath={NAV[other].rota}>
+  <div class="wrap">
+    <h1>{t('rota.title')}</h1>
+    <p class="lead">{t('rota.lead')}</p>
+    <p class="rota-meta">{t('rota.updated')} <time datetime={SON_TARAMA}>{tarihYaz(SON_TARAMA, lang)}</time></p>
+
+    {gruplar.map((g) => (
+      <section class="rota-grup">
+        <h2><span class={`durum durum-${g.durum}`}>{DURUM_ETIKET[g.durum][lang]}</span> <small>{g.kayitlar.length}</small></h2>
+        <ul class="rota-liste">
+          {g.kayitlar.map((k) => {
+            const p = k.proje ? bySlug.get(k.proje) : undefined;
+            const href = p ? projectPath(p, lang) : k.canli_url;
+            return (
+              <li>
+                <div class="rota-ust">
+                  <h3>{href ? <a href={href}>{k.ad[lang]}</a> : k.ad[lang]}</h3>
+                  <time datetime={k.son_guncelleme}>{tarihYaz(k.son_guncelleme, lang)}</time>
+                </div>
+                <p>{k.aciklama[lang]}</p>
+                {k.durum_notu[lang] && <p class="rota-not">{k.durum_notu[lang]}</p>}
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+  </div>
+</Base>
+
+<style>
+  .rota-meta { color: var(--ink-soft); font-size: 0.92rem; }
+  .rota-grup { margin-top: 2rem; }
+  .rota-grup h2 { display: flex; align-items: center; gap: 0.6rem; }
+  .rota-grup h2 small { color: var(--ink-soft); font-size: 0.9rem; font-weight: 500; }
+  .durum { font-size: 0.85rem; font-weight: 700; border-radius: 999px; padding: 0.2rem 0.75rem; border: 1px solid; }
+  .durum-canli { color: #0f766e; background: #e6f4f2; border-color: #b5e0da; }
+  .durum-gelistiriliyor { color: #1d4ed8; background: #eaf0fd; border-color: #c4d4f8; }
+  .durum-beklemede { color: #92400e; background: #fdf3e6; border-color: #f2d6ae; }
+  .durum-fikir { color: #4a5872; background: var(--bg-soft); border-color: var(--line); }
+  .rota-liste { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+  .rota-liste li { padding: 0.9rem 0; border-bottom: 1px solid var(--line); }
+  .rota-ust { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  .rota-ust h3 { margin: 0; font-size: 1.05rem; }
+  .rota-ust h3 a { color: var(--ink); text-decoration: none; }
+  .rota-ust h3 a:hover { color: var(--accent); }
+  .rota-ust time { color: var(--ink-soft); font-size: 0.85rem; white-space: nowrap; }
+  .rota-liste p { margin: 0.25rem 0 0; color: var(--ink-soft); }
+  .rota-liste .rota-not { color: var(--ink); font-size: 0.95rem; }
+</style>
