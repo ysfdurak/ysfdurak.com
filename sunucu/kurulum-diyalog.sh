@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Diyalog Atölyesi'ni ortak altyapıya kurar: https://diyalog.ysfdurak.com
-# Yapay zekâ karakteri için Anthropic API anahtarı ister (console.anthropic.com → API Keys).
+# Yapay zekâ karakteri için Anthropic API anahtarı ve yüklenen kredi tutarını sorar (console.anthropic.com).
+# Kredi bitince ya da azalınca telefona bildirim gelmesi için bir ntfy konusu üretir.
 # yusuf kullanıcısıyla çalıştırılır. Tekrar çalıştırmak güvenlidir (günceller, .env'e dokunmaz).
 set -euo pipefail
 DIZIN=~/diyalog-atolyesi
@@ -15,6 +16,8 @@ if [[ ! -f .env ]]; then
   read -rs ANAHTAR
   echo
   [[ $ANAHTAR == sk-ant-* ]] || { echo "Anahtar 'sk-ant-' ile başlamalı. Hiçbir şey kurulmadı; komutu yeniden çalıştır."; exit 1; }
+  read -rp "Anthropic'e kaç dolar kredi yükledin? (ör. 5; bilmiyorsan 0 yaz, kredi takibi kapalı kalır): " KREDI
+  [[ $KREDI =~ ^[0-9]+([.][0-9]+)?$ ]] || { echo "Sayı bekleniyordu (ör. 5). Hiçbir şey kurulmadı; komutu yeniden çalıştır."; exit 1; }
   umask 077
   cat > .env <<ENV
 APP_URL=https://diyalog.ysfdurak.com/
@@ -26,6 +29,10 @@ KARAKTER_MODELI=claude-haiku-5-5
 DEGERLENDIRICI_MODELI=claude-haiku-5-5
 ZIYARETCI_GUNLUK_OTURUM=3
 SITE_GUNLUK_OTURUM=30
+BILDIRIM_URL=https://ntfy.sh/diyalog-$(openssl rand -hex 10)
+KREDI_USD=$KREDI
+KREDI_BASLANGIC=$(TZ=Europe/Istanbul date +%F)
+KREDI_UYARI_YUZDE=20
 MCP_ENABLED=false
 MCP_ANAHTARLARI=
 MCP_GUNLUK_OTURUM=10
@@ -49,4 +56,8 @@ done
 sudo docker logs --tail 10 diyalog
 echo
 echo "TAMAM. 1-2 dakika sonra aç: https://diyalog.ysfdurak.com"
-echo "Kullanım ve tahmini maliyet: sudo docker exec diyalog node server/istatistik.js"
+echo "Kullanım, tahmini maliyet ve kalan kredi: sudo docker exec diyalog node server/istatistik.js"
+echo
+echo "BİLDİRİMLER: telefona ntfy uygulamasını kur ve şu konuya abone ol (kredi bitince ya da azalınca haber gelir):"
+echo "  $(grep ^BILDIRIM_URL $DIZIN/.env | cut -d= -f2 | sed 's#https://ntfy.sh/##')"
+echo "Bu konu adını kimseyle paylaşma. Deneme: curl -d 'Deneme bildirimi' \$(grep ^BILDIRIM_URL $DIZIN/.env | cut -d= -f2)"
