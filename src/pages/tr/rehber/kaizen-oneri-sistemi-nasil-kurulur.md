@@ -9,6 +9,7 @@ tool:
   cta: "Öneriden kazanca kadar akışı hazır bir sistemde deneyin: rolle girin, örnek verili demoyu kullanın."
   url: "https://ivme.ysfdurak.com/"
   project: "/tr/projeler/ivme-oneri-kaizen/"
+  shot: "/img/ivme/oneri-detayi.webp"
 ---
 
 **Kısa cevap:** Kaizen, Japonca "iyiye doğru değişim" anlamına gelir. İşi yapan herkesin, küçük ama sürekli iyileştirmelerle süreci geliştirmesi fikrine dayanır. Çalışan öneri sistemi bu fikri düzene sokar: her öneri kayda girer, belli bir sürede değerlendirilir, uygulanır, sonucu ölçülür ve öneren kişiye geri bildirim verilir. Bir öneri sistemini yaşatan şey formun kendisi değil, **önerinin kimde beklediğinin görünmesi** ve **önerenin sonucu öğrenmesidir**.
@@ -34,6 +35,11 @@ tool:
 5. **Uygulama.** Sonuç "uygulandı" ya da "uygulanamadı" olarak açıkça kapatılır. Uygulanamayan öneri kazanç adımına geçmez.
 6. **Kazanç.** Parasal kazanç (süre, malzeme, enerji) ve parasal olmayan kazanç (güvenlik, kalite, ergonomi) kaydedilir. Uygulama maliyeti düşülerek net kazanç hesaplanır.
 7. **Onay, puan ve ödül.** Kazancı bir üst yönetici onaylar. Öneri etki, kalıcılık ve yaygınlaştırılabilirlik gibi ölçütlerle puanlanır. Ödül puana göre belirlenir.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/kaizen/oneri-akisi.svg" title="Büyük boyutta aç"><img src="/img/rehber/kaizen/oneri-akisi.svg" width="680" height="400" alt="Öneri girişi, ön değerlendirme (3 iş günü), bölüm kararı (10 iş günü), aksiyon planı (5 iş günü), uygulama, kazanç ve onay-puan-ödül (10 iş günü). Eksik öneri revizyona döner, ret yalnızca gerekçeyle yapılır, uygulanamayan öneri kapanır." loading="lazy" /></a>
+  <figcaption>Her aşamanın bir sorumlusu ve hedef süresi var. Ret ve revizyon da akışın parçası; öneri hiçbir yerde sahipsiz kalmıyor.</figcaption>
+</figure>
 
 ## Her aşama için hedef süre
 

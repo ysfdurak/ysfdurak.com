@@ -9,6 +9,7 @@ tool:
   cta: "Adım sürelerini videodan ölçün, takta göre doluluk ve gereken kişi sayısını hesaplayın."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
+  shot: "/img/video-zaman-etudu/analiz.webp"
 ---
 
 **Kısa cevap:** Takt zamanı, talebi karşılamak için **her kaç saniyede bir** bir birim çıkarmanız gerektiğini gösterir.
@@ -33,6 +34,11 @@ Talep 1.800 koli ise:
 > 25.200 ÷ 1.800 = **14 sn / koli**
 
 Arızalar ve beklemeler kullanılabilir süreden **düşülmez**. Onlar kayıptır ve takt hesabında saklanmamalıdır.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/takt-zamani/takt-hesabi.svg" title="Büyük boyutta aç"><img src="/img/rehber/takt-zamani/takt-hesabi.svg" width="680" height="400" alt="28.800 saniyelik vardiyadan molalar ve toplantı düşülünce 25.200 saniye kalır; 1.800 koli için takt 14 saniyedir. 50 saniyelik iş içeriği 14 saniyelik dilimlere bölününce 3,6 kişi eder, yani 4 kişi gerekir." loading="lazy" /></a>
+  <figcaption>Takt, kullanılabilir süreden çıkar; gereken kişi sayısı, iş içeriğinin takt dilimlerine bölünmesiyle bulunur.</figcaption>
+</figure>
 
 ## Takt zamanı ile çevrim süresinin farkı
 

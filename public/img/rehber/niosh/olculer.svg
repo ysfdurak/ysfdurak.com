@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">NIOSH ölçüleri: alçak paletten konveyöre koli</title>
+  <desc id="d">Yan görünüş: çalışan yerden 15 santimetredeki paletten koliyi alıp 75 santimetrelik konveyöre koyuyor. Yatay mesafe H 40, dikey yükseklik V 15, dikey mesafe D 60 santimetre; gövde 30 derece dönüyor.</desc>
+  <rect width="680" height="360" fill="#ffffff"/>
+  <text x="24" y="34" font-size="19" font-weight="700" fill="#13294b">Ölçüler kaldırmanın başında alınır</text>
+  <line x1="24" y1="320" x2="656" y2="320" stroke="#c9d1dc" stroke-width="2"/>
+  <rect x="250" y="308" width="120" height="12" fill="#b08455"/>
+  <rect x="280" y="263.5" width="64" height="44" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="470" y="147.5" width="170" height="12" rx="3" fill="#64748b"/>
+  <circle cx="486" cy="153.5" r="4" fill="#cbd5e1"/>
+  <circle cx="508" cy="153.5" r="4" fill="#cbd5e1"/>
+  <circle cx="530" cy="153.5" r="4" fill="#cbd5e1"/>
+  <circle cx="552" cy="153.5" r="4" fill="#cbd5e1"/>
+  <circle cx="574" cy="153.5" r="4" fill="#cbd5e1"/>
+  <circle cx="596" cy="153.5" r="4" fill="#cbd5e1"/>
+  <circle cx="618" cy="153.5" r="4" fill="#cbd5e1"/>
+  <circle cx="640" cy="153.5" r="4" fill="#cbd5e1"/>
+  <rect x="490" y="159.5" width="8" height="160.5" fill="#94a3b8"/>
+  <rect x="612" y="159.5" width="8" height="160.5" fill="#94a3b8"/>
+  <rect x="520" y="107.5" width="60" height="40" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <path d="M176,214 L186,262 L156,316" fill="none" stroke="#6b7a93" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M176,214 L196,260 L170,316" fill="none" stroke="#13294b" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M176,214 L236,170" fill="none" stroke="#13294b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M236,170 L258,210 L282,281.5" fill="none" stroke="#13294b" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="256" cy="156" r="13" fill="#13294b"/>
+  <line x1="163" y1="318" x2="163" y2="244" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <line x1="312" y1="285.5" x2="312" y2="244" stroke="#c2410c" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <line x1="170" y1="250" x2="298.0" y2="250.0" stroke="#c2410c" stroke-width="2"/><polygon points="306.0,250.0 298.0,254.8 298.0,245.2" fill="#c2410c"/>
+  <line x1="306" y1="250" x2="178.0" y2="250.0" stroke="#c2410c" stroke-width="2"/><polygon points="170.0,250.0 178.0,245.2 178.0,254.8" fill="#c2410c"/>
+  <rect x="212" y="236" width="54" height="26" fill="#ffffff"/>
+  <text x="239" y="256" font-size="14" font-weight="800" fill="#c2410c" text-anchor="middle">H 40</text>
+  <line x1="390" y1="320" x2="390.0" y2="292.5" stroke="#1d4ed8" stroke-width="2"/><polygon points="390.0,285.5 394.2,292.5 385.8,292.5" fill="#1d4ed8"/>
+  <text x="398" y="310" font-size="14" font-weight="800" fill="#1d4ed8">V 15</text>
+  <line x1="380" y1="285.5" x2="440" y2="285.5" stroke="#1d4ed8" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="440" y1="147.5" x2="470" y2="147.5" stroke="#1d4ed8" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="440" y1="285.5" x2="440.0" y2="155.5" stroke="#0f766e" stroke-width="2"/><polygon points="440.0,147.5 444.8,155.5 435.2,155.5" fill="#0f766e"/>
+  <line x1="440" y1="147.5" x2="440.0" y2="277.5" stroke="#0f766e" stroke-width="2"/><polygon points="440.0,285.5 435.2,277.5 444.8,277.5" fill="#0f766e"/>
+  <text x="448" y="221.5" font-size="14" font-weight="800" fill="#0f766e">D 60</text>
+  <text x="560" y="97.5" font-size="13" fill="#4a5872" text-anchor="middle">Konveyör 75 cm</text>
+  <text x="24" y="68" font-size="13" fill="#4a5872">H: ayak bileği ortası ile ellerin ortası arası yatay mesafe (cm)</text>
+  <text x="24" y="88" font-size="13" fill="#4a5872">V: ellerin yerden yüksekliği · D: başlangıç ile varış yüksekliği farkı</text>
+  <text x="24" y="108" font-size="13" fill="#4a5872">A: gövde dönmesi 30° · 4 kaldırma/dk · tutamaksız koli 12 kg</text>
+</svg>

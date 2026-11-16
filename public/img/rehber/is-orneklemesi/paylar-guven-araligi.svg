@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">İş örneklemesi: forklift operatörünün zamanı</title>
+  <desc id="d">Vardiya boyunca rastgele anlarda yapılan 400 gözlem: yükleme ve boşaltma yüzde 43, boş sürüş ve yürüme yüzde 27, bekleme yüzde 19, diğer yüzde 11; her payın yüzde 95 güven aralığı çizgiyle gösterilmiş.</desc>
+  <rect width="680" height="400" fill="#ffffff"/>
+  <text x="24" y="34" font-size="18" font-weight="700" fill="#13294b">Vardiyada rastgele anlarda gözlem</text>
+  <rect x="24" y="52" width="632" height="34" rx="6" fill="#f8fafc" stroke="#dde3ec" stroke-width="1"/>
+  <line x1="72.6" y1="56" x2="72.6" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="75.4" y1="56" x2="75.4" y2="82" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <line x1="78.1" y1="56" x2="78.1" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="80.8" y1="56" x2="80.8" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="90.4" y1="56" x2="90.4" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="93.9" y1="56" x2="93.9" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="132.3" y1="56" x2="132.3" y2="82" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <line x1="141.5" y1="56" x2="141.5" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="146.5" y1="56" x2="146.5" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="184.0" y1="56" x2="184.0" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="216.2" y1="56" x2="216.2" y2="82" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="240.9" y1="56" x2="240.9" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="242.1" y1="56" x2="242.1" y2="82" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <line x1="243.0" y1="56" x2="243.0" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="247.1" y1="56" x2="247.1" y2="82" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="254.2" y1="56" x2="254.2" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="291.5" y1="56" x2="291.5" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="308.3" y1="56" x2="308.3" y2="82" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <line x1="318.7" y1="56" x2="318.7" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="337.0" y1="56" x2="337.0" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="337.8" y1="56" x2="337.8" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="337.9" y1="56" x2="337.9" y2="82" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <line x1="347.4" y1="56" x2="347.4" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="359.7" y1="56" x2="359.7" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="376.0" y1="56" x2="376.0" y2="82" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="377.4" y1="56" x2="377.4" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="379.9" y1="56" x2="379.9" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="384.1" y1="56" x2="384.1" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="407.6" y1="56" x2="407.6" y2="82" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <line x1="413.8" y1="56" x2="413.8" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="452.8" y1="56" x2="452.8" y2="82" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <line x1="471.5" y1="56" x2="471.5" y2="82" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <line x1="511.9" y1="56" x2="511.9" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="513.5" y1="56" x2="513.5" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="519.2" y1="56" x2="519.2" y2="82" stroke="#e11d48" stroke-width="3" stroke-linecap="round"/>
+  <line x1="524.1" y1="56" x2="524.1" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="537.4" y1="56" x2="537.4" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="602.5" y1="56" x2="602.5" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <line x1="608.6" y1="56" x2="608.6" y2="82" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <line x1="626.5" y1="56" x2="626.5" y2="82" stroke="#b42318" stroke-width="3" stroke-linecap="round"/>
+  <text x="24.0" y="104" font-size="12" fill="#4a5872" text-anchor="start">08:00</text>
+  <text x="182.0" y="104" font-size="12" fill="#4a5872" text-anchor="middle">10:00</text>
+  <text x="340.0" y="104" font-size="12" fill="#4a5872" text-anchor="middle">12:00</text>
+  <text x="498.0" y="104" font-size="12" fill="#4a5872" text-anchor="middle">14:00</text>
+  <text x="656.0" y="104" font-size="12" fill="#4a5872" text-anchor="end">16:00</text>
+  <text x="24" y="136" font-size="13" fill="#4a5872">Her çizgi bir gözlem anı (400 gözlemin bir kısmı). Saat başı değil, rastgele.</text>
+  <text x="24" y="172" font-size="18" font-weight="700" fill="#13294b">Paylar ve %95 güven aralığı</text>
+  <line x1="200.0" y1="186" x2="200.0" y2="346" stroke="#dde3ec" stroke-width="1"/>
+  <text x="200.0" y="362" font-size="12" fill="#4a5872" text-anchor="middle">%0</text>
+  <line x1="282.0" y1="186" x2="282.0" y2="346" stroke="#eef1f5" stroke-width="1"/>
+  <text x="282.0" y="362" font-size="12" fill="#4a5872" text-anchor="middle">%10</text>
+  <line x1="364.0" y1="186" x2="364.0" y2="346" stroke="#eef1f5" stroke-width="1"/>
+  <text x="364.0" y="362" font-size="12" fill="#4a5872" text-anchor="middle">%20</text>
+  <line x1="446.0" y1="186" x2="446.0" y2="346" stroke="#eef1f5" stroke-width="1"/>
+  <text x="446.0" y="362" font-size="12" fill="#4a5872" text-anchor="middle">%30</text>
+  <line x1="528.0" y1="186" x2="528.0" y2="346" stroke="#eef1f5" stroke-width="1"/>
+  <text x="528.0" y="362" font-size="12" fill="#4a5872" text-anchor="middle">%40</text>
+  <line x1="610.0" y1="186" x2="610.0" y2="346" stroke="#eef1f5" stroke-width="1"/>
+  <text x="610.0" y="362" font-size="12" fill="#4a5872" text-anchor="middle">%50</text>
+  <text x="190" y="213" font-size="14" font-weight="600" fill="#14213a" text-anchor="end">Yükleme ve boşaltma</text>
+  <rect x="200" y="198" width="352.6" height="22" rx="3" fill="#0f766e" opacity="0.85"/>
+  <line x1="512.4" y1="209" x2="592.8" y2="209" stroke="#14213a" stroke-width="2"/>
+  <line x1="512.4" y1="202" x2="512.4" y2="216" stroke="#14213a" stroke-width="2"/>
+  <line x1="592.8" y1="202" x2="592.8" y2="216" stroke="#14213a" stroke-width="2"/>
+  <text x="600.8" y="214" font-size="14" font-weight="700" fill="#14213a">%43,0</text>
+  <text x="190" y="251" font-size="14" font-weight="600" fill="#14213a" text-anchor="end">Boş sürüş ve yürüme</text>
+  <rect x="200" y="236" width="221.4" height="22" rx="3" fill="#b42318" opacity="0.85"/>
+  <line x1="385.3" y1="247" x2="457.5" y2="247" stroke="#14213a" stroke-width="2"/>
+  <line x1="385.3" y1="240" x2="385.3" y2="254" stroke="#14213a" stroke-width="2"/>
+  <line x1="457.5" y1="240" x2="457.5" y2="254" stroke="#14213a" stroke-width="2"/>
+  <text x="465.5" y="252" font-size="14" font-weight="700" fill="#14213a">%27,0</text>
+  <text x="190" y="289" font-size="14" font-weight="600" fill="#14213a" text-anchor="end">Bekleme</text>
+  <rect x="200" y="274" width="155.8" height="22" rx="3" fill="#e11d48" opacity="0.85"/>
+  <line x1="324.6" y1="285" x2="387.0" y2="285" stroke="#14213a" stroke-width="2"/>
+  <line x1="324.6" y1="278" x2="324.6" y2="292" stroke="#14213a" stroke-width="2"/>
+  <line x1="387.0" y1="278" x2="387.0" y2="292" stroke="#14213a" stroke-width="2"/>
+  <text x="395.0" y="290" font-size="14" font-weight="700" fill="#14213a">%19,0</text>
+  <text x="190" y="327" font-size="14" font-weight="600" fill="#14213a" text-anchor="end">Diğer</text>
+  <rect x="200" y="312" width="90.2" height="22" rx="3" fill="#94a3b8" opacity="0.85"/>
+  <line x1="264.8" y1="323" x2="315.6" y2="323" stroke="#14213a" stroke-width="2"/>
+  <line x1="264.8" y1="316" x2="264.8" y2="330" stroke="#14213a" stroke-width="2"/>
+  <line x1="315.6" y1="316" x2="315.6" y2="330" stroke="#14213a" stroke-width="2"/>
+  <text x="323.6" y="328" font-size="14" font-weight="700" fill="#14213a">%11,0</text>
+  <rect x="24" y="372" width="632" height="24" rx="6" fill="#fdf3f2" stroke="#efd2cf"/>
+  <text x="340" y="389" font-size="13.5" font-weight="700" fill="#b42318" text-anchor="middle">Boş sürüş + bekleme = zamanın %46'sı katma değer üretmiyor</text>
+</svg>

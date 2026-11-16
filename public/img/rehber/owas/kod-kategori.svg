@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">OWAS kodu ve eylem kategorisi</title>
+  <desc id="d">Alçak paletten 12 kilogram koli alma: sırt 2, kollar 1, bacaklar 4, yük 2; kategori 3, belirgin zararlı. Palet yükseltici ile: 1-1-2-2; kategori 1, normal.</desc>
+  <rect width="680" height="330" fill="#ffffff"/>
+  <text x="24" y="34" font-size="19" font-weight="700" fill="#13294b">OWAS kodu: dört rakam, bir eylem kategorisi</text>
+  <text x="24" y="62" font-size="14.5" font-weight="600" fill="#4a5872">Alçak paletten 12 kg koli</text>
+  <rect x="24" y="72" width="102" height="84" rx="10" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <text x="75" y="92" font-size="12.5" fill="#4a5872" text-anchor="middle">Sırt</text>
+  <text x="75" y="124" font-size="28" font-weight="800" fill="#13294b" text-anchor="middle">2</text>
+  <text x="75" y="146" font-size="11.5" fill="#4a5872" text-anchor="middle">öne eğik</text>
+  <rect x="136" y="72" width="102" height="84" rx="10" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <text x="187" y="92" font-size="12.5" fill="#4a5872" text-anchor="middle">Kollar</text>
+  <text x="187" y="124" font-size="28" font-weight="800" fill="#13294b" text-anchor="middle">1</text>
+  <text x="187" y="146" font-size="11.5" fill="#4a5872" text-anchor="middle">omuz altı</text>
+  <rect x="248" y="72" width="102" height="84" rx="10" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <text x="299" y="92" font-size="12.5" fill="#4a5872" text-anchor="middle">Bacaklar</text>
+  <text x="299" y="124" font-size="28" font-weight="800" fill="#13294b" text-anchor="middle">4</text>
+  <text x="299" y="146" font-size="11.5" fill="#4a5872" text-anchor="middle">iki diz bükük</text>
+  <rect x="360" y="72" width="102" height="84" rx="10" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <text x="411" y="92" font-size="12.5" fill="#4a5872" text-anchor="middle">Yük</text>
+  <text x="411" y="124" font-size="28" font-weight="800" fill="#13294b" text-anchor="middle">2</text>
+  <text x="411" y="146" font-size="11.5" fill="#4a5872" text-anchor="middle">10–20 kg</text>
+  <line x1="478" y1="114" x2="505.0" y2="114.0" stroke="#4a5872" stroke-width="2.5"/><polygon points="514.0,114.0 505.0,119.4 505.0,108.6" fill="#4a5872"/>
+  <rect x="522" y="72" width="134" height="84" rx="10" fill="#ea580c"/>
+  <text x="589" y="110" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">Kategori 3</text>
+  <text x="589" y="134" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Belirgin zararlı</text>
+  <text x="24" y="190" font-size="14.5" font-weight="600" fill="#4a5872">Aynı iş, palet yükseltici ile</text>
+  <rect x="24" y="200" width="102" height="84" rx="10" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <text x="75" y="220" font-size="12.5" fill="#4a5872" text-anchor="middle">Sırt</text>
+  <text x="75" y="252" font-size="28" font-weight="800" fill="#13294b" text-anchor="middle">1</text>
+  <text x="75" y="274" font-size="11.5" fill="#4a5872" text-anchor="middle">düz</text>
+  <rect x="136" y="200" width="102" height="84" rx="10" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <text x="187" y="220" font-size="12.5" fill="#4a5872" text-anchor="middle">Kollar</text>
+  <text x="187" y="252" font-size="28" font-weight="800" fill="#13294b" text-anchor="middle">1</text>
+  <text x="187" y="274" font-size="11.5" fill="#4a5872" text-anchor="middle">omuz altı</text>
+  <rect x="248" y="200" width="102" height="84" rx="10" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <text x="299" y="220" font-size="12.5" fill="#4a5872" text-anchor="middle">Bacaklar</text>
+  <text x="299" y="252" font-size="28" font-weight="800" fill="#13294b" text-anchor="middle">2</text>
+  <text x="299" y="274" font-size="11.5" fill="#4a5872" text-anchor="middle">iki bacak düz</text>
+  <rect x="360" y="200" width="102" height="84" rx="10" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <text x="411" y="220" font-size="12.5" fill="#4a5872" text-anchor="middle">Yük</text>
+  <text x="411" y="252" font-size="28" font-weight="800" fill="#13294b" text-anchor="middle">2</text>
+  <text x="411" y="274" font-size="11.5" fill="#4a5872" text-anchor="middle">10–20 kg</text>
+  <line x1="478" y1="242" x2="505.0" y2="242.0" stroke="#4a5872" stroke-width="2.5"/><polygon points="514.0,242.0 505.0,247.4 505.0,236.6" fill="#4a5872"/>
+  <rect x="522" y="200" width="134" height="84" rx="10" fill="#15803d"/>
+  <text x="589" y="238" font-size="17" font-weight="800" fill="#ffffff" text-anchor="middle">Kategori 1</text>
+  <text x="589" y="262" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Normal</text>
+  <text x="24" y="316" font-size="13" fill="#4a5872">Açı ölçmeden gözle kodlanır; vardiya boyunca rastgele anlarda kodlanınca duruş dağılımı çıkar.</text>
+</svg>

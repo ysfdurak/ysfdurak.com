@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 350" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">RULA ve REBA aynı iki işte</title>
+  <desc id="d">Paketleme masasında RULA 5 (kısa sürede değişiklik), REBA 4 (orta): risk bilek ve boyunda toplandığı için RULA daha ciddi görüyor. Alçak paletten koli almada RULA 7, REBA 10: iki yöntem de alarm veriyor.</desc>
+  <rect width="680" height="350" fill="#ffffff"/>
+  <text x="24" y="34" font-size="19" font-weight="700" fill="#13294b">Aynı iki iş, iki yöntem</text>
+  <text x="24" y="72" font-size="15" font-weight="600" fill="#4a5872">1 · Paketleme masası (bilek ve boyun zorlanıyor)</text>
+  <text x="110" y="122" font-size="14" font-weight="700" fill="#14213a" text-anchor="end">RULA</text>
+  <rect x="120.0" y="104" width="146.6" height="26" rx="3" fill="#15803d" opacity="0.9"/>
+  <rect x="268.6" y="104" width="146.6" height="26" rx="3" fill="#ca8a04" opacity="0.9"/>
+  <rect x="417.1" y="104" width="146.6" height="26" rx="3" fill="#ea580c" opacity="0.9"/>
+  <rect x="565.7" y="104" width="72.3" height="26" rx="3" fill="#b42318" opacity="0.9"/>
+  <polygon points="454.3,100 446.3,88 462.3,88" fill="#14213a"/>
+  <text x="454.3" y="84" font-size="16" font-weight="800" fill="#14213a" text-anchor="middle">5</text>
+  <text x="120" y="148" font-size="11.5" fill="#4a5872" text-anchor="start">1</text>
+  <text x="640" y="148" font-size="11.5" fill="#4a5872" text-anchor="end">7</text>
+  <text x="110" y="188" font-size="14" font-weight="700" fill="#14213a" text-anchor="end">REBA</text>
+  <rect x="120.0" y="170" width="32.7" height="26" rx="3" fill="#15803d" opacity="0.9"/>
+  <rect x="154.7" y="170" width="67.3" height="26" rx="3" fill="#65a30d" opacity="0.9"/>
+  <rect x="224.0" y="170" width="136.7" height="26" rx="3" fill="#ca8a04" opacity="0.9"/>
+  <rect x="362.7" y="170" width="102.0" height="26" rx="3" fill="#ea580c" opacity="0.9"/>
+  <rect x="466.7" y="170" width="171.3" height="26" rx="3" fill="#b42318" opacity="0.9"/>
+  <polygon points="241.3,166 233.3,154 249.3,154" fill="#14213a"/>
+  <text x="241.3" y="150" font-size="16" font-weight="800" fill="#14213a" text-anchor="middle">4</text>
+  <text x="120" y="214" font-size="11.5" fill="#4a5872" text-anchor="start">1</text>
+  <text x="640" y="214" font-size="11.5" fill="#4a5872" text-anchor="end">15</text>
+  <text x="24" y="238" font-size="15" font-weight="600" fill="#4a5872">2 · Alçak paletten 12 kg koli (tüm vücut zorlanıyor)</text>
+  <text x="110" y="310" font-size="14" font-weight="700" fill="#14213a" text-anchor="end">RULA</text>
+  <rect x="120.0" y="292" width="69.4" height="26" rx="3" fill="#15803d" opacity="0.9"/>
+  <rect x="191.4" y="292" width="69.4" height="26" rx="3" fill="#ca8a04" opacity="0.9"/>
+  <rect x="262.9" y="292" width="69.4" height="26" rx="3" fill="#ea580c" opacity="0.9"/>
+  <rect x="334.3" y="292" width="33.7" height="26" rx="3" fill="#b42318" opacity="0.9"/>
+  <polygon points="352.1,288 344.1,276 360.1,276" fill="#14213a"/>
+  <text x="352.1" y="272" font-size="16" font-weight="800" fill="#14213a" text-anchor="middle">7</text>
+  <text x="120" y="336" font-size="11.5" fill="#4a5872" text-anchor="start">1</text>
+  <text x="370" y="336" font-size="11.5" fill="#4a5872" text-anchor="end">7</text>
+  <text x="490" y="310" font-size="14" font-weight="700" fill="#14213a" text-anchor="end">REBA</text>
+  <rect x="500.0" y="292" width="8.0" height="26" rx="3" fill="#15803d" opacity="0.9"/>
+  <rect x="510.0" y="292" width="18.0" height="26" rx="3" fill="#65a30d" opacity="0.9"/>
+  <rect x="530.0" y="292" width="38.0" height="26" rx="3" fill="#ca8a04" opacity="0.9"/>
+  <rect x="570.0" y="292" width="28.0" height="26" rx="3" fill="#ea580c" opacity="0.9"/>
+  <rect x="600.0" y="292" width="48.0" height="26" rx="3" fill="#b42318" opacity="0.9"/>
+  <polygon points="595.0,288 587.0,276 603.0,276" fill="#14213a"/>
+  <text x="595.0" y="272" font-size="16" font-weight="800" fill="#14213a" text-anchor="middle">10</text>
+  <text x="500" y="336" font-size="11.5" fill="#4a5872" text-anchor="start">1</text>
+  <text x="650" y="336" font-size="11.5" fill="#4a5872" text-anchor="end">15</text>
+</svg>

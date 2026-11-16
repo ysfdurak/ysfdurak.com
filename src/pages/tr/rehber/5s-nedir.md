@@ -15,7 +15,7 @@ tool:
 **Kısa cevap:** 5S, çalışma alanını düzenli, temiz ve standart tutmak için beş adımlı bir yalın yöntemdir. Adımlar Japonca kelimelerin baş harflerinden gelir: **Seiri (Ayıkla), Seiton (Düzenle), Seiso (Temizle), Seiketsu (Standartlaştır), Shitsuke (Sürdür)**. Amaç, aranan şeyin hemen bulunduğu, sorunların gözle görüldüğü bir alan yaratmaktır. Sıra önemlidir: ayıklanmamış bir alanı düzenlemek, gereksiz eşyalara yer bulmak demektir.
 
 <figure class="rehber-gorsel">
-  <img src="/img/rehber/5s/5s-dongusu.svg" width="640" height="570" alt="5S döngüsü: 1 Ayıkla (Seiri), 2 Düzenle (Seiton), 3 Temizle (Seiso), 4 Standartlaştır (Seiketsu), 5 Sürdür (Shitsuke); Sürdür döngüyü yeniden Ayıkla'ya bağlar" loading="lazy" />
+  <a href="/img/rehber/5s/5s-dongusu.svg" title="Büyük boyutta aç"><img src="/img/rehber/5s/5s-dongusu.svg" width="640" height="570" alt="5S döngüsü: 1 Ayıkla (Seiri), 2 Düzenle (Seiton), 3 Temizle (Seiso), 4 Standartlaştır (Seiketsu), 5 Sürdür (Shitsuke); Sürdür döngüyü yeniden Ayıkla'ya bağlar" loading="lazy" /></a>
   <figcaption>5S bir kerelik temizlik değil, döngüdür: Sürdür adımındaki denetim yeniden Ayıkla'yı başlatır.</figcaption>
 </figure>
 
@@ -29,7 +29,7 @@ Alandaki her şey "gerekli mi?" sorusundan geçer.
 **Depo örneği:** paketleme masasındaki bozuk bant tabancaları, eski etiket ruloları, iade edilmeyi bekleyen boş paletler.
 
 <figure class="rehber-gorsel">
-  <img src="/img/rehber/5s/kirmizi-etiket.svg" width="520" height="330" alt="Örnek kırmızı etiket: tarih, alan, eşya, neden, 30 günlük karar tarihi ve karar seçenekleri" loading="lazy" />
+  <a href="/img/rehber/5s/kirmizi-etiket.svg" title="Büyük boyutta aç"><img src="/img/rehber/5s/kirmizi-etiket.svg" width="520" height="330" alt="Örnek kırmızı etiket: tarih, alan, eşya, neden, 30 günlük karar tarihi ve karar seçenekleri" loading="lazy" /></a>
   <figcaption>Kırmızı etiket kararı erteler ama unutturmaz: karar tarihi gelince eşya atılır, taşınır ya da yerinde kalır.</figcaption>
 </figure>
 
@@ -44,7 +44,7 @@ Kalan her şeyin belli bir yeri olur ve o yer işaretlenir.
 **Depo örneği:** bant, bıçak ve etiket yazıcısı için masada gölge pano; boş palet alanı zeminde sarı çizgiyle işaretli.
 
 <figure class="rehber-gorsel">
-  <img src="/img/rehber/5s/once-sonra.svg" width="680" height="400" alt="Paketleme masası 5S öncesi ve sonrası: önce aletler ve paletler dağınık; sonra aletler gölge panoda, palet alanı sarı çizgiyle işaretli" loading="lazy" />
+  <a href="/img/rehber/5s/once-sonra.svg" title="Büyük boyutta aç"><img src="/img/rehber/5s/once-sonra.svg" width="680" height="400" alt="Paketleme masası 5S öncesi ve sonrası: önce aletler ve paletler dağınık; sonra aletler gölge panoda, palet alanı sarı çizgiyle işaretli" loading="lazy" /></a>
   <figcaption>Ayıkla ve Düzenle adımlarından sonra aynı paketleme masası: eksik alet gölge panoda bir bakışta görünür.</figcaption>
 </figure>
 

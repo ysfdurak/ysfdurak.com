@@ -9,6 +9,7 @@ tool:
   cta: "Gün içindeki ses düzeylerini ve süreleri girin; LEX,8h, eylem değerleri ve en büyük katkı otomatik hesaplansın."
   url: "https://durus.ysfdurak.com/"
   project: "/tr/projeler/durus-ergonomi-analizi/"
+  shot: "/img/durus/formlar-niosh.webp"
 ---
 
 **Kısa cevap:** Bir çalışanın gün içinde farklı gürültü düzeylerinde geçirdiği süreler tek bir sayıya çevrilir: **günlük kişisel gürültü maruziyeti, LEX,8h**. Bu değer, 8 saat boyunca aynı enerjiyi verecek sabit ses düzeyidir. Gürültü Yönetmeliği'ndeki değerlerle karşılaştırılır: **80 dB(A) alt eylem değeri, 85 dB(A) üst eylem değeri, 87 dB(A) maruziyet sınır değeri**.
@@ -64,6 +65,11 @@ Kaynakta azaltma, rotasyondan daha etkili. Önlem sırası genel olarak şöyled
 2. **Yayılmayı engelleme:** bariyer, mesafe, ses yutucu yüzeyler.
 3. **Organizasyon:** rotasyon, sessiz dinlenme alanı, gürültülü işleri ayrı saatlere toplama.
 4. **Kulak koruyucu:** diğer önlemlerden sonra, son çare olarak. Doğru takılması ve sürekli kullanılması şarttır.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/gurultu/maruziyet-olcek.svg" title="Büyük boyutta aç"><img src="/img/rehber/gurultu/maruziyet-olcek.svg" width="680" height="400" alt="Günlük ses enerjisinin yüzde 86'sı sorterdaki 3 saatten geliyor. LEX,8h mevcut durumda 86,4 dB(A), rotasyonla 84,5, kaynakta azaltmayla 81,9, ikisi birlikte 81,4; yönetmelik değerleri 80, 85 ve 87 dB(A)." loading="lazy" /></a>
+  <figcaption>Desibel logaritmik olduğu için enerjinin büyük kısmı en gürültülü ortamdan gelir; kaynakta azaltma rotasyondan daha etkili.</figcaption>
+</figure>
 
 ## Sık yapılan hatalar
 

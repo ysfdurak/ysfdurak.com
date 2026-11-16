@@ -9,6 +9,7 @@ tool:
   cta: "Fotoğraf veya videodan OWAS kodunu REBA ve RULA ile birlikte otomatik bulun."
   url: "https://durus.ysfdurak.com/"
   project: "/tr/projeler/durus-ergonomi-analizi/"
+  shot: "/img/durus/durus-analizi.webp"
 ---
 
 **Kısa cevap:** OWAS (Ovako Working Posture Analysing System), bir çalışma duruşunu **sırt, kollar, bacaklar ve yük** için birer rakamla kodlar ve bu dört haneli kodu bir **eylem kategorisine (1–4)** çevirir. Açı ölçmeden, gözle hızlıca uygulanabilir. Bu yüzden uzun süreli iş örneklemesi ile birlikte, bir işin gün içindeki duruş dağılımını çıkarmak için çok uygundur.
@@ -73,6 +74,11 @@ Dört haneli kod, OWAS'ın sabit tablosunda bir kategoriye karşılık gelir.
 | 22 kg çuvalı yerden alıp yana bırakma: eğik ve dönük, dizler bükük | 4-1-4-3 | **4** · Çok zararlı |
 
 Palet örneğinde [REBA](/tr/rehber/reba-nasil-hesaplanir/) 10'dan 5'e inerken OWAS 3. kategoriden 1. kategoriye iner. İki yöntem aynı yönde sonuç verir. OWAS daha kaba ama çok daha hızlıdır.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/owas/kod-kategori.svg" title="Büyük boyutta aç"><img src="/img/rehber/owas/kod-kategori.svg" width="680" height="330" alt="Alçak paletten 12 kilogram koli alma: sırt 2, kollar 1, bacaklar 4, yük 2; kategori 3, belirgin zararlı. Palet yükseltici ile: 1-1-2-2; kategori 1, normal." loading="lazy" /></a>
+  <figcaption>Aynı iş, palet yükseltici ile: sırt ve bacak kodları düşünce kategori 3'ten 1'e iniyor.</figcaption>
+</figure>
 
 ## OWAS'ı iş örneklemesiyle kullanmak
 

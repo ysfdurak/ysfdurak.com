@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 410" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Yamazumi grafiği: dört kişilik paketleme hattı, önce ve sonra</title>
+  <desc id="d">Önce ikinci kişinin yükü 22 saniye, takt 14 saniye; hat darboğazda, denge verimi yüzde 55. Bantlama üçüncü kişiye geçince yükler 13, 13, 14 ve 8 saniye oluyor; hat takta yetişiyor, denge verimi yüzde 86.</desc>
+  <rect width="680" height="410" fill="#ffffff"/>
+  <rect x="10" y="10" width="324" height="390" rx="14" fill="#fdf3f2" stroke="#efd2cf"/>
+  <text x="28" y="40" font-size="19" font-weight="800" fill="#b42318">Önce</text>
+  <line x1="50" y1="300.0" x2="322" y2="300.0" stroke="#dde3ec" stroke-width="1"/>
+  <text x="46" y="305.0" font-size="12" fill="#4a5872" text-anchor="end">0</text>
+  <line x1="50" y1="232.8" x2="322" y2="232.8" stroke="#eef1f5" stroke-width="1"/>
+  <text x="46" y="237.8" font-size="12" fill="#4a5872" text-anchor="end">7</text>
+  <line x1="50" y1="165.6" x2="322" y2="165.6" stroke="#eef1f5" stroke-width="1"/>
+  <text x="46" y="170.6" font-size="12" fill="#4a5872" text-anchor="end">14</text>
+  <line x1="50" y1="98.4" x2="322" y2="98.4" stroke="#eef1f5" stroke-width="1"/>
+  <text x="46" y="103.4" font-size="12" fill="#4a5872" text-anchor="end">21</text>
+  <rect x="62" y="242.4" width="54" height="55.6" rx="3" fill="#1d4ed8"/>
+  <text x="89" y="276.2" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Koli</text>
+  <rect x="62" y="175.2" width="54" height="65.2" rx="3" fill="#0891b2"/>
+  <text x="89" y="213.8" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Toplama</text>
+  <text x="89" y="320" font-size="13" fill="#4a5872" text-anchor="middle">Kişi 1</text>
+  <text x="89" y="339" font-size="15" font-weight="800" fill="#14213a" text-anchor="middle">13 sn</text>
+  <rect x="128" y="223.2" width="54" height="74.8" rx="3" fill="#0f766e"/>
+  <text x="155" y="266.6" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Yerleştir</text>
+  <rect x="128" y="175.2" width="54" height="46.0" rx="3" fill="#65a30d"/>
+  <text x="155" y="204.2" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Kontrol</text>
+  <rect x="128" y="88.8" width="54" height="84.4" rx="3" fill="#c2410c"/>
+  <text x="155" y="137.0" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Bant</text>
+  <text x="155" y="320" font-size="13" fill="#4a5872" text-anchor="middle">Kişi 2</text>
+  <text x="155" y="339" font-size="15" font-weight="800" fill="#b42318" text-anchor="middle">22 sn</text>
+  <rect x="194" y="252.0" width="54" height="46.0" rx="3" fill="#a16207"/>
+  <text x="221" y="281.0" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Etiket</text>
+  <text x="221" y="320" font-size="13" fill="#4a5872" text-anchor="middle">Kişi 3</text>
+  <text x="221" y="339" font-size="15" font-weight="800" fill="#14213a" text-anchor="middle">5 sn</text>
+  <rect x="260" y="223.2" width="54" height="74.8" rx="3" fill="#7c3aed"/>
+  <text x="287" y="266.6" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Palet</text>
+  <text x="287" y="320" font-size="13" fill="#4a5872" text-anchor="middle">Kişi 4</text>
+  <text x="287" y="339" font-size="15" font-weight="800" fill="#14213a" text-anchor="middle">8 sn</text>
+  <line x1="50" y1="165.6" x2="322" y2="165.6" stroke="#b42318" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="322" y="159.6" font-size="13" font-weight="700" fill="#b42318" text-anchor="end">Takt 14 sn</text>
+  <text x="28" y="368" font-size="14" font-weight="700" fill="#14213a">Denge verimi %55</text>
+  <text x="28" y="388" font-size="14" fill="#4a5872">Saatte ~164 koli</text>
+  <rect x="346" y="10" width="324" height="390" rx="14" fill="#eef7f5" stroke="#cbe6e1"/>
+  <text x="364" y="40" font-size="19" font-weight="800" fill="#0f766e">Sonra</text>
+  <line x1="386" y1="300.0" x2="658" y2="300.0" stroke="#dde3ec" stroke-width="1"/>
+  <text x="382" y="305.0" font-size="12" fill="#4a5872" text-anchor="end">0</text>
+  <line x1="386" y1="232.8" x2="658" y2="232.8" stroke="#eef1f5" stroke-width="1"/>
+  <text x="382" y="237.8" font-size="12" fill="#4a5872" text-anchor="end">7</text>
+  <line x1="386" y1="165.6" x2="658" y2="165.6" stroke="#eef1f5" stroke-width="1"/>
+  <text x="382" y="170.6" font-size="12" fill="#4a5872" text-anchor="end">14</text>
+  <line x1="386" y1="98.4" x2="658" y2="98.4" stroke="#eef1f5" stroke-width="1"/>
+  <text x="382" y="103.4" font-size="12" fill="#4a5872" text-anchor="end">21</text>
+  <rect x="398" y="242.4" width="54" height="55.6" rx="3" fill="#1d4ed8"/>
+  <text x="425" y="276.2" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Koli</text>
+  <rect x="398" y="175.2" width="54" height="65.2" rx="3" fill="#0891b2"/>
+  <text x="425" y="213.8" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Toplama</text>
+  <text x="425" y="320" font-size="13" fill="#4a5872" text-anchor="middle">Kişi 1</text>
+  <text x="425" y="339" font-size="15" font-weight="800" fill="#14213a" text-anchor="middle">13 sn</text>
+  <rect x="464" y="223.2" width="54" height="74.8" rx="3" fill="#0f766e"/>
+  <text x="491" y="266.6" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Yerleştir</text>
+  <rect x="464" y="175.2" width="54" height="46.0" rx="3" fill="#65a30d"/>
+  <text x="491" y="204.2" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Kontrol</text>
+  <text x="491" y="320" font-size="13" fill="#4a5872" text-anchor="middle">Kişi 2</text>
+  <text x="491" y="339" font-size="15" font-weight="800" fill="#14213a" text-anchor="middle">13 sn</text>
+  <rect x="530" y="213.6" width="54" height="84.4" rx="3" fill="#c2410c"/>
+  <text x="557" y="261.8" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Bant</text>
+  <rect x="530" y="165.6" width="54" height="46.0" rx="3" fill="#a16207"/>
+  <text x="557" y="194.6" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Etiket</text>
+  <text x="557" y="320" font-size="13" fill="#4a5872" text-anchor="middle">Kişi 3</text>
+  <text x="557" y="339" font-size="15" font-weight="800" fill="#14213a" text-anchor="middle">14 sn</text>
+  <rect x="596" y="223.2" width="54" height="74.8" rx="3" fill="#7c3aed"/>
+  <text x="623" y="266.6" font-size="11.5" font-weight="600" fill="#ffffff" text-anchor="middle">Palet</text>
+  <text x="623" y="320" font-size="13" fill="#4a5872" text-anchor="middle">Kişi 4</text>
+  <text x="623" y="339" font-size="15" font-weight="800" fill="#14213a" text-anchor="middle">8 sn</text>
+  <line x1="386" y1="165.6" x2="658" y2="165.6" stroke="#b42318" stroke-width="2.5" stroke-dasharray="8 5"/>
+  <text x="658" y="159.6" font-size="13" font-weight="700" fill="#b42318" text-anchor="end">Takt 14 sn</text>
+  <text x="364" y="368" font-size="14" font-weight="700" fill="#14213a">Denge verimi %86</text>
+  <text x="364" y="388" font-size="14" fill="#4a5872">Saatte ~257 koli</text>
+</svg>

@@ -9,6 +9,7 @@ tool:
   cta: "Aynı fotoğraftan REBA, RULA ve OWAS'ı birlikte hesaplayın, sonuçları yan yana görün."
   url: "https://durus.ysfdurak.com/"
   project: "/tr/projeler/durus-ergonomi-analizi/"
+  shot: "/img/durus/durus-analizi.webp"
 ---
 
 **Kısa cevap:** RULA (Rapid Upper Limb Assessment), duruşu özellikle **kollar, bilekler ve boyun** açısından puanlayan bir ergonomik risk yöntemidir. Sonuç 1 ile 7 arasındadır. 7 en yüksek risktir. Masa başında, montaj ve paketleme gibi kolların yoğun çalıştığı işlerde RULA; tüm vücudun hareket ettiği kaldırma ve taşıma işlerinde [REBA](/tr/rehber/reba-nasil-hesaplanir/) daha uygundur.
@@ -69,6 +70,11 @@ RULA bu işi daha ciddi görür, çünkü riskin kaynağı bilek ve boyun. Bilek
 | REBA | **10** | Yüksek risk, kısa sürede değişiklik |
 
 İki yöntem de alarm verir. Bu iş için REBA ve [NIOSH kaldırma denklemi](/tr/rehber/niosh-kaldirma-denklemi/) daha açıklayıcıdır: bacak, yük ve kavrama ayrıntısını da gösterir.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/rula-reba/iki-yontem.svg" title="Büyük boyutta aç"><img src="/img/rehber/rula-reba/iki-yontem.svg" width="680" height="350" alt="Paketleme masasında RULA 5 (kısa sürede değişiklik), REBA 4 (orta): risk bilek ve boyunda toplandığı için RULA daha ciddi görüyor. Alçak paletten koli almada RULA 7, REBA 10: iki yöntem de alarm veriyor." loading="lazy" /></a>
+  <figcaption>Paketleme masasında risk bilek ve boyunda toplandığı için RULA daha yüksek alarm veriyor. Alçak palette ikisi de kırmızı bölgede.</figcaption>
+</figure>
 
 ## Hangisini seçmeli?
 

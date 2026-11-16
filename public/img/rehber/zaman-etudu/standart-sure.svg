@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 380" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Gözlemden standart süreye: koli bantlama örneği</title>
+  <desc id="d">On gözlemin ortalaması 12,39 saniye. Yüzde 105 tempo ile normal süre 13,01, yüzde 12 tolerans ile standart süre 14,78 saniye. Saatlik kapasite yaklaşık 243 koli.</desc>
+  <rect width="680" height="380" fill="#ffffff"/>
+  <text x="24" y="34" font-size="19" font-weight="700" fill="#13294b">Koli bantlama: gözlemden standart süreye</text>
+  <line x1="70" y1="320" x2="520" y2="320" stroke="#dde3ec" stroke-width="1"/>
+  <text x="62" y="325" font-size="12" fill="#4a5872" text-anchor="end">0</text>
+  <line x1="70" y1="252" x2="520" y2="252" stroke="#eef1f5" stroke-width="1"/>
+  <text x="62" y="257" font-size="12" fill="#4a5872" text-anchor="end">4</text>
+  <line x1="70" y1="184" x2="520" y2="184" stroke="#eef1f5" stroke-width="1"/>
+  <text x="62" y="189" font-size="12" fill="#4a5872" text-anchor="end">8</text>
+  <line x1="70" y1="116" x2="520" y2="116" stroke="#eef1f5" stroke-width="1"/>
+  <text x="62" y="121" font-size="12" fill="#4a5872" text-anchor="end">12</text>
+  <line x1="70" y1="48" x2="520" y2="48" stroke="#eef1f5" stroke-width="1"/>
+  <text x="62" y="53" font-size="12" fill="#4a5872" text-anchor="end">16</text>
+  <text x="30" y="60" font-size="12" fill="#4a5872">sn</text>
+  <rect x="100" y="109.4" width="96" height="210.6" rx="4" fill="#94a3b8"/>
+  <text x="148" y="78.8" font-size="16" font-weight="800" fill="#14213a" text-anchor="middle">12,39 sn</text>
+  <text x="148" y="342" font-size="14" font-weight="700" fill="#14213a" text-anchor="middle">Ortalama</text>
+  <text x="148" y="362" font-size="12.5" fill="#4a5872" text-anchor="middle">10 gözlem</text>
+  <rect x="250" y="98.8" width="96" height="221.2" rx="4" fill="#1d4ed8"/>
+  <text x="298" y="78.8" font-size="16" font-weight="800" fill="#14213a" text-anchor="middle">13,01 sn</text>
+  <text x="298" y="342" font-size="14" font-weight="700" fill="#14213a" text-anchor="middle">Normal süre</text>
+  <text x="298" y="362" font-size="12.5" fill="#4a5872" text-anchor="middle">× tempo %105</text>
+  <line x1="200" y1="180" x2="235.0" y2="180.0" stroke="#4a5872" stroke-width="2.5"/><polygon points="244.0,180.0 235.0,185.4 235.0,174.6" fill="#4a5872"/>
+  <rect x="400" y="68.7" width="96" height="251.3" rx="4" fill="#0f766e"/>
+  <text x="448" y="58.7" font-size="16" font-weight="800" fill="#14213a" text-anchor="middle">14,78 sn</text>
+  <text x="448" y="342" font-size="14" font-weight="700" fill="#14213a" text-anchor="middle">Standart süre</text>
+  <text x="448" y="362" font-size="12.5" fill="#4a5872" text-anchor="middle">÷ (1 − %12 tolerans)</text>
+  <line x1="350" y1="180" x2="385.0" y2="180.0" stroke="#4a5872" stroke-width="2.5"/><polygon points="394.0,180.0 385.0,185.4 385.0,174.6" fill="#4a5872"/>
+  <circle cx="132.2" cy="109.2" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <circle cx="124.2" cy="119.4" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <circle cx="141.8" cy="97.3" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <circle cx="127.3" cy="116.0" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <circle cx="122.0" cy="104.1" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <circle cx="142.1" cy="124.5" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <circle cx="173.1" cy="100.7" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <circle cx="166.0" cy="92.2" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <circle cx="163.9" cy="112.6" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <circle cx="131.3" cy="117.7" r="4.5" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <rect x="540" y="140" width="126" height="120" rx="12" fill="#eef7f5" stroke="#cbe6e1" stroke-width="1.5"/>
+  <text x="603" y="172" font-size="14" font-weight="700" fill="#0f766e" text-anchor="middle">Kapasite</text>
+  <text x="603" y="206" font-size="28" font-weight="800" fill="#0f766e" text-anchor="middle">≈ 243</text>
+  <text x="603" y="230" font-size="13" fill="#4a5872" text-anchor="middle">koli / saat</text>
+  <text x="603" y="249" font-size="12" fill="#4a5872" text-anchor="middle">3.600 ÷ 14,78</text>
+</svg>

@@ -9,6 +9,7 @@ tool:
   cta: "İş örneklemesini videodan yapın: rastgele anlar, kategori payları ve gereken gözlem sayısı otomatik."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
+  shot: "/img/video-zaman-etudu/olcum.webp"
 ---
 
 **Kısa cevap:** İş örneklemesi, bir kişinin ya da makinenin zamanını **nelere harcadığını** bulmak için kullanılır. Gün boyunca **rastgele anlarda** kısa gözlemler yapılır ve her gözlemde ne yapıldığı bir kategoriye yazılır. Bir kategorinin gözlemlerdeki payı, o işe ayrılan zamanın payının tahminidir. Gözlem sayısı arttıkça tahmin daralır. Kaç gözlem gerektiği önceden hesaplanabilir.
@@ -57,6 +58,11 @@ Pay basit bir orandır: `p = gözlem ÷ toplam gözlem`. Güven aralığı ise �
 > 0,19 ± 1,96 × √( 0,19 × 0,81 ÷ 400 ) = 0,19 ± 0,038 → **%15,2 – %22,8**
 
 Yorum: operatörün zamanının yaklaşık beşte biri beklemeyle geçiyor. Bu oran büyük olasılıkla %15 ile %23 arasında.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/is-orneklemesi/paylar-guven-araligi.svg" title="Büyük boyutta aç"><img src="/img/rehber/is-orneklemesi/paylar-guven-araligi.svg" width="680" height="400" alt="Vardiya boyunca rastgele anlarda yapılan 400 gözlem: yükleme ve boşaltma yüzde 43, boş sürüş ve yürüme yüzde 27, bekleme yüzde 19, diğer yüzde 11; her payın yüzde 95 güven aralığı çizgiyle gösterilmiş." loading="lazy" /></a>
+  <figcaption>Gözlem anları rastgele seçilir. Her payın etrafındaki çizgi %95 güven aralığıdır; aralıklar örtüşüyorsa fark anlamlı olmayabilir.</figcaption>
+</figure>
 
 ## 4. Kaç gözlem gerekir?
 

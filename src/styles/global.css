@@ -194,3 +194,14 @@ section[id] { scroll-margin-top: 1rem; }
 .tool-box.has-shot { display: grid; grid-template-columns: 1fr 180px; gap: 1rem; align-items: center; }
 .tool-box .tool-shot img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 8px; }
 @media (max-width: 560px) { .tool-box.has-shot { grid-template-columns: 1fr; } .tool-box .tool-shot { max-width: 320px; } }
+.guide .rehber-foto img { border: 0; background: #e2e8f0; }
+.guide .rehber-foto .kredi { display: block; font-size: 0.8rem; margin-top: 0.15rem; }
+.guide .rehber-foto .kredi a { color: inherit; }
+.guide .foto-cift { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.guide .foto-cift > div { position: relative; }
+.guide .foto-cift img { aspect-ratio: 3 / 2; object-fit: cover; }
+.guide .foto-cift figcaption { grid-column: 1 / -1; }
+.guide .foto-etiket { position: absolute; left: 0.6rem; top: 0.6rem; padding: 0.15rem 0.6rem; border-radius: 999px; font-weight: 700; font-size: 0.85rem; color: #fff; }
+.guide .foto-etiket.once { background: #b42318; }
+.guide .foto-etiket.sonra { background: #0f766e; }
+@media (max-width: 560px) { .guide .foto-cift { grid-template-columns: 1fr; } }

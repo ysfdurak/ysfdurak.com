@@ -9,6 +9,7 @@ tool:
   cta: "Adım sürelerini videodan ölçün, Yamazumi grafiğini görün ve işi takta göre otomatik dağıtın."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
+  shot: "/img/video-zaman-etudu/analiz.webp"
 ---
 
 **Kısa cevap:** Hat dengeleme, bir işin adımlarını istasyonlara ya da kişilere, her birinin yükü [takt zamanını](/tr/rehber/takt-zamani-nedir/) aşmayacak ve yükler birbirine olabildiğince yakın olacak şekilde dağıtmaktır. Hattın hızını en yüklü istasyon belirler. Yükü takttan fazla olan istasyon **darboğazdır**: talebe yetişilemez. Yükleri takttan çok düşük olan istasyonlarda ise bekleme oluşur.
@@ -73,6 +74,11 @@ Adım sırası korunarak her kişiye takt dolana kadar adım verilir:
 - Dördüncü kişinin 6 saniyelik boş kapasitesi var. Bu süre malzeme besleme, boş palet getirme gibi işlerle doldurulabilir.
 
 Kişi sayısı değişmeden çıktı yaklaşık **%57 arttı**.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/hat-dengeleme/yamazumi.svg" title="Büyük boyutta aç"><img src="/img/rehber/hat-dengeleme/yamazumi.svg" width="680" height="410" alt="Önce ikinci kişinin yükü 22 saniye, takt 14 saniye; hat darboğazda, denge verimi yüzde 55. Bantlama üçüncü kişiye geçince yükler 13, 13, 14 ve 8 saniye oluyor; hat takta yetişiyor, denge verimi yüzde 86." loading="lazy" /></a>
+  <figcaption>Bantlama ikinci kişiden üçüncü kişiye geçince darboğaz kalkıyor: aynı dört kişiyle hat takta yetişiyor.</figcaption>
+</figure>
 
 ## Dengeleme yetmediğinde
 

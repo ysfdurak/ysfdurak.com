@@ -9,6 +9,7 @@ tool:
   cta: "Ergonomi analizlerinizi Fine-Kinney veya 5×5 risk tablosuna dönüştürün, önlemleri takip edin."
   url: "https://durus.ysfdurak.com/"
   project: "/tr/projeler/durus-ergonomi-analizi/"
+  shot: "/img/durus/baslangic.webp"
 ---
 
 **Kısa cevap:** Fine-Kinney, bir tehlikenin riskini üç puanın çarpımıyla hesaplar:
@@ -93,6 +94,11 @@ Risk hâlâ "önemli" sınıfında, çünkü şiddet değişmedi. Bir sonraki ad
 > Risk = 1 × 6 × 7 = **42 → Olası**
 
 Bu örnek, ergonomik analizin (REBA, NIOSH) risk değerlendirmesine nasıl girdi olduğunu gösterir. Olasılık puanı tahminle değil, ölçülmüş bir analize dayanır.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/fine-kinney/risk-olcegi.svg" title="Büyük boyutta aç"><img src="/img/rehber/fine-kinney/risk-olcegi.svg" width="680" height="330" alt="Risk sınıfları: 20 altı önemsiz, 20–70 olası, 70–200 önemli, 200–400 yüksek, 400 ve üzeri tolerans gösterilemez. Forklift–yaya örneğinde risk 720'den 120'ye, alçak palet örneğinde 420'den 42'ye iniyor." loading="lazy" /></a>
+  <figcaption>Önlemlerin çoğu olasılığı ve frekansı düşürür. Forklift örneğinde şiddet değişmediği için risk hâlâ "önemli" sınıfında kalıyor.</figcaption>
+</figure>
 
 ## 5×5 matris ile farkı
 

@@ -9,6 +9,7 @@ tool:
   cta: "REBA'yı fotoğraf veya videodan açıları otomatik bularak hesaplayın. Kurulum ve hesap yok."
   url: "https://durus.ysfdurak.com/"
   project: "/tr/projeler/durus-ergonomi-analizi/"
+  shot: "/img/durus/durus-analizi.webp"
 ---
 
 **Kısa cevap:** REBA (Rapid Entire Body Assessment), bir çalışma duruşunun kas-iskelet sistemi için ne kadar riskli olduğunu tüm vücut üzerinden puanlayan bir yöntemdir. Gövde, boyun ve bacaklar bir grup, kollar ve bilekler diğer grup olarak puanlanır. Yük, kavrama ve aktivite puanları eklenir. Sonuç 1 ile 15 arasında bir sayıdır. **8 ve üzeri yüksek risk** demektir: duruş kısa sürede incelenmeli ve değiştirilmelidir.
@@ -110,6 +111,11 @@ Son olarak aktivite puanı eklenir, her biri +1:
 
 **REBA skoru = 9 + 1 = 10**
 
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/reba/puanlama.svg" title="Büyük boyutta aç"><img src="/img/rehber/reba/puanlama.svg" width="680" height="350" alt="Grup A: gövde 3, boyun 2, bacak 2; Tablo A 5, yük +2, Skor A 7. Grup B: üst kol 3, ön kol 2, bilek 2; Tablo B 5, kavrama +1, Skor B 6. Tablo C 9, aktivite +1: REBA 10." loading="lazy" /></a>
+  <figcaption>İki grup ayrı puanlanır, Tablo C'de birleşir. Yük, kavrama ve aktivite puanları tablolardan sonra eklenir.</figcaption>
+</figure>
+
 ## 4. Risk düzeyini yorumlayın
 
 | REBA skoru | Risk | Ne yapılmalı? |
@@ -136,6 +142,11 @@ Puan tablosu, riski en çok neyin artırdığını da gösterir. Örnekte gövde
 | **REBA** | **10 · Yüksek** | **5 · Orta** |
 
 Risk yarıya indi ama hâlâ orta düzeyde. Bir sonraki adım yükü azaltmak (daha küçük koli) ya da tutamaklı kasa kullanmak olabilir.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/reba/once-sonra-durus.svg" title="Büyük boyutta aç"><img src="/img/rehber/reba/once-sonra-durus.svg" width="680" height="360" alt="Solda çalışan gövdesi 45 derece eğik, dizleri bükük, yerden 15 santimetredeki paletten koli alıyor: REBA 10, yüksek risk. Sağda palet makaslı kaldırıcıyla bel hizasına gelmiş, çalışan dik duruyor: REBA 5, orta risk." loading="lazy" /></a>
+  <figcaption>Palet bel hizasına kalkınca gövde dikleşiyor, dizler düzleşiyor ve kol yükü alıyor: REBA 10'dan 5'e.</figcaption>
+</figure>
 
 ## Sık yapılan hatalar
 
