@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 360" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Alçak paletten koli alma: palet yükseltici öncesi ve sonrası</title>
+  <desc id="d">Solda çalışan gövdesi 45 derece eğik, dizleri bükük, yerden 15 santimetredeki paletten koli alıyor: REBA 10, yüksek risk. Sağda palet makaslı kaldırıcıyla bel hizasına gelmiş, çalışan dik duruyor: REBA 5, orta risk.</desc>
+  <rect width="680" height="360" fill="#ffffff"/>
+  <rect x="10" y="10" width="320" height="340" rx="14" fill="#fdf3f2" stroke="#efd2cf"/>
+  <rect x="350" y="10" width="320" height="340" rx="14" fill="#eef7f5" stroke="#cbe6e1"/>
+  <text x="30" y="44" font-size="22" font-weight="800" fill="#b42318">Önce</text>
+  <text x="370" y="44" font-size="22" font-weight="800" fill="#0f766e">Sonra</text>
+  <line x1="30" y1="280" x2="310" y2="280" stroke="#c9d1dc" stroke-width="2"/>
+  <rect x="180" y="266" width="110" height="14" fill="#b08455"/>
+  <rect x="200" y="230" width="60" height="36" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <path d="M118,200 L130,242 L104,276" fill="none" stroke="#6b7a93" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M118,200 L140,240 L118,276" fill="none" stroke="#13294b" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M118,200 L170,150" fill="none" stroke="#13294b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M170,150 L186,186 L204,226" fill="none" stroke="#13294b" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="190" cy="136" r="13" fill="#13294b"/>
+  <text x="60" y="120" font-size="14" font-weight="700" fill="#b42318">Gövde 45°</text>
+  <text x="150" y="262" font-size="13" font-weight="600" fill="#b42318">Diz 40°</text>
+  <text x="30" y="312" font-size="18" font-weight="800" fill="#b42318">REBA 10 · Yüksek</text>
+  <text x="30" y="334" font-size="14" fill="#4a5872">NIOSH LI 1,84 · OWAS 3</text>
+  <line x1="370" y1="280" x2="650" y2="280" stroke="#c9d1dc" stroke-width="2"/>
+  <rect x="520" y="272" width="120" height="8" fill="#64748b"/>
+  <line x1="526" y1="272" x2="634" y2="196" stroke="#64748b" stroke-width="4"/>
+  <line x1="634" y1="272" x2="526" y2="196" stroke="#64748b" stroke-width="4"/>
+  <rect x="520" y="188" width="120" height="8" fill="#64748b"/>
+  <rect x="528" y="174" width="104" height="14" fill="#b08455"/>
+  <rect x="548" y="138" width="60" height="36" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <path d="M460,196 L452,238 L448,276" fill="none" stroke="#6b7a93" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M460,196 L462,238 L460,276" fill="none" stroke="#13294b" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M460,196 L470,126" fill="none" stroke="#13294b" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M470,126 L492,160 L522,160" fill="none" stroke="#13294b" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="476" cy="106" r="13" fill="#13294b"/>
+  <text x="386" y="100" font-size="14" font-weight="700" fill="#0f766e">Gövde 10°</text>
+  <text x="372" y="312" font-size="18" font-weight="800" fill="#0f766e">REBA 5 · Orta</text>
+  <text x="372" y="334" font-size="14" fill="#4a5872">NIOSH LI 0,93 · OWAS 1</text>
+</svg>

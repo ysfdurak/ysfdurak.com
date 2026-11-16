@@ -186,3 +186,22 @@ section[id] { scroll-margin-top: 1rem; }
 .guide-list li { border-bottom: 1px solid var(--line); padding: 0.9rem 0; }
 .guide-list a { font-weight: 600; font-size: 1.1rem; }
 .guide-list p { margin: 0.3rem 0 0; color: var(--ink-soft); }
+
+/* Rehber görselleri */
+.guide .rehber-gorsel { margin: 1.6rem 0; }
+.guide .rehber-gorsel img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
+.guide .rehber-gorsel figcaption { font-size: 0.88rem; color: var(--ink-soft); margin-top: 0.45rem; line-height: 1.5; }
+.tool-box.has-shot { display: grid; grid-template-columns: 1fr 180px; gap: 1rem; align-items: center; }
+.tool-box .tool-shot img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 8px; }
+@media (max-width: 560px) { .tool-box.has-shot { grid-template-columns: 1fr; } .tool-box .tool-shot { max-width: 320px; } }
+.guide .rehber-foto img { border: 0; background: #e2e8f0; }
+.guide .rehber-foto .kredi { display: block; font-size: 0.8rem; margin-top: 0.15rem; }
+.guide .rehber-foto .kredi a { color: inherit; }
+.guide .foto-cift { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+.guide .foto-cift > div { position: relative; }
+.guide .foto-cift img { aspect-ratio: 3 / 2; object-fit: cover; }
+.guide .foto-cift figcaption { grid-column: 1 / -1; }
+.guide .foto-etiket { position: absolute; left: 0.6rem; top: 0.6rem; padding: 0.15rem 0.6rem; border-radius: 999px; font-weight: 700; font-size: 0.85rem; color: #fff; }
+.guide .foto-etiket.once { background: #b42318; }
+.guide .foto-etiket.sonra { background: #0f766e; }
+@media (max-width: 560px) { .guide .foto-cift { grid-template-columns: 1fr; } }

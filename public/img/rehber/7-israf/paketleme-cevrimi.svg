@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Paketleme çevrimi: 46 saniyeden 32 saniyeye</title>
+  <desc id="d">Önce 46 saniyelik çevrimde 14 saniye katma değerli yerleştirme, 14 saniye israf (fazla işlem 6, hareket 3, bekleme 5) var. İsraf kaldırılınca çevrim 32 saniyeye iniyor, katma değerli payı yüzde 30'dan yüzde 44'e çıkıyor.</desc>
+  <rect width="680" height="330" fill="#ffffff"/>
+  <text x="24" y="36" font-size="19" font-weight="700" fill="#13294b">Paketleme çevrimi: adımlar sınıflandırıldı</text>
+  <text x="24" y="94" font-size="17" font-weight="800" fill="#b42318">Önce</text>
+  <rect x="110" y="64" width="60.4" height="46" rx="4" fill="#b42318"/>
+  <text x="140.2" y="93" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+  <line x1="140.2" y1="114" x2="140.2" y2="124" stroke="#b42318" stroke-width="1.5"/>
+  <text x="140.2" y="140" font-size="13" font-weight="600" fill="#b42318" text-anchor="middle">Fazla işlem</text>
+  <rect x="172.4" y="64" width="81.2" height="46" rx="4" fill="#94a3b8"/>
+  <text x="213.0" y="93" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">8</text>
+  <rect x="255.6" y="64" width="143.6" height="46" rx="4" fill="#0f766e"/>
+  <text x="327.4" y="93" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">14 sn · Yerleştirme</text>
+  <rect x="401.2" y="64" width="29.2" height="46" rx="4" fill="#b42318"/>
+  <text x="415.8" y="93" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+  <line x1="415.8" y1="114" x2="415.8" y2="124" stroke="#b42318" stroke-width="1.5"/>
+  <text x="415.8" y="140" font-size="13" font-weight="600" fill="#b42318" text-anchor="middle">Hareket</text>
+  <rect x="432.4" y="64" width="60.4" height="46" rx="4" fill="#94a3b8"/>
+  <text x="462.6" y="93" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+  <rect x="494.8" y="64" width="50.0" height="46" rx="4" fill="#b42318"/>
+  <text x="519.8" y="93" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+  <line x1="519.8" y1="114" x2="519.8" y2="124" stroke="#b42318" stroke-width="1.5"/>
+  <text x="519.8" y="140" font-size="13" font-weight="600" fill="#b42318" text-anchor="middle">Bekleme</text>
+  <rect x="546.8" y="64" width="39.6" height="46" rx="4" fill="#94a3b8"/>
+  <text x="566.6" y="93" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="600.4" y="86" font-size="17" font-weight="800" fill="#14213a">46 sn</text>
+  <text x="600.4" y="106" font-size="14" font-weight="700" fill="#0f766e">VA %30</text>
+  <text x="24" y="208" font-size="17" font-weight="800" fill="#0f766e">Sonra</text>
+  <rect x="110" y="178" width="81.2" height="46" rx="4" fill="#94a3b8"/>
+  <text x="150.6" y="207" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">8</text>
+  <rect x="193.2" y="178" width="143.6" height="46" rx="4" fill="#0f766e"/>
+  <text x="265.0" y="207" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">14 sn · Yerleştirme</text>
+  <rect x="338.8" y="178" width="60.4" height="46" rx="4" fill="#94a3b8"/>
+  <text x="369.0" y="207" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+  <rect x="401.2" y="178" width="39.6" height="46" rx="4" fill="#94a3b8"/>
+  <text x="421.0" y="207" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="600.4" y="200" font-size="17" font-weight="800" fill="#14213a">32 sn</text>
+  <text x="600.4" y="220" font-size="14" font-weight="700" fill="#0f766e">VA %44</text>
+  <rect x="442.8" y="178" width="143.6" height="46" rx="4" fill="none" stroke="#b42318" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="515.6" y="206" font-size="14" font-weight="700" fill="#b42318" text-anchor="middle">−14 sn</text>
+  <text x="24" y="262" font-size="14" fill="#4a5872">Barkodla sipariş açma, sabit bant askısı ve önceden etiket basma 14 sn israfı kaldırdı.</text>
+  <rect x="24" y="289" width="14" height="14" rx="3" fill="#0f766e"/>
+  <text x="45" y="300" font-size="14" fill="#4a5872">Katma değerli (VA)</text>
+  <rect x="212.1" y="289" width="14" height="14" rx="3" fill="#94a3b8"/>
+  <text x="233.1" y="300" font-size="14" fill="#4a5872">Gerekli (SVA)</text>
+  <rect x="361.0" y="289" width="14" height="14" rx="3" fill="#b42318"/>
+  <text x="382.0" y="300" font-size="14" fill="#4a5872">İsraf (NVA)</text>
+</svg>

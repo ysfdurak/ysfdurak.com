@@ -9,6 +9,7 @@ tool:
   cta: "Deneyim örneklerini STAR yapısında yaz, mülakat dosyanı oluştur ve cevabını prova et. Ücretsiz, hesap gerekmez."
   url: "https://aday.ysfdurak.com/"
   project: "/tr/projeler/aday-atolyesi/"
+  shot: "/img/aday-atolyesi/hazirlik-plani.webp"
 ---
 
 **Kısa cevap:** Yetkinlik bazlı mülakatta "Bana bir zamanı anlatın ki…" diye başlayan sorular, geçmişte gerçekten ne yaptığınızı öğrenmek için sorulur. **STAR tekniği** cevabı dört parçaya ayırır: **Durum** (Situation), **Görev** (Task), **Eylem** (Action), **Sonuç** (Result). İyi bir cevabın ağırlığı eylemdedir: ekibin değil, sizin ne yaptığınız. Sonuç da mümkünse bir sayıyla ve bunu nereden bildiğinizle söylenir.
@@ -35,6 +36,11 @@ Bu sorular varsayıma değil, yaşanmış bir olaya yöneliktir:
 | **Sonuç** | Ne değişti, ne kadar, nasıl ölçüldü? | Kısa ve somut |
 
 Sık yapılan hata, sürenin çoğunu durumu anlatmaya harcamaktır. Görüşmeci asıl eylemi duymak ister.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/star-teknigi/star-yapisi.svg" title="Büyük boyutta aç"><img src="/img/rehber/star-teknigi/star-yapisi.svg" width="680" height="330" alt="Durum ve görev kısa, eylem cevabın yarıdan fazlası, sonuç sayı ve dayanakla. Altında üç takip sorusu: dayanak, alternatif, öğrenme." loading="lazy" /></a>
+  <figcaption>Durum ve görev kısa tutulur, sürenin çoğu eyleme ayrılır. Takip soruları çoğunlukla sonucun dayanağını ve seçilmeyen yolları sorar.</figcaption>
+</figure>
 
 ## Örnek cevap
 

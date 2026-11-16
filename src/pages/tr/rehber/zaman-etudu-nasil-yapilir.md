@@ -9,6 +9,7 @@ tool:
   cta: "Bu yazıdaki hesapları videodan, kurulumsuz yapın. Video cihazınızdan çıkmaz."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
+  shot: "/img/video-zaman-etudu/olcum.webp"
 ---
 
 **Kısa cevap:** İşi başlangıç ve bitiş noktası belli adımlara bölün. Her adımı yeterli sayıda gözlemleyin ve ortalama süreyi bulun. Ortalamayı tempo puanıyla çarparak **normal süreyi**, normal süreye tolerans ekleyerek **standart süreyi** hesaplayın. Kaç gözlemin yeterli olduğunu tahminle değil, t dağılımıyla belirleyin.
@@ -96,6 +97,11 @@ Bazı kaynaklar toleransı `Normal × (1 + Tolerans)` biçiminde ekler. Bu yönt
 | Saatlik kapasite (3.600 ÷ 14,78) | yaklaşık 243 koli |
 
 Bu yalnızca bantlama adımıdır. İstasyonun toplam standart süresi, adımların standart sürelerinin toplamıdır. Takt süresiyle (müsait çalışma süresi ÷ talep) karşılaştırarak kaç kişiye ihtiyaç olduğunu bulabilirsiniz.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/zaman-etudu/standart-sure.svg" title="Büyük boyutta aç"><img src="/img/rehber/zaman-etudu/standart-sure.svg" width="680" height="380" alt="On gözlemin ortalaması 12,39 saniye. Yüzde 105 tempo ile normal süre 13,01, yüzde 12 tolerans ile standart süre 14,78 saniye. Saatlik kapasite yaklaşık 243 koli." loading="lazy" /></a>
+  <figcaption>Noktalar on gözlemi gösteriyor. Tempo ve tolerans ortalamayı standart süreye, standart süre kapasiteye dönüşüyor.</figcaption>
+</figure>
 
 ## Sık yapılan hatalar
 

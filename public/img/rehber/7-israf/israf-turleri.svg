@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">7 israf ve sekizinci israf: depodan örnekler</title>
+  <desc id="d">Sekiz kart: taşıma, stok, hareket, bekleme, fazla üretim, fazla işlem, hata ve kullanılmayan yetenek; her birinde depodan bir örnek.</desc>
+  <rect width="680" height="420" fill="#ffffff"/>
+  <rect x="12" y="12" width="155" height="190" rx="12" fill="#ffffff" stroke="#dde3ec" stroke-width="2"/>
+  <rect x="12" y="12" width="155" height="8" rx="4" fill="#b42318"/>
+  <rect x="37.5" y="70" width="30" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="35.5" y="92" width="34" height="5" fill="#b08455"/>
+  <path d="M75.5,82 L93.5,60 L109.5,84 L125.5,62" fill="none" stroke="#b42318" stroke-width="3" stroke-dasharray="5 4" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="119.5" y1="70" x2="130.4" y2="59.1" stroke="#b42318" stroke-width="3"/><polygon points="137.5,52.0 134.7,63.3 126.2,54.8" fill="#b42318"/>
+  <text x="89.5" y="134" font-size="17" font-weight="700" fill="#14213a" text-anchor="middle">1 · Taşıma</text>
+  <text x="89.5" y="158" font-size="13" fill="#4a5872" text-anchor="middle">Paletin birkaç kez</text>
+  <text x="89.5" y="176" font-size="13" fill="#4a5872" text-anchor="middle">el değiştirmesi</text>
+  <rect x="179" y="12" width="155" height="190" rx="12" fill="#ffffff" stroke="#dde3ec" stroke-width="2"/>
+  <rect x="179" y="12" width="155" height="8" rx="4" fill="#b42318"/>
+  <rect x="209.5" y="77" width="22" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="233.5" y="77" width="22" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="257.5" y="77" width="22" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="281.5" y="77" width="22" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="221.5" y="53" width="22" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="245.5" y="53" width="22" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="269.5" y="53" width="22" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="233.5" y="29" width="22" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="257.5" y="29" width="22" height="22" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <text x="256.5" y="134" font-size="17" font-weight="700" fill="#14213a" text-anchor="middle">2 · Stok</text>
+  <text x="256.5" y="158" font-size="13" fill="#4a5872" text-anchor="middle">İstasyon önünde</text>
+  <text x="256.5" y="176" font-size="13" fill="#4a5872" text-anchor="middle">biriken siparişler</text>
+  <rect x="346" y="12" width="155" height="190" rx="12" fill="#ffffff" stroke="#dde3ec" stroke-width="2"/>
+  <rect x="346" y="12" width="155" height="8" rx="4" fill="#b42318"/>
+  <path d="M405.5,78 L411.5,92 L403.5,106" fill="none" stroke="#13294b" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M405.5,78 L433.5,54" fill="none" stroke="#13294b" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M433.5,54 L441.5,72 L453.5,90" fill="none" stroke="#13294b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/>
+  <circle cx="445.5" cy="44" r="13" fill="#13294b"/>
+  <rect x="449.5" y="92" width="22" height="16" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <text x="423.5" y="134" font-size="17" font-weight="700" fill="#14213a" text-anchor="middle">3 · Hareket</text>
+  <text x="423.5" y="158" font-size="13" fill="#4a5872" text-anchor="middle">Alçak paletten</text>
+  <text x="423.5" y="176" font-size="13" fill="#4a5872" text-anchor="middle">eğilerek koli almak</text>
+  <rect x="513" y="12" width="155" height="190" rx="12" fill="#ffffff" stroke="#dde3ec" stroke-width="2"/>
+  <rect x="513" y="12" width="155" height="8" rx="4" fill="#b42318"/>
+  <circle cx="590.5" cy="74" r="30" fill="#ffffff" stroke="#13294b" stroke-width="4"/>
+  <line x1="590.5" y1="74" x2="590.5" y2="55" stroke="#13294b" stroke-width="4" stroke-linecap="round"/>
+  <line x1="590.5" y1="74" x2="604.5" y2="80" stroke="#13294b" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="590.5" cy="74" r="3" fill="#13294b"/>
+  <text x="590.5" y="134" font-size="17" font-weight="700" fill="#14213a" text-anchor="middle">4 · Bekleme</text>
+  <text x="590.5" y="158" font-size="13" fill="#4a5872" text-anchor="middle">Forkliftin rampa</text>
+  <text x="590.5" y="176" font-size="13" fill="#4a5872" text-anchor="middle">açılmasını beklemesi</text>
+  <rect x="12" y="214" width="155" height="190" rx="12" fill="#ffffff" stroke="#dde3ec" stroke-width="2"/>
+  <rect x="12" y="214" width="155" height="8" rx="4" fill="#b42318"/>
+  <rect x="49.5" y="288" width="46" height="18" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="47.5" y="306" width="50" height="4" fill="#b08455"/>
+  <rect x="49.5" y="266" width="46" height="18" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="47.5" y="284" width="50" height="4" fill="#b08455"/>
+  <rect x="49.5" y="244" width="46" height="18" rx="2" fill="#d6b98c" stroke="#a88a5c" stroke-width="1.5"/>
+  <rect x="47.5" y="262" width="50" height="4" fill="#b08455"/>
+  <text x="119.5" y="288" font-size="40" font-weight="800" fill="#b42318" text-anchor="middle">+</text>
+  <text x="89.5" y="336" font-size="17" font-weight="700" fill="#14213a" text-anchor="middle">5 · Fazla üretim</text>
+  <text x="89.5" y="360" font-size="13" fill="#4a5872" text-anchor="middle">Sevkiyattan çok</text>
+  <text x="89.5" y="378" font-size="13" fill="#4a5872" text-anchor="middle">önce hazır paletler</text>
+  <rect x="179" y="214" width="155" height="190" rx="12" fill="#ffffff" stroke="#dde3ec" stroke-width="2"/>
+  <rect x="179" y="214" width="155" height="8" rx="4" fill="#b42318"/>
+  <rect x="232.5" y="244" width="48" height="62" rx="4" fill="#ffffff" stroke="#13294b" stroke-width="3"/>
+  <path d="M242.5,264 l7,7 l13,-14" fill="none" stroke="#0f766e" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M242.5,288 l7,7 l13,-14" fill="none" stroke="#b42318" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <line x1="266.5" y1="267" x2="272.5" y2="267" stroke="#94a3b8" stroke-width="3"/>
+  <line x1="266.5" y1="291" x2="272.5" y2="291" stroke="#94a3b8" stroke-width="3"/>
+  <text x="256.5" y="336" font-size="17" font-weight="700" fill="#14213a" text-anchor="middle">6 · Fazla işlem</text>
+  <text x="256.5" y="360" font-size="13" fill="#4a5872" text-anchor="middle">Doğrulanmış</text>
+  <text x="256.5" y="378" font-size="13" fill="#4a5872" text-anchor="middle">siparişi yeniden</text>
+  <text x="256.5" y="396" font-size="13" fill="#4a5872" text-anchor="middle">saymak</text>
+  <rect x="346" y="214" width="155" height="190" rx="12" fill="#ffffff" stroke="#dde3ec" stroke-width="2"/>
+  <rect x="346" y="214" width="155" height="8" rx="4" fill="#b42318"/>
+  <rect x="397.5" y="254" width="52" height="44" rx="3" fill="#d6b98c" stroke="#a88a5c" stroke-width="2"/>
+  <line x1="411.5" y1="266" x2="435.5" y2="286" stroke="#b42318" stroke-width="5" stroke-linecap="round"/>
+  <line x1="435.5" y1="266" x2="411.5" y2="286" stroke="#b42318" stroke-width="5" stroke-linecap="round"/>
+  <text x="423.5" y="336" font-size="17" font-weight="700" fill="#14213a" text-anchor="middle">7 · Hata</text>
+  <text x="423.5" y="360" font-size="13" fill="#4a5872" text-anchor="middle">Yanlış etiket,</text>
+  <text x="423.5" y="378" font-size="13" fill="#4a5872" text-anchor="middle">yeniden paketleme</text>
+  <rect x="513" y="214" width="155" height="190" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="513" y="214" width="155" height="8" rx="4" fill="#94a3b8"/>
+  <circle cx="590.5" cy="268" r="22" fill="#fef9c3" stroke="#b45309" stroke-width="3"/>
+  <rect x="580.5" y="290" width="20" height="14" rx="3" fill="#94a3b8"/>
+  <path d="M584.5,272 l6,8 l6,-8" fill="none" stroke="#b45309" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="590.5" y="336" font-size="17" font-weight="700" fill="#14213a" text-anchor="middle">8 · Yetenek</text>
+  <text x="590.5" y="360" font-size="13" fill="#4a5872" text-anchor="middle">Sahadaki fikirleri</text>
+  <text x="590.5" y="378" font-size="13" fill="#4a5872" text-anchor="middle">sormamak</text>
+</svg>

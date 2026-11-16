@@ -9,6 +9,7 @@ tool:
   cta: "Adımları el işi, yürüme, makine ve bekleme olarak işaretleyin; kombinasyon tablosu otomatik çizilsin."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
+  shot: "/img/video-zaman-etudu/analiz.webp"
 ---
 
 **Kısa cevap:** Standart iş kombinasyon tablosu, bir çevrimdeki **insan işini ve makine işini aynı zaman çizelgesinde** gösterir. Her adım türüne göre çizilir: el işi, yürüme, makine işi ve bekleme. Makine çalışırken operatör başka bir iş yapabiliyorsa bu tabloda hemen görülür. Amaç, operatörün makineyi izleyerek beklediği süreyi ortadan kaldırmak ve çevrimi [takt zamanına](/tr/rehber/takt-zamani-nedir/) sığdırmaktır.
@@ -57,6 +58,11 @@ Operatör paleti streç makinesine getiriyor, makineyi başlatıyor ve makine sa
 > Operatörün işi 50 sn, makine 60 sn'de bitiyor. Çevrim süresi = **60 sn**.
 
 Aynı kişi ve aynı makineyle çevrim **95 saniyeden 60 saniyeye** iniyor: saatte yaklaşık 38 yerine **60 palet**. Artık çevrimi makine belirliyor. Operatörün 10 saniyelik boşluğu, makine sararken yapılabilecek başka bir iş için kullanılabilir.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/standart-is/kombinasyon-tablosu.svg" title="Büyük boyutta aç"><img src="/img/rehber/standart-is/kombinasyon-tablosu.svg" width="680" height="430" alt="Mevcut düzende operatör makine sararken 45 saniye bekliyor, çevrim 95 saniye. Yeni düzende etiketleme ve sonraki paleti hazırlama makine sararken yapılıyor; operatörün işi 50 saniyede bitiyor, çevrimi makine belirliyor: 60 saniye." loading="lazy" /></a>
+  <figcaption>Makine sararken operatörün beklediği 45 saniye, etiketleme ve sonraki palet için kullanılınca çevrim 95 saniyeden 60 saniyeye iniyor.</figcaption>
+</figure>
 
 ## Ne zaman kullanılır?
 

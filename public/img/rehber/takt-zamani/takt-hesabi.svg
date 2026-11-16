@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 400" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Takt zamanı ve gereken kişi sayısı</title>
+  <desc id="d">28.800 saniyelik vardiyadan molalar ve toplantı düşülünce 25.200 saniye kalır; 1.800 koli için takt 14 saniyedir. 50 saniyelik iş içeriği 14 saniyelik dilimlere bölününce 3,6 kişi eder, yani 4 kişi gerekir.</desc>
+  <rect width="680" height="400" fill="#ffffff"/>
+  <text x="24" y="34" font-size="18" font-weight="700" fill="#13294b">Kullanılabilir süre</text>
+  <rect x="24" y="50" width="551.0" height="44" rx="4" fill="#0f766e"/>
+  <text x="299.5" y="78" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">25.200 sn kullanılabilir</text>
+  <rect x="577.0" y="50" width="57.2" height="44" rx="4" fill="#cbd5e1"/>
+  <text x="605.6" y="78" font-size="14" font-weight="700" fill="#14213a" text-anchor="middle"></text>
+  <rect x="636.2" y="50" width="17.8" height="44" rx="4" fill="#e2e8f0"/>
+  <text x="645.1" y="78" font-size="14" font-weight="700" fill="#14213a" text-anchor="middle"></text>
+  <text x="24" y="116" font-size="13" fill="#4a5872">Vardiya 8 saat = 28.800 sn</text>
+  <text x="656" y="116" font-size="13" fill="#4a5872" text-anchor="end">Molalar 2.700 + toplantı ve 5S 900</text>
+  <rect x="120" y="136" width="440" height="64" rx="12" fill="#ffffff" stroke="#13294b" stroke-width="2"/>
+  <text x="340" y="177" font-size="21" font-weight="800" fill="#13294b" text-anchor="middle">25.200 sn ÷ 1.800 koli = 14 sn / koli</text>
+  <line x1="340" y1="200" x2="340.0" y2="213.0" stroke="#4a5872" stroke-width="2.5"/><polygon points="340.0,222.0 334.6,213.0 345.4,213.0" fill="#4a5872"/>
+  <text x="24" y="248" font-size="18" font-weight="700" fill="#13294b">Kaç kişi? Bir kolinin toplam iş içeriği 50 sn</text>
+  <rect x="24" y="264" width="147.0" height="48" rx="4" fill="#0f766e"/>
+  <text x="99.0" y="294" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Kişi 1 · 14 sn</text>
+  <rect x="174.0" y="264" width="147.0" height="48" rx="4" fill="#0f766e"/>
+  <text x="249.0" y="294" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Kişi 2 · 14 sn</text>
+  <rect x="324.0" y="264" width="147.0" height="48" rx="4" fill="#0f766e"/>
+  <text x="399.0" y="294" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Kişi 3 · 14 sn</text>
+  <rect x="474.0" y="264" width="82.7" height="48" rx="4" fill="#5eead4"/>
+  <text x="516.9" y="294" font-size="13.5" font-weight="700" fill="#14213a" text-anchor="middle">Kişi 4 · 8</text>
+  <rect x="556.7" y="264" width="64.3" height="48" rx="4" fill="none" stroke="#4a5872" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="591.9" y="294" font-size="13" fill="#4a5872" text-anchor="middle">boş 6</text>
+  <line x1="24.0" y1="258" x2="24.0" y2="320" stroke="#b42318" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <line x1="172.0" y1="258" x2="172.0" y2="320" stroke="#b42318" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <line x1="322.0" y1="258" x2="322.0" y2="320" stroke="#b42318" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <line x1="472.0" y1="258" x2="472.0" y2="320" stroke="#b42318" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <line x1="622.0" y1="258" x2="622.0" y2="320" stroke="#b42318" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <text x="24" y="340" font-size="14" fill="#4a5872">Kırmızı çizgiler takt aralıklarını gösterir: her kişiye en fazla 14 sn iş düşer.</text>
+  <text x="24" y="370" font-size="16" font-weight="700" fill="#14213a">50 ÷ 14 ≈ 3,6 → 4 kişi; dördüncü kişi tam dolu çalışmaz.</text>
+</svg>

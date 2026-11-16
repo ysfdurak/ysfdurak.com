@@ -9,6 +9,7 @@ tool:
   cta: "NIOSH kaldırma denklemini ölçüleri girerek hesaplayın; hangi çarpanın riski artırdığını görün."
   url: "https://durus.ysfdurak.com/"
   project: "/tr/projeler/durus-ergonomi-analizi/"
+  shot: "/img/durus/formlar-niosh.webp"
 ---
 
 **Kısa cevap:** NIOSH kaldırma denklemi, iki elle yapılan bir kaldırma işi için **önerilen ağırlık sınırını (RWL)** hesaplar. 23 kg'lık bir sabit, kaldırmanın koşullarını yansıtan altı çarpanla küçültülür. Kaldırılan yükün RWL'ye oranı **kaldırma indeksidir (LI)**. LI 1'in altındaysa iş çoğu çalışan için güvenli kabul edilir. 1'in üstündeki her değer riskin arttığını gösterir.
@@ -42,6 +43,11 @@ Sınırlar: H 63 cm'yi, V 175 cm'yi veya A 135°'yi aşarsa ilgili çarpan sıf�
 ## Örnek: alçak paletten konveyöre koli
 
 Çalışan, yerden 15 cm yükseklikteki paletten 12 kg'lık tutamaksız koliyi alıp 75 cm yükseklikteki konveyöre koyuyor. Koli gövdesinden 40 cm uzakta, alırken 30° dönüyor. Dakikada 4 kaldırma, işin toplam süresi 1–2 saat.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/niosh/olculer.svg" title="Büyük boyutta aç"><img src="/img/rehber/niosh/olculer.svg" width="680" height="360" alt="Yan görünüş: çalışan yerden 15 santimetredeki paletten koliyi alıp 75 santimetrelik konveyöre koyuyor. Yatay mesafe H 40, dikey yükseklik V 15, dikey mesafe D 60 santimetre; gövde 30 derece dönüyor." loading="lazy" /></a>
+  <figcaption>Ölçüler kaldırmanın başlangıcında, ellerin koliyi kavradığı anda alınır.</figcaption>
+</figure>
 
 | Çarpan | Hesap | Değer |
 | --- | --- | --- |
@@ -79,6 +85,11 @@ En küçük çarpan, riski en çok artıran koşuldur. Örnekte en düşük değ
 > Yeni RWL ≈ **12,9 kg**, LI = 12 ÷ 12,9 ≈ **0,93**
 
 Tek bir önlemle iş "kabul edilebilir" sınırın altına iner. Tutamaklı kasaya geçilirse LI 0,88'e düşer.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/niosh/carpanlar.svg" title="Büyük boyutta aç"><img src="/img/rehber/niosh/carpanlar.svg" width="680" height="380" alt="Önce en küçük çarpanlar HM 0,63, FM 0,72 ve VM 0,82; önerilen sınır 6,5 kg, kaldırma indeksi 1,84. Palet yükseltici ile HM 0,83, VM 0,99, DM ve AM 1,00; önerilen sınır 12,9 kg, indeks 0,93." loading="lazy" /></a>
+  <figcaption>Palet yükseltici yatay, dikey, mesafe ve dönme çarpanlarını birlikte iyileştiriyor; sıklık ve kavrama aynı kalıyor.</figcaption>
+</figure>
 
 ## Sık yapılan hatalar
 

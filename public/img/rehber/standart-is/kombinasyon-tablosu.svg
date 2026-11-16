@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 430" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Streç sarma istasyonu: standart iş kombinasyon tablosu, mevcut ve yeni düzen</title>
+  <desc id="d">Mevcut düzende operatör makine sararken 45 saniye bekliyor, çevrim 95 saniye. Yeni düzende etiketleme ve sonraki paleti hazırlama makine sararken yapılıyor; operatörün işi 50 saniyede bitiyor, çevrimi makine belirliyor: 60 saniye.</desc>
+  <rect width="680" height="430" fill="#ffffff"/>
+  <text x="24" y="32" font-size="18" font-weight="800" fill="#b42318">Mevcut</text>
+  <line x1="120.0" y1="46" x2="120.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="120.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">0</text>
+  <line x1="175.0" y1="46" x2="175.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="175.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">10</text>
+  <line x1="230.0" y1="46" x2="230.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="230.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">20</text>
+  <line x1="285.0" y1="46" x2="285.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="285.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">30</text>
+  <line x1="340.0" y1="46" x2="340.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="340.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">40</text>
+  <line x1="395.0" y1="46" x2="395.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="395.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">50</text>
+  <line x1="450.0" y1="46" x2="450.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="450.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">60</text>
+  <line x1="505.0" y1="46" x2="505.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="505.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">70</text>
+  <line x1="560.0" y1="46" x2="560.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="560.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">80</text>
+  <line x1="615.0" y1="46" x2="615.0" y2="136" stroke="#eef1f5" stroke-width="1"/>
+  <text x="615.0" y="152" font-size="11.5" fill="#4a5872" text-anchor="middle">90</text>
+  <text x="24" y="78" font-size="15" font-weight="600" fill="#14213a">Operatör</text>
+  <text x="24" y="122" font-size="15" font-weight="600" fill="#14213a">Makine</text>
+  <path d="M120.0,73 Q125.0,68 130.0,73 Q135.0,78 140.0,73 Q145.0,68 150.0,73 Q155.0,78 160.0,73 Q165.0,68 170.0,73 Q175.0,78 180.0,73 Q183.0,68 186.0,73" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="153.0" y="57" font-size="12.5" fill="#4a5872" text-anchor="middle">Sür</text>
+  <line x1="187.0" y1="73" x2="201.5" y2="73" stroke="#13294b" stroke-width="6"/>
+  <rect x="202.5" y="60" width="247.5" height="26" rx="4" fill="#fdf3f2" stroke="#b42318" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="326.2" y="78" font-size="12.5" font-weight="700" fill="#b42318" text-anchor="middle">Makineyi izliyor 45 sn</text>
+  <line x1="451.0" y1="73" x2="559.0" y2="73" stroke="#13294b" stroke-width="6"/>
+  <text x="505.0" y="57" font-size="12.5" fill="#4a5872" text-anchor="middle">Etiket</text>
+  <line x1="561.0" y1="73" x2="641.5" y2="73" stroke="#13294b" stroke-width="6"/>
+  <text x="601.2" y="57" font-size="12.5" fill="#4a5872" text-anchor="middle">Sonraki palet</text>
+  <line x1="202.5" y1="117" x2="450.0" y2="117" stroke="#c2410c" stroke-width="6" stroke-dasharray="10 6"/>
+  <text x="326.2" y="103" font-size="12.5" font-weight="600" fill="#c2410c" text-anchor="middle">Streç sarma 45 sn</text>
+  <line x1="642.5" y1="44" x2="642.5" y2="136" stroke="#b42318" stroke-width="2.5"/>
+  <text x="636.5" y="36" font-size="14" font-weight="800" fill="#b42318" text-anchor="end">Çevrim 95 sn</text>
+  <text x="24" y="196" font-size="18" font-weight="800" fill="#0f766e">Yeni düzen</text>
+  <line x1="120.0" y1="210" x2="120.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="120.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">0</text>
+  <line x1="175.0" y1="210" x2="175.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="175.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">10</text>
+  <line x1="230.0" y1="210" x2="230.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="230.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">20</text>
+  <line x1="285.0" y1="210" x2="285.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="285.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">30</text>
+  <line x1="340.0" y1="210" x2="340.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="340.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">40</text>
+  <line x1="395.0" y1="210" x2="395.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="395.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">50</text>
+  <line x1="450.0" y1="210" x2="450.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="450.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">60</text>
+  <line x1="505.0" y1="210" x2="505.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="505.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">70</text>
+  <line x1="560.0" y1="210" x2="560.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="560.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">80</text>
+  <line x1="615.0" y1="210" x2="615.0" y2="300" stroke="#eef1f5" stroke-width="1"/>
+  <text x="615.0" y="316" font-size="11.5" fill="#4a5872" text-anchor="middle">90</text>
+  <text x="24" y="242" font-size="15" font-weight="600" fill="#14213a">Operatör</text>
+  <text x="24" y="286" font-size="15" font-weight="600" fill="#14213a">Makine</text>
+  <path d="M120.0,237 Q125.0,232 130.0,237 Q135.0,242 140.0,237 Q145.0,232 150.0,237 Q155.0,242 160.0,237 Q165.0,232 170.0,237 Q175.0,242 180.0,237 Q183.0,232 186.0,237" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="153.0" y="221" font-size="12.5" fill="#4a5872" text-anchor="middle">Sür</text>
+  <line x1="187.0" y1="237" x2="201.5" y2="237" stroke="#13294b" stroke-width="6"/>
+  <line x1="203.5" y1="237" x2="311.5" y2="237" stroke="#13294b" stroke-width="6"/>
+  <text x="257.5" y="221" font-size="12.5" fill="#4a5872" text-anchor="middle">Etiket</text>
+  <line x1="313.5" y1="237" x2="394.0" y2="237" stroke="#13294b" stroke-width="6"/>
+  <text x="353.8" y="221" font-size="12.5" fill="#4a5872" text-anchor="middle">Sonraki palet</text>
+  <rect x="395.0" y="224" width="55.0" height="26" rx="4" fill="#fdf3f2" stroke="#b42318" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="422.5" y="242" font-size="12.5" font-weight="700" fill="#b42318" text-anchor="middle">10</text>
+  <line x1="202.5" y1="281" x2="450.0" y2="281" stroke="#c2410c" stroke-width="6" stroke-dasharray="10 6"/>
+  <text x="326.2" y="267" font-size="12.5" font-weight="600" fill="#c2410c" text-anchor="middle">Streç sarma 45 sn</text>
+  <line x1="450.0" y1="208" x2="450.0" y2="300" stroke="#0f766e" stroke-width="2.5"/>
+  <text x="456.0" y="200" font-size="14" font-weight="800" fill="#0f766e">Çevrim 60 sn</text>
+  <text x="24" y="352" font-size="14" font-weight="600" fill="#14213a">Makine sararken etiket ve sonraki palet hazırlanıyor: saatte ~38 yerine ~60 palet.</text>
+  <line x1="24" y1="387" x2="60" y2="387" stroke="#13294b" stroke-width="6"/>
+  <text x="68" y="392" font-size="14" fill="#4a5872">El işi</text>
+  <path d="M140.0,387 Q145.0,382 150.0,387 Q155.0,392 160.0,387 Q165.0,382 170.0,387 Q173.0,392 176.0,387" fill="none" stroke="#1d4ed8" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+  <text x="184" y="392" font-size="14" fill="#4a5872">Yürüme</text>
+  <line x1="268" y1="387" x2="304" y2="387" stroke="#c2410c" stroke-width="6" stroke-dasharray="10 6"/>
+  <text x="312" y="392" font-size="14" fill="#4a5872">Makine</text>
+  <rect x="390" y="376" width="36" height="22" rx="4" fill="#fdf3f2" stroke="#b42318" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <text x="434" y="392" font-size="14" fill="#4a5872">Bekleme</text>
+  <text x="24" y="418" font-size="12" fill="#4a5872">Eksen: saniye</text>
+</svg>

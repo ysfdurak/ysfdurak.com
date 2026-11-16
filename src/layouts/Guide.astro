@@ -1,6 +1,7 @@
 ---
 // Rehber yazısı şablonu. src/pages/tr/rehber/*.md dosyaları bu düzeni kullanır.
-// Ön bilgi (frontmatter): title, description, updated (YYYY-MM-DD), tool: { name, url, project, cta }
+// Ön bilgi (frontmatter): title, description, updated (YYYY-MM-DD), tool: { name, url, project, cta, shot }
+// shot: araç kutusunda gösterilecek ekran görüntüsü (public/ altında). Yazı içi görseller: public/img/rehber/<konu>/
 import Base from './Base.astro';
 import { SITE } from '../data/site';
 
@@ -31,12 +32,15 @@ const jsonLd = {
     <p class="meta">Yusuf Durak · Güncelleme: <time datetime={fm.updated}>{updatedText}</time></p>
     {
       fm.tool && (
-        <aside class="tool-box">
-          <p><strong>{fm.tool.name}</strong> · {fm.tool.cta}</p>
-          <p class="tool-links">
-            <a class="btn primary" href={fm.tool.url}>Ücretsiz dene</a>
-            {fm.tool.project && <a class="btn" href={fm.tool.project}>Proje sayfası</a>}
-          </p>
+        <aside class={fm.tool.shot ? 'tool-box has-shot' : 'tool-box'}>
+          <div>
+            <p><strong>{fm.tool.name}</strong> · {fm.tool.cta}</p>
+            <p class="tool-links">
+              <a class="btn primary" href={fm.tool.url}>Ücretsiz dene</a>
+              {fm.tool.project && <a class="btn" href={fm.tool.project}>Proje sayfası</a>}
+            </p>
+          </div>
+          {fm.tool.shot && <a class="tool-shot" href={fm.tool.url}><img src={fm.tool.shot} alt={`${fm.tool.name} ekran görüntüsü`} width="360" height="225" loading="lazy" /></a>}
         </aside>
       )
     }

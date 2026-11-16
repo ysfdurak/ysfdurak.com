@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 330" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Fine-Kinney risk sınıfları ve iki örnekte önlemin etkisi</title>
+  <desc id="d">Risk sınıfları: 20 altı önemsiz, 20–70 olası, 70–200 önemli, 200–400 yüksek, 400 ve üzeri tolerans gösterilemez. Forklift–yaya örneğinde risk 720'den 120'ye, alçak palet örneğinde 420'den 42'ye iniyor.</desc>
+  <rect width="680" height="330" fill="#ffffff"/>
+  <text x="24" y="34" font-size="19" font-weight="700" fill="#13294b">Risk puanı = Olasılık × Frekans × Şiddet</text>
+  <rect x="30.0" y="56" width="141.5" height="40" rx="4" fill="#15803d"/>
+  <text x="101.7" y="80" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Önemsiz</text>
+  <rect x="173.5" y="56" width="127.6" height="40" rx="4" fill="#65a30d"/>
+  <text x="238.3" y="80" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Olası</text>
+  <rect x="303.1" y="56" width="106.6" height="40" rx="4" fill="#ca8a04"/>
+  <text x="357.4" y="80" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Önemli</text>
+  <rect x="411.7" y="56" width="69.7" height="40" rx="4" fill="#ea580c"/>
+  <text x="447.6" y="80" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">Yüksek</text>
+  <rect x="483.5" y="56" width="164.5" height="40" rx="4" fill="#b42318"/>
+  <text x="566.7" y="72" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Tolerans</text>
+  <text x="566.7" y="88" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">gösterilemez</text>
+  <text x="173.5" y="114" font-size="12.5" font-weight="600" fill="#4a5872" text-anchor="middle">20</text>
+  <text x="303.1" y="114" font-size="12.5" font-weight="600" fill="#4a5872" text-anchor="middle">70</text>
+  <text x="411.7" y="114" font-size="12.5" font-weight="600" fill="#4a5872" text-anchor="middle">200</text>
+  <text x="483.5" y="114" font-size="12.5" font-weight="600" fill="#4a5872" text-anchor="middle">400</text>
+  <text x="30" y="114" font-size="11.5" fill="#4a5872">Logaritmik ölçek</text>
+  <text x="24" y="150" font-size="15" font-weight="700" fill="#14213a">Forklift–yaya: bariyerli yaya yolu ile olasılık 3 → 0,5</text>
+  <line x1="30" y1="176" x2="650" y2="176" stroke="#dde3ec" stroke-width="1"/>
+  <line x1="534.3" y1="176" x2="381.9" y2="176.0" stroke="#0f766e" stroke-width="3"/><polygon points="370.9,176.0 381.9,169.4 381.9,182.6" fill="#0f766e"/>
+  <circle cx="544.3" cy="176" r="9" fill="#b42318"/>
+  <circle cx="358.9" cy="176" r="9" fill="#0f766e"/>
+  <text x="544.3" y="204" font-size="13" font-weight="700" fill="#b42318" text-anchor="middle">720 · 3×6×40</text>
+  <text x="358.9" y="204" font-size="13" font-weight="700" fill="#0f766e" text-anchor="middle">120 · 0,5×6×40</text>
+  <text x="24" y="236" font-size="15" font-weight="700" fill="#14213a">Alçak paletten koli: palet yükseltici ve rotasyon</text>
+  <line x1="30" y1="262" x2="650" y2="262" stroke="#dde3ec" stroke-width="1"/>
+  <line x1="478.5" y1="262" x2="273.2" y2="262.0" stroke="#0f766e" stroke-width="3"/><polygon points="262.2,262.0 273.2,255.4 273.2,268.6" fill="#0f766e"/>
+  <circle cx="488.5" cy="262" r="9" fill="#b42318"/>
+  <circle cx="250.2" cy="262" r="9" fill="#0f766e"/>
+  <text x="488.5" y="290" font-size="13" font-weight="700" fill="#b42318" text-anchor="middle">420 · 6×10×7</text>
+  <text x="250.2" y="290" font-size="13" font-weight="700" fill="#0f766e" text-anchor="middle">42 · 1×6×7</text>
+</svg>

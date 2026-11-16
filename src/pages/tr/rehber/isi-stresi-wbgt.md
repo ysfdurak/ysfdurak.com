@@ -9,6 +9,7 @@ tool:
   cta: "Sıcaklık ölçümlerini ve iş yükünü girin; WBGT ve referans değerle karşılaştırma otomatik hesaplansın."
   url: "https://durus.ysfdurak.com/"
   project: "/tr/projeler/durus-ergonomi-analizi/"
+  shot: "/img/durus/formlar-niosh.webp"
 ---
 
 **Kısa cevap:** Sıcak ortamda çalışmanın riski yalnızca hava sıcaklığına bağlı değildir: nem, ışınım (sıcak yüzeyler, güneş) ve iş yükü de belirleyicidir. **WBGT (Wet Bulb Globe Temperature)** bu etkileri tek bir sıcaklık değerinde toplar. Hesaplanan WBGT, işin ağırlığına ve çalışanın ısıya alışık olup olmadığına göre değişen **referans değerle** karşılaştırılır. Aşılıyorsa iş-dinlenme düzeni, teknik önlem ve ayrıntılı değerlendirme gerekir. Yöntem ISO 7243 standardına dayanır.
@@ -63,6 +64,11 @@ Referans değer belirgin biçimde aşıldı. Isıya alışık olmayan yeni bir �
 > Yeni referans (orta iş, alışık) = **28,2 °C** → referansın 0,4 °C altında
 
 Sonuç referansa çok yakın. Su, gölgeli dinlenme alanı ve izleme yine gerekir. En sıcak saatlerde iş-dinlenme döngüsü planlanmalıdır.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/isi-stresi/wbgt-karsilastirma.svg" title="Büyük boyutta aç"><img src="/img/rehber/isi-stresi/wbgt-karsilastirma.svg" width="680" height="410" alt="WBGT iç ortamda yaş termometre yüzde 70, glob termometre yüzde 30 ağırlıkla hesaplanır. Önce WBGT 29,6, ağır iş referansı 26,6: 3 derece aşım. Önlemlerden sonra WBGT 27,8, orta iş referansı 28,2: referansın 0,4 derece altında." loading="lazy" /></a>
+  <figcaption>Önlemler hem WBGT'yi düşürdü hem iş yükünü bir sınıf azaltarak referansı yükseltti.</figcaption>
+</figure>
 
 ## Önlem türleri
 

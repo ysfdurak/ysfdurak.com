@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 350" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">REBA puanlamasının akışı</title>
+  <desc id="d">Grup A: gövde 3, boyun 2, bacak 2; Tablo A 5, yük +2, Skor A 7. Grup B: üst kol 3, ön kol 2, bilek 2; Tablo B 5, kavrama +1, Skor B 6. Tablo C 9, aktivite +1: REBA 10.</desc>
+  <rect width="680" height="350" fill="#ffffff"/>
+  <text x="24" y="34" font-size="19" font-weight="700" fill="#13294b">REBA puanı nasıl birleşir? (örnek: 12 kg koli)</text>
+  <rect x="24" y="54" width="300" height="206" rx="12" fill="#ffffff" stroke="#c2410c" stroke-width="2"/>
+  <rect x="24" y="54" width="300" height="8" rx="4" fill="#c2410c"/>
+  <text x="40" y="90" font-size="16" font-weight="700" fill="#14213a">Grup A · gövde, boyun, bacak</text>
+  <rect x="40" y="104" width="82" height="50" rx="8" fill="#eef1f5"/>
+  <text x="81" y="126" font-size="12.5" fill="#4a5872" text-anchor="middle">Gövde 45°</text>
+  <text x="81" y="147" font-size="17" font-weight="800" fill="#14213a" text-anchor="middle">3</text>
+  <rect x="132" y="104" width="82" height="50" rx="8" fill="#eef1f5"/>
+  <text x="173" y="126" font-size="12.5" fill="#4a5872" text-anchor="middle">Boyun 25°</text>
+  <text x="173" y="147" font-size="17" font-weight="800" fill="#14213a" text-anchor="middle">2</text>
+  <rect x="224" y="104" width="82" height="50" rx="8" fill="#eef1f5"/>
+  <text x="265" y="126" font-size="12.5" fill="#4a5872" text-anchor="middle">Bacak</text>
+  <text x="265" y="147" font-size="17" font-weight="800" fill="#14213a" text-anchor="middle">2</text>
+  <text x="40" y="184" font-size="14" fill="#4a5872">Tablo A</text>
+  <text x="40" y="212" font-size="14" fill="#4a5872">+ Yük 12 kg</text>
+  <text x="308" y="184" font-size="16" font-weight="800" fill="#14213a" text-anchor="end">5</text>
+  <text x="308" y="212" font-size="16" font-weight="800" fill="#14213a" text-anchor="end">+2</text>
+  <line x1="40" y1="222" x2="308" y2="222" stroke="#dde3ec" stroke-width="1"/>
+  <text x="308" y="246" font-size="18" font-weight="800" fill="#c2410c" text-anchor="end">Skor A = 7</text>
+  <rect x="356" y="54" width="300" height="206" rx="12" fill="#ffffff" stroke="#1d4ed8" stroke-width="2"/>
+  <rect x="356" y="54" width="300" height="8" rx="4" fill="#1d4ed8"/>
+  <text x="372" y="90" font-size="16" font-weight="700" fill="#14213a">Grup B · kol ve bilek</text>
+  <rect x="372" y="104" width="82" height="50" rx="8" fill="#eef1f5"/>
+  <text x="413" y="126" font-size="12.5" fill="#4a5872" text-anchor="middle">Üst kol 50°</text>
+  <text x="413" y="147" font-size="17" font-weight="800" fill="#14213a" text-anchor="middle">3</text>
+  <rect x="464" y="104" width="82" height="50" rx="8" fill="#eef1f5"/>
+  <text x="505" y="126" font-size="12.5" fill="#4a5872" text-anchor="middle">Dirsek 110°</text>
+  <text x="505" y="147" font-size="17" font-weight="800" fill="#14213a" text-anchor="middle">2</text>
+  <rect x="556" y="104" width="82" height="50" rx="8" fill="#eef1f5"/>
+  <text x="597" y="126" font-size="12.5" fill="#4a5872" text-anchor="middle">Bilek 20°</text>
+  <text x="597" y="147" font-size="17" font-weight="800" fill="#14213a" text-anchor="middle">2</text>
+  <text x="372" y="184" font-size="14" fill="#4a5872">Tablo B</text>
+  <text x="372" y="212" font-size="14" fill="#4a5872">+ Kavrama orta</text>
+  <text x="640" y="184" font-size="16" font-weight="800" fill="#14213a" text-anchor="end">5</text>
+  <text x="640" y="212" font-size="16" font-weight="800" fill="#14213a" text-anchor="end">+1</text>
+  <line x1="372" y1="222" x2="640" y2="222" stroke="#dde3ec" stroke-width="1"/>
+  <text x="640" y="246" font-size="18" font-weight="800" fill="#1d4ed8" text-anchor="end">Skor B = 6</text>
+  <line x1="174" y1="262" x2="251.4" y2="287.2" stroke="#4a5872" stroke-width="2.5"/><polygon points="260.0,290.0 249.8,292.3 253.1,282.1" fill="#4a5872"/>
+  <line x1="506" y1="262" x2="428.6" y2="287.2" stroke="#4a5872" stroke-width="2.5"/><polygon points="420.0,290.0 426.9,282.1 430.2,292.3" fill="#4a5872"/>
+  <rect x="196" y="292" width="288" height="44" rx="10" fill="#fdf3f2" stroke="#efd2cf" stroke-width="1.5"/>
+  <text x="340" y="320" font-size="17" font-weight="800" fill="#b42318" text-anchor="middle">Tablo C 9 + aktivite 1 = REBA 10</text>
+</svg>

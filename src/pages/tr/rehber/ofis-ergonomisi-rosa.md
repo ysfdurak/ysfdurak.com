@@ -9,6 +9,7 @@ tool:
   cta: "ROSA'yı form üzerinden hesaplayın; hangi bölümün puanı yükselttiğini ve ne yapılacağını görün."
   url: "https://durus.ysfdurak.com/"
   project: "/tr/projeler/durus-ergonomi-analizi/"
+  shot: "/img/durus/formlar-niosh.webp"
 ---
 
 **Kısa cevap:** Masa başı çalışmada boyun, bel, omuz ve bilek rahatsızlıklarının çoğu sandalye, ekran, klavye ve farenin yanlış ayarından gelir. **ROSA (Rapid Office Strain Assessment)**, bu düzeni 1–10 arasında puanlayan yayımlanmış bir yöntemdir. Sandalye bir yanda, ekran, telefon, fare ve klavye öbür yanda puanlanır. Her bölüme günlük kullanım süresi eklenir. Sonuç ikisinden büyük olanıdır. **ROSA 5 ve üzeri** ise düzenleme ya da ayrıntılı değerlendirme gerekir.
@@ -21,6 +22,11 @@ tool:
 - **Klavye ve fare:** aynı yüzeyde, vücuda yakın. Bilekler düz, omuzlar gevşek.
 - **Telefon:** uzanmadan alınabiliyor; uzun görüşmede kulaklık.
 - **Ara:** 30–60 dakikada bir kısa ara ya da pozisyon değişikliği.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/ofis-ergonomisi/masa-basi-duzeni.svg" title="Büyük boyutta aç"><img src="/img/rehber/ofis-ergonomisi/masa-basi-duzeni.svg" width="680" height="420" alt="Oturan çalışanın yan görünüşü üzerinde altı kontrol noktası: dizler yaklaşık 90 derece ve ayaklar yerde, bel desteği ve 95–110 derece sırt açısı, dirsekler destekli, ekran üst kenarı göz hizasında, klavye ve fare aynı yüzeyde, ekran 40–75 santimetre uzakta." loading="lazy" /></a>
+  <figcaption>Doğru düzenin altı kontrol noktası. ROSA puanı yükseldiğinde ilk bakılacak yerler bunlardır.</figcaption>
+</figure>
 
 ## ROSA nasıl puanlanır?
 

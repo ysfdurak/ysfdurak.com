@@ -9,6 +9,7 @@ tool:
   cta: "İşi videodan ölçün, her adımı katma değer ve israf türüne göre sınıflandırın, iyileştirme fikirlerini toplayın."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
+  shot: "/img/video-zaman-etudu/analiz.webp"
 ---
 
 **Kısa cevap:** Yalın üretimde israf, müşterinin karşılığını ödemeye razı olmadığı her iştir. Toyota Üretim Sistemi'nden gelen 7 israf şunlardır: **taşıma, stok, hareket, bekleme, fazla üretim, fazla işlem ve hata**. Çoğu kaynak sekizinci israf olarak **kullanılmayan çalışan yeteneğini** ekler. İsrafı azaltmanın ilk adımı onu görmektir: bir iş adım adım ölçüldüğünde, sürenin büyük kısmının israf olduğu çoğu zaman şaşırtıcıdır.
@@ -24,6 +25,11 @@ Bir işin her adımı üç sınıftan birine girer:
 | **İsraf (NVA)** | Kaldırılabilecek iş | Malzeme aramak, bekleme |
 
 Amaç önce israfı kaldırmak, sonra gerekli işi azaltmaktır.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/7-israf/israf-turleri.svg" title="Büyük boyutta aç"><img src="/img/rehber/7-israf/israf-turleri.svg" width="680" height="420" alt="Sekiz kart: taşıma, stok, hareket, bekleme, fazla üretim, fazla işlem, hata ve kullanılmayan yetenek; her birinde depodan bir örnek." loading="lazy" /></a>
+  <figcaption>Sekiz israf türü ve depodaki karşılıkları. Sekizinci israf, kullanılmayan çalışan yeteneği, Toyota'nın ilk listesinde yoktur.</figcaption>
+</figure>
 
 ## 7 israf ve depodaki karşılıkları
 
@@ -97,6 +103,11 @@ Bir paketleme çevriminin adımları ölçüldü ve sınıflandırıldı:
 | **Toplam** | **46** | | |
 
 Katma değerli iş 46 saniyenin yalnızca **14 saniyesi (%30)**. Siparişi barkodla otomatik açmak, bant tabancasını sabit bir askıya almak ve etiketi bir önceki adımda yazdırmaya başlamak, kişi ve yatırım eklemeden 14 saniyelik israfı kaldırır. Çevrim **32 saniyeye** iner.
+
+<figure class="rehber-gorsel">
+  <a href="/img/rehber/7-israf/paketleme-cevrimi.svg" title="Büyük boyutta aç"><img src="/img/rehber/7-israf/paketleme-cevrimi.svg" width="680" height="330" alt="Önce 46 saniyelik çevrimde 14 saniye katma değerli yerleştirme, 14 saniye israf (fazla işlem 6, hareket 3, bekleme 5) var. İsraf kaldırılınca çevrim 32 saniyeye iniyor, katma değerli payı yüzde 30'dan yüzde 44'e çıkıyor." loading="lazy" /></a>
+  <figcaption>Aynı çevrim, israf kaldırılmadan önce ve sonra: katma değerli iş aynı kaldı, çevrim kısaldı.</figcaption>
+</figure>
 
 ## Sık yapılan hatalar
 
