@@ -84,10 +84,10 @@
       "repo": "ysfdurak/ivme-oneri-kaizen",
       "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "Canlı demo yayında; İngilizce sürüm hazırlanıyor",
-        "en": "Live demo; English version in progress"
+        "tr": "Türkçe ve İngilizce canlı demo yayında",
+        "en": "Live demo in Turkish and English"
       },
-      "ozel_not": "EN sürüm ayrı sohbette. Para birimi ayardan seçilebilir olacak."
+      "ozel_not": "Para birimi ayardan seçilebilir olacak."
     },
     {
       "id": "pusula",
@@ -255,10 +255,10 @@
       "ozel_not": "Pusula'ya isteğe bağlı bağlantı."
     },
     {
-      "id": "rampa-krizi",
+      "id": "yalin-oyun",
       "ad": {
-        "tr": "Rampa Krizi",
-        "en": "Rampa Krizi"
+        "tr": "Yalın Oyun",
+        "en": "Lean Game"
       },
       "aciklama": {
         "tr": "Oyuncunun bir depoda çalışarak israfları kendi yakaladığı ve yalın araçları hikâye içinde öğrendiği bir oyun. Zaman etüdü ve öneri sistemi gibi gerçek uygulamalar oyunun içinde kullanılır.",
