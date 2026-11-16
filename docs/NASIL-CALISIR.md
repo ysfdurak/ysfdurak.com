@@ -29,6 +29,9 @@ Sunucu, veritabanı veya giriş yok. Bu yüzden ücretsiz, hızlı ve bakım ger
 - **Proje eklemek:** `projects.ts` içine bir kayıt ekle (`slug`, `name`, `category`, `hosting`, TR ve EN metinleri). Canlı adresi olunca `url` alanını doldur; "Dene" butonu kendiliğinden açılır.
 - **İngilizce görseller:** Uygulama İngilizce de açılıyorsa ekran görüntülerine `srcEn`, kayda `ogEn` ekle; EN sayfada bunlar gösterilir.
 - **Uygulama iki dilliyse:** Kayda `langParam: true` ekle; “Dene” bağlantısı sayfanın diline göre `?lang=tr` veya `?lang=en` ile açılır.
+- **Tasarım kararları:** Kayda `decisions: { tr: [...], en: [...] }` eklenirse sayfada “Tasarım kararları ve nedenleri” bölümü çıkar (Aday Atölyesi).
+- **Tanıtım videosu:** `video: { src, poster, w, h, lang, caption }`. Dosyalar `public/video/` altında; `lang: 'en'` verilirse yalnız İngilizce sayfada görünür. Altyazı videonun içine işlenmiştir.
+- **Yalnız Türkçe uygulama:** Kayda `turkishOnly: { en: '...' }` ekle; İngilizce sayfada “For Turkish speakers” etiketi ve bu açıklama çıkar (Kesit, İngilizce Atölyesi, Aday Atölyesi). Bu uygulamalarda `langParam: true` da var: “Dene” bağlantısı `?lang=en` ile uygulamanın İngilizce tanıtım turunu açar; arayüz yine Türkçedir.
 - **Windows indirme düğmesi:** Masaüstü sürümü olan projede kayda `download` alanını ekle (ör. GitHub'daki `releases/latest` adresi); proje sayfasında “Windows için indir” düğmesi çıkar.
 - **Vitrine almak:** Kayda `featured: true` ekle.
 - **Metin değiştirmek:** İlgili dosyayı GitHub'da açıp kalem simgesiyle düzenleyebilirsin; kaydedince site birkaç dakikada güncellenir.

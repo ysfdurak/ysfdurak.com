@@ -47,6 +47,7 @@ const jsonLd = {
     <p class="crumb"><a href={NAV[lang].projects}>{t('project.back')}</a> / {CATEGORIES[p.category][lang]}</p>
     <h1>{p.name}</h1>
     <p class="lead">{text.tagline}</p>
+    {lang === 'en' && p.turkishOnly && <p class="tr-only"><strong>Turkish interface.</strong> {p.turkishOnly.en}</p>}
 
     <div class="actions">
       {
@@ -60,6 +61,7 @@ const jsonLd = {
       {p.repo && <a class="btn" href={p.repo}>{t('project.code')}</a>}
       {p.repos?.map((r) => <a class="btn" href={r.url}>{t('project.code')} · {r.label}</a>)}
       <span class="tag">{HOSTING_LABEL[p.hosting][lang]}</span>
+      {lang === 'en' && p.turkishOnly && <span class="tag">For Turkish speakers</span>}
       {p.mcp && <span class="tag">MCP · {p.mcp.tools} {t('project.claudeTools')}</span>}
     </div>
 
@@ -81,6 +83,29 @@ const jsonLd = {
       <h2>{t('project.solution')}</h2>
       <ul>{text.solution.map((s) => <li>{s}</li>)}</ul>
     </section>
+
+    {
+      p.video && (!p.video.lang || p.video.lang === lang) && (
+        <section>
+          <h2>{t('project.video')}</h2>
+          <figure class="shot video">
+            <video controls preload="none" playsinline poster={p.video.poster} width={p.video.w} height={p.video.h} aria-label={p.video.caption[lang]}>
+              <source src={p.video.src} type="video/mp4" />
+            </video>
+            <figcaption>{p.video.caption[lang]}</figcaption>
+          </figure>
+        </section>
+      )
+    }
+
+    {
+      p.decisions && (
+        <section>
+          <h2>{t('project.decisions')}</h2>
+          <ul>{p.decisions[lang].map((s) => <li>{s}</li>)}</ul>
+        </section>
+      )
+    }
 
     {
       p.demo && (

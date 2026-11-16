@@ -50,6 +50,12 @@ export interface Project {
   download?: string;
   /** Uygulama TR/EN destekliyorsa "Dene" bağlantısına sayfanın dili ?lang=tr|en olarak eklenir. */
   langParam?: boolean;
+  /** Uygulama yalnızca Türkçe konuşanlar için (arayüz ve içerik Türkçe). EN sayfada etiket ve bu açıklama gösterilir. */
+  turkishOnly?: { en: string };
+  /** Tasarım kararları ve nedenleri (sayfada ayrı bölüm). */
+  decisions?: { tr: string[]; en: string[] };
+  /** Kısa tanıtım videosu (altyazısı videoya işlenmiş). `lang` verilirse yalnız o dildeki sayfada gösterilir. */
+  video?: { src: string; poster: string; w: number; h: number; lang?: Lang; caption: { tr: string; en: string } };
 }
 
 export const CATEGORIES: Record<Category, { tr: string; en: string; trSlug: string; enSlug: string }> = {
@@ -348,16 +354,20 @@ export const PROJECTS: Project[] = [
     slug: 'aday-atolyesi',
     name: 'Aday Atölyesi',
     category: 'ekip',
+    turkishOnly: {
+      en: 'Built for candidates applying to jobs in Turkey: the aptitude tests (including verbal reasoning in Turkish), 20 company cases with Word/Excel files and the HR review are in Turkish, so the app stays in Turkish. “Try it” opens an English guide that explains every screen, and one sample case (Koru Distribution) is fully in English.',
+    },
     hosting: 'vps',
     url: 'https://aday.ysfdurak.com/',
+    langParam: true,
     repo: GH + 'aday_atolyesi',
     tech: ['JavaScript', 'Cloudflare Workers', 'D1 (SQLite)', 'R2'],
     og: '/img/aday-atolyesi/og.jpg',
     shots: [
-      { src: '/img/aday-atolyesi/vaka-calismasi.webp', w: 1440, h: 900, alt: { tr: 'Vaka çalışması: solda kurgusal şirket belgeleri, sağda çıktı bazında cevap alanları, kelime sayacı ve süre tutucu', en: 'Case exercise: fictional company documents on the left, answer fields per output on the right with word count and timer' } },
-      { src: '/img/aday-atolyesi/hazirlik-plani.webp', w: 1440, h: 900, alt: { tr: 'Hazırlık planı: hedef pozisyona göre bugün yapılacak tek adım ve günün bütün adımları', en: 'Preparation plan: the one next step for today and the full day plan for the target role' } },
-      { src: '/img/aday-atolyesi/olcutlu-degerlendirme.webp', w: 1440, h: 900, alt: { tr: 'İK değerlendirme formu: her ölçüt için 0–3 seviye ve seviye tanımı', en: 'HR review form: a 0–3 level per criterion with the level description' } },
-      { src: '/img/aday-atolyesi/giris.webp', w: 1440, h: 900, alt: { tr: 'Canlı demo girişi: aday, İK değerlendiricisi ya da pilot yöneticisi olarak şifresiz deneme', en: 'Live demo sign-in: try as candidate, HR reviewer or pilot admin, no password' } },
+      { src: '/img/aday-atolyesi/vaka-calismasi.webp', srcEn: '/img/aday-atolyesi/vaka-calismasi-en.webp', w: 1440, h: 900, alt: { tr: 'Vaka çalışması: solda kurgusal şirket belgeleri, sağda çıktı bazında cevap alanları, kelime sayacı ve süre tutucu', en: 'The English sample case (Koru Distribution) with the English guide open: company file on the left, numbered outputs on the right; English labels sit under the Turkish menus and headings' } },
+      { src: '/img/aday-atolyesi/hazirlik-plani.webp', srcEn: '/img/aday-atolyesi/hazirlik-plani-en.webp', w: 1440, h: 900, alt: { tr: 'Hazırlık planı: hedef pozisyona göre bugün yapılacak tek adım ve günün bütün adımları', en: 'Preparation plan for a warehouse operations role: one next step for today, then the full day plan; the guide explains how the plan is built' } },
+      { src: '/img/aday-atolyesi/olcutlu-degerlendirme.webp', srcEn: '/img/aday-atolyesi/olcutlu-degerlendirme-en.webp', w: 1440, h: 900, alt: { tr: 'İK değerlendirme formu: her ölçüt için 0–3 seviye ve seviye tanımı', en: 'HR review form with the English guide open: each criterion gets a level from 0 (Not yet) to 3 (Evidenced) and an optional evidence note' } },
+      { src: '/img/aday-atolyesi/giris.webp', srcEn: '/img/aday-atolyesi/giris-en.webp', w: 1440, h: 900, alt: { tr: 'Canlı demo girişi: aday, İK değerlendiricisi ya da pilot yöneticisi olarak şifresiz deneme', en: 'Live demo sign-in: pick candidate, HR reviewer or pilot admin, no password; the guide says what each role can try' } },
     ],
     demo: {
       tr: 'Hesap ve ayarlar → Giriş yap ile bir rol seç (aday, İK değerlendiricisi ya da pilot yöneticisi), şifre yok. Örnek teslimler yüklü; aday olarak dosya teslim edebilir, değerlendirici olarak ölçütlü geri bildirim yazabilirsin. Gerçek kişisel bilgi içeren dosya yükleme: dosyalar ortak değerlendirici hesabında görünür ve her gece silinir.',
@@ -391,6 +401,37 @@ export const PROJECTS: Project[] = [
         'No AI calls; work stays in the browser and can be saved to an account automatically',
       ],
     },
+    decisions: {
+      tr: [
+        'Arayüz Türkçe kaldı: sözel sorular Türkçe dil bilgisine, vakalar Türkiye’deki işe alım bağlamına dayanır. İngilizce okuyan ziyaretçi için ekranları anlatan bir rehber ve tamamen İngilizce bir örnek vaka eklendi.',
+        'Tek puan yok: sınav performansı, kendi beyanına dayalı tercihler ve senaryo seçimleri farklı türde kanıttır. Birleştirmek, verinin taşımadığı bir kesinlik iddia eder. İK da her ölçütü 0–3 düzeyle ve yazılı dayanakla değerlendirir.',
+        'Referans çözüm teslimden sonra açılır ve tek “doğru” cevap yerine savunulabilir alternatifleri gösterir. Vakalar akıl yürütmeyi ölçer: Koru Dağıtım’da toplam dakika yeter görünür, darboğaz paketlemededir.',
+        'Her belgenin kodu var (D01, D02…): aday cevabını belgeye dayandırır, değerlendirici dayanağı kontrol eder.',
+        'Yapay zekâ çağrısı yok, kayıt önce tarayıcıda: hesap açmadan çalışılır, aday metni bir modele gönderilmez, kullanıcı başına maliyet yoktur.',
+        'İK’nın iki sorunu önyargı ve geciken geri bildirimdi: kör değerlendirme kimliği gizler; kuyruk en eskiden başlar, bekleme süresini ve hedef süre aşımını gösterir.',
+        'Doğrulanmamış içerik etiketlenir: Rol Atölyesi’ndeki 187 senaryonun puan anahtarları “uzman incelemesi bekleyen taslak” olarak gösterilir.',
+      ],
+      en: [
+        'The interface stays in Turkish: verbal items rely on Turkish grammar and the cases follow the Turkish hiring context. For English-speaking visitors there is a guide that explains each screen and one sample case that is fully in English.',
+        'No single score: test performance, self-reported preferences and scenario choices are different kinds of evidence. Combining them would claim a precision the data does not have. HR also rates each criterion on a 0–3 level with a written, evidence-based note.',
+        'The reference solution opens only after submission and shows defensible alternatives rather than one “right” answer. The cases test reasoning: at Koru Distribution total person-minutes look sufficient, but packing is the bottleneck.',
+        'Every document has a code (D01, D02 …), so candidates tie their answers to evidence and reviewers can check it.',
+        'No AI calls, and work is saved in the browser first: no account needed to start, candidate text is never sent to a model, and there is no per-user cost.',
+        'HR’s two problems were bias and slow feedback: blind review hides the candidate’s identity; the queue starts with the oldest file and shows waiting time and target-time overruns.',
+        'Unvalidated content is labelled: the scoring keys of the 187 scenarios in the role workshop are shown as drafts awaiting expert review.',
+      ],
+    },
+    video: {
+      src: '/video/aday-atolyesi-en.mp4',
+      poster: '/video/aday-atolyesi-en.webp',
+      w: 1280,
+      h: 800,
+      lang: 'en',
+      caption: {
+        tr: 'Yaklaşık 1,5 dakikalık tur (İngilizce altyazılı): aday İngilizce örnek vakayı çözer ve dosyasını teslim eder, İK değerlendiricisi ölçütle inceler.',
+        en: 'An 84-second walkthrough with English captions: a candidate solves the English sample case and submits the workbook, then an HR reviewer rates it criterion by criterion.',
+      },
+    },
   },
 
 
@@ -399,9 +440,13 @@ export const PROJECTS: Project[] = [
     slug: 'kesit',
     name: 'Kesit (SQL, Power BI, Python, İstatistik)',
     category: 'ogrenme',
+    turkishOnly: {
+      en: 'Built for Turkish speakers: Kesit’s whole point is teaching data skills in Turkish, so the apps, lessons and exercises stay in Turkish. “Try it” opens an English guide that explains each app and screen; it stays on across all four apps.',
+    },
     featured: true,
     hosting: 'external',
     url: 'https://ysfdurak.github.io/',
+    langParam: true,
     repos: [
       { label: 'SQL', url: GH + 'kesit-sql' },
       { label: 'Power BI', url: GH + 'kesit-powerbi' },
@@ -411,7 +456,7 @@ export const PROJECTS: Project[] = [
     tech: ['JavaScript', 'SQLite (sql.js)', 'Pyodide', 'DAX benzetim motoru', 'PWA'],
     og: '/img/kesit/og.jpg',
     shots: [
-      { src: '/img/kesit/sql-alistirma.webp', w: 1280, h: 800, alt: { tr: 'Kesit SQL: tarayıcıdaki veritabanında yazılan sorgu anında denetlenir; görev, örnek tablo ve sonuç yan yana', en: 'Kesit SQL: a query written against the in-browser database is checked instantly; task, sample table and result side by side' } },
+      { src: '/img/kesit/sql-alistirma.webp', srcEn: '/img/kesit/sql-alistirma-en.webp', w: 1280, h: 800, alt: { tr: 'Kesit SQL: tarayıcıdaki veritabanında yazılan sorgu anında denetlenir; görev, örnek tablo ve sonuç yan yana', en: 'Kesit SQL with the English guide: a GROUP BY exercise checked instantly against the in-browser database; English labels sit under the Turkish menu' } },
       { src: '/img/kesit/powerbi-rapor.webp', w: 1280, h: 760, alt: { tr: 'Kesit Power BI: adım adım anlatılan örnek finansal performans raporu, yer işaretleri ve alan parametreleriyle', en: 'Kesit Power BI: a sample financial performance report explained step by step, with bookmarks and field parameters' } },
       { src: '/img/kesit/python-kod.webp', w: 1280, h: 800, alt: { tr: 'Kesit Python: tarayıcıda çalışan gerçek Python ile kod editörü ve çıktı', en: 'Kesit Python: code editor and output running real Python in the browser' } },
       { src: '/img/kesit/istatistik-vaka.webp', w: 1366, h: 860, alt: { tr: 'Kesit İstatistik: ortak kurgusal veriyle vaka; sonucu okuma ve iş kararına çevirme adımları', en: 'Kesit Statistics: a case on the shared fictional data; reading the result and turning it into a business decision' } },
@@ -453,16 +498,20 @@ export const PROJECTS: Project[] = [
     slug: 'ingilizce-atolyesi',
     name: 'İngilizce Atölyesi',
     category: 'ogrenme',
+    turkishOnly: {
+      en: 'Built for Turkish speakers learning English: explanations, feedback and the exam prep (YDS, e-YDS, YÖKDİL) are in Turkish, so the app stays in Turkish. “Try it” opens an English guide that explains each section, with small English labels under the menus.',
+    },
     hosting: 'static',
     url: 'https://ingilizce-atolyesi.ysfdurak.com/',
+    langParam: true,
     repo: GH + 'ingilizce-ogrenme-atolyesi',
     tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],
     og: '/img/ingilizce-atolyesi/og.jpg',
     shots: [
-      { src: '/img/ingilizce-atolyesi/bugunku-plan.webp', w: 1440, h: 900, alt: { tr: 'Bugün ekranı: seviyeye ve hedefe göre hazırlanan günlük plan, kelime dersi, ünite adımı ve sınav hazırlığı', en: 'Today screen: a daily plan built from level and goal, with a vocabulary lesson, a unit step and exam prep' } },
+      { src: '/img/ingilizce-atolyesi/bugunku-plan.webp', srcEn: '/img/ingilizce-atolyesi/bugunku-plan-en.webp', w: 1440, h: 900, alt: { tr: 'Bugün ekranı: seviyeye ve hedefe göre hazırlanan günlük plan, kelime dersi, ünite adımı ve sınav hazırlığı', en: 'Today screen with the English guide open: the daily plan with a vocabulary lesson, a unit step and a business English task' } },
       { src: '/img/ingilizce-atolyesi/dilbilgisi-dersi.webp', w: 1440, h: 900, alt: { tr: 'Dilbilgisi dersi: Türkçe konu anlatımı, tablo ve sesli örnek cümleler', en: 'Grammar lesson: explanation in Turkish, a table and example sentences with audio' } },
-      { src: '/img/ingilizce-atolyesi/aralikli-tekrar.webp', w: 1440, h: 900, alt: { tr: 'Tekrar ekranı: yanlış yapılan sorular ve öğrenilen kelimeler 10 dakika, 1, 3, 7 ve 21 gün sonra yeniden sorulur', en: 'Review screen: missed questions and learned words come back after 10 minutes, then 1, 3, 7 and 21 days' } },
-      { src: '/img/ingilizce-atolyesi/kesfet.webp', w: 1440, h: 900, alt: { tr: 'Keşfet ekranı: kelimeler, kalıplar, kelime aileleri, deyimler, dilbilgisi ve sık hatalar', en: 'Explore screen: words, collocations, word families, idioms, grammar and common mistakes' } },
+      { src: '/img/ingilizce-atolyesi/aralikli-tekrar.webp', srcEn: '/img/ingilizce-atolyesi/aralikli-tekrar-en.webp', w: 1440, h: 900, alt: { tr: 'Tekrar ekranı: yanlış yapılan sorular ve öğrenilen kelimeler 10 dakika, 1, 3, 7 ve 21 gün sonra yeniden sorulur', en: 'Review screen with the English guide: missed questions and learned words come back after 10 minutes, then 1, 3, 7 and 21 days' } },
+      { src: '/img/ingilizce-atolyesi/kesfet.webp', srcEn: '/img/ingilizce-atolyesi/kesfet-en.webp', w: 1440, h: 900, alt: { tr: 'Keşfet ekranı: kelimeler, kalıplar, kelime aileleri, deyimler, dilbilgisi ve sık hatalar', en: 'Explore screen with English labels under each section: words, collocations, word families, idioms, grammar and common mistakes' } },
     ],
     demo: {
       tr: 'Hesap gerekmez: aç, bir dakikalık tanışmada hedefini (genel, sınav, iş, seyahat, okul), günlük süreni ve seviyeni seç; günlük plan hemen hazırlanır. İlerleme yalnızca tarayıcında saklanır, Profil’den dosyaya yedeklenebilir.',
