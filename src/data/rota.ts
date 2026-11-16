@@ -4,11 +4,12 @@
 import data from './rota.json';
 import { PROJECTS, type Lang } from './projects';
 
-export type Durum = 'canli' | 'gelistiriliyor' | 'beklemede' | 'fikir';
-export const DURUMLAR: Durum[] = ['canli', 'gelistiriliyor', 'beklemede', 'fikir'];
+export type Durum = 'canli' | 'pilot' | 'gelistiriliyor' | 'beklemede' | 'fikir';
+export const DURUMLAR: Durum[] = ['canli', 'pilot', 'gelistiriliyor', 'beklemede', 'fikir'];
 
 export const DURUM_ETIKET: Record<Durum, { tr: string; en: string }> = {
   canli: { tr: 'Canlı', en: 'Live' },
+  pilot: { tr: 'Pilot / test', en: 'Pilot / testing' },
   gelistiriliyor: { tr: 'Geliştiriliyor', en: 'In development' },
   beklemede: { tr: 'Beklemede', en: 'On hold' },
   fikir: { tr: 'Fikir', en: 'Idea' },

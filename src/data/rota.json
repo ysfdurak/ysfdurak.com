@@ -268,8 +268,8 @@
       "yayinda": true,
       "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "Hikâyeyi baştan kendim yazana kadar duraklatıldı",
-        "en": "Paused until I write the story from scratch myself"
+        "tr": "Yalın hikâye oyunu olarak, diğer projeler tamamlandığında yapılacak",
+        "en": "To be built as a lean story game once the other projects are finished"
       },
       "ozel_not": "Bütün projeler bitince hikâye yazılacak, oyun ondan üretilecek."
     },
@@ -283,7 +283,7 @@
         "tr": "Depo yönetim sisteminden çıkan Excel raporlarını tanır ve bir kez kurulan senaryoyla formül sütunlarını, eşleştirmeleri ve vardiya sonu raporunu tek tıkla üretir. Arşivleme ve e-postayla gönderim de içerir.",
         "en": "Recognises Excel reports exported from a warehouse management system and, from a scenario set up once, builds formula columns, lookups and the shift-end report in one click. Includes archiving and email delivery."
       },
-      "durum": "gelistiriliyor",
+      "durum": "pilot",
       "yayinda": true,
       "son_guncelleme": "2026-11-10",
       "durum_notu": {
@@ -302,13 +302,13 @@
         "tr": "Ay sonu kapanış dosyalarından bütçe ile gerçekleşeni karşılaştırır, sapmaları kalem ve organizasyon seviyesinde raporlar ve aydan aya bütçe değişikliklerini gösterir. Python, Excel VBA ve makrosuz Power Query sürümleri var.",
         "en": "Compares budget and actuals from month-end closing files, reports variances by item and org level and shows month-over-month budget changes. Has Python, Excel VBA and macro-free Power Query versions."
       },
-      "durum": "gelistiriliyor",
+      "durum": "pilot",
       "yayinda": true,
       "repo": "ysfdurak/butce-sapmasi-rapor-otomasyonu",
       "son_guncelleme": "2026-11-13",
       "durum_notu": {
-        "tr": "Makrosuz Power Query sürümü hazırlanıyor",
-        "en": "Macro-free Power Query version in progress"
+        "tr": "Kullanımda test ediliyor; makrosuz Power Query sürümü hazırlanıyor",
+        "en": "Being tested in use; macro-free Power Query version in progress"
       },
       "ozel_not": "Sitede yer alıp almayacağı ayrıca konuşulacak."
     },
@@ -322,12 +322,12 @@
         "tr": "Tedarikçilerin mal kabul randevusu almasını ve depo kapasitesinin kapı ve saat bazında yönetilmesini sağlar. Talepleri sırayla uygun kapasiteye atar, iptal ve plaka giriş kurallarını uygular.",
         "en": "Lets suppliers book goods-receipt appointments and manages warehouse capacity by door and hour. Assigns requests to suitable capacity in order and applies cancellation and plate-entry rules."
       },
-      "durum": "beklemede",
+      "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-15",
+      "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "Prototip hazır; esnek kural yapısıyla yeniden tasarlanacak",
-        "en": "Prototype ready; to be redesigned with flexible rules"
+        "tr": "Esnek kural yapısı ve basit ekranlarla yeniden geliştiriliyor",
+        "en": "Being rebuilt with flexible rules and simpler screens"
       },
       "ozel_not": "Prototip beklenen gibi değil; esnek kural yapısı ile yeniden ele alınacak."
     },
@@ -341,12 +341,12 @@
         "tr": "Veriyi yapay zekâya göndermeden önce seçilen hücre ve sütunları maskeler, cevap geldikten sonra isteğe bağlı olarak eski haline getirir. Kişisel olmayan ama hassas operasyon verisi için de kullanılır.",
         "en": "Masks chosen cells and columns before data is sent to AI, and can restore them once the answer comes back. Also works for operational data that is sensitive without being personal."
       },
-      "durum": "gelistiriliyor",
+      "durum": "pilot",
       "yayinda": true,
       "son_guncelleme": "2026-11-03",
       "durum_notu": {
-        "tr": "İlk sürüm hazır; ayrıntılı çalışma sürüyor",
-        "en": "First version ready; detailed work ongoing"
+        "tr": "İlk sürüm test ediliyor",
+        "en": "First version being tested"
       },
       "ozel_not": ""
     },
@@ -360,12 +360,12 @@
         "tr": "Eldeki tablodan hazır pano ve grafikler üretir; aynı formattaki Excel dosyalarını birleştirir. Excel eklentisi olarak, sık kullanılan formüllerdeki eşleşme hatalarını (boşluk, Türkçe karakter) bulup düzeltmeyi de önerir.",
         "en": "Builds ready-made dashboards and charts from a table and merges same-format Excel files. As an Excel add-in it also finds and offers to fix lookup mismatches (spaces, Turkish characters) in common formulas."
       },
-      "durum": "gelistiriliyor",
+      "durum": "pilot",
       "yayinda": true,
       "son_guncelleme": "2026-11-03",
       "durum_notu": {
-        "tr": "HTML sürümü ve Excel eklentisi üzerinde çalışılıyor",
-        "en": "Work ongoing on the HTML version and Excel add-in"
+        "tr": "HTML sürümü ve Excel eklentisi test ediliyor",
+        "en": "HTML version and Excel add-in being tested"
       },
       "ozel_not": ""
     },
@@ -398,12 +398,12 @@
         "tr": "Henüz kurulmamış bir operasyon için sorter seçimi ve boyutlandırmasına yardım eder. Günlük hacim, lot büyüklüğü ve mağaza sayısı gibi birkaç parametreden şut sayısını ve dağılım ısı haritasını, istasyon başına personeli ve besleme noktalarını çıkarır.",
         "en": "Helps choose and size a sorter for an operation that does not exist yet. From a few inputs such as daily volume, lot size and store count it derives chute count and a distribution heatmap, staff per station and feed points."
       },
-      "durum": "gelistiriliyor",
+      "durum": "pilot",
       "yayinda": true,
       "son_guncelleme": "2026-11-11",
       "durum_notu": {
-        "tr": "Yatırım planlaması için sadeleştiriliyor",
-        "en": "Being simplified for investment planning"
+        "tr": "Yatırım planlaması için sadeleştirilip test ediliyor",
+        "en": "Being simplified for investment planning and tested"
       },
       "ozel_not": ""
     },
@@ -418,13 +418,13 @@
         "en": "Calculates which picking-route algorithm is best for each incoming order batch and directs picking accordingly. Will work together with WDL."
       },
       "durum": "fikir",
-      "yayinda": true,
+      "yayinda": false,
       "son_guncelleme": "2026-11-09",
       "durum_notu": {
         "tr": "Python ve web sürümü olarak planlanıyor",
         "en": "Planned as Python and web versions"
       },
-      "ozel_not": ""
+      "ozel_not": "Kaldırıldı: WDL kapsamında."
     },
     {
       "id": "isbasi-simulasyonu",
@@ -440,8 +440,8 @@
       "yayinda": true,
       "son_guncelleme": "2026-10-27",
       "durum_notu": {
-        "tr": "İlk hafta oynanabilir; Ekim 2026'da durduruldu",
-        "en": "Week one is playable; paused in October 2026"
+        "tr": "Durduruldu; ilk hafta oynanabilir durumda",
+        "en": "Stopped; week one is playable"
       },
       "ozel_not": ""
     },
@@ -456,13 +456,13 @@
         "en": "Analyses Formula 1 data with FastF1: a track map of straights, slow corners and braking zones, tyre and pit strategy, and a corner-by-corner comparison of two drivers' qualifying laps."
       },
       "durum": "gelistiriliyor",
-      "yayinda": true,
+      "yayinda": false,
       "son_guncelleme": "2026-11-04",
       "durum_notu": {
         "tr": "Streamlit arayüzü sıradaki adım",
         "en": "Streamlit interface is the next step"
       },
-      "ozel_not": ""
+      "ozel_not": "Kaldırıldı: tamamını Claude yaptı, portföyde gösterilmeyecek."
     },
     {
       "id": "olcu-elegi",
@@ -474,12 +474,12 @@
         "tr": "Power BI raporlarında hiçbir yerde kullanılmayan ölçüleri bulur; böylece gereksizler silinip model sadeleşir ve kafa karışıklığı azalır.",
         "en": "Finds measures that are not used anywhere in Power BI reports, so the unneeded ones can be removed and the model stays clean."
       },
-      "durum": "gelistiriliyor",
+      "durum": "pilot",
       "yayinda": true,
       "son_guncelleme": "2026-11-04",
       "durum_notu": {
-        "tr": "İlk sürüm hazır",
-        "en": "First version ready"
+        "tr": "İlk sürüm test ediliyor",
+        "en": "First version being tested"
       },
       "ozel_not": ""
     },
@@ -493,14 +493,14 @@
         "tr": "Eldeki Excel veya Word dosyasından yapay zekâ kullanmadan sunum üretir; grafiği yalnızca gerektiğinde ekler.",
         "en": "Builds a presentation from an Excel or Word file without AI, adding charts only where they help."
       },
-      "durum": "gelistiriliyor",
-      "yayinda": true,
+      "durum": "beklemede",
+      "yayinda": false,
       "son_guncelleme": "2026-11-02",
       "durum_notu": {
         "tr": "İlk sürüm hazır",
         "en": "First version ready"
       },
-      "ozel_not": ""
+      "ozel_not": "İptal: istenen çıktı elde edilemedi."
     },
     {
       "id": "unite-atolyesi",
@@ -512,12 +512,12 @@
         "tr": "Yüklenen kitap ve notları ünitelere ayırır; tüm içerikten soru havuzu oluşturup her seferinde değişen deneme sınavları ve bilgi grafikleri hazırlar. Yanlış cevaplar aralıklarla tekrar sorulur.",
         "en": "Splits uploaded books and notes into units, builds a question pool from all the content, and creates ever-changing mock exams and infographics. Wrong answers come back at intervals."
       },
-      "durum": "beklemede",
+      "durum": "pilot",
       "yayinda": true,
-      "son_guncelleme": "2026-10-28",
+      "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "API bağlantısı değerlendiriliyor",
-        "en": "Considering an API connection"
+        "tr": "Pilot aşamasında",
+        "en": "In pilot"
       },
       "ozel_not": ""
     },
