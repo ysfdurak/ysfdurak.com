@@ -114,6 +114,8 @@ export const PROJECTS: Project[] = [
       { title: 'Takt zamanı nedir, nasıl hesaplanır?', url: '/tr/rehber/takt-zamani-nedir/' },
       { title: 'İş örneklemesi nedir? Gözlem sayısı ve güven aralığı', url: '/tr/rehber/is-orneklemesi-nedir/' },
       { title: 'Hat dengeleme nedir? Yamazumi grafiği ve denge verimi', url: '/tr/rehber/hat-dengeleme-yamazumi/' },
+      { title: 'Standart iş kombinasyon tablosu nedir?', url: '/tr/rehber/standart-is-kombinasyon-tablosu/' },
+      { title: '7 israf nedir? Yalın üretimde israf türleri', url: '/tr/rehber/7-israf-nedir/' },
     ],
     tech: ['JavaScript', 'IndexedDB', 'C#', 'WPF', '.NET 8', 'SQLite', 'Excel (OpenXML)', 'Cloudflare Workers', 'GitHub Actions'],
     shots: [
@@ -183,6 +185,9 @@ export const PROJECTS: Project[] = [
       { title: 'REBA nedir, nasıl hesaplanır? Adım adım örnek', url: '/tr/rehber/reba-nasil-hesaplanir/' },
       { title: 'RULA nedir? REBA ile farkı ve hangisi seçilmeli', url: '/tr/rehber/rula-nedir-reba-farki/' },
       { title: 'NIOSH kaldırma denklemi nasıl hesaplanır?', url: '/tr/rehber/niosh-kaldirma-denklemi/' },
+      { title: 'OWAS nedir? Duruş kodları ve eylem kategorileri', url: '/tr/rehber/owas-nedir/' },
+      { title: 'Ofis ergonomisi ve ROSA yöntemi', url: '/tr/rehber/ofis-ergonomisi-rosa/' },
+      { title: 'Fine-Kinney risk analizi nasıl yapılır?', url: '/tr/rehber/fine-kinney-risk-analizi/' },
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'Electron', 'ExcelJS', 'pdfmake'],
     og: '/img/durus/og.jpg',
@@ -292,6 +297,7 @@ export const PROJECTS: Project[] = [
     guides: [
       { title: 'Kaizen nedir? Çalışan öneri sistemi nasıl kurulur?', url: '/tr/rehber/kaizen-oneri-sistemi-nasil-kurulur/' },
       { title: '5S nedir? Adımları, depo örneği ve kontrol listesi', url: '/tr/rehber/5s-nedir/' },
+      { title: '7 israf nedir? Yalın üretimde israf türleri', url: '/tr/rehber/7-israf-nedir/' },
     ],
     tech: ['React', 'TypeScript', 'Cloudflare Workers', 'D1 (SQLite)', 'MCP'],
     og: '/img/ivme/og.jpg',
