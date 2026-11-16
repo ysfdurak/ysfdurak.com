@@ -177,7 +177,11 @@ export const PROJECTS: Project[] = [
     langParam: true,
     repo: GH + 'durus-ergonomi',
     download: GH + 'durus-ergonomi/releases/latest',
-    guides: [{ title: 'REBA nedir, nasıl hesaplanır? Adım adım örnek', url: '/tr/rehber/reba-nasil-hesaplanir/' }],
+    guides: [
+      { title: 'REBA nedir, nasıl hesaplanır? Adım adım örnek', url: '/tr/rehber/reba-nasil-hesaplanir/' },
+      { title: 'RULA nedir? REBA ile farkı ve hangisi seçilmeli', url: '/tr/rehber/rula-nedir-reba-farki/' },
+      { title: 'NIOSH kaldırma denklemi nasıl hesaplanır?', url: '/tr/rehber/niosh-kaldirma-denklemi/' },
+    ],
     tech: ['HTML', 'CSS', 'JavaScript', 'Electron', 'ExcelJS', 'pdfmake'],
     og: '/img/durus/og.jpg',
     shots: [
@@ -283,6 +287,10 @@ export const PROJECTS: Project[] = [
     url: 'https://ivme.ysfdurak.com/',
     urlEn: 'https://ivme-en.ysfdurak.com/',
     repo: GH + 'ivme-oneri-kaizen',
+    guides: [
+      { title: 'Kaizen nedir? Çalışan öneri sistemi nasıl kurulur?', url: '/tr/rehber/kaizen-oneri-sistemi-nasil-kurulur/' },
+      { title: '5S nedir? Adımları, depo örneği ve kontrol listesi', url: '/tr/rehber/5s-nedir/' },
+    ],
     tech: ['React', 'TypeScript', 'Cloudflare Workers', 'D1 (SQLite)', 'MCP'],
     og: '/img/ivme/og.jpg',
     shots: [
