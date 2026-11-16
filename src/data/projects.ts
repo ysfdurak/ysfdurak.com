@@ -109,7 +109,10 @@ export const PROJECTS: Project[] = [
     langParam: true,
     repo: GH + 'video-zaman-etudu',
     download: GH + 'video-zaman-etudu/releases/latest',
-    guides: [{ title: 'Zaman etüdü nasıl yapılır? Standart süre hesaplama (örnekli)', url: '/tr/rehber/zaman-etudu-nasil-yapilir/' }],
+    guides: [
+      { title: 'Zaman etüdü nasıl yapılır? Standart süre hesaplama (örnekli)', url: '/tr/rehber/zaman-etudu-nasil-yapilir/' },
+      { title: 'Takt zamanı nedir, nasıl hesaplanır?', url: '/tr/rehber/takt-zamani-nedir/' },
+    ],
     tech: ['JavaScript', 'IndexedDB', 'C#', 'WPF', '.NET 8', 'SQLite', 'Excel (OpenXML)', 'Cloudflare Workers', 'GitHub Actions'],
     shots: [
       { src: '/img/video-zaman-etudu/olcum.webp', srcEn: '/img/video-zaman-etudu/olcum-en.webp', w: 1440, h: 900, alt: { tr: 'Ölçüm sekmesi: ölçüm video zamanından alınır, her Ölç bir sonraki adımın başlangıcı olur; birden çok kayıt birlikte düzeltilebilir', en: 'Measure tab: times come from the video position, each Measure starts the next step; several records can be fixed together' } },
@@ -174,6 +177,7 @@ export const PROJECTS: Project[] = [
     langParam: true,
     repo: GH + 'durus-ergonomi',
     download: GH + 'durus-ergonomi/releases/latest',
+    guides: [{ title: 'REBA nedir, nasıl hesaplanır? Adım adım örnek', url: '/tr/rehber/reba-nasil-hesaplanir/' }],
     tech: ['HTML', 'CSS', 'JavaScript', 'Electron', 'ExcelJS', 'pdfmake'],
     og: '/img/durus/og.jpg',
     shots: [
