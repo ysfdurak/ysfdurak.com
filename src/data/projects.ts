@@ -232,6 +232,7 @@ export const PROJECTS: Project[] = [
     health: '/healthz',
     langParam: true,
     repo: GH + 'destek-merkezi',
+    og: '/img/destek-merkezi/og.jpg',
     tech: ['React', 'Node.js', 'SQLite', 'Excel (SheetJS)', 'Access istemcisi', 'Docker', 'Caddy'],
     shots: [
       { src: '/img/destek-merkezi/genel-bakis.webp', srcEn: '/img/destek-merkezi/genel-bakis-en.webp', w: 1400, h: 950, alt: { tr: 'Destek Merkezi genel bakış: kesinleşen ve onay bekleyen destekler, bölümler arası dağılım', en: 'Destek Merkezi overview: finalised and pending supports, distribution between departments' } },

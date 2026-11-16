@@ -8,7 +8,10 @@ import { PROJECTS } from './src/data/projects.ts';
 // - Alt alan adlarında çalışan uygulamaların giriş adresleri (projects.ts'teki url alanından otomatik)
 // - Kendi site haritası olan uygulamalar (aşağıdaki liste) dizine ek harita olarak bağlanır
 // Not: başka alan adındaki adresler (ör. ysfdurak.github.io) Google kuralı gereği buraya girmez.
-const KENDI_HARITASI = ['https://ingilizce-atolyesi.ysfdurak.com/sitemap.xml'];
+const KENDI_HARITASI = [
+  'https://ingilizce-atolyesi.ysfdurak.com/sitemap.xml',
+  'https://durus.ysfdurak.com/sitemap.xml',
+];
 const uygulamaAdresleri = PROJECTS.map((p) => p.url)
   .filter((u) => u && /^https:\/\/[a-z0-9-]+\.ysfdurak\.com\//.test(u))
   .filter((u) => !KENDI_HARITASI.some((h) => h.startsWith(new URL(u).origin)));
