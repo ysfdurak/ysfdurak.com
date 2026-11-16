@@ -1,0 +1,30 @@
+---
+// Rehber listesi: bu klasördeki her .md dosyası otomatik listelenir (en yeni güncelleme üstte).
+import Base from '../../../layouts/Base.astro';
+
+const guides = Object.values(import.meta.glob('./*.md', { eager: true }) as Record<string, any>)
+  .map((m) => ({ ...m.frontmatter, url: m.url.replace(/\/?$/, '/') }))
+  .sort((a, b) => String(b.updated).localeCompare(String(a.updated)));
+---
+
+<Base
+  lang="tr"
+  title="Rehber"
+  description="Zaman etüdü, ergonomi, yalın üretim ve veri analizinde adım adım, örnek hesaplı Türkçe rehberler; her rehber ücretsiz bir araçla birlikte."
+  path="/tr/rehber/"
+>
+  <section class="wrap project">
+    <h1>Rehber</h1>
+    <p class="lead">Operasyon ve veri işinde sık sorulan konular, adım adım ve örnek hesaplarla. Her rehberin sonunda konuyu hemen deneyebileceğiniz ücretsiz bir araç var.</p>
+    <ul class="guide-list">
+      {
+        guides.map((g) => (
+          <li>
+            <a href={g.url}>{g.title}</a>
+            <p>{g.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Base>

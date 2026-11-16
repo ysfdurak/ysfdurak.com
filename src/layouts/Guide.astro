@@ -1,0 +1,57 @@
+---
+// Rehber yazısı şablonu. src/pages/tr/rehber/*.md dosyaları bu düzeni kullanır.
+// Ön bilgi (frontmatter): title, description, updated (YYYY-MM-DD), tool: { name, url, project, cta }
+import Base from './Base.astro';
+import { SITE } from '../data/site';
+
+const { frontmatter: fm } = Astro.props;
+const path = Astro.url.pathname;
+const url = new URL(path, SITE.url).href;
+const updated = new Date(fm.updated + 'T00:00:00Z');
+const updatedText = updated.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: fm.title,
+  description: fm.description,
+  inLanguage: 'tr',
+  dateModified: fm.updated,
+  datePublished: fm.published ?? fm.updated,
+  mainEntityOfPage: url,
+  author: { '@type': 'Person', name: SITE.name, url: SITE.url },
+  ...(fm.image ? { image: new URL(fm.image, SITE.url).href } : {}),
+};
+---
+
+<Base lang="tr" title={fm.title} description={fm.description} path={path} jsonLd={jsonLd} image={fm.image}>
+  <article class="wrap project guide">
+    <p class="crumb"><a href="/tr/rehber/">Rehber</a></p>
+    <h1>{fm.title}</h1>
+    <p class="meta">Yusuf Durak · Güncelleme: <time datetime={fm.updated}>{updatedText}</time></p>
+    {
+      fm.tool && (
+        <aside class="tool-box">
+          <p><strong>{fm.tool.name}</strong> · {fm.tool.cta}</p>
+          <p class="tool-links">
+            <a class="btn primary" href={fm.tool.url}>Ücretsiz dene</a>
+            {fm.tool.project && <a class="btn" href={fm.tool.project}>Proje sayfası</a>}
+          </p>
+        </aside>
+      )
+    }
+    <div class="prose"><slot /></div>
+    {
+      fm.tool && (
+        <aside class="tool-box">
+          <p><strong>{fm.tool.name}</strong> · {fm.tool.cta}</p>
+          <p class="tool-links"><a class="btn primary" href={fm.tool.url}>Ücretsiz dene</a></p>
+        </aside>
+      )
+    }
+    <section class="note">
+      <h2>Bir hata mı gördünüz?</h2>
+      <p>Yazıda düzeltilmesi gereken bir yer varsa yazın: <a href={`mailto:${SITE.email.tr}?subject=${encodeURIComponent('Rehber: ' + fm.title)}`}>{SITE.email.tr}</a></p>
+    </section>
+  </article>
+</Base>

@@ -201,6 +201,15 @@ const jsonLd = {
       )
     }
 
+    {
+      lang === 'tr' && p.guides && p.guides.length > 0 && (
+        <section>
+          <h2>İlgili rehber</h2>
+          <ul>{p.guides.map((g) => <li><a href={g.url}>{g.title}</a></li>)}</ul>
+        </section>
+      )
+    }
+
     <section>
       <h2>{t('project.tech')}</h2>
       <p class="chips">{p.tech.map((x) => <span class="tag">{x}</span>)}</p>

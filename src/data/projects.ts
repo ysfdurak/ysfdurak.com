@@ -66,6 +66,8 @@ export interface Project {
   turkishOnly?: { en: string };
   /** Sunucudaki sağlık adresi (ör. '/healthz'). Kesinti izleme bu adresi de kontrol eder. */
   health?: string;
+  /** Bu projeyle ilgili rehber yazıları (yalnız Türkçe sayfada gösterilir). */
+  guides?: { title: string; url: string }[];
   /** Vaka sayfası bölümleri (rol, sonuçlar, geri bildirim → değişiklik, öğrendiklerim). */
   caseStudy?: { tr: CaseStudy; en: CaseStudy };
   /** Tasarım kararları ve nedenleri (sayfada ayrı bölüm). */
@@ -107,6 +109,7 @@ export const PROJECTS: Project[] = [
     langParam: true,
     repo: GH + 'video-zaman-etudu',
     download: GH + 'video-zaman-etudu/releases/latest',
+    guides: [{ title: 'Zaman etüdü nasıl yapılır? Standart süre hesaplama (örnekli)', url: '/tr/rehber/zaman-etudu-nasil-yapilir/' }],
     tech: ['JavaScript', 'IndexedDB', 'C#', 'WPF', '.NET 8', 'SQLite', 'Excel (OpenXML)', 'Cloudflare Workers', 'GitHub Actions'],
     shots: [
       { src: '/img/video-zaman-etudu/olcum.webp', srcEn: '/img/video-zaman-etudu/olcum-en.webp', w: 1440, h: 900, alt: { tr: 'Ölçüm sekmesi: ölçüm video zamanından alınır, her Ölç bir sonraki adımın başlangıcı olur; birden çok kayıt birlikte düzeltilebilir', en: 'Measure tab: times come from the video position, each Measure starts the next step; several records can be fixed together' } },

@@ -10,7 +10,7 @@ interface Props {
   title: string; // sayfa başlığı (60 karakter altı hedef)
   description: string; // arama sonucundaki açıklama (155 karakter altı hedef)
   path: string; // bu sayfanın yolu, ör. /tr/projeler/
-  altPath: string; // diğer dildeki karşılığı, ör. /en/projects/
+  altPath?: string; // diğer dildeki karşılığı, ör. /en/projects/ (yoksa hreflang yazılmaz; dil düğmesi diğer dilin ana sayfasına gider)
   jsonLd?: Record<string, unknown>;
   image?: string; // paylaşım görseli (1200x630), site köküne göre yol
 }
@@ -19,8 +19,10 @@ const { lang, title, description, path, altPath, jsonLd, image } = Astro.props;
 const t = useT(lang);
 const nav = NAV[lang];
 const canonical = new URL(path, SITE.url).href;
-const trUrl = new URL(lang === 'tr' ? path : altPath, SITE.url).href;
-const enUrl = new URL(lang === 'en' ? path : altPath, SITE.url).href;
+const trUrl = altPath ? new URL(lang === 'tr' ? path : altPath, SITE.url).href : null;
+const enUrl = altPath ? new URL(lang === 'en' ? path : altPath, SITE.url).href : null;
+const otherLang = lang === 'tr' ? 'en' : 'tr';
+const switchHref = altPath ?? NAV[otherLang].home;
 const fullTitle = title === SITE.name ? title : `${title} | ${SITE.name}`;
 const current = Astro.url.pathname;
 const isActive = (href: string) => (href === nav.home ? current === href : current.startsWith(href));
@@ -34,9 +36,9 @@ const isActive = (href: string) => (href === nav.home ? current === href : curre
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="tr" href={trUrl} />
-    <link rel="alternate" hreflang="en" href={enUrl} />
-    <link rel="alternate" hreflang="x-default" href={trUrl} />
+    {trUrl && <link rel="alternate" hreflang="tr" href={trUrl} />}
+    {enUrl && <link rel="alternate" hreflang="en" href={enUrl} />}
+    {trUrl && <link rel="alternate" hreflang="x-default" href={trUrl} />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
@@ -60,9 +62,10 @@ const isActive = (href: string) => (href === nav.home ? current === href : curre
         <a class="brand" href={nav.home}>{SITE.name}</a>
         <nav aria-label={lang === 'tr' ? 'Ana menü' : 'Main menu'}>
           <a href={nav.projects} aria-current={isActive(nav.projects) ? 'page' : undefined}>{t('nav.projects')}</a>
+          {lang === 'tr' && <a href="/tr/rehber/" aria-current={current.startsWith('/tr/rehber/') ? 'page' : undefined}>Rehber</a>}
           <a href={nav.about} aria-current={isActive(nav.about) ? 'page' : undefined}>{t('nav.about')}</a>
           <a href={nav.contact} aria-current={isActive(nav.contact) ? 'page' : undefined}>{t('nav.contact')}</a>
-          <a class="lang" href={altPath} hreflang={lang === 'tr' ? 'en' : 'tr'}>{t('lang.switch')}</a>
+          <a class="lang" href={switchHref} hreflang={otherLang}>{t('lang.switch')}</a>
         </nav>
       </div>
     </header>

@@ -35,6 +35,7 @@ Sunucu, veritabanı veya giriş yok. Bu yüzden ücretsiz, hızlı ve bakım ger
 - **Windows indirme düğmesi:** Masaüstü sürümü olan projede kayda `download` alanını ekle (ör. GitHub'daki `releases/latest` adresi); proje sayfasında “Windows için indir” düğmesi çıkar.
 - **Vaka sayfası:** Kayda `caseStudy: { tr: {...}, en: {...} }` eklenir. Alanlar: `results` (ölçülebilir sonuçlar, kutucuk olarak görünür), `feedback` (gerçek geri bildirim → yapılan değişiklik; `who` ve `when` isteğe bağlı), `role` (rolüm ve yapım süreci), `lessons` (öğrendiklerim). Boş bırakılan bölüm sayfada görünmez.
 - **Kesinti izleme:** Sunucuda sağlık adresi olan projeye `health: '/healthz'` eklenir. Ayrıntı: `docs/IZLEME.md`.
+- **Rehber yazısı eklemek:** `src/pages/tr/rehber/` altına yeni bir `.md` dosyası. Üstteki ön bilgi alanları: `title`, `description`, `updated`, isteğe bağlı `image` ve `tool` (ilgili uygulama kutusu). Liste sayfası, site haritası ve "Article" yapılandırılmış verisi kendiliğinden oluşur. Yazıyı ilgili projeye bağlamak için proje kaydına `guides` eklenir.
 - **Vitrine almak:** Kayda `featured: true` ekle.
 - **Metin değiştirmek:** İlgili dosyayı GitHub'da açıp kalem simgesiyle düzenleyebilirsin; kaydedince site birkaç dakikada güncellenir.
 
