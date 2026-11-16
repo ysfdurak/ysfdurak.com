@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 330" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Örnek kırmızı etiket</title>
+  <desc id="d">Kırmızı etiket örneği. Alanlar: tarih, alan, eşya, etiketleyen, neden (gereksiz, bozuk, fazla, sahibi belli değil), karar tarihi (etiketten 30 gün sonra) ve karar (at, başka alana taşı, yerinde kalsın).</desc>
+  <rect width="520" height="330" fill="#ffffff"/>
+  <rect x="12" y="12" width="496" height="306" rx="14" fill="#fff5f4" stroke="#b42318" stroke-width="3"/>
+  <circle cx="44" cy="44" r="10" fill="#ffffff" stroke="#b42318" stroke-width="3"/>
+  <rect x="64" y="26" width="300" height="38" rx="6" fill="#b42318"/>
+  <text x="80" y="52" font-size="21" font-weight="800" fill="#ffffff" letter-spacing="1">KIRMIZI ETİKET</text>
+  <text x="380" y="52" font-size="15" fill="#4a5872">No: 0147</text>
+
+  <g font-size="16" fill="#14213a">
+    <text x="36" y="100" font-weight="700">Tarih</text><text x="150" y="100">12.11.2026</text>
+    <text x="36" y="128" font-weight="700">Alan</text><text x="150" y="128">Paketleme masası 2</text>
+    <text x="36" y="156" font-weight="700">Eşya</text><text x="150" y="156">Bant tabancası (2 adet)</text>
+    <text x="36" y="184" font-weight="700">Neden</text>
+  </g>
+  <g font-size="15" fill="#14213a">
+    <rect x="150" y="170" width="16" height="16" rx="3" fill="#fff" stroke="#14213a" stroke-width="1.5"/><text x="173" y="184">Gereksiz</text>
+    <rect x="262" y="170" width="16" height="16" rx="3" fill="#b42318"/><path d="M265 178 l4 4 l7 -9" stroke="#fff" stroke-width="2.4" fill="none"/><text x="285" y="184">Bozuk</text>
+    <rect x="358" y="170" width="16" height="16" rx="3" fill="#fff" stroke="#14213a" stroke-width="1.5"/><text x="381" y="184">Fazla</text>
+    <rect x="150" y="196" width="16" height="16" rx="3" fill="#fff" stroke="#14213a" stroke-width="1.5"/><text x="173" y="210">Sahibi belli değil</text>
+  </g>
+  <line x1="36" y1="230" x2="484" y2="230" stroke="#efc4bf" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <g font-size="16" fill="#14213a">
+    <text x="36" y="260" font-weight="700">Karar tarihi</text><text x="150" y="260">12.12.2026 (30 gün)</text>
+    <text x="36" y="292" font-weight="700">Karar</text>
+  </g>
+  <g font-size="15" fill="#14213a">
+    <rect x="150" y="278" width="16" height="16" rx="3" fill="#fff" stroke="#14213a" stroke-width="1.5"/><text x="173" y="292">At</text>
+    <rect x="212" y="278" width="16" height="16" rx="3" fill="#fff" stroke="#14213a" stroke-width="1.5"/><text x="235" y="292">Başka alana taşı</text>
+    <rect x="370" y="278" width="16" height="16" rx="3" fill="#fff" stroke="#14213a" stroke-width="1.5"/><text x="393" y="292">Yerinde kalsın</text>
+  </g>
+</svg>

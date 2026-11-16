@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 570" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">5S döngüsü</title>
+  <desc id="d">Beş adım bir döngü oluşturur: 1 Ayıkla (Seiri), 2 Düzenle (Seiton), 3 Temizle (Seiso), 4 Standartlaştır (Seiketsu), 5 Sürdür (Shitsuke). Sürdür adımı döngüyü yeniden Ayıkla'ya bağlar.</desc>
+  <rect width="640" height="570" fill="#ffffff"/>
+  <circle cx="320" cy="300" r="210" fill="none" stroke="#dde3ec" stroke-width="4"/>
+  <g fill="#4a5872">
+    <polygon points="-9,-8 9,0 -9,8" transform="translate(443.4 130.1) rotate(36)"/>
+    <polygon points="-9,-8 9,0 -9,8" transform="translate(519.7 364.9) rotate(108)"/>
+    <polygon points="-9,-8 9,0 -9,8" transform="translate(320 510) rotate(180)"/>
+    <polygon points="-9,-8 9,0 -9,8" transform="translate(120.3 364.9) rotate(252)"/>
+    <polygon points="-9,-8 9,0 -9,8" transform="translate(196.6 130.1) rotate(324)"/>
+  </g>
+  <text x="320" y="292" text-anchor="middle" font-size="76" font-weight="800" fill="#13294b">5S</text>
+  <text x="320" y="330" text-anchor="middle" font-size="17" fill="#4a5872">Sıra önemli:</text>
+  <text x="320" y="352" text-anchor="middle" font-size="17" fill="#4a5872">önce ayıkla, sonra düzenle</text>
+
+  <g>
+    <rect x="215" y="35" width="210" height="110" rx="14" fill="#fff" stroke="#c2410c" stroke-width="3"/>
+    <rect x="215" y="35" width="210" height="10" rx="5" fill="#c2410c"/>
+    <text x="320" y="78" text-anchor="middle" font-size="23" font-weight="700" fill="#14213a">1 · Ayıkla</text>
+    <text x="320" y="101" text-anchor="middle" font-size="16" font-style="italic" fill="#4a5872">Seiri</text>
+    <text x="320" y="127" text-anchor="middle" font-size="16" fill="#14213a">Gereksizi çıkar</text>
+  </g>
+  <g>
+    <rect x="415" y="180" width="210" height="110" rx="14" fill="#fff" stroke="#1d4ed8" stroke-width="3"/>
+    <rect x="415" y="180" width="210" height="10" rx="5" fill="#1d4ed8"/>
+    <text x="520" y="223" text-anchor="middle" font-size="23" font-weight="700" fill="#14213a">2 · Düzenle</text>
+    <text x="520" y="246" text-anchor="middle" font-size="16" font-style="italic" fill="#4a5872">Seiton</text>
+    <text x="520" y="272" text-anchor="middle" font-size="16" fill="#14213a">Her şeye bir yer</text>
+  </g>
+  <g>
+    <rect x="338" y="415" width="210" height="110" rx="14" fill="#fff" stroke="#0f766e" stroke-width="3"/>
+    <rect x="338" y="415" width="210" height="10" rx="5" fill="#0f766e"/>
+    <text x="443" y="458" text-anchor="middle" font-size="23" font-weight="700" fill="#14213a">3 · Temizle</text>
+    <text x="443" y="481" text-anchor="middle" font-size="16" font-style="italic" fill="#4a5872">Seiso</text>
+    <text x="443" y="507" text-anchor="middle" font-size="16" fill="#14213a">Temizlerken kontrol et</text>
+  </g>
+  <g>
+    <rect x="92" y="415" width="210" height="110" rx="14" fill="#fff" stroke="#6d28d9" stroke-width="3"/>
+    <rect x="92" y="415" width="210" height="10" rx="5" fill="#6d28d9"/>
+    <text x="197" y="458" text-anchor="middle" font-size="21" font-weight="700" fill="#14213a">4 · Standartlaştır</text>
+    <text x="197" y="481" text-anchor="middle" font-size="16" font-style="italic" fill="#4a5872">Seiketsu</text>
+    <text x="197" y="507" text-anchor="middle" font-size="16" fill="#14213a">Kuralı yaz, göster</text>
+  </g>
+  <g>
+    <rect x="15" y="180" width="210" height="110" rx="14" fill="#fff" stroke="#13294b" stroke-width="3"/>
+    <rect x="15" y="180" width="210" height="10" rx="5" fill="#13294b"/>
+    <text x="120" y="223" text-anchor="middle" font-size="23" font-weight="700" fill="#14213a">5 · Sürdür</text>
+    <text x="120" y="246" text-anchor="middle" font-size="16" font-style="italic" fill="#4a5872">Shitsuke</text>
+    <text x="120" y="272" text-anchor="middle" font-size="16" fill="#14213a">Denetle, alışkanlık yap</text>
+  </g>
+</svg>
