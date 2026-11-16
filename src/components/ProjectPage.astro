@@ -51,7 +51,7 @@ const jsonLd = {
     <div class="actions">
       {
         p.url ? (
-          <a class="btn primary" href={p.langParam ? `${p.url}?lang=${lang}` : p.url}>{t('project.try')}</a>
+          <a class="btn primary" href={lang === 'en' && p.urlEn ? p.urlEn : p.langParam ? `${p.url}?lang=${lang}` : p.url}>{t('project.try')}</a>
         ) : (
           <span class="btn disabled" aria-disabled="true">{t('project.soon')}</span>
         )

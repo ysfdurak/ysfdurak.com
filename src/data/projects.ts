@@ -28,6 +28,8 @@ export interface Project {
   hosting: Hosting;
   /** Canlı uygulama adresi. Boşsa "Dene" butonu "Canlı sürüm yakında" yazar. */
   url?: string;
+  /** İngilizce sayfada "Dene" düğmesinin gideceği ayrı canlı adres (ör. İngilizce örnek verili demo). Yoksa url kullanılır. */
+  urlEn?: string;
   repo?: string;
   /** Birden çok depo varsa (ör. Kesit paketi): her biri ayrı "Kaynak kod · <ad>" düğmesi olur. */
   repos?: { label: string; url: string }[];
@@ -190,6 +192,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'vps',
     url: 'https://ivme.ysfdurak.com/',
+    urlEn: 'https://ivme-en.ysfdurak.com/',
     repo: GH + 'ivme-oneri-kaizen',
     tech: ['React', 'TypeScript', 'Cloudflare Workers', 'D1 (SQLite)', 'MCP'],
     og: '/img/ivme/og.jpg',
@@ -201,7 +204,7 @@ export const PROJECTS: Project[] = [
     ],
     demo: {
       tr: 'Bir rol seç (çalışan, değerlendirici, müdür, İK ya da yönetici) ve şifresiz gir. Örnek bir şirketin 120 önerisi yüklü; her şeyi değiştirebilirsin. Veriler her gece sıfırlanır, kimseye e-posta gitmez.',
-      en: 'Pick a role (employee, reviewer, manager, HR or admin) and enter without a password. A sample company with 120 suggestions is loaded and you can change anything. Data resets nightly and no email is sent.',
+      en: 'Pick a role (employee, reviewer, manager, HR or admin) and enter without a password. A sample company with 120 suggestions in English is loaded and you can change anything. Data resets nightly and no email is sent.',
     },
     tr: {
       tagline: 'Çalışan önerisini değerlendirmeden aksiyona, kazanca, puana ve ödüle kadar tek akışta yöneten öneri sistemi.',
