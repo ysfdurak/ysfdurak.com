@@ -398,12 +398,12 @@
         "tr": "Henüz kurulmamış bir operasyon için sorter seçimi ve boyutlandırmasına yardım eder. Günlük hacim, lot büyüklüğü ve mağaza sayısı gibi birkaç parametreden şut sayısını ve dağılım ısı haritasını, istasyon başına personeli ve besleme noktalarını çıkarır.",
         "en": "Helps choose and size a sorter for an operation that does not exist yet. From a few inputs such as daily volume, lot size and store count it derives chute count and a distribution heatmap, staff per station and feed points."
       },
-      "durum": "pilot",
+      "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-11",
+      "son_guncelleme": "2026-11-16",
       "durum_notu": {
-        "tr": "Yatırım planlaması için sadeleştirilip test ediliyor",
-        "en": "Being simplified for investment planning and tested"
+        "tr": "Yatırım planlaması için sadeleştiriliyor",
+        "en": "Being simplified for investment planning"
       },
       "ozel_not": ""
     },
