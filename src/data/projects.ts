@@ -107,7 +107,7 @@ export const PROJECTS: Project[] = [
         'Student-t ile adım bazında gözlem yeterliliği (varsayılan %95 güven, ±%5 hata); baz süre ortalamadan veya en sık tekrar eden süreden',
         'Tempo ve toleransla normal ve standart süre; her N çevrimde bir yapılan işlerin çevrime katkısı',
         'Paralel işlerde çevrimin geçen süresi ile toplam iş yükü ayrı hesaplanır',
-        'Adım listesiyle akışlı ölçüm: Ölç'ten sonra sıradaki adım ve çevrim kendiliğinden gelir, kapsam dışı ara kayıt sırayı bozmaz, Ctrl+Z son kaydı geri alır; etüt kaldığı yerden açılır',
+        'Adım listesiyle akışlı ölçüm: Ölç’ten sonra sıradaki adım ve çevrim kendiliğinden gelir, kapsam dışı ara kayıt sırayı bozmaz, Ctrl+Z son kaydı geri alır; etüt kaldığı yerden açılır',
         'Kayıt başına tempo puanı, adıma özel tempo, kalemlere ayrılmış tolerans ve takt süresine göre doluluk ve gereken operatör sayısı',
         'Dağılım grafiği ve aykırı kayıt tespiti (IQR); aykırılar silinmeden kapsam dışı bırakılır',
         'Yalın araçlar: hat dengeleme (Yamazumi) ve takta göre otomatik dağıtım, standart iş kombinasyon tablosu, 7 israfa göre iyileştirme fikirleri, video kareli adım kartları (görsel iş talimatı)',
