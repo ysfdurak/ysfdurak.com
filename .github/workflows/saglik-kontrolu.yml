@@ -1,0 +1,30 @@
+# Kesinti izleme: tüm canlı adresler 10 dakikada bir dışarıdan kontrol edilir.
+# Sorun olursa "kesinti" etiketli bir issue açılır (GitHub e-postayla haber verir), düzelince kapanır.
+# Ayrıntı: docs/IZLEME.md
+name: Sağlık kontrolü
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: saglik-kontrolu
+  cancel-in-progress: false
+
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/saglik-kontrolu.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

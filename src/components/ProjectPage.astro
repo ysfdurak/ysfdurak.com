@@ -19,6 +19,7 @@ const related = byCategory(p.category)
   .slice(0, 3);
 const path = projectPath(p, lang);
 // EN sayfada İngilizce arayüz görüntüsü varsa onu göster.
+const cs = p.caseStudy?.[lang];
 const shotSrc = (sh: { src: string; srcEn?: string }) => (lang === 'en' && sh.srcEn ? sh.srcEn : sh.src);
 
 const jsonLd = {
@@ -103,6 +104,53 @@ const jsonLd = {
         <section>
           <h2>{t('project.decisions')}</h2>
           <ul>{p.decisions[lang].map((s) => <li>{s}</li>)}</ul>
+        </section>
+      )
+    }
+
+    {
+      cs?.results && cs.results.length > 0 && (
+        <section>
+          <h2>{t('project.results')}</h2>
+          <div class="results">
+            {cs.results.map((r) => (
+              <div class="result"><strong>{r.value}</strong><span>{r.label}</span></div>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    {
+      cs?.feedback && cs.feedback.length > 0 && (
+        <section>
+          <h2>{t('project.journey')}</h2>
+          <ol class="journey">
+            {cs.feedback.map((f) => (
+              <li>
+                <p class="said">“{f.said}”{(f.who || f.when) && <span class="who"> — {[f.who, f.when].filter(Boolean).join(', ')}</span>}</p>
+                <p class="done"><span>{t('project.done')}</span> {f.done}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+
+    {
+      cs?.role && (
+        <section>
+          <h2>{t('project.role')}</h2>
+          <p>{cs.role}</p>
+        </section>
+      )
+    }
+
+    {
+      cs?.lessons && cs.lessons.length > 0 && (
+        <section>
+          <h2>{t('project.lessons')}</h2>
+          <ul>{cs.lessons.map((s) => <li>{s}</li>)}</ul>
         </section>
       )
     }

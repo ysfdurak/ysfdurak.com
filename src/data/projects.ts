@@ -11,6 +11,18 @@ export interface ProjectText {
   solution: string[]; // temel kararlar / özellikler
 }
 
+/** Vaka sayfası: projenin sahadaki karşılığı. Her alan isteğe bağlı; boş olan bölüm sayfada görünmez. */
+export interface CaseStudy {
+  /** Benim rolüm ve yapım süreci: problemi kim tanımladı, kararları kim verdi, yapay zekâ neyi yaptı. */
+  role?: string;
+  /** Ölçülebilir sonuçlar (ör. { value: '5 dk', label: 'aylık rapor süresi (önce 2-3 saat)' }). */
+  results?: { value: string; label: string }[];
+  /** Gerçek geri bildirim → yapılan değişiklik. who: kim (ör. "Depo vardiya amiri"), when: "Kasım 2026". */
+  feedback?: { said: string; done: string; who?: string; when?: string }[];
+  /** Öğrendiklerim / bir dahakine farklı yapacaklarım. */
+  lessons?: string[];
+}
+
 export interface Shot {
   src: string;
   /** İngilizce arayüzle çekilmiş görüntü (EN sayfada gösterilir). Yoksa src kullanılır. */
@@ -52,6 +64,10 @@ export interface Project {
   langParam?: boolean;
   /** Uygulama yalnızca Türkçe konuşanlar için (arayüz ve içerik Türkçe). EN sayfada etiket ve bu açıklama gösterilir. */
   turkishOnly?: { en: string };
+  /** Sunucudaki sağlık adresi (ör. '/healthz'). Kesinti izleme bu adresi de kontrol eder. */
+  health?: string;
+  /** Vaka sayfası bölümleri (rol, sonuçlar, geri bildirim → değişiklik, öğrendiklerim). */
+  caseStudy?: { tr: CaseStudy; en: CaseStudy };
   /** Tasarım kararları ve nedenleri (sayfada ayrı bölüm). */
   decisions?: { tr: string[]; en: string[] };
   /** Kısa tanıtım videosu (altyazısı videoya işlenmiş). `lang` verilirse yalnız o dildeki sayfada gösterilir. */
@@ -213,6 +229,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'vps',
     url: 'https://destek.ysfdurak.com/',
+    health: '/healthz',
     langParam: true,
     repo: GH + 'destek-merkezi',
     tech: ['React', 'Node.js', 'SQLite', 'Excel (SheetJS)', 'Access istemcisi', 'Docker', 'Caddy'],
@@ -308,6 +325,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'vps',
     url: 'https://pusula.ysfdurak.com/',
+    health: '/healthz',
     langParam: true,
     repo: GH + 'pusula-is-takip',
     tech: ['React', 'Node.js', 'SQLite', 'Google OAuth', 'MCP', 'MCP Apps', 'Docker', 'Caddy'],

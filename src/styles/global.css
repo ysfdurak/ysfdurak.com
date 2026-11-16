@@ -157,3 +157,15 @@ section[id] { scroll-margin-top: 1rem; }
 .tr-only strong {
   color: var(--ink);
 }
+
+/* Vaka sayfası: sonuçlar ve geri bildirim → değişiklik */
+.results { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.8rem; }
+.result { background: var(--bg-soft); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.9rem 1rem; }
+.result strong { display: block; font-size: 1.6rem; color: var(--accent); line-height: 1.2; }
+.result span { color: var(--ink-soft); font-size: 0.92rem; }
+.journey { list-style: none; padding-left: 0 !important; counter-reset: j; }
+.journey li { border-left: 3px solid var(--accent); padding: 0.2rem 0 0.2rem 1rem; margin-bottom: 1rem; }
+.journey p { margin: 0.2rem 0; }
+.journey .said { font-style: italic; }
+.journey .who { font-style: normal; color: var(--ink-soft); font-size: 0.9rem; }
+.journey .done span { font-weight: 700; color: var(--accent); }

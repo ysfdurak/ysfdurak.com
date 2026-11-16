@@ -33,6 +33,8 @@ Sunucu, veritabanı veya giriş yok. Bu yüzden ücretsiz, hızlı ve bakım ger
 - **Tanıtım videosu:** `video: { src, poster, w, h, lang, caption }`. Dosyalar `public/video/` altında; `lang: 'en'` verilirse yalnız İngilizce sayfada görünür. Altyazı videonun içine işlenmiştir.
 - **Yalnız Türkçe uygulama:** Kayda `turkishOnly: { en: '...' }` ekle; İngilizce sayfada “For Turkish speakers” etiketi ve bu açıklama çıkar (Kesit, İngilizce Atölyesi, Aday Atölyesi). Bu uygulamalarda `langParam: true` da var: “Dene” bağlantısı `?lang=en` ile uygulamanın İngilizce tanıtım turunu açar; arayüz yine Türkçedir.
 - **Windows indirme düğmesi:** Masaüstü sürümü olan projede kayda `download` alanını ekle (ör. GitHub'daki `releases/latest` adresi); proje sayfasında “Windows için indir” düğmesi çıkar.
+- **Vaka sayfası:** Kayda `caseStudy: { tr: {...}, en: {...} }` eklenir. Alanlar: `results` (ölçülebilir sonuçlar, kutucuk olarak görünür), `feedback` (gerçek geri bildirim → yapılan değişiklik; `who` ve `when` isteğe bağlı), `role` (rolüm ve yapım süreci), `lessons` (öğrendiklerim). Boş bırakılan bölüm sayfada görünmez.
+- **Kesinti izleme:** Sunucuda sağlık adresi olan projeye `health: '/healthz'` eklenir. Ayrıntı: `docs/IZLEME.md`.
 - **Vitrine almak:** Kayda `featured: true` ekle.
 - **Metin değiştirmek:** İlgili dosyayı GitHub'da açıp kalem simgesiyle düzenleyebilirsin; kaydedince site birkaç dakikada güncellenir.
 
