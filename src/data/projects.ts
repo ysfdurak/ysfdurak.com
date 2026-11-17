@@ -119,6 +119,7 @@ export const PROJECTS: Project[] = [
       { title: 'Hat dengeleme nedir? Yamazumi grafiği ve denge verimi', url: '/tr/rehber/hat-dengeleme-yamazumi/' },
       { title: 'Standart iş kombinasyon tablosu nedir?', url: '/tr/rehber/standart-is-kombinasyon-tablosu/' },
       { title: '7 israf nedir? Yalın üretimde israf türleri', url: '/tr/rehber/7-israf-nedir/' },
+      { title: 'Zaman etüdü için video çekimi ve çalışan bilgilendirme şablonu', url: '/tr/rehber/zaman-etudu-video-cekimi-calisan-bilgilendirme/' },
     ],
     tech: ['JavaScript', 'IndexedDB', 'C#', 'WPF', '.NET 8', 'SQLite', 'Excel (OpenXML)', 'Cloudflare Workers', 'GitHub Actions'],
     shots: [
