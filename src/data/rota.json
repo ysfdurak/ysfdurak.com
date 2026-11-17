@@ -1,5 +1,5 @@
 {
-  "son_tarama": "2026-11-16",
+  "son_tarama": "2026-11-17",
   "projeler": [
     {
       "id": "video-zaman-etudu",
@@ -16,10 +16,10 @@
       "yayinda": true,
       "canli_url": "https://zaman-etudu.ysfdurak.com/",
       "repo": "ysfdurak/video-zaman-etudu",
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-17",
       "durum_notu": {
-        "tr": "Kullanıcı gözüyle yapılan inceleme bulguları uygulandı; Claude bağlantısı (MCP) planlanıyor",
-        "en": "Findings from a user-eyes review implemented; Claude connection (MCP) being planned"
+        "tr": "Gizlilik öncelikli yol haritasının 1. aşaması (güven ve gizlilik) başladı",
+        "en": "Phase 1 (trust and privacy) of a privacy-first roadmap has started"
       },
       "ozel_not": "Sıradaki: yerel, salt okunur MCP (Seviye 1). Kullanım sınırı fikri sonra."
     },
@@ -187,13 +187,14 @@
         "tr": "Doğru soru sorma, geri bildirim verme ve liderlik konuşmalarını senaryolarla çalıştırır. Kullanıcı bir yöneticinin yerine geçer, cevaplarına göre konuşma şekillenir ve sonunda değerlendirme alır.",
         "en": "Practises asking the right questions, giving feedback and leadership conversations through scenarios. The user plays a manager, the conversation adapts to their answers and ends with an assessment."
       },
-      "durum": "pilot",
+      "durum": "canli",
       "yayinda": true,
+      "canli_url": "https://diyalog.ysfdurak.com/",
       "repo": "ysfdurak/diyalog-atolyesi",
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-17",
       "durum_notu": {
-        "tr": "Pilot aşamasında; Aday Atölyesi'ne bağlı ayrı bir uygulama",
-        "en": "In pilot; a separate app linked to Aday Atölyesi"
+        "tr": "Canlı; soru modunda varyant sistemi geliştiriliyor",
+        "en": "Live; a variant system for the question mode is being built"
       },
       "ozel_not": "Yapay zekâ kredisi bitince/azalınca ziyaretçi ve ben bilgilendirilmeli."
     },
@@ -305,10 +306,10 @@
       "durum": "pilot",
       "yayinda": true,
       "repo": "ysfdurak/butce-sapmasi-rapor-otomasyonu",
-      "son_guncelleme": "2026-11-13",
+      "son_guncelleme": "2026-11-17",
       "durum_notu": {
-        "tr": "Kullanımda test ediliyor; makrosuz Power Query sürümü hazırlanıyor",
-        "en": "Being tested in use; macro-free Power Query version in progress"
+        "tr": "Kullanımda test ediliyor; daha otomatik hale getiriliyor",
+        "en": "Being tested in use; being made more automated"
       },
       "ozel_not": "Sitede yer alıp almayacağı ayrıca konuşulacak."
     },
@@ -540,6 +541,25 @@
         "en": "Closed for now; user accounts to be revisited on the server"
       },
       "ozel_not": ""
+    },
+    {
+      "id": "vekil",
+      "ad": {
+        "tr": "Vekil",
+        "en": "Vekil"
+      },
+      "aciklama": {
+        "tr": "Sanal bir şirketin dijital operasyon müdür yardımcısı olarak çalışan yapay zekâ ajanı. Mevcut uygulamaları araç olarak kullanır, brifing ve aksiyon planı hazırlar; dışarı giden veriyi maskeler, her aksiyonu yetki seviyesine göre onaya sunar.",
+        "en": "An AI agent that works as the digital deputy operations manager of a virtual company. It uses the existing apps as tools and prepares briefings and action plans; it masks outgoing data and sends each action for approval according to its autonomy level."
+      },
+      "durum": "fikir",
+      "yayinda": false,
+      "son_guncelleme": "2026-11-17",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      },
+      "ozel_not": "Havuzdan; ilk sürüm olay üreticisi + çekirdek + Telegram köprüsü."
     }
   ]
 }
