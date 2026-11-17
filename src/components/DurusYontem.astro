@@ -1,0 +1,135 @@
+---
+// Duruş: yöntem ve gizlilik sayfası (TR/EN).
+// Gizlilik maddeleri durus-ergonomi deposundaki CSP, sw.js ve lib/ klasörüyle aynı olmalı (README "Nasıl çalışıyor?").
+import Base from '../layouts/Base.astro';
+import type { Lang } from '../data/projects';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = lang === 'tr';
+const path = tr ? '/tr/projeler/durus-ergonomi-analizi/yontem-ve-gizlilik/' : '/en/projects/durus-ergonomi-analizi/method-and-privacy/';
+const alt = tr ? '/en/projects/durus-ergonomi-analizi/method-and-privacy/' : '/tr/projeler/durus-ergonomi-analizi/yontem-ve-gizlilik/';
+const project = tr ? '/tr/projeler/durus-ergonomi-analizi/' : '/en/projects/durus-ergonomi-analizi/';
+const app = tr ? 'https://durus.ysfdurak.com/' : 'https://durus.ysfdurak.com/en/';
+const repo = 'https://github.com/ysfdurak/durus-ergonomi';
+const src = `${repo}/blob/main/tools/i18n/source.html`;
+const lib = `${repo}/tree/main/lib`;
+---
+<Base lang={lang}
+  title={tr ? 'Duruş: yöntem ve gizlilik' : 'Duruş: method and privacy'}
+  description={tr
+    ? 'Duruş fotoğraf ve videolarınızı hiçbir yere göndermez, dış adrese bağlanmaz ve internetsiz çalışır. Hangi yöntem neye dayanıyor, otomatik nokta bulma nasıl çalışıyor, sınırlar neler.'
+    : 'Duruş never sends your photos or videos anywhere, connects to no outside address and works offline. What each method is based on, how automatic point detection works and where the limits are.'}
+  path={path} altPath={alt}>
+  <article class="wrap prose guide">
+    <p class="crumb"><a href={project}>{tr ? '← Duruş – Ergonomi Analizi' : '← Duruş – Ergonomics Analysis'}</a></p>
+    {tr ? (
+      <>
+        <h1>Yöntem ve gizlilik</h1>
+        <p class="lead">Bu sayfa iki soruyu cevaplıyor: Çalışanların görüntüleri nerede kalıyor ve puanlar neye göre hesaplanıyor? Her ikisi de açık: aşağıdaki adımlarla kendiniz de doğrulayabilirsiniz.</p>
+
+        <h2>Görüntüler cihazınızdan çıkmaz</h2>
+        <ul>
+          <li><strong>Yükleme yok:</strong> Fotoğraf ve videolar tarayıcının içinde açılır; hiçbir sunucuya, yapay zekâ servisine ya da bana gönderilmez.</li>
+          <li><strong>Otomatik nokta bulma da cihazda:</strong> Eklemleri bulan model (MediaPipe Pose) uygulamayla birlikte gelir ve tarayıcıda çalışır. Görüntü bir servise gönderilip işlenmez.</li>
+          <li><strong>Dış bağlantı yok:</strong> Excel/PDF kütüphaneleri, nokta bulma modeli ve yazı tipleri uygulamanın kendi adresinden yüklenir; CDN'e ya da Google Fonts'a istek gitmez.</li>
+          <li><strong>Tarayıcı kilidi:</strong> Sayfanın güvenlik politikası (<code>connect-src 'self'</code>) uygulamanın kendi adresi dışındaki her bağlantıyı engeller. Kodda bir hata olsa bile tarayıcı isteği durdurur.</li>
+          <li><strong>İnternetsiz çalışır:</strong> Sayfa bir kez açıldıktan sonra bağlantı olmadan da açılır; formlar, raporlar ve yedekleme çalışır. Otomatik nokta bulma ilk kullanımda indirilir (~25 MB), sonrasında o da internetsiz çalışır.</li>
+          <li><strong>Kayıtlar sizde:</strong> Tarayıcının yerel deposunda (fotoğraf ve kareler IndexedDB'de) saklanır. Yedek dosyası (.json) siz indirdiğinizde oluşur ve yalnız sizin seçtiğiniz yere gider.</li>
+          <li><strong>Windows sürümü:</strong> Aynı uygulamadır; tek fark, açılışta GitHub'a "yeni sürüm var mı?" diye sorması. Bu istekte kayıtlarınızdan hiçbir şey gönderilmez.</li>
+        </ul>
+
+        <h2>Kendiniz kontrol edin</h2>
+        <ol>
+          <li><strong>İnterneti kapatın:</strong> <a href={app}>Uygulamayı</a> bir kez açın, ardından Wi-Fi'yi kapatıp sayfayı yenileyin. Uygulama açılır; kayıt ekleyip Excel ya da PDF alabilirsiniz.</li>
+          <li><strong>Ağ sekmesine bakın:</strong> F12 ile geliştirici araçlarını açın, <em>Network</em> (Ağ) sekmesine geçin. Bir fotoğraf açın, noktaları otomatik bulun, rapor alın. Listede yalnızca <code>durus.ysfdurak.com</code> adresindeki dosyalar görünür.</li>
+          <li><strong>Kaynak koda bakın:</strong> Kodun tamamı <a href={repo}>GitHub'da açık</a>. Uygulama tek dosya: <a href={src}><code>tools/i18n/source.html</code></a>; kullanılan kütüphanelerin kendisi ve lisansları <a href={lib}><code>lib/</code></a> klasöründe.</li>
+        </ol>
+
+        <h2>Yöntemler ve dayanakları</h2>
+        <table>
+          <thead><tr><th>Yöntem</th><th>Ne için</th><th>Dayanak</th></tr></thead>
+          <tbody>
+            <tr><td>REBA</td><td>Tüm vücut duruşu</td><td>Hignett ve McAtamney (2000)</td></tr>
+            <tr><td>RULA</td><td>Üst ekstremite, oturarak ya da ayakta sabit işler</td><td>McAtamney ve Corlett (1993)</td></tr>
+            <tr><td>OWAS</td><td>Duruş kodu ve eylem kategorisi</td><td>Karhu ve diğ. (1977)</td></tr>
+            <tr><td>NIOSH</td><td>Kaldırma: önerilen ağırlık sınırı ve kaldırma indeksi</td><td>Revize NIOSH kaldırma denklemi (Waters ve diğ., 1993)</td></tr>
+            <tr><td>KIM</td><td>Kaldırma-taşıma ve itme-çekme</td><td>BAuA anahtar gösterge yöntemleri</td></tr>
+            <tr><td>Liberty Mutual</td><td>İtme, çekme, taşıma için kabul edilebilir kuvvet</td><td>Snook ve Ciriello tabloları</td></tr>
+            <tr><td>OCRA, QEC, ROSA, Nordik anket</td><td>Tekrarlı işler, hızlı tarama, ofis, şikâyet anketi</td><td>Yöntemlerin yayımlanmış formları</td></tr>
+          </tbody>
+        </table>
+        <p>Her yöntemin adım adım örneği <a href="/tr/rehber/">rehber sayfalarında</a>: örneğin <a href="/tr/rehber/reba-nasil-hesaplanir/">REBA</a>, <a href="/tr/rehber/niosh-kaldirma-denklemi/">NIOSH</a>. Uygulamadaki sonucu bu örneklerle karşılaştırabilirsiniz.</p>
+
+        <h2>Otomatik nokta bulma nasıl çalışıyor?</h2>
+        <ul>
+          <li>Model görüntüde 33 vücut noktası bulur. Açılar bu noktalardan <strong>görüntü düzleminde</strong> (2B) hesaplanır.</li>
+          <li>Bu yüzden kamera, ölçülen açıya dik durmalıdır: gövde ve kol bükülmesi için yandan çekim en doğru sonucu verir. Çapraz açıdan çekilen görüntüde açılar olduğundan küçük çıkar.</li>
+          <li>Bulunan noktalar elle düzeltilebilir. Uygulama sınıra yakın açılarda ve yandan görünmeyen durumlarda uyarır; son karar her zaman değerlendirmeyi yapan kişidedir.</li>
+        </ul>
+
+        <h2>Bilinen sınırlar</h2>
+        <ul>
+          <li>Sonuçlar karar desteği içindir; iş güvenliği uzmanının ya da işyeri hekiminin değerlendirmesinin yerine geçmez.</li>
+          <li>Tek kameradan derinlik bilinmez; bükülme ve dönme gibi hareketler elle girilmelidir.</li>
+          <li>Tarayıcı verisi temizlenirse oradaki kayıtlar da silinir. Uygulamadaki yedek hatırlatmasıyla düzenli yedek alın.</li>
+          <li>Birden çok kişinin aynı kayıtları birlikte düzenlemesi ve merkezi kayıt yoktur.</li>
+          <li>Bu sayfa teknik bir açıklamadır, hukuki görüş değildir. Çalışanların fotoğraf ya da videoya alınmasıyla ilgili bilgilendirme kurallarını kendi kurumunuzla birlikte değerlendirin; adımlar ve kopyalanabilir bir şablon için <a href="/tr/rehber/zaman-etudu-video-cekimi-calisan-bilgilendirme/">video çekimi ve çalışan bilgilendirme rehberine</a> bakın (zaman etüdü için yazıldı, ergonomi çekimi için de aynı adımlar geçerlidir).</li>
+        </ul>
+      </>
+    ) : (
+      <>
+        <h1>Method and privacy</h1>
+        <p class="lead">This page answers two questions: where do images of your employees stay, and what are the scores based on? Both are open: you can verify them yourself with the steps below.</p>
+
+        <h2>Images never leave your device</h2>
+        <ul>
+          <li><strong>No upload:</strong> Photos and videos open inside the browser. They are never sent to a server, an AI service or to me.</li>
+          <li><strong>Automatic point detection runs on the device too:</strong> The model that finds the joints (MediaPipe Pose) ships with the app and runs in the browser. Images are not sent to a service for processing.</li>
+          <li><strong>No outside connections:</strong> The Excel/PDF libraries, the detection model and the fonts load from the app's own address; nothing is requested from a CDN or Google Fonts.</li>
+          <li><strong>Browser lock:</strong> The page's security policy (<code>connect-src 'self'</code>) blocks every connection except to the app's own address. Even if the code had a bug, the browser would stop the request.</li>
+          <li><strong>Works offline:</strong> Once opened, the page loads without a connection; forms, reports and backups work. Automatic point detection downloads on first use (~25 MB) and then works offline too.</li>
+          <li><strong>Your records stay with you:</strong> In the browser's local storage (photos and frames in IndexedDB). A backup file (.json) is only created when you download it, and goes only where you save it.</li>
+          <li><strong>Windows version:</strong> The same app; the only difference is that on start it asks GitHub whether a new version exists. Nothing from your records is sent with that request.</li>
+        </ul>
+
+        <h2>Check it yourself</h2>
+        <ol>
+          <li><strong>Turn off the internet:</strong> Open <a href={app}>the app</a> once, switch off Wi-Fi and reload. The app opens; you can add records and export Excel or PDF.</li>
+          <li><strong>Watch the Network tab:</strong> Press F12, switch to <em>Network</em>. Open a photo, detect the points automatically, export a report. Only files from <code>durus.ysfdurak.com</code> appear.</li>
+          <li><strong>Read the source:</strong> All code is <a href={repo}>open on GitHub</a>. The app is a single file: <a href={src}><code>tools/i18n/source.html</code></a>; the libraries it uses, with their licences, are in the <a href={lib}><code>lib/</code></a> folder.</li>
+        </ol>
+
+        <h2>Methods and their sources</h2>
+        <table>
+          <thead><tr><th>Method</th><th>For</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>REBA</td><td>Whole-body posture</td><td>Hignett and McAtamney (2000)</td></tr>
+            <tr><td>RULA</td><td>Upper limbs, seated or standing fixed work</td><td>McAtamney and Corlett (1993)</td></tr>
+            <tr><td>OWAS</td><td>Posture code and action category</td><td>Karhu et al. (1977)</td></tr>
+            <tr><td>NIOSH</td><td>Lifting: recommended weight limit and lifting index</td><td>Revised NIOSH lifting equation (Waters et al., 1993)</td></tr>
+            <tr><td>KIM</td><td>Lifting-carrying and pushing-pulling</td><td>BAuA Key Indicator Methods</td></tr>
+            <tr><td>Liberty Mutual</td><td>Acceptable force for pushing, pulling, carrying</td><td>Snook and Ciriello tables</td></tr>
+            <tr><td>OCRA, QEC, ROSA, Nordic questionnaire</td><td>Repetitive work, quick screening, office, symptom survey</td><td>The methods' published forms</td></tr>
+          </tbody>
+        </table>
+
+        <h2>How automatic point detection works</h2>
+        <ul>
+          <li>The model finds 33 body points in the image. Angles are calculated from these points <strong>in the image plane</strong> (2D).</li>
+          <li>So the camera should be perpendicular to the angle being measured: a side view gives the most accurate trunk and arm flexion. An image taken at an angle makes angles look smaller than they are.</li>
+          <li>Detected points can be corrected by hand. The app warns about angles near a threshold and about views that are not from the side; the final call always rests with the assessor.</li>
+        </ul>
+
+        <h2>Known limits</h2>
+        <ul>
+          <li>Results support decisions; they do not replace an assessment by an occupational safety specialist or occupational physician.</li>
+          <li>A single camera cannot see depth; twisting and side-bending must be entered by hand.</li>
+          <li>Clearing browser data also deletes the records stored there. Follow the in-app backup reminder.</li>
+          <li>There is no shared editing by several people and no central storage.</li>
+          <li>This page is a technical description, not legal advice. Agree the rules for informing employees who are photographed or filmed with your own organisation.</li>
+        </ul>
+      </>
+    )}
+  </article>
+</Base>
