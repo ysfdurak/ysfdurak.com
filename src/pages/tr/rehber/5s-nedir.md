@@ -43,6 +43,19 @@ Kalan her şeyin belli bir yeri olur ve o yer işaretlenir.
 
 **Depo örneği:** bant, bıçak ve etiket yazıcısı için masada gölge pano; boş palet alanı zeminde sarı çizgiyle işaretli.
 
+
+<figure class="rehber-gorsel rehber-foto foto-cift">
+  <div>
+    <img src="/img/rehber/5s/once-daginik-tezgah.webp" width="1200" height="800" alt="Tozlu bir tezgâhın üzerine karışık bırakılmış el aletleri" loading="lazy" decoding="async" />
+    <span class="foto-etiket once">Önce</span>
+  </div>
+  <div>
+    <img src="/img/rehber/5s/sonra-alet-panosu.webp" width="1200" height="800" alt="Duvardaki panoda her biri kendi yerinde asılı el aletleri" loading="lazy" decoding="async" />
+    <span class="foto-etiket sonra">Sonra</span>
+  </div>
+  <figcaption>Dağınık tezgâhta alet aranır; alet panosunda her aletin yeri bellidir ve eksik olan hemen görünür.</figcaption>
+</figure>
+
 <figure class="rehber-gorsel">
   <a href="/img/rehber/5s/once-sonra.svg" title="Büyük boyutta aç"><img src="/img/rehber/5s/once-sonra.svg" width="680" height="400" alt="Paketleme masası 5S öncesi ve sonrası: önce aletler ve paletler dağınık; sonra aletler gölge panoda, palet alanı sarı çizgiyle işaretli" loading="lazy" /></a>
   <figcaption>Ayıkla ve Düzenle adımlarından sonra aynı paketleme masası: eksik alet gölge panoda bir bakışta görünür.</figcaption>

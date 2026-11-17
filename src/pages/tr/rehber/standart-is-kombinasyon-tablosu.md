@@ -14,6 +14,12 @@ tool:
 
 **Kısa cevap:** Standart iş kombinasyon tablosu, bir çevrimdeki **insan işini ve makine işini aynı zaman çizelgesinde** gösterir. Her adım türüne göre çizilir: el işi, yürüme, makine işi ve bekleme. Makine çalışırken operatör başka bir iş yapabiliyorsa bu tabloda hemen görülür. Amaç, operatörün makineyi izleyerek beklediği süreyi ortadan kaldırmak ve çevrimi [takt zamanına](/tr/rehber/takt-zamani-nedir/) sığdırmaktır.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/standart-is/strecli-paletler.webp" width="1200" height="800" alt="Depoda streç filmle sarılmış paletler ve raflar" loading="lazy" decoding="async" />
+  <figcaption>Streç sarma gibi makine işlerinde operatörün beklediği süre kombinasyon tablosunda görünür olur.</figcaption>
+</figure>
+
+
 ## Tablo nasıl okunur?
 
 | Çizgi türü | Anlamı |

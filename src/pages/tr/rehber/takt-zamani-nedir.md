@@ -14,6 +14,12 @@ tool:
 
 **Kısa cevap:** Takt zamanı, talebi karşılamak için **her kaç saniyede bir** bir birim çıkarmanız gerektiğini gösterir.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/takt-zamani/depo-koli-tasima.webp" width="1200" height="800" alt="Depoda raflar arasında koli taşıyan iki çalışan" loading="lazy" decoding="async" />
+  <figcaption>Takt, depodaki işin talebe göre hangi hızda akması gerektiğini söyler.</figcaption>
+</figure>
+
+
 > Takt zamanı = Kullanılabilir çalışma süresi ÷ Talep
 
 Vardiyada 25.200 saniye çalışılabiliyor ve 1.800 koli çıkması gerekiyorsa takt **14 saniyedir**. İşi 14 saniyeden uzun süren bir istasyon talebe yetişemez.

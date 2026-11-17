@@ -14,6 +14,12 @@ tool:
 
 **Kısa cevap:** OWAS (Ovako Working Posture Analysing System), bir çalışma duruşunu **sırt, kollar, bacaklar ve yük** için birer rakamla kodlar ve bu dört haneli kodu bir **eylem kategorisine (1–4)** çevirir. Açı ölçmeden, gözle hızlıca uygulanabilir. Bu yüzden uzun süreli iş örneklemesi ile birlikte, bir işin gün içindeki duruş dağılımını çıkarmak için çok uygundur.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/owas/koli-tasima.webp" width="1200" height="800" alt="Depoda koli taşıyan iki çalışan" loading="lazy" decoding="async" />
+  <figcaption>Vardiya boyunca değişen duruşlar OWAS koduyla hızlıca kaydedilebilir.</figcaption>
+</figure>
+
+
 ## Kodlar
 
 **Sırt**

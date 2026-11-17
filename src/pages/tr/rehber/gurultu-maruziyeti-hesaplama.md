@@ -14,6 +14,12 @@ tool:
 
 **Kısa cevap:** Bir çalışanın gün içinde farklı gürültü düzeylerinde geçirdiği süreler tek bir sayıya çevrilir: **günlük kişisel gürültü maruziyeti, LEX,8h**. Bu değer, 8 saat boyunca aynı enerjiyi verecek sabit ses düzeyidir. Gürültü Yönetmeliği'ndeki değerlerle karşılaştırılır: **80 dB(A) alt eylem değeri, 85 dB(A) üst eylem değeri, 87 dB(A) maruziyet sınır değeri**.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/gurultu/kulak-koruyucu.webp" width="1200" height="800" alt="Koruyucu gözlük ve kulaklık takmış bir çalışan" loading="lazy" decoding="async" />
+  <figcaption>Kulak koruyucu son çaredir; önce kaynakta azaltma gelir.</figcaption>
+</figure>
+
+
 > LEX,8h = 10 × log₁₀ [ Σ (Tᵢ ÷ 8) × 10^(Lᵢ ÷ 10) ]
 
 Lᵢ her ortamda ölçülen eşdeğer ses düzeyi (LAeq, dB(A)), Tᵢ o ortamda geçen süredir (saat).

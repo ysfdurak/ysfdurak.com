@@ -14,6 +14,12 @@ tool:
 
 **Kısa cevap:** Masa başı çalışmada boyun, bel, omuz ve bilek rahatsızlıklarının çoğu sandalye, ekran, klavye ve farenin yanlış ayarından gelir. **ROSA (Rapid Office Strain Assessment)**, bu düzeni 1–10 arasında puanlayan yayımlanmış bir yöntemdir. Sandalye bir yanda, ekran, telefon, fare ve klavye öbür yanda puanlanır. Her bölüme günlük kullanım süresi eklenir. Sonuç ikisinden büyük olanıdır. **ROSA 5 ve üzeri** ise düzenleme ya da ayrıntılı değerlendirme gerekir.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/ofis-ergonomisi/calisma-masasi.webp" width="1200" height="900" alt="Ahşap çalışma masası, monitör ve klavye" loading="lazy" decoding="async" />
+  <figcaption>Ekran, klavye ve sandalye birbirine göre ayarlanmadıkça pahalı ekipman tek başına fark yaratmaz.</figcaption>
+</figure>
+
+
 ## Doğru masa başı düzeni
 
 - **Sandalye:** dizler yaklaşık 90°, ayaklar yere basıyor. Diz arkası ile koltuk ucu arasında yaklaşık 8 cm boşluk. Bel desteği bel boşluğunda, sırt 95–110° yaslanıyor.

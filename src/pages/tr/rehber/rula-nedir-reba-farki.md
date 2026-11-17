@@ -14,6 +14,12 @@ tool:
 
 **Kısa cevap:** RULA (Rapid Upper Limb Assessment), duruşu özellikle **kollar, bilekler ve boyun** açısından puanlayan bir ergonomik risk yöntemidir. Sonuç 1 ile 7 arasındadır. 7 en yüksek risktir. Masa başında, montaj ve paketleme gibi kolların yoğun çalıştığı işlerde RULA; tüm vücudun hareket ettiği kaldırma ve taşıma işlerinde [REBA](/tr/rehber/reba-nasil-hesaplanir/) daha uygundur.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/rula-reba/raf-duzenleme.webp" width="1200" height="800" alt="Depo rafında kutuları düzenleyen bir çalışan" loading="lazy" decoding="async" />
+  <figcaption>Kolların yoğun çalıştığı işlerde RULA, tüm vücudun çalıştığı işlerde REBA daha açıklayıcıdır.</figcaption>
+</figure>
+
+
 ## RULA nasıl puanlanır?
 
 Puanlama iki gruptan oluşur:

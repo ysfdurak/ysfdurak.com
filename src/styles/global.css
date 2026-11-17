@@ -195,8 +195,6 @@ section[id] { scroll-margin-top: 1rem; }
 .tool-box .tool-shot img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 8px; }
 @media (max-width: 560px) { .tool-box.has-shot { grid-template-columns: 1fr; } .tool-box .tool-shot { max-width: 320px; } }
 .guide .rehber-foto img { border: 0; background: #e2e8f0; }
-.guide .rehber-foto .kredi { display: block; font-size: 0.8rem; margin-top: 0.15rem; }
-.guide .rehber-foto .kredi a { color: inherit; }
 .guide .foto-cift { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
 .guide .foto-cift > div { position: relative; }
 .guide .foto-cift img { aspect-ratio: 3 / 2; object-fit: cover; }

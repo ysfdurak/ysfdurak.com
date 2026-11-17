@@ -14,6 +14,12 @@ tool:
 
 **Kısa cevap:** Hat dengeleme, bir işin adımlarını istasyonlara ya da kişilere, her birinin yükü [takt zamanını](/tr/rehber/takt-zamani-nedir/) aşmayacak ve yükler birbirine olabildiğince yakın olacak şekilde dağıtmaktır. Hattın hızını en yüklü istasyon belirler. Yükü takttan fazla olan istasyon **darboğazdır**: talebe yetişilemez. Yükleri takttan çok düşük olan istasyonlarda ise bekleme oluşur.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/hat-dengeleme/koli-bantlama.webp" width="1200" height="900" alt="Depodaki paketleme masasında koliyi bantlayan bir çalışan" loading="lazy" decoding="async" />
+  <figcaption>Paketleme hattında her istasyonun yükü takta ne kadar yakınsa hat o kadar dengelidir.</figcaption>
+</figure>
+
+
 ## Temel hesaplar
 
 > En az istasyon sayısı = ⌈ Toplam iş içeriği ÷ Takt ⌉
