@@ -178,6 +178,7 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'durus-ergonomi-analizi',
+    method: { tr: '/tr/projeler/durus-ergonomi-analizi/yontem-ve-gizlilik/', en: '/en/projects/durus-ergonomi-analizi/method-and-privacy/' },
     name: 'Duruş – Ergonomi Analizi',
     category: 'operasyon',
     hosting: 'desktop',
