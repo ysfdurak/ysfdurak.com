@@ -214,6 +214,9 @@ const jsonLd = {
     <section>
       <h2>{t('project.tech')}</h2>
       <p class="chips">{p.tech.map((x) => <span class="tag">{x}</span>)}</p>
+      {(p.repo || p.repos) && (
+        <p class="license-note">{t('project.license')} <a href={`mailto:${SITE.email[lang]}?subject=${encodeURIComponent(p.name)}`}>{SITE.email[lang]}</a></p>
+      )}
     </section>
 
     <section class="note">

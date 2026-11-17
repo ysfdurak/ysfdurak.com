@@ -205,3 +205,5 @@ section[id] { scroll-margin-top: 1rem; }
 .guide .foto-etiket.once { background: #b42318; }
 .guide .foto-etiket.sonra { background: #0f766e; }
 @media (max-width: 560px) { .guide .foto-cift { grid-template-columns: 1fr; } }
+
+.license-note { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.8rem; }
