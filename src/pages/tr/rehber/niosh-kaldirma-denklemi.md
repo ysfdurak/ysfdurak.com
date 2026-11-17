@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/niosh/koli-tasiyan-calisan.webp" width="1200" height="800" alt="Depo koridorunda koli taşıyan bir çalışan" loading="lazy" decoding="async" />
-  <figcaption>Aynı 12 kg, koşullara göre güvenli de olabilir riskli de: NIOSH ağırlığı koşullarıyla birlikte değerlendirir. <span class="kredi">Fotoğraf: <a href="https://www.pexels.com/photo/4483774/" rel="nofollow">Tiger Lily / Pexels</a></span></figcaption>
+  <figcaption>Aynı 12 kg, koşullara göre güvenli de olabilir riskli de: NIOSH ağırlığı koşullarıyla birlikte değerlendirir.</figcaption>
 </figure>
+
 
 > RWL = 23 kg × HM × VM × DM × AM × FM × CM
 >

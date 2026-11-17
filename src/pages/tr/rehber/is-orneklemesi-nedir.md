@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/is-orneklemesi/forklift-depo.webp" width="1200" height="900" alt="Büyük bir depoda sarı forklift" loading="lazy" decoding="async" />
-  <figcaption>Forklift operatörü gibi işi her an değişen rollerde zamanın nereye gittiğini iş örneklemesi gösterir. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/82ZiY5pzl1c" rel="nofollow">Kseniia Ilinykh / Unsplash</a></span></figcaption>
+  <figcaption>Forklift operatörü gibi işi her an değişen rollerde zamanın nereye gittiğini iş örneklemesi gösterir.</figcaption>
 </figure>
+
 
 ## Zaman etüdünden farkı
 

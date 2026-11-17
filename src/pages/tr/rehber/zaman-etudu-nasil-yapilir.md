@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/zaman-etudu/kronometre.webp" width="1200" height="900" alt="Siyah zemin üzerinde mekanik bir kronometre" loading="lazy" decoding="async" />
-  <figcaption>Kronometreyle kaçan an geri gelmez; videoyla ölçüm adım sınırlarını kare kare bulmayı sağlar. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/VwqMTcsb0Tg" rel="nofollow">William Warby / Unsplash</a></span></figcaption>
+  <figcaption>Kronometreyle kaçan an geri gelmez; videoyla ölçüm adım sınırlarını kare kare bulmayı sağlar.</figcaption>
 </figure>
+
 
 Aşağıda her adımı, bir depo işi üzerinden gerçek sayılarla anlatıyorum.
 

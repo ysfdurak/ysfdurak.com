@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/star-teknigi/mulakat-el-sikisma.webp" width="1200" height="675" alt="Masa üzerinden tokalaşan iki kişi, iş görüşmesi sonrası" loading="lazy" decoding="async" />
-  <figcaption>Yetkinlik mülakatında görüşmeci, anlattığınız olayda sizin ne yaptığınızı dinler. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/jEpZNyFSQwQ" rel="nofollow">Vitaly Gariev / Unsplash</a></span></figcaption>
+  <figcaption>Yetkinlik mülakatında görüşmeci, anlattığınız olayda sizin ne yaptığınızı dinler.</figcaption>
 </figure>
+
 
 ## Yetkinlik bazlı soru nasıl tanınır?
 

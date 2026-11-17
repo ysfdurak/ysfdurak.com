@@ -43,16 +43,17 @@ Kalan her şeyin belli bir yeri olur ve o yer işaretlenir.
 
 **Depo örneği:** bant, bıçak ve etiket yazıcısı için masada gölge pano; boş palet alanı zeminde sarı çizgiyle işaretli.
 
+
 <figure class="rehber-gorsel rehber-foto foto-cift">
   <div>
-    <img src="/img/rehber/5s/once-daginik-tezgah.webp" width="1200" height="800" alt="Raflarında ve tezgâhında el aletleri karışık duran bir atölye" loading="lazy" decoding="async" />
+    <img src="/img/rehber/5s/once-daginik-tezgah.webp" width="1200" height="800" alt="Tozlu bir tezgâhın üzerine karışık bırakılmış el aletleri" loading="lazy" decoding="async" />
     <span class="foto-etiket once">Önce</span>
   </div>
   <div>
     <img src="/img/rehber/5s/sonra-alet-panosu.webp" width="1200" height="800" alt="Duvardaki panoda her biri kendi yerinde asılı el aletleri" loading="lazy" decoding="async" />
     <span class="foto-etiket sonra">Sonra</span>
   </div>
-  <figcaption>Dağınık tezgâhta alet aranır; alet panosunda her aletin yeri bellidir ve eksik olan hemen görünür. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/gJWlckmTeYc" rel="nofollow">Job Vermeulen / Unsplash</a> · Fotoğraf: <a href="https://unsplash.com/photos/t5YUoHW6zRo" rel="nofollow">Barn Images / Unsplash</a></span></figcaption>
+  <figcaption>Dağınık tezgâhta alet aranır; alet panosunda her aletin yeri bellidir ve eksik olan hemen görünür.</figcaption>
 </figure>
 
 <figure class="rehber-gorsel">

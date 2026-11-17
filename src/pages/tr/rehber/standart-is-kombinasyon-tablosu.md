@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/standart-is/strecli-paletler.webp" width="1200" height="800" alt="Depoda streç filmle sarılmış paletler ve raflar" loading="lazy" decoding="async" />
-  <figcaption>Streç sarma gibi makine işlerinde operatörün beklediği süre kombinasyon tablosunda görünür olur. <span class="kredi">Fotoğraf: <a href="https://www.pexels.com/photo/4487363/" rel="nofollow">Tiger Lily / Pexels</a></span></figcaption>
+  <figcaption>Streç sarma gibi makine işlerinde operatörün beklediği süre kombinasyon tablosunda görünür olur.</figcaption>
 </figure>
+
 
 ## Tablo nasıl okunur?
 

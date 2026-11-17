@@ -6,8 +6,8 @@ Kullanım:
   python3 scripts/rehber_fotograflari.py klasor DIR # indirilmiş dosyaları DIR içinden alır (ad: <konu>-<ad>.jpg)
   python3 scripts/rehber_fotograflari.py ekle       # webp'leri yazılara <figure> olarak ekler (tekrar çalıştırmak güvenli)
 
-Lisanslar: Pexels Lisansı ve Unsplash Lisansı ticari kullanıma izin verir, atıf zorunlu değildir.
-Yine de her fotoğrafın altına fotoğrafçının adı ve kaynak yazılır.
+Lisanslar: Pexels Lisansı ve Unsplash Lisansı ticari kullanıma izin verir, atıf zorunlu değildir;
+bu yüzden sayfada fotoğrafçı adı gösterilmez. Kaynak kimlikleri aşağıdaki listede kayıtlıdır.
 Unsplash+ (ücretli) fotoğraflar bu listeye alınmaz.
 """
 import io
@@ -24,13 +24,13 @@ ORAN = {'5s': 3 / 2}
 VARSAYILAN_ORAN = 4 / 3
 # Kırpmada dikey odak (0 = üst, 1 = alt); yazılmayanlar ortadan kırpılır.
 ODAK = {'is-orneklemesi-forklift-depo': 0.72, 'hat-dengeleme-koli-hazirlama': 0.55,
-        'ofis-ergonomisi-calisma-masasi': 0.62, '5s-once-daginik-tezgah': 0.6}   # yazı sütunu ~760 px; 1200 px yüksek yoğunluklu ekranlarda da net
+        'ofis-ergonomisi-calisma-masasi': 0.62, 'hat-dengeleme-koli-bantlama': 0.72}   # yazı sütunu ~760 px; 1200 px yüksek yoğunluklu ekranlarda da net
 KALITE = 74
 
 # (konu klasörü, dosya adı, yazı, kaynak, kimlik, fotoğrafçı, alt metin, alt yazı)
 FOTOLAR = [
-    ('5s', 'once-daginik-tezgah', '5s-nedir', 'unsplash', 'gJWlckmTeYc', 'Job Vermeulen',
-     'Raflarında ve tezgâhında el aletleri karışık duran bir atölye',
+    ('5s', 'once-daginik-tezgah', '5s-nedir', 'unsplash', 'CxuTYrgVoyI', '',
+     'Tozlu bir tezgâhın üzerine karışık bırakılmış el aletleri',
      None),
     ('5s', 'sonra-alet-panosu', '5s-nedir', 'unsplash', 't5YUoHW6zRo', 'Barn Images',
      'Duvardaki panoda her biri kendi yerinde asılı el aletleri',
@@ -41,8 +41,8 @@ FOTOLAR = [
     ('takt-zamani', 'depo-koli-tasima', 'takt-zamani-nedir', 'pexels', '4487360', 'Tiger Lily',
      'Depoda raflar arasında koli taşıyan iki çalışan',
      'Takt, depodaki işin talebe göre hangi hızda akması gerektiğini söyler.'),
-    ('hat-dengeleme', 'koli-hazirlama', 'hat-dengeleme-yamazumi', 'unsplash', 'uqZXLOd4F8E', 'GB The Green Brand',
-     'Raf önünde karton koli hazırlayan bir çalışan',
+    ('hat-dengeleme', 'koli-bantlama', 'hat-dengeleme-yamazumi', 'unsplash', 'OmjHovNJvA8', '',
+     'Depodaki paketleme masasında koliyi bantlayan bir çalışan',
      'Paketleme hattında her istasyonun yükü takta ne kadar yakınsa hat o kadar dengelidir.'),
     ('standart-is', 'strecli-paletler', 'standart-is-kombinasyon-tablosu', 'pexels', '4487363', 'Tiger Lily',
      'Depoda streç filmle sarılmış paletler ve raflar',
@@ -80,9 +80,9 @@ FOTOLAR = [
     ('gurultu', 'kulak-koruyucu', 'gurultu-maruziyeti-hesaplama', 'unsplash', '8WmS1_XWdKg', 'Jimmy Nilsson Masth',
      'Koruyucu gözlük ve kulaklık takmış bir çalışan',
      'Kulak koruyucu son çaredir; önce kaynakta azaltma gelir.'),
-    ('isi-stresi', 'yukleme-rampasi', 'isi-stresi-wbgt', 'unsplash', '2vM-hJbDwME', 'PortCalls Asia',
-     'Güneşli bir liman sahasında konteyner yığınları ve yükleme ekipmanları',
-     'Güneş altındaki açık sahalar ve ısınan metal yüzeyler ışınım yoluyla ısı yükünü artırır.'),
+    ('isi-stresi', 'yukleme-rampasi', 'isi-stresi-wbgt', 'unsplash', 'SJGC3NNOqU4', '',
+     'Güneş alan bir depo cephesinde yan yana yükleme rampası kapıları',
+     'Güneş alan rampa kapıları ve ısınan metal yüzeyler ışınım yoluyla ısı yükünü artırır.'),
 ]
 
 
@@ -169,7 +169,7 @@ def ekle():
             continue
         blok = ('<figure class="rehber-gorsel rehber-foto">\n'
                 f'  {img(konu, ad, alt)}\n'
-                f'  <figcaption>{altyazi} <span class="kredi">{kredi(kaynak, kimlik, yazar)}</span></figcaption>\n'
+                f'  <figcaption>{altyazi}</figcaption>\n'
                 '</figure>\n')
         satirlar = metin.split('\n')
         i = next(k for k, s in enumerate(satirlar) if s.startswith('**Kısa cevap:**'))
@@ -192,8 +192,7 @@ def ekle():
                     f'    {img(sonra[0], sonra[1], sonra[6])}\n'
                     '    <span class="foto-etiket sonra">Sonra</span>\n'
                     '  </div>\n'
-                    '  <figcaption>Dağınık tezgâhta alet aranır; alet panosunda her aletin yeri bellidir ve eksik olan hemen görünür. '
-                    f'<span class="kredi">{kredi(once[3], once[4], once[5])} · {kredi(sonra[3], sonra[4], sonra[5])}</span></figcaption>\n'
+                    '  <figcaption>Dağınık tezgâhta alet aranır; alet panosunda her aletin yeri bellidir ve eksik olan hemen görünür.</figcaption>\n'
                     '</figure>\n\n')
             hedef = '<figure class="rehber-gorsel">\n  <a href="/img/rehber/5s/once-sonra.svg"'
             assert hedef in metin

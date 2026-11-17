@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/ofis-ergonomisi/calisma-masasi.webp" width="1200" height="900" alt="Ahşap çalışma masası, monitör ve klavye" loading="lazy" decoding="async" />
-  <figcaption>Ekran, klavye ve sandalye birbirine göre ayarlanmadıkça pahalı ekipman tek başına fark yaratmaz. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/tdnYk4qOGhc" rel="nofollow">ergonofis / Unsplash</a></span></figcaption>
+  <figcaption>Ekran, klavye ve sandalye birbirine göre ayarlanmadıkça pahalı ekipman tek başına fark yaratmaz.</figcaption>
 </figure>
+
 
 ## Doğru masa başı düzeni
 

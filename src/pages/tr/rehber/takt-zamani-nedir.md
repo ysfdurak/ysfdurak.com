@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/takt-zamani/depo-koli-tasima.webp" width="1200" height="800" alt="Depoda raflar arasında koli taşıyan iki çalışan" loading="lazy" decoding="async" />
-  <figcaption>Takt, depodaki işin talebe göre hangi hızda akması gerektiğini söyler. <span class="kredi">Fotoğraf: <a href="https://www.pexels.com/photo/4487360/" rel="nofollow">Tiger Lily / Pexels</a></span></figcaption>
+  <figcaption>Takt, depodaki işin talebe göre hangi hızda akması gerektiğini söyler.</figcaption>
 </figure>
+
 
 > Takt zamanı = Kullanılabilir çalışma süresi ÷ Talep
 

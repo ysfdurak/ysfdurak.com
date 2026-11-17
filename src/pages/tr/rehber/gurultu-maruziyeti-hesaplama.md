@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/gurultu/kulak-koruyucu.webp" width="1200" height="800" alt="Koruyucu gözlük ve kulaklık takmış bir çalışan" loading="lazy" decoding="async" />
-  <figcaption>Kulak koruyucu son çaredir; önce kaynakta azaltma gelir. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/8WmS1_XWdKg" rel="nofollow">Jimmy Nilsson Masth / Unsplash</a></span></figcaption>
+  <figcaption>Kulak koruyucu son çaredir; önce kaynakta azaltma gelir.</figcaption>
 </figure>
+
 
 > LEX,8h = 10 × log₁₀ [ Σ (Tᵢ ÷ 8) × 10^(Lᵢ ÷ 10) ]
 

@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/fine-kinney/forklift-raflar.webp" width="1200" height="900" alt="Yüksek raflar arasında forklift kullanan bir çalışan" loading="lazy" decoding="async" />
-  <figcaption>Forkliftle yayanın aynı koridoru kullanması, Fine-Kinney ile puanlanan tipik bir depo tehlikesidir. <span class="kredi">Fotoğraf: <a href="https://www.pexels.com/photo/13532504/" rel="nofollow">Jimmy Nilsson Masth / Pexels</a></span></figcaption>
+  <figcaption>Forkliftle yayanın aynı koridoru kullanması, Fine-Kinney ile puanlanan tipik bir depo tehlikesidir.</figcaption>
 </figure>
+
 
 > Risk = Olasılık × Frekans × Şiddet
 

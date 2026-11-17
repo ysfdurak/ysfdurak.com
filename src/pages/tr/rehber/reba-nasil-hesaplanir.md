@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/reba/koli-yukleme.webp" width="1200" height="800" alt="Kamyonete karton koli yükleyen iki çalışan" loading="lazy" decoding="async" />
-  <figcaption>Koli alma ve yerleştirme gibi tüm vücudun çalıştığı işler REBA ile puanlanır. <span class="kredi">Fotoğraf: <a href="https://www.pexels.com/photo/4487487/" rel="nofollow">Tiger Lily / Pexels</a></span></figcaption>
+  <figcaption>Koli alma ve yerleştirme gibi tüm vücudun çalıştığı işler REBA ile puanlanır.</figcaption>
 </figure>
+
 
 Aşağıda her adımı, bir depo çalışanının alçak paletten koli alması örneğiyle hesaplıyorum.
 

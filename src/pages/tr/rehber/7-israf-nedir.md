@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/7-israf/forklift-paletler.webp" width="1200" height="900" alt="Paletlerle dolu bir depoda ilerleyen forklift" loading="lazy" decoding="async" />
-  <figcaption>Taşıma israfı: palet her yer değiştirdiğinde zaman harcanır, ürün değişmez. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/F2C_mSrb6iM" rel="nofollow">Bernd Dittrich / Unsplash</a></span></figcaption>
+  <figcaption>Taşıma israfı: palet her yer değiştirdiğinde zaman harcanır, ürün değişmez.</figcaption>
 </figure>
+
 
 ## Katma değer, gerekli iş ve israf
 

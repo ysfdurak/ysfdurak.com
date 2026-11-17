@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/owas/koli-tasima.webp" width="1200" height="800" alt="Depoda koli taşıyan iki çalışan" loading="lazy" decoding="async" />
-  <figcaption>Vardiya boyunca değişen duruşlar OWAS koduyla hızlıca kaydedilebilir. <span class="kredi">Fotoğraf: <a href="https://www.pexels.com/photo/4487362/" rel="nofollow">Tiger Lily / Pexels</a></span></figcaption>
+  <figcaption>Vardiya boyunca değişen duruşlar OWAS koduyla hızlıca kaydedilebilir.</figcaption>
 </figure>
+
 
 ## Kodlar
 

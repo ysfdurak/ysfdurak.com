@@ -16,8 +16,9 @@ tool:
 
 <figure class="rehber-gorsel rehber-foto">
   <img src="/img/rehber/kaizen/yapiskan-notlar.webp" width="1200" height="800" alt="Duvarda renkli yapışkan notlar" loading="lazy" decoding="async" />
-  <figcaption>Öneriler kayda girmezse duvardaki not gibi kalır; akış ve sorumlu onları sonuca taşır. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/fQOyF0D0cDU" rel="nofollow">Jakub Żerdzicki / Unsplash</a></span></figcaption>
+  <figcaption>Öneriler kayda girmezse duvardaki not gibi kalır; akış ve sorumlu onları sonuca taşır.</figcaption>
 </figure>
+
 
 ## Öneri sistemleri neden söner?
 

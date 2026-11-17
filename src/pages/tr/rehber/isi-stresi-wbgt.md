@@ -15,9 +15,10 @@ tool:
 **Kısa cevap:** Sıcak ortamda çalışmanın riski yalnızca hava sıcaklığına bağlı değildir: nem, ışınım (sıcak yüzeyler, güneş) ve iş yükü de belirleyicidir. **WBGT (Wet Bulb Globe Temperature)** bu etkileri tek bir sıcaklık değerinde toplar. Hesaplanan WBGT, işin ağırlığına ve çalışanın ısıya alışık olup olmadığına göre değişen **referans değerle** karşılaştırılır. Aşılıyorsa iş-dinlenme düzeni, teknik önlem ve ayrıntılı değerlendirme gerekir. Yöntem ISO 7243 standardına dayanır.
 
 <figure class="rehber-gorsel rehber-foto">
-  <img src="/img/rehber/isi-stresi/yukleme-rampasi.webp" width="1200" height="900" alt="Güneşli bir liman sahasında konteyner yığınları ve yükleme ekipmanları" loading="lazy" decoding="async" />
-  <figcaption>Güneş altındaki açık sahalar ve ısınan metal yüzeyler ışınım yoluyla ısı yükünü artırır. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/2vM-hJbDwME" rel="nofollow">PortCalls Asia / Unsplash</a></span></figcaption>
+  <img src="/img/rehber/isi-stresi/yukleme-rampasi.webp" width="1200" height="800" alt="Güneş alan bir depo cephesinde yan yana yükleme rampası kapıları" loading="lazy" decoding="async" />
+  <figcaption>Güneş alan rampa kapıları ve ısınan metal yüzeyler ışınım yoluyla ısı yükünü artırır.</figcaption>
 </figure>
+
 
 ## WBGT nasıl hesaplanır?
 
