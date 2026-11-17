@@ -14,6 +14,11 @@ tool:
 
 **Kısa cevap:** Yetkinlik bazlı mülakatta "Bana bir zamanı anlatın ki…" diye başlayan sorular, geçmişte gerçekten ne yaptığınızı öğrenmek için sorulur. **STAR tekniği** cevabı dört parçaya ayırır: **Durum** (Situation), **Görev** (Task), **Eylem** (Action), **Sonuç** (Result). İyi bir cevabın ağırlığı eylemdedir: ekibin değil, sizin ne yaptığınız. Sonuç da mümkünse bir sayıyla ve bunu nereden bildiğinizle söylenir.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/star-teknigi/mulakat-el-sikisma.webp" width="1200" height="675" alt="Masa üzerinden tokalaşan iki kişi, iş görüşmesi sonrası" loading="lazy" decoding="async" />
+  <figcaption>Yetkinlik mülakatında görüşmeci, anlattığınız olayda sizin ne yaptığınızı dinler. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/jEpZNyFSQwQ" rel="nofollow">Vitaly Gariev / Unsplash</a></span></figcaption>
+</figure>
+
 ## Yetkinlik bazlı soru nasıl tanınır?
 
 Bu sorular varsayıma değil, yaşanmış bir olaya yöneliktir:

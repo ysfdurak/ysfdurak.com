@@ -14,6 +14,11 @@ tool:
 
 **Kısa cevap:** Fine-Kinney, bir tehlikenin riskini üç puanın çarpımıyla hesaplar:
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/fine-kinney/forklift-raflar.webp" width="1200" height="900" alt="Yüksek raflar arasında forklift kullanan bir çalışan" loading="lazy" decoding="async" />
+  <figcaption>Forkliftle yayanın aynı koridoru kullanması, Fine-Kinney ile puanlanan tipik bir depo tehlikesidir. <span class="kredi">Fotoğraf: <a href="https://www.pexels.com/photo/13532504/" rel="nofollow">Jimmy Nilsson Masth / Pexels</a></span></figcaption>
+</figure>
+
 > Risk = Olasılık × Frekans × Şiddet
 
 Olasılık zararın ne kadar muhtemel olduğunu, frekans çalışanın tehlikeye ne sıklıkla maruz kaldığını, şiddet zarar gerçekleşirse sonucun ne kadar ağır olacağını gösterir. Sonuç 20'nin altındaysa risk kabul edilebilir, **400 ve üzerindeyse tolerans gösterilemez**: önlem hemen alınmalıdır, gerekirse iş durdurulur. Türkiye'de iş sağlığı ve güvenliği risk değerlendirmesinde en yaygın kullanılan yöntemlerden biridir.

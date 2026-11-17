@@ -14,6 +14,11 @@ tool:
 
 **Kısa cevap:** Kaizen, Japonca "iyiye doğru değişim" anlamına gelir. İşi yapan herkesin, küçük ama sürekli iyileştirmelerle süreci geliştirmesi fikrine dayanır. Çalışan öneri sistemi bu fikri düzene sokar: her öneri kayda girer, belli bir sürede değerlendirilir, uygulanır, sonucu ölçülür ve öneren kişiye geri bildirim verilir. Bir öneri sistemini yaşatan şey formun kendisi değil, **önerinin kimde beklediğinin görünmesi** ve **önerenin sonucu öğrenmesidir**.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/kaizen/yapiskan-notlar.webp" width="1200" height="800" alt="Duvarda renkli yapışkan notlar" loading="lazy" decoding="async" />
+  <figcaption>Öneriler kayda girmezse duvardaki not gibi kalır; akış ve sorumlu onları sonuca taşır. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/fQOyF0D0cDU" rel="nofollow">Jakub Żerdzicki / Unsplash</a></span></figcaption>
+</figure>
+
 ## Öneri sistemleri neden söner?
 
 Çoğu öneri sistemi ilk aylarda çok sayıda öneri alır, sonra katılım düşer. Sık görülen nedenler:

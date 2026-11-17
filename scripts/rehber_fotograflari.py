@@ -18,13 +18,19 @@ import urllib.request
 KOK = os.path.join(os.path.dirname(__file__), '..')
 IMG = os.path.join(KOK, 'public', 'img', 'rehber')
 MD = os.path.join(KOK, 'src', 'pages', 'tr', 'rehber')
-GENISLIK = 1200   # yazı sütunu ~760 px; 1200 px yüksek yoğunluklu ekranlarda da net
+GENISLIK = 1200
+# Dikey fotoğraflar yazıda çok yer kaplamasın diye yatay kırpılır (genişlik/yükseklik oranı).
+ORAN = {'5s': 3 / 2}
+VARSAYILAN_ORAN = 4 / 3
+# Kırpmada dikey odak (0 = üst, 1 = alt); yazılmayanlar ortadan kırpılır.
+ODAK = {'is-orneklemesi-forklift-depo': 0.72, 'hat-dengeleme-koli-hazirlama': 0.55,
+        'ofis-ergonomisi-calisma-masasi': 0.62, '5s-once-daginik-tezgah': 0.6}   # yazı sütunu ~760 px; 1200 px yüksek yoğunluklu ekranlarda da net
 KALITE = 74
 
 # (konu klasörü, dosya adı, yazı, kaynak, kimlik, fotoğrafçı, alt metin, alt yazı)
 FOTOLAR = [
     ('5s', 'once-daginik-tezgah', '5s-nedir', 'unsplash', 'gJWlckmTeYc', 'Job Vermeulen',
-     'Üzerinde birçok el aleti karışık duran ahşap bir çalışma tezgâhı',
+     'Raflarında ve tezgâhında el aletleri karışık duran bir atölye',
      None),
     ('5s', 'sonra-alet-panosu', '5s-nedir', 'unsplash', 't5YUoHW6zRo', 'Barn Images',
      'Duvardaki panoda her biri kendi yerinde asılı el aletleri',
@@ -36,7 +42,7 @@ FOTOLAR = [
      'Depoda raflar arasında koli taşıyan iki çalışan',
      'Takt, depodaki işin talebe göre hangi hızda akması gerektiğini söyler.'),
     ('hat-dengeleme', 'koli-hazirlama', 'hat-dengeleme-yamazumi', 'unsplash', 'uqZXLOd4F8E', 'GB The Green Brand',
-     'Otomatik depolama sistemi önünde karton koli hazırlayan bir çalışan',
+     'Raf önünde karton koli hazırlayan bir çalışan',
      'Paketleme hattında her istasyonun yükü takta ne kadar yakınsa hat o kadar dengelidir.'),
     ('standart-is', 'strecli-paletler', 'standart-is-kombinasyon-tablosu', 'pexels', '4487363', 'Tiger Lily',
      'Depoda streç filmle sarılmış paletler ve raflar',
@@ -57,7 +63,7 @@ FOTOLAR = [
      'Masa üzerinden tokalaşan iki kişi, iş görüşmesi sonrası',
      'Yetkinlik mülakatında görüşmeci, anlattığınız olayda sizin ne yaptığınızı dinler.'),
     ('reba', 'koli-yukleme', 'reba-nasil-hesaplanir', 'pexels', '4487487', 'Tiger Lily',
-     'Depoda karton koli yükleyen iki çalışan',
+     'Kamyonete karton koli yükleyen iki çalışan',
      'Koli alma ve yerleştirme gibi tüm vücudun çalıştığı işler REBA ile puanlanır.'),
     ('rula-reba', 'raf-duzenleme', 'rula-nedir-reba-farki', 'pexels', '7019225', 'cottonbro studio',
      'Depo rafında kutuları düzenleyen bir çalışan',
@@ -75,8 +81,8 @@ FOTOLAR = [
      'Koruyucu gözlük ve kulaklık takmış bir çalışan',
      'Kulak koruyucu son çaredir; önce kaynakta azaltma gelir.'),
     ('isi-stresi', 'yukleme-rampasi', 'isi-stresi-wbgt', 'unsplash', '2vM-hJbDwME', 'PortCalls Asia',
-     'Yükleme alanının önünde duran bir kamyon',
-     'Güneş alan rampa kapıları ve ısınan metal yüzeyler ışınım yoluyla ısı yükünü artırır.'),
+     'Güneşli bir liman sahasında konteyner yığınları ve yükleme ekipmanları',
+     'Güneş altındaki açık sahalar ve ısınan metal yüzeyler ışınım yoluyla ısı yükünü artırır.'),
 ]
 
 
@@ -92,10 +98,15 @@ def sayfa_url(kaynak, kimlik):
     return f'https://unsplash.com/photos/{kimlik}'
 
 
-def kucult(veri, hedef):
+def kucult(veri, hedef, anahtar=''):
     from PIL import Image, ImageOps
     im = Image.open(io.BytesIO(veri))
     im = ImageOps.exif_transpose(im).convert('RGB')
+    oran = ORAN.get(anahtar.split('-')[0], VARSAYILAN_ORAN)
+    if im.width / im.height < oran:   # fazla dikey: yatay kırp
+        h = round(im.width / oran)
+        ust = round((im.height - h) * ODAK.get(anahtar, 0.5))
+        im = im.crop((0, ust, im.width, ust + h))
     if im.width > GENISLIK:
         im = im.resize((GENISLIK, round(im.height * GENISLIK / im.width)), Image.LANCZOS)
     os.makedirs(os.path.dirname(hedef), exist_ok=True)
@@ -114,7 +125,7 @@ def indir():
             continue
         istek = urllib.request.Request(indir_url(kaynak, kimlik), headers={'User-Agent': 'Mozilla/5.0'})
         with urllib.request.urlopen(istek, timeout=60) as yanit:
-            boyut = kucult(yanit.read(), hedef)
+            boyut = kucult(yanit.read(), hedef, f'{konu}-{ad}')
         print(f'{konu}/{ad}.webp {boyut}')
 
 
@@ -124,7 +135,7 @@ def klasorden(klasor):
             yol = os.path.join(klasor, f'{konu}-{ad}{uzanti}')
             if os.path.exists(yol):
                 with open(yol, 'rb') as f:
-                    print(f'{konu}/{ad}.webp {kucult(f.read(), webp_yolu(konu, ad))}')
+                    print(f'{konu}/{ad}.webp {kucult(f.read(), webp_yolu(konu, ad), f"{konu}-{ad}")}')
                 break
         else:
             print('eksik:', f'{konu}-{ad}')
@@ -184,7 +195,7 @@ def ekle():
                     '  <figcaption>Dağınık tezgâhta alet aranır; alet panosunda her aletin yeri bellidir ve eksik olan hemen görünür. '
                     f'<span class="kredi">{kredi(once[3], once[4], once[5])} · {kredi(sonra[3], sonra[4], sonra[5])}</span></figcaption>\n'
                     '</figure>\n\n')
-            hedef = '<figure class="rehber-gorsel">\n  <img src="/img/rehber/5s/once-sonra.svg"'
+            hedef = '<figure class="rehber-gorsel">\n  <a href="/img/rehber/5s/once-sonra.svg"'
             assert hedef in metin
             metin = metin.replace(hedef, blok + hedef, 1)
             open(yol, 'w', encoding='utf-8').write(metin)

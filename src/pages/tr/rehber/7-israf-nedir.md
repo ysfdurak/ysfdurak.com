@@ -14,6 +14,11 @@ tool:
 
 **Kısa cevap:** Yalın üretimde israf, müşterinin karşılığını ödemeye razı olmadığı her iştir. Toyota Üretim Sistemi'nden gelen 7 israf şunlardır: **taşıma, stok, hareket, bekleme, fazla üretim, fazla işlem ve hata**. Çoğu kaynak sekizinci israf olarak **kullanılmayan çalışan yeteneğini** ekler. İsrafı azaltmanın ilk adımı onu görmektir: bir iş adım adım ölçüldüğünde, sürenin büyük kısmının israf olduğu çoğu zaman şaşırtıcıdır.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/7-israf/forklift-paletler.webp" width="1200" height="900" alt="Paletlerle dolu bir depoda ilerleyen forklift" loading="lazy" decoding="async" />
+  <figcaption>Taşıma israfı: palet her yer değiştirdiğinde zaman harcanır, ürün değişmez. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/F2C_mSrb6iM" rel="nofollow">Bernd Dittrich / Unsplash</a></span></figcaption>
+</figure>
+
 ## Katma değer, gerekli iş ve israf
 
 Bir işin her adımı üç sınıftan birine girer:

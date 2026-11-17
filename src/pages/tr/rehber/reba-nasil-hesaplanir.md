@@ -14,6 +14,11 @@ tool:
 
 **Kısa cevap:** REBA (Rapid Entire Body Assessment), bir çalışma duruşunun kas-iskelet sistemi için ne kadar riskli olduğunu tüm vücut üzerinden puanlayan bir yöntemdir. Gövde, boyun ve bacaklar bir grup, kollar ve bilekler diğer grup olarak puanlanır. Yük, kavrama ve aktivite puanları eklenir. Sonuç 1 ile 15 arasında bir sayıdır. **8 ve üzeri yüksek risk** demektir: duruş kısa sürede incelenmeli ve değiştirilmelidir.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/reba/koli-yukleme.webp" width="1200" height="800" alt="Kamyonete karton koli yükleyen iki çalışan" loading="lazy" decoding="async" />
+  <figcaption>Koli alma ve yerleştirme gibi tüm vücudun çalıştığı işler REBA ile puanlanır. <span class="kredi">Fotoğraf: <a href="https://www.pexels.com/photo/4487487/" rel="nofollow">Tiger Lily / Pexels</a></span></figcaption>
+</figure>
+
 Aşağıda her adımı, bir depo çalışanının alçak paletten koli alması örneğiyle hesaplıyorum.
 
 ## REBA ne zaman kullanılır?

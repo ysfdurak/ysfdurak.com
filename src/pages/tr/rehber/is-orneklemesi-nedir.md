@@ -14,6 +14,11 @@ tool:
 
 **Kısa cevap:** İş örneklemesi, bir kişinin ya da makinenin zamanını **nelere harcadığını** bulmak için kullanılır. Gün boyunca **rastgele anlarda** kısa gözlemler yapılır ve her gözlemde ne yapıldığı bir kategoriye yazılır. Bir kategorinin gözlemlerdeki payı, o işe ayrılan zamanın payının tahminidir. Gözlem sayısı arttıkça tahmin daralır. Kaç gözlem gerektiği önceden hesaplanabilir.
 
+<figure class="rehber-gorsel rehber-foto">
+  <img src="/img/rehber/is-orneklemesi/forklift-depo.webp" width="1200" height="900" alt="Büyük bir depoda sarı forklift" loading="lazy" decoding="async" />
+  <figcaption>Forklift operatörü gibi işi her an değişen rollerde zamanın nereye gittiğini iş örneklemesi gösterir. <span class="kredi">Fotoğraf: <a href="https://unsplash.com/photos/82ZiY5pzl1c" rel="nofollow">Kseniia Ilinykh / Unsplash</a></span></figcaption>
+</figure>
+
 ## Zaman etüdünden farkı
 
 | | Zaman etüdü | İş örneklemesi |
