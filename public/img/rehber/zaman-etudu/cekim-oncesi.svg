@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 600" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">Video çekiminden önce beş adım</title>
+  <desc id="d">1 Amacı yaz: süreyi ölçmek, kişiyi değerlendirmek değil. 2 Ekiple konuş ve bilgilendirme metnini ver. 3 Kadrajı işe göre kur: eller ve iş alanı, ses kapalı. 4 Saklama süresini ve kimlerin izleyeceğini belirle. 5 Sonuçları ekiple paylaş, iyileştirmeyi birlikte seç.</desc>
+  <rect width="640" height="600" fill="#ffffff"/>
+  <line x1="62" y1="70" x2="62" y2="540" stroke="#dde3ec" stroke-width="4"/>
+  <g>
+    <circle cx="62" cy="70" r="26" fill="#0f766e"/><text x="62" y="79" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">1</text>
+    <text x="106" y="64" font-size="22" font-weight="700" fill="#14213a">Amacı yaz</text>
+    <text x="106" y="91" font-size="17" fill="#4a5872">Süreyi ölçmek; kişiyi değerlendirmek değil</text>
+  </g>
+  <g>
+    <circle cx="62" cy="187" r="26" fill="#1d4ed8"/><text x="62" y="196" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">2</text>
+    <text x="106" y="181" font-size="22" font-weight="700" fill="#14213a">Ekiple konuş</text>
+    <text x="106" y="208" font-size="17" fill="#4a5872">Çekimden önce anlat, bilgilendirme metnini ver</text>
+  </g>
+  <g>
+    <circle cx="62" cy="304" r="26" fill="#6d28d9"/><text x="62" y="313" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">3</text>
+    <text x="106" y="298" font-size="22" font-weight="700" fill="#14213a">Kadrajı işe göre kur</text>
+    <text x="106" y="325" font-size="17" fill="#4a5872">Eller ve iş alanı yeterli; ses kapalı</text>
+  </g>
+  <g>
+    <circle cx="62" cy="421" r="26" fill="#c2410c"/><text x="62" y="430" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">4</text>
+    <text x="106" y="415" font-size="22" font-weight="700" fill="#14213a">Süreyi ve erişimi belirle</text>
+    <text x="106" y="442" font-size="17" fill="#4a5872">Video ne kadar saklanacak, kim izleyecek?</text>
+  </g>
+  <g>
+    <circle cx="62" cy="538" r="26" fill="#13294b"/><text x="62" y="547" text-anchor="middle" font-size="24" font-weight="800" fill="#fff">5</text>
+    <text x="106" y="532" font-size="22" font-weight="700" fill="#14213a">Sonucu birlikte konuş</text>
+    <text x="106" y="559" font-size="17" fill="#4a5872">Ölçümü paylaş, iyileştirmeyi ekiple seç</text>
+  </g>
+</svg>

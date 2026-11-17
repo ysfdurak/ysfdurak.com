@@ -160,6 +160,7 @@ const jsonLd = {
         <section>
           <h2>{t('project.demo')}</h2>
           <p>{p.demo[lang]}</p>
+          {p.method && <p><a href={p.method[lang]}>{t('project.method')} →</a></p>}
         </section>
       )
     }
