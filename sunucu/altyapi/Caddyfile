@@ -21,3 +21,9 @@ destek.ysfdurak.com {
 	encode zstd gzip
 	reverse_proxy destek:8080
 }
+
+# Diyalog Atölyesi: doğru soru sorma pratiği, Anthropic API (github.com/ysfdurak/diyalog-atolyesi)
+diyalog.ysfdurak.com {
+	encode zstd gzip
+	reverse_proxy diyalog:8080
+}
