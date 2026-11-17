@@ -1,0 +1,127 @@
+---
+// Video Zaman Etüdü: yöntem ve gizlilik sayfası (TR/EN).
+// Formüller uygulamanın docs/PROJE_REHBERI.md "Formüller" bölümüyle ve Web/js/core.js ile aynı olmalı.
+// Test sayıları README'deki eşdeğerlik testleriyle aynı tutulmalı.
+import Base from '../layouts/Base.astro';
+import type { Lang } from '../data/projects';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const tr = lang === 'tr';
+const path = tr ? '/tr/projeler/video-zaman-etudu/yontem-ve-gizlilik/' : '/en/projects/video-zaman-etudu/method-and-privacy/';
+const alt = tr ? '/en/projects/video-zaman-etudu/method-and-privacy/' : '/tr/projeler/video-zaman-etudu/yontem-ve-gizlilik/';
+const project = tr ? '/tr/projeler/video-zaman-etudu/' : '/en/projects/video-zaman-etudu/';
+const app = `https://zaman-etudu.ysfdurak.com/?lang=${lang}`;
+const repo = 'https://github.com/ysfdurak/video-zaman-etudu';
+const parity = `${repo}/blob/main/Shared/esdeger-ornekler.json`;
+const core = `${repo}/blob/main/Web/js/core.js`;
+---
+<Base lang={lang}
+  title={tr ? 'Video Zaman Etüdü: yöntem ve gizlilik' : 'Video Time Study: method and privacy'}
+  description={tr
+    ? 'Video Zaman Etüdü videonuzu hiçbir yere göndermez ve internetsiz çalışır. Standart süre formülleri, gözlem yeterliliği ve iki sürümü sınayan testler; hepsini kendiniz kontrol edin.'
+    : 'Video Time Study never sends your video anywhere and works offline. Standard time formulas, sample sufficiency and the tests behind both versions — check them yourself.'}
+  path={path} altPath={alt}>
+  <article class="wrap prose guide">
+    <p class="crumb"><a href={project}>{tr ? '← Video Zaman Etüdü' : '← Video Time Study'}</a></p>
+    {tr ? (
+      <>
+        <h1>Yöntem ve gizlilik</h1>
+        <p class="lead">Bu sayfa iki soruyu cevaplıyor: Videonuz nerede kalıyor ve sonuçlar nasıl hesaplanıyor? İkisini de bana güvenmeden, kendiniz kontrol edebilirsiniz.</p>
+
+        <h2>Videonuz bilgisayarınızdan çıkmaz</h2>
+        <ul>
+          <li><strong>Yükleme yok:</strong> Video tarayıcının içinde açılır ve oynatılır; hiçbir sunucuya, yapay zekâ servisine ya da bana gönderilmez.</li>
+          <li><strong>Tarayıcı kilidi:</strong> Sayfanın güvenlik politikası (<code>connect-src 'self'</code>) uygulamanın kendi adresi dışındaki her bağlantıyı engeller. Kodda bir hata olsa ya da biri gönderme kodu eklese bile tarayıcı isteği durdurur.</li>
+          <li><strong>Kamera, mikrofon ve konum kapalı:</strong> Uygulama bunlara erişemez.</li>
+          <li><strong>İnternetsiz çalışır:</strong> Sayfa bir kez açıldıktan sonra bağlantı olmadan da etüt açılır, ölçülür, analiz edilir ve Excel'e aktarılır.</li>
+          <li><strong>Etütler sizde:</strong> Tarayıcıda o tarayıcının yerel deposunda, Windows'ta bilgisayardaki bir dosyada saklanır. Başkasına gönderdiğiniz <code>.vzetud</code> paketinde yalnızca ölçümler bulunur; video ve klasör yolu yoktur.</li>
+        </ul>
+
+        <h2>Kendiniz kontrol edin</h2>
+        <ol>
+          <li><strong>İnterneti kapatın:</strong> <a href={app}>Uygulamayı</a> bir kez açın, ardından Wi-Fi'yi kapatıp sayfayı yenileyin. Uygulama açılır; demo etüdü ve kendi videonuzla çalışmaya devam edersiniz.</li>
+          <li><strong>Ağ sekmesine bakın:</strong> Tarayıcıda F12 ile geliştirici araçlarını açın, <em>Network</em> (Ağ) sekmesine geçin. Videonuzu açın, birkaç ölçüm alın, Excel'e aktarın. Listede yalnızca uygulamanın kendi dosyaları görünür; videonuzu taşıyan bir istek yoktur.</li>
+          <li><strong>Kaynak koda bakın:</strong> Kodun tamamı <a href={repo}>GitHub'da açık</a>. Hesapların hepsi tek bir dosyada: <a href={core}><code>Web/js/core.js</code></a>.</li>
+        </ol>
+
+        <h2>Hesaplar</h2>
+        <table>
+          <thead><tr><th>Ne</th><th>Nasıl hesaplanır</th></tr></thead>
+          <tbody>
+            <tr><td>Süre</td><td>(bitiş − başlangıç) video zamanından, saniye. Duraklatma ve yavaş oynatma süreyi değiştirmez.</td></tr>
+            <tr><td>Gözlem yeterliliği</td><td>Bağıl hata % = t × s ÷ (√n × ortalama) × 100. t: Student-t, iki taraflı, n − 1 serbestlik derecesi (varsayılan %95 güven). Hedef hataya (varsayılan ±%5) eşit ya da küçükse "Yeterli". n &lt; 2 ise hesaplanmaz.</td></tr>
+            <tr><td>Gereken gözlem</td><td>Aynı formül, hedef hatayı sağlayan en küçük n için yinelemeli çözülür.</td></tr>
+            <tr><td>Baz süre</td><td>Ortalama ya da "tekrarlanan düşük süre": süreler 100 ms gruplara yuvarlanır, en kalabalık grubun (eşitlikte ortalaması düşük olanın) ham ortalaması alınır.</td></tr>
+            <tr><td>Normal süre</td><td>Baz × tempo ÷ 100. Tempo genel, adıma özel ya da kayıt başına verilebilir.</td></tr>
+            <tr><td>Standart süre</td><td>Normal ÷ (1 − tolerans ÷ 100). Tolerans kalemleri toplanır.</td></tr>
+            <tr><td>Seyrek iş</td><td>Her N çevrimde bir yapılan işin çevrime katkısı = standart ÷ N.</td></tr>
+            <tr><td>Paralel işler</td><td>Çevrimin geçen süresi aralıkların birleşimidir (çakışma bir kez sayılır); iş yükü sürelerin toplamıdır.</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Örnek (demo etüdü):</strong> "Toplama" adımı 5, 6 ve 5 saniye ölçülmüş. Ortalama 5,333 sn; tempo %110 ile normal süre 5,333 × 1,10 = 5,867 sn; tolerans %15 ile standart süre 5,867 ÷ 0,85 = <strong>6,902 sn</strong>.</p>
+
+        <h2>Doğrulama</h2>
+        <p>Uygulamanın iki sürümü var: tarayıcı (JavaScript) ve Windows (C#). İkisi de aynı ortak test dosyasıyla sınanıyor: <strong>61 hesap örneği, 175 t değeri ve 86 paket senaryosu</strong>. Her kod gönderiminde iki sürüm aynı sonucu vermek zorunda; vermezse yayın durur. Test dosyası herkese açık: <a href={parity}><code>Shared/esdeger-ornekler.json</code></a>.</p>
+
+        <h2>Bilinen sınırlar</h2>
+        <ul>
+          <li>Ölçüm hassasiyeti oynatıcıya bağlıdır; uygulama videonun kare hızını bilmez.</li>
+          <li>Tarayıcı verisi temizlenirse oradaki etütler de silinir. "Tümünü yedekle" ile düzenli yedek alın.</li>
+          <li>Birden çok kişinin aynı etüdü birlikte düzenlemesi ve merkezi kayıt yoktur.</li>
+          <li>Tempo elle verilir; Westinghouse gibi puan tabloları yoktur.</li>
+          <li>Bu sayfa teknik bir açıklamadır, hukuki görüş değildir. Çalışanların videoya alınmasıyla ilgili bilgilendirme ve onay kurallarını kendi kurumunuzla birlikte değerlendirin.</li>
+        </ul>
+      </>
+    ) : (
+      <>
+        <h1>Method and privacy</h1>
+        <p class="lead">This page answers two questions: where does your video stay, and how are the results calculated? You can check both yourself, without taking my word for it.</p>
+
+        <h2>Your video never leaves your computer</h2>
+        <ul>
+          <li><strong>No upload:</strong> The video opens and plays inside the browser. It is never sent to a server, an AI service or to me.</li>
+          <li><strong>Browser lock:</strong> The page's security policy (<code>connect-src 'self'</code>) blocks every connection except to the app's own address. Even if the code had a bug or someone added upload code, the browser would stop the request.</li>
+          <li><strong>No camera, microphone or location:</strong> The app cannot access them.</li>
+          <li><strong>Works offline:</strong> Once the page has been opened, you can open, measure, analyse and export to Excel without a connection.</li>
+          <li><strong>Your studies stay with you:</strong> In the browser's local storage, or in a file on your PC with the Windows version. A <code>.vzetud</code> package you send to someone contains only the measurements, never the video or folder paths.</li>
+        </ul>
+
+        <h2>Check it yourself</h2>
+        <ol>
+          <li><strong>Turn off the internet:</strong> Open <a href={app}>the app</a> once, switch off Wi-Fi and reload. The app opens and you can keep working with the demo study or your own video.</li>
+          <li><strong>Watch the Network tab:</strong> Press F12 to open the developer tools and switch to <em>Network</em>. Open your video, take a few measurements, export to Excel. Only the app's own files appear; there is no request carrying your video.</li>
+          <li><strong>Read the source:</strong> All code is <a href={repo}>open on GitHub</a>. Every calculation lives in one file: <a href={core}><code>Web/js/core.js</code></a>.</li>
+        </ol>
+
+        <h2>Calculations</h2>
+        <table>
+          <thead><tr><th>What</th><th>How it is calculated</th></tr></thead>
+          <tbody>
+            <tr><td>Duration</td><td>(end − start) from the video position, in seconds. Pausing and slow playback do not change it.</td></tr>
+            <tr><td>Sample sufficiency</td><td>Relative error % = t × s ÷ (√n × mean) × 100. t: two-sided Student-t with n − 1 degrees of freedom (default 95% confidence). "Sufficient" if at or below the target error (default ±5%). Not calculated when n &lt; 2.</td></tr>
+            <tr><td>Required observations</td><td>The same formula, solved iteratively for the smallest n that meets the target error.</td></tr>
+            <tr><td>Base time</td><td>Mean, or "repeated low time": durations are rounded into 100 ms groups and the raw mean of the largest group (the lower one on a tie) is used.</td></tr>
+            <tr><td>Normal time</td><td>Base × pace ÷ 100. Pace can be global, per step or per record.</td></tr>
+            <tr><td>Standard time</td><td>Normal ÷ (1 − allowance ÷ 100). Allowance parts are added up.</td></tr>
+            <tr><td>Occasional tasks</td><td>Contribution of a task done once every N cycles = standard ÷ N.</td></tr>
+            <tr><td>Parallel work</td><td>A cycle's elapsed time is the union of its intervals (overlap counted once); workload is the sum of durations.</td></tr>
+          </tbody>
+        </table>
+        <p><strong>Example (demo study):</strong> the "Picking" step measured 5, 6 and 5 seconds. Mean 5.333 s; with 110% pace the normal time is 5.333 × 1.10 = 5.867 s; with a 15% allowance the standard time is 5.867 ÷ 0.85 = <strong>6.902 s</strong>.</p>
+
+        <h2>Verification</h2>
+        <p>The app has two versions: browser (JavaScript) and Windows (C#). Both are tested against the same shared file: <strong>61 calculation cases, 175 t values and 86 package scenarios</strong>. On every code push both versions must give identical results, or the release stops. The test file is public: <a href={parity}><code>Shared/esdeger-ornekler.json</code></a>.</p>
+
+        <h2>Known limits</h2>
+        <ul>
+          <li>Timing precision depends on the video player; the app does not know the video's frame rate.</li>
+          <li>Clearing browser data also deletes the studies stored there. Use "Back up all" regularly.</li>
+          <li>There is no shared editing of one study by several people and no central storage.</li>
+          <li>Pace is entered manually; rating tables such as Westinghouse are not included.</li>
+          <li>This page is a technical description, not legal advice. Agree the rules for informing and getting consent from filmed employees with your own organisation.</li>
+        </ul>
+      </>
+    )}
+  </article>
+</Base>

@@ -74,6 +74,8 @@ export interface Project {
   decisions?: { tr: string[]; en: string[] };
   /** Kısa tanıtım videosu (altyazısı videoya işlenmiş). `lang` verilirse yalnız o dildeki sayfada gösterilir. */
   video?: { src: string; poster: string; w: number; h: number; lang?: Lang; caption: { tr: string; en: string } };
+  /** Yöntem ve gizlilik sayfası (varsa demo bölümünde bağlantı gösterilir). */
+  method?: { tr: string; en: string };
 }
 
 export const CATEGORIES: Record<Category, { tr: string; en: string; trSlug: string; enSlug: string }> = {
@@ -101,6 +103,7 @@ export const PROJECTS: Project[] = [
   // ── Operasyon ve depo ────────────────────────────────────────────
   {
     slug: 'video-zaman-etudu',
+    method: { tr: '/tr/projeler/video-zaman-etudu/yontem-ve-gizlilik/', en: '/en/projects/video-zaman-etudu/method-and-privacy/' },
     name: 'Video Zaman Etüdü',
     category: 'operasyon',
     featured: true,
