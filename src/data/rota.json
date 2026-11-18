@@ -471,8 +471,8 @@
     {
       "id": "olcu-elegi",
       "ad": {
-        "tr": "Ölçü Eleği",
-        "en": "Ölçü Eleği"
+        "tr": "Measure Sieve",
+        "en": "Measure Sieve"
       },
       "aciklama": {
         "tr": "Power BI raporlarında hiçbir yerde kullanılmayan ölçüleri bulur; böylece gereksizler silinip model sadeleşir ve kafa karışıklığı azalır.",
@@ -480,10 +480,10 @@
       },
       "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
-        "tr": "İlk sürüm hazır; geliştirme sürüyor",
-        "en": "First version ready; development ongoing"
+        "tr": "Yayına hazırlanıyor; sütun ve tablo taraması, gerçek dosya testleri ve MCP sunucusu eklendi; adı Ölçü Eleği’nden Measure Sieve oldu",
+        "en": "Being prepared for release; column and table scanning, real-file tests and an MCP server added; renamed from Ölçü Eleği to Measure Sieve"
       },
       "ozel_not": ""
     },
@@ -563,6 +563,44 @@
         "en": "Scope document drafted"
       },
       "ozel_not": "Havuzdan; ilk sürüm olay üreticisi + çekirdek + Telegram köprüsü."
+    },
+    {
+      "id": "dax-kural-defteri",
+      "ad": {
+        "tr": "DAX Kural Defteri",
+        "en": "DAX Rulebook"
+      },
+      "aciklama": {
+        "tr": "Power BI’da DAX yazımını ortak bir sözlük ve kural setiyle yönlendirir; kurala uymayan ölçüleri kodla denetler ve yeni ölçüleri kurala göre önerir.",
+        "en": "Guides DAX writing in Power BI with a shared dictionary and rule set; checks measures against the rules in code and suggests new ones that follow them."
+      },
+      "durum": "fikir",
+      "yayinda": false,
+      "son_guncelleme": "2026-11-18",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı; Measure Sieve ile birleşme 2. aşamada",
+        "en": "Scope document drafted; merging with Measure Sieve comes in phase 2"
+      },
+      "ozel_not": ""
+    },
+    {
+      "id": "tpm-ariza-defteri",
+      "ad": {
+        "tr": "TPM – Arıza Defteri",
+        "en": "TPM – Failure Log"
+      },
+      "aciklama": {
+        "tr": "Depo ekipmanı için TPM: ortak bir arıza kaydı, vardiya başı otonom bakım kontrolleri, anormallik etiketleri ve duruş kayıplarının analizi.",
+        "en": "TPM for warehouse equipment: a shared failure log, start-of-shift autonomous maintenance checks, abnormality tags and analysis of downtime losses."
+      },
+      "durum": "fikir",
+      "yayinda": false,
+      "son_guncelleme": "2026-11-18",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      },
+      "ozel_not": "Uygulama adı (Nabız) kesinleşmedi."
     }
   ]
 }
