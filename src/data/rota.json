@@ -412,25 +412,6 @@
       "ozel_not": ""
     },
     {
-      "id": "toplama-rotasi",
-      "ad": {
-        "tr": "Toplama Rotası Seçimi",
-        "en": "Picking Route Selection"
-      },
-      "aciklama": {
-        "tr": "Gelen her sipariş partisi için hangi toplama rotası algoritmasının en avantajlı olduğunu hesaplar ve toplamayı ona göre yönlendirir. WDL ile bağlantılı çalışacak.",
-        "en": "Calculates which picking-route algorithm is best for each incoming order batch and directs picking accordingly. Will work together with WDL."
-      },
-      "durum": "fikir",
-      "yayinda": false,
-      "son_guncelleme": "2026-11-09",
-      "durum_notu": {
-        "tr": "Python ve web sürümü olarak planlanıyor",
-        "en": "Planned as Python and web versions"
-      },
-      "ozel_not": "Kaldırıldı: WDL kapsamında."
-    },
-    {
       "id": "isbasi-simulasyonu",
       "ad": {
         "tr": "İşbaşı Simülasyonu",
