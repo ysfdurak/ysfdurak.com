@@ -733,6 +733,30 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['JavaScript', 'SQLite (sql.js)', 'Pyodide', 'DAX benzetim motoru', 'PWA'],
     og: '/img/kesit/og.jpg',
+    video: {
+      src: '/video/kesit-tanitim-tr.mp4',
+      poster: '/video/kesit-tanitim-tr.webp',
+      srcEn: '/video/kesit-promo-en.mp4',
+      posterEn: '/video/kesit-promo-en.webp',
+      w: 1920,
+      h: 1080,
+      caption: {
+        tr: '30 saniyede Kesit: SQL’de tarayıcıdaki veritabanına sorgu, Power BI’da DAX ölçüsü ve yıl dilimleyicisi, Python dersi ve istatistikte tek bir uzun işlemin ortalamayı nasıl değiştirdiği.',
+        en: 'Kesit in 30 seconds: a SQL query on the in-browser database, a DAX measure with a year slicer in Power BI, a Python lesson and how one long task moves the mean in statistics. The interface is Turkish.',
+      },
+      loop: {
+        src: '/video/kesit-dongu-tr.mp4',
+        poster: '/video/kesit-dongu-tr.webp',
+        srcEn: '/video/kesit-loop-en.mp4',
+        posterEn: '/video/kesit-loop-en.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'Kesit kısa döngü: SQL sorgusu, DAX grafiği, Python dersi ve istatistik görseli',
+          en: 'Kesit short loop: SQL query, DAX chart, Python lesson and a statistics visual',
+        },
+      },
+    },
     shots: [
       { src: '/img/kesit/sql-alistirma.webp', srcEn: '/img/kesit/sql-alistirma-en.webp', w: 1280, h: 800, alt: { tr: 'Kesit SQL: tarayıcıdaki veritabanında yazılan sorgu anında denetlenir; görev, örnek tablo ve sonuç yan yana', en: 'Kesit SQL with the English guide: a GROUP BY exercise checked instantly against the in-browser database; English labels sit under the Turkish menu' } },
       { src: '/img/kesit/powerbi-rapor.webp', w: 1280, h: 760, alt: { tr: 'Kesit Power BI: adım adım anlatılan örnek finansal performans raporu, yer işaretleri ve alan parametreleriyle', en: 'Kesit Power BI: a sample financial performance report explained step by step, with bookmarks and field parameters' } },
