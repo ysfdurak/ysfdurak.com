@@ -21,6 +21,10 @@ const path = projectPath(p, lang);
 // EN sayfada İngilizce arayüz görüntüsü varsa onu göster.
 const cs = p.caseStudy?.[lang];
 const shotSrc = (sh: { src: string; srcEn?: string }) => (lang === 'en' && sh.srcEn ? sh.srcEn : sh.src);
+// Tanıtım videosu: EN sayfada İngilizce sürüm varsa o; döngü videosu en üstte ilk ekran görüntüsünün yerine geçer.
+const pick = (a: string, b?: string) => (lang === 'en' && b ? b : a);
+const showVideo = p.video && (!p.video.lang || p.video.lang === lang);
+const loop = showVideo ? p.video?.loop : undefined;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -71,7 +75,26 @@ const jsonLd = {
     </div>
 
     {
-      p.shots && p.shots.length > 0 && (
+      loop && (
+        <figure class="shot hero-shot hero-loop">
+          <video autoplay muted loop playsinline preload="metadata" poster={pick(loop.poster, loop.posterEn)} width={loop.w} height={loop.h} aria-label={loop.alt[lang]} data-hero-loop>
+            <source src={pick(loop.src, loop.srcEn)} type="video/mp4" />
+          </video>
+          <figcaption>{loop.alt[lang]}</figcaption>
+        </figure>
+      )
+    }
+    <script>
+      // Hareket azaltma tercihinde döngü videosu oynamaz, kapak görseli kalır.
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches)
+        document.querySelectorAll<HTMLVideoElement>('video[data-hero-loop]').forEach((v) => {
+          v.removeAttribute('autoplay');
+          v.pause();
+        });
+    </script>
+
+    {
+      !loop && p.shots && p.shots.length > 0 && (
         <figure class="shot hero-shot">
           <img src={shotSrc(p.shots[0])} width={p.shots[0].w} height={p.shots[0].h} alt={p.shots[0].alt[lang]} fetchpriority="high" />
           <figcaption>{p.shots[0].alt[lang]}</figcaption>
@@ -90,12 +113,12 @@ const jsonLd = {
     </section>
 
     {
-      p.video && (!p.video.lang || p.video.lang === lang) && (
+      p.video && showVideo && (
         <section>
           <h2>{t('project.video')}</h2>
           <figure class="shot video">
-            <video controls preload="none" playsinline poster={p.video.poster} width={p.video.w} height={p.video.h} aria-label={p.video.caption[lang]}>
-              <source src={p.video.src} type="video/mp4" />
+            <video controls preload="none" playsinline poster={pick(p.video.poster, p.video.posterEn)} width={p.video.w} height={p.video.h} aria-label={p.video.caption[lang]}>
+              <source src={pick(p.video.src, p.video.srcEn)} type="video/mp4" />
             </video>
             <figcaption>{p.video.caption[lang]}</figcaption>
           </figure>
@@ -193,10 +216,10 @@ const jsonLd = {
     }
 
     {
-      // shots[1] MCP kutusunda gösterilir; MCP yoksa galeride yer alır.
-      p.shots && p.shots.length > (p.mcp ? 2 : 1) && (
+      // shots[1] MCP kutusunda gösterilir; MCP yoksa galeride yer alır. Üstte döngü videosu varsa shots[0] de galeriye iner.
+      p.shots && p.shots.filter((_, i) => (loop ? i !== 1 || !p.mcp : i > (p.mcp ? 1 : 0))).length > 0 && (
         <section class="gallery">
-          {p.shots.slice(p.mcp ? 2 : 1).map((sh) => (
+          {p.shots.filter((_, i) => (loop ? i !== 1 || !p.mcp : i > (p.mcp ? 1 : 0))).map((sh) => (
             <figure class="shot">
               <img src={shotSrc(sh)} width={sh.w} height={sh.h} alt={sh.alt[lang]} loading="lazy" />
               <figcaption>{sh.alt[lang]}</figcaption>

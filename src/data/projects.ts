@@ -79,8 +79,20 @@ export interface Project {
   caseStudy?: { tr: CaseStudy; en: CaseStudy };
   /** Tasarım kararları ve nedenleri (sayfada ayrı bölüm). */
   decisions?: { tr: string[]; en: string[] };
-  /** Kısa tanıtım videosu (altyazısı videoya işlenmiş). `lang` verilirse yalnız o dildeki sayfada gösterilir. */
-  video?: { src: string; poster: string; w: number; h: number; lang?: Lang; caption: { tr: string; en: string } };
+  /** Kısa tanıtım videosu (altyazısı videoya işlenmiş). `lang` verilirse yalnız o dildeki sayfada gösterilir.
+   *  srcEn/posterEn: İngilizce sayfada gösterilen İngilizce sürüm. loop: sayfanın üstünde ilk ekran görüntüsünün
+   *  yerine kendiliğinden, sessiz ve döngüyle oynayan kısa video (hareket azaltma tercihinde oynamaz). */
+  video?: {
+    src: string;
+    poster: string;
+    srcEn?: string;
+    posterEn?: string;
+    w: number;
+    h: number;
+    lang?: Lang;
+    caption: { tr: string; en: string };
+    loop?: { src: string; poster: string; srcEn?: string; posterEn?: string; w: number; h: number; alt: { tr: string; en: string } };
+  };
   /** Yöntem ve gizlilik sayfası (varsa demo bölümünde bağlantı gösterilir). */
   method?: { tr: string; en: string };
 }
@@ -319,6 +331,30 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['React', 'TypeScript', 'Cloudflare Workers', 'D1 (SQLite)', 'MCP'],
     og: '/img/ivme/og.jpg',
+    video: {
+      src: '/video/ivme-tanitim-tr.mp4',
+      poster: '/video/ivme-tanitim-tr.webp',
+      srcEn: '/video/ivme-promo-en.mp4',
+      posterEn: '/video/ivme-promo-en.webp',
+      w: 1920,
+      h: 1080,
+      caption: {
+        tr: '40 saniyede İvme: çalışan önerisini telefondan verir, öneri değerlendirme, aksiyon ve kazanç onayından geçer, panoda ve raporda izlenir. Görüntüler canlı demonun örnek verisinden.',
+        en: 'İvme in 40 seconds: an employee submits an idea from their phone, it moves through review, action and savings approval, and shows up on the board and in reports. Footage uses the live demo’s sample data.',
+      },
+      loop: {
+        src: '/video/ivme-dongu-tr.mp4',
+        poster: '/video/ivme-dongu-tr.webp',
+        srcEn: '/video/ivme-loop-en.mp4',
+        posterEn: '/video/ivme-loop-en.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'İvme kısa döngü: telefondan öneri girişi, çalışma merkezi, durum panosu ve kazanç raporu',
+          en: 'İvme short loop: submitting an idea on a phone, the work centre, the status board and the savings report',
+        },
+      },
+    },
     shots: [
       { src: '/img/ivme/calisma-merkezi.webp', srcEn: '/img/ivme/calisma-merkezi-en.webp', w: 1440, h: 900, alt: { tr: 'İvme çalışma merkezi: toplam öneri, beni bekleyenler, tamamlananlar, onaylı kazanç ve geciken işler', en: 'İvme work centre: total suggestions, items waiting on me, completed work, approved savings and overdue items' } },
       { src: '/img/ivme/durum-panosu.webp', srcEn: '/img/ivme/durum-panosu-en.webp', w: 1440, h: 900, alt: { tr: 'Durum panosu: önerilerin aşamalara dağılımı ve en çok öneri bekleyen kişiler, gecikmelerle birlikte', en: 'Status board: suggestions by stage and the people with the most open items, with overdue counts' } },
