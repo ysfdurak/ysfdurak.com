@@ -281,6 +281,30 @@ export const PROJECTS: Project[] = [
     repo: GH + 'destek-merkezi',
     og: '/img/destek-merkezi/og.jpg',
     tech: ['React', 'Node.js', 'SQLite', 'Excel (SheetJS)', 'Access istemcisi', 'Docker', 'Caddy'],
+    video: {
+      src: '/video/destek-tanitim-tr.mp4',
+      poster: '/video/destek-tanitim-tr.webp',
+      srcEn: '/video/destek-promo-en.mp4',
+      posterEn: '/video/destek-promo-en.webp',
+      w: 1920,
+      h: 1080,
+      caption: {
+        tr: '40 saniyede Destek Merkezi: B vardiyası için planlanan destek kaydı, karşı bölümün onayı, puantajla uyuşmayan kayıt ve kim kime destek verdi matrisi. Görüntüler kurgusal depo organizasyonunun örnek verisinden.',
+        en: 'Destek Merkezi in 40 seconds: a planned support record for shift B, the receiving unit’s approval, a record that clashes with the timesheet and the who-supported-whom matrix. Footage uses the sample warehouse organisation’s data.',
+      },
+      loop: {
+        src: '/video/destek-dongu-tr.mp4',
+        poster: '/video/destek-dongu-tr.webp',
+        srcEn: '/video/destek-loop-en.mp4',
+        posterEn: '/video/destek-loop-en.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'Destek Merkezi kısa döngü: destek kaydı, onay kutusu, uyumsuz destekler ve dashboard',
+          en: 'Destek Merkezi short loop: support entry, approval inbox, mismatched supports and dashboard',
+        },
+      },
+    },
     shots: [
       { src: '/img/destek-merkezi/genel-bakis.webp', srcEn: '/img/destek-merkezi/genel-bakis-en.webp', w: 1400, h: 950, alt: { tr: 'Destek Merkezi genel bakış: kesinleşen ve onay bekleyen destekler, bölümler arası dağılım', en: 'Destek Merkezi overview: finalised and pending supports, distribution between departments' } },
       { src: '/img/destek-merkezi/dashboard.webp', srcEn: '/img/destek-merkezi/dashboard-en.webp', w: 1440, h: 1000, alt: { tr: 'Destek Merkezi dashboard: 50 bölümlük işletmede kim kime destek verdi, gün ve bölüm takvimi', en: 'Destek Merkezi dashboard: filters by period, location, shift and hierarchy, totals and a daily chart of support records' } },
