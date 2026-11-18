@@ -333,21 +333,24 @@
       "ozel_not": "Prototip beklenen gibi değil; esnek kural yapısı ile yeniden ele alınacak."
     },
     {
-      "id": "ortu",
+      "id": "sirdas",
+      "proje": "sirdas-veri-maskeleme",
       "ad": {
-        "tr": "Örtü",
-        "en": "Örtü"
+        "tr": "Sırdaş",
+        "en": "Sırdaş"
       },
       "aciklama": {
-        "tr": "Veriyi yapay zekâya göndermeden önce seçilen hücre ve sütunları maskeler, cevap geldikten sonra isteğe bağlı olarak eski haline getirir. Kişisel olmayan ama hassas operasyon verisi için de kullanılır.",
-        "en": "Masks chosen cells and columns before data is sent to AI, and can restore them once the answer comes back. Also works for operational data that is sensitive without being personal."
+        "tr": "Excel, Word, PowerPoint, JSON, XML ya da PDF’teki seçilen değerleri yapay zekâya göndermeden maskeler, yanıtı geri açar. Sayılar ve tarihler hesap bozulmadan gizlenir; kişisel olmayan ama hassas operasyon verisi için de kullanılır. Tarayıcıda, Excel eklentisi olarak ve MCP ile çalışır.",
+        "en": "Masks the values you choose in Excel, Word, PowerPoint, JSON, XML or PDF before they reach an AI, and unmasks the answer. Numbers and dates are hidden without breaking the maths; also works for operational data that is sensitive without being personal. Runs in the browser, as an Excel add-in and through MCP."
       },
-      "durum": "gelistiriliyor",
+      "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-16",
+      "canli_url": "https://sirdas.ysfdurak.com/",
+      "repo": "ysfdurak/sirdas",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
-        "tr": "İlk sürüm hazır; geliştirme sürüyor",
-        "en": "First version ready; development ongoing"
+        "tr": "Yayında (1.1): Excel eklentisi, biçimi koruyan Excel, Word, PowerPoint, JSON/XML ve PDF desteği eklendi; eski adı Örtü",
+        "en": "Live (1.1): Excel add-in, formatting-preserving Excel, Word, PowerPoint, JSON/XML and PDF support added; formerly called Örtü"
       },
       "ozel_not": ""
     },

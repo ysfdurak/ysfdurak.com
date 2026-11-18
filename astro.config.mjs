@@ -11,6 +11,7 @@ import { PROJECTS } from './src/data/projects.ts';
 const KENDI_HARITASI = [
   'https://ingilizce-atolyesi.ysfdurak.com/sitemap.xml',
   'https://durus.ysfdurak.com/sitemap.xml',
+  'https://sirdas.ysfdurak.com/sitemap.xml',
 ];
 const uygulamaAdresleri = PROJECTS.map((p) => p.url)
   .filter((u) => u && /^https:\/\/[a-z0-9-]+\.ysfdurak\.com\//.test(u))

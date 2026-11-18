@@ -104,7 +104,7 @@ const GH = 'https://github.com/ysfdurak/';
 
 // Sitede yalnızca tamamlanmış ve yayına hazır projeler durur.
 // Pilotu süren ya da üzerinde çalışılan projeler (WDL, Sorter Studio, ShiftFlow, Mal Kabul,
-// Toplama Rotası, İşbaşı, Pit Duvarı, Bütçe Sapma, Ölçü Eleği, Otopano, Örtü, Sunum Atölyesi,
+// Toplama Rotası, İşbaşı, Pit Duvarı, Bütçe Sapma, Ölçü Eleği, Otopano, Örtü (Sırdaş olarak 18 Kasım'da geri döndü), Sunum Atölyesi,
 // Ünite Atölyesi, Kıvılcım) 12 Kasım 2026'da çıkarıldı; eski metinleri 847188b commit'inde duruyor.
 export const PROJECTS: Project[] = [
   // ── Operasyon ve depo ────────────────────────────────────────────
@@ -507,6 +507,90 @@ export const PROJECTS: Project[] = [
   },
 
 
+  // ── Veri ve raporlama ────────────────────────────────────────────
+  {
+    slug: 'sirdas-veri-maskeleme',
+    name: 'Sırdaş – Veri Maskeleme',
+    category: 'veri',
+    hosting: 'static',
+    url: 'https://sirdas.ysfdurak.com/',
+    isaret: 'Sırdaş',
+    langParam: true,
+    repo: GH + 'sirdas',
+    tech: ['JavaScript', 'Web Worker', 'SheetJS', 'ExcelJS', 'Office.js', 'MCP', 'Node.js'],
+    og: '/img/sirdas/og.jpg',
+    ogEn: '/img/sirdas/og-en.jpg',
+    shots: [
+      { src: '/img/sirdas/tablo.webp', srcEn: '/img/sirdas/tablo-en.webp', w: 1440, h: 900, alt: { tr: 'Tablo: Operasyon ve Sorumlu sütunları etiketlenmiş, maliyet gizli katsayıyla ölçeklenmiş, tarihler tam hafta kaydırılmış; not hücresinde geçen operasyon adı da gizlenmiş', en: 'Table: Operation and Owner columns tagged, cost scaled by a hidden factor, dates shifted by whole weeks; the project name inside a note is hidden too' } },
+      { src: '/img/sirdas/kontrol.webp', srcEn: '/img/sirdas/kontrol-en.webp', w: 1440, h: 900, alt: { tr: 'Göndermeden kontrol: gidecek satır ve hücre sayısı, gizlenen değerler, ölçeklenen sayılar ve açık kalan gizli değer uyarısı', en: 'Check before you send: rows and cells to be sent, hidden values, scaled numbers and the warning for hidden values left visible' } },
+      { src: '/img/sirdas/alanlar.webp', srcEn: '/img/sirdas/alanlar-en.webp', w: 1440, h: 900, alt: { tr: 'Alanlar: JSON kayıtlarında alan yoluyla seçim; yapı aynen kalıyor, tutar ölçekleniyor, tarih kaydırılıyor', en: 'Fields: pick JSON fields by path; the structure stays the same, the cost is scaled and the date shifted' } },
+      { src: '/img/sirdas/word.webp', srcEn: '/img/sirdas/word-en.webp', w: 1440, h: 900, alt: { tr: 'Word belgesi: seçilen ifadeler belgenin her yerinde gizleniyor, belge biçimiyle indiriliyor', en: 'Word document: chosen phrases are hidden everywhere in the document, which downloads with its formatting' } },
+    ],
+    demo: {
+      tr: 'Hesap gerekmez, veri bilgisayarından çıkmaz. Sayfa örnek bir operasyon tablosuyla açılır: sütun harfine tıklayıp gizle, “Göndermeden kontrol et” bölümünde ne gideceğini gör, aşağıdaki örnek yanıtta etiketlerin, ölçeklenen tutarların ve kaydırılan tarihlerin geri açıldığını izle. Kendi Excel, Word, PowerPoint, JSON, XML ya da PDF dosyanı da açabilirsin.',
+      en: 'No account, and your data never leaves your computer. The page opens with a sample project table: click a column letter to hide it, see what will be sent under “Check before you send”, and watch the sample answer below get its labels, scaled costs and shifted dates put back. You can also open your own Excel, Word, PowerPoint, JSON, XML or PDF file.',
+    },
+    tr: {
+      tagline: 'Excel, Word, PowerPoint, JSON, XML ya da PDF’teki seçtiğin değerleri yapay zekâya göndermeden maskeleyen, yanıtı geri açan araç; veri bilgisayardan çıkmaz.',
+      problem:
+        'Yapay zekâya bir tablo ya da rapor verip analiz istemek hızlı, ama içinde operasyon adları, müşteri kodları, maliyetler ve kişiler var. Elle silmek hem zaman alıyor hem de analizi bozuyor: adı silinen satırlar birbirine karışıyor, silinen sayılarla hesap yapılamıyor. Hassas olan her zaman kişisel veri de değil; bir operasyonun adı ya da maliyeti de dışarı çıkmamalı.',
+      solution: [
+        'Gizleneceğini kullanıcı seçer: sütun, satır, hücre ya da alan. Aynı değer her yerde ve her mesajda aynı etiketi alır ([OPERASYON_1]), böylece yapay zekâ ilişkileri takip edebilir',
+        'Sayılar gizli bir katsayıyla ölçeklenir: toplam, ortalama ve oranlar doğru kalır, yanıttaki sonuçlar geri çevrilir. Tarihler tam hafta kayar; süreler ve haftanın günü korunur',
+        'Sütun çıkarma, aralığa çevirme (“400 bin–500 bin”) ve kendi gruplama eşlemen',
+        'Göndermeden kontrol: açık kalan gizli değer, adı değer ele veren etiket, seçim yapılmamış ve gizli sayfalar',
+        'Biçimi koruyan Excel çıktısı; formül, not, açılır liste, tablo tanımı ve belge özellikleri temizlenir',
+        'Word ve PowerPoint biçimiyle: gövde, tablo, üst bilgi, dipnot, konuşmacı notu ve grafik etiketleri; parçalara bölünmüş değerler de yakalanır',
+        'JSON ve XML’de alan yoluyla seçim; PDF’ten metin çıkarma',
+        'Şablonlar: seçimi başlık adıyla kaydet, her hafta aynı rapora tek tıkla uygula',
+        'Parolayla şifreli anahtar dosyası (PBKDF2 + AES-GCM); ertesi gün aynı etiketlerle devam',
+        'Üç yüz, tek çekirdek: tarayıcı sürümü, Excel eklentisi ve yapay zekâ asistanları için yerel MCP sunucusu. MCP’de asistan yalnızca maskeli veriyi görür',
+        'Büyük tablolar arka planda işlenir; 40.000 satır yaklaşık 1 saniyede maskelenir',
+        'Türkçe ve İngilizce arayüz; internet olmadan da çalışır',
+      ],
+    },
+    en: {
+      tagline: 'A tool that masks the values you choose in Excel, Word, PowerPoint, JSON, XML or PDF before they reach an AI, and unmasks the answer; your data never leaves your computer.',
+      problem:
+        'Handing a table or report to an AI for analysis is fast, but it carries project names, customer codes, costs and people. Deleting them by hand takes time and breaks the analysis: rows without names get mixed up, and removed numbers cannot be calculated with. What is sensitive is not always personal data either; a project’s name or cost should not leave the company.',
+      solution: [
+        'You choose what to hide: column, row, cell or field. The same value gets the same label everywhere and in every message ([OPERATION_1]), so the AI can still follow relationships',
+        'Numbers are scaled by a hidden factor: totals, averages and ratios stay right, and results in the answer are converted back. Dates move by whole weeks; durations and weekdays are kept',
+        'Remove columns, convert numbers to ranges (“400k–500k”) or apply your own grouping',
+        'Check before you send: hidden values left visible, labels that give a value away, sheets with nothing hidden and hidden sheets',
+        'Excel output keeps its formatting; formulas, notes, drop-down lists, table definitions and document properties are cleaned',
+        'Word and PowerPoint with their formatting: body, tables, headers, footnotes, speaker notes and chart labels; values split across formatting runs are caught too',
+        'JSON and XML masked by field path; text extracted from PDF',
+        'Templates: save a selection by header name and apply it to the same weekly report with one click',
+        'Password-encrypted key file (PBKDF2 + AES-GCM) to continue with the same labels the next day',
+        'Three front ends, one core: the browser app, an Excel add-in and a local MCP server for AI assistants; through MCP the assistant only ever sees masked data',
+        'Large tables are processed in the background; 40,000 rows are masked in about a second',
+        'English and Turkish interface; also works offline',
+      ],
+    },
+    decisions: {
+      tr: [
+        'Yapay zekâya kendisi göndermez: gönderen kullanıcıdır. Araç bir yapay zekâya bağlansaydı “veri bilgisayardan çıkmaz” sözü bozulurdu',
+        'Sahte gerçekçi değer yerine köşeli parantezli etiket: yapay zekâ “Ayla Kurt”u gerçek sanıp değiştirebilir, [AD_1] ise yanıtta her zaman geri bulunur',
+        'Sayıyı etiketlemek yerine ölçeklemek: [MALIYET_1] ile toplama yapılamaz; aynı katsayıyla çarpılan sayılarla yapılır. Sınırı açıkça yazılı: tek bir gerçek değeri bilen katsayıyı bulabilir, hassas rakam için aralık ya da çıkarma önerilir',
+        'Tarih kaydırma tam hafta: depo ve operasyon verisinde pazartesi yükü önemli; rastgele gün sayısı haftanın gününü bozardı',
+        'Excel çıktısında formül yok: bir formül gizli hücreye başvurarak ya da içindeki sabit metinle değeri ele verebilir',
+        'Sunucu yok: her şey tarayıcıda ve yerelde çalışıyor; güvenin temeli bu. Bu yüzden VPS gerekmedi',
+      ],
+      en: [
+        'It never sends data to an AI itself; the user does. If the tool connected to an AI, “your data never leaves your computer” would no longer hold',
+        'Bracketed labels instead of realistic fake values: an AI may take “Ayla Kurt” for real and change it, while [NAME_1] can always be found again in the answer',
+        'Scaling numbers instead of tagging them: you cannot add up [COST_1], but you can add numbers multiplied by the same factor. The limit is stated openly: someone who knows one real value can work out the factor, so ranges or removal are suggested for very sensitive figures',
+        'Dates move by whole weeks: in warehouse and operations data the Monday peak matters, and a random number of days would change the weekday',
+        'No formulas in the Excel output: a formula can give a value away through a reference to a hidden cell or a literal inside it',
+        'No server: everything runs in the browser or locally, which is what the trust rests on; so no VPS was needed',
+      ],
+    },
+    caseStudy: {
+      tr: { role: 'Problemi ve kapsamı ben tanımladım: kişisel olmayan ama hassas operasyon verisini de seçerek gizleyebilmek. Biçim sırası, sınırlar ve hangi kararın neden alındığı benden; kod yapay zekâ (Claude) ile yazıldı. İlk sürüm “Örtü” adıyla bir claude.ai sayfası olarak başladı, sonra şablonlar, sayı ve tarih koruma, Office biçimleri, Excel eklentisi ve MCP eklendi.' },
+      en: { role: 'I defined the problem and scope: being able to hide operational data that is sensitive without being personal. The order of formats, the limits and the reasons behind each decision are mine; the code was written with AI (Claude). The first version started as a claude.ai page called “Örtü”; templates, number and date protection, Office formats, the Excel add-in and MCP came after.' },
+    },
+  },
   // ── Öğrenme ──────────────────────────────────────────────────────
   {
     slug: 'kesit',
