@@ -43,7 +43,7 @@ const jsonLd = {
       {cats.map((c) => (
         <a class="card cat" href={`${projectsHref}#${lang === 'tr' ? CATEGORIES[c].trSlug : CATEGORIES[c].enSlug}`}>
           <h3>{CATEGORIES[c][lang]}</h3>
-          <p class="card-meta">{byCategory(c).length} {lang === 'tr' ? 'proje' : 'projects'}</p>
+          <p class="card-meta">{byCategory(c).length} {lang === 'tr' ? 'proje' : byCategory(c).length === 1 ? 'project' : 'projects'}</p>
         </a>
       ))}
     </div>

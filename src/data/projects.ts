@@ -35,6 +35,8 @@ export interface Shot {
 export interface Project {
   slug: string;
   name: string;
+  /** İngilizce sayfada gösterilen ad (marka adı aynı kalır, açıklayıcı kısım çevrilir). Yoksa name kullanılır. */
+  nameEn?: string;
   category: Category;
   featured?: boolean;
   hosting: Hosting;
@@ -47,7 +49,7 @@ export interface Project {
   urlEn?: string;
   repo?: string;
   /** Birden çok depo varsa (ör. Kesit paketi): her biri ayrı "Kaynak kod · <ad>" düğmesi olur. */
-  repos?: { label: string; url: string }[];
+  repos?: { label: string; labelEn?: string; url: string }[];
   tech: string[];
   tr: ProjectText;
   en: ProjectText;
@@ -124,6 +126,7 @@ export const PROJECTS: Project[] = [
     slug: 'video-zaman-etudu',
     method: { tr: '/tr/projeler/video-zaman-etudu/yontem-ve-gizlilik/', en: '/en/projects/video-zaman-etudu/method-and-privacy/' },
     name: 'Video Zaman Etüdü',
+    nameEn: 'Video Time Study',
     category: 'operasyon',
     featured: true,
     hosting: 'desktop',
@@ -185,7 +188,7 @@ export const PROJECTS: Project[] = [
         'Normal and standard time with pace rating and allowance; contribution of tasks done once every N cycles',
         'For parallel work, a cycle’s elapsed time and total workload are calculated separately',
         'Guided measuring with a step list: after Measure the next step and cycle come up automatically, an out-of-scope interruption does not break the sequence, Ctrl+Z undoes the last record; a study reopens where you left off',
-        'Per-record performance rating, step-specific pace, allowance split into parts, and takt time with load and required operators',
+        'Pace rating per record and per step, allowances broken down by item, and load and required operators against takt time',
         'Distribution chart and outlier detection (IQR); outliers are excluded without being deleted',
         'Lean tools: line balancing (Yamazumi) with automatic distribution by takt, standard work combination sheet, improvement ideas by the 7 wastes, step cards with video frames (visual work instruction)',
         'Work sampling: observations at random moments in the video, category shares, confidence interval and the observations needed for a target error',
@@ -200,6 +203,7 @@ export const PROJECTS: Project[] = [
     slug: 'durus-ergonomi-analizi',
     method: { tr: '/tr/projeler/durus-ergonomi-analizi/yontem-ve-gizlilik/', en: '/en/projects/durus-ergonomi-analizi/method-and-privacy/' },
     name: 'Duruş – Ergonomi Analizi',
+    nameEn: 'Duruş – Ergonomics Analysis',
     category: 'operasyon',
     hosting: 'desktop',
     url: 'https://durus.ysfdurak.com/',
@@ -307,7 +311,7 @@ export const PROJECTS: Project[] = [
     },
     shots: [
       { src: '/img/destek-merkezi/genel-bakis.webp', srcEn: '/img/destek-merkezi/genel-bakis-en.webp', w: 1400, h: 950, alt: { tr: 'Destek Merkezi genel bakış: kesinleşen ve onay bekleyen destekler, bölümler arası dağılım', en: 'Destek Merkezi overview: finalised and pending supports, distribution between departments' } },
-      { src: '/img/destek-merkezi/dashboard.webp', srcEn: '/img/destek-merkezi/dashboard-en.webp', w: 1440, h: 1000, alt: { tr: 'Destek Merkezi dashboard: 50 bölümlük işletmede kim kime destek verdi, gün ve bölüm takvimi', en: 'Destek Merkezi dashboard: filters by period, location, shift and hierarchy, totals and a daily chart of support records' } },
+      { src: '/img/destek-merkezi/dashboard.webp', srcEn: '/img/destek-merkezi/dashboard-en.webp', w: 1440, h: 1000, alt: { tr: 'Destek Merkezi dashboard: dönem, lokasyon, vardiya ve bölüm filtreleri, özet göstergeler ve günlük destek kayıtları grafiği', en: 'Destek Merkezi dashboard: filters by period, location, shift and hierarchy, totals and a daily chart of support records' } },
       { src: '/img/destek-merkezi/toplu-giris.webp', srcEn: '/img/destek-merkezi/toplu-giris-en.webp', w: 1400, h: 950, alt: { tr: 'Toplu giriş: kişileri sabitle, birkaç günü vardiyayla tek seferde gir', en: 'Bulk entry: pin people and enter several days at once by shift' } },
       { src: '/img/destek-merkezi/hiyerarsi.webp', srcEn: '/img/destek-merkezi/hiyerarsi-en.webp', w: 1110, h: 1110, alt: { tr: 'Hiyerarşi tanımı: düzey adlarını ve derinliği işletme belirler', en: 'Hierarchy setup: the business names its own levels and depth' } },
     ],
@@ -341,6 +345,7 @@ export const PROJECTS: Project[] = [
   {
     slug: 'ivme-oneri-kaizen',
     name: 'İvme – Öneri ve Kaizen Merkezi',
+    nameEn: 'İvme – Suggestion and Kaizen Centre',
     category: 'operasyon',
     featured: true,
     hosting: 'vps',
@@ -380,14 +385,14 @@ export const PROJECTS: Project[] = [
       },
     },
     shots: [
-      { src: '/img/ivme/calisma-merkezi.webp', srcEn: '/img/ivme/calisma-merkezi-en.webp', w: 1440, h: 900, alt: { tr: 'İvme çalışma merkezi: toplam öneri, beni bekleyenler, tamamlananlar, onaylı kazanç ve geciken işler', en: 'İvme work centre: total suggestions, items waiting on me, completed work, approved savings and overdue items' } },
-      { src: '/img/ivme/durum-panosu.webp', srcEn: '/img/ivme/durum-panosu-en.webp', w: 1440, h: 900, alt: { tr: 'Durum panosu: önerilerin aşamalara dağılımı ve en çok öneri bekleyen kişiler, gecikmelerle birlikte', en: 'Status board: suggestions by stage and the people with the most open items, with overdue counts' } },
-      { src: '/img/ivme/oneri-detayi.webp', srcEn: '/img/ivme/oneri-detayi-en.webp', w: 1440, h: 900, alt: { tr: 'Öneri detayı: sıradaki adım, sorumlu, hedef süre, problem ve çözüm önerisi', en: 'Suggestion detail: next step, owner, target time, problem and proposed solution' } },
+      { src: '/img/ivme/calisma-merkezi.webp', srcEn: '/img/ivme/calisma-merkezi-en.webp', w: 1440, h: 900, alt: { tr: 'İvme çalışma merkezi: toplam öneri, beni bekleyenler, tamamlananlar, onaylı kazanç ve geciken işler', en: 'İvme work centre: total proposals, items waiting on me, completed work, approved savings and overdue items' } },
+      { src: '/img/ivme/durum-panosu.webp', srcEn: '/img/ivme/durum-panosu-en.webp', w: 1440, h: 900, alt: { tr: 'Durum panosu: önerilerin aşamalara dağılımı ve en çok öneri bekleyen kişiler, gecikmelerle birlikte', en: 'Status board: proposals by stage and the people with the most open items, with overdue counts' } },
+      { src: '/img/ivme/oneri-detayi.webp', srcEn: '/img/ivme/oneri-detayi-en.webp', w: 1440, h: 900, alt: { tr: 'Öneri detayı: sıradaki adım, sorumlu, hedef süre, problem ve çözüm önerisi', en: 'Proposal detail: next step, owner, target time, problem and proposed solution' } },
       { src: '/img/ivme/giris.webp', srcEn: '/img/ivme/giris-en.webp', w: 1440, h: 900, alt: { tr: 'Canlı demo girişi: rol seçerek şifresiz deneme', en: 'Live demo sign-in: pick a role, no password' } },
     ],
     demo: {
       tr: 'Bir rol seç (çalışan, değerlendirici, müdür, İK ya da yönetici) ve şifresiz gir. Örnek bir şirketin 120 önerisi yüklü; her şeyi değiştirebilirsin. Veriler her gece sıfırlanır, kimseye e-posta gitmez.',
-      en: 'Pick a role (employee, reviewer, manager, HR or admin) and enter without a password. A sample company with 120 suggestions in English is loaded and you can change anything. Data resets nightly and no email is sent.',
+      en: 'Pick a role (employee, reviewer, manager, HR or admin) and enter without a password. A sample company with 120 proposals in English is loaded and you can change anything. Data resets nightly and no email is sent.',
     },
     tr: {
       tagline: 'Çalışan önerisini değerlendirmeden aksiyona, kazanca, puana ve ödüle kadar tek akışta yöneten öneri sistemi.',
@@ -406,9 +411,9 @@ export const PROJECTS: Project[] = [
     en: {
       tagline: 'A suggestion system that runs each employee idea through one workflow: review, action, savings, scoring and reward.',
       problem:
-        'When suggestions run on paper or email threads they get lost: nobody knows who holds them, savings go unmeasured and the person who suggested never hears back. Participation fades within months.',
+        'When suggestions run on paper or in email threads they get lost: nobody knows who has them, savings go unmeasured and the person who made the suggestion never hears back. Participation fades within months.',
       solution: [
-        'End-to-end workflow: screening, area review, action, savings, manager approval and scoring. Ideas that cannot be implemented close separately',
+        'End-to-end workflow: screening, department review, action, savings, manager approval and scoring. Ideas that cannot be implemented close separately',
         'Every stage has an owner and a target time. Overdue work shows on the board, and reviewers get a single daily digest email',
         'Items waiting on support units such as IT or Technical Services are tracked with ticket numbers. Handovers work one by one or in bulk and can be undone',
         'Net savings (after implementation cost), weighted scoring criteria, automatic reward proposals by score and HR approval',
@@ -608,6 +613,7 @@ export const PROJECTS: Project[] = [
   {
     slug: 'sirdas-veri-maskeleme',
     name: 'Sırdaş – Veri Maskeleme',
+    nameEn: 'Sırdaş – Data Masking',
     category: 'veri',
     hosting: 'static',
     url: 'https://sirdas.ysfdurak.com/',
@@ -649,7 +655,7 @@ export const PROJECTS: Project[] = [
     ],
     demo: {
       tr: 'Hesap gerekmez, veri bilgisayarından çıkmaz. Sayfa örnek bir operasyon tablosuyla açılır: sütun harfine tıklayıp gizle, “Göndermeden kontrol et” bölümünde ne gideceğini gör, aşağıdaki örnek yanıtta etiketlerin, ölçeklenen tutarların ve kaydırılan tarihlerin geri açıldığını izle. Kendi Excel, Word, PowerPoint, JSON, XML ya da PDF dosyanı da açabilirsin.',
-      en: 'No account, and your data never leaves your computer. The page opens with a sample project table: click a column letter to hide it, see what will be sent under “Check before you send”, and watch the sample answer below get its labels, scaled costs and shifted dates put back. You can also open your own Excel, Word, PowerPoint, JSON, XML or PDF file.',
+      en: 'No account, and your data never leaves your computer. The page opens with a sample operations table: click a column letter to hide it, see what will be sent under “Check before you send”, and watch the sample answer below get its labels, scaled costs and shifted dates put back. You can also open your own Excel, Word, PowerPoint, JSON, XML or PDF file.',
     },
     tr: {
       tagline: 'Excel, Word, PowerPoint, JSON, XML ya da PDF’teki seçtiğin değerleri yapay zekâya göndermeden maskeleyen, yanıtı geri açan araç; veri bilgisayardan çıkmaz.',
@@ -673,7 +679,7 @@ export const PROJECTS: Project[] = [
     en: {
       tagline: 'A tool that masks the values you choose in Excel, Word, PowerPoint, JSON, XML or PDF before they reach an AI, and unmasks the answer; your data never leaves your computer.',
       problem:
-        'Handing a table or report to an AI for analysis is fast, but it carries project names, customer codes, costs and people. Deleting them by hand takes time and breaks the analysis: rows without names get mixed up, and removed numbers cannot be calculated with. What is sensitive is not always personal data either; a project’s name or cost should not leave the company.',
+        'Handing a table or report to an AI for analysis is fast, but it carries operation names, customer codes, costs and people. Deleting them by hand takes time and breaks the analysis: rows without names get mixed up, and removed numbers cannot be calculated with. What is sensitive is not always personal data; an operation’s name or cost should not leave the company either.',
       solution: [
         'You choose what to hide: column, row, cell or field. The same value gets the same label everywhere and in every message ([OPERATION_1]), so the AI can still follow relationships',
         'Numbers are scaled by a hidden factor: totals, averages and ratios stay right, and results in the answer are converted back. Dates move by whole weeks; durations and weekdays are kept',
@@ -716,6 +722,7 @@ export const PROJECTS: Project[] = [
   {
     slug: 'kesit',
     name: 'Kesit (SQL, Power BI, Python, İstatistik)',
+    nameEn: 'Kesit (SQL, Power BI, Python, Statistics)',
     category: 'ogrenme',
     turkishOnly: {
       en: 'Built for Turkish speakers: Kesit’s whole point is teaching data skills in Turkish, so the apps, lessons and exercises stay in Turkish. “Try it” opens an English guide that explains each app and screen; it stays on across all four apps.',
@@ -729,7 +736,7 @@ export const PROJECTS: Project[] = [
       { label: 'SQL', url: GH + 'kesit-sql' },
       { label: 'Power BI', url: GH + 'kesit-powerbi' },
       { label: 'Python', url: GH + 'kesit-python' },
-      { label: 'İstatistik', url: GH + 'kesit-istatistik' },
+      { label: 'İstatistik', labelEn: 'Statistics', url: GH + 'kesit-istatistik' },
     ],
     tech: ['JavaScript', 'SQLite (sql.js)', 'Pyodide', 'DAX benzetim motoru', 'PWA'],
     og: '/img/kesit/og.jpg',
@@ -874,6 +881,15 @@ export const PROJECTS: Project[] = [
     },
   },
 ];
+
+/** Teknoloji etiketlerinin İngilizce sayfadaki karşılığı (yalnız Türkçe yazılmış olanlar). */
+const TECH_EN: Record<string, string> = {
+  'Access istemcisi': 'Access client',
+  'DAX benzetim motoru': 'DAX emulation engine',
+};
+export const techLabel = (t: string, lang: Lang) => (lang === 'en' ? TECH_EN[t] ?? t : t);
+/** Sayfanın diline göre proje adı. */
+export const projectName = (p: Project, lang: Lang) => (lang === 'en' && p.nameEn ? p.nameEn : p.name);
 
 export const featured = () => PROJECTS.filter((p) => p.featured);
 export const byCategory = (c: Category) => PROJECTS.filter((p) => p.category === c);

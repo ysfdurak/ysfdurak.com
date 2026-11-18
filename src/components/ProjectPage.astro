@@ -2,7 +2,7 @@
 // Proje sayfası şablonu. TR ve EN sayfaları bu bileşeni kullanır.
 import Base from '../layouts/Base.astro';
 import ProjectCard from './ProjectCard.astro';
-import { CATEGORIES, HOSTING_LABEL, byCategory, hasFieldResult, liveHref, projectPath, tryHref, type Lang, type Project } from '../data/projects';
+import { CATEGORIES, HOSTING_LABEL, byCategory, hasFieldResult, liveHref, projectName, projectPath, techLabel, tryHref, type Lang, type Project } from '../data/projects';
 import { NAV, useT } from '../i18n/ui';
 import { SITE } from '../data/site';
 
@@ -18,6 +18,7 @@ const related = byCategory(p.category)
   .filter((x) => x.slug !== p.slug)
   .slice(0, 3);
 const path = projectPath(p, lang);
+const name = projectName(p, lang);
 // EN sayfada İngilizce arayüz görüntüsü varsa onu göster.
 const cs = p.caseStudy?.[lang];
 const shotSrc = (sh: { src: string; srcEn?: string }) => (lang === 'en' && sh.srcEn ? sh.srcEn : sh.src);
@@ -29,7 +30,7 @@ const loop = showVideo ? p.video?.loop : undefined;
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'SoftwareApplication',
-  name: p.name,
+  name,
   description: text.tagline,
   applicationCategory: 'BusinessApplication',
   operatingSystem: p.hosting === 'desktop' ? 'Windows, Web' : 'Web',
@@ -41,7 +42,7 @@ const jsonLd = {
 
 <Base
   lang={lang}
-  title={p.name}
+  title={name}
   description={text.tagline}
   path={path}
   altPath={projectPath(p, other)}
@@ -50,7 +51,7 @@ const jsonLd = {
 >
   <article class="wrap project">
     <p class="crumb"><a href={NAV[lang].projects}>{t('project.back')}</a> / {CATEGORIES[p.category][lang]}</p>
-    <h1>{p.name}</h1>
+    <h1>{name}</h1>
     <p class="lead">{text.tagline}</p>
     {lang === 'en' && p.turkishOnly && <p class="tr-only"><strong>Turkish interface.</strong> {p.turkishOnly.en}</p>}
 
@@ -67,7 +68,7 @@ const jsonLd = {
       }
       {p.download && <a class="btn" href={p.download}>{t('project.download')}</a>}
       {p.repo && <a class="btn" href={p.repo}>{t('project.code')}</a>}
-      {p.repos?.map((r) => <a class="btn" href={r.url}>{t('project.code')} · {r.label}</a>)}
+      {p.repos?.map((r) => <a class="btn" href={r.url}>{t('project.code')} · {lang === 'en' && r.labelEn ? r.labelEn : r.label}</a>)}
       <span class="tag">{HOSTING_LABEL[p.hosting][lang]}</span>
       {p.url && <span class="tag" title={t(hasFieldResult(p) ? 'evidence.field.title' : 'evidence.synthetic.title')}>{t(hasFieldResult(p) ? 'evidence.field' : 'evidence.synthetic')}</span>}
       {lang === 'en' && p.turkishOnly && <span class="tag">For Turkish speakers</span>}
@@ -240,15 +241,15 @@ const jsonLd = {
 
     <section>
       <h2>{t('project.tech')}</h2>
-      <p class="chips">{p.tech.map((x) => <span class="tag">{x}</span>)}</p>
+      <p class="chips">{p.tech.map((x) => <span class="tag">{techLabel(x, lang)}</span>)}</p>
       {(p.repo || p.repos) && (
-        <p class="license-note">{t('project.license')} <a href={`mailto:${SITE.email[lang]}?subject=${encodeURIComponent(p.name)}`}>{SITE.email[lang]}</a></p>
+        <p class="license-note">{t('project.license')} <a href={`mailto:${SITE.email[lang]}?subject=${encodeURIComponent(name)}`}>{SITE.email[lang]}</a></p>
       )}
     </section>
 
     <section class="note">
       <h2>{t('project.feedback')}</h2>
-      <p>{t('project.feedbackText')} <a href={`mailto:${SITE.email[lang]}?subject=${encodeURIComponent(p.name)}`}>{SITE.email[lang]}</a></p>
+      <p>{t('project.feedbackText')} <a href={`mailto:${SITE.email[lang]}?subject=${encodeURIComponent(name)}`}>{SITE.email[lang]}</a></p>
     </section>
 
     {
