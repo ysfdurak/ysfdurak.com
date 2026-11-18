@@ -1,0 +1,26 @@
+# Portföy sitesi: her PR'da ve main'e gönderimde derler, iç bağlantıları ve izleme listesini doğrular.
+name: Site kontrolü
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Derle
+        run: npm run build
+      - name: İç bağlantılar
+        run: node scripts/baglanti-kontrolu.mjs
+      - name: Sağlık kontrolü hedef listesi (her canlı projede sayfa işareti var mı)
+        run: node scripts/saglik-kontrolu.mjs --liste
