@@ -73,6 +73,10 @@ main { padding-bottom: 4rem; }
 .card p { margin: 0; color: var(--ink-soft); font-size: 0.97rem; }
 .card h3 a { color: var(--ink); text-decoration: none; }
 .card h3 a:hover { color: var(--accent); }
+.card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 1rem; margin-top: 0.9rem !important; }
+.card-link { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--accent); text-decoration: none; }
+.card-link:hover { text-decoration: underline; }
+.card-tag { margin-left: auto; font-size: 0.8rem; color: var(--ink-soft); border: 1px solid var(--line); border-radius: 999px; padding: 0.15rem 0.6rem; }
 .card-meta { font-size: 0.8rem !important; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem !important; }
 .card.cat { text-decoration: none; color: inherit; }
 .card.cat:hover { border-color: var(--accent); }
@@ -205,3 +209,10 @@ section[id] { scroll-margin-top: 1rem; }
 @media (max-width: 560px) { .guide .foto-cift { grid-template-columns: 1fr; } }
 
 .license-note { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.8rem; }
+
+/* Dar ekranda dil bağlantısı ikinci satıra düşünce baştaki ayırıcı çizgi boşlukta kalmasın */
+@media (max-width: 640px) {
+  .site-header nav { gap: 0.25rem 1rem; }
+  .site-header nav a { display: inline-flex; align-items: center; min-height: 44px; }
+  .site-header .lang { border-left: 0; padding-left: 0; }
+}

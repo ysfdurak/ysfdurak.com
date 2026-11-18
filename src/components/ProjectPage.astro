@@ -2,7 +2,7 @@
 // Proje sayfası şablonu. TR ve EN sayfaları bu bileşeni kullanır.
 import Base from '../layouts/Base.astro';
 import ProjectCard from './ProjectCard.astro';
-import { CATEGORIES, HOSTING_LABEL, byCategory, projectPath, type Lang, type Project } from '../data/projects';
+import { CATEGORIES, HOSTING_LABEL, byCategory, hasFieldResult, liveHref, projectPath, tryHref, type Lang, type Project } from '../data/projects';
 import { NAV, useT } from '../i18n/ui';
 import { SITE } from '../data/site';
 
@@ -53,7 +53,10 @@ const jsonLd = {
     <div class="actions">
       {
         p.url ? (
-          <a class="btn primary" href={lang === 'en' && p.urlEn ? p.urlEn : p.langParam ? `${p.url}?lang=${lang}` : p.url}>{t('project.try')}</a>
+          <>
+            <a class="btn primary" href={tryHref(p, lang)}>{t('project.try')}</a>
+            {p.tryUrl && <a class="btn" href={liveHref(p, lang)}>{t('project.server')}</a>}
+          </>
         ) : (
           <span class="btn disabled" aria-disabled="true">{t('project.soon')}</span>
         )
@@ -62,6 +65,7 @@ const jsonLd = {
       {p.repo && <a class="btn" href={p.repo}>{t('project.code')}</a>}
       {p.repos?.map((r) => <a class="btn" href={r.url}>{t('project.code')} · {r.label}</a>)}
       <span class="tag">{HOSTING_LABEL[p.hosting][lang]}</span>
+      {p.url && <span class="tag" title={t(hasFieldResult(p) ? 'evidence.field.title' : 'evidence.synthetic.title')}>{t(hasFieldResult(p) ? 'evidence.field' : 'evidence.synthetic')}</span>}
       {lang === 'en' && p.turkishOnly && <span class="tag">For Turkish speakers</span>}
       {p.mcp && <span class="tag">MCP · {p.mcp.tools} {t('project.claudeTools')}</span>}
     </div>
