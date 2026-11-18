@@ -1,5 +1,5 @@
 {
-  "son_tarama": "2026-11-17",
+  "son_tarama": "2026-11-18",
   "projeler": [
     {
       "id": "video-zaman-etudu",
@@ -16,7 +16,7 @@
       "yayinda": true,
       "canli_url": "https://zaman-etudu.ysfdurak.com/",
       "repo": "ysfdurak/video-zaman-etudu",
-      "son_guncelleme": "2026-11-17",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Gizlilik öncelikli yol haritasının 1. aşaması (güven ve gizlilik) başladı",
         "en": "Phase 1 (trust and privacy) of a privacy-first roadmap has started"
@@ -38,7 +38,7 @@
       "yayinda": true,
       "canli_url": "https://durus.ysfdurak.com/",
       "repo": "ysfdurak/durus-ergonomi",
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Türkçe ve İngilizce yayında",
         "en": "Live in Turkish and English"
@@ -60,7 +60,7 @@
       "yayinda": true,
       "canli_url": "https://destek.ysfdurak.com/",
       "repo": "ysfdurak/destek-merkezi",
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Kendi sunucumda yayında",
         "en": "Live on my own server"
@@ -82,7 +82,7 @@
       "yayinda": true,
       "canli_url": "https://ivme.ysfdurak.com/",
       "repo": "ysfdurak/ivme-oneri-kaizen",
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Türkçe ve İngilizce canlı demo yayında",
         "en": "Live demo in Turkish and English"
@@ -104,7 +104,7 @@
       "yayinda": true,
       "canli_url": "https://pusula.ysfdurak.com/",
       "repo": "ysfdurak/pusula-is-takip",
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Google ile giriş ve Claude bağlantısıyla yayında",
         "en": "Live with Google sign-in and Claude connection"
@@ -126,7 +126,7 @@
       "yayinda": true,
       "canli_url": "https://aday.ysfdurak.com/",
       "repo": "ysfdurak/aday_atolyesi",
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Canlı demo yayında",
         "en": "Live demo"
@@ -148,7 +148,7 @@
       "yayinda": true,
       "canli_url": "https://ysfdurak.github.io/",
       "repo": "ysfdurak/kesit-sql",
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Yayında; kullanıcı hesapları planlanıyor",
         "en": "Live; user accounts being planned"
@@ -170,7 +170,7 @@
       "yayinda": true,
       "canli_url": "https://ingilizce-atolyesi.ysfdurak.com/",
       "repo": "ysfdurak/ingilizce-ogrenme-atolyesi",
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Kendi adresinde yayında",
         "en": "Live at its own address"
@@ -191,7 +191,7 @@
       "yayinda": true,
       "canli_url": "https://diyalog.ysfdurak.com/",
       "repo": "ysfdurak/diyalog-atolyesi",
-      "son_guncelleme": "2026-11-17",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Canlı; soru modunda varyant sistemi geliştiriliyor",
         "en": "Live; a variant system for the question mode is being built"
@@ -306,7 +306,7 @@
       "durum": "pilot",
       "yayinda": true,
       "repo": "ysfdurak/butce-sapmasi-rapor-otomasyonu",
-      "son_guncelleme": "2026-11-17",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Kullanımda test ediliyor; daha otomatik hale getiriliyor",
         "en": "Being tested in use; being made more automated"
@@ -323,12 +323,12 @@
         "tr": "Tedarikçilerin mal kabul randevusu almasını ve depo kapasitesinin kapı ve saat bazında yönetilmesini sağlar. Talepleri sırayla uygun kapasiteye atar, iptal ve plaka giriş kurallarını uygular.",
         "en": "Lets suppliers book goods-receipt appointments and manages warehouse capacity by door and hour. Assigns requests to suitable capacity in order and applies cancellation and plate-entry rules."
       },
-      "durum": "gelistiriliyor",
+      "durum": "beklemede",
       "yayinda": true,
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
-        "tr": "Esnek kural yapısı ve basit ekranlarla yeniden geliştiriliyor",
-        "en": "Being rebuilt with flexible rules and simpler screens"
+        "tr": "Beklemede; esnek kural yapısıyla baştan tasarlanacak",
+        "en": "On hold; to be redesigned around a flexible rule structure"
       },
       "ozel_not": "Prototip beklenen gibi değil; esnek kural yapısı ile yeniden ele alınacak."
     },
@@ -366,10 +366,10 @@
       },
       "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
-        "tr": "HTML sürümü ve Excel eklentisi geliştiriliyor",
-        "en": "HTML version and Excel add-in in development"
+        "tr": "Önce yalnızca HTML sürümü çıkacak; Excel eklentisi sonraya kaldı",
+        "en": "HTML version first; the Excel add-in comes later"
       },
       "ozel_not": ""
     },
@@ -402,12 +402,12 @@
         "tr": "Henüz kurulmamış bir operasyon için sorter seçimi ve boyutlandırmasına yardım eder. Günlük hacim, lot büyüklüğü ve mağaza sayısı gibi birkaç parametreden şut sayısını ve dağılım ısı haritasını, istasyon başına personeli ve besleme noktalarını çıkarır.",
         "en": "Helps choose and size a sorter for an operation that does not exist yet. From a few inputs such as daily volume, lot size and store count it derives chute count and a distribution heatmap, staff per station and feed points."
       },
-      "durum": "gelistiriliyor",
+      "durum": "beklemede",
       "yayinda": true,
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
-        "tr": "Yatırım planlaması için sadeleştiriliyor",
-        "en": "Being simplified for investment planning"
+        "tr": "Beklemede; ileride WDL içinde bir modül olabilir",
+        "en": "On hold; may later become a module inside WDL"
       },
       "ozel_not": ""
     },
@@ -516,12 +516,12 @@
         "tr": "Yüklenen kitap ve notları ünitelere ayırır; tüm içerikten soru havuzu oluşturup her seferinde değişen deneme sınavları ve bilgi grafikleri hazırlar. Yanlış cevaplar aralıklarla tekrar sorulur.",
         "en": "Splits uploaded books and notes into units, builds a question pool from all the content, and creates ever-changing mock exams and infographics. Wrong answers come back at intervals."
       },
-      "durum": "gelistiriliyor",
+      "durum": "beklemede",
       "yayinda": true,
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
-        "tr": "Geliştirme sürüyor",
-        "en": "Development ongoing"
+        "tr": "Beklemede; ilk sürüm hazır",
+        "en": "On hold; first version ready"
       },
       "ozel_not": ""
     },
@@ -538,7 +538,7 @@
       "durum": "beklemede",
       "yayinda": false,
       "repo": "ysfdurak/kivilcim-zihin-oyunlari",
-      "son_guncelleme": "2026-11-09",
+      "son_guncelleme": "2026-11-18",
       "durum_notu": {
         "tr": "Şimdilik kapatıldı; kullanıcı hesapları sunucuya geçişte ele alınacak",
         "en": "Closed for now; user accounts to be revisited on the server"
