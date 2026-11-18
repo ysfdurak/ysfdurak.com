@@ -410,6 +410,30 @@ export const PROJECTS: Project[] = [
     repo: GH + 'pusula-is-takip',
     tech: ['React', 'Node.js', 'SQLite', 'Google OAuth', 'MCP', 'MCP Apps', 'Docker', 'Caddy'],
     og: '/img/pusula/og.jpg',
+    video: {
+      src: '/video/pusula-tanitim-tr.mp4',
+      poster: '/video/pusula-tanitim-tr.webp',
+      srcEn: '/video/pusula-promo-en.mp4',
+      posterEn: '/video/pusula-promo-en.webp',
+      w: 1920,
+      h: 1080,
+      caption: {
+        tr: '40 saniyede Pusula: hızlı iş ekleme, ekip panosu, statü panosunda işi başlatma ve ilk termini kaybetmeyen iş ayrıntısı. Görüntüler kurgusal depo ekibinin örnek verisinden.',
+        en: 'Pusula in 40 seconds: quick task entry, the team board, starting work on the status board and a task detail that keeps the first due date. Footage uses the sample warehouse team’s data.',
+      },
+      loop: {
+        src: '/video/pusula-dongu-tr.mp4',
+        poster: '/video/pusula-dongu-tr.webp',
+        srcEn: '/video/pusula-loop-en.mp4',
+        posterEn: '/video/pusula-loop-en.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'Pusula kısa döngü: hızlı iş ekleme, ekip panosu, statü panosu ve iş ayrıntısı',
+          en: 'Pusula short loop: quick task entry, team board, status board and task detail',
+        },
+      },
+    },
     shots: [
       { src: '/img/pusula/ekip-panosu.webp', srcEn: '/img/pusula/ekip-panosu-en.webp', w: 1440, h: 900, alt: { tr: 'Pusula ekip panosu: açık, geciken, bugün teslim ve tamamlanan işler', en: 'Pusula team board: open, overdue, due today and completed tasks' } },
       { src: '/img/pusula/claude-panom.webp', w: 1392, h: 1100, alt: { tr: "Claude sohbetinin içinde açılan Pusula panosu: Başla, Tamamla ve Ayrıntı düğmeleri", en: 'Pusula board opened inside a Claude chat, with Start, Complete and Details buttons' } },
