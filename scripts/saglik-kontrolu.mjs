@@ -26,6 +26,7 @@ const SABIT = [
 const hedefler = [...SABIT];
 for (const p of PROJECTS) {
   if (p.url) hedefler.push({ ad: p.name, url: p.url, baslik: p.isaret });
+  if (p.tryUrl) hedefler.push({ ad: `${p.name} · girişsiz demo`, url: p.tryUrl, baslik: p.isaret });
   if (p.urlEn && p.urlEn !== p.url) hedefler.push({ ad: `${p.name} (EN)`, url: p.urlEn, baslik: p.isaret });
   // Sunucuda çalışan uygulamalarda /healthz: uygulama ayakta ve isteğe cevap veriyor mu? (gövde "ok" içermeli)
   if (p.health) hedefler.push({ ad: `${p.name} · sağlık`, url: new URL(p.health, p.url).href, icerik: 'ok' });

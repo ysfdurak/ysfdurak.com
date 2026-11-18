@@ -1,5 +1,6 @@
 ---
-import { CATEGORIES, HOSTING_LABEL, projectPath, type Lang, type Project } from '../data/projects';
+import { CATEGORIES, HOSTING_LABEL, hasFieldResult, projectPath, tryHref, type Lang, type Project } from '../data/projects';
+import { useT } from '../i18n/ui';
 
 interface Props {
   project: Project;
@@ -7,6 +8,7 @@ interface Props {
   showCategory?: boolean;
 }
 const { project: p, lang, showCategory = false } = Astro.props;
+const t = useT(lang);
 ---
 
 <article class="card">
@@ -17,4 +19,9 @@ const { project: p, lang, showCategory = false } = Astro.props;
   </p>
   <h3><a href={projectPath(p, lang)}>{p.name}</a></h3>
   <p>{p[lang].tagline}</p>
+  <p class="card-actions">
+    <a class="card-link" href={projectPath(p, lang)}>{t('project.how')} →</a>
+    {p.url && <a class="card-link try" href={tryHref(p, lang)}>{t('project.try')} ↗</a>}
+    {p.url && <span class="card-tag">{t(hasFieldResult(p) ? 'evidence.field' : 'evidence.synthetic')}</span>}
+  </p>
 </article>

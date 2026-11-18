@@ -40,6 +40,9 @@ export interface Project {
   hosting: Hosting;
   /** Canlı uygulama adresi. Boşsa "Dene" butonu "Canlı sürüm yakında" yazar. */
   url?: string;
+  /** "Dene" düğmesinin gideceği girişsiz deneme adresi (ör. tarayıcı demosu). Verilirse url ikinci düğme olur
+   *  ("Sunucu sürümü"); hesapla giriş gerektiren canlı sürümün önüne girişsiz yol koymak için. */
+  tryUrl?: string;
   /** İngilizce sayfada "Dene" düğmesinin gideceği ayrı canlı adres (ör. İngilizce örnek verili demo). Yoksa url kullanılır. */
   urlEn?: string;
   repo?: string;
@@ -364,6 +367,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'vps',
     url: 'https://pusula.ysfdurak.com/',
+    tryUrl: 'https://ysfdurak.github.io/pusula-is-takip/',
     isaret: 'Pusula',
     health: '/healthz',
     langParam: true,
@@ -622,3 +626,11 @@ export const featured = () => PROJECTS.filter((p) => p.featured);
 export const byCategory = (c: Category) => PROJECTS.filter((p) => p.category === c);
 export const projectPath = (p: Project, lang: Lang) =>
   lang === 'tr' ? `/tr/projeler/${p.slug}/` : `/en/projects/${p.slug}/`;
+
+const withLang = (url: string, p: Project, lang: Lang) => (p.langParam ? `${url}${url.includes('?') ? '&' : '?'}lang=${lang}` : url);
+/** Canlı (sunucu) sürüm adresi, sayfanın diline göre. */
+export const liveHref = (p: Project, lang: Lang) => (lang === 'en' && p.urlEn ? p.urlEn : withLang(p.url ?? '', p, lang));
+/** "Dene" düğmesi: girişsiz deneme adresi varsa o, yoksa canlı sürüm. */
+export const tryHref = (p: Project, lang: Lang) => (p.tryUrl ? withLang(p.tryUrl, p, lang) : liveHref(p, lang));
+/** Vaka sayfasında sahadan gelen ölçülebilir sonuç var mı (yoksa demo sentetik veriyle etiketlenir). */
+export const hasFieldResult = (p: Project) => (p.caseStudy?.tr.results?.length ?? 0) > 0;
