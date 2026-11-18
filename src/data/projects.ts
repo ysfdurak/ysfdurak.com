@@ -786,6 +786,30 @@ export const PROJECTS: Project[] = [
     repo: GH + 'ingilizce-ogrenme-atolyesi',
     tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],
     og: '/img/ingilizce-atolyesi/og.jpg',
+    video: {
+      src: '/video/ingilizce-tanitim-tr.mp4',
+      poster: '/video/ingilizce-tanitim-tr.webp',
+      srcEn: '/video/ingilizce-promo-en.mp4',
+      posterEn: '/video/ingilizce-promo-en.webp',
+      w: 1920,
+      h: 1080,
+      caption: {
+        tr: '30 saniyede İngilizce Atölyesi: hedefe göre günlük plan, kelime dersinde yanlışın Türkçe açıklaması, dilbilgisi konu anlatımı ve aralıklı tekrar. Telefon görünümü.',
+        en: 'İngilizce Atölyesi in 30 seconds, with the English guide on: a daily plan for your goal, a vocabulary mistake explained in Turkish, a grammar lesson and spaced review. Phone view; the interface is Turkish.',
+      },
+      loop: {
+        src: '/video/ingilizce-dongu-tr.mp4',
+        poster: '/video/ingilizce-dongu-tr.webp',
+        srcEn: '/video/ingilizce-loop-en.mp4',
+        posterEn: '/video/ingilizce-loop-en.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'İngilizce Atölyesi kısa döngü: günlük plan, kelime dersi, dilbilgisi ve tekrar ekranı',
+          en: 'İngilizce Atölyesi short loop: daily plan, vocabulary lesson, grammar and review screen',
+        },
+      },
+    },
     shots: [
       { src: '/img/ingilizce-atolyesi/bugunku-plan.webp', srcEn: '/img/ingilizce-atolyesi/bugunku-plan-en.webp', w: 1440, h: 900, alt: { tr: 'Bugün ekranı: seviyeye ve hedefe göre hazırlanan günlük plan, kelime dersi, ünite adımı ve sınav hazırlığı', en: 'Today screen with the English guide open: the daily plan with a vocabulary lesson, a unit step and a business English task' } },
       { src: '/img/ingilizce-atolyesi/dilbilgisi-dersi.webp', w: 1440, h: 900, alt: { tr: 'Dilbilgisi dersi: Türkçe konu anlatımı, tablo ve sesli örnek cümleler', en: 'Grammar lesson: explanation in Turkish, a table and example sentences with audio' } },
