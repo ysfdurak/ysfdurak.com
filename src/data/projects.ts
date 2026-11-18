@@ -289,8 +289,8 @@ export const PROJECTS: Project[] = [
       w: 1920,
       h: 1080,
       caption: {
-        tr: '40 saniyede Destek Merkezi: B vardiyası için planlanan destek kaydı, karşı bölümün onayı, puantajla uyuşmayan kayıt ve kim kime destek verdi matrisi. Görüntüler kurgusal depo organizasyonunun örnek verisinden.',
-        en: 'Destek Merkezi in 40 seconds: a planned support record for shift B, the receiving unit’s approval, a record that clashes with the timesheet and the who-supported-whom matrix. Footage uses the sample warehouse organisation’s data.',
+        tr: '35 saniyede Destek Merkezi: B vardiyası için planlanan destek kaydı, karşı bölümün onayı, puantajla uyuşmayan kayıt ve kim kime destek verdi matrisi. Görüntüler kurgusal depo organizasyonunun örnek verisinden.',
+        en: 'Destek Merkezi in 35 seconds: a planned support record for shift B, the receiving unit’s approval, a record that clashes with the timesheet and the who-supported-whom matrix. Footage uses the sample warehouse organisation’s data.',
       },
       loop: {
         src: '/video/destek-dongu-tr.mp4',
@@ -442,8 +442,8 @@ export const PROJECTS: Project[] = [
       w: 1920,
       h: 1080,
       caption: {
-        tr: '40 saniyede Pusula: hızlı iş ekleme, ekip panosu, statü panosunda işi başlatma ve ilk termini kaybetmeyen iş ayrıntısı. Görüntüler kurgusal depo ekibinin örnek verisinden.',
-        en: 'Pusula in 40 seconds: quick task entry, the team board, starting work on the status board and a task detail that keeps the first due date. Footage uses the sample warehouse team’s data.',
+        tr: '35 saniyede Pusula: hızlı iş ekleme, ekip panosu, statü panosunda işi başlatma ve ilk termini kaybetmeyen iş ayrıntısı. Görüntüler kurgusal depo ekibinin örnek verisinden.',
+        en: 'Pusula in 35 seconds: quick task entry, the team board, starting work on the status board and a task detail that keeps the first due date. Footage uses the sample warehouse team’s data.',
       },
       loop: {
         src: '/video/pusula-dongu-tr.mp4',
@@ -604,6 +604,30 @@ export const PROJECTS: Project[] = [
     tech: ['JavaScript', 'Web Worker', 'SheetJS', 'ExcelJS', 'Office.js', 'MCP', 'Node.js'],
     og: '/img/sirdas/og.jpg',
     ogEn: '/img/sirdas/og-en.jpg',
+    video: {
+      src: '/video/sirdas-tanitim-tr.mp4',
+      poster: '/video/sirdas-tanitim-tr.webp',
+      srcEn: '/video/sirdas-promo-en.mp4',
+      posterEn: '/video/sirdas-promo-en.webp',
+      w: 1920,
+      h: 1080,
+      caption: {
+        tr: '30 saniyede Sırdaş: sütun seçilince değerler etiketlenir, maliyet ölçeklenir, tarihler kayar; göndermeden kontrol, anahtar defteri ve yanıtın geri açılması. Görüntüler uygulamanın örnek tablosundan.',
+        en: 'Sırdaş in 30 seconds: pick columns and values get labels, costs are scaled and dates shifted; then the pre-send check, the key ledger and unmasking the answer. Footage uses the app’s sample table.',
+      },
+      loop: {
+        src: '/video/sirdas-dongu-tr.mp4',
+        poster: '/video/sirdas-dongu-tr.webp',
+        srcEn: '/video/sirdas-loop-en.mp4',
+        posterEn: '/video/sirdas-loop-en.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'Sırdaş kısa döngü: sütun seçimi, göndermeden kontrol ve yanıtın geri açılması',
+          en: 'Sırdaş short loop: picking columns, the pre-send check and unmasking the answer',
+        },
+      },
+    },
     shots: [
       { src: '/img/sirdas/tablo.webp', srcEn: '/img/sirdas/tablo-en.webp', w: 1440, h: 900, alt: { tr: 'Tablo: Operasyon ve Sorumlu sütunları etiketlenmiş, maliyet gizli katsayıyla ölçeklenmiş, tarihler tam hafta kaydırılmış; not hücresinde geçen operasyon adı da gizlenmiş', en: 'Table: Operation and Owner columns tagged, cost scaled by a hidden factor, dates shifted by whole weeks; the project name inside a note is hidden too' } },
       { src: '/img/sirdas/kontrol.webp', srcEn: '/img/sirdas/kontrol-en.webp', w: 1440, h: 900, alt: { tr: 'Göndermeden kontrol: gidecek satır ve hücre sayısı, gizlenen değerler, ölçeklenen sayılar ve açık kalan gizli değer uyarısı', en: 'Check before you send: rows and cells to be sent, hidden values, scaled numbers and the warning for hidden values left visible' } },
