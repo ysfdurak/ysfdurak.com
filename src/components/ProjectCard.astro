@@ -12,6 +12,7 @@ const t = useT(lang);
 ---
 
 <article class="card">
+  <a class="card-thumb" href={projectPath(p, lang)} tabindex="-1" aria-hidden="true"><img src={`/img/kart/${p.slug}-${lang}.webp`} alt="" width="640" height="400" loading="lazy" decoding="async" /></a>
   <p class="card-meta">
     {showCategory && <span>{CATEGORIES[p.category][lang]} · </span>}
     <span>{HOSTING_LABEL[p.hosting][lang]}</span>

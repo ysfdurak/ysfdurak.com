@@ -124,6 +124,10 @@ export const PROJECTS: Project[] = [
   // ── Operasyon ve depo ────────────────────────────────────────────
   {
     slug: 'video-zaman-etudu',
+    caseStudy: {
+      tr: { role: "Şirkette kullanmak için başladım: kronometreyle yapılan etütte kaçan anı tekrar izleyememek ve sonuçları elle Excel’e geçirmek asıl sorundu. Windows ve tarayıcı olmak üzere iki sürüm, videonun bilgisayardan hiç çıkmaması ve ticari olmaması benim kararlarım; kod yapay zekâ (Claude) ile yazıldı. Kullanırken yetersiz bulduğum yerleri kullanıcı gözüyle inceletip bulguları sırayla düzelttirdim." },
+      en: { role: "I started it for use at my company: in stopwatch studies a missed moment cannot be replayed and results are copied into Excel by hand. The two versions (Windows and browser), keeping the video on the computer and keeping it non-commercial are my decisions; the code was written with AI (Claude). Where I found it lacking in use, I had it reviewed from a user’s point of view and the findings fixed one by one." },
+    },
     method: { tr: '/tr/projeler/video-zaman-etudu/yontem-ve-gizlilik/', en: '/en/projects/video-zaman-etudu/method-and-privacy/' },
     name: 'Video Zaman Etüdü',
     nameEn: 'Video Time Study',
@@ -201,6 +205,10 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'durus-ergonomi-analizi',
+    caseStudy: {
+      tr: { role: "Bir iş istasyonunu videodan değerlendirecek tek bir yer istedim: bütün yaygın yöntemler, Excel formları ve hangi yöntemin seçileceğine rehberlik. Kapsam, web ve masaüstü sürümleri, Türkçe ve İngilizce arayüz, MCP gerekmediği ve senaryo özelliklerinin uygulamanın içinde olması benim kararlarım; kod yapay zekâ (Claude) ile yazıldı. İlk sürüm “Duruş” adıyla bir claude.ai sayfası olarak başladı." },
+      en: { role: "I wanted one place to assess a workstation from video: all the common methods, Excel forms and guidance on which method to choose. The scope, the web and desktop versions, the English and Turkish interface, the decision that no MCP was needed and that scenarios belong inside the app are mine; the code was written with AI (Claude). The first version started as a claude.ai page called “Duruş”." },
+    },
     method: { tr: '/tr/projeler/durus-ergonomi-analizi/yontem-ve-gizlilik/', en: '/en/projects/durus-ergonomi-analizi/method-and-privacy/' },
     name: 'Duruş – Ergonomi Analizi',
     nameEn: 'Duruş – Ergonomics Analysis',
@@ -274,7 +282,12 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'destek-merkezi',
+    caseStudy: {
+      tr: { role: "Problem kendi operasyonumdan: destek talepleri WhatsApp’tan gelir, kayıt gün sonunda, ertesi gün ya da ertesi hafta girilir. İlk sürüm (Node sunucusu ve Access istemcisi) ile kural belgesi bendeydi; Claude ile gözden geçirip sürüm sürüm geliştirdik. Vardiyadan gelen sabit süreler, toplu ve geriye dönük giriş, aynı güne ikinci kayıt engeli, işletmenin kendi hiyerarşisi ve verimlilik ile adam-saat hesabının çıkarılması benim kararlarım; kod yapay zekâ (Claude) ile yazıldı." },
+      en: { role: "The problem comes from my own operation: support requests arrive over WhatsApp and records are entered at the end of the day, the next day or the following week. I had the first version (a Node server and an Access client) and the rules document; we reviewed it with Claude and developed it release by release. Fixed durations from shifts, bulk and retroactive entry, blocking a second record for the same day, the business’s own hierarchy and dropping productivity and man-hour figures are my decisions; the code was written with AI (Claude)." },
+    },
     name: 'Destek Merkezi',
+    nameEn: 'Destek Merkezi – Workforce Support',
     category: 'operasyon',
     featured: true,
     hosting: 'vps',
@@ -310,7 +323,7 @@ export const PROJECTS: Project[] = [
       },
     },
     shots: [
-      { src: '/img/destek-merkezi/genel-bakis.webp', srcEn: '/img/destek-merkezi/genel-bakis-en.webp', w: 1400, h: 950, alt: { tr: 'Destek Merkezi genel bakış: kesinleşen ve onay bekleyen destekler, bölümler arası dağılım', en: 'Destek Merkezi overview: finalised and pending supports, distribution between departments' } },
+      { src: '/img/destek-merkezi/genel-bakis.webp', srcEn: '/img/destek-merkezi/genel-bakis-en.webp', w: 1400, h: 950, alt: { tr: 'Destek Merkezi genel bakış: kesinleşen ve onay bekleyen destekler, bölümler arası dağılım', en: 'Destek Merkezi overview: finalised and pending supports, distribution between 17 departments in three centres' } },
       { src: '/img/destek-merkezi/dashboard.webp', srcEn: '/img/destek-merkezi/dashboard-en.webp', w: 1440, h: 1000, alt: { tr: 'Destek Merkezi dashboard: dönem, lokasyon, vardiya ve bölüm filtreleri, özet göstergeler ve günlük destek kayıtları grafiği', en: 'Destek Merkezi dashboard: filters by period, location, shift and hierarchy, totals and a daily chart of support records' } },
       { src: '/img/destek-merkezi/toplu-giris.webp', srcEn: '/img/destek-merkezi/toplu-giris-en.webp', w: 1400, h: 950, alt: { tr: 'Toplu giriş: kişileri sabitle, birkaç günü vardiyayla tek seferde gir', en: 'Bulk entry: pin people and enter several days at once by shift' } },
       { src: '/img/destek-merkezi/hiyerarsi.webp', srcEn: '/img/destek-merkezi/hiyerarsi-en.webp', w: 1110, h: 1110, alt: { tr: 'Hiyerarşi tanımı: düzey adlarını ve derinliği işletme belirler', en: 'Hierarchy setup: the business names its own levels and depth' } },
@@ -344,6 +357,10 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'ivme-oneri-kaizen',
+    caseStudy: {
+      tr: { role: "Şirketimdeki öneri sisteminin sorunlarını gördüm ve İvme’yi “bir öneri sistemi nasıl olmalı” sorusuyla, şirkete ait hiçbir şey içermeyen genel bir ürün olarak tasarladım. Uygulanamayan önerinin kazanç adımına gitmemesi, devirlerin geri alınabilmesi, vardiya yerine lokasyon, öneri içeriğinin dış yapay zekâya hiç gitmemesi ve iki sürümlü yapı benim kararlarım; kod yapay zekâ (Claude) ile yazıldı." },
+      en: { role: "I saw the problems of the suggestion system at my company and designed İvme as a generic product around the question “how should a suggestion system work?”, with nothing taken from the company. Closing ideas that could not be implemented before the savings step, undoable handovers, location instead of shift, never sending proposal content to an external AI and the two-edition design are my decisions; the code was written with AI (Claude)." },
+    },
     name: 'İvme – Öneri ve Kaizen Merkezi',
     nameEn: 'İvme – Suggestion and Kaizen Centre',
     category: 'operasyon',
@@ -427,6 +444,10 @@ export const PROJECTS: Project[] = [
   // ── İş ve ekip ───────────────────────────────────────────────────
   {
     slug: 'pusula',
+    caseStudy: {
+      tr: { role: "İşlerin e-posta, mesaj ve Excel arasında dağıldığını görüp şirkette birkaç kişiyle denemek için başladım. Neyin ekleneceği, neyin çıkarılacağı, Outlook’a uygun bildirimler, Google ile giriş ve MCP araç listesi benim kararlarım; kod yapay zekâ (Claude) ile yazıldı. Pusula, aynı çekirdek üzerinde web ve MCP ikili yapısını ilk kurduğum proje." },
+      en: { role: "I started it after seeing work scattered across email, chat and Excel, to trial it with a few people at my company. What to add and what to remove, Outlook-friendly notifications, Google sign-in and the MCP tool list are my decisions; the code was written with AI (Claude). Pusula is the first project where I set up the web + MCP dual structure on one core." },
+    },
     name: 'Pusula',
     category: 'ekip',
     featured: true,
@@ -511,6 +532,10 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'aday-atolyesi',
+    caseStudy: {
+      tr: { role: "Adayların iş görüşmelerine kendi kendine hazırlanabilmesi için kurdum. Kapsamı ben belirledim, Claude’a uzman gözüyle yaptırdığım incelemede çıkan eksiklerden hangilerinin düzeltileceğini ben seçtim; vaka içerikleri ve kod yapay zekâ (Claude) ile yazıldı. Arayüzün Türkçe kalması ve tek puan verilmemesi de benim kararlarım." },
+      en: { role: "I built it so candidates can prepare for job interviews on their own. I set the scope and chose which gaps from an expert-eye review I had Claude do would be fixed; the case content and the code were written with AI (Claude). Keeping the interface in Turkish and never giving a single score are also my decisions." },
+    },
     name: 'Aday Atölyesi',
     category: 'ekip',
     turkishOnly: {
@@ -608,6 +633,61 @@ export const PROJECTS: Project[] = [
     },
   },
 
+  {
+    slug: 'diyalog-atolyesi',
+    caseStudy: {
+      tr: { role: 'Fikir, iletişim, liderlik ve doğru soru sorma becerisini çalışabileceğim bir uygulama istememden çıktı. Ürün yönünü bilerek Claude’a bıraktım; ayrı bir uygulama olarak Aday Atölyesi’ne bağlanması, kredi azalınca bildirim gelmesi ve tekrar oynayışta ezberi önleyecek varyant sistemi benim kararlarım; kod yapay zekâ (Claude) ile yazıldı. Pilotta rapor cevabı gösterdiği için ikinci denemenin kolaylaştığını gördüm; aynı senaryoya farklı kök nedenler getiren varyantlar bu yüzden sırada.' },
+      en: { role: 'The idea came from wanting an app to practise communication, leadership and asking the right questions. I deliberately left the product direction to Claude; keeping it a separate app linked to Aday Atölyesi, credit alerts and a variant system against memorising replays are my decisions; the code was written with AI (Claude). In the pilot I saw that the report makes a second attempt easier because it reveals the answer, so variants that give the same scenario different root causes are next.' },
+    },
+    name: 'Diyalog Atölyesi',
+    category: 'ekip',
+    turkishOnly: {
+      en: 'Built for Turkish-speaking managers: the characters answer in Turkish and the questions are scored on Turkish phrasing, so the app stays in Turkish. “Watch the sample session” shows a finished report without an AI call.',
+    },
+    hosting: 'vps',
+    url: 'https://diyalog.ysfdurak.com/',
+    isaret: 'Diyalog Atölyesi',
+    repo: GH + 'diyalog-atolyesi',
+    tech: ['JavaScript', 'Node.js', 'Anthropic API', 'SQLite', 'MCP', 'Docker'],
+    og: '/img/diyalog-atolyesi/og.jpg',
+    shots: [
+      { src: '/img/diyalog-atolyesi/oturum.webp', w: 840, h: 860, alt: { tr: 'Oturum: durum, rolün ve karşındaki kişi; açık uçlu sorular gizli bilgileri tek tek açıyor, 5 soru hakkı', en: 'Session: the situation, your role and the other person; open questions unlock hidden facts one by one, 5 questions allowed' } },
+      { src: '/img/diyalog-atolyesi/rapor.webp', w: 840, h: 860, alt: { tr: 'Rapor: 100 üzerinden skor ve beş boyut (açık uçlu soru, derinleşme, varsayımsız soru, bilgi keşfi, sonuç)', en: 'Report: a score out of 100 and five dimensions (open questions, follow-up depth, no leading questions, facts uncovered, conclusion)' } },
+      { src: '/img/diyalog-atolyesi/senaryolar.webp', w: 840, h: 900, alt: { tr: 'Senaryolar: operasyon, ekip yönetimi ve iş geliştirme; günün senaryosu ve örnek oturum', en: 'Scenarios: operations, team management and business development; scenario of the day and a sample session' } },
+    ],
+    demo: {
+      tr: 'Hesap gerekmez: bir senaryo seç, 5 soru sor, kök nedeni tahmin et; raporda her soru için “şöyle sorabilirdin” önerisi gelir. Günde 3 canlı oturum hakkın var. Yapay zekâ kullanmayan “Örnek oturumu izle” her zaman açık. Konuşma metni kaydedilmez, yalnızca anonim özet tutulur.',
+      en: 'No account needed: pick a scenario, ask 5 questions and guess the root cause; the report suggests a better way to ask each question. You get 3 live sessions a day, and “Örnek oturumu izle” (watch the sample session) works without an AI call. Conversations are not stored, only an anonymous summary. The interface is in Turkish.',
+    },
+    tr: {
+      tagline: 'Yöneticilerin doğru soru sormayı çalıştığı pratik alanı: karakter bildiğini ancak doğru soruya anlatır, sorular rubrikle puanlanır.',
+      problem:
+        'Sorun çözerken yöneticiler çoğu zaman nedeni baştan varsayar, evet/hayır ya da suçlayan sorular sorar ve asıl bilgiye ulaşamaz. Bu beceri toplantıda değil pratikle gelişir; genel bir sohbet botuyla çalışmak da işe yaramaz, çünkü bot her şeyi anlatır ve iki deneme karşılaştırılamaz.',
+      solution: [
+        'Senaryo, karakter ve gizli bilgiler: her bilginin bir açılma koşulu var; evet/hayır sorusu kısa, suçlayan soru savunmacı cevap alır',
+        '5 soru hakkı, sonunda kök neden tahmini; gizli bilgiler ve kök neden oturum bitene kadar tarayıcıya hiç gönderilmez',
+        'Beş boyutlu rubrik: üç boyut kodla, iki boyut yazılı ölçüte göre modelle puanlanır; toplam skor kodla hesaplanır, her soru etiketi raporda görünür',
+        'Her soru için “şöyle sorabilirdin” önerisi ve zayıf soruyu yeniden deneme',
+        'Karakter ve değerlendirici ayrı model çağrıları; oturum başına en fazla 6 çağrı, ziyaretçi ve site günlük sınırı, kredi biterse kendiliğinden kapanıp açılma',
+        'Aynı çekirdek iki kapıdan: web arayüzü ve anahtarla açılan MCP kapısı (Claude’un içinden oynama)',
+        'Gizlilik: konuşma kaydedilmez, IP yerine tuzlu özet tutulur; gelişim grafiği tarayıcıda',
+      ],
+    },
+    en: {
+      tagline: 'A practice space where managers learn to ask the right questions: the character only tells what they know when asked the right way, and questions are scored against a rubric.',
+      problem:
+        'When solving problems, managers often assume the cause up front, ask yes/no or blaming questions and never reach the real information. The skill grows with practice, not in meetings, and a general chatbot does not help: it tells everything, and two attempts cannot be compared.',
+      solution: [
+        'Scenario, character and hidden facts: each fact has an unlock condition; a yes/no question gets a short answer, a blaming one gets a defensive one',
+        '5 questions, then a root-cause guess; hidden facts and the root cause never reach the browser before the session ends',
+        'Five-dimension rubric: three dimensions scored in code, two by the model against written criteria; the total is calculated in code and every question label shows in the report',
+        'A “you could have asked” suggestion for every question, and a retry for weak ones',
+        'Separate model calls for the character and the reviewer; at most 6 calls per session, daily visitor and site limits, automatic shutdown and recovery when credit runs out',
+        'One core, two doors: the web UI and a key-protected MCP gate for playing inside Claude',
+        'Privacy: conversations are not stored, a salted hash replaces the IP address; the progress chart stays in the browser',
+      ],
+    },
+  },
 
   // ── Veri ve raporlama ────────────────────────────────────────────
   {
@@ -721,6 +801,10 @@ export const PROJECTS: Project[] = [
   // ── Öğrenme ──────────────────────────────────────────────────────
   {
     slug: 'kesit',
+    caseStudy: {
+      tr: { role: "SQL, Power BI ve Python uygulamalarını önce kendi çalışmam için yaptım, sonra kapsamı genişletip Kesit paketi olarak yayımladım; istatistik uygulaması sonradan eklendi. Hangi konuların, ortak veri setlerinin ve rol yollarının olacağına ben karar verdim; ders içeriği ve kod yapay zekâ (Claude) ile yazıldı." },
+      en: { role: "I first built the SQL, Power BI and Python apps for my own study, then widened the scope and published them as the Kesit suite; the statistics app came later. I decided the topics, the shared datasets and the role paths; the lesson content and the code were written with AI (Claude)." },
+    },
     name: 'Kesit (SQL, Power BI, Python, İstatistik)',
     nameEn: 'Kesit (SQL, Power BI, Python, Statistics)',
     category: 'ogrenme',
@@ -805,6 +889,10 @@ export const PROJECTS: Project[] = [
   },
   {
     slug: 'ingilizce-atolyesi',
+    caseStudy: {
+      tr: { role: "Türkçe konuşanlar için bir İngilizce öğrenme uygulaması olarak birkaç oturumda Claude ile geliştirdim. Sıcak, oyunsu görsel dil, YDS ve YÖKDİL hazırlığına öncelik verilmesi ve uygulamanın ticari olmadan tarayıcıda ve telefonda kalması benim kararlarım; içerik ve kod yapay zekâ (Claude) ile yazıldı." },
+      en: { role: "I developed it with Claude over several sessions as an English learning app for Turkish speakers. The warm, playful look, putting YDS and YÖKDİL exam prep first and keeping it non-commercial in the browser and on the phone are my decisions; the content and the code were written with AI (Claude)." },
+    },
     name: 'İngilizce Atölyesi',
     category: 'ogrenme',
     turkishOnly: {
