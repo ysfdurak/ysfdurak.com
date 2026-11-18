@@ -1,0 +1,54 @@
+{
+  "_aciklama": "Ölçüm kabul eden projeler. Listede olmayan proje adıyla gelen olay reddedilir. 'huni': ziyaretçinin nereye kadar geldiği (olay adı ya da 'ekran:ad'). 'ekranlar' ve 'olaylar': yönetim sayfasındaki okunur adlar; listede olmayanlar ham adıyla görünür.",
+  "ivme": {
+    "ad": "İvme (TR)",
+    "adres": "https://ivme.ysfdurak.com",
+    "huni": [
+      ["Rolle giriş yaptı", "oturum:giris"],
+      ["Yeni öneri ekranını açtı", "ekran:new"],
+      ["Öneri gönderdi", "islem:create"],
+      ["Bir öneriyi değerlendirdi", "islem:accept|islem:reject|islem:forward|islem:revision"],
+      ["Kazanç girdi", "islem:gain"],
+      ["Geri bildirim verdi", "geri_bildirim"]
+    ],
+    "ekranlar": {
+      "overview": "Genel bakış",
+      "tasks": "İşlerim",
+      "list": "Öneriler",
+      "new": "Yeni öneri",
+      "matrix": "Sorumluluk matrisi",
+      "users": "Kullanıcılar",
+      "definitions": "Tanımlar",
+      "rewards": "Ödüller",
+      "recognition": "Takdir",
+      "dashboard": "Gösterge paneli",
+      "reports": "Raporlar",
+      "detay": "Öneri detayı",
+      "giris": "Giriş ekranı"
+    },
+    "olaylar": {
+      "oturum:giris": "Rolle giriş",
+      "islem:create": "Öneri gönderdi",
+      "islem:accept": "Öneriyi kabul etti",
+      "islem:reject": "Öneriyi reddetti",
+      "islem:forward": "Öneriyi yönlendirdi",
+      "islem:revision": "Revizyon istedi",
+      "islem:addaction": "Aksiyon ekledi",
+      "islem:finish": "Aksiyonu tamamladı",
+      "islem:gain": "Kazanç girdi",
+      "islem:comment": "Yorum yazdı",
+      "geri_bildirim": "Geri bildirim gönderdi",
+      "rol:calisan": "Rol seçti: Çalışan",
+      "rol:on_lojistik": "Rol seçti: Ön değerlendirme",
+      "rol:op_lojistik": "Rol seçti: Bölüm sorumlusu",
+      "rol:mudur_lojistik": "Rol seçti: Müdür",
+      "rol:ik": "Rol seçti: İK",
+      "rol:admin": "Rol seçti: Yönetici"
+    }
+  },
+  "ivme-en": {
+    "ad": "İvme (EN)",
+    "adres": "https://ivme-en.ysfdurak.com",
+    "kopya": "ivme"
+  }
+}

@@ -11,7 +11,7 @@ const tr = lang === 'tr';
 const path = tr ? '/tr/gizlilik/' : '/en/privacy/';
 const alt = tr ? '/en/privacy/' : '/tr/gizlilik/';
 const email = SITE.email[lang];
-const updated = '13.11.2026';
+const updated = '18.11.2026';
 ---
 <Base lang={lang} title={tr ? 'Gizlilik politikası' : 'Privacy policy'}
   description={tr ? 'ysfdurak.com ve uygulamalarında hangi verilerin, ne amaçla ve ne kadar süre işlendiği.' : 'Which data ysfdurak.com and its apps process, why, and for how long.'}
@@ -32,7 +32,18 @@ const updated = '13.11.2026';
         <h2>2. Tarayıcıda çalışan araçlar</h2>
         <p>Tarayıcıda çalışan araçlarda girdiğiniz veriler tarayıcınızda işlenir ve sunucuya gönderilmez.</p>
 
-        <h2>3. Pusula (pusula.ysfdurak.com)</h2>
+        <h2>3. Uygulama içi kullanım ölçümü ve geri bildirim (olcum.ysfdurak.com)</h2>
+        <p>Canlı demolarda, uygulamayı geliştirmek için hangi ekranların açıldığı ve hangi işlemlerin denendiği ölçülür. Şu an İvme demosunda açıktır; diğer demolara da eklenecektir. Şirketlere kurulan sürümlerde bu ölçüm yoktur.</p>
+        <ul>
+          <li><strong>Ne kaydedilir:</strong> Ekran ve işlem adları ("öneri gönderdi" gibi; önerinin metni değil), o ekranda geçen aktif süre, cihaz türü (mobil / masaüstü), arayüz dili ve sizi uygulamaya yönlendiren sitenin adı.</li>
+          <li><strong>Kaydedilmez:</strong> Adınız, e-postanız, IP adresiniz, uygulamaya girdiğiniz içerik, yüklediğiniz dosya ya da video.</li>
+          <li><strong>Çerez yok:</strong> Tarayıcınızda rastgele bir kimlik saklanır; sunucu bunu bir kez daha karıştırarak kaydeder. Bu kimlik size bağlanamaz, yalnızca aynı ziyaretçinin geri dönüp dönmediğini sayar.</li>
+          <li><strong>Tercihiniz:</strong> Tarayıcınızda "Do Not Track" ya da "Global Privacy Control" açıksa hiçbir ölçüm gönderilmez. Adresin sonuna <code>?olcum=kapat</code> ekleyerek de o tarayıcıda ölçümü kapatabilirsiniz.</li>
+          <li><strong>Geri bildirim:</strong> Anonimdir; e-postanız yalnızca "Bana dönüş yapabilirsiniz" kutusunu işaretlerseniz saklanır.</li>
+          <li><strong>Süre:</strong> Kayıtlar 180 gün sonra silinir.</li>
+        </ul>
+
+        <h2>4. Pusula (pusula.ysfdurak.com)</h2>
         <ul>
           <li><strong>Giriş:</strong> Google ile girişte yalnızca e-posta adresiniz, adınız ve Google hesap kimliğiniz alınır. Parolanız Pusula'ya hiç ulaşmaz.</li>
           <li><strong>Amaç:</strong> Sizi tanımak, çalışma alanınızı size göstermek ve güvenlik kaydı (kim, ne zaman, hangi işlemi yaptı) tutmak.</li>
@@ -42,7 +53,7 @@ const updated = '13.11.2026';
           <li><strong>Claude bağlantısı (isteğe bağlı):</strong> Pusula'yı Claude'a bağlarsanız, Claude yalnızca sizin izin verdiğiniz araçlarla ve sizin yetkilerinizle verinize erişir. Bağlantıyı istediğiniz an kaldırabilirsiniz.</li>
         </ul>
 
-        <h2>4. Destek Merkezi (destek.ysfdurak.com)</h2>
+        <h2>5. Destek Merkezi (destek.ysfdurak.com)</h2>
         <ul>
           <li><strong>Giriş yok:</strong> Hesap, e-posta veya ad istenmez. "Örnek verilerle dene" ile size ait, kurgusal verili bir alan açılır; alana tarayıcınızdaki bir oturum çereziyle dönülür.</li>
           <li><strong>Süre:</strong> Alan, son kullanımdan <strong>3 gün sonra</strong> içeriğiyle birlikte tümüyle silinir. Yedeği alınmaz.</li>
@@ -50,13 +61,13 @@ const updated = '13.11.2026';
           <li>Demo alanına gerçek kişi veya şirket verisi girmeyin.</li>
         </ul>
 
-        <h2>5. Verinin tutulduğu yer</h2>
+        <h2>6. Verinin tutulduğu yer</h2>
         <p>Uygulama sunucusu Almanya'da (Contabo), yedekler Avrupa Birliği içinde (Cloudflare R2, AB bölgesi) tutulur. Bu nedenle veriler Türkiye dışına aktarılır. Yedekler 30 gün sonra silinir.</p>
 
-        <h2>6. Paylaşım</h2>
+        <h2>7. Paylaşım</h2>
         <p>Veriler üçüncü kişilere satılmaz veya pazarlama amacıyla paylaşılmaz. Yalnızca hizmeti sağlayan altyapı sağlayıcıları (Cloudflare, Contabo, Google giriş hizmeti) işleyebilir.</p>
 
-        <h2>7. Haklarınız</h2>
+        <h2>8. Haklarınız</h2>
         <p>6698 sayılı KVKK kapsamında verilerinize erişme, düzeltilmesini veya silinmesini isteme ve işlenmesine itiraz etme haklarınız vardır. Talepleriniz için <a href={`mailto:${email}`}>{email}</a> adresine yazabilirsiniz; en geç 30 gün içinde yanıtlanır.</p>
       </>
     ) : (
@@ -74,7 +85,18 @@ const updated = '13.11.2026';
         <h2>2. Browser-based tools</h2>
         <p>In tools that run in your browser, the data you enter is processed in your browser and never sent to a server.</p>
 
-        <h2>3. Pusula (pusula.ysfdurak.com)</h2>
+        <h2>3. In-app usage measurement and feedback (olcum.ysfdurak.com)</h2>
+        <p>In the live demos, which screens are opened and which actions are tried is measured to improve the apps. It is currently on in the İvme demo and will be added to the other demos. Versions installed for companies do not include this measurement.</p>
+        <ul>
+          <li><strong>What is recorded:</strong> Screen and action names (such as "submitted a proposal", not the proposal's text), active time on that screen, device type (mobile / desktop), interface language and the name of the site that referred you.</li>
+          <li><strong>Not recorded:</strong> Your name, email, IP address, anything you enter into the app, or files and videos you load.</li>
+          <li><strong>No cookies:</strong> A random ID is kept in your browser and scrambled again by the server before it is stored. It cannot be linked to you; it only tells whether the same visitor came back.</li>
+          <li><strong>Your choice:</strong> If "Do Not Track" or "Global Privacy Control" is on in your browser, nothing is sent. You can also add <code>?olcum=kapat</code> to the address to turn measurement off in that browser.</li>
+          <li><strong>Feedback:</strong> Anonymous; your email is stored only if you tick "You may contact me".</li>
+          <li><strong>Retention:</strong> Records are deleted after 180 days.</li>
+        </ul>
+
+        <h2>4. Pusula (pusula.ysfdurak.com)</h2>
         <ul>
           <li><strong>Sign-in:</strong> With Google sign-in, only your email address, name and Google account ID are received. Your password never reaches Pusula.</li>
           <li><strong>Purpose:</strong> To identify you, show your workspace and keep a security log (who did what, when).</li>
@@ -84,7 +106,7 @@ const updated = '13.11.2026';
           <li><strong>Claude connection (optional):</strong> If you connect Pusula to Claude, Claude can access your data only through the tools you allow and with your permissions. You can disconnect at any time.</li>
         </ul>
 
-        <h2>4. Destek Merkezi (destek.ysfdurak.com)</h2>
+        <h2>5. Destek Merkezi (destek.ysfdurak.com)</h2>
         <ul>
           <li><strong>No sign-in:</strong> No account, email or name is requested. "Try with sample data" opens your own workspace with fictional data; you return to it through a session cookie in your browser.</li>
           <li><strong>Retention:</strong> The workspace and everything in it is deleted <strong>3 days after last use</strong>. It is not backed up.</li>
@@ -92,13 +114,13 @@ const updated = '13.11.2026';
           <li>Please do not enter real personal or company data into the demo.</li>
         </ul>
 
-        <h2>5. Where data is stored</h2>
+        <h2>6. Where data is stored</h2>
         <p>The application server is in Germany (Contabo); backups are kept in the European Union (Cloudflare R2, EU jurisdiction) and deleted after 30 days.</p>
 
-        <h2>6. Sharing</h2>
+        <h2>7. Sharing</h2>
         <p>Data is not sold or shared for marketing. Only the infrastructure providers that deliver the service (Cloudflare, Contabo, Google sign-in) may process it.</p>
 
-        <h2>7. Your rights</h2>
+        <h2>8. Your rights</h2>
         <p>You may request access to, correction or deletion of your data, or object to its processing, by writing to <a href={`mailto:${email}`}>{email}</a>. Requests are answered within 30 days.</p>
       </>
     )}

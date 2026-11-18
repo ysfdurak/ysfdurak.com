@@ -1,0 +1,19 @@
+{
+  "name": "olcum",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ysfdurak.com uygulamaları için ortak kullanım ölçümü ve geri bildirim servisi",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node src/sunucu.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "pg": "^8.16.0"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.0"
+  },
+  "license": "SEE LICENSE IN ../../LICENSE.md"
+}
