@@ -66,6 +66,10 @@ export interface Project {
   turkishOnly?: { en: string };
   /** Sunucudaki sağlık adresi (ör. '/healthz'). Kesinti izleme bu adresi de kontrol eder. */
   health?: string;
+  /** Kesinti izleme: canlı sayfanın <title> etiketinde aranacak metin (ör. 'Pusula'). Yanlış sayfaya
+   *  yönlendirme ya da boş/hata sayfası 200 dönse bile yakalanır. url'i olan her projede zorunlu
+   *  (PR kontrolü eksikse uyarır). */
+  isaret?: string;
   /** Bu projeyle ilgili rehber yazıları (yalnız Türkçe sayfada gösterilir). */
   guides?: { title: string; url: string }[];
   /** Vaka sayfası bölümleri (rol, sonuçlar, geri bildirim → değişiklik, öğrendiklerim). */
@@ -109,6 +113,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'desktop',
     url: 'https://zaman-etudu.ysfdurak.com/',
+    isaret: 'Zaman Etüdü',
     langParam: true,
     repo: GH + 'video-zaman-etudu',
     download: GH + 'video-zaman-etudu/releases/latest',
@@ -183,6 +188,7 @@ export const PROJECTS: Project[] = [
     category: 'operasyon',
     hosting: 'desktop',
     url: 'https://durus.ysfdurak.com/',
+    isaret: 'Duruş',
     langParam: true,
     repo: GH + 'durus-ergonomi',
     download: GH + 'durus-ergonomi/releases/latest',
@@ -254,6 +260,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'vps',
     url: 'https://destek.ysfdurak.com/',
+    isaret: 'Destek Merkezi',
     health: '/healthz',
     langParam: true,
     repo: GH + 'destek-merkezi',
@@ -299,6 +306,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'vps',
     url: 'https://ivme.ysfdurak.com/',
+    isaret: 'İvme',
     urlEn: 'https://ivme-en.ysfdurak.com/',
     repo: GH + 'ivme-oneri-kaizen',
     guides: [
@@ -356,6 +364,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'vps',
     url: 'https://pusula.ysfdurak.com/',
+    isaret: 'Pusula',
     health: '/healthz',
     langParam: true,
     repo: GH + 'pusula-is-takip',
@@ -416,6 +425,7 @@ export const PROJECTS: Project[] = [
     },
     hosting: 'vps',
     url: 'https://aday.ysfdurak.com/',
+    isaret: 'Aday Atölyesi',
     langParam: true,
     repo: GH + 'aday_atolyesi',
     guides: [{ title: 'STAR tekniği ve yetkinlik bazlı mülakat soruları', url: '/tr/rehber/star-teknigi-yetkinlik-mulakati/' }],
@@ -504,6 +514,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     hosting: 'external',
     url: 'https://ysfdurak.github.io/',
+    isaret: 'Kesit',
     langParam: true,
     repos: [
       { label: 'SQL', url: GH + 'kesit-sql' },
@@ -561,6 +572,7 @@ export const PROJECTS: Project[] = [
     },
     hosting: 'static',
     url: 'https://ingilizce-atolyesi.ysfdurak.com/',
+    isaret: 'İngilizce Öğrenme Atölyesi',
     langParam: true,
     repo: GH + 'ingilizce-ogrenme-atolyesi',
     tech: ['HTML', 'CSS', 'JavaScript', 'PWA'],

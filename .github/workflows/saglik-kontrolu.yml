@@ -6,7 +6,12 @@ name: Sağlık kontrolü
 on:
   schedule:
     - cron: '*/10 * * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      issue_ac:
+        description: 'Sorun bulursa kesinti issue''su açılsın mı? (deneme için false)'
+        type: boolean
+        default: true
 
 permissions:
   contents: read
@@ -28,3 +33,4 @@ jobs:
       - run: node scripts/saglik-kontrolu.mjs
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_AC: ${{ github.event_name != 'workflow_dispatch' || inputs.issue_ac }}

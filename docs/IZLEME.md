@@ -5,6 +5,7 @@
 GitHub her 10 dakikada bir `scripts/saglik-kontrolu.mjs` dosyasını çalıştırır. Betik sitedeki bütün canlı adresleri dışarıdan açmayı dener:
 
 - Sitenin kendisi (TR, EN, site haritası)
+- Henüz proje kartı olmayan canlı uygulamalar (Diyalog, Kıvılcım)
 - Sunucunun test adresi `app.ysfdurak.com`
 - `projects.ts` içindeki her projenin `url` ve `urlEn` adresi
 - Sunucuda çalışan projelerin `health` adresi (Pusula ve Destek Merkezi için `/healthz`)
@@ -23,7 +24,11 @@ Bir adres sorunluysa GitHub'da **"🔴 Kesinti: <proje>"** başlıklı, `kesinti
 
 - Bir adres **3 kez** (15 sn arayla) denenir; tek seferlik ağ dalgalanması alarm üretmez.
 - 15 saniyede cevap vermeyen adres "sorunlu" sayılır. 5 saniyeden uzun süren cevap 🟡 "yavaş" olarak raporda görünür ama alarm üretmez.
-- Bazı adreslerde sayfanın içinde belirli bir kelime aranır: sayfa açılıp boş ya da hata sayfası gelirse de yakalanır.
+- **Doğru yere varıldı mı:** Yönlendirmelerden sonra varılan alan adı, beklenenle aynı olmalı. Örneğin `pusula.ysfdurak.com` portföy sayfasına ya da başka bir siteye yönlendirip 200 dönerse yine de 🔴 sayılır.
+- **Doğru sayfa mı:** Her projenin sayfa başlığında (`<title>`) `projects.ts` → `isaret` metni aranır (ör. `'Pusula'`). Boş sayfa, sunucunun varsayılan sayfası ya da hata sayfası 200 dönse bile yakalanır. `/healthz` ve site haritası gibi başlıksız adreslerde gövdede bir kelime aranır.
+- Yeni proje eklerken `url` ile birlikte `isaret` de yaz. Unutursan PR'daki **Site kontrolü** işi kırmızı olur.
+- Henüz proje kartı olmayan canlı uygulamalar (Diyalog, Kıvılcım) betikteki `SABIT` listesinde izlenir; kartı eklenince oradan çıkar.
+- **Denemek için:** Actions → "Sağlık kontrolü" → Run workflow → "issue açılsın mı" kutusunu kapat. Rapor çıkar, issue açılmaz.
 
 ## Nereden bakarım?
 
@@ -52,3 +57,11 @@ Cloudflare'de çalışan uygulamalar (Zaman Etüdü, Duruş, İvme, Aday, İngil
 ## Mülakatta nasıl anlatırım?
 
 "Sitedeki tüm uygulamaları sunucunun dışından, 10 dakikada bir izleyen bir kontrol kurdum. Kesinti olursa otomatik kayıt açılıyor, düzelince süresiyle kapanıyor. Böylece hangi uygulamanın ne kadar ayakta kaldığını da kayıt altında tutuyorum."
+
+## Site kontrolü (PR'larda)
+
+`.github/workflows/site-kontrolu.yml` her PR'da ve `main`'e gönderimde çalışır:
+
+1. Siteyi derler (`npm run build`). Derleme hatası varsa iş kırmızı olur.
+2. `scripts/baglanti-kontrolu.mjs`: derlenen sayfalardaki her iç bağlantı (`/tr/...`, görseller, `#bölüm`) bir dosyaya, `_redirects` kuralına ya da sayfadaki bir id'ye karşılık gelmeli.
+3. `scripts/saglik-kontrolu.mjs --liste`: canlı adresi olan her projede `isaret` var mı.
