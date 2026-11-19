@@ -2,6 +2,34 @@
 {
 	email iletisim@ysfdurak.com
 	acme_dns cloudflare {env.CF_API_TOKEN}
+	servers {
+		# Gerçek istemci IP'si: CF-Connecting-IP başlığına YALNIZCA istek Cloudflare'in
+		# adreslerinden geliyorsa güvenilir. Sunucunun IP'sine doğrudan gelen biri bu başlığı
+		# kendisi yazıp giriş denemesi ve API hız sınırlarını atlatamasın.
+		# Liste: https://www.cloudflare.com/ips/ (son değişiklik Eylül 2023). Cloudflare listeyi
+		# değiştirirse burası güncellenmeli; eksik kalan aralıktan gelen ziyaretçiler Cloudflare
+		# IP'siyle görünür (sınırlar ortaklaşır), güvenlik açığı oluşmaz.
+		trusted_proxies static 173.245.48.0/20 103.21.244.0/22 103.22.200.0/22 103.31.4.0/22 141.101.64.0/18 108.162.192.0/18 190.93.240.0/20 188.114.96.0/20 197.234.240.0/22 198.41.128.0/17 162.158.0.0/15 104.16.0.0/13 104.24.0.0/14 172.64.0.0/13 131.0.72.0/22 2400:cb00::/32 2606:4700::/32 2803:f800::/32 2405:b500::/32 2405:8100::/32 2a06:98c0::/29 2c0f:f248::/32
+		client_ip_headers CF-Connecting-IP
+	}
+}
+
+# Her uygulamaya giden istekte istemci IP'si Caddy'nin doğruladığı adresle değiştirilir.
+# Uygulamalar (Destek, Diyalog, Pusula) CF-Connecting-IP / X-Forwarded-For okur; böylece
+# istemcinin gönderdiği sahte değer asla uygulamaya ulaşmaz.
+(uygulama) {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		X-Content-Type-Options "nosniff"
+		?Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+	reverse_proxy {args[0]} {
+		header_up CF-Connecting-IP {client_ip}
+		header_up X-Forwarded-For {client_ip}
+		header_up X-Real-IP {client_ip}
+	}
 }
 
 # Test adresi: sunucu ayakta mı?
@@ -12,20 +40,17 @@ app.ysfdurak.com {
 
 # Pusula: iş ve ekip takibi + MCP (github.com/ysfdurak/pusula-is-takip)
 pusula.ysfdurak.com {
-	encode zstd gzip
-	reverse_proxy pusula:8080
+	import uygulama pusula:8080
 }
 
 # Destek Merkezi: bölümler arası işgücü desteği, ziyaretçi demo modu (github.com/ysfdurak/destek-merkezi)
 destek.ysfdurak.com {
-	encode zstd gzip
-	reverse_proxy destek:8080
+	import uygulama destek:8080
 }
 
 # Diyalog Atölyesi: doğru soru sorma pratiği, Anthropic API (github.com/ysfdurak/diyalog-atolyesi)
 diyalog.ysfdurak.com {
-	encode zstd gzip
-	reverse_proxy diyalog:8080
+	import uygulama diyalog:8080
 }
 
 # Ortak ölçüm ve geri bildirim: tüm uygulamalar olayları buraya gönderir, yönetim /yonetim (sunucu/olcum)
