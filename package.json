@@ -10,10 +10,10 @@
     "deploy": "astro build && wrangler deploy"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.7.4",
-    "astro": "^7.4.11"
+    "@astrojs/sitemap": "^3.7.5",
+    "astro": "^7.4.12"
   },
   "devDependencies": {
-    "wrangler": "^4.160.1"
+    "wrangler": "^4.163.0"
   }
 }
