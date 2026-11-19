@@ -221,3 +221,5 @@ section[id] { scroll-margin-top: 1rem; }
   .site-header nav a { display: inline-flex; align-items: center; min-height: 44px; }
   .site-header .lang { border-left: 0; padding-left: 0; }
 }
+/* Kartta ortam satırı: ziyaretçinin girdiği yer (ortak demo, kişisel alan, cihazda) */
+.card-env { font-size: 0.85rem !important; margin: 0 0 0.6rem !important; padding-left: 0.6rem; border-left: 3px solid var(--line, #d9d9d9); }

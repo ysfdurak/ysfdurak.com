@@ -40,6 +40,8 @@ export interface Project {
   category: Category;
   featured?: boolean;
   hosting: Hosting;
+  /** Ziyaretçinin girdiği ortam: ortak demo, kişisel deneme alanı, kişisel oturum ya da yalnız cihazda çalışan araç. */
+  env: Env;
   /** Canlı uygulama adresi. Boşsa "Dene" butonu "Canlı sürüm yakında" yazar. */
   url?: string;
   /** "Dene" düğmesinin gideceği girişsiz deneme adresi (ör. tarayıcı demosu). Verilirse url ikinci düğme olur
@@ -106,6 +108,15 @@ export const CATEGORIES: Record<Category, { tr: string; en: string; trSlug: stri
   ogrenme: { tr: 'Öğrenme', en: 'Learning', trSlug: 'ogrenme', enSlug: 'learning' },
 };
 
+export type Env = 'shared' | 'personal' | 'session' | 'device';
+/** Kartta tek satır: ziyaretçi ne tür bir ortama giriyor, verisi nerede duruyor. */
+export const ENV_LABEL: Record<Env, { tr: string; en: string }> = {
+  shared: { tr: 'Ortak demo: örnek veri, diğer ziyaretçiler de görür', en: 'Shared demo: sample data that other visitors also see' },
+  personal: { tr: 'Kişisel deneme alanı: yalnız sana açılır, süre sonunda silinir', en: 'Personal trial space: only yours, deleted after a set time' },
+  session: { tr: 'Kişisel oturum: kaydedilmez, sorular yapay zekâya gider', en: 'Personal session: not saved; questions go to an AI service' },
+  device: { tr: 'Yalnız cihazında çalışır: veri tarayıcından çıkmaz', en: 'Runs only on your device: data stays in your browser' },
+};
+
 export const HOSTING_LABEL: Record<Hosting, { tr: string; en: string }> = {
   static: { tr: 'Tarayıcıda çalışır', en: 'Runs in the browser' },
   vps: { tr: 'Sunucuda çalışır', en: 'Runs on a server' },
@@ -134,6 +145,7 @@ export const PROJECTS: Project[] = [
     category: 'operasyon',
     featured: true,
     hosting: 'desktop',
+    env: 'device',
     url: 'https://zaman-etudu.ysfdurak.com/',
     isaret: 'Zaman Etüdü',
     langParam: true,
@@ -214,6 +226,7 @@ export const PROJECTS: Project[] = [
     nameEn: 'Duruş – Ergonomics Analysis',
     category: 'operasyon',
     hosting: 'desktop',
+    env: 'device',
     url: 'https://durus.ysfdurak.com/',
     isaret: 'Duruş',
     langParam: true,
@@ -291,6 +304,7 @@ export const PROJECTS: Project[] = [
     category: 'operasyon',
     featured: true,
     hosting: 'vps',
+    env: 'personal',
     url: 'https://destek.ysfdurak.com/',
     isaret: 'Destek Merkezi',
     health: '/healthz',
@@ -366,6 +380,7 @@ export const PROJECTS: Project[] = [
     category: 'operasyon',
     featured: true,
     hosting: 'vps',
+    env: 'shared',
     url: 'https://ivme.ysfdurak.com/',
     isaret: 'İvme',
     urlEn: 'https://ivme-en.ysfdurak.com/',
@@ -452,6 +467,7 @@ export const PROJECTS: Project[] = [
     category: 'ekip',
     featured: true,
     hosting: 'vps',
+    env: 'personal',
     url: 'https://pusula.ysfdurak.com/',
     tryUrl: 'https://ysfdurak.github.io/pusula-is-takip/',
     isaret: 'Pusula',
@@ -542,6 +558,7 @@ export const PROJECTS: Project[] = [
       en: 'Built for candidates applying to jobs in Turkey: the aptitude tests (including verbal reasoning in Turkish), 20 company cases with Word/Excel files and the HR review are in Turkish, so the app stays in Turkish. “Try it” opens an English guide that explains every screen, and one sample case (Koru Distribution) is fully in English.',
     },
     hosting: 'vps',
+    env: 'shared',
     url: 'https://aday.ysfdurak.com/',
     isaret: 'Aday Atölyesi',
     langParam: true,
@@ -645,6 +662,7 @@ export const PROJECTS: Project[] = [
       en: 'Built for Turkish-speaking managers: the characters answer in Turkish and the questions are scored on Turkish phrasing, so the app stays in Turkish. “Watch the sample session” shows a finished report without an AI call.',
     },
     hosting: 'vps',
+    env: 'session',
     url: 'https://diyalog.ysfdurak.com/',
     isaret: 'Diyalog Atölyesi',
     repo: GH + 'diyalog-atolyesi',
@@ -696,6 +714,7 @@ export const PROJECTS: Project[] = [
     nameEn: 'Sırdaş – Data Masking',
     category: 'veri',
     hosting: 'static',
+    env: 'device',
     url: 'https://sirdas.ysfdurak.com/',
     isaret: 'Sırdaş',
     langParam: true,
@@ -813,6 +832,7 @@ export const PROJECTS: Project[] = [
     },
     featured: true,
     hosting: 'external',
+    env: 'device',
     url: 'https://ysfdurak.github.io/',
     isaret: 'Kesit',
     langParam: true,
@@ -899,6 +919,7 @@ export const PROJECTS: Project[] = [
       en: 'Built for Turkish speakers learning English: explanations, feedback and the exam prep (YDS, e-YDS, YÖKDİL) are in Turkish, so the app stays in Turkish. “Try it” opens an English guide that explains each section, with small English labels under the menus.',
     },
     hosting: 'static',
+    env: 'device',
     url: 'https://ingilizce-atolyesi.ysfdurak.com/',
     isaret: 'İngilizce Öğrenme Atölyesi',
     langParam: true,

@@ -1,5 +1,5 @@
 ---
-import { CATEGORIES, HOSTING_LABEL, hasFieldResult, projectName, projectPath, tryHref, type Lang, type Project } from '../data/projects';
+import { CATEGORIES, ENV_LABEL, HOSTING_LABEL, hasFieldResult, projectName, projectPath, tryHref, type Lang, type Project } from '../data/projects';
 import { useT } from '../i18n/ui';
 
 interface Props {
@@ -20,6 +20,7 @@ const t = useT(lang);
   </p>
   <h3><a href={projectPath(p, lang)}>{projectName(p, lang)}</a></h3>
   <p>{p[lang].tagline}</p>
+  <p class="card-env">{ENV_LABEL[p.env][lang]}</p>
   <p class="card-actions">
     <a class="card-link" href={projectPath(p, lang)}>{t('project.how')} →</a>
     {p.url && <a class="card-link try" href={tryHref(p, lang)}>{t('project.try')} ↗</a>}
