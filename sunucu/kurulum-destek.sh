@@ -27,6 +27,12 @@ else
 fi
 
 echo "== 3/4 Destek Merkezi derleniyor ve başlatılıyor (ilk derleme 1-3 dakika) =="
+# Kasım 2026: compose proje adı "deploy"tan "destek"e geçti (iki uygulama aynı adı paylaşıyordu). Eski konteyner
+# varsa kaldırılır; veri birimi (deploy_destek-data) silinmez ve yeni proje aynı birimi kullanır.
+if sudo docker inspect destek --format '{{index .Config.Labels "com.docker.compose.project"}}' 2>/dev/null | grep -qx deploy; then
+  sudo docker rm -f destek >/dev/null && echo "Eski 'destek' konteyneri kaldırıldı (veri birimi yerinde)."
+fi
+sudo docker volume inspect deploy_destek-data >/dev/null 2>&1 || echo "Not: deploy_destek-data birimi yok; ilk kurulumsa normal, değilse 'sudo docker volume ls' ile eski birimi kontrol et."
 cd deploy && sudo docker compose -f docker-compose.ortak.yml up -d --build
 
 echo "== 4/4 Caddy yönlendirmesi =="

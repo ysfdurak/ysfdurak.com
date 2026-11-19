@@ -40,6 +40,12 @@ else
 fi
 
 echo "== 3/4 Pusula derleniyor ve başlatılıyor (ilk derleme 2-4 dakika) =="
+# Kasım 2026: compose proje adı "deploy"tan "pusula"e geçti (iki uygulama aynı adı paylaşıyordu). Eski konteyner
+# varsa kaldırılır; veri birimi (deploy_pusula-data) silinmez ve yeni proje aynı birimi kullanır.
+if sudo docker inspect pusula --format '{{index .Config.Labels "com.docker.compose.project"}}' 2>/dev/null | grep -qx deploy; then
+  sudo docker rm -f pusula >/dev/null && echo "Eski 'pusula' konteyneri kaldırıldı (veri birimi yerinde)."
+fi
+sudo docker volume inspect deploy_pusula-data >/dev/null 2>&1 || echo "Not: deploy_pusula-data birimi yok; ilk kurulumsa normal, değilse 'sudo docker volume ls' ile eski birimi kontrol et."
 cd deploy && sudo docker compose -f docker-compose.ortak.yml up -d --build
 
 echo "== 4/4 Caddy yönlendirmesi =="

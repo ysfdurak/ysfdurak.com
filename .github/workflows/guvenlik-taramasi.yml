@@ -1,0 +1,56 @@
+# Portföy güvenlik taraması: her pazartesi bütün depolar aynı kurallarla denetlenir (araclar/guvenlik/tara.py).
+# YÜKSEK ya da orta bulgu varsa "guvenlik" etiketli issue açılır/güncellenir (GitHub e-postayla haber verir);
+# temizse açık issue kapatılır. Kurallar: docs/GUVENLIK_TEMELI.md · istisnalar: araclar/guvenlik/istisnalar.json
+name: Güvenlik taraması
+
+on:
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'araclar/guvenlik/**'
+      - '.github/workflows/guvenlik-taramasi.yml'
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  tara:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Depoları klonla (salt okuma, herkese açık)
+        run: |
+          mkdir -p ../depolar
+          while read -r d; do
+            [ -n "$d" ] && git clone -q --depth 1 "https://github.com/ysfdurak/$d.git" "../depolar/$d"
+          done < araclar/guvenlik/depolar.txt
+          ln -s "$GITHUB_WORKSPACE" ../depolar/ysfdurak.com
+      - name: Tara
+        id: tara
+        run: |
+          pip install -q pyyaml
+          set +e
+          python3 araclar/guvenlik/tara.py --audit ../depolar/* > rapor.md
+          echo "kod=$?" >> "$GITHUB_OUTPUT"
+          cat rapor.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Issue aç / güncelle / kapat
+        if: github.event_name != 'push'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          KOD: ${{ steps.tara.outputs.kod }}
+        run: |
+          gh label create guvenlik --color B60205 --description "Haftalık güvenlik taraması" 2>/dev/null || true
+          ACIK=$(gh issue list --label guvenlik --state open --json number --jq '.[0].number')
+          if [ "$KOD" != "0" ]; then
+            if [ -n "$ACIK" ]; then gh issue comment "$ACIK" --body-file rapor.md
+            else gh issue create --title "Güvenlik taraması: bulgu var" --label guvenlik --body-file rapor.md; fi
+          elif [ -n "$ACIK" ]; then
+            gh issue close "$ACIK" --comment "Tarama temiz: bütün bulgular kapandı."
+          fi

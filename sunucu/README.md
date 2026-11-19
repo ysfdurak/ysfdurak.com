@@ -88,3 +88,27 @@ bash ~/ysfdurak.com/sunucu/kayit-siniri.sh
 ```
 
 Docker yeniden başlatıldığı için tüm uygulamalar 10-30 saniye kesilir.
+
+
+## Güvenlik sertleştirme (Kasım 2026 taraması)
+
+| Ne | Nerede | Neden |
+| --- | --- | --- |
+| Uygulama konteynerleri salt okunur kök dosya sistemiyle çalışır; yazma yalnız `/data` birimine ve 64 MB'lık `/tmp`'ye | Destek, Pusula, Diyalog `deploy/docker-compose.*.yml` | Uygulamaya sızan biri dosya bırakıp kalıcı hale gelemez |
+| Linux yetkileri kapalı (`cap_drop: ALL`), yetki yükseltme yok (`no-new-privileges`), bellek, süreç ve kayıt boyutu sınırlı | Aynı dosyalar; Caddy yalnız `NET_BIND_SERVICE` ile | Bir konteynerdeki sorun ötekileri ve sunucuyu etkilemez |
+| Compose proje adları açık: `destek`, `pusula`, `diyalog` | `deploy/docker-compose.ortak.yml` | Destek ve Pusula aynı `deploy` adını paylaşıyordu; birinde `down` ya da `--remove-orphans` ötekini durdurabilirdi. Veri birimi adları (`deploy_destek-data`, `deploy_pusula-data`) korundu; `kurulum-destek.sh` ve `kurulum-pusula.sh` eski konteyneri kaldırıp aynı birimle yeniden başlatır |
+| Caddy: HSTS, nosniff, Referrer-Policy, Permissions-Policy, X-Frame-Options, Server başlığı gizli | `altyapi/Caddyfile` | Uygulama başlık göndermese bile tarayıcı korumaları açık |
+| 80/443 yalnız Cloudflare'den (isteğe bağlı, önerilen) | `cloudflare-kaynak.sh` | Sunucu IP'sini bilen biri Cloudflare'in korumasını atlayamaz. ufw bunu yapamaz: Docker'ın açtığı portlar ufw'yi atlar; kural Docker'ın `DOCKER-USER` zincirine yazılır ve açılışta yeniden yazılır. Önce Cloudflare'de bütün kayıtlar turuncu bulut olmalı. Geri alma: `sudo bash cloudflare-kaynak.sh --kaldir` |
+
+Uygulamak için (sırayla):
+
+```bash
+cd ~/ysfdurak.com && git pull
+cd sunucu/altyapi && sudo docker compose up -d          # Caddy ve Postgres yeni ayarlarla
+bash ~/ysfdurak.com/sunucu/kurulum-destek.sh            # eski 'deploy' konteynerini kaldırır, aynı veriyle başlatır
+bash ~/ysfdurak.com/sunucu/kurulum-pusula.sh
+bash ~/ysfdurak.com/sunucu/kurulum-diyalog.sh
+sudo bash ~/ysfdurak.com/sunucu/cloudflare-kaynak.sh    # Cloudflare'de turuncu bulutu kontrol ettikten sonra
+```
+
+Bir uygulama salt okunur kök yüzünden açılmazsa (`sudo docker logs <ad>` "read-only file system" der) o compose dosyasında `read_only: true` satırının başına `#` koyup kurulum betiğini yeniden çalıştır ve bana haber ver. Yerel denemede üç uygulama da `/data` ve `/tmp` dışına yazmadı (strace ile denetlendi).

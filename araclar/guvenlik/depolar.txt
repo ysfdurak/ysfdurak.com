@@ -1,0 +1,16 @@
+aday_atolyesi
+butce-sapmasi-rapor-otomasyonu
+destek-merkezi
+diyalog-atolyesi
+durus-ergonomi
+ingilizce-ogrenme-atolyesi
+ivme-oneri-kaizen
+kesit-istatistik
+kesit-powerbi
+kesit-python
+kesit-sql
+kivilcim-zihin-oyunlari
+pusula-is-takip
+sirdas
+video-zaman-etudu
+ysfdurak.github.io
