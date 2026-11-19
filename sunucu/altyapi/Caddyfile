@@ -55,6 +55,5 @@ diyalog.ysfdurak.com {
 
 # Ortak ölçüm ve geri bildirim: tüm uygulamalar olayları buraya gönderir, yönetim /yonetim (sunucu/olcum)
 olcum.ysfdurak.com {
-	encode zstd gzip
-	reverse_proxy olcum:8080
+	import uygulama olcum:8080
 }

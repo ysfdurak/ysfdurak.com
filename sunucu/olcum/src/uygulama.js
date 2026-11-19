@@ -44,22 +44,38 @@ async function govdeOku(req, sinir = 16 * 1024) {
  * @param {string[]} o.kokenler          izinli kökenler (ör. https://*.ysfdurak.com)
  * @param {boolean} [o.adresDenetimi]    true: proje yalnızca projeler.json'daki kendi adresinden olay gönderebilir
  * @param {{kullanici: string, sifre: string}} o.yonetim
- * @param {number} [o.dakikaSiniri]      IP başına dakikada en çok istek (IP saklanmaz, yalnızca bellekte sayılır)
+ * @param {number} [o.dakikaSiniri]      IP başına dakikada en çok olay isteği (IP saklanmaz, yalnızca bellekte sayılır)
+ * @param {number} [o.geriBildirimSiniri] IP başına 10 dakikada en çok geri bildirim
+ * @param {number} [o.girisDenemeSiniri]  IP başına 15 dakikada en çok hatalı yönetim girişi; aşılınca o IP 15 dakika bekler
  */
-export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = true, yonetim, dakikaSiniri = 120 }) {
-  const sayac = new Map();
+export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = true, yonetim, dakikaSiniri = 120, geriBildirimSiniri = 10, girisDenemeSiniri = 10 }) {
   let istemciKodu = null;
 
-  function sinirli(ip) {
-    const simdi = Date.now();
-    const s = sayac.get(ip);
-    if (!s || s.bitis < simdi) {
-      sayac.set(ip, { adet: 1, bitis: simdi + 60e3 });
-      if (sayac.size > 10000) for (const [k, v] of sayac) if (v.bitis < simdi) sayac.delete(k);
-      return false;
-    }
-    return ++s.adet > dakikaSiniri;
+  /** Bellekte kayan pencere sayacı: anahtar başına `sure` ms içinde en çok `sinir` sayım. */
+  function pencere(sure, sinir) {
+    const sayac = new Map();
+    const bak = (anahtar) => {
+      const simdi = Date.now();
+      let s = sayac.get(anahtar);
+      if (!s || s.bitis < simdi) {
+        s = { adet: 0, bitis: simdi + sure };
+        sayac.set(anahtar, s);
+        if (sayac.size > 10000) for (const [k, v] of sayac) if (v.bitis < simdi) sayac.delete(k);
+      }
+      return s;
+    };
+    return {
+      say: (anahtar) => ++bak(anahtar).adet > sinir,
+      doldu: (anahtar) => bak(anahtar).adet >= sinir,
+      sifirla: (anahtar) => sayac.delete(anahtar),
+    };
   }
+  const olaySiniri = pencere(60e3, dakikaSiniri);
+  const fbSiniri = pencere(10 * 60e3, geriBildirimSiniri);
+  // Yönetim şifresine deneme-yanılma saldırısı: hatalı girişler IP başına sayılır.
+  const girisSiniri = pencere(15 * 60e3, girisDenemeSiniri);
+  // Caddy, CF-Connecting-IP'yi yalnızca Cloudflare'den gelen isteklerde korur, diğerlerinde gerçek IP ile yeniden yazar.
+  const ipBul = (req) => String(req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
 
   function yanit(res, kod, govde, basliklar = {}) {
     const metin = typeof govde === 'string' ? govde : JSON.stringify(govde);
@@ -73,12 +89,19 @@ export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = t
   }
 
   function yonetimDenetle(req, res) {
+    const ip = ipBul(req);
+    if (girisSiniri.doldu(ip)) {
+      res.writeHead(429, { 'Content-Type': 'text/plain; charset=utf-8', 'Retry-After': '900', 'Cache-Control': 'no-store' });
+      res.end('Çok fazla hatalı giriş denemesi. 15 dakika sonra tekrar dene.');
+      return false;
+    }
     const [tur, deger] = String(req.headers.authorization || '').split(' ');
     if (tur === 'Basic' && deger) {
       const [k, ...s] = Buffer.from(deger, 'base64').toString('utf8').split(':');
       const bekle = Buffer.from(`${yonetim.kullanici}:${yonetim.sifre}`);
       const gelen = Buffer.from(`${k}:${s.join(':')}`);
       if (yonetim.sifre && gelen.length === bekle.length && timingSafeEqual(gelen, bekle)) return true;
+      girisSiniri.say(ip); // yalnızca bilgi gönderilip yanlış çıkan denemeler sayılır; ilk "giriş gerekli" yanıtı sayılmaz
     }
     res.writeHead(401, { 'WWW-Authenticate': 'Basic realm="Olcum", charset="UTF-8"', 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('Giriş gerekli.');
@@ -111,8 +134,9 @@ export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = t
         if (req.method === 'OPTIONS') return yanit(res, cors['Access-Control-Allow-Origin'] ? 204 : 403, '', cors);
         if (req.method !== 'POST') return yanit(res, 405, { hata: 'Yalnızca POST.' }, cors);
         if (!cors['Access-Control-Allow-Origin']) return yanit(res, 403, { hata: 'Bu adresten kabul edilmiyor.' });
-        const ip = String(req.headers['cf-connecting-ip'] || req.headers['x-forwarded-for'] || req.socket.remoteAddress || '').split(',')[0].trim();
-        if (sinirli(ip)) return yanit(res, 429, { hata: 'Çok fazla istek.' }, cors);
+        const ip = ipBul(req);
+        if (olaySiniri.say(ip)) return yanit(res, 429, { hata: 'Çok fazla istek.' }, cors);
+        if (yol === '/v1/geri-bildirim' && fbSiniri.say(ip)) return yanit(res, 429, { hata: 'Çok fazla geri bildirim. Biraz sonra tekrar dene.' }, cors);
         let b;
         try {
           b = JSON.parse(await govdeOku(req));
@@ -143,13 +167,20 @@ export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = t
       if (yol === '/yonetim' || yol.startsWith('/yonetim/')) {
         if (!yonetimDenetle(req, res)) return;
         const gun = GUNLER.includes(Number(url.searchParams.get('gun'))) ? Number(url.searchParams.get('gun')) : 30;
-        const ozelBaslik = { 'Cache-Control': 'no-store', 'X-Frame-Options': 'DENY', 'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'" };
+        // Referrer-Policy: same-origin. "no-referrer" olsaydı tarayıcı kendi formumuzun gönderiminde Origin: null yollar,
+        // aşağıdaki CSRF denetimi de gerçek kaydı reddederdi. same-origin dış sitelere adres sızdırmaz.
+        const ozelBaslik = { 'Cache-Control': 'no-store', 'X-Frame-Options': 'DENY', 'Referrer-Policy': 'same-origin', 'Content-Security-Policy': "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'" };
 
         const fbYol = yol.match(/^\/yonetim\/geri-bildirim\/(\d+)$/);
         if (fbYol && req.method === 'POST') {
-          // Başka siteden form gönderimini reddet (CSRF): tarayıcı kendi sayfamızdan gönderirken Origin bizim adresimizdir.
+          // Başka siteden form gönderimini reddet (CSRF). Tarayıcı Basic Auth bilgisini başka siteden gelen isteğe de ekler;
+          // bu yüzden yalnızca kendi sayfamızdan geldiği kanıtlanan gönderim kabul edilir: Sec-Fetch-Site varsa same-origin
+          // olmalı, Origin olmalı ve bizim adresimiz olmalı. Origin'siz gönderim (eski/alışılmadık istemci) reddedilir.
           const host = req.headers['x-forwarded-host'] || req.headers.host;
-          if (koken && new URL(koken).host !== host) return yanit(res, 403, 'Reddedildi.', ozelBaslik);
+          const site = req.headers['sec-fetch-site'];
+          let kokenHost = null;
+          try { kokenHost = koken ? new URL(koken).host : null; } catch { kokenHost = null; }
+          if ((site && site !== 'same-origin') || !kokenHost || kokenHost !== host) return yanit(res, 403, 'Reddedildi.', ozelBaslik);
           const f = new URLSearchParams(await govdeOku(req));
           try {
             await depo.geriBildirimGuncelle(db, Number(fbYol[1]), { durum: f.get('durum'), not: f.get('not') });
@@ -157,7 +188,7 @@ export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = t
             return yanit(res, 400, kacisli(e.message), ozelBaslik);
           }
           const don = f.get('don') || '/yonetim';
-          res.writeHead(303, { Location: don.startsWith('/yonetim') ? don : '/yonetim' });
+          res.writeHead(303, { Location: /^\/yonetim(?:[/?]|$)/.test(don) ? don : '/yonetim', 'Cache-Control': 'no-store' });
           return res.end();
         }
         if (req.method !== 'GET') return yanit(res, 405, 'Desteklenmiyor.', ozelBaslik);

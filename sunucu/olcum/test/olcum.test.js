@@ -111,6 +111,8 @@ test('proje özeti: ekran süreleri, huni, kaynak, geri bildirim', async () => {
 test('yönetim sayfaları HTML üretir, içerik kaçışlıdır; geri bildirim durumu güncellenir', async () => {
   const ana = await yonetim('/yonetim?gun=7');
   assert.equal(ana.status, 200);
+  // no-referrer olursa tarayıcı kendi formumuzda Origin: null gönderir ve kayıt CSRF denetimine takılır.
+  assert.equal(ana.headers.get('referrer-policy'), 'same-origin');
   const h = await ana.text();
   assert.match(h, /İvme \(TR\)/);
   assert.match(h, /İvme \(EN\)/);
@@ -120,8 +122,15 @@ test('yönetim sayfaları HTML üretir, içerik kaçışlıdır; geri bildirim d
   const id = (await db.query("SELECT id FROM geri_bildirim WHERE metin LIKE 'Filtre%'")).rows[0].id;
   const kotu = await yonetim(`/yonetim/geri-bildirim/${id}`, { method: 'POST', redirect: 'manual', headers: { Origin: 'https://kotu.com', Host: '127.0.0.1', 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'durum=uygulandi' });
   assert.equal(kotu.status, 403, 'başka siteden form reddedilir');
+  const form = { 'Content-Type': 'application/x-www-form-urlencoded' };
+  const originsiz = await yonetim(`/yonetim/geri-bildirim/${id}`, { method: 'POST', redirect: 'manual', headers: form, body: 'durum=uygulandi' });
+  assert.equal(originsiz.status, 403, 'Origin göndermeyen form reddedilir (kaynağı kanıtlanamaz)');
+  const capraz = await yonetim(`/yonetim/geri-bildirim/${id}`, { method: 'POST', redirect: 'manual', headers: { ...form, Origin: adres, 'Sec-Fetch-Site': 'cross-site' }, body: 'durum=uygulandi' });
+  assert.equal(capraz.status, 403, 'tarayıcı başka siteden geldiğini söylüyorsa reddedilir');
+  const bozuk = await yonetim(`/yonetim/geri-bildirim/${id}`, { method: 'POST', redirect: 'manual', headers: { ...form, Origin: 'null' }, body: 'durum=uygulandi' });
+  assert.equal(bozuk.status, 403, 'Origin: null (sandbox iframe, dosya) reddedilir, sunucu hata vermez');
   const r = await yonetim(`/yonetim/geri-bildirim/${id}`, {
-    method: 'POST', redirect: 'manual', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    method: 'POST', redirect: 'manual', headers: { ...form, Origin: adres, 'Sec-Fetch-Site': 'same-origin' },
     body: new URLSearchParams({ durum: 'uygulandi', not: 'Filtre çubuğu sadeleşti (v1.5)', don: 'https://kotu.com' }).toString(),
   });
   assert.equal(r.status, 303);
@@ -157,4 +166,31 @@ test('hız sınırı', async () => {
     kodlar.push((await fetch(a + '/v1/olay', { method: 'POST', headers: { Origin: KOKEN }, body: JSON.stringify({ p: 'ivme', z: Z1, o: 'oturum-bir-0001', e: [] }) })).status);
   s.close();
   assert.deepEqual(kodlar, [200, 200, 200, 429, 429]);
+});
+
+test('yönetim girişine deneme-yanılma sınırı', async () => {
+  const tuz = await kur(db);
+  const isle = uygulamaOlustur({ db, tuz, projeler, kokenler: ['https://*.ysfdurak.com'], yonetim: { kullanici: 'yusuf', sifre: SIFRE }, girisDenemeSiniri: 3 });
+  const s = createServer(isle);
+  await new Promise((r) => s.listen(0, r));
+  const a = `http://127.0.0.1:${s.address().port}`;
+  const dene = (sifre) => fetch(a + '/yonetim', sifre === undefined ? {} : { headers: { Authorization: 'Basic ' + Buffer.from('yusuf:' + sifre).toString('base64') } });
+  const kodlar = [(await dene()).status]; // bilgisiz ilk istek (tarayıcının giriş penceresini açtıran) sayılmaz
+  for (let i = 0; i < 3; i++) kodlar.push((await dene('yanlis-' + i)).status);
+  kodlar.push((await dene(SIFRE)).status); // sınır dolunca doğru şifre de beklemeli: tahmin edilen şifre doğrulanamaz
+  s.close();
+  assert.deepEqual(kodlar, [401, 401, 401, 401, 429]);
+});
+
+test('geri bildirim için ayrı, sıkı hız sınırı', async () => {
+  const tuz = await kur(db);
+  const isle = uygulamaOlustur({ db, tuz, projeler, kokenler: ['https://*.ysfdurak.com'], yonetim: { kullanici: 'y', sifre: SIFRE }, dakikaSiniri: 100, geriBildirimSiniri: 2 });
+  const s = createServer(isle);
+  await new Promise((r) => s.listen(0, r));
+  const a = `http://127.0.0.1:${s.address().port}`;
+  const fb = async () => (await fetch(a + '/v1/geri-bildirim', { method: 'POST', headers: { Origin: KOKEN }, body: JSON.stringify({ p: 'ivme', z: Z2, o: 'oturum-iki-0002', r: 4, m: 'iyi' }) })).status;
+  const olay = async () => (await fetch(a + '/v1/olay', { method: 'POST', headers: { Origin: KOKEN }, body: JSON.stringify({ p: 'ivme', z: Z2, o: 'oturum-iki-0002', e: [] }) })).status;
+  const kodlar = [await fb(), await fb(), await fb(), await olay()];
+  s.close();
+  assert.deepEqual(kodlar, [200, 200, 429, 200], 'geri bildirim sınırı olayları etkilemez');
 });
