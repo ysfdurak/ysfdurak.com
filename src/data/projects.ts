@@ -558,7 +558,7 @@ export const PROJECTS: Project[] = [
       en: 'Built for candidates applying to jobs in Turkey: the aptitude tests (including verbal reasoning in Turkish), 20 company cases with Word/Excel files and the HR review are in Turkish, so the app stays in Turkish. “Try it” opens an English guide that explains every screen, and one sample case (Koru Distribution) is fully in English.',
     },
     hosting: 'vps',
-    env: 'shared',
+    env: 'personal',
     url: 'https://aday.ysfdurak.com/',
     isaret: 'Aday Atölyesi',
     langParam: true,
@@ -573,8 +573,8 @@ export const PROJECTS: Project[] = [
       { src: '/img/aday-atolyesi/giris.webp', srcEn: '/img/aday-atolyesi/giris-en.webp', w: 1440, h: 900, alt: { tr: 'Canlı demo girişi: aday, İK değerlendiricisi ya da pilot yöneticisi olarak şifresiz deneme', en: 'Live demo sign-in: pick candidate, HR reviewer or pilot admin, no password; the guide says what each role can try' } },
     ],
     demo: {
-      tr: 'Hesap ve ayarlar → Giriş yap ile bir rol seç (aday, İK değerlendiricisi ya da pilot yöneticisi), şifre yok. Örnek teslimler yüklü; aday olarak dosya teslim edebilir, değerlendirici olarak ölçütlü geri bildirim yazabilirsin. Gerçek kişisel bilgi içeren dosya yükleme: dosyalar ortak değerlendirici hesabında görünür ve her gece silinir.',
-      en: 'Go to Account and settings → Sign in and pick a role (candidate, HR reviewer or pilot admin), no password. Sample submissions are loaded: submit a file as a candidate or write criteria-based feedback as a reviewer. Do not upload files with real personal data: files are visible to the shared reviewer account and are deleted every night.',
+      tr: 'Hesap ve ayarlar → Giriş yap ile bir rol seç (aday, İK değerlendiricisi ya da pilot yöneticisi), şifre yok. Örnek teslimler yüklü; aday olarak hazır kurgusal örnek dosyayı teslim edebilir, değerlendirici olarak ölçütlü geri bildirim yazabilirsin. Üç rol de tarayıcına özel ayrı bir alanda çalışır, başka ziyaretçiler göremez; kendi dosyan yüklenmez ve kayıtlar her gece silinir.',
+      en: 'Go to Account and settings → Sign in and pick a role (candidate, HR reviewer or pilot admin), no password. Sample submissions are loaded: submit the ready-made fictional sample file as a candidate or write criteria-based feedback as a reviewer. All three roles run in a space private to your browser that other visitors cannot see; your own files cannot be uploaded and records are deleted every night.',
     },
     tr: {
       tagline: 'İş adaylarının hedef pozisyona göre sınav, vaka ve mülakata hazırlandığı; İK’nın teslimleri ölçütle değerlendirdiği çalışma alanı.',
