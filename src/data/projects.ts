@@ -380,7 +380,7 @@ export const PROJECTS: Project[] = [
     category: 'operasyon',
     featured: true,
     hosting: 'vps',
-    env: 'shared',
+    env: 'personal',
     url: 'https://ivme.ysfdurak.com/',
     isaret: 'İvme',
     urlEn: 'https://ivme-en.ysfdurak.com/',
@@ -423,8 +423,8 @@ export const PROJECTS: Project[] = [
       { src: '/img/ivme/giris.webp', srcEn: '/img/ivme/giris-en.webp', w: 1440, h: 900, alt: { tr: 'Canlı demo girişi: rol seçerek şifresiz deneme', en: 'Live demo sign-in: pick a role, no password' } },
     ],
     demo: {
-      tr: 'Bir rol seç (çalışan, değerlendirici, müdür, İK ya da yönetici) ve şifresiz gir. Örnek bir şirketin 120 önerisi yüklü; her şeyi değiştirebilirsin. Veriler her gece sıfırlanır, kimseye e-posta gitmez.',
-      en: 'Pick a role (employee, reviewer, manager, HR or admin) and enter without a password. A sample company with 120 proposals in English is loaded and you can change anything. Data resets nightly and no email is sent.',
+      tr: 'Bir rol seç (çalışan, değerlendirici, müdür, İK ya da yönetici) ve şifresiz gir. Sana özel bir alan açılır: örnek bir şirketin 45 önerisi yüklü, başka ziyaretçiler yazdıklarını ve eklediklerini görmez. Veriler her gece silinir, kimseye e-posta gitmez.',
+      en: 'Pick a role (employee, reviewer, manager, HR or admin) and enter without a password. You get your own space with 45 sample proposals in English; other visitors cannot see what you write or attach. Data is deleted nightly and no email is sent.',
     },
     tr: {
       tagline: 'Çalışan önerisini değerlendirmeden aksiyona, kazanca, puana ve ödüle kadar tek akışta yöneten öneri sistemi.',

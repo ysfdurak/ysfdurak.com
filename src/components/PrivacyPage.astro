@@ -17,7 +17,7 @@ const ozet: { app: string; url: string; where: [string, string]; who: [string, s
   { app: 'Pusula', url: 'https://pusula.ysfdurak.com/', where: ['Sunucu (Almanya)', 'Server (Germany)'], who: ['Yalnız sen (demo alanı sana özel)', 'Only you (your own demo space)'], del: ['7 gün sonra', 'After 7 days'] },
   { app: 'Destek Merkezi', url: 'https://destek.ysfdurak.com/', where: ['Sunucu (Almanya)', 'Server (Germany)'], who: ['Yalnız sen (alan sana özel)', 'Only you (your own space)'], del: ['Son kullanımdan 3 gün sonra', '3 days after last use'] },
   { app: 'Aday Atölyesi', url: 'https://aday.ysfdurak.com/', where: ['Cloudflare (D1, R2); hazırlık kayıtların tarayıcında', 'Cloudflare (D1, R2); your preparation stays in your browser'], who: ['Yalnız sen (üç rol de tarayıcına özel alanda)', 'Only you (all three roles in a space tied to your browser)'], del: ['Her gece 03.00 (TSİ)', 'Every night at 03:00 (Turkey time)'] },
-  { app: 'İvme', url: 'https://ivme.ysfdurak.com/', where: ['Cloudflare (D1)', 'Cloudflare (D1)'], who: ['Ortak demo: diğer ziyaretçiler de görür', 'Shared demo: other visitors can see it'], del: ['Her gece', 'Every night'] },
+  { app: 'İvme', url: 'https://ivme.ysfdurak.com/', where: ['Cloudflare (D1)', 'Cloudflare (D1)'], who: ['Yalnız sen (tarayıcına özel alan)', 'Only you (a space tied to your browser)'], del: ['Her gece', 'Every night'] },
   { app: 'Diyalog Atölyesi', url: 'https://diyalog.ysfdurak.com/gizlilik.html', where: ['Sorular Anthropic (ABD); konuşma sunucu belleğinde', 'Questions go to Anthropic (US); conversation in server memory'], who: ['Yalnız sen; Anthropic işler', 'Only you; processed by Anthropic'], del: ['Sunucuda 45 dk; Anthropic\'te en geç 30 gün', '45 min on the server; within 30 days at Anthropic'] },
   { app: 'Sırdaş, Duruş, Zaman Etüdü, İngilizce', url: '', where: ['Yalnız tarayıcında ya da bilgisayarında', 'Only in your browser or on your computer'], who: ['Yalnız sen', 'Only you'], del: ['Sen silene kadar (tarayıcı verisi)', 'Until you delete it (browser data)'] },
   { app: 'Kesit, Kıvılcım, Bütçe demosu', url: '', where: ['Yalnız tarayıcında (GitHub Pages üzerinden açılır)', 'Only in your browser (served from GitHub Pages)'], who: ['Yalnız sen', 'Only you'], del: ['Sen silene kadar (tarayıcı verisi)', 'Until you delete it (browser data)'] },
@@ -84,7 +84,7 @@ const L = tr ? 0 : 1;
 
         <h2>4b. İvme (ivme.ysfdurak.com)</h2>
         <ul>
-          <li><strong>Ortak demo:</strong> Rol düğmesiyle girilir; yazdığın öneriler ve eklediğin fotoğraf ya da PDF'ler <strong>diğer ziyaretçilere de görünür</strong>. Gerçek kişi, iş yeri ya da belge bilgisi ekleme.</li>
+          <li><strong>Sana özel alan:</strong> Rol düğmesiyle girince tarayıcına rastgele bir alan kimliği (çerez) verilir ve örnek verili kendi çalışma alanın açılır. Yazdığın öneriler ve eklediğin fotoğraf ya da PDF'ler başka ziyaretçilere görünmez. Kötüye kullanımı sınırlamak için IP adresinin geri çevrilemez özeti bir saatliğine tutulur. Yine de gerçek kişi, iş yeri ya da belge bilgisi ekleme.</li>
           <li><strong>Süre:</strong> Bütün veriler her gece silinir ve örnek veriler yeniden yüklenir. E-posta gönderilmez.</li>
         </ul>
 
@@ -158,7 +158,7 @@ const L = tr ? 0 : 1;
 
         <h2>4b. İvme (ivme.ysfdurak.com)</h2>
         <ul>
-          <li><strong>Shared demo:</strong> You sign in with a role button; the proposals you write and the photos or PDFs you add are <strong>visible to other visitors</strong>. Do not add information about real people, workplaces or documents.</li>
+          <li><strong>Your own space:</strong> When you sign in with a role button, your browser receives a random space ID (cookie) and your own workspace with sample data opens. The proposals you write and the photos or PDFs you add are not visible to other visitors. To limit abuse, an irreversible hash of your IP address is kept for one hour. Still, do not add information about real people, workplaces or documents.</li>
           <li><strong>Retention:</strong> All data is deleted every night and the sample data is reloaded. No emails are sent.</li>
         </ul>
 
