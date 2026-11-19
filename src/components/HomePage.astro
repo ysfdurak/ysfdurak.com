@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import ProjectCard from './ProjectCard.astro';
+import KanitKartlari from './KanitKartlari.astro';
 import { CATEGORIES, byCategory, featured, type Category, type Lang } from '../data/projects';
 import { NAV, useT } from '../i18n/ui';
 import { SITE } from '../data/site';
@@ -31,6 +32,8 @@ const jsonLd = {
       <p><a class="btn primary" href={projectsHref}>{t('home.cta')}</a></p>
     </div>
   </section>
+
+  <KanitKartlari lang={lang} />
 
   <section class="wrap">
     <h2>{t('home.featured')}</h2>

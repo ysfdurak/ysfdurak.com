@@ -1,0 +1,42 @@
+---
+// "Üç projede kanıt": problem → ürün kararım → çalışan örnek → doğrulanan sonuç. Açık kalan kısım ayrıca yazılır.
+import { KANITLAR } from '../data/kanit';
+import type { Lang } from '../data/projects';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const T = lang === 'tr'
+  ? { h: 'Üç projede kanıt', lead: 'Problem, verdiğim ürün kararı, çalışan örnek ve doğrulanan sonuç. Doğrulama bağlantıları herkese açık test ve belgelere gider.', p: 'Problem', d: 'Kararım', e: 'Çalışan örnek', v: 'Doğrulanan sonuç', o: 'Henüz açık', page: 'Proje sayfası', note: 'Ortak eksik: bağımsız kullanıcı testi. Kanıtlar otomatik testler ve sentetik veriyle yapılan doğrulamalardır.' }
+  : { h: 'Evidence from three projects', lead: 'The problem, the product decision I made, a working example and a verified result. Verification links go to public tests and documents.', p: 'Problem', d: 'My decision', e: 'Working example', v: 'Verified result', o: 'Still open', page: 'Project page', note: 'Common gap: independent user testing. The evidence is automated tests and checks on synthetic data.' };
+const base = lang === 'tr' ? '/tr/projeler/' : '/en/projects/';
+---
+<section class="wrap kanit" aria-labelledby="kanit-h">
+  <h2 id="kanit-h">{T.h}</h2>
+  <p class="lead-sm">{T.lead}</p>
+  <div class="grid kanit-grid">
+    {KANITLAR.map((k) => (
+      <article class="card kanit-card">
+        <h3>{k.slug ? <a href={`${base}${k.slug}/`}>{k.name[lang]}</a> : k.name[lang]}</h3>
+        <p class="card-meta">{k.skill[lang]}</p>
+        <dl>
+          <dt>{T.p}</dt><dd>{k.problem[lang]}</dd>
+          <dt>{T.d}</dt><dd>{k.decision[lang]}</dd>
+          <dt>{T.e}</dt><dd><a href={k.example.url} rel="noopener">{k.example.label[lang]} ↗</a></dd>
+          <dt>{T.v}</dt><dd>{k.verified[lang]} <a href={k.proof.url} rel="noopener">{k.proof.label[lang]} ↗</a></dd>
+          {k.open && <><dt>{T.o}</dt><dd class="acik">{k.open[lang]}</dd></>}
+        </dl>
+      </article>
+    ))}
+  </div>
+  <p class="kanit-not">{T.note}</p>
+</section>
+<style>
+  .lead-sm { color: var(--ink-soft); margin: -0.4rem 0 1rem; max-width: 60ch; }
+  .kanit-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  .kanit-card h3 { margin: 0 0 0.3rem; }
+  .kanit-card dl { margin: 0.4rem 0 0; }
+  .kanit-card dt { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--accent); margin-top: 0.7rem; }
+  .kanit-card dd { margin: 0.15rem 0 0; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.5; }
+  .kanit-card dd a { font-weight: 600; color: var(--accent); }
+  .kanit-card dd.acik { font-style: italic; }
+  .kanit-not { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.8rem; }
+</style>
