@@ -17,7 +17,7 @@ const desc = lang === 'tr'
 <Base lang={lang} title={t('projects.title')} description={desc} path={NAV[lang].projects} altPath={NAV[other].projects}>
   <div class="wrap">
     <h1>{t('projects.title')}</h1>
-    <p class="lead">{t('projects.lead')}</p>
+    <p class="lead">{t('projects.lead')} <a href={NAV[lang].rota}>{t('projects.all')}</a></p>
     {cats.map((c) => (
       <section id={lang === 'tr' ? CATEGORIES[c].trSlug : CATEGORIES[c].enSlug}>
         <h2>{CATEGORIES[c][lang]}</h2>
