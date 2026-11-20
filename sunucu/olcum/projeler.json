@@ -37,6 +37,7 @@
       "islem:finish": "Aksiyonu tamamladı",
       "islem:gain": "Kazanç girdi",
       "islem:comment": "Yorum yazdı",
+      "islem:endorse": "Fikre destek verdi",
       "geri_bildirim": "Geri bildirim gönderdi",
       "rol:calisan": "Rol seçti: Çalışan",
       "rol:on_lojistik": "Rol seçti: Ön değerlendirme",
