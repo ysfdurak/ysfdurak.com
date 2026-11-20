@@ -159,9 +159,15 @@
     kok = document.createElement('div');
     kok.setAttribute('data-olcum', '');
     golge = kok.attachShadow({ mode: 'open' });
-    var stil = document.createElement('style');
-    stil.textContent = CSS;
-    golge.appendChild(stil);
+    // Stil: mümkünse oluşturulmuş stil sayfası (adoptedStyleSheets). Bu yol sayfanın CSP'sinde 'unsafe-inline'
+    // gerektirmez; sıkı politikalı uygulamalar (ör. Diyalog) gevşetmeden kullanabilir. Desteklemeyen tarayıcıda <style>.
+    if ('adoptedStyleSheets' in golge && typeof CSSStyleSheet === 'function' && 'replaceSync' in CSSStyleSheet.prototype) {
+      var sayfa = new CSSStyleSheet(); sayfa.replaceSync(CSS); golge.adoptedStyleSheets = [sayfa];
+    } else {
+      var stil = document.createElement('style');
+      stil.textContent = CSS;
+      golge.appendChild(stil);
+    }
     if (DUGME) {
       var d = document.createElement('button');
       d.className = 'dugme ' + KONUM;

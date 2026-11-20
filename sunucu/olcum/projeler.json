@@ -51,5 +51,19 @@
     "ad": "İvme (EN)",
     "adres": "https://ivme-en.ysfdurak.com",
     "kopya": "ivme"
+  },
+  "diyalog": {
+    "ad": "Diyalog Atölyesi",
+    "adres": "https://diyalog.ysfdurak.com",
+    "ekranlar": { "oturum": "Konuşma", "rapor": "Rapor", "ornek": "Örnek konuşma" }
+  },
+  "is-etudu": {
+    "ad": "Video İş Etüdü (web)",
+    "adres": "https://zaman-etudu.ysfdurak.com"
+  },
+  "kivilcim": {
+    "ad": "Kıvılcım",
+    "adres": "https://ysfdurak.github.io",
+    "ekranlar": { "home": "Bugün", "games": "Oyun kütüphanesi", "progress": "Yolculuğum", "favorites": "Favorilerim" }
   }
 }

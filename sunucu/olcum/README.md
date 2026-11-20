@@ -84,3 +84,16 @@ Testler gerçek PostgreSQL yerine aynı SQL'i çalıştıran PGlite kullanır: k
 - **Yönetim sayfasını nasıl korudun?** HTTPS üzerinde Basic Auth, hatalı girişe IP başına sınır, CSRF denetimi ve betiği tamamen kapatan CSP. İlk sürümde `Referrer-Policy: no-referrer` yüzünden tarayıcı kendi formumda `Origin: null` gönderiyordu ve kayıt çalışmıyordu; tarayıcıyla uçtan uca denerken bulundu, `same-origin` ile düzeldi.
 - **Biri sahte olay gönderirse?** Köken ve proje-adres eşleşmesi, IP başına hız sınırı ve istek boyutu sınırı var. Tarayıcıdan gelen veri her zaman taklit edilebileceği için bu sayılar "kanıt" değil "eğilim" olarak okunmalı.
 - **Neden vitrin demolarında açık, şirket kurulumunda kapalı?** Amaç ürünü geliştirmek; çalışanları izlemek değil.
+
+## Bağlı projeler (20 Kasım 2026)
+
+| Proje | Adres | Nasıl bağlı |
+| --- | --- | --- |
+| İvme / İvme EN | ivme.ysfdurak.com, ivme-en.ysfdurak.com | `app/olcum.ts`; yalnız `IVME_VITRIN=1` iken, CSP de yalnız o zaman açılır |
+| Diyalog Atölyesi | diyalog.ysfdurak.com | `web/olcum.js` yükleyicisi, yalnız bu adreste |
+| Video İş Etüdü (tarayıcı) | zaman-etudu.ysfdurak.com | `Web/js/olcum.js`, yalnız bu adreste |
+| Kıvılcım | ysfdurak.github.io/kivilcim-zihin-oyunlari | `olcum.js`; `navigate()` geçişleri ekran olarak bildirilir |
+
+Bilerek bağlanmayanlar: **Sırdaş** ve **Duruş** "veri cihazından çıkmaz" sözü verir; dış adrese bağlantı bu sözü zayıflatır. **İngilizce Atölyesi**'nin kendi izinli ölçümü var. Kesit uygulamaları "dış bağımlılık yok" ilkesiyle yayımlanıyor; eklenmesi ayrı karar.
+
+Yeni bir proje bağlamak: `projeler.json`'a ad ve adres ekle; projede yalnız resmî adreste çalışan küçük bir yükleyici koy (`location.hostname` denetimi), CSP'de `script-src` ve `connect-src`'ye `https://olcum.ysfdurak.com` ekle. Betik stillerini `adoptedStyleSheets` ile verdiği için `style-src 'unsafe-inline'` gerekmez.
