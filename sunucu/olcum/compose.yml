@@ -7,6 +7,22 @@ services:
     container_name: olcum
     env_file: .env
     restart: unless-stopped
+    # Sertleştirme (GUVENLIK_TEMELI): salt okunur kök, Linux yetkileri kapalı, yetki yükseltme yok,
+    # bellek/süreç/kayıt boyutu sınırlı. Servis diske yazmaz (veri PostgreSQL'de); geçici dosya için /tmp.
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 192m
+    pids_limit: 64
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"
     networks:
       - web
       - db
