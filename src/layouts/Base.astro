@@ -87,26 +87,5 @@ const isActive = (href: string) => (href === nav.home ? current === href : curre
         </span>
       </div>
     </footer>
-    <script is:inline>
-      // Proje bağlantısı tıklama sayacı (olcum.ysfdurak.com, depo → olcum/README.md). Yalnız hedef proje adresi
-      // sayılır; çerez, kimlik, IP saklanmaz. Do Not Track / GPC açıksa hiçbir şey gönderilmez.
-      (function () {
-        var n = navigator;
-        if (n.doNotTrack === '1' || window.doNotTrack === '1' || n.globalPrivacyControl === true || !n.sendBeacon) return;
-        document.addEventListener('click', function (e) {
-          var a = e.target.closest && e.target.closest('a[href]');
-          if (!a) return;
-          var u;
-          try { u = new URL(a.href); } catch (_) { return; }
-          var proje = /^([a-z0-9-]+)\.ysfdurak\.com$/.test(u.hostname) && u.hostname !== 'www.ysfdurak.com'
-            ? u.hostname.split('.')[0]
-            : u.hostname === 'github.com' && /^\/ysfdurak\/[\w.-]+/.test(u.pathname) ? 'github/' + u.pathname.split('/')[2] : '';
-          if (!proje || proje === 'olcum') return;
-          n.sendBeacon('https://olcum.ysfdurak.com/e', new Blob([JSON.stringify({
-            p: 'site', e: 'proje_tik', s: '/' + proje.slice(0, 60), d: (document.documentElement.lang || '').slice(0, 2)
-          })], { type: 'text/plain' }));
-        }, { capture: true });
-      })();
-    </script>
   </body>
 </html>
