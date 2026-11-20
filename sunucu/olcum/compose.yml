@@ -1,0 +1,18 @@
+# Ortak ölçüm ve geri bildirim servisi: https://olcum.ysfdurak.com
+# Kurulum ve güncelleme: bash ~/ysfdurak.com/sunucu/kurulum-olcum.sh
+# Dışarıya port açmaz: Caddy "web" ağından, servis de PostgreSQL'e "db" ağından ulaşır.
+services:
+  olcum:
+    build: .
+    container_name: olcum
+    env_file: .env
+    restart: unless-stopped
+    networks:
+      - web
+      - db
+
+networks:
+  web:
+    external: true
+  db:
+    external: true

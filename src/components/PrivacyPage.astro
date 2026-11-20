@@ -11,7 +11,7 @@ const tr = lang === 'tr';
 const path = tr ? '/tr/gizlilik/' : '/en/privacy/';
 const alt = tr ? '/en/privacy/' : '/tr/gizlilik/';
 const email = SITE.email[lang];
-const updated = '19.11.2026';
+const updated = '20.11.2026';
 // Uygulama bazında özet: veri nerede durur, kim görür, ne zaman silinir. Bir uygulamanın veri akışı değişirse burayı da güncelle.
 const ozet: { app: string; url: string; where: [string, string]; who: [string, string]; del: [string, string] }[] = [
   { app: 'Pusula', url: 'https://pusula.ysfdurak.com/', where: ['Sunucu (Almanya)', 'Server (Germany)'], who: ['Yalnız sen (demo alanı sana özel)', 'Only you (your own demo space)'], del: ['7 gün sonra', 'After 7 days'] },
@@ -57,7 +57,18 @@ const L = tr ? 0 : 1;
         <h2>2. Tarayıcıda çalışan araçlar</h2>
         <p>Tarayıcıda çalışan araçlarda girdiğiniz veriler tarayıcınızda işlenir ve sunucuya gönderilmez.</p>
 
-        <h2>3. Pusula (pusula.ysfdurak.com)</h2>
+        <h2>3. Uygulama içi kullanım ölçümü ve geri bildirim (olcum.ysfdurak.com)</h2>
+        <p>Canlı demolarda, uygulamayı geliştirmek için hangi ekranların açıldığı ve hangi işlemlerin denendiği ölçülür. Şu an İvme demosunda açıktır; diğer demolara da eklenecektir. Şirketlere kurulan sürümlerde bu ölçüm yoktur.</p>
+        <ul>
+          <li><strong>Ne kaydedilir:</strong> Ekran ve işlem adları ("öneri gönderdi" gibi; önerinin metni değil), o ekranda geçen aktif süre, cihaz türü (mobil / masaüstü), arayüz dili ve sizi uygulamaya yönlendiren sitenin adı.</li>
+          <li><strong>Kaydedilmez:</strong> Adınız, e-postanız, IP adresiniz, uygulamaya girdiğiniz içerik, yüklediğiniz dosya ya da video.</li>
+          <li><strong>Çerez yok:</strong> Tarayıcınızda rastgele bir kimlik saklanır; sunucu bunu bir kez daha karıştırarak kaydeder. Bu kimlik size bağlanamaz, yalnızca aynı ziyaretçinin geri dönüp dönmediğini sayar.</li>
+          <li><strong>Tercihiniz:</strong> Tarayıcınızda "Do Not Track" ya da "Global Privacy Control" açıksa hiçbir ölçüm gönderilmez. Adresin sonuna <code>?olcum=kapat</code> ekleyerek de o tarayıcıda ölçümü kapatabilirsiniz.</li>
+          <li><strong>Geri bildirim:</strong> Anonimdir; e-postanız yalnızca "Bana dönüş yapabilirsiniz" kutusunu işaretlerseniz saklanır.</li>
+          <li><strong>Süre:</strong> Kayıtlar 180 gün sonra silinir.</li>
+        </ul>
+
+        <h2>4. Pusula (pusula.ysfdurak.com)</h2>
         <ul>
           <li><strong>Giriş:</strong> Google ile girişte yalnızca e-posta adresiniz, adınız ve Google hesap kimliğiniz alınır. Parolanız Pusula'ya hiç ulaşmaz.</li>
           <li><strong>Amaç:</strong> Sizi tanımak, çalışma alanınızı size göstermek ve güvenlik kaydı (kim, ne zaman, hangi işlemi yaptı) tutmak.</li>
@@ -67,7 +78,7 @@ const L = tr ? 0 : 1;
           <li><strong>Claude bağlantısı (isteğe bağlı):</strong> Pusula'yı Claude'a bağlarsanız, Claude yalnızca sizin izin verdiğiniz araçlarla ve sizin yetkilerinizle verinize erişir. Bağlantıyı istediğiniz an kaldırabilirsiniz.</li>
         </ul>
 
-        <h2>4. Destek Merkezi (destek.ysfdurak.com)</h2>
+        <h2>5. Destek Merkezi (destek.ysfdurak.com)</h2>
         <ul>
           <li><strong>Giriş yok:</strong> Hesap, e-posta veya ad istenmez. "Örnek verilerle dene" ile size ait, kurgusal verili bir alan açılır; alana tarayıcınızdaki bir oturum çereziyle dönülür.</li>
           <li><strong>Süre:</strong> Alan, son kullanımdan <strong>3 gün sonra</strong> içeriğiyle birlikte tümüyle silinir. Yedeği alınmaz.</li>
@@ -75,32 +86,32 @@ const L = tr ? 0 : 1;
           <li>Demo alanına gerçek kişi veya şirket verisi girmeyin.</li>
         </ul>
 
-        <h2>4a. Aday Atölyesi (aday.ysfdurak.com)</h2>
+        <h2>6. Aday Atölyesi (aday.ysfdurak.com)</h2>
         <ul>
           <li><strong>Sana özel alan:</strong> Rol seçtiğinde tarayıcına rastgele bir alan kimliği (çerez) verilir. Aday, değerlendirici ve yönetici rolleri bu alanda çalışır; başka ziyaretçiler kayıtlarını görmez.</li>
           <li><strong>Dosya:</strong> Kendi dosyan yüklenmez; teslim için hazır kurgusal örnek dosyalar kullanılır.</li>
           <li><strong>Süre:</strong> Bütün kayıtlar ve dosyalar her gece 03.00'te (TSİ) silinir. Kötüye kullanımı sınırlamak için IP adresinin geri çevrilemez özeti bir saatliğine tutulur, gece silinir.</li>
         </ul>
 
-        <h2>4b. İvme (ivme.ysfdurak.com)</h2>
+        <h2>7. İvme (ivme.ysfdurak.com)</h2>
         <ul>
           <li><strong>Sana özel alan:</strong> Rol düğmesiyle girince tarayıcına rastgele bir alan kimliği (çerez) verilir ve örnek verili kendi çalışma alanın açılır. Yazdığın öneriler ve eklediğin fotoğraf ya da PDF'ler başka ziyaretçilere görünmez. Kötüye kullanımı sınırlamak için IP adresinin geri çevrilemez özeti bir saatliğine tutulur. Yine de gerçek kişi, iş yeri ya da belge bilgisi ekleme.</li>
           <li><strong>Süre:</strong> Bütün veriler her gece silinir ve örnek veriler yeniden yüklenir. E-posta gönderilmez.</li>
         </ul>
 
-        <h2>4c. Diyalog Atölyesi (diyalog.ysfdurak.com)</h2>
+        <h2>8. Diyalog Atölyesi (diyalog.ysfdurak.com)</h2>
         <ul>
           <li><strong>Yapay zekâ:</strong> Soruların ve tahminin, cevap ve değerlendirme üretmek için Anthropic'in (ABD) Claude servisine gönderilir; bu yurt dışına aktarımdır. Anthropic'in kuralına göre bu içerik model eğitiminde kullanılmaz ve en geç 30 gün içinde silinir.</li>
           <li><strong>Sunucuda:</strong> Konuşma yalnız bellekte durur, 45 dakika işlem olmazsa silinir. Anonim özet (senaryo, soru sayısı, puan) ve IP adresinin geri çevrilemez özetiyle günlük sayaçlar (2 gün) tutulur. Ayrıntı: <a href="https://diyalog.ysfdurak.com/gizlilik.html">Diyalog gizlilik sayfası</a>.</li>
         </ul>
 
-        <h2>5. Verinin tutulduğu yer</h2>
-        <p>Pusula, Destek Merkezi ve Diyalog Atölyesi'nin sunucusu Almanya'da (Contabo), yedekler Avrupa Birliği içinde (Cloudflare R2, AB bölgesi) tutulur. Bu nedenle veriler Türkiye dışına aktarılır. Yedekler 30 gün sonra silinir.</p>
+        <h2>9. Verinin tutulduğu yer</h2>
+        <p>Pusula, Destek Merkezi, Diyalog Atölyesi ve ölçüm servisinin sunucusu Almanya'da (Contabo), yedekler Avrupa Birliği içinde (Cloudflare R2, AB bölgesi) tutulur. Bu nedenle veriler Türkiye dışına aktarılır. Yedekler 30 gün sonra silinir.</p>
 
-        <h2>6. Paylaşım</h2>
+        <h2>10. Paylaşım</h2>
         <p>Veriler üçüncü kişilere satılmaz veya pazarlama amacıyla paylaşılmaz. Yalnızca hizmeti sağlayan altyapı sağlayıcıları (Cloudflare, Contabo, GitHub Pages, Google giriş hizmeti) ve Diyalog Atölyesi'nde Anthropic işleyebilir.</p>
 
-        <h2>7. Haklarınız</h2>
+        <h2>11. Haklarınız</h2>
         <p>6698 sayılı KVKK kapsamında verilerinize erişme, düzeltilmesini veya silinmesini isteme ve işlenmesine itiraz etme haklarınız vardır. Talepleriniz için <a href={`mailto:${email}`}>{email}</a> adresine yazabilirsiniz; en geç 30 gün içinde yanıtlanır.</p>
       </>
     ) : (
@@ -131,7 +142,18 @@ const L = tr ? 0 : 1;
         <h2>2. Browser-based tools</h2>
         <p>In tools that run in your browser, the data you enter is processed in your browser and never sent to a server.</p>
 
-        <h2>3. Pusula (pusula.ysfdurak.com)</h2>
+        <h2>3. In-app usage measurement and feedback (olcum.ysfdurak.com)</h2>
+        <p>In the live demos, which screens are opened and which actions are tried is measured to improve the apps. It is currently on in the İvme demo and will be added to the other demos. Versions installed for companies do not include this measurement.</p>
+        <ul>
+          <li><strong>What is recorded:</strong> Screen and action names (such as "submitted a proposal", not the proposal's text), active time on that screen, device type (mobile / desktop), interface language and the name of the site that referred you.</li>
+          <li><strong>Not recorded:</strong> Your name, email, IP address, anything you enter into the app, or files and videos you load.</li>
+          <li><strong>No cookies:</strong> A random ID is kept in your browser and scrambled again by the server before it is stored. It cannot be linked to you; it only tells whether the same visitor came back.</li>
+          <li><strong>Your choice:</strong> If "Do Not Track" or "Global Privacy Control" is on in your browser, nothing is sent. You can also add <code>?olcum=kapat</code> to the address to turn measurement off in that browser.</li>
+          <li><strong>Feedback:</strong> Anonymous; your email is stored only if you tick "You may contact me".</li>
+          <li><strong>Retention:</strong> Records are deleted after 180 days.</li>
+        </ul>
+
+        <h2>4. Pusula (pusula.ysfdurak.com)</h2>
         <ul>
           <li><strong>Sign-in:</strong> With Google sign-in, only your email address, name and Google account ID are received. Your password never reaches Pusula.</li>
           <li><strong>Purpose:</strong> To identify you, show your workspace and keep a security log (who did what, when).</li>
@@ -141,7 +163,7 @@ const L = tr ? 0 : 1;
           <li><strong>Claude connection (optional):</strong> If you connect Pusula to Claude, Claude can access your data only through the tools you allow and with your permissions. You can disconnect at any time.</li>
         </ul>
 
-        <h2>4. Destek Merkezi (destek.ysfdurak.com)</h2>
+        <h2>5. Destek Merkezi (destek.ysfdurak.com)</h2>
         <ul>
           <li><strong>No sign-in:</strong> No account, email or name is requested. "Try with sample data" opens your own workspace with fictional data; you return to it through a session cookie in your browser.</li>
           <li><strong>Retention:</strong> The workspace and everything in it is deleted <strong>3 days after last use</strong>. It is not backed up.</li>
@@ -149,32 +171,32 @@ const L = tr ? 0 : 1;
           <li>Please do not enter real personal or company data into the demo.</li>
         </ul>
 
-        <h2>4a. Aday Atölyesi (aday.ysfdurak.com)</h2>
+        <h2>6. Aday Atölyesi (aday.ysfdurak.com)</h2>
         <ul>
           <li><strong>Your own space:</strong> When you pick a role, your browser receives a random space ID (cookie). The candidate, reviewer and admin roles all work inside this space; other visitors cannot see your records.</li>
           <li><strong>Files:</strong> Your own files cannot be uploaded; ready-made fictional sample files are used for submissions.</li>
           <li><strong>Retention:</strong> All records and files are deleted every night at 03:00 (Turkey time). To limit abuse, an irreversible hash of your IP address is kept for one hour and deleted overnight.</li>
         </ul>
 
-        <h2>4b. İvme (ivme.ysfdurak.com)</h2>
+        <h2>7. İvme (ivme.ysfdurak.com)</h2>
         <ul>
           <li><strong>Your own space:</strong> When you sign in with a role button, your browser receives a random space ID (cookie) and your own workspace with sample data opens. The proposals you write and the photos or PDFs you add are not visible to other visitors. To limit abuse, an irreversible hash of your IP address is kept for one hour. Still, do not add information about real people, workplaces or documents.</li>
           <li><strong>Retention:</strong> All data is deleted every night and the sample data is reloaded. No emails are sent.</li>
         </ul>
 
-        <h2>4c. Diyalog Atölyesi (diyalog.ysfdurak.com)</h2>
+        <h2>8. Diyalog Atölyesi (diyalog.ysfdurak.com)</h2>
         <ul>
           <li><strong>AI:</strong> Your questions and final guess are sent to Anthropic's Claude service (US) to produce replies and feedback; this is an international transfer. Under Anthropic's policy this content is not used for model training and is deleted within 30 days.</li>
           <li><strong>On the server:</strong> The conversation lives only in memory and is deleted after 45 minutes of inactivity. An anonymous summary (scenario, number of questions, score) and daily counters keyed by an irreversible hash of your IP address (2 days) are kept. Details: <a href="https://diyalog.ysfdurak.com/gizlilik.html">Diyalog privacy page</a>.</li>
         </ul>
 
-        <h2>5. Where data is stored</h2>
-        <p>The server for Pusula, Destek Merkezi and Diyalog Atölyesi is in Germany (Contabo); backups are kept in the European Union (Cloudflare R2, EU jurisdiction) and deleted after 30 days.</p>
+        <h2>9. Where data is stored</h2>
+        <p>The server for Pusula, Destek Merkezi, Diyalog Atölyesi and the measurement service is in Germany (Contabo); backups are kept in the European Union (Cloudflare R2, EU jurisdiction) and deleted after 30 days.</p>
 
-        <h2>6. Sharing</h2>
+        <h2>10. Sharing</h2>
         <p>Data is not sold or shared for marketing. Only the infrastructure providers that deliver the service (Cloudflare, Contabo, GitHub Pages, Google sign-in) and, in Diyalog Atölyesi, Anthropic may process it.</p>
 
-        <h2>7. Your rights</h2>
+        <h2>11. Your rights</h2>
         <p>You may request access to, correction or deletion of your data, or object to its processing, by writing to <a href={`mailto:${email}`}>{email}</a>. Requests are answered within 30 days.</p>
       </>
     )}
