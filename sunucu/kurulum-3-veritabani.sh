@@ -40,6 +40,8 @@ else
   echo "/etc/ysf-yedek.env zaten var, dokunulmadı."
 fi
 sudo install -m 755 ../yedek.sh /usr/local/bin/ysf-yedek
+# Yeni kurulumda yedek şifrelemesi baştan açılır (iki şifreyi bir kez gösterir).
+sudo bash ../yedek-sifrele.sh
 echo '30 3 * * * root /usr/local/bin/ysf-yedek >> /var/log/ysf-yedek.log 2>&1' | sudo tee /etc/cron.d/ysf-yedek >/dev/null
 
 echo "== 4/4 İlk yedek deneniyor =="

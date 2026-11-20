@@ -1,21 +1,70 @@
 {
   "*": [
-    { "kural": "gizli-anahtar", "yer": "uretec/|c_orta\\.js|c_ileri\\.js|n_ileri\\.js|x_\\d\\.js|bank\\.js", "neden": "Kesit Python ders içeriği: gizli bilgi taraması alıştırmasındaki örnek desenler (AWS'nin belgelediği örnek anahtar)." }
+    {
+      "kural": "gizli-anahtar",
+      "yer": "uretec/|c_orta\\.js|c_ileri\\.js|n_ileri\\.js|x_\\d\\.js|bank\\.js",
+      "neden": "Kesit Python ders içeriği: gizli bilgi taraması alıştırmasındaki örnek desenler (AWS'nin belgelediği örnek anahtar)."
+    }
   ],
   "destek-merkezi": [
-    { "kural": "csp", "yer": "^public/index\\.html$", "neden": "Sayfa Node sunucusundan CSP başlığıyla verilir (server/main.mjs)." }
+    {
+      "kural": "csp",
+      "yer": "^public/index\\.html$",
+      "neden": "Sayfa Node sunucusundan CSP başlığıyla verilir (server/main.mjs)."
+    }
   ],
   "diyalog-atolyesi": [
-    { "kural": "csp", "yer": "^web/", "neden": "Sayfalar Node sunucusundan CSP başlığıyla verilir (server/app.js)." }
+    {
+      "kural": "csp",
+      "yer": "^web/",
+      "neden": "Sayfalar Node sunucusundan CSP başlığıyla verilir (server/app.js)."
+    }
   ],
   "pusula-is-takip": [
-    { "kural": "csp", "yer": "^src/mcp-app/panom\\.html$", "neden": "MCP App: Claude'un korumalı çerçevesinde, ev sahibinin CSP'siyle çalışır; kendi meta etiketi ev sahibiyle çakışır." }
+    {
+      "kural": "csp",
+      "yer": "^src/mcp-app/panom\\.html$",
+      "neden": "MCP App: Claude'un korumalı çerçevesinde, ev sahibinin CSP'siyle çalışır; kendi meta etiketi ev sahibiyle çakışır."
+    }
   ],
   "butce-sapmasi-rapor-otomasyonu": [
-    { "kural": "csp", "yer": "^python/web/index\\.html$", "neden": "Yerel Python sunucusu CSP başlığını kendisi gönderir (python/app.py)." }
+    {
+      "kural": "csp",
+      "yer": "^python/web/index\\.html$",
+      "neden": "Yerel Python sunucusu CSP başlığını kendisi gönderir (python/app.py)."
+    }
   ],
   "sirdas": [
-    { "kural": "csp", "yer": "^web/source\\.html$", "neden": "Şablon; yayımlanan index.html'i tools/build.mjs CSP ile üretir." },
-    { "kural": "dis-betik", "yer": "^eklenti/", "neden": "Office eklentisi Microsoft'un office.js kitaplığını kendi adresinden yüklemek zorundadır (Office kuralı)." }
+    {
+      "kural": "csp",
+      "yer": "^web/source\\.html$",
+      "neden": "Şablon; yayımlanan index.html'i tools/build.mjs CSP ile üretir."
+    },
+    {
+      "kural": "dis-betik",
+      "yer": "^eklenti/",
+      "neden": "Office eklentisi Microsoft'un office.js kitaplığını kendi adresinden yüklemek zorundadır (Office kuralı)."
+    }
+  ],
+  "aday_atolyesi": [
+    {
+      "kural": "oznitelik-kacis",
+      "yer": "^web/(app\\.js|workspace-ux\\.js|modules/(mizac/report|rol/app|zihin/app)\\.js)$",
+      "neden": "Kimlikler koddaki sabit listelerden (DIMS, roleTemplates, kategoriler, Positions) ya da koddan üretilen görevlerden gelir; yedek içe aktarma (core.js validateBackup) on…=, <script> ve javascript: içeren her metni reddeder. Gezginle denetlendi (Kasım 2026)."
+    }
+  ],
+  "kivilcim-zihin-oyunlari": [
+    {
+      "kural": "oznitelik-kacis",
+      "yer": "^app\\.js$",
+      "neden": "g.id sabit oyun kataloğundan (GAMES); yedek içe aktarma (readBackup) kimlikleri katalogla eşleştirir, sayıları aralıkta tutar, etiketi esc() ile basar."
+    }
+  ],
+  "ivme-oneri-kaizen": [
+    {
+      "kural": "sabit-parola",
+      "yer": "^lib/server\\.ts$",
+      "neden": "Kaizen123! yalnız demo kurulumunda (IVME_DEMO açık, giriş ekranında yazılı). Şirket kurulumunda (IVME_DEMO=0) yönetici şifresi IVME_ILK_SIFRE gizli değerinden gelir, tanımsızsa uygulama açılmaz."
+    }
   ]
 }

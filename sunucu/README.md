@@ -59,7 +59,8 @@ bash ~/ysfdurak.com/sunucu/kurulum-3-veritabani.sh
 - **PostgreSQL 18** tek konteynerde çalışır; her proje kendi veritabanını ve kullanıcısını alır: `bash ~/ysfdurak.com/sunucu/db-olustur.sh pusula`
 - Veritabanı `db` adlı **iç ağda** durur: internete hiç açılmaz, yalnızca bu ağa katılan proje konteynerleri bağlanabilir.
 - **Yedek:** her gece 03:30'da tüm veritabanları sıkıştırılır, bütünlüğü kontrol edilir, R2'ye gönderilir. Sunucuda 7 gün, R2'de 30 gün saklanır. Elle çalıştırmak: `sudo ysf-yedek`
-- **Geri yükleme:** `zcat dosya.sql.gz | docker exec -i postgres psql -U admin`
+- **Geri yükleme (sunucudaki son 7 gün):** `sudo zcat /var/backups/postgres/<dosya>.sql.gz | sudo docker exec -i postgres psql -U admin`
+- **Geri yükleme (R2'den, şifreli):** `sudo bash -c 'source /etc/ysf-yedek.env; rclone ls r2s:postgres/'` ile dosyayı bul, sonra `sudo bash -c 'source /etc/ysf-yedek.env; rclone cat r2s:postgres/<dosya>.sql.gz' | zcat | sudo docker exec -i postgres psql -U admin`. Sunucu tamamen kaybolduysa başka bir bilgisayarda rclone'a R2 anahtarını ve `yedek-sifrele.sh`'in gösterdiği iki şifreyi ver (`rclone config` → crypt, uzak alan `r2:<bucket>/sifreli`, dosya adı şifreleme kapalı).
 
 ## Projeler
 
@@ -98,6 +99,7 @@ Docker yeniden başlatıldığı için tüm uygulamalar 10-30 saniye kesilir.
 | Linux yetkileri kapalı (`cap_drop: ALL`), yetki yükseltme yok (`no-new-privileges`), bellek, süreç ve kayıt boyutu sınırlı | Aynı dosyalar; Caddy yalnız `NET_BIND_SERVICE` ile | Bir konteynerdeki sorun ötekileri ve sunucuyu etkilemez |
 | Compose proje adları açık: `destek`, `pusula`, `diyalog` | `deploy/docker-compose.ortak.yml` | Destek ve Pusula aynı `deploy` adını paylaşıyordu; birinde `down` ya da `--remove-orphans` ötekini durdurabilirdi. Veri birimi adları (`deploy_destek-data`, `deploy_pusula-data`) korundu; `kurulum-destek.sh` ve `kurulum-pusula.sh` eski konteyneri kaldırıp aynı birimle yeniden başlatır |
 | Caddy: HSTS, nosniff, Referrer-Policy, Permissions-Policy, X-Frame-Options, Server başlığı gizli | `altyapi/Caddyfile` | Uygulama başlık göndermese bile tarayıcı korumaları açık |
+| Yedekler R2'ye şifreli gider (rclone crypt, istemci tarafında); sunucudaki yedek dosyaları yalnız root okur (`umask 077`) | `yedek.sh`, `yedek-sifrele.sh` | Döküm bütün veritabanlarını, parola özetlerini ve demo ziyaretçilerinin e-postalarını içerir; R2 anahtarı sızsa bile içerik okunamaz. İki şifreyi parola yöneticine kaydet: onlarsız yedek açılmaz |
 | 80/443 yalnız Cloudflare'den (isteğe bağlı, önerilen) | `cloudflare-kaynak.sh` | Sunucu IP'sini bilen biri Cloudflare'in korumasını atlayamaz. ufw bunu yapamaz: Docker'ın açtığı portlar ufw'yi atlar; kural Docker'ın `DOCKER-USER` zincirine yazılır ve açılışta yeniden yazılır. Önce Cloudflare'de bütün kayıtlar turuncu bulut olmalı. Geri alma: `sudo bash cloudflare-kaynak.sh --kaldir` |
 
 Uygulamak için (sırayla):
@@ -108,6 +110,9 @@ cd sunucu/altyapi && sudo docker compose up -d          # Caddy ve Postgres yeni
 bash ~/ysfdurak.com/sunucu/kurulum-destek.sh            # eski 'deploy' konteynerini kaldırır, aynı veriyle başlatır
 bash ~/ysfdurak.com/sunucu/kurulum-pusula.sh
 bash ~/ysfdurak.com/sunucu/kurulum-diyalog.sh
+sudo install -m 755 ~/ysfdurak.com/sunucu/yedek.sh /usr/local/bin/ysf-yedek   # yeni yedek betiği
+sudo bash ~/ysfdurak.com/sunucu/yedek-sifrele.sh       # iki şifre gösterir: parola yöneticine kaydet
+sudo ysf-yedek                                         # deneme; "UYARI: şifresiz" yazmamalı
 sudo bash ~/ysfdurak.com/sunucu/cloudflare-kaynak.sh    # Cloudflare'de turuncu bulutu kontrol ettikten sonra
 ```
 

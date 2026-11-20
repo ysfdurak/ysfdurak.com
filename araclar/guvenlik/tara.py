@@ -166,6 +166,39 @@ def tara(d, audit=False):
                 if k not in t:
                     b('düşük', 'caddy-baslik', f'Caddy: {k} yok', cf)
 
+    # --- Uygulama katmanı (2. derin tur, Kasım 2026): bulunan açık türleri geri gelmesin
+    kod = [f for f in F if f.endswith(('.js', '.mjs', '.cjs', '.ts', '.tsx', '.jsx', '.html')) and not f.endswith(IKILI)
+           and not f.startswith(ATLA) and not f.startswith(('tests/', 'test/', 'docs/', 'ders/')) and '/tests/' not in f
+           and '.test.' not in f and '/lib/' not in f and '/vendor/' not in f]
+    for f in kod:
+        t = oku(os.path.join(d, f))
+        if 'text/csv' in t and re.search(r"""replace\(/"/g,\s*['"]""['"]\)""", t) and 'csvSafe(' not in t and not re.search(r'\[=\+(\\-|-)?@|\[=\+@', t):
+            b('orta', 'csv-formul', 'CSV dışa aktarımında formül koruması yok (=, +, -, @ ile başlayan hücre Excel’de formül olur)', f)
+        if re.search(r'DecompressionStream\([^)]*\)\)\)\.arrayBuffer\(\)', t):
+            b('orta', 'zip-sinir', 'Sıkıştırılmış veri sınırsız açılıyor (zip bombası); akışla okuyup boyutu sınırla', f)
+        if 'new BrowserWindow' in t and 'setPermissionRequestHandler' not in t:
+            b('orta', 'electron-izin', 'Electron: setPermissionRequestHandler yok; kamera, konum, bildirim izinleri sorgusuz verilir', f)
+        if re.search(r'(JSON\.parse|b64Oku|atob)\([^)]*location\.hash', t) and 'localStorage.setItem' in t and 'document.referrer' not in t:
+            b('orta', 'hash-kayit', 'Adresin # kısmıyla gelen veri tarayıcı kaydına yazılıyor, kaynağı doğrulanmıyor (hazırlanmış bağlantı)', f)
+        if re.search(r"""searchParams\.get\(['"]error_description['"]\)""", t):
+            b('düşük', 'hata-yansitma', 'Kimlik sağlayıcının error_description metni sayfaya yazılıyor olabilir (sahte uyarı)', f)
+        if 'innerHTML' in t or 'insertAdjacentHTML' in t:
+            for m in re.finditer(r'\s(?:data-[\w-]+|id|value|href|src)="[^"$`<>]*\$\{(?!esc\(|escapeHtml\(|escAttr\(|encodeURIComponent\()([A-Za-z_$][\w$]*\.(?:id|at|key|raw|name|ad|url))\}', t):
+                b('orta', 'oznitelik-kacis', f'Kayıttan gelen değer HTML özniteliğine kaçışsız yazılıyor: {m.group(1)} (içe aktarılan veriyle XSS)', f)
+                break
+    sunucu_kodu = [f for f in F if f.endswith(('.js', '.mjs', '.ts')) and not f.endswith(IKILI) and '.test.' not in f
+                   and not f.startswith(('node_modules/', 'vendor/', 'dist/', 'tests/', 'test/', 'examples/'))
+                   and re.search(r'(^|/)(server|lib|api|worker)/', f)]
+    for f in sunucu_kodu:
+        if re.search(r'''(password|parola|sifre|passwordHash)\(\s*["'][^"'\s]{6,}["']\s*\)''', oku(os.path.join(d, f))):
+            b('orta', 'sabit-parola', 'Sabit başlangıç parolası koddan atanıyor; şirket kurulumunda gizli değerden gelmeli', f)
+    for f in [f for f in F if f.endswith('.sh')]:
+        t = oku(os.path.join(d, f))
+        if re.search(r'pg_dump(all)?\b', t) and 'umask 0' not in t:
+            b('orta', 'yedek-umask', 'Yedek betiği umask 077 kullanmıyor; döküm sunucuda herkesçe okunur', f)
+        if re.search(r'pg_dump(all)?\b', t) and 'rclone copy' in t and 'crypt' not in t:
+            b('orta', 'yedek-sifre', 'Yedek uzak depoya istemci tarafında şifrelenmeden gidiyor (rclone crypt)', f)
+
     # --- Bağımlılık açıkları
     if audit:
         for lock in [f for f in F if f.endswith('package-lock.json') and not f.startswith(ATLA)]:
