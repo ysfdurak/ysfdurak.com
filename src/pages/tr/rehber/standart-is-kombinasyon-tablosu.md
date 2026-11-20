@@ -5,7 +5,7 @@ description: "Standart iş kombinasyon tablosu: el işi, yürüme, makine işi v
 updated: "2026-11-16"
 image: "/img/video-zaman-etudu/og.jpg"
 tool:
-  name: "Video Zaman Etüdü"
+  name: "Video İş Etüdü"
   cta: "Adımları el işi, yürüme, makine ve bekleme olarak işaretleyin; kombinasyon tablosu otomatik çizilsin."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
@@ -92,4 +92,4 @@ Yalın üretimde standart iş genellikle üç belgeyle tanımlanır:
 
 ## Tabloyu ölçümden çizmek
 
-[Video Zaman Etüdü](https://zaman-etudu.ysfdurak.com/) adımları videodan ölçer. Her adımı el işi, makine, yürüme veya bekleme olarak işaretlediğinizde standart iş kombinasyon tablosunu otomatik çizer: makine işi paralel, diğerleri arka arkaya. Adım kartlarıyla görsel iş talimatı da hazırlayabilirsiniz. Bu yazıdaki zamanlama, uygulamanın standart iş kuralıyla hesaplandı.
+[Video İş Etüdü](https://zaman-etudu.ysfdurak.com/) adımları videodan ölçer. Her adımı el işi, makine, yürüme veya bekleme olarak işaretlediğinizde standart iş kombinasyon tablosunu otomatik çizer: makine işi paralel, diğerleri arka arkaya. Adım kartlarıyla görsel iş talimatı da hazırlayabilirsiniz. Bu yazıdaki zamanlama, uygulamanın standart iş kuralıyla hesaplandı.

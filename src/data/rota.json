@@ -5,8 +5,8 @@
       "id": "video-zaman-etudu",
       "proje": "video-zaman-etudu",
       "ad": {
-        "tr": "Video Zaman Etüdü",
-        "en": "Video Time Study"
+        "tr": "Video İş Etüdü",
+        "en": "Video Work Study"
       },
       "aciklama": {
         "tr": "İş adımlarını videodan ölçer; standart süreyi, gözlem yeterliliğini ve takta göre gereken operatör sayısını hesaplar. Hat dengeleme ve 7 israf analizi içerir, sonuçları Excel'e aktarır. Tarayıcıda ve Windows'ta çalışır.",

@@ -5,7 +5,7 @@ description: "Takt zamanı = kullanılabilir çalışma süresi ÷ müşteri tal
 updated: "2026-11-16"
 image: "/img/video-zaman-etudu/og.jpg"
 tool:
-  name: "Video Zaman Etüdü"
+  name: "Video İş Etüdü"
   cta: "Adım sürelerini videodan ölçün, takta göre doluluk ve gereken kişi sayısını hesaplayın."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
@@ -74,4 +74,4 @@ Bir koli için tüm adımların toplam standart süresi 50 saniye olsun (koli ku
 
 ## Takt hesabını ölçümle birleştirmek
 
-[Video Zaman Etüdü](https://zaman-etudu.ysfdurak.com/) adım sürelerini videodan ölçer, standart süreyi hesaplar ve takt süresini girdiğinizde istasyonun doluluk oranını ve gereken operatör sayısını gösterir. Yamazumi grafiğiyle işi takta göre otomatik dağıtabilirsiniz. Uygulama ücretsizdir, kurulum gerektirmez.
+[Video İş Etüdü](https://zaman-etudu.ysfdurak.com/) adım sürelerini videodan ölçer, standart süreyi hesaplar ve takt süresini girdiğinizde istasyonun doluluk oranını ve gereken operatör sayısını gösterir. Yamazumi grafiğiyle işi takta göre otomatik dağıtabilirsiniz. Uygulama ücretsizdir, kurulum gerektirmez.

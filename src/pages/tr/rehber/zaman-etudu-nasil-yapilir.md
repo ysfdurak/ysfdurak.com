@@ -5,7 +5,7 @@ description: "Zaman etüdü adım adım: işi adımlara bölme, gözlem sayısı
 updated: "2026-11-16"
 image: "/img/video-zaman-etudu/og.jpg"
 tool:
-  name: "Video Zaman Etüdü"
+  name: "Video İş Etüdü"
   cta: "Bu yazıdaki hesapları videodan, kurulumsuz yapın. Video cihazınızdan çıkmaz."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
@@ -126,4 +126,4 @@ Kronometreyle yapılan etütte gözlemci aynı anda izler, ölçer ve not alır.
 - Paralel işleri ve beklemeleri ayırabilirsiniz.
 - Sonucu, videoyla birlikte ekibe gösterebilirsiniz.
 
-Yukarıdaki hesapların hepsini (gözlem yeterliliği, tempo, tolerans, standart süre, Excel çıktısı) [Video Zaman Etüdü](https://zaman-etudu.ysfdurak.com/) ile tarayıcıda yapabilirsiniz. Uygulama ücretsiz, kurulum ve hesap gerektirmiyor; video bilgisayarınızdan çıkmıyor.
+Yukarıdaki hesapların hepsini (gözlem yeterliliği, tempo, tolerans, standart süre, Excel çıktısı) [Video İş Etüdü](https://zaman-etudu.ysfdurak.com/) ile tarayıcıda yapabilirsiniz. Uygulama ücretsiz, kurulum ve hesap gerektirmiyor; video bilgisayarınızdan çıkmıyor.

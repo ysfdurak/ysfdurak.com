@@ -5,7 +5,7 @@ description: "Yalın üretimin 7 israfı: taşıma, stok, hareket, bekleme, fazl
 updated: "2026-11-16"
 image: "/img/video-zaman-etudu/og.jpg"
 tool:
-  name: "Video Zaman Etüdü"
+  name: "Video İş Etüdü"
   cta: "İşi videodan ölçün, her adımı katma değer ve israf türüne göre sınıflandırın, iyileştirme fikirlerini toplayın."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
@@ -123,4 +123,4 @@ Katma değerli iş 46 saniyenin yalnızca **14 saniyesi (%30)**. Siparişi barko
 
 ## İsrafı ölçerek görmek
 
-[Video Zaman Etüdü](https://zaman-etudu.ysfdurak.com/) her adımı videodan ölçer ve VA, SVA, NVA olarak sınıflandırır. Adımlara 7 israf türünü ve iyileştirme fikirlerini ekleyebilir, israf payını ve önce/sonra farkını görebilirsiniz. Ücretsizdir, kurulum gerektirmez.
+[Video İş Etüdü](https://zaman-etudu.ysfdurak.com/) her adımı videodan ölçer ve VA, SVA, NVA olarak sınıflandırır. Adımlara 7 israf türünü ve iyileştirme fikirlerini ekleyebilir, israf payını ve önce/sonra farkını görebilirsiniz. Ücretsizdir, kurulum gerektirmez.

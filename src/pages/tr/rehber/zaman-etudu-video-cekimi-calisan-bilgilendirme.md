@@ -5,7 +5,7 @@ description: "Zaman etüdü için çalışanları videoya almadan önce yapılma
 updated: "2026-11-17"
 image: "/img/video-zaman-etudu/og.jpg"
 tool:
-  name: "Video Zaman Etüdü"
+  name: "Video İş Etüdü"
   cta: "Videoyu hiçbir yere yüklemeden ölçün; uygulama internetsiz de çalışır."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/yontem-ve-gizlilik/"
@@ -43,7 +43,7 @@ Zaman etüdünün en zor kısmı çoğu zaman hesap değil, güvendir. Kameranı
 
 ## Saklama, erişim ve sonrası
 
-- **Saklama süresini belirleyin.** Örneğin "Ölçümler tamamlandıktan sonra en geç 30 gün içinde video silinir; yalnızca ölçüm sonuçları saklanır." Video Zaman Etüdü'nün etüt paketi (`.vzetud`) zaten videoyu içermez, yalnızca ölçümleri taşır.
+- **Saklama süresini belirleyin.** Örneğin "Ölçümler tamamlandıktan sonra en geç 30 gün içinde video silinir; yalnızca ölçüm sonuçları saklanır." Video İş Etüdü'nün etüt paketi (`.vzetud`) zaten videoyu içermez, yalnızca ölçümleri taşır.
 - **Erişimi sınırlayın.** Videoyu kimlerin izleyeceğini isimle ya da görevle yazın (örneğin "etüdü yapan endüstri mühendisi ve bölüm sorumlusu").
 - **Sonucu ekiple paylaşın.** Standart süreyi ve bulunan israfları önce çekime katılan ekiple konuşun. İyileştirme fikirleri çoğunlukla onlardan gelir; süreç de "bizi ölçtüler" yerine "işi birlikte iyileştirdik" diye hatırlanır.
 
@@ -80,6 +80,6 @@ Aşağıdaki metni kopyalayıp köşeli parantezli yerleri kendi işyerinize gö
 
 **Telefonla çekim yeterli mi?** Evet, sabit bir yere konmuş bir telefon genellikle yeterlidir. Önemli olan görüntünün sabit olması ve adım sınırlarının görünmesi.
 
-**Video bulut uygulamasına yüklenmeli mi?** Zaman etüdü için gerekmez. Video ne kadar az yere kopyalanırsa o kadar az risk oluşur. Video Zaman Etüdü videoyu yalnızca açtığınız bilgisayarda kullanır, hiçbir sunucuya göndermez; bunu nasıl kontrol edebileceğiniz [yöntem ve gizlilik sayfasında](/tr/projeler/video-zaman-etudu/yontem-ve-gizlilik/) anlatılıyor.
+**Video bulut uygulamasına yüklenmeli mi?** Zaman etüdü için gerekmez. Video ne kadar az yere kopyalanırsa o kadar az risk oluşur. Video İş Etüdü videoyu yalnızca açtığınız bilgisayarda kullanır, hiçbir sunucuya göndermez; bunu nasıl kontrol edebileceğiniz [yöntem ve gizlilik sayfasında](/tr/projeler/video-zaman-etudu/yontem-ve-gizlilik/) anlatılıyor.
 
 **Çalışan çekilmek istemezse?** Zorlamayın. Başka bir gönüllüyle başlayın ya da ilk çekimi yalnızca iş alanını ve malzeme akışını gösterecek şekilde yapın. Sonuçlar ekiple paylaşıldıkça çekime itiraz genellikle azalır.

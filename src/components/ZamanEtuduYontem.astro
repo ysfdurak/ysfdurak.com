@@ -1,5 +1,5 @@
 ---
-// Video Zaman Etüdü: yöntem ve gizlilik sayfası (TR/EN).
+// Video İş Etüdü: yöntem ve gizlilik sayfası (TR/EN).
 // Formüller uygulamanın docs/PROJE_REHBERI.md "Formüller" bölümüyle ve Web/js/core.js ile aynı olmalı.
 // Test sayıları README'deki eşdeğerlik testleriyle aynı tutulmalı.
 import Base from '../layouts/Base.astro';
@@ -17,13 +17,13 @@ const parity = `${repo}/blob/main/Shared/esdeger-ornekler.json`;
 const core = `${repo}/blob/main/Web/js/core.js`;
 ---
 <Base lang={lang}
-  title={tr ? 'Video Zaman Etüdü: yöntem ve gizlilik' : 'Video Time Study: method and privacy'}
+  title={tr ? 'Video İş Etüdü: yöntem ve gizlilik' : 'Video Work Study: method and privacy'}
   description={tr
-    ? 'Video Zaman Etüdü videonuzu hiçbir yere göndermez ve internetsiz çalışır. Standart süre formülleri, gözlem yeterliliği ve iki sürümü sınayan testler; hepsini kendiniz kontrol edin.'
-    : 'Video Time Study never sends your video anywhere and works offline. Standard time formulas, sample sufficiency and the tests behind both versions — check them yourself.'}
+    ? 'Video İş Etüdü videonuzu hiçbir yere göndermez ve internetsiz çalışır. Standart süre formülleri, gözlem yeterliliği ve iki sürümü sınayan testler; hepsini kendiniz kontrol edin.'
+    : 'Video Work Study never sends your video anywhere and works offline. Standard time formulas, sample sufficiency and the tests behind both versions — check them yourself.'}
   path={path} altPath={alt}>
   <article class="wrap prose guide">
-    <p class="crumb"><a href={project}>{tr ? '← Video Zaman Etüdü' : '← Video Time Study'}</a></p>
+    <p class="crumb"><a href={project}>{tr ? '← Video İş Etüdü' : '← Video Work Study'}</a></p>
     {tr ? (
       <>
         <h1>Yöntem ve gizlilik</h1>

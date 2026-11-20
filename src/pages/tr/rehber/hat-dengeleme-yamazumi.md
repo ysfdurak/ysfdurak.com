@@ -5,7 +5,7 @@ description: "Hat dengeleme adım adım: takt zamanı, en az istasyon sayısı, 
 updated: "2026-11-16"
 image: "/img/video-zaman-etudu/og.jpg"
 tool:
-  name: "Video Zaman Etüdü"
+  name: "Video İş Etüdü"
   cta: "Adım sürelerini videodan ölçün, Yamazumi grafiğini görün ve işi takta göre otomatik dağıtın."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
@@ -100,4 +100,4 @@ Kişi sayısı değişmeden çıktı yaklaşık **%57 arttı**.
 
 ## Yamazumi'yi uygulamada çizmek
 
-[Video Zaman Etüdü](https://zaman-etudu.ysfdurak.com/) adım sürelerini videodan ölçer, seyrek işlerin çevrim başına katkısını hesaplar, Yamazumi grafiğini takt çizgisiyle çizer ve işi takta göre otomatik dağıtır. Denge verimini ve gereken en az kişi sayısını da gösterir. Bu yazıdaki örnek, uygulamanın dengeleme kurallarıyla hesaplandı.
+[Video İş Etüdü](https://zaman-etudu.ysfdurak.com/) adım sürelerini videodan ölçer, seyrek işlerin çevrim başına katkısını hesaplar, Yamazumi grafiğini takt çizgisiyle çizer ve işi takta göre otomatik dağıtır. Denge verimini ve gereken en az kişi sayısını da gösterir. Bu yazıdaki örnek, uygulamanın dengeleme kurallarıyla hesaplandı.

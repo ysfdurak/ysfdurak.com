@@ -5,7 +5,7 @@ description: "İş örneklemesi (work sampling) adım adım: rastgele anlarda g�
 updated: "2026-11-16"
 image: "/img/video-zaman-etudu/og.jpg"
 tool:
-  name: "Video Zaman Etüdü"
+  name: "Video İş Etüdü"
   cta: "İş örneklemesini videodan yapın: rastgele anlar, kategori payları ve gereken gözlem sayısı otomatik."
   url: "https://zaman-etudu.ysfdurak.com/"
   project: "/tr/projeler/video-zaman-etudu/"
@@ -103,4 +103,4 @@ En kalabalık kategori olan yükleme ve boşaltma için (p = 0,43, e = 0,05):
 
 ## Videodan iş örneklemesi
 
-Sahada gün boyunca rastgele anlarda bulunmak zordur. Videodan yapılan iş örneklemesinde gözlem anları videonun içinden rastgele seçilir ve her an bir tuşla sınıflandırılır. [Video Zaman Etüdü](https://zaman-etudu.ysfdurak.com/) payları, güven aralıklarını ve hedef hata için gereken gözlem sayısını otomatik hesaplar. Bu yazıdaki örnek de uygulamanın iş örneklemesi hesabıyla doğrulandı.
+Sahada gün boyunca rastgele anlarda bulunmak zordur. Videodan yapılan iş örneklemesinde gözlem anları videonun içinden rastgele seçilir ve her an bir tuşla sınıflandırılır. [Video İş Etüdü](https://zaman-etudu.ysfdurak.com/) payları, güven aralıklarını ve hedef hata için gereken gözlem sayısını otomatik hesaplar. Bu yazıdaki örnek de uygulamanın iş örneklemesi hesabıyla doğrulandı.
