@@ -199,6 +199,18 @@ def tara(d, audit=False):
         if re.search(r'pg_dump(all)?\b', t) and 'rclone copy' in t and 'crypt' not in t:
             b('orta', 'yedek-sifre', 'Yedek uzak depoya istemci tarafında şifrelenmeden gidiyor (rclone crypt)', f)
 
+    # Sürüm bildirimi (Kesit): listedeki dosya özetleri tutmuyorsa CI düşer; göndermeden önce yakala.
+    if 'release-manifest.json' in F:
+        import hashlib
+        try:
+            man = json.loads(oku(os.path.join(d, 'release-manifest.json'))).get('files', {})
+        except json.JSONDecodeError:
+            man = {}
+        for yol, ozet in man.items():
+            p = os.path.join(d, yol)
+            if os.path.exists(p) and hashlib.sha256(open(p, 'rb').read()).hexdigest() != ozet:
+                b('orta', 'manifest-ozet', 'release-manifest.json özeti dosyayla tutmuyor (CI düşer)', yol)
+
     # --- Bağımlılık açıkları
     if audit:
         for lock in [f for f in F if f.endswith('package-lock.json') and not f.startswith(ATLA)]:
