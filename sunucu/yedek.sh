@@ -43,6 +43,17 @@ for UYG in pusula; do
   echo "$UYG yedeği: $(basename "$HEDEF") ($(du -h "$HEDEF" | cut -f1))"
 done
 
+# Ölçüm servisi (olcum): SQLite dosyasının tutarlı kopyası VACUUM INTO ile alınır (konteyner kökü salt okunur, /tmp'ye yazılır).
+if docker ps --format '{{.Names}}' | grep -qx olcum; then
+  HEDEF="$YER/olcum_$ZAMAN.db.gz"
+  docker exec olcum node --disable-warning=ExperimentalWarning -e "const {DatabaseSync}=require('node:sqlite');const fs=require('fs');try{fs.unlinkSync('/tmp/y.db')}catch{};new DatabaseSync('/veri/olcum.db').exec(\"VACUUM INTO '/tmp/y.db'\")"
+  docker exec olcum sh -c 'cat /tmp/y.db && rm -f /tmp/y.db' | gzip -9 > "$HEDEF"
+  gzip -t "$HEDEF"
+  rclone copy "$HEDEF" "${KOK}olcum/" --s3-no-check-bucket --s3-no-head
+  rclone delete "${KOK}olcum/" --min-age 30d --s3-no-check-bucket
+  echo "olcum yedeği: $(basename "$HEDEF") ($(du -h "$HEDEF" | cut -f1))"
+fi
+
 # Sunucuda 7 gün, R2'de 30 gün sakla
 find "$YER" \( -name '*.sql.gz' -o -name '*.db.gz' \) -mtime +7 -delete
 rclone delete "${KOK}postgres/" --min-age 30d --s3-no-check-bucket

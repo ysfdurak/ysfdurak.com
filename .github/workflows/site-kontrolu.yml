@@ -24,3 +24,5 @@ jobs:
         run: node scripts/baglanti-kontrolu.mjs
       - name: Sağlık kontrolü hedef listesi (her canlı projede sayfa işareti var mı)
         run: node scripts/saglik-kontrolu.mjs --liste
+      - name: Ölçüm servisi testleri
+        run: node --test olcum/test.mjs

@@ -54,3 +54,9 @@ destek.ysfdurak.com {
 diyalog.ysfdurak.com {
 	import uygulama diyalog:8080
 }
+
+# Ölçüm: projeler için gizlilik öncelikli kullanım sayacı ve geri bildirim (ysfdurak.com deposu → olcum/)
+# Panel uygulamanın kendi şifresiyle korunur. Çerez, IP, tarayıcı kimliği saklanmaz.
+olcum.ysfdurak.com {
+	import uygulama olcum:8080
+}
