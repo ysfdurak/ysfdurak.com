@@ -246,8 +246,32 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'Electron', 'ExcelJS', 'pdfmake'],
     og: '/img/durus/og.jpg',
+    video: {
+      src: '/video/durus-tanitim-tr.mp4',
+      poster: '/video/durus-tanitim-tr.webp',
+      srcEn: '/video/durus-promo-en.mp4',
+      posterEn: '/video/durus-promo-en.webp',
+      w: 1920,
+      h: 1080,
+      caption: {
+        tr: '35 saniyede Duruş: gerçek bir depo videosunda koliyi yerden alıp kamyonete taşıyan çalışan. Video saniyede bir kare taranıyor, eklemler otomatik bulunuyor; yerden alımda gövde 82° öne eğik, 12 kg yükle REBA 10. Görüntü Pexels’ten (Pexels Lisansı), yüzler bulanıklaştırıldı.',
+        en: 'Duruş in 35 seconds: a real warehouse video of a worker lifting a box from the floor and loading it into a van. The video is scanned one frame per second and the joints are found automatically; at the floor lift the trunk is 82° forward and REBA is 10 with a 12 kg load. Footage from Pexels (Pexels License), faces blurred.',
+      },
+      loop: {
+        src: '/video/durus-dongu-tr.mp4',
+        poster: '/video/durus-dongu-tr.webp',
+        srcEn: '/video/durus-loop-en.mp4',
+        posterEn: '/video/durus-loop-en.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'Duruş kısa döngü: gerçek depo videosunun taranması ve yerden alımda REBA 10 sonucu',
+          en: 'Duruş short loop: scanning a real warehouse video and the REBA 10 result at the floor lift',
+        },
+      },
+    },
     shots: [
-      { src: '/img/durus/durus-analizi.webp', srcEn: '/img/durus/durus-analizi-en.webp', w: 1440, h: 900, alt: { tr: 'Duruş analizi: örnek karede eklemler işaretlenmiş, açılar hesaplanmış; REBA, RULA ve OWAS aynı anda puanlanmış', en: 'Posture analysis: joints marked on a sample frame, angles calculated, REBA, RULA and OWAS scored together' } },
+      { src: '/img/durus/durus-analizi.webp', srcEn: '/img/durus/durus-analizi-en.webp', w: 1440, h: 900, alt: { tr: 'Duruş analizi: gerçek bir depo videosunda koliyi yerden alan çalışanın eklemleri otomatik bulunmuş; gövde 82°, 12 kg yükle REBA 10, RULA 7, OWAS AC3 (görüntü: Pexels, yüzler bulanık)', en: 'Posture analysis: joints found automatically on a real warehouse video of a worker lifting a box from the floor; trunk 82°, with 12 kg REBA 10, RULA 7, OWAS AC3 (footage: Pexels, faces blurred)' } },
       { src: '/img/durus/formlar-niosh.webp', srcEn: '/img/durus/formlar-niosh-en.webp', w: 1440, h: 900, alt: { tr: 'Formlar: NIOSH kaldırma denklemi, çarpanlar ve kaldırma indeksi ile ne yapılabileceği', en: 'Forms: the NIOSH lifting equation with multipliers, lifting index and what can be done' } },
       { src: '/img/durus/rehber.webp', srcEn: '/img/durus/rehber-en.webp', w: 1440, h: 900, alt: { tr: 'Rehber: evet/hayır sorularıyla riskli alanları bulma ve önerilen yöntem', en: 'Guide: find risk areas with yes/no questions and get a recommended method' } },
       { src: '/img/durus/baslangic.webp', srcEn: '/img/durus/baslangic-en.webp', w: 1440, h: 900, alt: { tr: 'Başlangıç: duruma göre dört giriş yolu ve son kayıtlar', en: 'Start: four entry points by situation and recent records' } },
