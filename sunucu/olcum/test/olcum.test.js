@@ -81,6 +81,18 @@ test('geri bildirim: doğrulama, e-posta yalnızca izinle', async () => {
   assert.equal(rows[1].iletisim, 'a@b.co');
 });
 
+test('denetim D09: ölçüm kapalı tarayıcının kimliksiz geri bildirimi kabul edilir, ziyarete bağlanmaz', async () => {
+  const K = 'https://aday.ysfdurak.com';
+  const once = (await db.query("SELECT count(*)::int AS n FROM olay WHERE proje = 'aday'")).rows[0].n;
+  assert.equal((await gonder('/v1/geri-bildirim', { p: 'aday', z: '', o: '', r: 3, m: 'kimliksiz' }, K)).status, 200);
+  assert.equal((await gonder('/v1/geri-bildirim', { p: 'aday', z: '', o: '', r: 4 }, K)).status, 200);
+  const { rows } = await db.query("SELECT ziyaretci FROM geri_bildirim WHERE proje = 'aday' ORDER BY id");
+  assert.equal(rows.length, 2);
+  assert.notEqual(rows[0].ziyaretci, rows[1].ziyaretci, 'iki kimliksiz kayıt birbirine bağlanmaz');
+  assert.equal((await db.query("SELECT count(*)::int AS n FROM olay WHERE proje = 'aday'")).rows[0].n, once, 'huniye olay yazılmaz');
+  assert.equal((await gonder('/v1/olay', { p: 'aday', z: '', o: '', e: [{ a: 'ekran', s: 'x' }] }, K)).status, 400, 'olayda kimlik zorunlu');
+});
+
 test('yönetim şifresiz açılmaz', async () => {
   assert.equal((await fetch(adres + '/yonetim')).status, 401);
   const yanlis = await fetch(adres + '/yonetim', { headers: { Authorization: 'Basic ' + Buffer.from('yusuf:yanlis').toString('base64') } });

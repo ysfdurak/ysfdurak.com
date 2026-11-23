@@ -29,6 +29,7 @@ Uygulama (ivme.ysfdurak.com, durus…)                 Sunucu (VPS)
 |---|---|
 | Google Analytics yok, kendi servisimiz | Üçüncü taraf çerez ve çerez onayı gerekmez, veri başka şirkete gitmez |
 | Çerez yok; tarayıcıda rastgele kimlik, sunucuda bir kez daha karıştırılır (HMAC) | Aynı kişinin geri dönüşü sayılır ama veritabanından kim olduğu çıkarılamaz |
+| Ölçüm kapalıyken (DNT, GPC, `?olcum=kapat`) tarayıcıya kimlik yazılmaz; kapatınca var olan kimlik silinir. Geri bildirim kimliksiz gider, her kayıt tek kullanımlık takma ad alır ve huniye girmez | Kapalı demek gerçekten kapalı: tarayıcıda izlenebilir bir iz kalmaz (denetim D09) |
 | IP adresi saklanmaz | Yalnızca hız sınırları için bellekte sayılır (olay: 1 dk, geri bildirim: 10 dk, hatalı giriş: 15 dk) |
 | İçerik yok | "Öneri gönderdi" yazılır, önerinin metni yazılmaz. Duruş ve Zaman Etüdü'nde video hiçbir zaman gönderilmez |
 | Do Not Track / Global Privacy Control açıksa ölçüm yok | Kişinin tarayıcıdaki tercihine uyulur; geri bildirim yine çalışır |
@@ -99,3 +100,8 @@ Testler gerçek PostgreSQL yerine aynı SQL'i çalıştıran PGlite kullanır: k
 Bilerek bağlanmayanlar: **Sırdaş** ve **Duruş** "veri cihazından çıkmaz" sözü verir; dış adrese bağlantı bu sözü zayıflatır. **İngilizce Atölyesi**'nin kendi izinli ölçümü var. Kesit uygulamaları "dış bağımlılık yok" ilkesiyle yayımlanıyor; eklenmesi ayrı karar.
 
 Yeni bir proje bağlamak: `projeler.json`'a ad ve adres ekle; projede yalnız resmî adreste çalışan küçük bir yükleyici koy (`location.hostname` denetimi), CSP'de `script-src` ve `connect-src`'ye `https://olcum.ysfdurak.com` ekle. Betik stillerini `adoptedStyleSheets` ile verdiği için `style-src 'unsafe-inline'` gerekmez.
+
+## Geri bildirim penceresi erişilebilirliği (olcum.js 2, 23 Kasım 2026)
+
+- Puan tek seçimli **radyo grubu**dur (`role=radiogroup`, her yıldız `role=radio` + `aria-checked`); ekran okuyucu "3 yıldız (3/5), seçili" der. Ok tuşları, Home/End ile değişir; sekme tuşuyla grupta tek durak vardır.
+- Seçim yalnız renkle gösterilmez: dolu ★ / boş ☆ biçimi ve yanında "3/5" yazısı. Renklerin zemine kontrastı en az 3:1 (açık temada seçili 5,9:1, boş 4,8:1; koyu temada 9,4:1 ve 5,4:1). Önceki gri/altın renkler beyaz zeminde 1,6:1 ve 2,2:1 idi (denetim D08).

@@ -11,7 +11,9 @@
  * Yüklenmeden önce yapılan çağrılar için: (window.olcumKuyruk ||= []).push(["olay", "ad"])
  *
  * Gizlilik:
- *   - Çerez yok. Tarayıcıda rastgele bir kimlik (localStorage) durur; sunucu onu bir kez daha karıştırarak saklar.
+ *   - Çerez yok. Ölçüm açıkken tarayıcıda rastgele bir kimlik (localStorage) durur; sunucu onu bir kez daha karıştırarak saklar.
+ *     Ölçüm kapalıyken (DNT/GPC ya da ?olcum=kapat) kimlik hiç oluşturulmaz; kapatınca var olan kimlikler silinir.
+ *     Bu durumda geri bildirim kimliksiz gider ve ziyaretle ilişkilendirilmez.
  *   - Girilen içerik, ad, e-posta, IP saklanmaz. Yalnızca ekran/işlem adları, aktif süre, cihaz türü, dil ve geldiği site.
  *   - Tarayıcıda "Do Not Track" ya da "Global Privacy Control" açıksa hiçbir olay gönderilmez (geri bildirim yine çalışır).
  *   - Adrese ?olcum=kapat eklenirse o tarayıcıda ölçüm kapanır (kendi denemelerin sayılmasın diye); ?olcum=ac açar.
@@ -49,9 +51,10 @@
   var yerel = depo('localStorage'), oturumDepo = depo('sessionStorage');
   var oku = function (d, k) { try { return d && d.getItem(k); } catch (e) { return null; } };
   var yaz = function (d, k, v) { try { d && (v == null ? d.removeItem(k) : d.setItem(k, v)); } catch (e) {} };
+  function kimlikleriSil() { yaz(yerel, 'olcum_z', null); yaz(oturumDepo, 'olcum_o', null); yaz(oturumDepo, 'olcum_sh', null); }
   try {
     var q = new URLSearchParams(location.search).get('olcum');
-    if (q === 'kapat') yaz(yerel, 'olcum_kapali', '1');
+    if (q === 'kapat') { yaz(yerel, 'olcum_kapali', '1'); kimlikleriSil(); }
     if (q === 'ac') yaz(yerel, 'olcum_kapali', null);
   } catch (e) {}
   var izin = function () {
@@ -64,12 +67,21 @@
     var a = new Uint8Array(16); crypto.getRandomValues(a);
     return Array.prototype.map.call(a, function (b) { return ('0' + b.toString(16)).slice(-2); }).join('');
   };
-  var ziyaretci = oku(yerel, 'olcum_z') || rastgele();
-  yaz(yerel, 'olcum_z', ziyaretci);
-  var oturum = oku(oturumDepo, 'olcum_o');
-  var sonHareket = Number(oku(oturumDepo, 'olcum_sh')) || 0;
-  var yeniOturum = !oturum || Date.now() - sonHareket > 30 * 60e3;
-  if (yeniOturum) { oturum = rastgele(); yaz(oturumDepo, 'olcum_o', oturum); }
+  // Kimlikler yalnız ölçüm izni varken ve ilk gerektiğinde oluşturulur; izin yoksa tarayıcıya hiçbir şey yazılmaz.
+  var ziyaretci = null, oturum = null, yeniOturum = false;
+  var sonHareket = Date.now();
+  function kimlik() {
+    if (!izin()) return false;
+    if (ziyaretci) return true;
+    ziyaretci = oku(yerel, 'olcum_z') || rastgele();
+    yaz(yerel, 'olcum_z', ziyaretci);
+    oturum = oku(oturumDepo, 'olcum_o');
+    var onceki = Number(oku(oturumDepo, 'olcum_sh')) || 0;
+    yeniOturum = !oturum || Date.now() - onceki > 30 * 60e3;
+    if (yeniOturum) { oturum = rastgele(); yaz(oturumDepo, 'olcum_o', oturum); }
+    yaz(oturumDepo, 'olcum_sh', String(sonHareket));
+    return true;
+  }
 
   // --- Kuyruk ve gönderim ---
   var kuyruk = [];
@@ -87,12 +99,12 @@
     } catch (e) { return ''; }
   }
   function ekle(o) {
-    if (!izin()) return;
+    if (!kimlik()) return;
     kuyruk.push(o);
     if (kuyruk.length >= 40) gonder(false);
   }
   function gonder(cikis) {
-    if (!izin()) return void (kuyruk.length = 0);
+    if (!kimlik()) return void (kuyruk.length = 0);
     while (kuyruk.length) {
       var govde = paket(kuyruk.splice(0, 50));
       // text/plain: tarayıcı ön kontrol (preflight) isteği atmaz; sunucu yine Origin'e bakar.
@@ -103,7 +115,7 @@
 
   // --- Aktif süre: sekme görünürken ve kişi son 60 sn içinde etkileşimdeyken sayılır ---
   var ekranAdi = null, birikim = 0, sonTik = Date.now();
-  var etkilesim = function () { sonHareket = Date.now(); yaz(oturumDepo, 'olcum_sh', String(sonHareket)); };
+  var etkilesim = function () { sonHareket = Date.now(); if (ziyaretci && izin()) yaz(oturumDepo, 'olcum_sh', String(sonHareket)); };
   ['pointerdown', 'keydown', 'scroll', 'touchstart', 'mousemove'].forEach(function (t) { addEventListener(t, etkilesim, { passive: true, capture: true }); });
   etkilesim();
   function tik() {
@@ -147,12 +159,13 @@
     '.sag{right:16px}.sol{left:16px}.perde{position:fixed;inset:0;z-index:2147483001;background:rgba(15,20,18,.45);display:flex;align-items:flex-end;justify-content:center;padding:16px}' +
     '@media(min-width:600px){.perde{align-items:center}}.kutu{background:#fff;color:#1f2d27;width:100%;max-width:420px;border-radius:14px;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,.25)}' +
     'h2{margin:0 0 12px;font-size:17px}label{display:block;font-size:13px;color:#4d5c55;margin:12px 0 6px}.yildizlar{display:flex;gap:4px}' +
-    '.yildizlar button{border:0;background:none;font-size:28px;line-height:1;color:#c9cfca;cursor:pointer;padding:2px}.yildizlar button[aria-pressed=true]{color:#e0a325}' +
+    '.yildizlar button{border:0;background:none;font-size:28px;line-height:1;color:#6b756f;cursor:pointer;padding:2px}.yildizlar button.dolu{color:#8a5a00}' +
+    '.puanyaz{font-size:14px;font-weight:600;margin-left:8px;min-width:2.5em;color:#1f2d27}.puansatir{display:flex;align-items:center}' +
     'textarea,input[type=email]{width:100%;border:1px solid #cfd6d1;border-radius:8px;padding:9px 10px;font-size:14px;color:inherit;background:#fff}textarea{min-height:96px;resize:vertical}' +
     '.satir{display:flex;align-items:center;gap:8px;margin-top:10px;font-size:13px}.satir label{margin:0;color:inherit}.not{font-size:12px;color:#66746d;margin-top:10px}' +
     '.alt{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.alt button{border-radius:8px;padding:9px 14px;font-size:14px;cursor:pointer;border:1px solid #cfd6d1;background:#fff;color:#1f2d27}' +
     '.alt .ana{background:var(--renk);color:#fff;border-color:var(--renk)}.alt .ana:disabled{opacity:.6}.hata{color:#b3261e;font-size:13px;margin-top:8px}' +
-    '@media(prefers-color-scheme:dark){.kutu{background:#1d2420;color:#e4ebe6}label,.not{color:#a3b0a8}textarea,input[type=email],.alt button{background:#151a17;color:#e4ebe6;border-color:#36413a}.alt .ana{background:#7cc39b;color:#10201a;border-color:#7cc39b}}';
+    '@media(prefers-color-scheme:dark){.yildizlar button{color:#8c9a92}.yildizlar button.dolu{color:#f2c14e}.puanyaz{color:#e4ebe6}.kutu{background:#1d2420;color:#e4ebe6}label,.not{color:#a3b0a8}textarea,input[type=email],.alt button{background:#151a17;color:#e4ebe6;border-color:#36413a}.alt .ana{background:#7cc39b;color:#10201a;border-color:#7cc39b}}';
 
   function hazirla() {
     if (kok) return;
@@ -189,7 +202,7 @@
     pencere.className = 'perde';
     pencere.innerHTML =
       '<div class="kutu" role="dialog" aria-modal="true" aria-labelledby="ob"><h2 id="ob"></h2>' +
-      '<label id="op"></label><div class="yildizlar" role="group" aria-labelledby="op"></div>' +
+      '<label id="op"></label><div class="puansatir"><div class="yildizlar" role="radiogroup" aria-labelledby="op"></div><span class="puanyaz" aria-hidden="true"></span></div>' +
       '<label for="om"></label><textarea id="om" maxlength="2000"></textarea>' +
       '<div class="satir"><input type="checkbox" id="od"><label for="od"></label></div>' +
       '<div class="eposta" hidden><label for="oe"></label><input type="email" id="oe" maxlength="200" autocomplete="email"></div>' +
@@ -204,16 +217,36 @@
     $('.not').textContent = m.not;
     $('.vazgec').textContent = m.kapat;
     $('.ana').textContent = m.gonder;
-    var yildizlar = $('.yildizlar');
+    // Puan: tek seçimli radyo grubu (ekran okuyucu "3 yıldız, seçili, 3/5" der). Seçim yalnız renkle değil,
+    // dolu/boş yıldız biçimi ve yanında yazan "3/5" ile de görünür; renkler beyaz/koyu zeminde en az 3:1.
+    var yildizlar = $('.yildizlar'), puanYaz = $('.puanyaz');
+    var sec = function (n, odakla) {
+      puan = n;
+      Array.prototype.forEach.call(yildizlar.children, function (c, j) {
+        c.textContent = j < n ? '\u2605' : '\u2606';
+        c.classList.toggle('dolu', j < n);
+        c.setAttribute('aria-checked', String(j + 1 === n));
+        c.tabIndex = j + 1 === n ? 0 : -1;
+      });
+      puanYaz.textContent = n + '/5';
+      if (odakla) yildizlar.children[n - 1].focus();
+    };
     for (var i = 1; i <= 5; i++) (function (n) {
       var b = document.createElement('button');
       b.type = 'button';
-      b.textContent = '★';
-      b.setAttribute('aria-label', n + m.yildiz);
-      b.setAttribute('aria-pressed', 'false');
-      b.addEventListener('click', function () {
-        puan = n;
-        Array.prototype.forEach.call(yildizlar.children, function (c, j) { c.setAttribute('aria-pressed', String(j < n)); });
+      b.textContent = '\u2606';
+      b.setAttribute('role', 'radio');
+      b.setAttribute('aria-label', n + m.yildiz + ' (' + n + '/5)');
+      b.setAttribute('aria-checked', 'false');
+      b.tabIndex = n === 1 ? 0 : -1;
+      b.addEventListener('click', function () { sec(n); });
+      b.addEventListener('keydown', function (e) {
+        var k = e.key, h = null;
+        if (k === 'ArrowRight' || k === 'ArrowUp') h = Math.min(5, (puan || 0) + 1);
+        else if (k === 'ArrowLeft' || k === 'ArrowDown') h = Math.max(1, (puan || 2) - 1);
+        else if (k === 'Home') h = 1; else if (k === 'End') h = 5;
+        else if (k === ' ' || k === 'Enter') { e.preventDefault(); sec(n); return; }
+        if (h) { e.preventDefault(); sec(h, true); }
       });
       yildizlar.appendChild(b);
     })(i);
@@ -239,7 +272,8 @@
       var dugme = this;
       fetch(ADRES + '/v1/geri-bildirim', {
         method: 'POST', credentials: 'omit', headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify({ p: PROJE, z: ziyaretci, o: oturum, d: dil(), s: temiz(ekranArg || ekranAdi || ''), r: puan, m: metin, i: eposta }),
+        // Ölçüm kapalıysa kimlik gönderilmez (boş): geri bildirim ziyaretle ilişkilendirilmez.
+        body: JSON.stringify({ p: PROJE, z: kimlik() ? ziyaretci : '', o: kimlik() ? oturum : '', d: dil(), s: temiz(ekranArg || ekranAdi || ''), r: puan, m: metin, i: eposta }),
       }).then(function (r) { return r.json().then(function (b) { if (!r.ok) throw Error(b.hata || m.hata); }); })
         .then(function () {
           pencere.querySelector('.kutu').innerHTML = '<h2></h2><div class="alt"><button type="button" class="ana"></button></div>';
@@ -273,14 +307,14 @@
     izle();
   }
 
-  if (yeniOturum) ekle({ a: 'oturum:basla' });
+  if (kimlik() && yeniOturum) ekle({ a: 'oturum:basla' });
 
   window.olcum = {
-    surum: 1,
+    surum: 2,
     ekran: ekran,
     olay: olay,
     geriBildirimAc: function (e) { ac(e); },
-    kapat: function () { yaz(yerel, 'olcum_kapali', '1'); kuyruk.length = 0; },
+    kapat: function () { yaz(yerel, 'olcum_kapali', '1'); kuyruk.length = 0; kimlikleriSil(); ziyaretci = oturum = null; },
     ac: function () { yaz(yerel, 'olcum_kapali', null); },
   };
   var bekleyen = window.olcumKuyruk || [];
