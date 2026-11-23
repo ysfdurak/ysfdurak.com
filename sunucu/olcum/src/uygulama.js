@@ -146,7 +146,9 @@ export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = t
         const ayar = typeof b?.p === 'string' ? projeAyari(projeler, b.p) : null;
         if (!ayar) return yanit(res, 400, { hata: 'Tanınmayan proje.' }, cors);
         if (adresDenetimi && ayar.adres && new URL(ayar.adres).origin !== koken) return yanit(res, 403, { hata: 'Proje bu adresten ölçülmez.' }, cors);
-        if (!KIMLIK.test(String(b.z))) return yanit(res, 400, { hata: 'Geçersiz kimlik.' }, cors);
+        // Geri bildirimde boş kimlik kabul edilir: ölçüm kapalı tarayıcı kimlik üretmez (olcum.js 2).
+        const kimliksiz = yol === '/v1/geri-bildirim' && (b.z === '' || b.z == null);
+        if (!kimliksiz && !KIMLIK.test(String(b.z))) return yanit(res, 400, { hata: 'Geçersiz kimlik.' }, cors);
 
         if (yol === '/v1/olay') {
           if (!KIMLIK.test(String(b.o)) || !Array.isArray(b.e)) return yanit(res, 400, { hata: 'Geçersiz istek.' }, cors);

@@ -1,6 +1,6 @@
 // Veri katmanı: tablolar, olay ve geri bildirim kaydı, yönetim özetleri.
 // `db` yalnızca query(sql, params) → { rows } bekler: sunucuda node-postgres (pg.Pool), testte PGlite.
-import { createHmac, randomBytes } from 'node:crypto';
+import { createHmac, randomBytes, randomUUID } from 'node:crypto';
 
 export const AD = /^[a-z0-9_:-]{1,48}$/;
 const TZ = 'Europe/Istanbul';
@@ -95,11 +95,14 @@ export function geriBildirimDogrula(g) {
 
 export async function geriBildirimYaz(db, tuz, g) {
   const { metin, puan, iletisim } = geriBildirimDogrula(g);
-  const ziyaretci = takmaAd(tuz, g.z);
+  // Kimliksiz (ölçüm kapalı) geri bildirim: her kayda tek kullanımlık takma ad; ziyaret olaylarına bağlanmaz, huniye girmez.
+  const kimliksiz = g.z === '' || g.z == null;
+  const ziyaretci = takmaAd(tuz, kimliksiz ? 'anon:' + randomUUID() : g.z);
   await db.query(
     'INSERT INTO geri_bildirim (proje, ziyaretci, puan, metin, ekran, iletisim, dil) VALUES ($1,$2,$3,$4,$5,$6,$7)',
     [g.p, ziyaretci, puan, metin, g.s ? temizAd(g.s) : null, iletisim, ['tr', 'en'].includes(g.d) ? g.d : null],
   );
+  if (kimliksiz) return;
   // Huniye "geri bildirim verdi" adımı olarak da girer.
   await db.query("INSERT INTO olay (proje, ziyaretci, oturum, ad, dil) VALUES ($1,$2,$3,'geri_bildirim',$4)", [
     g.p, ziyaretci, takmaAd(tuz, 'o:' + (g.o || '')), ['tr', 'en'].includes(g.d) ? g.d : null,
