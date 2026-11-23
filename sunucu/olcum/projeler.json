@@ -65,5 +65,56 @@
     "ad": "Kıvılcım",
     "adres": "https://ysfdurak.github.io",
     "ekranlar": { "home": "Bugün", "games": "Oyun kütüphanesi", "progress": "Yolculuğum", "favorites": "Favorilerim" }
+  },
+  "aday": {
+    "ad": "Aday Atölyesi",
+    "adres": "https://aday.ysfdurak.com",
+    "huni": [
+      ["Açtı", "ekran:home"],
+      ["Bir vaka açtı", "ekran:cases"],
+      ["Mülakat dosyasına baktı", "ekran:dossier"],
+      ["Prova yaptı", "ekran:rehearsal"],
+      ["Geri bildirim verdi", "geri_bildirim"]
+    ],
+    "ekranlar": {
+      "home": "Çalışmam",
+      "plan": "Plan",
+      "modules": "Atölyeler",
+      "cases": "Vakalar",
+      "examples": "Deneyim örneklerim",
+      "dossier": "Mülakat dosyam",
+      "rehearsal": "Prova",
+      "cv": "CV ve ilan",
+      "growth": "Gelişim raporu",
+      "results": "Modül sonuçları",
+      "pilot": "Hesabım ve teslimler",
+      "settings": "Hedef ve kayıtlar",
+      "guide": "Nasıl çalışır?",
+      "kalibrasyon": "Kalibrasyon"
+    }
+  },
+  "destek": {
+    "ad": "Destek Merkezi (demo)",
+    "adres": "https://destek.ysfdurak.com",
+    "huni": [
+      ["Demoyu açtı", "ekran:overview"],
+      ["Destek kayıtlarına baktı", "ekran:supports"],
+      ["Onay kutusunu açtı", "ekran:approvals"],
+      ["Raporlara baktı", "ekran:reports"],
+      ["Geri bildirim verdi", "geri_bildirim"]
+    ],
+    "ekranlar": {
+      "overview": "Genel bakış",
+      "supports": "Destek kayıtları",
+      "approvals": "Onay kutusu",
+      "mismatches": "Puantaj farkları",
+      "attendance": "Puantaj",
+      "dashboard": "Gösterge paneli",
+      "reports": "Raporlar",
+      "periods": "Dönemler",
+      "history": "Geçmiş",
+      "definitions": "Tanımlar",
+      "settings": "Ayarlar"
+    }
   }
 }

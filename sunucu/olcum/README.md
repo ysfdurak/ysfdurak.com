@@ -85,7 +85,7 @@ Testler gerçek PostgreSQL yerine aynı SQL'i çalıştıran PGlite kullanır: k
 - **Biri sahte olay gönderirse?** Köken ve proje-adres eşleşmesi, IP başına hız sınırı ve istek boyutu sınırı var. Tarayıcıdan gelen veri her zaman taklit edilebileceği için bu sayılar "kanıt" değil "eğilim" olarak okunmalı.
 - **Neden vitrin demolarında açık, şirket kurulumunda kapalı?** Amaç ürünü geliştirmek; çalışanları izlemek değil.
 
-## Bağlı projeler (20 Kasım 2026)
+## Bağlı projeler (23 Kasım 2026)
 
 | Proje | Adres | Nasıl bağlı |
 | --- | --- | --- |
@@ -93,6 +93,8 @@ Testler gerçek PostgreSQL yerine aynı SQL'i çalıştıran PGlite kullanır: k
 | Diyalog Atölyesi | diyalog.ysfdurak.com | `web/olcum.js` yükleyicisi, yalnız bu adreste |
 | Video İş Etüdü (tarayıcı) | zaman-etudu.ysfdurak.com | `Web/js/olcum.js`, yalnız bu adreste |
 | Kıvılcım | ysfdurak.github.io/kivilcim-zihin-oyunlari | `olcum.js`; `navigate()` geçişleri ekran olarak bildirilir |
+| Aday Atölyesi | aday.ysfdurak.com | `web/olcum.js`, yalnız bu adreste; ekran = `#` sonrasının ilk parçası; düğme yerine menüde ve altbilgide "Geri bildirim ver" bağlantısı |
+| Destek Merkezi (demo) | destek.ysfdurak.com | Sunucu `public/olcum.js`'i yalnız `DEMO_MODE` iken sayfaya ekler ve CSP'yi o zaman açar; ekran = uygulamanın `page` değeri |
 
 Bilerek bağlanmayanlar: **Sırdaş** ve **Duruş** "veri cihazından çıkmaz" sözü verir; dış adrese bağlantı bu sözü zayıflatır. **İngilizce Atölyesi**'nin kendi izinli ölçümü var. Kesit uygulamaları "dış bağımlılık yok" ilkesiyle yayımlanıyor; eklenmesi ayrı karar.
 

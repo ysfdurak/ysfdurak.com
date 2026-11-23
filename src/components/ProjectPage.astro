@@ -62,11 +62,11 @@ const jsonLd = {
             <a class="btn primary" href={tryHref(p, lang)}>{t('project.try')}</a>
             {p.tryUrl && <a class="btn" href={liveHref(p, lang)}>{t('project.server')}</a>}
           </>
-        ) : (
+        ) : p.download ? null : (
           <span class="btn disabled" aria-disabled="true">{t('project.soon')}</span>
         )
       }
-      {p.download && <a class="btn" href={p.download}>{t('project.download')}</a>}
+      {p.download && <a class={p.url ? 'btn' : 'btn primary'} href={p.download}>{t('project.download')}</a>}
       {p.repo && <a class="btn" href={p.repo}>{t('project.code')}</a>}
       {p.repos?.map((r) => <a class="btn" href={r.url}>{t('project.code')} · {lang === 'en' && r.labelEn ? r.labelEn : r.label}</a>)}
       <span class="tag">{HOSTING_LABEL[p.hosting][lang]}</span>

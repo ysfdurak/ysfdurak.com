@@ -24,6 +24,7 @@ const t = useT(lang);
   <p class="card-actions">
     <a class="card-link" href={projectPath(p, lang)}>{t('project.how')} →</a>
     {p.url && <a class="card-link try" href={tryHref(p, lang)}>{t('project.try')} ↗</a>}
+    {!p.url && p.download && <a class="card-link try" href={p.download}>{t('project.download')} ↗</a>}
     {p.url && <span class="card-tag">{t(hasFieldResult(p) ? 'evidence.field' : 'evidence.synthetic')}</span>}
   </p>
 </article>
