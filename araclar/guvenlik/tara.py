@@ -177,7 +177,9 @@ def tara(d, audit=False):
            and '.test.' not in f and '/lib/' not in f and '/vendor/' not in f]
     for f in kod:
         t = oku(os.path.join(d, f))
-        if 'text/csv' in t and re.search(r"""replace\(/"/g,\s*['"]""['"]\)""", t) and 'csvSafe(' not in t and not re.search(r'\[=\+(\\-|-)?@|\[=\+@', t):
+        # Yalnız gerçek CSV indirmesi (Blob türü ya da data: adresi). Kesit Power BI'daki Power Query benzetiminde
+        # "text/csv" bir dosya türü metni olarak geçer, indirme değildir (yanlış alarm, 23 Kasım 2026).
+        if re.search(r'''type\s*:\s*['"]text/csv|data:text/csv''', t) and re.search(r"""replace\(/"/g,\s*['"]""['"]\)""", t) and 'csvSafe(' not in t and not re.search(r'\[=\+(\\-|-)?@|\[=\+@', t):
             b('orta', 'csv-formul', 'CSV dışa aktarımında formül koruması yok (=, +, -, @ ile başlayan hücre Excel’de formül olur)', f)
         if re.search(r'DecompressionStream\([^)]*\)\)\)\.arrayBuffer\(\)', t):
             b('orta', 'zip-sinir', 'Sıkıştırılmış veri sınırsız açılıyor (zip bombası); akışla okuyup boyutu sınırla', f)
