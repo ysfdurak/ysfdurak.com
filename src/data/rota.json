@@ -1,5 +1,5 @@
 {
-  "son_tarama": "2026-11-18",
+  "son_tarama": "2026-11-23",
   "projeler": [
     {
       "id": "video-zaman-etudu",
@@ -284,14 +284,15 @@
         "tr": "Depo yönetim sisteminden çıkan Excel raporlarını tanır ve bir kez kurulan senaryoyla formül sütunlarını, eşleştirmeleri ve vardiya sonu raporunu tek tıkla üretir. Arşivleme ve e-postayla gönderim de içerir.",
         "en": "Recognises Excel reports exported from a warehouse management system and, from a scenario set up once, builds formula columns, lookups and the shift-end report in one click. Includes archiving and email delivery."
       },
-      "durum": "pilot",
+      "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-10",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
-        "tr": "Pilot denemeler sürüyor",
-        "en": "Pilot trials in progress"
+        "tr": "Windows sürümü (3.11.1) indirilebilir; gerçek Windows ve Excel’le uçtan uca denendi",
+        "en": "Windows release (3.11.1) available for download; tested end to end with real Windows and Excel"
       },
-      "ozel_not": "Pilot bitince yayınlanacak."
+      "proje": "shiftflow",
+      "repo": "ysfdurak/ShiftFlow"
     },
     {
       "id": "butce-sapma",
@@ -303,15 +304,16 @@
         "tr": "Ay sonu kapanış dosyalarından bütçe ile gerçekleşeni karşılaştırır, sapmaları kalem ve organizasyon seviyesinde raporlar ve aydan aya bütçe değişikliklerini gösterir. Python, Excel VBA ve makrosuz Power Query sürümleri var.",
         "en": "Compares budget and actuals from month-end closing files, reports variances by item and org level and shows month-over-month budget changes. Has Python, Excel VBA and macro-free Power Query versions."
       },
-      "durum": "pilot",
+      "durum": "canli",
       "yayinda": true,
       "repo": "ysfdurak/butce-sapmasi-rapor-otomasyonu",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
-        "tr": "Kullanımda test ediliyor; daha otomatik hale getiriliyor",
-        "en": "Being tested in use; being made more automated"
+        "tr": "Tarayıcı demosu yayında; Excel makrosu Windows’ta 188/188 testle doğrulandı",
+        "en": "Browser demo is live; the Excel macro passed 188/188 tests on Windows"
       },
-      "ozel_not": "Sitede yer alıp almayacağı ayrıca konuşulacak."
+      "proje": "butce-sapmasi",
+      "canli_url": "https://ysfdurak.github.io/butce-sapmasi-rapor-otomasyonu/demo/"
     },
     {
       "id": "mal-kabul-rezervasyon",

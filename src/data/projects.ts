@@ -3,7 +3,7 @@
 
 export type Lang = 'tr' | 'en';
 export type Category = 'operasyon' | 'ekip' | 'veri' | 'ogrenme';
-export type Hosting = 'static' | 'vps' | 'desktop' | 'repo' | 'external';
+export type Hosting = 'static' | 'vps' | 'desktop' | 'windows' | 'repo' | 'external';
 
 export interface ProjectText {
   tagline: string; // tek cümle: kime, hangi problem
@@ -108,19 +108,21 @@ export const CATEGORIES: Record<Category, { tr: string; en: string; trSlug: stri
   ogrenme: { tr: 'Öğrenme', en: 'Learning', trSlug: 'ogrenme', enSlug: 'learning' },
 };
 
-export type Env = 'shared' | 'personal' | 'session' | 'device';
+export type Env = 'shared' | 'personal' | 'session' | 'device' | 'pc';
 /** Kartta tek satır: ziyaretçi ne tür bir ortama giriyor, verisi nerede duruyor. */
 export const ENV_LABEL: Record<Env, { tr: string; en: string }> = {
   shared: { tr: 'Ortak demo: örnek veri, diğer ziyaretçiler de görür', en: 'Shared demo: sample data that other visitors also see' },
   personal: { tr: 'Kişisel deneme alanı: yalnız sana açılır, süre sonunda silinir', en: 'Personal trial space: only yours, deleted after a set time' },
   session: { tr: 'Kişisel oturum: kaydedilmez, sorular yapay zekâya gider', en: 'Personal session: not saved; questions go to an AI service' },
   device: { tr: 'Yalnız cihazında çalışır: veri tarayıcından çıkmaz', en: 'Runs only on your device: data stays in your browser' },
+  pc: { tr: 'Bilgisayarına kurulur: veri bilgisayarından çıkmaz', en: 'Installed on your PC: data stays on your computer' },
 };
 
 export const HOSTING_LABEL: Record<Hosting, { tr: string; en: string }> = {
   static: { tr: 'Tarayıcıda çalışır', en: 'Runs in the browser' },
   vps: { tr: 'Sunucuda çalışır', en: 'Runs on a server' },
   desktop: { tr: 'Tarayıcı + Windows masaüstü', en: 'Browser + Windows desktop' },
+  windows: { tr: 'Windows masaüstü', en: 'Windows desktop' },
   repo: { tr: 'Kaynak kod ve vaka', en: 'Source code and case study' },
   external: { tr: 'Ayrı sitede', en: 'Separate site' },
 };
@@ -818,6 +820,95 @@ export const PROJECTS: Project[] = [
     },
   },
   // ── Öğrenme ──────────────────────────────────────────────────────
+  {
+    slug: 'shiftflow',
+    name: 'ShiftFlow Data Studio',
+    nameEn: 'ShiftFlow Data Studio – Excel Report Workflows',
+    category: 'veri',
+    hosting: 'windows',
+    env: 'pc',
+    download: 'https://github.com/ysfdurak/ShiftFlow/releases/latest',
+    repo: GH + 'ShiftFlow',
+    og: '/img/shiftflow/og.jpg',
+    turkishOnly: { en: 'The interface and guides are in Turkish; it reads Turkish-language WMS reports and Excel formulas.' },
+    tech: ['Python', 'PySide6 (Qt)', 'pandas', 'openpyxl', 'PyInstaller', 'GitHub Actions (Windows)'],
+    shots: [
+      { src: '/img/shiftflow/is-akisi.webp', w: 1366, h: 768, alt: { tr: 'ShiftFlow iş akışı: solda veri kümeleri ve sırayla uygulanan işlem adımları, sağda seçili adımın sonucu', en: 'ShiftFlow workflow: datasets and ordered steps on the left, the result of the selected step on the right' } },
+      { src: '/img/shiftflow/excel-formulleri.webp', w: 980, h: 420, alt: { tr: 'Excel’den taşıma: raporun yanındaki formüllü sütunlar okunup ShiftFlow formülüne çevrilir ve Excel’in değerleriyle karşılaştırılır', en: 'Moving from Excel: formula columns next to the report are read, converted to ShiftFlow formulas and compared with Excel’s own values' } },
+      { src: '/img/shiftflow/gosterge-paneli.webp', w: 1100, h: 700, alt: { tr: 'Gösterge paneli: iş akışıyla kaydedilen ve her açılışta güncel sonuçtan hesaplanan kutucuklar', en: 'Dashboard: tiles saved with the workflow and recalculated from the latest result each time' } },
+    ],
+    tr: {
+      tagline: 'Excel’de her gün elle yapılan rapor hazırlığını bir kez tanımlayıp her vardiya tek tıkla tekrar çalıştıran Windows uygulaması.',
+      problem:
+        'Vardiya sonu raporları her gün aynı adımlarla hazırlanır: WMS çıktısını aç, temizle, filtrele, personel listesiyle eşleştir, hesapla, özetle, maille. Adımlar kişinin kafasındadır; biri unutulunca ya da rapor biçimi değişince sonuç sessizce yanlış çıkar.',
+      solution: [
+        'Temizleme, filtre, DÜŞEYARA benzeri eşleştirme, hesap, pivot ve birleştirme adımları kaydedilir; her adımın sonucu ayrı görülür',
+        'Dönem (tarih + vardiya) seçilip “Rapor oluştur” denince aynı akış yeni raporla çalışır; biçim değişikliği ve eksik rapor yakalanır',
+        'Excel’de raporun yanına eklenmiş formüllü sütunlar okunur, ShiftFlow formülüne çevrilir ve Excel’in değerleriyle karşılaştırılır',
+        'Sonuç grafikli Excel’e yazılır ve dönemiyle arşivlenir; vardiya maili önizlemeyle hazırlanır, onaysız gönderilmez',
+        'Veri yalnız bilgisayarda işlenir; kaynak dosyalar değiştirilmez',
+      ],
+    },
+    en: {
+      tagline: 'A Windows app that captures the Excel report preparation done by hand every day once, then re-runs it for each shift in one click.',
+      problem:
+        'End-of-shift reports are prepared with the same steps every day: open the WMS export, clean, filter, match against the staff list, calculate, summarise, email. The steps live in one person’s head; when one is forgotten or the report layout changes, the result is silently wrong.',
+      solution: [
+        'Cleaning, filter, VLOOKUP-style matching, calculation, pivot and merge steps are recorded; the result of each step can be inspected',
+        'Pick the period (date + shift) and “Create report” runs the same flow on the new report; layout changes and missing reports are caught',
+        'Formula columns added next to the report in Excel are read, converted to ShiftFlow formulas and checked against Excel’s values',
+        'Output goes to a charted Excel file archived with its period; the shift email is prepared with a preview and never sent without approval',
+        'Data is processed only on the computer; source files are never changed',
+      ],
+    },
+  },
+  {
+    slug: 'butce-sapmasi',
+    name: 'Bütçe Sapması',
+    nameEn: 'Bütçe Sapması – Budget Variance Reporting',
+    category: 'veri',
+    hosting: 'desktop',
+    env: 'device',
+    url: 'https://ysfdurak.github.io/butce-sapmasi-rapor-otomasyonu/demo/',
+    isaret: 'Bütçe Sapması',
+    repo: GH + 'butce-sapmasi-rapor-otomasyonu',
+    og: '/img/butce-sapmasi/og.jpg',
+    turkishOnly: { en: 'Built for Turkish monthly-closing files: the interface, report sheets and the synthetic sample data are in Turkish.' },
+    tech: ['Python', 'Pyodide (tarayıcıda Python)', 'openpyxl', 'Excel VBA', 'Power Query'],
+    shots: [
+      { src: '/img/butce-sapmasi/genel-durum.webp', w: 1440, h: 1000, alt: { tr: 'Bütçe Sapması genel durum: en büyük üç bütçe aşımı, bütçe ve gerçekleşen tutarlar, sapma oranı', en: 'Budget variance overview: the three largest overruns, budget and actual totals, variance rate' } },
+      { src: '/img/butce-sapmasi/sapma-oncelikleri.webp', w: 1440, h: 1000, alt: { tr: 'Sapma öncelikleri: brüt bütçe aşımı, aşan bölüm sayısı ve en büyük 10 aşım grafiği', en: 'Variance priorities: gross overrun, number of departments over budget and the 10 largest overruns' } },
+      { src: '/img/butce-sapmasi/bolum-analizi.webp', w: 1440, h: 1000, alt: { tr: 'Bölüm analizi: bölüm ve müdürlük bazında gerçekleşen, bütçe ve sapma', en: 'Department analysis: actual, budget and variance by department and directorate' } },
+    ],
+    demo: {
+      tr: 'Giriş gerekmez. Sentetik veriyle açılır; Python kodu tarayıcında çalışır, dosyalar hiçbir yere gönderilmez. İlk açılışta Python motoru indirilir (yaklaşık 10 saniye).',
+      en: 'No sign-in. Opens with synthetic data; the Python code runs in your browser and files are not sent anywhere. The first visit downloads the Python engine (about 10 seconds).',
+    },
+    tr: {
+      tagline: 'Aylık kapanışta bütçe sapmasını kaynak Excel’lerden hesaplayan, en büyük aşımları ve açıklama ihtiyacını öne çıkaran raporlama otomasyonu.',
+      problem:
+        'Her ay kapanışta bölümlerin maliyet dosyaları, ciro ve endeks Excel’leri elle birleştirilir; bütçe ile gerçekleşen karşılaştırılır, büyük sapmalar için açıklama istenir. İş günler sürer, formül hatası ve önceki ayın yorumunun yanlış satıra taşınması sık olur.',
+      solution: [
+        'Maliyet klasörü, ciro/kontrol ve endeks Excel’leri ayar dosyasındaki eşleştirmelerle okunur; seçili ay kümesi önceki yılda da aynen uygulanır',
+        'Yönetici özeti, önemli sapmalar (eşik + açıklama zorunluluğu), yıl sonu tahmini, hacim ve birim maliyet etkisi',
+        'Önceki dönemin açıklamaları inceleme kuyruğuna gelir; toplu onay, onay izi (kim, ne zaman) ve kaynak hücrelere kadar hesap izi',
+        'Üç çalıştırma seçeneği: Python yerel panosu, Excel VBA ve makrosuz Power Query şablonu; hepsi aynı hesap kurallarıyla aynı rapor sayfalarını üretir',
+        'Veri bilgisayarda kalır; tarayıcı demosu sentetik veriyle çalışır',
+      ],
+    },
+    en: {
+      tagline: 'Reporting automation that calculates budget variance from the source Excel files at month-end and brings the largest overruns and the comments they need to the front.',
+      problem:
+        'At every month-end close, department cost files, revenue and index workbooks are merged by hand; budget is compared with actuals and comments are requested for large variances. It takes days, and formula errors or last month’s comments landing on the wrong line are common.',
+      solution: [
+        'Cost folder, revenue/control and index workbooks are read through the mappings in a settings file; the selected set of months is applied to the previous year as well',
+        'Executive summary, significant variances (threshold + mandatory comment), year-end forecast, volume and unit-cost effects',
+        'Previous-period comments come back into a review queue; bulk approval, an approval trail (who, when) and a calculation trail down to the source cells',
+        'Three ways to run it: a local Python dashboard, Excel VBA and a macro-free Power Query template; all use the same calculation rules and produce the same report sheets',
+        'Data stays on the computer; the browser demo runs on synthetic data',
+      ],
+    },
+  },
   {
     slug: 'kesit',
     caseStudy: {
