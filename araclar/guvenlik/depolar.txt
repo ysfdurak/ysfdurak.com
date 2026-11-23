@@ -10,6 +10,7 @@ kesit-powerbi
 kesit-python
 kesit-sql
 kivilcim-zihin-oyunlari
+measure-sieve
 pusula-is-takip
 ShiftFlow
 sirdas
