@@ -16,7 +16,7 @@
       "yayinda": true,
       "canli_url": "https://zaman-etudu.ysfdurak.com/",
       "repo": "ysfdurak/video-zaman-etudu",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
         "tr": "Gizlilik öncelikli yol haritasının 1. aşaması (güven ve gizlilik) başladı",
         "en": "Phase 1 (trust and privacy) of a privacy-first roadmap has started"
@@ -38,7 +38,7 @@
       "yayinda": true,
       "canli_url": "https://durus.ysfdurak.com/",
       "repo": "ysfdurak/durus-ergonomi",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
         "tr": "Türkçe ve İngilizce yayında",
         "en": "Live in Turkish and English"
@@ -60,7 +60,7 @@
       "yayinda": true,
       "canli_url": "https://destek.ysfdurak.com/",
       "repo": "ysfdurak/destek-merkezi",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
         "tr": "Kendi sunucumda yayında",
         "en": "Live on my own server"
@@ -82,7 +82,7 @@
       "yayinda": true,
       "canli_url": "https://ivme.ysfdurak.com/",
       "repo": "ysfdurak/ivme-oneri-kaizen",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
         "tr": "Türkçe ve İngilizce canlı demo yayında",
         "en": "Live demo in Turkish and English"
@@ -104,7 +104,7 @@
       "yayinda": true,
       "canli_url": "https://pusula.ysfdurak.com/",
       "repo": "ysfdurak/pusula-is-takip",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
         "tr": "Google ile giriş ve Claude bağlantısıyla yayında",
         "en": "Live with Google sign-in and Claude connection"
@@ -126,7 +126,7 @@
       "yayinda": true,
       "canli_url": "https://aday.ysfdurak.com/",
       "repo": "ysfdurak/aday_atolyesi",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
         "tr": "Canlı demo yayında",
         "en": "Live demo"
@@ -148,7 +148,7 @@
       "yayinda": true,
       "canli_url": "https://ysfdurak.github.io/",
       "repo": "ysfdurak/kesit-sql",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
         "tr": "Yayında; kullanıcı hesapları planlanıyor",
         "en": "Live; user accounts being planned"
@@ -170,7 +170,7 @@
       "yayinda": true,
       "canli_url": "https://ingilizce-atolyesi.ysfdurak.com/",
       "repo": "ysfdurak/ingilizce-ogrenme-atolyesi",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
         "tr": "Kendi adresinde yayında",
         "en": "Live at its own address"
@@ -191,7 +191,7 @@
       "yayinda": true,
       "canli_url": "https://diyalog.ysfdurak.com/",
       "repo": "ysfdurak/diyalog-atolyesi",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-20",
       "durum_notu": {
         "tr": "Canlı; soru modunda varyant sistemi geliştiriliyor",
         "en": "Live; a variant system for the question mode is being built"
@@ -349,7 +349,7 @@
       "yayinda": true,
       "canli_url": "https://sirdas.ysfdurak.com/",
       "repo": "ysfdurak/sirdas",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
         "tr": "Yayında (1.1): Excel eklentisi, biçimi koruyan Excel, Word, PowerPoint, JSON/XML ve PDF desteği eklendi; eski adı Örtü",
         "en": "Live (1.1): Excel add-in, formatting-preserving Excel, Word, PowerPoint, JSON/XML and PDF support added; formerly called Örtü"
@@ -461,14 +461,16 @@
         "tr": "Power BI raporlarında hiçbir yerde kullanılmayan ölçüleri bulur; böylece gereksizler silinip model sadeleşir ve kafa karışıklığı azalır.",
         "en": "Finds measures that are not used anywhere in Power BI reports, so the unneeded ones can be removed and the model stays clean."
       },
-      "durum": "gelistiriliyor",
+      "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-23",
       "durum_notu": {
-        "tr": "Yayına hazırlanıyor; sütun ve tablo taraması, gerçek dosya testleri ve MCP sunucusu eklendi; adı Ölçü Eleği’nden Measure Sieve oldu",
-        "en": "Being prepared for release; column and table scanning, real-file tests and an MCP server added; renamed from Ölçü Eleği to Measure Sieve"
+        "tr": "Yayında; PBIX dosyalarını tarayıcıda okuyor, temizlenmiş kopya ve sayısal doğrulama var",
+        "en": "Live; reads PBIX files in the browser, with a cleaned copy and numeric verification"
       },
-      "ozel_not": ""
+      "ozel_not": "",
+      "canli_url": "https://measure-sieve.ysfdurak.com/",
+      "repo": "ysfdurak/measure-sieve"
     },
     {
       "id": "sunum-atolyesi",
@@ -521,7 +523,7 @@
       "durum": "beklemede",
       "yayinda": false,
       "repo": "ysfdurak/kivilcim-zihin-oyunlari",
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-20",
       "durum_notu": {
         "tr": "Şimdilik kapatıldı; kullanıcı hesapları sunucuya geçişte ele alınacak",
         "en": "Closed for now; user accounts to be revisited on the server"
