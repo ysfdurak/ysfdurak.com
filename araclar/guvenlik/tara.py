@@ -8,7 +8,9 @@ arar; yeni bir proje de aynı listeyle başlar (docs/GUVENLIK_TEMELI.md). Haftal
 Kullanım:
   python3 araclar/guvenlik/tara.py <depo-klasörü>...            # rapor (Markdown) yazar
   python3 araclar/guvenlik/tara.py --audit <depo-klasörü>...    # npm audit de çalıştırır (ağ gerekir)
-Çıkış kodu: YÜKSEK ya da orta bulgu varsa 1.
+  --beklenen=depolar.txt --atlanan=atlanan.txt   # kapsam: beklenen / taranan / atlanan ayrı yazılır
+Çıkış kodu: 0 temiz · 1 YÜKSEK ya da orta bulgu · 2 tarama tamamlanamadı (depo atlandı ya da npm audit okunamadı;
+bu durumda sonuç "temiz" sayılmaz ve açık issue kapatılmaz).
 İstisnalar: araclar/guvenlik/istisnalar.json (her istisna gerekçesiyle).
 """
 import json, os, re, subprocess, sys
@@ -40,6 +42,9 @@ def istisna_mi(depo, kural, yer):
         if i['kural'] == kural and re.search(i.get('yer', '.*'), yer or ''):
             return True
     return False
+
+
+EKSIK = []  # (depo, dosya, neden): denetimi tamamlanamayanlar
 
 
 def tara(d, audit=False):
@@ -212,13 +217,18 @@ def tara(d, audit=False):
                 b('orta', 'manifest-ozet', 'release-manifest.json özeti dosyayla tutmuyor (CI düşer)', yol)
 
     # --- Bağımlılık açıkları
+    # npm audit okunamazsa (ağ, kayıt, bozuk çıktı, zaman aşımı) depo "temiz" sayılmaz: denetim tamamlanamadı olarak raporlanır.
     if audit:
         for lock in [f for f in F if f.endswith('package-lock.json') and not f.startswith(ATLA)]:
             kl = os.path.join(d, os.path.dirname(lock))
-            r = subprocess.run(['npm', 'audit', '--omit=dev', '--json'], cwd=kl, capture_output=True, text=True, timeout=180)
             try:
-                v = json.loads(r.stdout).get('metadata', {}).get('vulnerabilities', {})
-            except json.JSONDecodeError:
+                r = subprocess.run(['npm', 'audit', '--omit=dev', '--json'], cwd=kl, capture_output=True, text=True, timeout=180)
+                j = json.loads(r.stdout)
+                if 'error' in j or 'metadata' not in j:
+                    raise ValueError((j.get('error') or {}).get('summary') or 'npm audit çıktısında özet yok')
+                v = j['metadata'].get('vulnerabilities', {})
+            except (json.JSONDecodeError, ValueError, subprocess.TimeoutExpired, OSError) as e:
+                EKSIK.append((depo, lock, str(e).splitlines()[0][:160] if str(e) else type(e).__name__))
                 continue
             for sev, n in v.items():
                 if n and sev in ('critical', 'high'):
@@ -228,16 +238,35 @@ def tara(d, audit=False):
     return depo, B
 
 
+def secenek(ad):
+    """--ad=deger biçimindeki seçeneği döndürür."""
+    for a in sys.argv[1:]:
+        if a.startswith(f'--{ad}='):
+            return a.split('=', 1)[1]
+    return None
+
+
+def liste(yol):
+    if not yol or not os.path.exists(yol):
+        return []
+    return [x.strip() for x in open(yol, encoding='utf-8') if x.strip() and not x.startswith('#')]
+
+
 def main():
+    """Çıkış kodu: 0 temiz · 1 orta/YÜKSEK bulgu · 2 tarama tamamlanamadı (depo atlandı ya da denetim okunamadı)."""
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     audit = '--audit' in sys.argv
+    beklenen = liste(secenek('beklenen'))
+    atlanan = liste(secenek('atlanan'))
     toplam = Counter()
     satir = ['# Portföy güvenlik taraması', '', f'Kurallar ve gerekçeleri: `docs/GUVENLIK_TEMELI.md`. İstisnalar: `araclar/guvenlik/istisnalar.json`.', '']
+    taranan = []
     for d in args:
         depo, B = tara(d, audit)
+        taranan.append(depo)
         toplam.update(s for s, *_ in B)
         if not B:
-            satir.append(f'- **{depo}**: temiz')
+            satir.append(f'- **{depo}**: temiz' + (' (bağımlılık denetimi tamamlanamadı, aşağıya bak)' if any(e[0] == depo for e in EKSIK) else ''))
             continue
         satir.append(f'- **{depo}**: {len(B)} bulgu')
         grup = Counter((s, m) for s, k, m, y in B)
@@ -247,9 +276,22 @@ def main():
         for (s, m), n in sorted(grup.items(), key=lambda x: SIRA.index(x[0][0])):
             ys = [y for y in yerler[(s, m)] if y][:3]
             satir.append(f'  - [{s}] {m}' + (f' ×{n}' if n > 1 else '') + (f' — `{"`, `".join(ys)}`' if ys else ''))
-    satir += ['', 'Özet: ' + ', '.join(f'{k} {toplam[k]}' for k in SIRA if toplam[k]) if toplam else 'Özet: bulgu yok']
+    eksik_depo = [x for x in beklenen if x not in taranan and x not in atlanan]
+    satir += ['', '## Kapsam', '',
+              f'- Beklenen: {len(beklenen)} depo' if beklenen else '- Beklenen: liste verilmedi',
+              f'- Taranan: {len(taranan)} depo',
+              f'- Atlanan (klonlanamadı): {len(atlanan)}' + (f' — {", ".join(atlanan)}' if atlanan else ''),
+              ]
+    if eksik_depo:
+        satir.append(f'- Listede olup taranmayan: {", ".join(eksik_depo)}')
+    if EKSIK:
+        satir += ['', '## Denetim tamamlanamadı', '']
+        satir += [f'- **{d}** `{y}`: {n}' for d, y, n in EKSIK]
+    eksik = bool(atlanan or eksik_depo or EKSIK)
+    satir += ['', 'Özet: ' + (', '.join(f'{k} {toplam[k]}' for k in SIRA if toplam[k]) if toplam else 'bulgu yok')
+              + (' · DENETİM TAMAMLANAMADI: sonuç "temiz" sayılmaz' if eksik else '')]
     print('\n'.join(satir))
-    sys.exit(1 if toplam['YÜKSEK'] or toplam['orta'] else 0)
+    sys.exit(2 if eksik else 1 if toplam['YÜKSEK'] or toplam['orta'] else 0)
 
 
 if __name__ == '__main__':
