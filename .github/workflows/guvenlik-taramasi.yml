@@ -1,6 +1,7 @@
 # Portföy güvenlik taraması: her pazartesi bütün depolar aynı kurallarla denetlenir (araclar/guvenlik/tara.py).
 # YÜKSEK ya da orta bulgu varsa "guvenlik" etiketli issue açılır/güncellenir (GitHub e-postayla haber verir);
-# temizse açık issue kapatılır. Kurallar: docs/GUVENLIK_TEMELI.md · istisnalar: araclar/guvenlik/istisnalar.json
+# yalnızca tam ve temiz taramada açık issue kapatılır. Depo klonlanamaz ya da npm audit okunamazsa
+# sonuç "tamamlanamadı"dır: issue'ya yazılır, kapatılmaz. Kurallar: docs/GUVENLIK_TEMELI.md · istisnalar: araclar/guvenlik/istisnalar.json
 name: Güvenlik taraması
 
 on:
@@ -28,8 +29,10 @@ jobs:
       - name: Depoları klonla (salt okuma, herkese açık)
         run: |
           mkdir -p ../depolar
+          : > atlanan.txt
           while read -r d; do
-            [ -n "$d" ] && git clone -q --depth 1 "https://github.com/ysfdurak/$d.git" "../depolar/$d"
+            [ -z "$d" ] && continue
+            git clone -q --depth 1 "https://github.com/ysfdurak/$d.git" "../depolar/$d" || echo "$d" >> atlanan.txt
           done < araclar/guvenlik/depolar.txt
           ln -s "$GITHUB_WORKSPACE" ../depolar/ysfdurak.com
       - name: Tara
@@ -37,7 +40,7 @@ jobs:
         run: |
           pip install -q pyyaml
           set +e
-          python3 araclar/guvenlik/tara.py --audit ../depolar/* > rapor.md
+          python3 araclar/guvenlik/tara.py --audit --beklenen=araclar/guvenlik/depolar.txt --atlanan=atlanan.txt ../depolar/* > rapor.md
           echo "kod=$?" >> "$GITHUB_OUTPUT"
           cat rapor.md >> "$GITHUB_STEP_SUMMARY"
       - name: Issue aç / güncelle / kapat
@@ -48,9 +51,12 @@ jobs:
         run: |
           gh label create guvenlik --color B60205 --description "Haftalık güvenlik taraması" 2>/dev/null || true
           ACIK=$(gh issue list --label guvenlik --state open --json number --jq '.[0].number')
-          if [ "$KOD" != "0" ]; then
+          # 0 temiz · 1 bulgu var · 2 tamamlanamadı (ya da beklenmeyen hata): yalnız 0'da kapatılır.
+          if [ "$KOD" = "0" ]; then
+            [ -n "$ACIK" ] && gh issue close "$ACIK" --comment "Tarama tam ve temiz: bütün bulgular kapandı."
+          else
+            BASLIK="Güvenlik taraması: bulgu var"; [ "$KOD" != "1" ] && BASLIK="Güvenlik taraması: denetim tamamlanamadı"
             if [ -n "$ACIK" ]; then gh issue comment "$ACIK" --body-file rapor.md
-            else gh issue create --title "Güvenlik taraması: bulgu var" --label guvenlik --body-file rapor.md; fi
-          elif [ -n "$ACIK" ]; then
-            gh issue close "$ACIK" --comment "Tarama temiz: bütün bulgular kapandı."
+            else gh issue create --title "$BASLIK" --label guvenlik --body-file rapor.md; fi
           fi
+          true

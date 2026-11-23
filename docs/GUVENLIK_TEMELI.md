@@ -78,5 +78,12 @@ Bu liste, Kasım 2026'daki inceleme turlarında portföy projelerinde tek tek bu
 
 1. Depoyu bu listeyle aç: lisans, dependabot, `.gitignore`, iş akışı izinleri, CSP ve başlıklar.
 2. Sunucu gerekiyorsa (kalıcı veri, giriş, sürekli çalışma) bunu baştan söyle; 3. ve 4. bölümü uygula, `sunucu/kurulum-<proje>.sh` ve Caddy bloğunu ekle.
-3. İlk gönderimden önce `python3 araclar/guvenlik/tara.py ../<proje>` temiz çıkmalı; depo adını `araclar/guvenlik/depolar.txt`'ye ekle.
+3. İlk gönderimden önce `python3 araclar/guvenlik/tara.py ../<proje>` temiz çıkmalı; depo adını `araclar/guvenlik/depolar.txt`'ye ekle (GitHub'daki adıyla, büyük-küçük harf dahil).
    Tarayıcıda kayıt tutan ve yedek içe aktaran projede ayrıca: `python3 araclar/guvenlik/zehir_gezgin.py ../<proje> index.html oznitelik` ve `… metin` → "tetiklenen yok" çıkmalı. Araç uygulamayı gezer, tarayıcı kaydındaki her metni betikli değerle değiştirir (kötü niyetli yedek gibi) ve yeniden gezer.
+
+## Tarama sonucu nasıl okunur (23 Kasım 2026)
+
+- Rapor sonundaki **Kapsam** bölümü beklenen (`depolar.txt`), taranan ve klonlanamadığı için atlanan depoları ayrı sayar.
+- `npm audit` okunamazsa (ağ, kayıt hatası, bozuk çıktı, zaman aşımı) o dosya **Denetim tamamlanamadı** altında yazılır; depo "temiz" sayılmaz.
+- Çıkış kodu: 0 tam ve temiz · 1 orta/YÜKSEK bulgu · 2 tamamlanamadı. Açık "guvenlik" issue'su yalnız 0'da kapatılır; 2'de issue'ya yorum düşer.
+- Neden: önceden ShiftFlow listede yoktu ve denetim okunamayınca depo sessizce temiz görünüyor, açık issue kendiliğinden kapanabiliyordu (denetim D17, D18).
