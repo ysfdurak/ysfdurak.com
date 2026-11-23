@@ -18,8 +18,8 @@
       "repo": "ysfdurak/video-zaman-etudu",
       "son_guncelleme": "2026-11-23",
       "durum_notu": {
-        "tr": "Gizlilik öncelikli yol haritasının 1. aşaması (güven ve gizlilik) başladı",
-        "en": "Phase 1 (trust and privacy) of a privacy-first roadmap has started"
+        "tr": "Windows sürümü 2.2.5 yayında; gizlilik öncelikli yol haritasının 1. aşaması (güven ve gizlilik) sürüyor",
+        "en": "Windows release 2.2.5 is out; phase 1 (trust and privacy) of a privacy-first roadmap is under way"
       },
       "ozel_not": "Sıradaki: yerel, salt okunur MCP (Seviye 1). Kullanım sınırı fikri sonra."
     },
@@ -150,8 +150,8 @@
       "repo": "ysfdurak/kesit-sql",
       "son_guncelleme": "2026-11-23",
       "durum_notu": {
-        "tr": "Yayında; kullanıcı hesapları planlanıyor",
-        "en": "Live; user accounts being planned"
+        "tr": "Yayında; Kesit SQL MySQL ve PostgreSQL’de gerçek sunucuyla doğrulandı; kullanıcı hesapları planlanıyor",
+        "en": "Live; Kesit SQL verified against real MySQL and PostgreSQL servers; user accounts being planned"
       },
       "ozel_not": "Hesap öncelikleri: cihazlar arası ilerleme ve kullanım istatistikleri."
     },
@@ -310,8 +310,8 @@
       "repo": "ysfdurak/butce-sapmasi-rapor-otomasyonu",
       "son_guncelleme": "2026-11-23",
       "durum_notu": {
-        "tr": "Tarayıcı demosu yayında; Excel makrosu Windows’ta 188/188 testle doğrulandı",
-        "en": "Browser demo is live; the Excel macro passed 188/188 tests on Windows"
+        "tr": "Tarayıcı demosu yayında; Excel makrosu Windows’ta 188/188 testle doğrulandı, Power Query şablonu gerçek Excel’de denendi",
+        "en": "Browser demo is live; the Excel macro passed 188/188 tests on Windows and the Power Query template was tried in real Excel"
       },
       "proje": "butce-sapmasi",
       "canli_url": "https://ysfdurak.github.io/butce-sapmasi-rapor-otomasyonu/demo/"
@@ -352,8 +352,8 @@
       "repo": "ysfdurak/sirdas",
       "son_guncelleme": "2026-11-23",
       "durum_notu": {
-        "tr": "Yayında (1.1): Excel eklentisi, biçimi koruyan Excel, Word, PowerPoint, JSON/XML ve PDF desteği eklendi; eski adı Örtü",
-        "en": "Live (1.1): Excel add-in, formatting-preserving Excel, Word, PowerPoint, JSON/XML and PDF support added; formerly called Örtü"
+        "tr": "Yayında (1.2.4): Excel eklentisi, biçimi koruyan Excel, Word, PowerPoint, JSON/XML ve PDF desteği; eski adı Örtü",
+        "en": "Live (1.2.4): Excel add-in, formatting-preserving Excel, Word, PowerPoint, JSON/XML and PDF support; formerly called Örtü"
       },
       "ozel_not": ""
     },
@@ -466,8 +466,8 @@
       "yayinda": true,
       "son_guncelleme": "2026-11-23",
       "durum_notu": {
-        "tr": "Yayında; PBIX dosyalarını tarayıcıda okuyor, temizlenmiş kopya ve sayısal doğrulama var",
-        "en": "Live; reads PBIX files in the browser, with a cleaned copy and numeric verification"
+        "tr": "Yayında; Windows’ta Power BI Desktop ile uçtan uca test edildi. PBIX dosyalarını tarayıcıda okuyor, temizlenmiş kopya ve sayısal doğrulama var",
+        "en": "Live; tested end to end with Power BI Desktop on Windows. Reads PBIX files in the browser, with a cleaned copy and numeric verification"
       },
       "ozel_not": "",
       "canli_url": "https://measure-sieve.ysfdurak.com/",
@@ -587,6 +587,25 @@
         "en": "Scope document drafted"
       },
       "ozel_not": "Uygulama adı (Nabız) kesinleşmedi."
+    },
+    {
+      "id": "forum-nabzi",
+      "ad": {
+        "tr": "Forum Nabzı",
+        "en": "Forum Pulse"
+      },
+      "aciklama": {
+        "tr": "Power BI topluluk forumundaki “çalışmıyor” sorularını toplar ve kök nedenlerine göre sınıflar; en sık sorunların Pareto’sunu çıkarır.",
+        "en": "Collects “not working” questions from the Power BI community forum and classifies them by root cause, producing a Pareto of the most common problems."
+      },
+      "durum": "gelistiriliyor",
+      "yayinda": false,
+      "son_guncelleme": "2026-11-23",
+      "durum_notu": {
+        "tr": "Plan ve toplayıcının ilk sürümü (0.1) hazır",
+        "en": "Plan and first collector version (0.1) ready"
+      },
+      "ozel_not": ""
     }
   ]
 }
