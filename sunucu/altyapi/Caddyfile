@@ -66,6 +66,11 @@ nabiz.ysfdurak.com {
 	import uygulama nabiz:8080
 }
 
+# Emanet + Usta: çağrı yönlendirme (ML) ve kişiye bağımlılık riski, ziyaretçi demosu, anahtarlı MCP (github.com/ysfdurak/emanet)
+emanet.ysfdurak.com {
+	import uygulama emanet:8000
+}
+
 # Ortak ölçüm ve geri bildirim: tüm uygulamalar olayları buraya gönderir, yönetim /yonetim (sunucu/olcum)
 olcum.ysfdurak.com {
 	import uygulama olcum:8080

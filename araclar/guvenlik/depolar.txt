@@ -4,6 +4,7 @@ butce-sapmasi-rapor-otomasyonu
 destek-merkezi
 diyalog-atolyesi
 durus-ergonomi
+emanet
 ingilizce-ogrenme-atolyesi
 ivme-oneri-kaizen
 kesit-istatistik
