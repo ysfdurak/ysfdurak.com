@@ -1,4 +1,5 @@
 aday_atolyesi
+ariza-defteri
 butce-sapmasi-rapor-otomasyonu
 destek-merkezi
 diyalog-atolyesi
@@ -11,6 +12,8 @@ kesit-python
 kesit-sql
 kivilcim-zihin-oyunlari
 measure-sieve
+nabiz
+nabiz-analiz
 pusula-is-takip
 ShiftFlow
 sirdas

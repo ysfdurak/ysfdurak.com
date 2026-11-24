@@ -1,0 +1,26 @@
+name: Testler
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Bağımlılıklar (özetlerle doğrulanarak)
+        run: pip install --require-hashes -r requirements-dev.txt
+      - name: Testler (matematik, kör tahmin, HTTP, MCP)
+        run: python -m pytest -q
+      - name: Bilinen açıklar (pip-audit)
+        run: pip install pip-audit && pip-audit -r requirements.txt --require-hashes --disable-pip

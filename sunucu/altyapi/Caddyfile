@@ -55,6 +55,17 @@ diyalog.ysfdurak.com {
 	import uygulama diyalog:8080
 }
 
+# Arıza Defteri: ortak arıza kayıt servisi + sentetik veri, API ve MCP (github.com/ysfdurak/ariza-defteri)
+# Nabız, Usta ve Emanet içeriden http://ariza-defteri:8080 ile okur; bu blok yalnız dışarıdan erişim için.
+ariza.ysfdurak.com {
+	import uygulama ariza-defteri:8080
+}
+
+# Nabız: depo ekipmanı TPM (QR, otonom bakım kontrolü, etiket → Pusula), MCP (github.com/ysfdurak/nabiz)
+nabiz.ysfdurak.com {
+	import uygulama nabiz:8080
+}
+
 # Ortak ölçüm ve geri bildirim: tüm uygulamalar olayları buraya gönderir, yönetim /yonetim (sunucu/olcum)
 olcum.ysfdurak.com {
 	import uygulama olcum:8080

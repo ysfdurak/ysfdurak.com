@@ -1,0 +1,31 @@
+# ysfdurak.com ortak altyapısında çalıştırma.
+#   cd deploy && sudo docker compose -f docker-compose.ortak.yml up -d --build
+# Dışarı açılacaksa ortak Caddyfile'a blok eklenir; yalnız iç ağdan kullanılıyorsa blok gerekmez.
+# Kalıcı veri gerekiyorsa: volumes: - PROJE_ADI-data:/data (ve en altta volumes: tanımı); read_only kalır.
+name: PROJE_ADI
+services:
+  PROJE_ADI:
+    build: ..
+    container_name: PROJE_ADI
+    env_file: ../.env
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    mem_limit: 384m
+    pids_limit: 64
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
