@@ -66,5 +66,12 @@
       "yer": "^lib/server\\.ts$",
       "neden": "Kaizen123! yalnız demo kurulumunda (IVME_DEMO açık, giriş ekranında yazılı). Şirket kurulumunda (IVME_DEMO=0) yönetici şifresi IVME_ILK_SIFRE gizli değerinden gelir, tanımsızsa uygulama açılmaz."
     }
+  ],
+  "ShiftFlow": [
+    {
+      "kural": "postmessage",
+      "yer": "web/vendor/pyodide/",
+      "neden": "Pyodide'ın kendi derlenmiş dosyası (üçüncü taraf, SHA256SUMS ile doğrulanıyor); kendi worker iletişimi, bizim kodumuz değil."
+    }
   ]
 }
