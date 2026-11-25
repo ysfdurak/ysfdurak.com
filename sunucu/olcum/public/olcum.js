@@ -156,6 +156,12 @@
   var CSS = ':host{all:initial;--renk:' + RENK + '}*{box-sizing:border-box;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}' +
     '.dugme{position:fixed;bottom:16px;z-index:2147483000;border:0;border-radius:999px;padding:10px 16px;background:var(--renk);color:#fff;font-size:14px;font-weight:600;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.18)}' +
     '.dugme:focus-visible,button:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid #7cc39b;outline-offset:2px}' +
+    // Dar ekranda yalnız simge (48 px yuvarlak): içerikle çakışan alan küçülür. Aşağı kaydırırken gizlenir, yukarı kaydırınca ya da durunca geri gelir.
+    '.dugme{display:inline-flex;align-items:center;gap:6px;transition:transform .2s ease,opacity .2s ease}.ikon{display:none;width:22px;height:22px}' +
+    '.dugme.gizli{transform:translateY(96px);opacity:0;pointer-events:none}' +
+    '@media(max-width:599px){.dugme{width:48px;height:48px;padding:0;justify-content:center}.ikon{display:block}' +
+    '.metin{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}}' +
+    '@media(prefers-reduced-motion:reduce){.dugme{transition:none}}' +
     '.sag{right:16px}.sol{left:16px}.perde{position:fixed;inset:0;z-index:2147483001;background:rgba(15,20,18,.45);display:flex;align-items:flex-end;justify-content:center;padding:16px}' +
     '@media(min-width:600px){.perde{align-items:center}}.kutu{background:#fff;color:#1f2d27;width:100%;max-width:420px;border-radius:14px;padding:20px;box-shadow:0 12px 40px rgba(0,0,0,.25)}' +
     'h2{margin:0 0 12px;font-size:17px}label{display:block;font-size:13px;color:#4d5c55;margin:12px 0 6px}.yildizlar{display:flex;gap:4px}' +
@@ -185,11 +191,32 @@
       var d = document.createElement('button');
       d.className = 'dugme ' + KONUM;
       d.type = 'button';
-      d.textContent = METIN[dil()].dugme;
+      d.setAttribute('aria-label', METIN[dil()].dugme);
+      d.innerHTML = '<svg class="ikon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+        '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg><span class="metin"></span>';
+      d.querySelector('.metin').textContent = METIN[dil()].dugme;
       d.addEventListener('click', function () { ac(); });
       golge.appendChild(d);
+      kaydirmadaGizle(d);
     }
     document.body.appendChild(kok);
+  }
+
+  // Yalnız dar ekranda: aşağı kaydırırken düğme içeriğin üstünden çekilir; yukarı kaydırınca, sayfa başına
+  // dönünce ya da kaydırma 1 saniye durunca geri gelir. Klavye odağı düğmedeyken hiç gizlenmez.
+  function kaydirmadaGizle(d) {
+    if (!window.matchMedia) return;
+    var dar = window.matchMedia('(max-width: 599px)');
+    var sonY = window.scrollY, zaman;
+    window.addEventListener('scroll', function () {
+      var y = window.scrollY;
+      if (!dar.matches || golge.activeElement === d) { d.classList.remove('gizli'); sonY = y; return; }
+      if (y > sonY + 8 && y > 120) d.classList.add('gizli');
+      else if (y < sonY - 8 || y <= 120) d.classList.remove('gizli');
+      sonY = y;
+      clearTimeout(zaman);
+      zaman = setTimeout(function () { d.classList.remove('gizli'); }, 1000);
+    }, { passive: true });
   }
 
   function ac(ekranArg) {
