@@ -9,7 +9,7 @@ Portföyde Python gereken işler (makine öğrenmesi, optimizasyon, simülasyon,
 ```bash
 bash ysfdurak.com/sablonlar/python-servis/yeni.sh talep-tahmini      # ./talep-tahmini klasörü, adlar değişmiş, git init
 cd talep-tahmini
-python3 -m venv .venv && .venv/bin/pip install --require-hashes -r requirements-dev.txt
+python3 -m venv .venv && .venv/bin/pip install --require-hashes -r requirements.txt -r requirements-dev.txt
 .venv/bin/python -m pytest -q
 ```
 

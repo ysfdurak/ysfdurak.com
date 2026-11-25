@@ -8,6 +8,10 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    # Python sürümü CI ve özet dosyalarıyla birlikte elle yükseltilir; Dependabot yalnız yama sürümü önerir
+    ignore:
+      - dependency-name: python
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
   - package-ecosystem: github-actions
     directory: /
     schedule:

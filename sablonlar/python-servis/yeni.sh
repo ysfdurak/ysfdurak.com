@@ -14,5 +14,5 @@ sed -i "s/Copyright [0-9]\{4\}/Copyright $(date +%Y)/" "$HEDEF/LICENSE.md"
 git -C "$HEDEF" init -q -b main
 echo "Hazır: $HEDEF"
 echo "Sıradaki: README.md'yi yaz (lisans bölümü hazır), servis/cekirdek.py'ye işi koy, testleri çalıştır:"
-echo "  python3 -m venv .venv && .venv/bin/pip install --require-hashes -r requirements-dev.txt && .venv/bin/python -m pytest -q"
+echo "  python3 -m venv .venv && .venv/bin/pip install --require-hashes -r requirements.txt -r requirements-dev.txt && .venv/bin/python -m pytest -q"
 echo "Bağımlılık eklerken: requirements.in'e yaz, sonra pip-compile --generate-hashes --strip-extras --allow-unsafe -o requirements.txt requirements.in"
