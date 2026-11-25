@@ -20,6 +20,7 @@ if [[ ! -f .env ]]; then
       -e "s|^ANALIZ_URL=.*|ANALIZ_URL=http://nabiz-analiz:8000|" \
       -e "s|^MCP_ENABLED=.*|MCP_ENABLED=true|" \
       -e "s|^MCP_ANAHTARLARI=.*|MCP_ANAHTARLARI=$(openssl rand -hex 32)|" \
+      -e "s|^BILDIRIM_URL=.*|BILDIRIM_URL=https://ntfy.sh/nabiz-$(openssl rand -hex 8)|" \
       .env.example > .env
   unset ARIZA_ANAHTAR
   echo ".env oluşturuldu (yalnızca sen okuyabilirsin). Kurum girişi şifresi: grep SITE_SIFRESI ~/nabiz/.env"
@@ -40,3 +41,9 @@ done
 sudo docker logs --tail 10 nabiz
 echo
 echo "TAMAM. 1-2 dakika sonra aç: https://nabiz.ysfdurak.com  ·  QR etiketleri: https://nabiz.ysfdurak.com/#/qr"
+KONU=$(grep -s '^BILDIRIM_URL=' ~/nabiz/.env | cut -d/ -f4)
+if [[ -n $KONU ]]; then
+  echo "Sabah özeti (her gün 07:30): telefonda ntfy uygulamasını kur, şu konuya abone ol → $KONU"
+else
+  echo "Sabah özeti kapalı: ~/nabiz/.env içinde BILDIRIM_URL boş (eski kurulum). Açmak için: sed -i \"s|^BILDIRIM_URL=.*|BILDIRIM_URL=https://ntfy.sh/nabiz-\$(openssl rand -hex 8)|\" ~/nabiz/.env ve betiği yeniden çalıştır."
+fi
