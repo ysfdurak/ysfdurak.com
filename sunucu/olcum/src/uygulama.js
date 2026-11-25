@@ -122,7 +122,9 @@ export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = t
         istemciKodu ??= await readFile(new URL('../public/olcum.js', import.meta.url), 'utf8');
         res.writeHead(200, {
           'Content-Type': 'text/javascript; charset=utf-8',
-          'Cache-Control': 'public, max-age=3600',
+          // Bütün projeler bu betiği yükler; değişiklik en geç 5 dakikada yayılsın. stale-while-revalidate:
+          // süre dolunca eski kopya hemen sunulur, yenisi arka planda alınır (sayfa açılışı yavaşlamaz).
+          'Cache-Control': 'public, max-age=300, stale-while-revalidate=86400',
           'Access-Control-Allow-Origin': '*',
           'Cross-Origin-Resource-Policy': 'cross-origin',
           'X-Content-Type-Options': 'nosniff',
