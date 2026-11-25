@@ -52,11 +52,29 @@ Bu liste, Kasım 2026'daki inceleme turlarında portföy projelerinde tek tek bu
 | Yapay zekâ çağıran uygulama: ziyaretçi, site ve kanal başına günlük sınır; harcama tavanı (Anthropic konsolu) | Maliyet saldırısı |
 | Yazma işlemleri denetim kaydına (kim, ne, ne zaman); argümanlarda kişisel veri tutulmaz | İz sürme, KVKK |
 
+## 3b. Sunucu uygulaması (Python, VPS)
+
+Başlangıç: `sablonlar/python-servis` (`yeni.sh <ad>`). İlk kullanıcı: Nabız Analiz (Kasım 2026). 3. bölümdeki ilkeler aynen geçerli; Python karşılıkları:
+
+| Önlem | Nasıl | Neden |
+| --- | --- | --- |
+| Bağımlılıklar sürüm **ve özet** ile sabit | `requirements.in` → `pip-compile --generate-hashes`; kurulum `pip install --require-hashes` | Paket deposunda değiştirilmiş dosya kurulmaz |
+| Bilinen açık taraması | CI'da ve `tara.py --audit`'te `pip-audit -r requirements.txt --require-hashes` | npm audit'in karşılığı |
+| Güvenlik başlıkları ve CSP her yanıtta | ASGI dış katmanı (`servis/app.py`); HTML sunmuyorsa `default-src 'none'` | Tarayıcı korumaları |
+| FastAPI belge sayfaları kapalı | `docs_url=None, redoc_url=None, openapi_url=None` | Swagger dış CDN'den betik yükler; şema saldırgana harita olur |
+| Gerçek IP yalnız güvenilen vekilden | `gercek_ip.py`; uvicorn `proxy_headers=False` (başlığı uvicorn değil biz yorumlarız) | Sahte `X-Forwarded-For` ile sınır atlatma |
+| MCP anahtarı | Bellekte SHA-256 özeti, `hmac.compare_digest`; `MCPServer` durumsuz (`stateless_http`) | Zamanlama saldırısı, bellekte düz anahtar |
+| Beklenmeyen hata | Genel ileti, ayrıntı yalnız kayıtta; `debug`/`reload` kapalı | Bilgi sızıntısı |
+| Tehlikeli kalıplar yok | `yaml.safe_load`; `pickle`/`eval` ile dış veri açılmaz; `shell=True` yok; `verify=False` yok; CORS `*` yok | Kod çalıştırma, ortadaki adam |
+| Docker | `python:<sürüm>-slim-<dağıtım>` sabit, `useradd --system` + `USER`, `HEALTHCHECK` (python -c ile), `PYTHONDONTWRITEBYTECODE` | Salt okunur kökte .pyc yazılamaz; root değil |
+
+`tara.py` bunları denetler: `pip-sabit`, `pip-ozet`, `py-yaml`, `py-pickle`, `py-shell`, `py-tls`, `py-debug`, `py-cors`, `py-vekil`, `py-docs`, `pip-audit`.
+
 ## 4. Konteyner ve VPS
 
 | Önlem | Neden |
 | --- | --- |
-| Dockerfile: sabit sürümlü taban imaj, çok aşamalı derleme, `npm ci --omit=dev`, `USER node` (root değil), `HEALTHCHECK` | Saldırı yüzeyi küçük |
+| Dockerfile: sabit sürümlü taban imaj, çok aşamalı derleme, `npm ci --omit=dev`, `USER node` (root değil), `HEALTHCHECK`. Python: 3b | Saldırı yüzeyi küçük |
 | Compose: `name:` açık (aynı klasördeki başka uygulamayla çakışmasın), `read_only: true` + `tmpfs: /tmp`, `cap_drop: [ALL]`, `security_opt: [no-new-privileges:true]`, `mem_limit`, `pids_limit`, kayıt boyutu sınırı | Bir konteynerdeki sorun ötekileri ve sunucuyu etkilemez |
 | Uygulama portu dışarı açılmaz; yalnız Caddy 80/443 dinler, uygulamalar `web` ağında | Doğrudan erişim yok |
 | Caddy: otomatik HTTPS (DNS doğrulaması), HSTS, `-Server`, Cloudflare `trusted_proxies`, istemci IP başlıklarını kendisi yazar | |
@@ -78,7 +96,7 @@ Bu liste, Kasım 2026'daki inceleme turlarında portföy projelerinde tek tek bu
 
 1. Depoyu bu listeyle aç: lisans, dependabot, `.gitignore`, iş akışı izinleri, CSP ve başlıklar.
 2. Sunucu gerekiyorsa (kalıcı veri, giriş, sürekli çalışma) bunu baştan söyle; 3. ve 4. bölümü uygula, `sunucu/kurulum-<proje>.sh` ve Caddy bloğunu ekle.
-3. İlk gönderimden önce `python3 araclar/guvenlik/tara.py ../<proje>` temiz çıkmalı; depo adını `araclar/guvenlik/depolar.txt`'ye ekle (GitHub'daki adıyla, büyük-küçük harf dahil).
+3. İlk gönderimden önce `python3 araclar/guvenlik/tara.py ../<proje>` temiz çıkmalı (tarama `git ls-files` okur: dosyalar en az `git add` edilmiş olmalı, yoksa boş depo "temiz" görünür); depo adını `araclar/guvenlik/depolar.txt`'ye ekle (GitHub'daki adıyla, büyük-küçük harf dahil).
    Tarayıcıda kayıt tutan ve yedek içe aktaran projede ayrıca: `python3 araclar/guvenlik/zehir_gezgin.py ../<proje> index.html oznitelik` ve `… metin` → "tetiklenen yok" çıkmalı. Araç uygulamayı gezer, tarayıcı kaydındaki her metni betikli değerle değiştirir (kötü niyetli yedek gibi) ve yeniden gezer.
 
 ## Tarama sonucu nasıl okunur (23 Kasım 2026)

@@ -1,6 +1,6 @@
 # Portföy güvenlik taraması: her pazartesi bütün depolar aynı kurallarla denetlenir (araclar/guvenlik/tara.py).
 # YÜKSEK ya da orta bulgu varsa "guvenlik" etiketli issue açılır/güncellenir (GitHub e-postayla haber verir);
-# yalnızca tam ve temiz taramada açık issue kapatılır. Depo klonlanamaz ya da npm audit okunamazsa
+# yalnızca tam ve temiz taramada açık issue kapatılır. Depo klonlanamaz ya da npm audit / pip-audit okunamazsa
 # sonuç "tamamlanamadı"dır: issue'ya yazılır, kapatılmaz. Kurallar: docs/GUVENLIK_TEMELI.md · istisnalar: araclar/guvenlik/istisnalar.json
 name: Güvenlik taraması
 
@@ -38,7 +38,7 @@ jobs:
       - name: Tara
         id: tara
         run: |
-          pip install -q pyyaml
+          pip install -q pyyaml pip-audit  # pip-audit: Python depoları (Kasım 2026); yoksa denetim "tamamlanamadı" olur
           set +e
           python3 araclar/guvenlik/tara.py --audit --beklenen=araclar/guvenlik/depolar.txt --atlanan=atlanan.txt ../depolar/* > rapor.md
           echo "kod=$?" >> "$GITHUB_OUTPUT"

@@ -7,7 +7,8 @@ arar; yeni bir proje de aynı listeyle başlar (docs/GUVENLIK_TEMELI.md). Haftal
 
 Kullanım:
   python3 araclar/guvenlik/tara.py <depo-klasörü>...            # rapor (Markdown) yazar
-  python3 araclar/guvenlik/tara.py --audit <depo-klasörü>...    # npm audit de çalıştırır (ağ gerekir)
+  python3 araclar/guvenlik/tara.py --audit <depo-klasörü>...    # npm audit ve pip-audit de çalıştırır (ağ gerekir)
+Not: dosya listesi `git ls-files`'tan gelir; yeni depoda dosyalar en az `git add` edilmiş olmalı.
   --beklenen=depolar.txt --atlanan=atlanan.txt   # kapsam: beklenen / taranan / atlanan ayrı yazılır
 Çıkış kodu: 0 temiz · 1 YÜKSEK ya da orta bulgu · 2 tarama tamamlanamadı (depo atlandı ya da npm audit okunamadı;
 bu durumda sonuç "temiz" sayılmaz ve açık issue kapatılmaz).
@@ -61,7 +62,7 @@ def tara(d, audit=False):
         b('orta', 'lisans', 'Lisans dosyası yok (PolyForm Shield 1.0.0 beklenir)')
     if not os.path.exists(os.path.join(d, '.github/dependabot.yml')):
         b('düşük', 'dependabot', 'Bağımlılık botu (dependabot.yml) yok')
-    if any(f.endswith('package.json') for f in F) and '.env' not in oku(os.path.join(d, '.gitignore')):
+    if any(f.endswith(('package.json', 'requirements.txt', 'pyproject.toml')) for f in F) and '.env' not in oku(os.path.join(d, '.gitignore')):
         b('orta', 'gitignore-env', '.gitignore .env içermiyor')
     for f in F:
         if f.startswith(ATLA) or f.endswith(IKILI):
@@ -206,6 +207,36 @@ def tara(d, audit=False):
         if re.search(r'pg_dump(all)?\b', t) and 'rclone copy' in t and 'crypt' not in t:
             b('orta', 'yedek-sifre', 'Yedek uzak depoya istemci tarafında şifrelenmeden gidiyor (rclone crypt)', f)
 
+    # --- Python (Kasım 2026, Nabız Analiz ile): aynı kalıp, Python karşılıkları
+    for rq in [f for f in F if re.search(r'(^|/)requirements[^/]*\.txt$', f) and not f.startswith(ATLA)]:
+        satirlar = [x.strip() for x in oku(os.path.join(d, rq)).splitlines()]
+        paket = [x for x in satirlar if x and not x.startswith(('#', '-', '--')) and not x.startswith('\\')]
+        gevsek = [x.split()[0] for x in paket if '==' not in x and not x.startswith('git+')]
+        if gevsek:
+            b('orta', 'pip-sabit', f'Sürümü sabitlenmemiş paket: {", ".join(gevsek[:5])}', rq)
+        if paket and '--hash=' not in oku(os.path.join(d, rq)) and not rq.endswith('-dev.txt'):
+            b('düşük', 'pip-ozet', 'Bağımlılıklar özetle (--hash) sabitlenmemiş; pip-compile --generate-hashes ve pip install --require-hashes', rq)
+    py = [f for f in F if f.endswith('.py') and not f.startswith(ATLA) and not f.startswith(('tests/', 'test/', 'docs/', 'araclar/', 'tools/'))
+          and '/tests/' not in f and not os.path.basename(f).startswith('test_')]
+    for f in py:
+        t = oku(os.path.join(d, f))
+        if re.search(r'yaml\.load\((?![^)]*SafeLoader)', t):
+            b('orta', 'py-yaml', 'yaml.load güvenli yükleyicisiz (yaml.safe_load kullan)', f)
+        if re.search(r'pickle\.loads?\(|marshal\.loads?\(', t):
+            b('orta', 'py-pickle', 'pickle/marshal ile dışarıdan veri açmak kod çalıştırır', f)
+        if re.search(r'shell\s*=\s*True', t):
+            b('orta', 'py-shell', 'subprocess shell=True (komut enjeksiyonu riski)', f)
+        if re.search(r'verify\s*=\s*False', t):
+            b('orta', 'py-tls', 'TLS sertifika doğrulaması kapalı (verify=False)', f)
+        if re.search(r'(debug\s*=\s*True|reload\s*=\s*True)', t) and re.search(r'uvicorn|FastAPI|Flask|Starlette', t):
+            b('orta', 'py-debug', 'Hata ayıklama/yeniden yükleme açık (debug/reload=True)', f)
+        if re.search(r'allow_origins\s*=\s*\[\s*["\']\*', t):
+            b('orta', 'py-cors', 'CORS her kaynağa açık (allow_origins=["*"])', f)
+        if re.search(r'forwarded_allow_ips\s*=\s*["\']\*', t):
+            b('orta', 'py-vekil', 'Her adresten gelen X-Forwarded-For güvenilir sayılıyor (forwarded_allow_ips="*")', f)
+        if re.search(r'FastAPI\(', t) and not re.search(r'docs_url\s*=\s*None', t):
+            b('düşük', 'py-docs', 'FastAPI /docs açık: Swagger dış CDN\'den betik yükler, CSP ile çakışır (docs_url=None, redoc_url=None, openapi_url=None)', f)
+
     # Sürüm bildirimi (Kesit): listedeki dosya özetleri tutmuyorsa CI düşer; göndermeden önce yakala.
     if 'release-manifest.json' in F:
         import hashlib
@@ -237,6 +268,21 @@ def tara(d, audit=False):
                     b('YÜKSEK', 'npm-audit', f'npm audit: {n} {sev}', lock)
                 elif n and sev == 'moderate':
                     b('orta', 'npm-audit', f'npm audit: {n} moderate', lock)
+        # pip-audit: Python bağımlılıkları (kurulu değilse ya da okunamazsa denetim tamamlanamadı sayılır)
+        for rq in [f for f in F if re.search(r'(^|/)requirements\.txt$', f) and not f.startswith(ATLA)]:
+            ozetli = '--hash=' in oku(os.path.join(d, rq))
+            try:
+                r = subprocess.run(['pip-audit', '-r', rq, '--format', 'json', '--progress-spinner', 'off',
+                                    *(['--require-hashes', '--disable-pip'] if ozetli else ['--no-deps', '--disable-pip'])],
+                                   cwd=d, capture_output=True, text=True, timeout=300)
+                j = json.loads(r.stdout)
+                deps = j.get('dependencies', j) if isinstance(j, dict) else j
+            except (json.JSONDecodeError, subprocess.TimeoutExpired, OSError) as e:
+                EKSIK.append((depo, rq, (str(e).splitlines() or [type(e).__name__])[0][:160]))
+                continue
+            acikli = [x['name'] for x in deps if x.get('vulns')]
+            if acikli:
+                b('YÜKSEK', 'pip-audit', f'pip-audit: açığı olan paket: {", ".join(acikli[:5])}', rq)
     return depo, B
 
 
