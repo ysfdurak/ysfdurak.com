@@ -35,6 +35,23 @@ else
   YENI=0
 fi
 
+# Pusula'nın kendi ölçümünü ortak panele çekmek için okuma anahtarı (iki tarafa aynısı yazılır; tekrar çalıştırmak güvenli).
+if ! grep -q '^PUSULA_ISTATISTIK_ANAHTARI=.\+' .env; then
+  ANAHTAR=$(openssl rand -hex 32)
+  sed -i '/^PUSULA_ISTATISTIK_ANAHTARI=/d' .env && echo "PUSULA_ISTATISTIK_ANAHTARI=$ANAHTAR" >> .env
+  echo "Pusula okuma anahtarı üretildi."
+fi
+ANAHTAR=$(grep '^PUSULA_ISTATISTIK_ANAHTARI=' .env | cut -d= -f2)
+PUSULA_ENV=~/pusula-is-takip/.env
+if [[ -f $PUSULA_ENV ]] && ! grep -qx "ISTATISTIK_OKUMA_ANAHTARI=$ANAHTAR" $PUSULA_ENV; then
+  sed -i '/^ISTATISTIK_OKUMA_ANAHTARI=/d' $PUSULA_ENV && echo "ISTATISTIK_OKUMA_ANAHTARI=$ANAHTAR" >> $PUSULA_ENV
+  (cd ~/pusula-is-takip/deploy && sudo docker compose -f docker-compose.ortak.yml up -d --build)
+  echo "Pusula'ya okuma anahtarı yazıldı ve Pusula yeniden başlatıldı."
+elif [[ ! -f $PUSULA_ENV ]]; then
+  echo "Not: Pusula kurulu değil; panelde 'ulaşılamadı' görünür. Pusula'yı kurduktan sonra bu betiği yeniden çalıştır."
+fi
+unset ANAHTAR
+
 echo "== 3/4 Ölçüm servisi derleniyor ve başlatılıyor =="
 sudo docker compose up -d --build
 

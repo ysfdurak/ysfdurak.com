@@ -3,7 +3,8 @@
 import { readFile } from 'node:fs/promises';
 import { timingSafeEqual } from 'node:crypto';
 import * as depo from './depo.js';
-import { anaSayfa, projeSayfasi } from './yonetim.js';
+import { anaSayfa, projeSayfasi, disProjeSayfasi } from './yonetim.js';
+import { disSatir } from './dis.js';
 
 const KIMLIK = /^[A-Za-z0-9_-]{8,64}$/;
 const GUNLER = [7, 30, 90, 180];
@@ -47,8 +48,9 @@ async function govdeOku(req, sinir = 16 * 1024) {
  * @param {number} [o.dakikaSiniri]      IP başına dakikada en çok olay isteği (IP saklanmaz, yalnızca bellekte sayılır)
  * @param {number} [o.geriBildirimSiniri] IP başına 10 dakikada en çok geri bildirim
  * @param {number} [o.girisDenemeSiniri]  IP başına 15 dakikada en çok hatalı yönetim girişi; aşılınca o IP 15 dakika bekler
+ * @param {(ayar: object, gun: number) => Promise<object|null>} [o.disOku]  kendi ölçümü olan projelerin özetini okur (dis.js)
  */
-export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = true, yonetim, dakikaSiniri = 120, geriBildirimSiniri = 10, girisDenemeSiniri = 10 }) {
+export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = true, yonetim, dakikaSiniri = 120, geriBildirimSiniri = 10, girisDenemeSiniri = 10, disOku = async () => null }) {
   let istemciKodu = null;
 
   /** Bellekte kayan pencere sayacı: anahtar başına `sure` ms içinde en çok `sinir` sayım. */
@@ -147,6 +149,7 @@ export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = t
         }
         const ayar = typeof b?.p === 'string' ? projeAyari(projeler, b.p) : null;
         if (!ayar) return yanit(res, 400, { hata: 'Tanınmayan proje.' }, cors);
+        if (ayar.dis) return yanit(res, 400, { hata: 'Bu proje kendi ölçümünü kullanır.' }, cors);
         if (adresDenetimi && ayar.adres && new URL(ayar.adres).origin !== koken) return yanit(res, 403, { hata: 'Proje bu adresten ölçülmez.' }, cors);
         // Geri bildirimde boş kimlik kabul edilir: ölçüm kapalı tarayıcı kimlik üretmez (olcum.js 2).
         const kimliksiz = yol === '/v1/geri-bildirim' && (b.z === '' || b.z == null);
@@ -197,12 +200,22 @@ export function uygulamaOlustur({ db, tuz, projeler, kokenler, adresDenetimi = t
         }
         if (req.method !== 'GET') return yanit(res, 405, 'Desteklenmiyor.', ozelBaslik);
 
-        if (yol === '/yonetim' || yol === '/yonetim/') return yanit(res, 200, anaSayfa(projeler, await depo.genelOzet(db, gun), gun), ozelBaslik);
-        if (yol === '/yonetim/ozet.json') return yanit(res, 200, await depo.genelOzet(db, gun), ozelBaslik);
+        // Ana tablo: kendi olaylarımız + kendi ölçümü olan projelerin iç ağdan okunan özeti (paralel, 3 sn sınırlı).
+        const genel = async () => {
+          const disler = Object.keys(projeler).filter((k) => !k.startsWith('_') && projeler[k].dis);
+          const [ic, ...dis] = await Promise.all([depo.genelOzet(db, gun), ...disler.map((k) => disOku(projeler[k], gun))]);
+          return [...ic.filter((r) => !disler.includes(r.proje)), ...disler.map((k, i) => disSatir(k, dis[i]))];
+        };
+        if (yol === '/yonetim' || yol === '/yonetim/') return yanit(res, 200, anaSayfa(projeler, await genel(), gun), ozelBaslik);
+        if (yol === '/yonetim/ozet.json') return yanit(res, 200, await genel(), ozelBaslik);
         const p = yol.match(/^\/yonetim\/p\/([a-z0-9_-]+)(\.json)?$/);
         if (p) {
           const ayar = projeAyari(projeler, p[1]);
           if (!ayar) return yanit(res, 404, 'Proje yok.', ozelBaslik);
+          if (ayar.dis) {
+            const s = await disOku(ayar, gun);
+            return p[2] ? yanit(res, s ? 200 : 502, s || { hata: 'Ulaşılamadı.' }, ozelBaslik) : yanit(res, 200, disProjeSayfasi(ayar, p[1], s, gun), ozelBaslik);
+          }
           const s = await depo.projeOzeti(db, p[1], gun, ayar);
           return p[2] ? yanit(res, 200, s, ozelBaslik) : yanit(res, 200, projeSayfasi(ayar.ad || p[1], s), ozelBaslik);
         }

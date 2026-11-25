@@ -7,6 +7,7 @@
     "destek-merkezi": "destek",
     "diyalog-atolyesi": "diyalog",
     "emanet": "emanet",
+    "ingilizce-ogrenme-atolyesi": "ingilizce",
     "ivme-oneri-kaizen": "ivme",
     "kivilcim-zihin-oyunlari": "kivilcim",
     "nabiz": "nabiz",
@@ -26,7 +27,6 @@
   "diger": {
     "ysfdurak.com": "Ölçüm servisinin kendisi burada; site Cloudflare Web Analytics kullanır",
     "nabiz-analiz": "Arayüzü yok; Nabız iç ağdan okur (ölçüm Nabız'da)",
-    "pusula-is-takip": "KARAR BEKLİYOR: kendi sunucu tarafı ölçümü var (server/analytics.js); ortak panele taşınsın mı?",
-    "ingilizce-ogrenme-atolyesi": "KARAR BEKLİYOR: onaya bağlı Google Analytics var; ortak ölçüme geçilsin mi?"
+    "pusula-is-takip": "Kendi sunucu tarafı ölçümü (server/analytics.js); ortak panele iç ağdan okunur (projeler.json → pusula.dis, /ic/istatistik.json)"
   }
 }

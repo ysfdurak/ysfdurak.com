@@ -18,6 +18,7 @@ before(async () => {
   const isle = uygulamaOlustur({
     db, tuz, projeler, kokenler: ['https://ysfdurak.com', 'https://*.ysfdurak.com'],
     yonetim: { kullanici: 'yusuf', sifre: SIFRE }, dakikaSiniri: 1000,
+    disOku: async (ayar, gun) => (ayar.dis?.url?.includes('pusula') && DIS_ACIK ? { ...PUSULA_OZET, donem: { gun } } : null),
   });
   sunucu = createServer(isle);
   await new Promise((r) => sunucu.listen(0, r));
@@ -30,6 +31,14 @@ const gonder = (yol, govde, koken = KOKEN) =>
 const yonetim = (yol, ek = {}) =>
   fetch(adres + yol, { ...ek, headers: { Authorization: 'Basic ' + Buffer.from('yusuf:' + SIFRE).toString('base64'), ...(ek.headers || {}) } });
 const Z1 = 'ziyaretci-bir-0001', Z2 = 'ziyaretci-iki-0002';
+let DIS_ACIK = true;
+const PUSULA_OZET = {
+  ziyaretci: 7, yeniDemoAlani: 5, geriDonen: 2, claudeKullanan: 1, claudeBaglayan: 1,
+  gunluk: [{ gun: '2026-11-24', ziyaretci: 3, yeni: 2 }, { gun: '2026-11-25', ziyaretci: 4, yeni: 3 }],
+  ozellikler: [{ olay: 'is:created', ad: 'İş oluşturdu', kanal: 'web', kullanim: 9, kisi: 4 }],
+  huni: [{ adim: 'Demoyu açtı ya da giriş yaptı', kisi: 7 }, { adim: 'İş oluşturdu', kisi: 4 }],
+  geriBildirim: { adet: 1, ortalamaPuan: 4, son: [{ tarih: '2026-11-25', puan: 4, metin: '<b>güzel</b>', ekran: 'tasks', kanal: 'web' }] },
+};
 
 test('köken kalıpları', () => {
   assert.ok(kokenUyar('https://ivme.ysfdurak.com', ['https://*.ysfdurak.com']));
@@ -205,4 +214,35 @@ test('geri bildirim için ayrı, sıkı hız sınırı', async () => {
   const kodlar = [await fb(), await fb(), await fb(), await olay()];
   s.close();
   assert.deepEqual(kodlar, [200, 200, 429, 200], 'geri bildirim sınırı olayları etkilemez');
+});
+
+test('kendi ölçümü olan proje (Pusula): özet iç ağdan okunur, olay kabul edilmez', async () => {
+  const ana = await (await yonetim('/yonetim')).text();
+  assert.match(ana, /Pusula<\/a> <span class="etiket">kendi ölçümü<\/span>/);
+  const json = await (await yonetim('/yonetim/ozet.json')).json();
+  const p = json.find((r) => r.proje === 'pusula');
+  assert.equal(p.ziyaretci, 7);
+  assert.equal(p.ortPuan, 4);
+  const sayfa = await (await yonetim('/yonetim/p/pusula?gun=30')).text();
+  assert.match(sayfa, /İş oluşturdu/);
+  assert.match(sayfa, /&lt;b&gt;güzel&lt;\/b&gt;/, 'dış metin de kaçışlı');
+  assert.match(sayfa, /pusula\.ysfdurak\.com\/yonetim\/istatistik/);
+  const r = await gonder('/v1/olay', { p: 'pusula', z: 'ziyaretci-bir-0001', o: 'oturum-bir-0001', e: [] }, 'https://pusula.ysfdurak.com');
+  assert.equal(r.status, 400);
+  DIS_ACIK = false;
+  assert.match(await (await yonetim('/yonetim')).text(), /ulaşılamadı/);
+  assert.match(await (await yonetim('/yonetim/p/pusula')).text(), /Özet okunamadı/);
+  assert.equal((await yonetim('/yonetim/p/pusula.json')).status, 502);
+  DIS_ACIK = true;
+});
+
+test('dış okuyucu: anahtar yoksa istek atmaz, varsa Bearer ve gün gönderir', async () => {
+  const { disOkuyucu } = await import('../src/dis.js');
+  const istekler = [];
+  const sahte = async (u, o) => { istekler.push([String(u), o.headers.Authorization]); return { ok: true, json: async () => ({ ziyaretci: 1 }) }; };
+  const ayar = { dis: { url: 'http://pusula:8080/ic/istatistik.json', anahtar: 'PA' } };
+  assert.equal(await disOkuyucu({}, { fetchFn: sahte })(ayar, 30), null);
+  assert.equal(istekler.length, 0);
+  assert.deepEqual(await disOkuyucu({ PA: 'gizli' }, { fetchFn: sahte })(ayar, 90), { ziyaretci: 1 });
+  assert.deepEqual(istekler[0], ['http://pusula:8080/ic/istatistik.json?gun=90', 'Bearer gizli']);
 });
