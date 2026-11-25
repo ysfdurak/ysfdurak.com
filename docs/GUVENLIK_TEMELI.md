@@ -92,11 +92,23 @@ Başlangıç: `sablonlar/python-servis` (`yeni.sh <ad>`). İlk kullanıcı: Nab�
 | Paketteki kitaplıklar (SQLite vb.) yayından önce sürüm kapısıyla denetlenir | Açıklı sürüm yayımlanmaz |
 | Güncelleme yalnız bildirim; uygulama kendini değiştirmez | Tedarik zinciri |
 
+## 6. Kullanım ölçümü ve geri bildirim (25 Kasım 2026)
+
+Kural: **"veri dışarı gitmez" sözü vermeyen her projede ortak ölçüm baştan vardır.** Söz veren projede hiç yoktur. Karar `sunucu/olcum/kapsam.json` dosyasında tutulur, tarama iki yönü de denetler.
+
+- Ölçülen proje: yükleyici yalnız resmî demo adresinde (`location.hostname === '<alt>.ysfdurak.com'` ya da `DEMO_MODE`) `https://olcum.ysfdurak.com/olcum.js` yükler, `data-proje` kimliğiyle. Kurum kurulumu dışarıya istek atmaz.
+- CSP'de yalnız `script-src` ve `connect-src`'ye `https://olcum.ysfdurak.com` eklenir; stil izni gerekmez.
+- Ekran adı ham adres değil, sabit bir ad olmalı (`#/e/F-03` → `e`); kimlik, kod, metin gönderilmez. İşlem adları sabit parçalardan (`islem:etiket_kapat`).
+- `sunucu/olcum/projeler.json`'a kayıt (adres, huni, ekran ve işlem adları); gizlilik sayfasında (TR/EN) ölçülen uygulamalar listesine ad.
+- Betik geç yüklenebilir: olaylar `window.olcumKuyruk` dizisine itilir, betik gelince gönderir.
+- Tarama: `olcum-karar` (kapsam.json'da yok), `olcum-eksik` (yükleyici yok), `olcum-kimlik`, `olcum-kayit` (projeler.json'da yok), `olcum-soz` (söz veren projede ölçüm adresi: YÜKSEK).
+
 ## Yeni projede sıra
 
 1. Depoyu bu listeyle aç: lisans, dependabot, `.gitignore`, iş akışı izinleri, CSP ve başlıklar.
 2. Sunucu gerekiyorsa (kalıcı veri, giriş, sürekli çalışma) bunu baştan söyle; 3. ve 4. bölümü uygula, `sunucu/kurulum-<proje>.sh` ve Caddy bloğunu ekle.
 3. İlk gönderimden önce `python3 araclar/guvenlik/tara.py ../<proje>` temiz çıkmalı (tarama `git ls-files` okur: dosyalar en az `git add` edilmiş olmalı, yoksa boş depo "temiz" görünür); depo adını `araclar/guvenlik/depolar.txt`'ye ekle (GitHub'daki adıyla, büyük-küçük harf dahil).
+   Ölçüm kararını `sunucu/olcum/kapsam.json`'a yaz: söz vermeyen projede 6. bölümü uygula (yükleyici, CSP, projeler.json, gizlilik sayfası); söz veren projeyi gerekçesiyle `soz` altına koy.
    Tarayıcıda kayıt tutan ve yedek içe aktaran projede ayrıca: `python3 araclar/guvenlik/zehir_gezgin.py ../<proje> index.html oznitelik` ve `… metin` → "tetiklenen yok" çıkmalı. Araç uygulamayı gezer, tarayıcı kaydındaki her metni betikli değerle değiştirir (kötü niyetli yedek gibi) ve yeniden gezer.
 
 ## Tarama sonucu nasıl okunur (23 Kasım 2026)

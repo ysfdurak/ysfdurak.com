@@ -45,6 +45,10 @@ def istisna_mi(depo, kural, yer):
     return False
 
 
+OLCUM = os.path.join(BURASI, '..', '..', 'sunucu', 'olcum')
+KAPSAM = json.load(open(os.path.join(OLCUM, 'kapsam.json'), encoding='utf-8'))
+PROJELER = {k for k in json.load(open(os.path.join(OLCUM, 'projeler.json'), encoding='utf-8')) if not k.startswith('_')}
+
 EKSIK = []  # (depo, dosya, neden): denetimi tamamlanamayanlar
 
 
@@ -248,6 +252,30 @@ def tara(d, audit=False):
             p = os.path.join(d, yol)
             if os.path.exists(p) and hashlib.sha256(open(p, 'rb').read()).hexdigest() != ozet:
                 b('orta', 'manifest-ozet', 'release-manifest.json özeti dosyayla tutmuyor (CI düşer)', yol)
+
+    # --- Ortak ölçüm kapsamı (25 Kasım 2026): her depo için karar sunucu/olcum/kapsam.json'da.
+    # Ölçülen depoda yükleyici ve projeler.json kaydı olmalı; "veri dışarı gitmez" sözü veren depoda ölçüm adresi hiç geçmemeli.
+    kap = KAPSAM.get('olculen', {}), KAPSAM.get('soz', {}), KAPSAM.get('diger', {})
+    anahtar = {k.lower(): k for sozluk in kap for k in sozluk}
+    ad = anahtar.get(depo.lower())
+    uygulama = [f for f in F if f.endswith(('.js', '.mjs', '.cjs', '.ts', '.tsx', '.html', '.json', '.jsonc', '.py'))
+                and not f.startswith(ATLA + ('tests/', 'test/', 'tools/', 'araclar/', 'docs/')) and not f.endswith(IKILI)]
+    olcum_dosya = [f for f in uygulama if 'olcum.ysfdurak.com' in oku(os.path.join(d, f))]
+    if ad is None:
+        b('orta', 'olcum-karar', 'Ölçüm kararı yok: sunucu/olcum/kapsam.json içinde "olculen" (proje kimliğiyle) ya da gerekçeyle "soz"/"diger" altına ekle', 'sunucu/olcum/kapsam.json')
+    elif ad in kap[0]:
+        kimlik = kap[0][ad]
+        if not olcum_dosya:
+            b('orta', 'olcum-eksik', 'Ölçülen proje ama ölçüm yükleyicisi yok (olcum.ysfdurak.com/olcum.js)')
+        elif not any(re.search(r'[\'"]' + re.escape(kimlik) + r'[\'"]', oku(os.path.join(d, f))) for f in olcum_dosya + [f for f in uygulama if f.endswith(('.json', '.jsonc'))]):
+            b('orta', 'olcum-kimlik', f'Ölçüm yükleyicisinde proje kimliği "{kimlik}" bulunamadı', olcum_dosya[0])
+        if kimlik not in PROJELER:
+            b('orta', 'olcum-kayit', f'"{kimlik}" sunucu/olcum/projeler.json içinde yok: servis olayları reddeder', 'sunucu/olcum/projeler.json')
+    elif ad in kap[1]:
+        for f in olcum_dosya:
+            b('YÜKSEK', 'olcum-soz', f'"Veri dışarı gitmez" sözü veren projede ölçüm adresi var ({kap[1][ad]})', f)
+    elif kap[2][ad].startswith('KARAR BEKLİYOR'):
+        b('düşük', 'olcum-karar', kap[2][ad], 'sunucu/olcum/kapsam.json')
 
     # --- Bağımlılık açıkları
     # npm audit okunamazsa (ağ, kayıt, bozuk çıktı, zaman aşımı) depo "temiz" sayılmaz: denetim tamamlanamadı olarak raporlanır.

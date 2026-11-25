@@ -86,6 +86,8 @@ Testler gerçek PostgreSQL yerine aynı SQL'i çalıştıran PGlite kullanır: k
 - **Biri sahte olay gönderirse?** Köken ve proje-adres eşleşmesi, IP başına hız sınırı ve istek boyutu sınırı var. Tarayıcıdan gelen veri her zaman taklit edilebileceği için bu sayılar "kanıt" değil "eğilim" olarak okunmalı.
 - **Neden vitrin demolarında açık, şirket kurulumunda kapalı?** Amaç ürünü geliştirmek; çalışanları izlemek değil.
 
+**Kapsam kararı:** her deponun ölçülüp ölçülmeyeceği `kapsam.json`'da (ölçülen / "veri dışarı gitmez" sözü / diğer). Haftalık güvenlik taraması (`araclar/guvenlik/tara.py`) bunu denetler: listede olmayan yeni depo, yükleyicisi ya da `projeler.json` kaydı eksik ölçülen proje ve ölçüm adresi geçen söz verilmiş proje bulgu olarak çıkar.
+
 ## Bağlı projeler (25 Kasım 2026)
 
 | Proje | Adres | Nasıl bağlı |
