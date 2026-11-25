@@ -86,7 +86,7 @@ Testler gerçek PostgreSQL yerine aynı SQL'i çalıştıran PGlite kullanır: k
 - **Biri sahte olay gönderirse?** Köken ve proje-adres eşleşmesi, IP başına hız sınırı ve istek boyutu sınırı var. Tarayıcıdan gelen veri her zaman taklit edilebileceği için bu sayılar "kanıt" değil "eğilim" olarak okunmalı.
 - **Neden vitrin demolarında açık, şirket kurulumunda kapalı?** Amaç ürünü geliştirmek; çalışanları izlemek değil.
 
-## Bağlı projeler (23 Kasım 2026)
+## Bağlı projeler (25 Kasım 2026)
 
 | Proje | Adres | Nasıl bağlı |
 | --- | --- | --- |
@@ -96,8 +96,12 @@ Testler gerçek PostgreSQL yerine aynı SQL'i çalıştıran PGlite kullanır: k
 | Kıvılcım | ysfdurak.github.io/kivilcim-zihin-oyunlari | `olcum.js`; `navigate()` geçişleri ekran olarak bildirilir |
 | Aday Atölyesi | aday.ysfdurak.com | `web/olcum.js`, yalnız bu adreste; ekran = `#` sonrasının ilk parçası; düğme yerine menüde ve altbilgide "Geri bildirim ver" bağlantısı |
 | Destek Merkezi (demo) | destek.ysfdurak.com | Sunucu `public/olcum.js`'i yalnız `DEMO_MODE` iken sayfaya ekler ve CSP'yi o zaman açar; ekran = uygulamanın `page` değeri |
+| Emanet + Usta | emanet.ysfdurak.com | `web/app.js` başında yükleyici, yalnız bu adreste; ekran = sayfa adı (`git()` içinden `olc("ekran", sayfa)`) |
+| Arıza Defteri | ariza.ysfdurak.com | `web/app.js` başında yükleyici, yalnız bu adreste; tek ekran `pano` |
+| Nabız (TPM) | nabiz.ysfdurak.com | `web/app.js`; ekran = adresin ilk parçası (`#/e/F-03` → `e`), işlem = POST yolunun sabit parçaları (`islem:etiket_kapat`); kimlik ve ekipman kodu gitmez |
+| Bütçe Sapması (tarayıcı demosu) | ysfdurak.github.io/butce-sapmasi-rapor-otomasyonu/demo | `demo/olcum.js`, yalnız GitHub Pages'te; `data-page` tıklamaları ekran, rapor üretimi `islem:rapor_uret`. Masaüstü arayüz dosyasına dokunulmadı |
 
-Bilerek bağlanmayanlar: **Sırdaş** ve **Duruş** "veri cihazından çıkmaz" sözü verir; dış adrese bağlantı bu sözü zayıflatır. **İngilizce Atölyesi**'nin kendi izinli ölçümü var. Kesit uygulamaları "dış bağımlılık yok" ilkesiyle yayımlanıyor; eklenmesi ayrı karar.
+Bilerek bağlanmayanlar: **Sırdaş**, **Duruş**, **Measure Sieve** ve **ShiftFlow** "dosya/veri cihazından çıkmaz" sözü verir (Measure Sieve ve ShiftFlow ayrıca "analitik yok", "dış adrese istek yok" der; ShiftFlow'un uçtan uca testi dış isteği hata sayar); dış adrese bağlantı bu sözü zayıflatır. **Pusula**'nın kendi sunucu tarafı ölçümü var (`server/analytics.js`). **İngilizce Atölyesi**'nin kendi izinli ölçümü var. Kesit uygulamaları "dış bağımlılık yok" ilkesiyle yayımlanıyor; eklenmesi ayrı karar.
 
 Yeni bir proje bağlamak: `projeler.json`'a ad ve adres ekle; projede yalnız resmî adreste çalışan küçük bir yükleyici koy (`location.hostname` denetimi), CSP'de `script-src` ve `connect-src`'ye `https://olcum.ysfdurak.com` ekle. Betik stillerini `adoptedStyleSheets` ile verdiği için `style-src 'unsafe-inline'` gerekmez.
 
