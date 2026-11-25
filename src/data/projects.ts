@@ -585,7 +585,7 @@ export const PROJECTS: Project[] = [
     },
     hosting: 'vps',
     env: 'personal',
-    url: 'https://aday.ysfdurak.com/',
+    url: 'https://aday.ysfdurak.com/workspace',
     isaret: 'Aday Atölyesi',
     langParam: true,
     repo: GH + 'aday_atolyesi',
