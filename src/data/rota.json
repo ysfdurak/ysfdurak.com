@@ -1,5 +1,5 @@
 {
-  "son_tarama": "2026-11-23",
+  "son_tarama": "2026-11-25",
   "projeler": [
     {
       "id": "video-zaman-etudu",
@@ -38,7 +38,7 @@
       "yayinda": true,
       "canli_url": "https://durus.ysfdurak.com/",
       "repo": "ysfdurak/durus-ergonomi",
-      "son_guncelleme": "2026-11-23",
+      "son_guncelleme": "2026-11-24",
       "durum_notu": {
         "tr": "Türkçe ve İngilizce yayında",
         "en": "Live in Turkish and English"
@@ -60,7 +60,7 @@
       "yayinda": true,
       "canli_url": "https://destek.ysfdurak.com/",
       "repo": "ysfdurak/destek-merkezi",
-      "son_guncelleme": "2026-11-23",
+      "son_guncelleme": "2026-11-24",
       "durum_notu": {
         "tr": "Kendi sunucumda yayında",
         "en": "Live on my own server"
@@ -126,7 +126,7 @@
       "yayinda": true,
       "canli_url": "https://aday.ysfdurak.com/",
       "repo": "ysfdurak/aday_atolyesi",
-      "son_guncelleme": "2026-11-23",
+      "son_guncelleme": "2026-11-25",
       "durum_notu": {
         "tr": "Canlı demo yayında",
         "en": "Live demo"
@@ -170,7 +170,7 @@
       "yayinda": true,
       "canli_url": "https://ingilizce-atolyesi.ysfdurak.com/",
       "repo": "ysfdurak/ingilizce-ogrenme-atolyesi",
-      "son_guncelleme": "2026-11-23",
+      "son_guncelleme": "2026-11-25",
       "durum_notu": {
         "tr": "Kendi adresinde yayında",
         "en": "Live at its own address"
@@ -210,12 +210,13 @@
       },
       "durum": "pilot",
       "yayinda": true,
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-25",
       "durum_notu": {
-        "tr": "Pilot aşamasında; otomasyonlar ve risk tespiti genişletiliyor",
-        "en": "In pilot; automations and risk detection being extended"
+        "tr": "Pilot: kendi sunucumda yayında; pilot bitiş ölçütleri 9 Aralık’a kadar izleniyor",
+        "en": "Pilot: running on my own server; pilot exit criteria are tracked until 9 December"
       },
-      "ozel_not": "Henüz GitHub'da ve sunucuda değil. Usta adı kesinleşmedi."
+      "ozel_not": "Usta adı kesinleşmedi. Site proje sayfası pilot bitince eklenecek.",
+      "repo": "ysfdurak/emanet"
     },
     {
       "id": "liman-kulesi",
@@ -289,7 +290,7 @@
       "yayinda": true,
       "canli_url": "https://shiftflow.ysfdurak.com/",
       "repo": "ysfdurak/ShiftFlow",
-      "son_guncelleme": "2026-11-23",
+      "son_guncelleme": "2026-11-25",
       "durum_notu": {
         "tr": "Windows sürümü (3.11.2) indirilebilir; tarayıcı demosu yayında, Python tarayıcıda çalışıyor ve veri cihazdan çıkmıyor",
         "en": "Windows release (3.11.2) available; the browser demo is live, running Python in the browser so data never leaves the device"
@@ -308,7 +309,7 @@
       "durum": "canli",
       "yayinda": true,
       "repo": "ysfdurak/butce-sapmasi-rapor-otomasyonu",
-      "son_guncelleme": "2026-11-23",
+      "son_guncelleme": "2026-11-25",
       "durum_notu": {
         "tr": "Tarayıcı demosu yayında; Excel makrosu Windows’ta 188/188 testle doğrulandı, Power Query şablonu gerçek Excel’de denendi",
         "en": "Browser demo is live; the Excel macro passed 188/188 tests on Windows and the Power Query template was tried in real Excel"
@@ -464,7 +465,7 @@
       },
       "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-23",
+      "son_guncelleme": "2026-11-24",
       "durum_notu": {
         "tr": "Yayında; Windows’ta Power BI Desktop ile uçtan uca test edildi. PBIX dosyalarını tarayıcıda okuyor, temizlenmiş kopya ve sayısal doğrulama var",
         "en": "Live; tested end to end with Power BI Desktop on Windows. Reads PBIX files in the browser, with a cleaned copy and numeric verification"
@@ -579,14 +580,15 @@
         "tr": "Depo ekipmanı için TPM: ortak bir arıza kaydı, vardiya başı otonom bakım kontrolleri, anormallik etiketleri ve duruş kayıplarının analizi.",
         "en": "TPM for warehouse equipment: a shared failure log, start-of-shift autonomous maintenance checks, abnormality tags and analysis of downtime losses."
       },
-      "durum": "fikir",
+      "durum": "pilot",
       "yayinda": false,
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-25",
       "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
+        "tr": "Arıza Defteri, Nabız ve Nabız Analiz kendi sunucumda çalışıyor; telefon denemeleri sürüyor",
+        "en": "Arıza Defteri, Nabız and Nabız Analiz run on my own server; phone tests are ongoing"
       },
-      "ozel_not": "Uygulama adı (Nabız) kesinleşmedi."
+      "ozel_not": "Uygulama adı (Nabız) kesinleşmedi.",
+      "repo": "ysfdurak/nabiz"
     },
     {
       "id": "forum-nabzi",
