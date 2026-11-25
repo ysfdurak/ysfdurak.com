@@ -127,15 +127,7 @@ const jsonLd = {
       )
     }
 
-    {
-      p.decisions && (
-        <section>
-          <h2>{t('project.decisions')}</h2>
-          <ul>{p.decisions[lang].map((s) => <li>{s}</li>)}</ul>
-        </section>
-      )
-    }
-
+    {/* Proje sayfası projenin ne yaptığını anlatır; kişisel rol, tasarım kararları ve öğrendiklerim bölümleri gösterilmez (25 Kasım 2026). */}
     {
       cs?.results && cs.results.length > 0 && (
         <section>
@@ -161,24 +153,6 @@ const jsonLd = {
               </li>
             ))}
           </ol>
-        </section>
-      )
-    }
-
-    {
-      cs?.role && (
-        <section>
-          <h2>{t('project.role')}</h2>
-          <p>{cs.role}</p>
-        </section>
-      )
-    }
-
-    {
-      cs?.lessons && cs.lessons.length > 0 && (
-        <section>
-          <h2>{t('project.lessons')}</h2>
-          <ul>{cs.lessons.map((s) => <li>{s}</li>)}</ul>
         </section>
       )
     }
