@@ -117,7 +117,7 @@ const jsonLd = {
       p.video && showVideo && (
         <section>
           <h2>{t('project.video')}</h2>
-          <figure class="shot video">
+          <figure class={p.video.h > p.video.w ? 'shot video portrait' : 'shot video'}>
             <video controls preload="none" playsinline poster={pick(p.video.poster, p.video.posterEn)} width={p.video.w} height={p.video.h} aria-label={p.video.caption[lang]}>
               <source src={pick(p.video.src, p.video.srcEn)} type="video/mp4" />
             </video>

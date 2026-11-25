@@ -140,6 +140,8 @@ section[id] { scroll-margin-top: 1rem; }
 .shot { margin: 1.5rem 0; }
 .shot img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); display: block; background: var(--bg-soft); }
 .shot video { width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); display: block; background: var(--bg-soft); }
+/* Dikey (telefon biçimli) tanıtım videosu: sayfa genişliğine yayılmasın */
+.shot.video.portrait { max-width: 400px; margin-inline: auto; }
 .shot figcaption { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.4rem; }
 .hero-shot { margin-top: 1.2rem; }
 .hero-loop video { width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); display: block; background: var(--bg-soft); }

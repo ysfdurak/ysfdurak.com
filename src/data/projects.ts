@@ -699,6 +699,26 @@ export const PROJECTS: Project[] = [
       { src: '/img/diyalog-atolyesi/rapor.webp', w: 840, h: 860, alt: { tr: 'Rapor: 100 üzerinden skor ve beş boyut (açık uçlu soru, derinleşme, varsayımsız soru, bilgi keşfi, sonuç)', en: 'Report: a score out of 100 and five dimensions (open questions, follow-up depth, no leading questions, facts uncovered, conclusion)' } },
       { src: '/img/diyalog-atolyesi/senaryolar-depo.webp', w: 840, h: 900, alt: { tr: 'Senaryolar: sektör ve alan filtreleri, günün senaryosu bir depo konusu, her kartta üç farklı kök neden', en: 'Scenarios: sector and area filters, a warehouse topic as the scenario of the day, three root causes on every card' } },
     ],
+    video: {
+      src: '/video/diyalog-tanitim-tr.mp4',
+      poster: '/video/diyalog-tanitim-tr.webp',
+      w: 1080,
+      h: 1920,
+      caption: {
+        tr: '27 saniyede Diyalog Atölyesi: “Ekip isteksiz mi?” gibi yönlendirici bir soru yerine doğru soruyu sormak; senaryo seçimi, 5 soru hakkıyla oturum, beş boyutlu rapor ve “Şöyle sorabilirdin” önerisi. Görüntüler örnek oturumdan.',
+        en: 'Diyalog Atölyesi in 27 seconds (Turkish captions): choosing a scenario, a session with 5 questions, the five-dimension report and the “you could have asked” suggestion. Footage from the sample session.',
+      },
+      loop: {
+        src: '/video/diyalog-dongu-tr.mp4',
+        poster: '/video/diyalog-dongu-tr.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'Diyalog Atölyesi kısa döngü: senaryolar, oturum ve rapor',
+          en: 'Diyalog Atölyesi short loop: scenarios, a session and the report',
+        },
+      },
+    },
     demo: {
       tr: 'Hesap gerekmez: bir senaryo seç, 5 soru sor, kök nedeni tahmin et; raporda her soru için “şöyle sorabilirdin” önerisi gelir. Günde 3 canlı oturum hakkın var. Yapay zekâ kullanmayan “Örnek oturumu izle” her zaman açık. Konuşma metni kaydedilmez, yalnızca anonim özet tutulur.',
       en: 'No account needed: pick a scenario, ask 5 questions and guess the root cause; the report suggests a better way to ask each question. You get 3 live sessions a day, and “Örnek oturumu izle” (watch the sample session) works without an AI call. Conversations are not stored, only an anonymous summary. The interface is in Turkish.',
@@ -869,6 +889,26 @@ export const PROJECTS: Project[] = [
       { src: '/img/shiftflow/excel-formulleri.webp', w: 980, h: 420, alt: { tr: 'Excel’den taşıma: raporun yanındaki formüllü sütunlar okunup ShiftFlow formülüne çevrilir ve Excel’in değerleriyle karşılaştırılır', en: 'Moving from Excel: formula columns next to the report are read, converted to ShiftFlow formulas and compared with Excel’s own values' } },
       { src: '/img/shiftflow/gosterge-paneli.webp', w: 1100, h: 700, alt: { tr: 'Gösterge paneli: iş akışıyla kaydedilen ve her açılışta güncel sonuçtan hesaplanan kutucuklar', en: 'Dashboard: tiles saved with the workflow and recalculated from the latest result each time' } },
     ],
+    video: {
+      src: '/video/shiftflow-tanitim-tr.mp4',
+      poster: '/video/shiftflow-tanitim-tr.webp',
+      w: 1080,
+      h: 1920,
+      caption: {
+        tr: '27 saniyede ShiftFlow: rapor adımlarını bir kez kurmak, aynı değerin farklı yazılışlarını yakalayıp düzeltmek ve yeni günün verisiyle aynı akışı tek tıkla yeniden çalıştırmak. Görüntüler tarayıcı demosunun örnek verisinden.',
+        en: 'ShiftFlow in 27 seconds (Turkish captions): defining report steps once, catching different spellings of the same value and re-running the same flow on the next day’s data in one click. Footage from the browser demo’s sample data.',
+      },
+      loop: {
+        src: '/video/shiftflow-dongu-tr.mp4',
+        poster: '/video/shiftflow-dongu-tr.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'ShiftFlow kısa döngü: yazım uyarısı, düzeltilmiş pivot ve yeni günün verisiyle çalışan adımlar',
+          en: 'ShiftFlow short loop: the spelling warning, the fixed pivot and the steps re-run on the next day’s data',
+        },
+      },
+    },
     tr: {
       tagline: 'Excel’de her gün elle yapılan rapor hazırlığını bir kez tanımlayıp her vardiya tek tıkla tekrar çalıştıran Windows uygulaması.',
       problem:
@@ -912,6 +952,26 @@ export const PROJECTS: Project[] = [
       { src: '/img/butce-sapmasi/sapma-oncelikleri.webp', w: 1440, h: 1000, alt: { tr: 'Sapma öncelikleri: brüt bütçe aşımı, aşan bölüm sayısı ve en büyük 10 aşım grafiği', en: 'Variance priorities: gross overrun, number of departments over budget and the 10 largest overruns' } },
       { src: '/img/butce-sapmasi/bolum-analizi.webp', w: 1440, h: 1000, alt: { tr: 'Bölüm analizi: bölüm ve müdürlük bazında gerçekleşen, bütçe ve sapma', en: 'Department analysis: actual, budget and variance by department and directorate' } },
     ],
+    video: {
+      src: '/video/butce-tanitim-tr.mp4',
+      poster: '/video/butce-tanitim-tr.webp',
+      w: 1080,
+      h: 1920,
+      caption: {
+        tr: '27 saniyede Bütçe Sapması: bütçe, gerçekleşen ve geçen yıl karşılaştırması, öne çıkan aşımlar, bir kalemin hacim ve birim maliyet etkisiyle kaynağı, dip toplam ve revizyon kontrolleri. Görüntüler sentetik örnek veriden.',
+        en: 'Bütçe Sapması in 27 seconds (Turkish captions): budget vs actual vs last year, the largest overruns, one line traced to its volume and unit-cost effect and its source, plus total and revision checks. Footage from synthetic sample data.',
+      },
+      loop: {
+        src: '/video/butce-dongu-tr.mp4',
+        poster: '/video/butce-dongu-tr.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'Bütçe Sapması kısa döngü: genel durum, kalem ayrıntısı ve sapma öncelikleri',
+          en: 'Bütçe Sapması short loop: overview, line detail and variance priorities',
+        },
+      },
+    },
     demo: {
       tr: 'Giriş gerekmez. Sentetik veriyle açılır; Python kodu tarayıcında çalışır, dosyalar hiçbir yere gönderilmez. İlk açılışta Python motoru indirilir (yaklaşık 10 saniye).',
       en: 'No sign-in. Opens with synthetic data; the Python code runs in your browser and files are not sent anywhere. The first visit downloads the Python engine (about 10 seconds).',
