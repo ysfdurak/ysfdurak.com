@@ -22,7 +22,7 @@ else
   echo ".env zaten var, dokunulmadı."
 fi
 
-echo "== 3/4 Arıza Defteri derleniyor ve başlatılıyor (ilk açılışta 180 günlük geçmiş üretilir) =="
+echo "== 3/4 Arıza Defteri derleniyor ve başlatılıyor (ilk açılışta 360 günlük geçmiş üretilir) =="
 cd deploy && sudo docker compose -f docker-compose.ortak.yml up -d --build
 
 echo "== 4/4 Caddy yönlendirmesi =="
