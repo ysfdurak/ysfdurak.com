@@ -679,8 +679,8 @@ export const PROJECTS: Project[] = [
   {
     slug: 'diyalog-atolyesi',
     caseStudy: {
-      tr: { role: 'Fikir, iletişim, liderlik ve doğru soru sorma becerisini çalışabileceğim bir uygulama istememden çıktı. Ürün yönünü bilerek Claude’a bıraktım; ayrı bir uygulama olarak Aday Atölyesi’ne bağlanması, kredi azalınca bildirim gelmesi ve tekrar oynayışta ezberi önleyecek varyant sistemi benim kararlarım; kod yapay zekâ (Claude) ile yazıldı. Pilotta rapor cevabı gösterdiği için ikinci denemenin kolaylaştığını gördüm; aynı senaryoya farklı kök nedenler getiren varyantlar bu yüzden sırada.' },
-      en: { role: 'The idea came from wanting an app to practise communication, leadership and asking the right questions. I deliberately left the product direction to Claude; keeping it a separate app linked to Aday Atölyesi, credit alerts and a variant system against memorising replays are my decisions; the code was written with AI (Claude). In the pilot I saw that the report makes a second attempt easier because it reveals the answer, so variants that give the same scenario different root causes are next.' },
+      tr: { role: 'Fikir, iletişim, liderlik ve doğru soru sorma becerisini çalışabileceğim bir uygulama istememden çıktı. Ürün yönünü bilerek Claude’a bıraktım; ayrı bir uygulama olarak Aday Atölyesi’ne bağlanması, kredi azalınca bildirim gelmesi ve tekrar oynayışta ezberi önleyecek varyant sistemi benim kararlarım; kod yapay zekâ (Claude) ile yazıldı. Pilotta rapor cevabı gösterdiği için ikinci denemenin kolaylaştığını gördüm; bu yüzden her senaryoya üç farklı kök neden eklendi. Senaryo konularını kendi depo deneyimimden ve yaşadığım sorunlardan seçtim; bankacılık, e-ticaret, pazarlama ve perakende senaryoları da ekledik.' },
+      en: { role: 'The idea came from wanting an app to practise communication, leadership and asking the right questions. I deliberately left the product direction to Claude; keeping it a separate app linked to Aday Atölyesi, credit alerts and a variant system against memorising replays are my decisions; the code was written with AI (Claude). In the pilot I saw that the report makes a second attempt easier because it reveals the answer, so every scenario now has three different root causes. I drew the scenario topics from my own warehouse experience and problems I have faced; banking, e-commerce, marketing and retail scenarios were added too.' },
     },
     name: 'Diyalog Atölyesi',
     category: 'ekip',
@@ -697,7 +697,7 @@ export const PROJECTS: Project[] = [
     shots: [
       { src: '/img/diyalog-atolyesi/oturum.webp', w: 840, h: 860, alt: { tr: 'Oturum: durum, rolün ve karşındaki kişi; açık uçlu sorular gizli bilgileri tek tek açıyor, 5 soru hakkı', en: 'Session: the situation, your role and the other person; open questions unlock hidden facts one by one, 5 questions allowed' } },
       { src: '/img/diyalog-atolyesi/rapor.webp', w: 840, h: 860, alt: { tr: 'Rapor: 100 üzerinden skor ve beş boyut (açık uçlu soru, derinleşme, varsayımsız soru, bilgi keşfi, sonuç)', en: 'Report: a score out of 100 and five dimensions (open questions, follow-up depth, no leading questions, facts uncovered, conclusion)' } },
-      { src: '/img/diyalog-atolyesi/senaryolar.webp', w: 840, h: 900, alt: { tr: 'Senaryolar: operasyon, ekip yönetimi ve iş geliştirme; günün senaryosu ve örnek oturum', en: 'Scenarios: operations, team management and business development; scenario of the day and a sample session' } },
+      { src: '/img/diyalog-atolyesi/senaryolar.webp', w: 840, h: 900, alt: { tr: 'Senaryolar: sektör ve alan filtreleri, sektörler arasında dönen günün senaryosu, her kartta üç farklı kök neden', en: 'Scenarios: sector and area filters, a scenario of the day that rotates across sectors, three root causes on every card' } },
     ],
     demo: {
       tr: 'Hesap gerekmez: bir senaryo seç, 5 soru sor, kök nedeni tahmin et; raporda her soru için “şöyle sorabilirdin” önerisi gelir. Günde 3 canlı oturum hakkın var. Yapay zekâ kullanmayan “Örnek oturumu izle” her zaman açık. Konuşma metni kaydedilmez, yalnızca anonim özet tutulur.',
@@ -709,6 +709,7 @@ export const PROJECTS: Project[] = [
         'Sorun çözerken yöneticiler çoğu zaman nedeni baştan varsayar, evet/hayır ya da suçlayan sorular sorar ve asıl bilgiye ulaşamaz. Bu beceri toplantıda değil pratikle gelişir; genel bir sohbet botuyla çalışmak da işe yaramaz, çünkü bot her şeyi anlatır ve iki deneme karşılaştırılamaz.',
       solution: [
         'Senaryo, karakter ve gizli bilgiler: her bilginin bir açılma koşulu var; evet/hayır sorusu kısa, suçlayan soru savunmacı cevap alır',
+        '163 senaryo, her biri üç farklı kök nedenli (489 oturum); 8 yönetim alanı ve 5 sektör (depo ve lojistik, bankacılık, e-ticaret, pazarlama, perakende). Tekrar oynayışta oynanmamış kök neden gelir, rapor ezberlenemez; günün senaryosu sektörler arasında döner',
         '5 soru hakkı, sonunda kök neden tahmini; gizli bilgiler ve kök neden oturum bitene kadar tarayıcıya hiç gönderilmez',
         'Beş boyutlu rubrik: üç boyut kodla, iki boyut yazılı ölçüte göre modelle puanlanır; toplam skor kodla hesaplanır, her soru etiketi raporda görünür',
         'Her soru için “şöyle sorabilirdin” önerisi ve zayıf soruyu yeniden deneme',
@@ -723,6 +724,7 @@ export const PROJECTS: Project[] = [
         'When solving problems, managers often assume the cause up front, ask yes/no or blaming questions and never reach the real information. The skill grows with practice, not in meetings, and a general chatbot does not help: it tells everything, and two attempts cannot be compared.',
       solution: [
         'Scenario, character and hidden facts: each fact has an unlock condition; a yes/no question gets a short answer, a blaming one gets a defensive one',
+        '163 scenarios, each with three different root causes (489 sessions), across 8 management areas and 5 sectors (warehousing and logistics, banking, e-commerce, marketing, retail). A replay brings a root cause you have not played, so the report cannot be memorised; the scenario of the day rotates across sectors',
         '5 questions, then a root-cause guess; hidden facts and the root cause never reach the browser before the session ends',
         'Five-dimension rubric: three dimensions scored in code, two by the model against written criteria; the total is calculated in code and every question label shows in the report',
         'A “you could have asked” suggestion for every question, and a retry for weak ones',

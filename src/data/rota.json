@@ -191,10 +191,10 @@
       "yayinda": true,
       "canli_url": "https://diyalog.ysfdurak.com/",
       "repo": "ysfdurak/diyalog-atolyesi",
-      "son_guncelleme": "2026-11-20",
+      "son_guncelleme": "2026-11-25",
       "durum_notu": {
-        "tr": "Canlı; soru modunda varyant sistemi geliştiriliyor",
-        "en": "Live; a variant system for the question mode is being built"
+        "tr": "Canlı; 163 senaryo, her biri üç kök nedenli, 5 sektör. Sırada: yeni sektör senaryolarını gerçek modelle denemek",
+        "en": "Live; 163 scenarios with three root causes each, across 5 sectors. Next: testing the new sector scenarios with the real model"
       },
       "ozel_not": "Yapay zekâ kredisi bitince/azalınca ziyaretçi ve ben bilgilendirilmeli."
     },
