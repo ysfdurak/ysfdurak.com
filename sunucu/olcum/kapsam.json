@@ -1,0 +1,32 @@
+{
+  "_aciklama": "Her depo için ölçüm kararı. araclar/guvenlik/tara.py bunu denetler: 'olculen' depoda ölçüm yükleyicisi ve projeler.json kaydı olmalı; 'soz' depoda olcum.ysfdurak.com hiç geçmemeli (\"veri dışarı gitmez\" sözü); 'diger' gerekçeyle ayrı tutulur; listede olmayan yeni depo karar verilene kadar bulgu üretir.",
+  "olculen": {
+    "aday_atolyesi": "aday",
+    "ariza-defteri": "ariza",
+    "butce-sapmasi-rapor-otomasyonu": "butce",
+    "destek-merkezi": "destek",
+    "diyalog-atolyesi": "diyalog",
+    "emanet": "emanet",
+    "ivme-oneri-kaizen": "ivme",
+    "kivilcim-zihin-oyunlari": "kivilcim",
+    "nabiz": "nabiz",
+    "video-zaman-etudu": "is-etudu"
+  },
+  "soz": {
+    "durus-ergonomi": "Video ve analiz cihazdan çıkmaz sözü",
+    "sirdas": "Maskelenecek veri cihazdan çıkmaz sözü",
+    "measure-sieve": "Sayfada 'no analytics, dosya tarayıcıdan çıkmaz' yazıyor",
+    "ShiftFlow": "Demo 'veri tarayıcınızdan çıkmaz, dış adrese istek yok' diyor; uçtan uca test dış isteği hata sayar",
+    "kesit-sql": "Kesit: 'geri bildirim bağlantısını açmadıkça dış sunucuya istek gitmez' sözü",
+    "kesit-powerbi": "Kesit: aynı söz",
+    "kesit-python": "Kesit: aynı söz",
+    "kesit-istatistik": "Kesit: aynı söz",
+    "ysfdurak.github.io": "Kesit merkez sayfası ve eski adres yönlendirmeleri: Kesit'in sözü"
+  },
+  "diger": {
+    "ysfdurak.com": "Ölçüm servisinin kendisi burada; site Cloudflare Web Analytics kullanır",
+    "nabiz-analiz": "Arayüzü yok; Nabız iç ağdan okur (ölçüm Nabız'da)",
+    "pusula-is-takip": "KARAR BEKLİYOR: kendi sunucu tarafı ölçümü var (server/analytics.js); ortak panele taşınsın mı?",
+    "ingilizce-ogrenme-atolyesi": "KARAR BEKLİYOR: onaya bağlı Google Analytics var; ortak ölçüme geçilsin mi?"
+  }
+}
