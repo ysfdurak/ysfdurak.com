@@ -131,7 +131,7 @@ const GH = 'https://github.com/ysfdurak/';
 
 // Sitede yalnızca tamamlanmış ve yayına hazır projeler durur.
 // Pilotu süren ya da üzerinde çalışılan projeler (WDL, Sorter Studio, ShiftFlow, Mal Kabul,
-// Toplama Rotası, İşbaşı, Pit Duvarı, Bütçe Sapma, Ölçü Eleği, Otopano, Örtü (Sırdaş olarak 18 Kasım'da geri döndü), Sunum Atölyesi,
+// Toplama Rotası, İşbaşı, Pit Duvarı, Bütçe Sapma, Ölçü Eleği (Measure Sieve olarak 25 Kasım'da geri döndü), Otopano, Örtü (Sırdaş olarak 18 Kasım'da geri döndü), Sunum Atölyesi,
 // Ünite Atölyesi, Kıvılcım) 12 Kasım 2026'da çıkarıldı; eski metinleri 847188b commit'inde duruyor.
 export const PROJECTS: Project[] = [
   // ── Operasyon ve depo ────────────────────────────────────────────
@@ -702,11 +702,13 @@ export const PROJECTS: Project[] = [
     video: {
       src: '/video/diyalog-tanitim-tr.mp4',
       poster: '/video/diyalog-tanitim-tr.webp',
+      srcEn: '/video/diyalog-promo-en.mp4',
+      posterEn: '/video/diyalog-promo-en.webp',
       w: 1080,
       h: 1920,
       caption: {
         tr: '27 saniyede Diyalog Atölyesi: “Ekip isteksiz mi?” gibi yönlendirici bir soru yerine doğru soruyu sormak; senaryo seçimi, 5 soru hakkıyla oturum, beş boyutlu rapor ve “Şöyle sorabilirdin” önerisi. Görüntüler örnek oturumdan.',
-        en: 'Diyalog Atölyesi in 27 seconds (Turkish captions): choosing a scenario, a session with 5 questions, the five-dimension report and the “you could have asked” suggestion. Footage from the sample session.',
+        en: 'Diyalog Atölyesi in 27 seconds (Turkish interface, English captions): choosing a scenario, a session with 5 questions, the five-dimension report and the “you could have asked” suggestion. Footage from the sample session.',
       },
       loop: {
         src: '/video/diyalog-dongu-tr.mp4',
@@ -892,11 +894,13 @@ export const PROJECTS: Project[] = [
     video: {
       src: '/video/shiftflow-tanitim-tr.mp4',
       poster: '/video/shiftflow-tanitim-tr.webp',
+      srcEn: '/video/shiftflow-promo-en.mp4',
+      posterEn: '/video/shiftflow-promo-en.webp',
       w: 1080,
       h: 1920,
       caption: {
         tr: '27 saniyede ShiftFlow: rapor adımlarını bir kez kurmak, aynı değerin farklı yazılışlarını yakalayıp düzeltmek ve yeni günün verisiyle aynı akışı tek tıkla yeniden çalıştırmak. Görüntüler tarayıcı demosunun örnek verisinden.',
-        en: 'ShiftFlow in 27 seconds (Turkish captions): defining report steps once, catching different spellings of the same value and re-running the same flow on the next day’s data in one click. Footage from the browser demo’s sample data.',
+        en: 'ShiftFlow in 27 seconds (Turkish interface, English captions): defining report steps once, catching different spellings of the same value and re-running the same flow on the next day’s data in one click. Footage from the browser demo’s sample data.',
       },
       loop: {
         src: '/video/shiftflow-dongu-tr.mp4',
@@ -955,11 +959,13 @@ export const PROJECTS: Project[] = [
     video: {
       src: '/video/butce-tanitim-tr.mp4',
       poster: '/video/butce-tanitim-tr.webp',
+      srcEn: '/video/butce-promo-en.mp4',
+      posterEn: '/video/butce-promo-en.webp',
       w: 1080,
       h: 1920,
       caption: {
         tr: '27 saniyede Bütçe Sapması: bütçe, gerçekleşen ve geçen yıl karşılaştırması, öne çıkan aşımlar, bir kalemin hacim ve birim maliyet etkisiyle kaynağı, dip toplam ve revizyon kontrolleri. Görüntüler sentetik örnek veriden.',
-        en: 'Bütçe Sapması in 27 seconds (Turkish captions): budget vs actual vs last year, the largest overruns, one line traced to its volume and unit-cost effect and its source, plus total and revision checks. Footage from synthetic sample data.',
+        en: 'Bütçe Sapması in 27 seconds (Turkish interface, English captions): budget vs actual vs last year, the largest overruns, one line traced to its volume and unit-cost effect and its source, plus total and revision checks. Footage from synthetic sample data.',
       },
       loop: {
         src: '/video/butce-dongu-tr.mp4',
@@ -999,6 +1005,103 @@ export const PROJECTS: Project[] = [
         'Three ways to run it: a local Python dashboard, Excel VBA and a macro-free Power Query template; all use the same calculation rules and produce the same report sheets',
         'Data stays on the computer; the browser demo runs on synthetic data',
       ],
+    },
+  },
+  {
+    slug: 'measure-sieve',
+    name: 'Measure Sieve',
+    category: 'veri',
+    hosting: 'static',
+    env: 'device',
+    url: 'https://measure-sieve.ysfdurak.com/',
+    isaret: 'Measure Sieve',
+    langParam: true,
+    repo: GH + 'measure-sieve',
+    tech: ['JavaScript', 'JSZip', 'Xpress9', 'TMSL / TMDL', 'MCP', 'Node.js', 'PowerShell'],
+    og: '/img/measure-sieve/og.jpg',
+    ogEn: '/img/measure-sieve/og-en.jpg',
+    video: {
+      src: '/video/measure-sieve-tanitim-tr.mp4',
+      poster: '/video/measure-sieve-tanitim-tr.webp',
+      srcEn: '/video/measure-sieve-promo-en.mp4',
+      posterEn: '/video/measure-sieve-promo-en.webp',
+      w: 1080,
+      h: 1920,
+      caption: {
+        tr: '27 saniyede Measure Sieve: dosyayı bırakınca kullanılmayan measure’lar nedenleriyle listelenir, temizlenmiş kopya oluşturulup doğrulanır; aynı çekirdek Claude’dan da sorulabilir. Görüntüler uygulamanın örnek raporundan.',
+        en: 'Measure Sieve in 27 seconds: drop a file and the unused measures are listed with reasons, a cleaned copy is built and verified, and the same core can be asked from Claude. Footage uses the app’s sample report in English.',
+      },
+      loop: {
+        src: '/video/measure-sieve-dongu-tr.mp4',
+        poster: '/video/measure-sieve-dongu-tr.webp',
+        srcEn: '/video/measure-sieve-loop-en.mp4',
+        posterEn: '/video/measure-sieve-loop-en.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'Measure Sieve kısa döngü: sonuç özeti, nedenleriyle measure listesi, temizlik listesi ve doğrulama',
+          en: 'Measure Sieve short loop: the result summary, the measure list with reasons, the cleanup list and verification',
+        },
+      },
+    },
+    shots: [
+      { src: '/img/measure-sieve/sonuc.webp', srcEn: '/img/measure-sieve/sonuc-en.webp', w: 1440, h: 900, alt: { tr: 'Sonuç: 16 measure içinden 5 tanesi kullanılmıyor gibi; aynı formüle sahip measure grubu ve durumlara göre renkli özet', en: 'Result: 5 of 16 measures look unused; a group of measures with the same formula and a colour summary by status' } },
+      { src: '/img/measure-sieve/liste.webp', srcEn: '/img/measure-sieve/liste-en.webp', w: 1440, h: 900, alt: { tr: 'Liste: her measure’ın durumu ve nedeni (görselde, formülde, gizli sayfada); sağda güvenli silme sırasıyla temizlik listesi', en: 'List: each measure’s status and reason (in a visual, in a formula, on a hidden page); on the right, the cleanup list in a safe removal order' } },
+      { src: '/img/measure-sieve/dogrulama.webp', srcEn: '/img/measure-sieve/dogrulama-en.webp', w: 1440, h: 900, alt: { tr: 'Temizlenmiş kopya: seçilenler çıkarılmış yeni dosya yeniden taranıp aslıyla karşılaştırılır; doğrulama geçti', en: 'Cleaned copy: the new file without the selected items is scanned again and compared with the original; verification passed' } },
+    ],
+    demo: {
+      tr: 'Hesap gerekmez, dosyan bilgisayarından çıkmaz. Sayfa örnek bir satış raporuyla açılır: kullanılmayan measure’ları ve nedenlerini gör, “Kopyayı oluştur ve doğrula” ile temizlenmiş kopyayı üret. Kendi PBIX, PBIT ya da PBIP dosyanı da bırakabilirsin; veri satırları hiç okunmaz, yalnızca model tanımı.',
+      en: 'No account, and your file never leaves your computer. The page opens with a sample sales report: see the unused measures and the reasons, then use “Build and verify the copy” to produce a cleaned copy. You can also drop your own PBIX, PBIT or PBIP file; no data rows are read, only the model definition.',
+    },
+    tr: {
+      tagline: 'Power BI modelinde hangi measure, sütun ve tabloların gerçekten kullanıldığını bulan; kullanılmayanları nedenleriyle listeleyip temizlenmiş kopyayı doğrulayan araç.',
+      problem:
+        'Power BI raporları büyüdükçe modelde kimsenin kullanmadığı measure’lar birikir: eski denemeler, aynı hesabı yapan iki ayrı measure, artık hiçbir görselde olmayan alanlar. Bunlar raporu açanın kafasını karıştırır, hangisinin doğru olduğu sorulur. Elle temizlemek riskli: bir measure başka bir formülün, gizli bir sayfanın ya da güvenlik rolünün içinde kullanılıyor olabilir ve silinince rapor bozulur.',
+      solution: [
+        'PBIX, PBIT, PBIP (TMSL ve TMDL; eski ve PBIR rapor biçimi) ve model.bim okunur; PBIX’in sıkıştırılmış modeli tarayıcıda açılır',
+        'Her öğe için durum ve neden: kullanılıyor, dolaylı kullanım, kontrol et (gizli sayfa, yer imi), zincirleme ve kullanılmıyor gibi',
+        'Aynı formüle sahip measure’lar ve raporda kullanılıp modelde artık bulunmayan alanlar bildirilir',
+        'Güvenli silme sırası; Tabular Editor betiği ve Power Query adımı üretilir',
+        'Temizlenmiş kopya (PBIT ve PBIP): seçilenler çıkarılmış yeni dosya; aslına dokunulmaz',
+        'Yapısal doğrulama: kopya yeniden taranır, rapor alanları ve formül başvuruları aslıyla karşılaştırılır',
+        'Sayısal doğrulama (MCP, Windows): açık Power BI Desktop’ta görsellerin değerleri temizlikten önce ve sonra hesaplanıp karşılaştırılır',
+        'Aynı çekirdek bir MCP sunucusu olarak da çalışır; Claude’a “bu raporda kullanılmayan measure’lar hangileri?” diye sorulabilir',
+        'Türkçe ve İngilizce arayüz; sunucu yok, analiz tarayıcıda',
+      ],
+    },
+    en: {
+      tagline: 'A tool that finds which measures, columns and tables in a Power BI model are really used, lists the unused ones with reasons and verifies the cleaned copy.',
+      problem:
+        'As Power BI reports grow, measures nobody uses pile up in the model: old experiments, two measures doing the same sum, fields no visual shows any more. They confuse whoever opens the report, and people start asking which one is right. Cleaning by hand is risky: a measure may be used inside another formula, on a hidden page or in a security role, and the report breaks when it is deleted.',
+      solution: [
+        'Reads PBIX, PBIT, PBIP (TMSL and TMDL; legacy and PBIR reports) and model.bim; the compressed PBIX model is opened in the browser',
+        'A status and a reason for every item: used, indirect use, check (hidden page, bookmark), chained and looks unused',
+        'Flags measures with the same formula and fields the report uses that no longer exist in the model',
+        'A safe removal order; a Tabular Editor script and a Power Query step are generated',
+        'Cleaned copy (PBIT and PBIP): a new file without the selected items; the original is untouched',
+        'Structural verification: the copy is scanned again and its report fields and formula references are compared with the original',
+        'Numeric verification (MCP, Windows): visual values are computed in an open Power BI Desktop before and after cleanup and compared',
+        'The same core runs as an MCP server; you can ask Claude “which measures are unused in this report?”',
+        'English and Turkish interface; no server, the analysis runs in the browser',
+      ],
+    },
+    decisions: {
+      tr: [
+        '“Kullanılmıyor gibi” kesin hüküm değildir: yüklenmeyen raporlar, Excel pivotları ve dışarıdan yazılan sorgular görülemez; araç bunu açıkça söyler',
+        'PBIX’e yazılmaz: model veriyle birlikte özel bir sıkıştırmayla saklanıyor ve Microsoft içini değiştirmeyi desteklemiyor; dosya bozulursa veri de gider. Bunun yerine PBIP’e kaydetme ya da Tabular Editor betiği önerilir',
+        'Veri satırları hiç okunmaz, yalnızca model tanımı: hem gizlilik hem hız için',
+        'Raporda, rolde, ilişkide kullanılan ya da kalan bir öğeyi bozan hiçbir şey otomatik silinmez',
+      ],
+      en: [
+        '“Looks unused” is not a final verdict: reports you did not load, Excel pivots and queries written from outside cannot be seen, and the tool says so openly',
+        'PBIX files are never written: the model is stored with the data in a special compression Microsoft does not support editing, and a broken file loses the data too. Saving as PBIP or running the Tabular Editor script is suggested instead',
+        'No data rows are read, only the model definition: for privacy and for speed',
+        'Nothing used in the report, a role or a relationship, or anything whose removal would break a remaining item, is removed automatically',
+      ],
+    },
+    caseStudy: {
+      tr: { role: 'Fikir, modelde biriken ve kafa karıştıran kullanılmayan measure’ları bulup temizleme ihtiyacımdan çıktı. PBIX dosyalarıyla çalışması, bulunanların otomatik çıkarılabilmesi ve öncesi-sonrası doğrulamanın (sayısal doğrulama dahil) olması benim şartlarımdı; kod yapay zekâ (Claude) ile yazıldı. İlk sürüm “Ölçü Eleği” adıyla bir claude.ai sayfası olarak başladı; Türkçe karakter içermeyen ve “measure” terimini kullanan bir ad istediğim için Measure Sieve oldu. Windows testleri tamamlandı.' },
+      en: { role: 'The idea came from needing to find and clean up the unused measures that pile up in a model and confuse people. Working with PBIX files, being able to remove what it finds automatically, and a before-and-after verification (including numeric checks) were my requirements; the code was written with AI (Claude). The first version started as a claude.ai page called “Ölçü Eleği”; I wanted a name without Turkish characters that uses the term “measure”, so it became Measure Sieve. The Windows tests are done.' },
     },
   },
   {
