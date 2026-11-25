@@ -72,7 +72,7 @@ Her proje kendi deposunda durur. Konteyneri `web` ağına katılır, dışarıya
 | Destek Merkezi | destek.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-destek.sh` | Ziyaretçi demo alanları (SQLite, 72 saatte silinir, yedek yok) |
 | Diyalog Atölyesi | diyalog.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-diyalog.sh` | Anthropic API; SQLite'ta yalnızca sayaçlar, yedek yok |
 | Arıza Defteri | ariza.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-ariza.sh` | SQLite; sentetik veri tarihten yeniden üretilebildiği için yedek yok (gerçek kayıt yazılmaya başlarsa yedeğe eklenir) |
-| Nabız | nabiz.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-nabiz.sh` (önce Pusula'da hizmet hesabı: nabiz/docs/SUNUCU_KURULUMU.md) | SQLite; demo modunda ziyaretçi alanları 72 saatte silinir, vitrin her gün yeniden üretilir, yedek yok |
+| Nabız | nabiz.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-nabiz.sh` (önce Arıza Defteri; soru sormaz) | SQLite; demo modunda ziyaretçi alanları 72 saatte silinir, vitrin her gün yeniden üretilir, yedek yok |
 | Nabız Analiz (Python) | yalnız iç ağ (`http://nabiz-analiz:8000`) | `bash ~/ysfdurak.com/sunucu/kurulum-nabiz-analiz.sh` | Veri tutmaz; Arıza Defteri'nden okur; Caddy bloğu yok, Claude'a Nabız MCP'si üzerinden |
 | Emanet + Usta (Python) | emanet.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-emanet.sh` | SQLite; demo her gece yeniden üretilir, ziyaretçi kopyaları 24 saatte silinir, yedek yok; MCP anahtarı `.env`'de |
 | Ortak ölçüm ve geri bildirim | olcum.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-olcum.sh` | PostgreSQL `olcum`, gece R2'ye yedeklenir; ayrıntı `olcum/README.md` |

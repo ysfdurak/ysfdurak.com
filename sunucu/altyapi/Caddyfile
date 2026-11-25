@@ -61,7 +61,7 @@ ariza.ysfdurak.com {
 	import uygulama ariza-defteri:8080
 }
 
-# Nabız: depo ekipmanı TPM (QR, otonom bakım kontrolü, etiket → Pusula), MCP (github.com/ysfdurak/nabiz)
+# Nabız: depo ekipmanı TPM (QR, otonom bakım kontrolü, etiket takibi), MCP (github.com/ysfdurak/nabiz)
 nabiz.ysfdurak.com {
 	import uygulama nabiz:8080
 }
