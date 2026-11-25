@@ -116,5 +116,103 @@
       "definitions": "Tanımlar",
       "settings": "Ayarlar"
     }
+  },
+  "emanet": {
+    "ad": "Emanet + Usta",
+    "adres": "https://emanet.ysfdurak.com",
+    "huni": [
+      ["Açtı", "ekran:genel"],
+      ["Çağrı açma ekranına geçti", "ekran:cagri"],
+      ["Risk haritasına baktı", "ekran:risk"],
+      ["\"Ya giderse?\" denedi", "ekran:giderse"],
+      ["Eğitim planına baktı", "ekran:plan"],
+      ["Geri bildirim verdi", "geri_bildirim"]
+    ],
+    "ekranlar": {
+      "genel": "Genel bakış",
+      "cagri": "Çağrı aç",
+      "kuyruk": "Çağrı kuyruğu",
+      "detay": "Çağrı detayı",
+      "otomasyon": "Otomasyon",
+      "kartlar": "Çözümler",
+      "ogrenme": "Öğrenme",
+      "risk": "Risk haritası",
+      "giderse": "Ya giderse?",
+      "izin": "İzin kontrolü",
+      "plan": "Eğitim planı",
+      "degisim": "Değişimler",
+      "ekibim": "Kendi verinle dene",
+      "nasil": "Nasıl çalışır"
+    }
+  },
+  "ariza": {
+    "ad": "Arıza Defteri",
+    "adres": "https://ariza.ysfdurak.com",
+    "huni": [
+      ["Panoyu açtı", "ekran:pano"],
+      ["Geri bildirim verdi", "geri_bildirim"]
+    ],
+    "ekranlar": {
+      "pano": "Pano"
+    }
+  },
+  "nabiz": {
+    "ad": "Nabız (TPM)",
+    "adres": "https://nabiz.ysfdurak.com",
+    "huni": [
+      ["Açtı", "ekran:ekipman"],
+      ["Ekipman kartını açtı", "ekran:e"],
+      ["Vardiya kontrolü yaptı", "islem:kontrol"],
+      ["Etiket açtı", "islem:etiket"],
+      ["Geri bildirim verdi", "geri_bildirim"]
+    ],
+    "ekranlar": {
+      "ekipman": "Ekipman listesi",
+      "e": "Ekipman kartı",
+      "kontrol": "Vardiya kontrolü",
+      "etiket-ac": "Etiket aç",
+      "etiket": "Etiket detayı",
+      "etiketler": "Etiketler",
+      "ozet": "Özet",
+      "qr": "QR kodları",
+      "durus": "Duruş kaydı",
+      "kayip": "Kayıp analizi",
+      "analiz": "Analiz",
+      "a3": "A3 raporu",
+      "giris": "Kurum girişi"
+    },
+    "olaylar": {
+      "islem:kontrol": "Vardiya kontrolü yaptı",
+      "islem:etiket": "Etiket açtı",
+      "islem:etiket_foto": "Etikete fotoğraf ekledi",
+      "islem:etiket_kapat": "Etiketi kapattı",
+      "islem:etiket_ata": "Etiketi atadı",
+      "islem:durus": "Duruş kaydetti",
+      "islem:durus_bitir": "Duruşu bitirdi",
+      "geri_bildirim": "Geri bildirim gönderdi"
+    }
+  },
+  "butce": {
+    "ad": "Bütçe Sapması (tarayıcı demosu)",
+    "adres": "https://ysfdurak.github.io",
+    "huni": [
+      ["Açtı", "ekran:general"],
+      ["Sapma önceliklerine baktı", "ekran:priority"],
+      ["Rapor üretti", "islem:rapor_uret"],
+      ["Geri bildirim verdi", "geri_bildirim"]
+    ],
+    "ekranlar": {
+      "general": "Genel durum",
+      "staff": "Personel",
+      "transactions": "İşlem adedi",
+      "detail": "Detay durum",
+      "departments": "Bölüm analizi",
+      "unit": "Birim maliyet",
+      "priority": "Sapma öncelikleri"
+    },
+    "olaylar": {
+      "islem:rapor_uret": "Rapor üretti",
+      "geri_bildirim": "Geri bildirim gönderdi"
+    }
   }
 }
