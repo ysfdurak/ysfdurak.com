@@ -42,6 +42,8 @@ app.ysfdurak.com {
 
 # Pusula: iş ve ekip takibi + MCP (github.com/ysfdurak/pusula-is-takip)
 pusula.ysfdurak.com {
+	# /ic/: yalnız iç ağ (ölçüm servisi http://pusula:8080'e doğrudan bağlanır); dışarıdan hiç açılmaz
+	respond /ic/* 404
 	import uygulama pusula:8080
 }
 

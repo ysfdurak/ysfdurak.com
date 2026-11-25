@@ -214,5 +214,59 @@
       "islem:rapor_uret": "Rapor üretti",
       "geri_bildirim": "Geri bildirim gönderdi"
     }
+  },
+  "pusula": {
+    "ad": "Pusula",
+    "adres": "https://pusula.ysfdurak.com",
+    "dis": {
+      "url": "http://pusula:8080/ic/istatistik.json",
+      "anahtar": "PUSULA_ISTATISTIK_ANAHTARI",
+      "sayfa": "https://pusula.ysfdurak.com/yonetim/istatistik"
+    }
+  },
+  "ingilizce": {
+    "ad": "İngilizce Atölyesi",
+    "adres": "https://ingilizce-atolyesi.ysfdurak.com",
+    "huni": [
+      ["Açtı", "ekran:home"],
+      ["Kelimelere baktı", "ekran:kelimeler|ekran:card|ekran:practice"],
+      ["Test ya da deneme çözdü", "ekran:test|ekran:ydstest|ekran:sinav"],
+      ["Geri bildirim verdi", "geri_bildirim"]
+    ],
+    "ekranlar": {
+      "home": "Ana sayfa",
+      "uniteler": "Üniteler",
+      "unite": "Ünite",
+      "lesson": "Ders",
+      "dersler": "Dersler",
+      "kelimeler": "Kelimeler",
+      "practice": "Alıştırma",
+      "card": "Kelime kartı",
+      "test": "Kelime testi",
+      "tekrar": "Tekrar",
+      "mywords": "Kelimelerim",
+      "grammar": "Dil bilgisi",
+      "gunit": "Dil bilgisi konusu",
+      "stories": "Okuma parçaları",
+      "story": "Okuma",
+      "dinle": "Dinleme",
+      "dinlex": "Dinleme alıştırması",
+      "diyaloglar": "Diyaloglar",
+      "diyalog": "Diyalog",
+      "idioms": "Deyimler",
+      "idiom": "Deyim",
+      "kaliplar": "Kalıplar",
+      "yazma": "Yazma",
+      "telaffuz": "Telaffuz",
+      "ydstest": "YDS denemesi",
+      "ydsozluk": "YDS sözlüğü",
+      "sinav": "Sınav",
+      "yolculuk": "Yolculuk",
+      "seviye": "Seviye testi",
+      "stats": "İstatistik",
+      "karne": "Karne",
+      "bk": "PDF kitaplar",
+      "hosgeldin": "Hoş geldin"
+    }
   }
 }

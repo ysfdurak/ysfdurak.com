@@ -5,6 +5,7 @@ import { readFile } from 'node:fs/promises';
 import pg from 'pg';
 import { kur, temizle } from './depo.js';
 import { uygulamaOlustur } from './uygulama.js';
+import { disOkuyucu } from './dis.js';
 
 const ortam = process.env;
 if (!ortam.DATABASE_URL) throw Error('DATABASE_URL tanımlı değil (.env).');
@@ -22,6 +23,7 @@ const isle = uygulamaOlustur({
   kokenler: (ortam.IZINLI_KOKENLER || 'https://ysfdurak.com,https://*.ysfdurak.com').split(',').map((s) => s.trim()).filter(Boolean),
   adresDenetimi: ortam.ADRES_DENETIMI !== '0',
   yonetim: { kullanici: ortam.YONETIM_KULLANICI || 'yusuf', sifre: ortam.YONETIM_SIFRE },
+  disOku: disOkuyucu(ortam),
 });
 
 // Saklama süresi dolan olay ve geri bildirimler günde iki kez silinir.

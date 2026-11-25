@@ -27,8 +27,9 @@ export function anaSayfa(projeler, ozet, gun) {
     .filter(([k]) => !k.startsWith('_'))
     .map(([k, a]) => {
       const o = ozet.find((x) => x.proje === k) || {};
-      return `<tr><td><a href="/yonetim/p/${encodeURIComponent(k)}?gun=${gun}">${kac(a.ad || k)}</a></td>
-<td class="sag">${o.ziyaretci ?? 0}</td><td class="sag">${o.geriDonen ?? 0}</td><td class="sag">${o.ortOturumDk ?? 0}</td>
+      const notu = a.dis ? ` <span class="etiket">${o.ulasilamadi ? 'ulaşılamadı' : 'kendi ölçümü'}</span>` : '';
+      return `<tr><td><a href="/yonetim/p/${encodeURIComponent(k)}?gun=${gun}">${kac(a.ad || k)}</a>${notu}</td>
+<td class="sag">${o.ziyaretci ?? 0}</td><td class="sag">${o.geriDonen ?? 0}</td><td class="sag">${o.ortOturumDk ?? '–'}</td>
 <td class="sag">${o.geriBildirim ?? 0}${o.yeniGeriBildirim ? ` <span class="etiket yeni">${o.yeniGeriBildirim} yeni</span>` : ''}</td>
 <td class="sag">${o.ortPuan ?? '–'}</td></tr>`;
     })
@@ -88,5 +89,38 @@ export function projeSayfasi(ad, s) {
 <h2>Geri bildirimler</h2><p class="alt">Durumu "Uygulandı" yapıp ne değiştirdiğini yazarsan, bu kayıt vaka sayfasındaki "geri bildirimden değişikliğe" bölümünün kaynağı olur.</p>
 <div class="tablo-kaydir"><table>${fb}</table></div>
 <p class="alt"><a href="${yol}.json?gun=${s.gun}">JSON</a></p>`,
+  );
+}
+
+/** Kendi ölçümü olan proje (ör. Pusula): özet iç ağdan okunur; geri bildirim durumu o uygulamanın kendi sayfasında yönetilir. */
+export function disProjeSayfasi(ayar, proje, s, gun) {
+  const ad = ayar.ad || proje;
+  const yol = `/yonetim/p/${encodeURIComponent(proje)}`;
+  const kendi = ayar.dis?.sayfa ? ` · <a href="${kac(ayar.dis.sayfa)}">Uygulamanın kendi sayfası</a>` : '';
+  const ust = `<p class="alt"><a href="/yonetim?gun=${gun}">← Projeler</a>${kendi}</p><h1>${kac(ad)}</h1>${donemSec(yol, gun)}`;
+  if (!s) return sayfa(ad, `${ust}<p>Özet okunamadı: uygulama kapalı olabilir ya da okuma anahtarı (${kac(ayar.dis?.anahtar || '')}) iki tarafta aynı değil.</p>`);
+  const max = Math.max(1, ...s.gunluk.map((d) => d.ziyaretci));
+  const cubuklar = s.gunluk
+    .map((d) => `<div title="${kac(d.gun)}: ${d.ziyaretci} ziyaretçi" style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:110px">
+<div style="background:#2c6549;border-radius:3px 3px 0 0;height:${Math.round((d.ziyaretci / max) * 100)}%;min-height:${d.ziyaretci ? 2 : 0}px"></div></div>`)
+    .join('');
+  const ilk = s.huni[0]?.kisi || 1;
+  const huni = s.huni.map((h) => `<tr><td>${kac(h.adim)}</td><td class="sag">${h.kisi}</td><td style="width:40%"><div class="cubuk" style="width:${Math.round((h.kisi / ilk) * 100)}%"></div></td></tr>`).join('');
+  const bos = (n, m) => `<tr><td colspan="${n}" class="alt">${m}</td></tr>`;
+  const oz = s.ozellikler.length
+    ? s.ozellikler.map((o) => `<tr><td>${kac(o.ad)}</td><td>${o.kanal === 'claude' ? 'Claude' : 'Web'}</td><td class="sag">${o.kisi}</td><td class="sag">${o.kullanim}</td></tr>`).join('')
+    : bos(4, 'Henüz kullanım yok.');
+  const fb = s.geriBildirim.son.length
+    ? s.geriBildirim.son.map((f) => `<tr><td style="white-space:nowrap">${kac(f.tarih)}</td><td>${f.puan ? '★'.repeat(f.puan) + '☆'.repeat(5 - f.puan) + '<br>' : ''}${f.metin ? `<div style="white-space:pre-wrap">${kac(f.metin)}</div>` : ''}<div class="alt">${f.ekran ? 'Ekran: ' + kac(f.ekran) : ''}${f.kanal === 'claude' ? ' · Claude' : ''}</div></td></tr>`).join('')
+    : bos(2, 'Henüz geri bildirim yok.');
+  return sayfa(
+    ad,
+    `${ust}<p class="alt">Bu projenin ölçümü kendi sunucusunda (giriş yapan demo kullanıcıları, takma kimlikle); burada iç ağdan okunan özeti görüyorsun.</p>
+<div class="grid">${kart(s.ziyaretci, 'ziyaretçi')}${kart(s.yeniDemoAlani, 'yeni demo alanı')}${kart(s.geriDonen, 'farklı günde geri dönen')}${kart(s.claudeKullanan, "Claude'dan kullanan")}${kart(s.geriBildirim.ortalamaPuan ?? '–', `ortalama puan (${s.geriBildirim.adet} geri bildirim)`)}</div>
+<h2>Günlük ziyaretçi</h2><div class="kart" style="display:flex;gap:2px;align-items:flex-end">${cubuklar}</div>
+<h2>Huni</h2><table>${huni}</table>
+<h2>Özellikler: neleri kullandılar?</h2><div class="tablo-kaydir"><table><tr><th>Özellik</th><th>Kanal</th><th class="sag">Kişi</th><th class="sag">Kullanım</th></tr>${oz}</table></div>
+<h2>Geri bildirimler</h2><p class="alt">Durum ve not, uygulamanın kendi sayfasında tutulur.</p><div class="tablo-kaydir"><table>${fb}</table></div>
+<p class="alt"><a href="${yol}.json?gun=${gun}">JSON</a></p>`,
   );
 }
