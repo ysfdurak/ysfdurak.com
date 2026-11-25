@@ -697,7 +697,7 @@ export const PROJECTS: Project[] = [
     shots: [
       { src: '/img/diyalog-atolyesi/oturum.webp', w: 840, h: 860, alt: { tr: 'Oturum: durum, rolün ve karşındaki kişi; açık uçlu sorular gizli bilgileri tek tek açıyor, 5 soru hakkı', en: 'Session: the situation, your role and the other person; open questions unlock hidden facts one by one, 5 questions allowed' } },
       { src: '/img/diyalog-atolyesi/rapor.webp', w: 840, h: 860, alt: { tr: 'Rapor: 100 üzerinden skor ve beş boyut (açık uçlu soru, derinleşme, varsayımsız soru, bilgi keşfi, sonuç)', en: 'Report: a score out of 100 and five dimensions (open questions, follow-up depth, no leading questions, facts uncovered, conclusion)' } },
-      { src: '/img/diyalog-atolyesi/senaryolar-2026-11.webp', w: 840, h: 900, alt: { tr: 'Senaryolar: sektör ve alan filtreleri, sektörler arasında dönen günün senaryosu, her kartta üç farklı kök neden', en: 'Scenarios: sector and area filters, a scenario of the day that rotates across sectors, three root causes on every card' } },
+      { src: '/img/diyalog-atolyesi/senaryolar-depo.webp', w: 840, h: 900, alt: { tr: 'Senaryolar: sektör ve alan filtreleri, günün senaryosu bir depo konusu, her kartta üç farklı kök neden', en: 'Scenarios: sector and area filters, a warehouse topic as the scenario of the day, three root causes on every card' } },
     ],
     demo: {
       tr: 'Hesap gerekmez: bir senaryo seç, 5 soru sor, kök nedeni tahmin et; raporda her soru için “şöyle sorabilirdin” önerisi gelir. Günde 3 canlı oturum hakkın var. Yapay zekâ kullanmayan “Örnek oturumu izle” her zaman açık. Konuşma metni kaydedilmez, yalnızca anonim özet tutulur.',
