@@ -1,5 +1,5 @@
 {
-  "son_tarama": "2026-11-25",
+  "son_tarama": "2026-11-26",
   "projeler": [
     {
       "id": "video-zaman-etudu",
@@ -230,7 +230,7 @@
       },
       "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-15",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Yapım aşamasında",
         "en": "Being built"
@@ -268,7 +268,7 @@
       },
       "durum": "beklemede",
       "yayinda": true,
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Yalın hikâye oyunu olarak, diğer projeler tamamlandığında yapılacak",
         "en": "To be built as a lean story game once the other projects are finished"
@@ -329,7 +329,7 @@
       },
       "durum": "beklemede",
       "yayinda": true,
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Beklemede; esnek kural yapısıyla baştan tasarlanacak",
         "en": "On hold; to be redesigned around a flexible rule structure"
@@ -370,7 +370,7 @@
       },
       "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Önce yalnızca HTML sürümü çıkacak; Excel eklentisi sonraya kaldı",
         "en": "HTML version first; the Excel add-in comes later"
@@ -389,7 +389,7 @@
       },
       "durum": "gelistiriliyor",
       "yayinda": true,
-      "son_guncelleme": "2026-11-12",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Adresleme ve toplama kural setleri belirleniyor",
         "en": "Addressing and picking rule sets being defined"
@@ -408,7 +408,7 @@
       },
       "durum": "beklemede",
       "yayinda": true,
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Beklemede; ileride WDL içinde bir modül olabilir",
         "en": "On hold; may later become a module inside WDL"
@@ -427,10 +427,10 @@
       },
       "durum": "beklemede",
       "yayinda": true,
-      "son_guncelleme": "2026-10-27",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
-        "tr": "Durduruldu; ilk hafta oynanabilir durumda",
-        "en": "Stopped; week one is playable"
+        "tr": "Durduruldu",
+        "en": "Stopped"
       },
       "ozel_not": ""
     },
@@ -446,7 +446,7 @@
       },
       "durum": "gelistiriliyor",
       "yayinda": false,
-      "son_guncelleme": "2026-11-04",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Streamlit arayüzü sıradaki adım",
         "en": "Streamlit interface is the next step"
@@ -486,7 +486,7 @@
       },
       "durum": "beklemede",
       "yayinda": false,
-      "son_guncelleme": "2026-11-02",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "İlk sürüm hazır",
         "en": "First version ready"
@@ -505,7 +505,7 @@
       },
       "durum": "beklemede",
       "yayinda": true,
-      "son_guncelleme": "2026-11-18",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Beklemede; ilk sürüm hazır",
         "en": "On hold; first version ready"
@@ -525,7 +525,7 @@
       "durum": "beklemede",
       "yayinda": false,
       "repo": "ysfdurak/kivilcim-zihin-oyunlari",
-      "son_guncelleme": "2026-11-20",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Şimdilik kapatıldı; kullanıcı hesapları sunucuya geçişte ele alınacak",
         "en": "Closed for now; user accounts to be revisited on the server"
@@ -543,8 +543,8 @@
         "en": "An AI agent that works as the digital deputy operations manager of a virtual company. It uses the existing apps as tools and prepares briefings and action plans; it masks outgoing data and sends each action for approval according to its autonomy level."
       },
       "durum": "fikir",
-      "yayinda": false,
-      "son_guncelleme": "2026-11-17",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Kapsam belgesi hazırlandı",
         "en": "Scope document drafted"
@@ -581,11 +581,11 @@
         "en": "TPM for warehouse equipment: a shared failure log, start-of-shift autonomous maintenance checks, abnormality tags and analysis of downtime losses."
       },
       "durum": "pilot",
-      "yayinda": false,
-      "son_guncelleme": "2026-11-25",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
-        "tr": "Arıza Defteri, Nabız ve Nabız Analiz kendi sunucumda çalışıyor; telefon denemeleri sürüyor",
-        "en": "Arıza Defteri, Nabız and Nabız Analiz run on my own server; phone tests are ongoing"
+        "tr": "Pilot: Arıza Defteri, Nabız ve Nabız Analiz kendi sunucumda canlı; 3 yıllık gerçekçi veriyle çalışıyor, Android telefonda denendi",
+        "en": "Pilot: Arıza Defteri, Nabız and Nabız Analiz are live on my own server, running on three years of realistic data and tested on an Android phone"
       },
       "ozel_not": "Uygulama adı (Nabız) kesinleşmedi.",
       "repo": "ysfdurak/nabiz"
@@ -602,12 +602,246 @@
       },
       "durum": "gelistiriliyor",
       "yayinda": false,
-      "son_guncelleme": "2026-11-23",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
         "tr": "Plan ve toplayıcının ilk sürümü (0.1) hazır",
         "en": "Plan and first collector version (0.1) ready"
       },
       "ozel_not": ""
+    },
+    {
+      "id": "kalkan",
+      "ad": {
+        "tr": "Kalkan",
+        "en": "Kalkan"
+      },
+      "aciklama": {
+        "tr": "Yaşayan İSG risk değerlendirmesi: ramak kala bildirimleri, saha fotoğrafları ve kaza kayıtları uzman onayıyla risk kaydını günceller. Yerleşim planında canlı risk haritası, düzeltici faaliyetler \"sonra\" fotoğrafıyla doğrulanır; periyodik kontroller (raf, forklift, yangın tüpü) ve kök neden analizi modülleri var.",
+        "en": "A living occupational-safety risk assessment: near-miss reports, site photos and accident records update the risk register with expert approval. Live risk map on the layout, corrective actions verified by an after-photo, plus periodic inspections (racking, forklifts, extinguishers) and root-cause analysis modules."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "kagitsiz",
+      "ad": {
+        "tr": "Kâğıtsız",
+        "en": "Kâğıtsız"
+      },
+      "aciklama": {
+        "tr": "Boş kâğıt formun fotoğrafından doldurulabilir dijital form üretir; doldurulmuş formların fotoğraflarını kayda çevirir, eksik imza ve aralık dışı değerlerde uyarır, eğilimleri gösterir.",
+        "en": "Turns a photo of a blank paper form into a fillable digital form, reads photos of filled-in forms into records, flags missing signatures and out-of-range values and shows trends."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "zimmet",
+      "ad": {
+        "tr": "Zimmet",
+        "en": "Zimmet"
+      },
+      "aciklama": {
+        "tr": "QR ile ekipman alma ve iade: yetki belgesi ve günlük kontrol listesi tamamlanmadan teslim yok; kayıp ve hasar geçmişi ekipman bazında tutulur.",
+        "en": "QR-based equipment checkout and return: no handover without a valid certificate and the daily checklist; loss and damage history kept per item."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "yordam",
+      "ad": {
+        "tr": "Yordam",
+        "en": "Yordam"
+      },
+      "aciklama": {
+        "tr": "Yazılı prosedürü çalıştırılabilir bir akışa çevirir, eksik ve çelişkili adımları bulur, sahada telefondan adım adım rehber olarak açılır.",
+        "en": "Turns a written procedure into an executable flow, finds missing or conflicting steps and opens as a step-by-step guide on the phone in the field."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "damla",
+      "ad": {
+        "tr": "Damla",
+        "en": "Damla"
+      },
+      "aciklama": {
+        "tr": "Vardiya içinde birkaç dakikalık mikro eğitimler; Yordam akışlarından beslenir, kimin neyi bildiğini görünür kılar.",
+        "en": "A few minutes of micro-training inside the shift, fed by Yordam flows, showing who knows what."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "netlestir",
+      "ad": {
+        "tr": "Netleştir",
+        "en": "Netleştir"
+      },
+      "aciklama": {
+        "tr": "Belirsiz gelen iş ve BT taleplerini sorular sorarak kabul ölçütleri belli, düzgün bir gereksinime çeviren ajan.",
+        "en": "An agent that asks questions to turn vague business and IT requests into proper requirements with clear acceptance criteria."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "tatbikat",
+      "ad": {
+        "tr": "Tatbikat",
+        "en": "Tatbikat"
+      },
+      "aciklama": {
+        "tr": "Sistem kesintileri için masa başı tatbikat (ör. depo yönetim sistemi çöktü): ekip senaryoyu oynar, iş sürekliliği planındaki boşluklar raporlanır.",
+        "en": "A tabletop drill for system outages (e.g. the warehouse management system goes down): the team plays the scenario and gaps in the continuity plan are reported."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "tesvik-laboratuvari",
+      "ad": {
+        "tr": "Teşvik Laboratuvarı",
+        "en": "Incentive Lab"
+      },
+      "aciklama": {
+        "tr": "Prim ve teşvik kurallarını tasarlama laboratuvarı: farklı çalışan tipleri simülasyonda kuralları kendi lehine kullanmaya çalışır, kuralın açıkları ortaya çıkar (oyun teorisi).",
+        "en": "A lab for designing bonus and incentive rules: simulated worker types try to game the rules, exposing their loopholes (game theory)."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "sorgu-haritasi",
+      "ad": {
+        "tr": "Sorgu Haritası",
+        "en": "Query Map"
+      },
+      "aciklama": {
+        "tr": "Uzun bir SQL sorgusunu tablolar, birleştirmeler ve filtrelerden oluşan görsel bir haritaya çevirir; sorguyu okumayı ve hatayı bulmayı kolaylaştırır.",
+        "en": "Turns a long SQL query into a visual map of tables, joins and filters, making it easier to read and debug."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "kiyas",
+      "ad": {
+        "tr": "Kıyas",
+        "en": "Kıyas"
+      },
+      "aciklama": {
+        "tr": "Aynı raporun iki sürümünü karşılaştırır: hangi satır ve sütun değişti, toplamlar neden tutmuyor.",
+        "en": "Compares two versions of the same report: which rows and columns changed and why the totals differ."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "pbi-belgeleyici",
+      "ad": {
+        "tr": "Power BI Belgeleyici",
+        "en": "Power BI Documenter"
+      },
+      "aciklama": {
+        "tr": "Bir Power BI modelinden tablo, ilişki ve ölçü dokümanını otomatik çıkarır.",
+        "en": "Generates documentation of tables, relationships and measures from a Power BI model automatically."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "sentetik-veri",
+      "ad": {
+        "tr": "Sentetik Veri Atölyesi",
+        "en": "Synthetic Data Workshop"
+      },
+      "aciklama": {
+        "tr": "Gerçek veriyi paylaşmadan, aynı yapıda ve gerçekçi dağılımlarda örnek veri seti üretir; eğitim ve demo için.",
+        "en": "Produces realistic sample datasets with the same structure and distributions as real data, without sharing it; for training and demos."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
+    },
+    {
+      "id": "kesit-excel",
+      "ad": {
+        "tr": "Kesit Excel",
+        "en": "Kesit Excel"
+      },
+      "aciklama": {
+        "tr": "Kesit ailesinin Excel kardeşi: iş verisiyle formül, pivot ve Power Query öğrenme.",
+        "en": "The Excel sibling of the Kesit apps: learning formulas, pivots and Power Query on business data."
+      },
+      "durum": "fikir",
+      "yayinda": true,
+      "son_guncelleme": "2026-11-26",
+      "durum_notu": {
+        "tr": "Kapsam belgesi hazırlandı",
+        "en": "Scope document drafted"
+      }
     }
   ]
 }
