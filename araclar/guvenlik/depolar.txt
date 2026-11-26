@@ -12,6 +12,7 @@ kesit-powerbi
 kesit-python
 kesit-sql
 kivilcim-zihin-oyunlari
+kiyas
 measure-sieve
 nabiz
 nabiz-analiz
