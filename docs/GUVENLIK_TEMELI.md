@@ -12,6 +12,7 @@ Bu liste, Kasım 2026'daki inceleme turlarında portföy projelerinde tek tek bu
 | Gizli anahtar yok: anahtarlar yalnız `.env`'de (sunucuda `umask 077`) ya da Cloudflare/GitHub gizli değişkenlerinde | Depo herkese açık |
 | Her iş akışında üst düzey `permissions:` (çoğunlukla `contents: read`); `pull_request_target` yok; kullanıcı metni `run:` içine doğrudan yazılmaz, `env:` ile verilir | Actions üzerinden yetki yükseltme ve komut enjeksiyonu |
 | CI'da testler + önbellek sürümü kapısı (service worker varsa) | Güvenlik düzeltmesi kullanıcıya ulaşır |
+| Cloudflare'de yayınlanan depoda derleme bildirimi: `.github/workflows/cf-derleme.yml` çağıran iş akışı (her derleme bitince; kırmızıysa `derleme` issue'su, yeşil olunca kapanır). Haftalık tarama `--derleme` ile yedek kontrol yapar | Başarısız derleme yayınlanmaz, site eski sürümde sessizce kalır; sağlık kontrolü bunu görmez (26 Kasım 2026: geçersiz derleme anahtarı) |
 
 ## 2. Her web sayfası (statik, Cloudflare, GitHub Pages)
 

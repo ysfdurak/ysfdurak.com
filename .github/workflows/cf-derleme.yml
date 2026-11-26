@@ -1,0 +1,61 @@
+# Cloudflare derleme bildirimi: her Workers Builds derlemesi bittiğinde çalışır (26 Kasım 2026).
+# Neden: geçersiz derleme anahtarı ivme ve ysfdurak.com derlemelerini kırdı. Cloudflare başarısız derlemeyi
+# yayınlamadığı için site eski sürümde kaldı, sağlık kontrolü yeşil göründü ve kimseye haber gitmedi.
+# Ne yapar: varsayılan daldaki derleme başarısızsa "derleme" etiketli issue açar (ya da açık olana yorum yazar);
+# aynı Worker'ın derlemesi sonra başarılı olursa issue'yu kapatır. GitHub issue'yu e-postayla bildirir.
+# Bu depoda doğrudan check_run ile, öteki depolarda kısa bir çağıran iş akışıyla (workflow_call) çalışır:
+#   on: { check_run: { types: [completed] } }
+#   permissions: { contents: read, issues: write }
+#   jobs: { bildir: { uses: ysfdurak/ysfdurak.com/.github/workflows/cf-derleme.yml@main } }
+# Haftalık güvenlik taraması (tara.py --derleme) yedek olarak bütün depolara yine bakar.
+name: Cloudflare derlemesi
+
+on:
+  check_run:
+    types: [completed]
+  workflow_call:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  bildir:
+    # Yalnız Cloudflare'in kontrolleri ve yalnız varsayılan dal (PR dallarının önizleme derlemeleri sayılmaz)
+    if: >-
+      startsWith(github.event.check_run.name, 'Workers Builds') &&
+      github.event.check_run.check_suite.head_branch == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Issue aç / güncelle / kapat
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          AD: ${{ github.event.check_run.name }}
+          SONUC: ${{ github.event.check_run.conclusion }}
+          ADRES: ${{ github.event.check_run.details_url || github.event.check_run.html_url }}
+          SHA: ${{ github.event.check_run.head_sha }}
+        run: |
+          WORKER="${AD#Workers Builds: }"
+          BASLIK="Cloudflare derlemesi başarısız: $WORKER"
+          gh label create derleme --color D93F0B --description "Cloudflare derlemesi başarısız" 2>/dev/null || true
+          ACIK=$(gh issue list --label derleme --state open --json number,title --jq ".[] | select(.title == \"$BASLIK\") | .number" | head -1)
+          case "$SONUC" in
+            failure|timed_out|cancelled|action_required|startup_failure)
+              GOVDE=$(printf '%s\n' \
+                "**$WORKER** derlemesi başarısız oldu (\`$SONUC\`), commit \`${SHA:0:7}\`." \
+                "" \
+                "Cloudflare başarısız derlemeyi yayınlamaz: site bir önceki sürümle çalışmaya devam ediyor, yeni değişiklik yayında değil." \
+                "" \
+                "- Derleme günlüğü: $ADRES" \
+                "- İlk bakılacak yer: günlüğün ilk hata satırı. \"build token ... left your organization\" ise Workers & Pages → $WORKER → Settings → Builds → API token, sonra Retry build." \
+                "" \
+                "Aynı Worker'ın sonraki derlemesi başarılı olunca bu kayıt kendiliğinden kapanır.")
+              if [ -n "$ACIK" ]; then gh issue comment "$ACIK" --body "$GOVDE"
+              else gh issue create --title "$BASLIK" --label derleme --body "$GOVDE"; fi
+              ;;
+            success)
+              if [ -n "$ACIK" ]; then gh issue close "$ACIK" --comment "Derleme başarılı (commit \`${SHA:0:7}\`); yeni sürüm yayında."; fi
+              ;;
+          esac
