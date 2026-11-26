@@ -164,7 +164,7 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['JavaScript', 'IndexedDB', 'C#', 'WPF', '.NET 8', 'SQLite', 'Excel (OpenXML)', 'Cloudflare Workers', 'GitHub Actions'],
     shots: [
-      { src: '/img/video-zaman-etudu/olcum.webp', srcEn: '/img/video-zaman-etudu/olcum-en.webp', w: 1440, h: 900, alt: { tr: 'Ölçüm: gerçek bir kargo ayrıştırma videosunda adım adım zamanlama; adım düğmelerinde yeterlilik, zaman çizgisinde sınıf renkleri (görüntü: Pexels, yüzler bulanık)', en: 'Measure: step-by-step timing on real parcel-sorting footage; sufficiency on the step buttons, class colours on the timeline (footage: Pexels, faces blurred)' } },
+      { src: '/img/video-zaman-etudu/olcum.webp', srcEn: '/img/video-zaman-etudu/olcum-en.webp', w: 1440, h: 900, alt: { tr: 'Ölçüm: gerçek bir kargo ayrıştırma videosunda adım adım zamanlama; adım düğmelerinde yeterlilik, zaman çizgisinde sınıf renkleri', en: 'Measure: step-by-step timing on real parcel-sorting footage; sufficiency on the step buttons, class colours on the timeline' } },
       { src: '/img/video-zaman-etudu/analiz.webp', srcEn: '/img/video-zaman-etudu/analiz-en.webp', w: 1440, h: 900, alt: { tr: 'Analiz: 5 çevrimde standart süre 4,955 sn, takt 4 sn ile doluluk %124, gereken gözlem sayısı ve çevrim değişkenliği', en: 'Analysis: over 5 cycles the standard time is 4.955 s, 124% of a 4 s takt, with required observations and cycle variation' } },
       { src: '/img/video-zaman-etudu/yamazumi.webp', srcEn: '/img/video-zaman-etudu/yamazumi-en.webp', w: 1440, h: 900, alt: { tr: 'Hat dengeleme (Yamazumi): tek operatörün yükü taktı bekleme yüzünden aşıyor', en: 'Line balancing (Yamazumi): the single operator overruns takt because of waiting' } },
       { src: '/img/video-zaman-etudu/adim-kartlari.webp', srcEn: '/img/video-zaman-etudu/adim-kartlari-en.webp', w: 1440, h: 900, alt: { tr: 'Adım kartları: videodan seçilmiş kare, bitiş anı, israf türü ve iyileştirme fikri', en: 'Step cards: a frame from the video, end point, waste type and improvement idea' } },
@@ -181,8 +181,8 @@ export const PROJECTS: Project[] = [
       w: 1080,
       h: 1920,
       caption: {
-        tr: '34 saniyede Video İş Etüdü: gerçek bir kargo ayrıştırma kaydında 5 çevrim ölçülüyor; standart süre, takt uyumu, Yamazumi, standart iş tablosu, israf ve adım kartları programda çıkıyor. Tekstil kontrol masasında 40 gözlemlik iş örneklemesi ve iki gözlemci karşılaştırması da gerçek ölçüm. Görüntüler Pexels’ten (Pexels Lisansı); kargo klibi kurgulu, yüzler bulanıklaştırıldı.',
-        en: 'Video Work Study in 34 seconds: 5 cycles timed on real parcel-sorting footage; standard time, takt fit, Yamazumi, standard work, waste and step cards come out of the app. The 40-observation work sampling at a textile inspection table and the two-observer check are real timings too. Footage from Pexels (Pexels License); the parcel clip is edited and faces are blurred.',
+        tr: '34 saniyede Video İş Etüdü: gerçek bir kargo ayrıştırma kaydında 5 çevrim ölçülüyor; standart süre, takt uyumu, Yamazumi, standart iş tablosu, israf ve adım kartları programda çıkıyor. Tekstil kontrol masasında 40 gözlemlik iş örneklemesi ve iki gözlemci karşılaştırması da gerçek ölçüm.',
+        en: 'Video Work Study in 34 seconds: 5 cycles timed on real parcel-sorting footage; standard time, takt fit, Yamazumi, standard work, waste and step cards come out of the app. The 40-observation work sampling at a textile inspection table and the two-observer check are real timings too.',
       },
       loop: {
         src: '/video/zaman-etudu-dongu-tr.mp4',
@@ -281,8 +281,8 @@ export const PROJECTS: Project[] = [
       w: 1920,
       h: 1080,
       caption: {
-        tr: '35 saniyede Duruş: gerçek bir depo videosunda koliyi yerden alıp kamyonete taşıyan çalışan. Video saniyede bir kare taranıyor, eklemler otomatik bulunuyor; yerden alımda gövde 82° öne eğik, 12 kg yükle REBA 10. Görüntü Pexels’ten (Pexels Lisansı), yüzler bulanıklaştırıldı.',
-        en: 'Duruş in 35 seconds: a real warehouse video of a worker lifting a box from the floor and loading it into a van. The video is scanned one frame per second and the joints are found automatically; at the floor lift the trunk is 82° forward and REBA is 10 with a 12 kg load. Footage from Pexels (Pexels License), faces blurred.',
+        tr: '35 saniyede Duruş: gerçek bir depo videosunda koliyi yerden alıp kamyonete taşıyan çalışan. Video saniyede bir kare taranıyor, eklemler otomatik bulunuyor; yerden alımda gövde 82° öne eğik, 12 kg yükle REBA 10.',
+        en: 'Duruş in 35 seconds: a real warehouse video of a worker lifting a box from the floor and loading it into a van. The video is scanned one frame per second and the joints are found automatically; at the floor lift the trunk is 82° forward and REBA is 10 with a 12 kg load.',
       },
       loop: {
         src: '/video/durus-dongu-tr.mp4',
@@ -298,7 +298,7 @@ export const PROJECTS: Project[] = [
       },
     },
     shots: [
-      { src: '/img/durus/durus-analizi.webp', srcEn: '/img/durus/durus-analizi-en.webp', w: 1440, h: 900, alt: { tr: 'Duruş analizi: gerçek bir depo videosunda koliyi yerden alan çalışanın eklemleri otomatik bulunmuş; gövde 82°, 12 kg yükle REBA 10, RULA 7, OWAS AC3 (görüntü: Pexels, yüzler bulanık)', en: 'Posture analysis: joints found automatically on a real warehouse video of a worker lifting a box from the floor; trunk 82°, with 12 kg REBA 10, RULA 7, OWAS AC3 (footage: Pexels, faces blurred)' } },
+      { src: '/img/durus/durus-analizi.webp', srcEn: '/img/durus/durus-analizi-en.webp', w: 1440, h: 900, alt: { tr: 'Duruş analizi: gerçek bir depo videosunda koliyi yerden alan çalışanın eklemleri otomatik bulunmuş; gövde 82°, 12 kg yükle REBA 10, RULA 7, OWAS AC3', en: 'Posture analysis: joints found automatically on a real warehouse video of a worker lifting a box from the floor; trunk 82°, with 12 kg REBA 10, RULA 7, OWAS AC3' } },
       { src: '/img/durus/formlar-niosh.webp', srcEn: '/img/durus/formlar-niosh-en.webp', w: 1440, h: 900, alt: { tr: 'Formlar: NIOSH kaldırma denklemi, çarpanlar ve kaldırma indeksi ile ne yapılabileceği', en: 'Forms: the NIOSH lifting equation with multipliers, lifting index and what can be done' } },
       { src: '/img/durus/rehber.webp', srcEn: '/img/durus/rehber-en.webp', w: 1440, h: 900, alt: { tr: 'Rehber: evet/hayır sorularıyla riskli alanları bulma ve önerilen yöntem', en: 'Guide: find risk areas with yes/no questions and get a recommended method' } },
       { src: '/img/durus/baslangic.webp', srcEn: '/img/durus/baslangic-en.webp', w: 1440, h: 900, alt: { tr: 'Başlangıç: duruma göre dört giriş yolu ve son kayıtlar', en: 'Start: four entry points by situation and recent records' } },
