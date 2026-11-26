@@ -170,6 +170,30 @@ export const PROJECTS: Project[] = [
     ],
     og: '/img/video-zaman-etudu/og.jpg',
     ogEn: '/img/video-zaman-etudu/og-en.jpg',
+    video: {
+      src: '/video/zaman-etudu-tanitim-tr.mp4',
+      poster: '/video/zaman-etudu-tanitim-tr.webp',
+      srcEn: '/video/zaman-etudu-promo-en.mp4',
+      posterEn: '/video/zaman-etudu-promo-en.webp',
+      w: 1080,
+      h: 1920,
+      caption: {
+        tr: '34 saniyede Video İş Etüdü: gerçek bir kargo ayrıştırma kaydında 5 çevrim ölçülüyor; standart süre, takt uyumu, Yamazumi, standart iş tablosu, israf ve adım kartları programda çıkıyor. Tekstil kontrol masasında 40 gözlemlik iş örneklemesi ve iki gözlemci karşılaştırması da gerçek ölçüm. Görüntüler Pexels’ten (Pexels Lisansı); kargo klibi kurgulu, yüzler bulanıklaştırıldı.',
+        en: 'Video Work Study in 34 seconds: 5 cycles timed on real parcel-sorting footage; standard time, takt fit, Yamazumi, standard work, waste and step cards come out of the app. The 40-observation work sampling at a textile inspection table and the two-observer check are real timings too. Footage from Pexels (Pexels License); the parcel clip is edited and faces are blurred.',
+      },
+      loop: {
+        src: '/video/zaman-etudu-dongu-tr.mp4',
+        poster: '/video/zaman-etudu-dongu-tr.webp',
+        srcEn: '/video/zaman-etudu-loop-en.mp4',
+        posterEn: '/video/zaman-etudu-loop-en.webp',
+        w: 1280,
+        h: 720,
+        alt: {
+          tr: 'Video İş Etüdü kısa döngü: gerçek depo videosunda ölçüm, standart süre özeti ve çevrim grafiği, Yamazumi ve adım kartları',
+          en: 'Video Work Study short loop: timing on real warehouse video, the standard-time summary and cycle chart, Yamazumi and step cards',
+        },
+      },
+    },
     demo: {
       tr: 'Hesap ve kurulum gerekmez. Uygulamayı açıp “Demo etüdü aç” bağlantısına tıklayın: üç çevrimlik sentetik depo videosu ve hazır ölçümler yüklenir, analiz ekranında sonuçlar görünür. Kendi videonuzla yeni etüt de başlatabilirsiniz; etütler yalnızca tarayıcınızda saklanır, video hiçbir sunucuya yüklenmez. Windows sürümü de Türkçe ve İngilizce; aynı etüt paketini (.vzetud) ve toplu yedeği açar.',
       en: 'No account or install needed. The app opens in English from this page: click “Open demo study” and a three-cycle synthetic warehouse video with ready measurements loads; the analysis screen shows the results. You can also start a study with your own video; studies stay in your browser and the video is never uploaded. The Windows version is also in English and Turkish and opens the same study packages (.vzetud) and backups.',
