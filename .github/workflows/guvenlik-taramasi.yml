@@ -37,10 +37,12 @@ jobs:
           ln -s "$GITHUB_WORKSPACE" ../depolar/ysfdurak.com
       - name: Tara
         id: tara
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # --derleme: depoların Cloudflare derleme sonuçlarını okumak için
         run: |
           pip install -q pyyaml pip-audit  # pip-audit: Python depoları (Kasım 2026); yoksa denetim "tamamlanamadı" olur
           set +e
-          python3 araclar/guvenlik/tara.py --audit --beklenen=araclar/guvenlik/depolar.txt --atlanan=atlanan.txt ../depolar/* > rapor.md
+          python3 araclar/guvenlik/tara.py --audit --derleme --beklenen=araclar/guvenlik/depolar.txt --atlanan=atlanan.txt ../depolar/* > rapor.md
           echo "kod=$?" >> "$GITHUB_OUTPUT"
           cat rapor.md >> "$GITHUB_STEP_SUMMARY"
       - name: Issue aç / güncelle / kapat

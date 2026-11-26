@@ -10,11 +10,12 @@ Kullanım:
   python3 araclar/guvenlik/tara.py --audit <depo-klasörü>...    # npm audit ve pip-audit de çalıştırır (ağ gerekir)
 Not: dosya listesi `git ls-files`'tan gelir; yeni depoda dosyalar en az `git add` edilmiş olmalı.
   --beklenen=depolar.txt --atlanan=atlanan.txt   # kapsam: beklenen / taranan / atlanan ayrı yazılır
+  --derleme   # varsayılan daldaki son Cloudflare derlemesi (Workers Builds) kırmızı mı? GitHub API, GITHUB_TOKEN ister
 Çıkış kodu: 0 temiz · 1 YÜKSEK ya da orta bulgu · 2 tarama tamamlanamadı (depo atlandı ya da npm audit okunamadı;
 bu durumda sonuç "temiz" sayılmaz ve açık issue kapatılmaz).
 İstisnalar: araclar/guvenlik/istisnalar.json (her istisna gerekçesiyle).
 """
-import json, os, re, subprocess, sys
+import json, os, re, subprocess, sys, urllib.request
 from collections import Counter
 
 BURASI = os.path.dirname(os.path.abspath(__file__))
@@ -314,6 +315,39 @@ def tara(d, audit=False):
     return depo, B
 
 
+def github(yol):
+    """GitHub REST API'den JSON okur (GITHUB_TOKEN varsa kimlikli; yoksa saatte 60 istek sınırı)."""
+    istek = urllib.request.Request('https://api.github.com/' + yol, headers={'Accept': 'application/vnd.github+json'})
+    if os.environ.get('GITHUB_TOKEN'):
+        istek.add_header('Authorization', 'Bearer ' + os.environ['GITHUB_TOKEN'])
+    with urllib.request.urlopen(istek, timeout=30) as y:
+        return json.load(y)
+
+
+def derleme(depo, sahip='ysfdurak', oku_=github):
+    """Varsayılan daldaki son commit'in Cloudflare derlemelerini (Workers Builds kontrolleri) denetler.
+
+    Neden (26 Kasım 2026): derleme anahtarı geçersiz kalınca ivme ve ysfdurak.com derlemeleri kırıldı. Cloudflare
+    başarısız derlemeyi yayınlamadığı için site eski sürümle çalışmaya devam etti; sağlık kontrolü yeşil kaldı ve
+    kimseye haber gitmedi. Kırmızı derleme artık bulgudur. Workers Builds kullanmayan depoda kontrol yoktur, bulgu da yok."""
+    B = []
+    try:
+        dal = oku_(f'repos/{sahip}/{depo}')['default_branch']
+        kontroller = oku_(f'repos/{sahip}/{depo}/commits/{dal}/check-runs?per_page=100')['check_runs']
+    except Exception as e:  # ağ, yetki, sınır: sonuç "temiz" sayılmaz
+        EKSIK.append((depo, 'Workers Builds', (str(e).splitlines() or [type(e).__name__])[0][:160]))
+        return B
+    for k in kontroller:
+        if not k.get('name', '').startswith('Workers Builds'):
+            continue
+        sonuc = k.get('conclusion') or k.get('status')
+        if sonuc in ('failure', 'timed_out', 'cancelled', 'action_required', 'startup_failure'):
+            ad = k['name'].split(':', 1)[-1].strip()
+            tarih = (k.get('completed_at') or '')[:10]
+            B.append(('orta', 'cf-derleme', f'Cloudflare derlemesi başarısız: {ad} ({dal}, {tarih}); site eski sürümde kalıyor', k.get('html_url', '')))
+    return [x for x in B if not istisna_mi(depo, x[1], x[3])]
+
+
 def secenek(ad):
     """--ad=deger biçimindeki seçeneği döndürür."""
     for a in sys.argv[1:]:
@@ -339,6 +373,8 @@ def main():
     taranan = []
     for d in args:
         depo, B = tara(d, audit)
+        if '--derleme' in sys.argv:
+            B += derleme(depo)
         taranan.append(depo)
         toplam.update(s for s, *_ in B)
         if not B:
