@@ -19,5 +19,6 @@ nabiz-analiz
 pusula-is-takip
 ShiftFlow
 sirdas
+sorgu-haritasi
 video-zaman-etudu
 ysfdurak.github.io
