@@ -1,12 +1,12 @@
 ---
-// "Üç projede kanıt": problem → ürün kararım → çalışan örnek → doğrulanan sonuç. Açık kalan kısım ayrıca yazılır.
+// "Üç projede kanıt": problem → çalışan örnek → doğrulanan sonuç (karar satırı 26 Kasım 2026'da kaldırıldı). Açık kalan kısım ayrıca yazılır.
 import { KANITLAR } from '../data/kanit';
 import type { Lang } from '../data/projects';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const T = lang === 'tr'
-  ? { h: 'Üç projede kanıt', lead: 'Problem, verdiğim ürün kararı, çalışan örnek ve doğrulanan sonuç. Doğrulama bağlantıları herkese açık test ve belgelere gider.', p: 'Problem', d: 'Kararım', e: 'Çalışan örnek', v: 'Doğrulanan sonuç', o: 'Henüz açık', page: 'Proje sayfası', note: 'Ortak eksik: bağımsız kullanıcı testi. Kanıtlar otomatik testler ve sentetik veriyle yapılan doğrulamalardır.' }
-  : { h: 'Evidence from three projects', lead: 'The problem, the product decision I made, a working example and a verified result. Verification links go to public tests and documents.', p: 'Problem', d: 'My decision', e: 'Working example', v: 'Verified result', o: 'Still open', page: 'Project page', note: 'Common gap: independent user testing. The evidence is automated tests and checks on synthetic data.' };
+  ? { h: 'Üç projede kanıt', lead: 'Problem, çalışan örnek ve doğrulanan sonuç. Doğrulama bağlantıları herkese açık test ve belgelere gider.', p: 'Problem', e: 'Çalışan örnek', v: 'Doğrulanan sonuç', o: 'Henüz açık', page: 'Proje sayfası', note: 'Ortak eksik: bağımsız kullanıcı testi. Kanıtlar otomatik testler ve sentetik veriyle yapılan doğrulamalardır.' }
+  : { h: 'Evidence from three projects', lead: 'The problem, a working example and a verified result. Verification links go to public tests and documents.', p: 'Problem', e: 'Working example', v: 'Verified result', o: 'Still open', page: 'Project page', note: 'Common gap: independent user testing. The evidence is automated tests and checks on synthetic data.' };
 const base = lang === 'tr' ? '/tr/projeler/' : '/en/projects/';
 ---
 <section class="wrap kanit" aria-labelledby="kanit-h">
@@ -19,7 +19,6 @@ const base = lang === 'tr' ? '/tr/projeler/' : '/en/projects/';
         <p class="card-meta">{k.skill[lang]}</p>
         <dl>
           <dt>{T.p}</dt><dd>{k.problem[lang]}</dd>
-          <dt>{T.d}</dt><dd>{k.decision[lang]}</dd>
           <dt>{T.e}</dt><dd><a href={k.example.url} rel="noopener">{k.example.label[lang]} ↗</a></dd>
           <dt>{T.v}</dt><dd>{k.verified[lang]} <a href={k.proof.url} rel="noopener">{k.proof.label[lang]} ↗</a></dd>
           {k.open && <><dt>{T.o}</dt><dd class="acik">{k.open[lang]}</dd></>}
