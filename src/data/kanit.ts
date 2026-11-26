@@ -1,5 +1,5 @@
 // Ana sayfadaki "Üç projede kanıt" kartları: işe alım yöneticisinin tek bakışta görmesi gerekenler.
-// Problem → benim verdiğim ürün kararı → çalışan örnek → doğrulanan sonuç (nasıl doğrulandığı ve bağlantısı).
+// Problem → çalışan örnek → doğrulanan sonuç (nasıl doğrulandığı ve bağlantısı).
 // Her doğrulama bağlantısı herkese açık bir test ya da belgeye gider; iddia yalnız orada gösterilen kadardır.
 import type { Lang } from './projects';
 
@@ -9,7 +9,8 @@ export interface Kanit {
   /** Proje sayfası slug'ı (sitede sayfası varsa). */
   slug?: string;
   problem: { tr: string; en: string };
-  decision: { tr: string; en: string };
+  /** Artık gösterilmiyor (26 Kasım 2026). */
+  decision?: { tr: string; en: string };
   example: { url: string; label: { tr: string; en: string } };
   verified: { tr: string; en: string };
   proof: { url: string; label: { tr: string; en: string } };
@@ -24,6 +25,7 @@ export const KANITLAR: Kanit[] = [
   {
     id: 'butce',
     name: { tr: 'Bütçe Sapması ve Aylık Kapanış', en: 'Budget Variance and Monthly Close' },
+    slug: 'butce-sapmasi',
     problem: {
       tr: 'Gider dosyaları her ay farklı biçimde gelir, rakamlar elle toplanır. Yönetici “hangi bütçeye göre, ne kadar aştık?” sorusuna kaynağıyla birlikte cevap alamaz.',
       en: 'Cost files arrive in a different shape every month and figures are added up by hand. A manager cannot get a sourced answer to “against which budget, and by how much, did we overspend?”.',
@@ -42,46 +44,38 @@ export const KANITLAR: Kanit[] = [
     skill: { tr: 'Finansal raporlama, iş kuralı tasarımı, izlenebilirlik', en: 'Financial reporting, business-rule design, traceability' },
   },
   {
-    id: 'destek',
-    name: { tr: 'Destek Merkezi', en: 'Destek Merkezi – Workforce Support' },
-    slug: 'destek-merkezi',
+    id: 'pusula',
+    name: { tr: 'Pusula', en: 'Pusula – Work and Team Tracking' },
+    slug: 'pusula',
     problem: {
-      tr: 'Bölümler arası işgücü desteği WhatsApp’tan istenir, kayıt günler sonra girilir. Kimin kime destek verdiği ve puantajla çelişen kayıtlar görünmez; operasyon ve İK farklı sayılar konuşur.',
-      en: 'Cross-department workforce support is requested over WhatsApp and recorded days later. Who supported whom, and records that contradict the timesheet, stay invisible; operations and HR quote different numbers.',
+      tr: 'Vardiyalı ekiplerde işler WhatsApp, e-posta ve Excel’e dağılır. Kimin neyi ne zamana yapacağı, terminin kaç kez kaydığı ve neden kaydığı görünmez.',
+      en: 'In shift-based teams, work is scattered across WhatsApp, email and Excel. Who does what by when, how often a deadline slipped and why, stays invisible.',
     },
-    decision: {
-      tr: 'Karşı bölüm onayı zorunlu; ret gerekçeli ve silinmez. Puantaj uyumsuzluğu ayrı izlenir, otomatik onayı bekletir. Gözetim algısı yaratmamak için bilerek adam-saat ve verimlilik hesaplanmaz.',
-      en: 'Approval by the receiving department is mandatory; rejections need a reason and are never deleted. Timesheet mismatches are tracked separately and hold automatic approval. Man-hours and productivity are deliberately not calculated, to avoid a sense of surveillance.',
-    },
-    example: { url: 'https://destek.ysfdurak.com/', label: { tr: 'Canlı demo', en: 'Live demo' } },
+    example: { url: 'https://pusula.ysfdurak.com/', label: { tr: 'Canlı demo (örnek depo ekibi)', en: 'Live demo (sample warehouse team)' } },
     verified: {
-      tr: 'Uçtan uca kabul testi: tek kayıt gece yarısını geçen vardiyada girilir, reddedilir, düzeltilir, puantajla çelişir, puantaj düzeltilip onaylanır. Her adımda beş rapor (özet, birim, uyumsuz, personel, liste) aynı kayıt, kişi ve gün sayısını verir.',
-      en: 'End-to-end acceptance test: one record crosses midnight, is rejected, corrected, contradicts the timesheet, and is approved after the timesheet is fixed. At every step five reports (summary, unit, mismatch, staff, list) give the same record, person and day counts.',
+      tr: 'Uçtan uca test: Claude üzerinden (MCP) iş açılır, atanır; gerekçesiz termin değişikliği reddedilir, gerekçeyle ertelenince ilk termin korunur; iş tamamlanır. Web arayüzü aynı işi aynı durumda görür, her yazma denetim kaydına düşer. Her gönderimde 89 test çalışır.',
+      en: 'End-to-end test: through Claude (MCP) a task is created and assigned; a deadline change without a reason is rejected, and when postponed with a reason the original deadline is kept; the task is completed. The web interface sees the same task in the same state, and every write lands in the audit log. 89 tests run on every push.',
     },
-    proof: { url: GH + 'destek-merkezi/blob/main/tests/kabul.test.mjs', label: { tr: 'Kabul testi', en: 'Acceptance test' } },
-    open: { tr: 'Sahada bağımsız bir vardiya amiriyle kullanılabilirlik testi henüz yapılmadı.', en: 'No independent usability test with a shift supervisor yet.' },
-    skill: { tr: 'Operasyon süreci, iş kuralı tasarımı, veri tutarlılığı', en: 'Operations process, business-rule design, data consistency' },
+    proof: { url: GH + 'pusula-is-takip/blob/main/tests/server/mcp.test.js', label: { tr: 'Uçtan uca MCP testi', en: 'End-to-end MCP test' } },
+    open: { tr: 'Gerçek bir ekiple pilot kullanım henüz yapılmadı.', en: 'No pilot with a real team yet.' },
+    skill: { tr: 'Ürün geliştirme, yetki ve iş kuralları, yapay zekâ entegrasyonu (MCP)', en: 'Product development, permissions and business rules, AI integration (MCP)' },
   },
   {
-    id: 'kesit',
-    name: { tr: 'Kesit: depo vakası', en: 'Kesit: warehouse case' },
-    slug: 'kesit',
+    id: 'measure-sieve',
+    name: { tr: 'Measure Sieve', en: 'Measure Sieve' },
+    slug: 'measure-sieve',
     problem: {
-      tr: 'SQL, Python, Power BI ve istatistik ayrı ayrı öğrenilir; bir iş kararında birlikte nasıl kullanıldıkları ve “fark var” ile “karar için yeterli” arasındaki boşluk görünmez.',
-      en: 'SQL, Python, Power BI and statistics are learned separately; how they combine in one business decision, and the gap between “there is a difference” and “enough to decide”, stays hidden.',
+      tr: 'Power BI modelinde kimsenin kullanmadığı measure’lar birikir ve kafa karıştırır. Elle silmek riskli: bir measure başka bir formülün ya da gizli bir sayfanın içinde kullanılıyor olabilir.',
+      en: 'Measures nobody uses pile up in a Power BI model and confuse people. Deleting them by hand is risky: a measure may be used inside another formula or on a hidden page.',
     },
-    decision: {
-      tr: 'Tek depo sorusu dört araçtan geçer: SQL ile temizlik, Python ile adillik denetimi, Power BI ölçüleri, istatistikle karar sınırı. İstatistiksel fark ile operasyonel yeterlilik ve nedensellik ayrı sorulur; öğrenci kararını uzman yorumundan önce yazar.',
-      en: 'One warehouse question runs through four tools: cleaning in SQL, a fairness check in Python, Power BI measures, a decision boundary in statistics. Statistical difference, operational sufficiency and causation are asked separately; the learner writes a decision before seeing the expert view.',
-    },
-    example: { url: 'https://ysfdurak.github.io/#vaka', label: { tr: 'Vakayı çöz (yaklaşık 40 dk)', en: 'Solve the case (about 40 min)' } },
+    example: { url: 'https://measure-sieve.ysfdurak.com/', label: { tr: 'Canlı demo (örnek satış raporu)', en: 'Live demo (sample sales report)' } },
     verified: {
-      tr: 'Beklenen sonuçlar SQLite, pandas ve SciPy ile bağımsız hesaplanır; tarayıcıdaki motorlar bunlarla 1e-11 düzeyinde aynı. İkinci örnekte (İzmir) aynı kazanç vardiya karışımından gelir: toplam fark anlamlı, vardiya içinde fark yok.',
-      en: 'Expected results are computed independently with SQLite, pandas and SciPy; the in-browser engines match them to about 1e-11. In a second example (İzmir) the same gain comes from the shift mix: the overall difference is significant, within shifts there is none.',
+      tr: 'Örnek raporda beklenen sonuç testte sabit: Ciro, Toplam Satış ile aynı formül ve kullanılmıyor; Eski Hedef yalnız kullanılmayan bir measure’ın içinde. Temizlenmiş kopya yeniden taranıp doğrulamadan geçer; kalan bir öğeyi bozacak silme yapılmaz. Her gönderimde 22 test çalışır.',
+      en: 'The expected result on the sample report is fixed in tests: Revenue has the same formula as Total Sales and is unused; Old Target is only used inside an unused measure. The cleaned copy is scanned again and passes verification; no removal that would break a remaining item is made. 22 tests run on every push.',
     },
-    proof: { url: GH + 'ysfdurak.github.io/tree/main/vaka/depo-kaynak', label: { tr: 'Vaka üreteci ve doğrulama', en: 'Case generator and verification' } },
-    open: { tr: 'İlk kez gelen bir öğrenciyle yardımsız tamamlama testi henüz yapılmadı.', en: 'No unassisted completion test with a first-time learner yet.' },
-    skill: { tr: 'Veriyle karar verme, analitik araçlar, eğitim tasarımı', en: 'Data-driven decisions, analytics tools, learning design' },
+    proof: { url: GH + 'measure-sieve/blob/main/tests/pbix-clean.test.mjs', label: { tr: 'Temizlenmiş kopya testi', en: 'Cleaned copy test' } },
+    open: { tr: 'Gerçek bir kurum raporuyla pilot henüz yapılmadı; sayısal doğrulama otomatik testte sahte bir Power BI motoruyla denenir.', en: 'No pilot with a real company report yet; numeric verification is exercised in automated tests with a fake Power BI engine.' },
+    skill: { tr: 'Power BI modelleme, DAX, veri kalitesi', en: 'Power BI modelling, DAX, data quality' },
   },
 ];
 
