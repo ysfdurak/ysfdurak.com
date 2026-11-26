@@ -465,10 +465,10 @@
       },
       "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-24",
+      "son_guncelleme": "2026-11-26",
       "durum_notu": {
-        "tr": "Yayında; Windows’ta Power BI Desktop ile uçtan uca test edildi. PBIX dosyalarını tarayıcıda okuyor, temizlenmiş kopya ve sayısal doğrulama var",
-        "en": "Live; tested end to end with Power BI Desktop on Windows. Reads PBIX files in the browser, with a cleaned copy and numeric verification"
+        "tr": "Yayında; Windows’ta Power BI Desktop ile uçtan uca test edildi. PBIX dosyalarını tarayıcıda okuyor, temizlenmiş kopya ve sayısal doğrulama var. Sırada: modeli belgeleyen Belgele modu (veri soyağacı, ilişki diyagramı, devir belgesi)",
+        "en": "Live; tested end to end with Power BI Desktop on Windows. Reads PBIX files in the browser, with a cleaned copy and numeric verification. Next: a Document mode (data lineage, relationship diagram, handover document)"
       },
       "ozel_not": "",
       "canli_url": "https://measure-sieve.ysfdurak.com/",
@@ -780,24 +780,6 @@
       "aciklama": {
         "tr": "Aynı raporun iki sürümünü karşılaştırır: hangi satır ve sütun değişti, toplamlar neden tutmuyor.",
         "en": "Compares two versions of the same report: which rows and columns changed and why the totals differ."
-      },
-      "durum": "fikir",
-      "yayinda": true,
-      "son_guncelleme": "2026-11-26",
-      "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
-      }
-    },
-    {
-      "id": "pbi-belgeleyici",
-      "ad": {
-        "tr": "Power BI Belgeleyici",
-        "en": "Power BI Documenter"
-      },
-      "aciklama": {
-        "tr": "Bir Power BI modelinden tablo, ilişki ve ölçü dokümanını otomatik çıkarır.",
-        "en": "Generates documentation of tables, relationships and measures from a Power BI model automatically."
       },
       "durum": "fikir",
       "yayinda": true,
