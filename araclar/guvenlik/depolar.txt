@@ -22,3 +22,4 @@ sirdas
 sorgu-haritasi
 video-zaman-etudu
 ysfdurak.github.io
+sentetik-veri-atolyesi
