@@ -73,5 +73,12 @@
       "yer": "web/vendor/pyodide/",
       "neden": "Pyodide'ın kendi derlenmiş dosyası (üçüncü taraf, SHA256SUMS ile doğrulanıyor); kendi worker iletişimi, bizim kodumuz değil."
     }
+  ],
+  "kesit-istatistik": [
+    {
+      "kural": "pip-ozet",
+      "yer": "^docs/(advanced|business|business-v7)/requirements\\.txt$",
+      "neden": "Kesit İstatistik ders paketlerindeki örnek gereksinim dosyaları: öğrenci kendi bilgisayarında kurar, sunucuda çalışan uygulama yok. Doğrudan paketler sürümle sabit ve pip-audit'ten geçiyor; özet listesi (binlerce satır, platforma göre değişir) öğrenciyi zorlar."
+    }
   ]
 }
