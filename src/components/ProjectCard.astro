@@ -11,8 +11,11 @@ const { project: p, lang, showCategory = false } = Astro.props;
 const t = useT(lang);
 ---
 
-<article class="card">
-  <a class="card-thumb" href={projectPath(p, lang)} tabindex="-1" aria-hidden="true"><img src={`/img/kart/${p.slug}-${lang}.webp`} alt="" width="640" height="400" loading="lazy" decoding="async" /></a>
+<article class="card project-card">
+  <div class="card-media">
+    <a class="card-thumb" href={projectPath(p, lang)} tabindex="-1" aria-hidden="true"><img src={`/img/kart/${p.slug}-${lang}.webp`} alt="" width="800" height="500" loading="lazy" decoding="async" /></a>
+    {p.url && <span class="card-tag" title={t(hasFieldResult(p) ? 'evidence.field.title' : 'evidence.synthetic.title')}>{t(hasFieldResult(p) ? 'evidence.field' : 'evidence.synthetic')}</span>}
+  </div>
   <p class="card-meta">
     {showCategory && <span>{CATEGORIES[p.category][lang]} · </span>}
     <span>{HOSTING_LABEL[p.hosting][lang]}</span>
@@ -25,6 +28,5 @@ const t = useT(lang);
     <a class="card-link" href={projectPath(p, lang)}>{t('project.how')} →</a>
     {p.url && <a class="card-link try" href={tryHref(p, lang)}>{t('project.try')} ↗</a>}
     {!p.url && p.download && <a class="card-link try" href={p.download}>{t('project.download')} ↗</a>}
-    {p.url && <span class="card-tag">{t(hasFieldResult(p) ? 'evidence.field' : 'evidence.synthetic')}</span>}
   </p>
 </article>

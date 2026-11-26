@@ -13,6 +13,12 @@ const other: Lang = lang === 'tr' ? 'en' : 'tr';
 // Projesi olmayan kategori gösterilmez.
 const cats = (Object.keys(CATEGORIES) as Category[]).filter((c) => byCategory(c).length > 0);
 const projectsHref = NAV[lang].projects;
+const total = cats.reduce((n, c) => n + byCategory(c).length, 0);
+const stats = lang === 'tr'
+  ? [[String(total), 'canlı proje'], [String(cats.length), 'alan'], ['0', 'kurulum: tarayıcıda dene']]
+  : [[String(total), 'live projects'], [String(cats.length), 'areas'], ['0', 'installs: try in the browser']];
+// Açılıştaki görsel kolaj: farklı alanlardan üç proje.
+const kolaj = ['ivme-oneri-kaizen', 'video-zaman-etudu', 'measure-sieve'];
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -25,11 +31,19 @@ const jsonLd = {
 ---
 <Base lang={lang} title={SITE.title[lang]} description={SITE.description[lang]} path={NAV[lang].home} altPath={NAV[other].home} jsonLd={jsonLd}>
   <section class="hero">
-    <div class="wrap">
-      <p class="kicker">{t('home.kicker')}</p>
-      <h1>{SITE.title[lang]}</h1>
-      <p class="lead">{t('home.lead')}</p>
-      <p><a class="btn primary" href={projectsHref}>{t('home.cta')}</a></p>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="kicker">{t('home.kicker')}</p>
+        <h1>{SITE.title[lang]}</h1>
+        <p class="lead">{t('home.lead')}</p>
+        <p><a class="btn primary" href={projectsHref}>{t('home.cta')}</a></p>
+        <ul class="hero-stats">
+          {stats.map(([v, l]) => <li><strong>{v}</strong> <span>{l}</span></li>)}
+        </ul>
+      </div>
+      <div class="hero-kolaj" aria-hidden="true">
+        {kolaj.map((slug, i) => <img class={`k${i}`} src={`/img/kart/${slug}-${lang}.webp`} alt="" width="800" height="500" fetchpriority={i === 0 ? 'high' : 'auto'} decoding="async" />)}
+      </div>
     </div>
   </section>
 

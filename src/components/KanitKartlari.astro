@@ -1,28 +1,35 @@
 ---
-// "Üç projede kanıt": problem → çalışan örnek → doğrulanan sonuç (karar satırı 26 Kasım 2026'da kaldırıldı). Açık kalan kısım ayrıca yazılır.
+// "Üç projede kanıt": görsel → problem (tek cümle) → büyük sonuç → nasıl doğrulandı → bağlantılar.
+// Açık kalan kısım küçük bir satır olarak yazılır (dürüstlük notu kalır, ilk izlenimi domine etmez).
 import { KANITLAR } from '../data/kanit';
 import type { Lang } from '../data/projects';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const T = lang === 'tr'
-  ? { h: 'Üç projede kanıt', lead: 'Problem, çalışan örnek ve doğrulanan sonuç. Doğrulama bağlantıları herkese açık test ve belgelere gider.', p: 'Problem', e: 'Çalışan örnek', v: 'Doğrulanan sonuç', o: 'Henüz açık', page: 'Proje sayfası', note: 'Ortak eksik: bağımsız kullanıcı testi. Kanıtlar otomatik testler ve sentetik veriyle yapılan doğrulamalardır.' }
-  : { h: 'Evidence from three projects', lead: 'The problem, a working example and a verified result. Verification links go to public tests and documents.', p: 'Problem', e: 'Working example', v: 'Verified result', o: 'Still open', page: 'Project page', note: 'Common gap: independent user testing. The evidence is automated tests and checks on synthetic data.' };
+  ? { h: 'Üç projede kanıt', lead: 'Her biri çalışıyor ve nasıl doğrulandığı herkese açık. Bağlantılar test ve belgelere gider.', demo: 'Demoyu aç', proof: 'Nasıl doğrulandı', o: 'Henüz:', note: 'Kanıtlar otomatik testler ve örnek veriyle yapılan denemelerdir; bağımsız kullanıcı testi henüz yapılmadı.' }
+  : { h: 'Evidence from three projects', lead: 'Each one works, and how it was verified is public. Links go to the tests and documents.', demo: 'Demo', proof: 'Verification', o: 'Not yet:', note: 'The evidence is automated tests and runs on sample data; no independent user testing yet.' };
 const base = lang === 'tr' ? '/tr/projeler/' : '/en/projects/';
 ---
 <section class="wrap kanit" aria-labelledby="kanit-h">
   <h2 id="kanit-h">{T.h}</h2>
   <p class="lead-sm">{T.lead}</p>
-  <div class="grid kanit-grid">
+  <div class="kanit-grid">
     {KANITLAR.map((k) => (
       <article class="card kanit-card">
-        <h3>{k.slug ? <a href={`${base}${k.slug}/`}>{k.name[lang]}</a> : k.name[lang]}</h3>
+        {k.slug && <a class="card-thumb" href={`${base}${k.slug}/`} tabindex="-1" aria-hidden="true"><img src={`/img/kart/${k.slug}-${lang}.webp`} alt="" width="800" height="500" loading="lazy" decoding="async" /></a>}
         <p class="card-meta">{k.skill[lang]}</p>
-        <dl>
-          <dt>{T.p}</dt><dd>{k.problem[lang]}</dd>
-          <dt>{T.e}</dt><dd><a href={k.example.url} rel="noopener">{k.example.label[lang]} ↗</a></dd>
-          <dt>{T.v}</dt><dd>{k.verified[lang]} <a href={k.proof.url} rel="noopener">{k.proof.label[lang]} ↗</a></dd>
-          {k.open && <><dt>{T.o}</dt><dd class="acik">{k.open[lang]}</dd></>}
-        </dl>
+        <h3>{k.slug ? <a href={`${base}${k.slug}/`}>{k.name[lang]}</a> : k.name[lang]}</h3>
+        <p class="kanit-problem">{k.problem[lang]}</p>
+        <div class="kanit-metric">
+          <strong>{k.metric.value[lang]}</strong>
+          <span>{k.metric.label[lang]}</span>
+        </div>
+        <p class="kanit-verified">{k.verified[lang]}</p>
+        <p class="card-actions">
+          <a class="card-link" href={k.example.url} rel="noopener">{T.demo} ↗</a>
+          <a class="card-link" href={k.proof.url} rel="noopener">{T.proof} ↗</a>
+        </p>
+        {k.open && <p class="kanit-open"><span>{T.o}</span> {k.open[lang]}</p>}
       </article>
     ))}
   </div>
@@ -30,12 +37,16 @@ const base = lang === 'tr' ? '/tr/projeler/' : '/en/projects/';
 </section>
 <style>
   .lead-sm { color: var(--ink-soft); margin: -0.4rem 0 1rem; max-width: 60ch; }
-  .kanit-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-  .kanit-card h3 { margin: 0 0 0.3rem; }
-  .kanit-card dl { margin: 0.4rem 0 0; }
-  .kanit-card dt { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 700; color: var(--accent); margin-top: 0.7rem; }
-  .kanit-card dd { margin: 0.15rem 0 0; color: var(--ink-soft); font-size: 0.95rem; line-height: 1.5; }
-  .kanit-card dd a { font-weight: 600; color: var(--accent); }
-  .kanit-card dd.acik { font-style: italic; }
-  .kanit-not { font-size: 0.9rem; color: var(--ink-soft); margin-top: 0.8rem; }
+  .kanit-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+  .kanit-card { display: flex; flex-direction: column; }
+  .kanit-card h3 { margin: 0 0 0.35rem; }
+  .kanit-problem { font-size: 0.95rem; }
+  .kanit-metric { margin: 0.9rem 0 0.5rem; padding: 0.7rem 0.9rem; border-radius: 8px; background: var(--bg-soft); border-left: 3px solid var(--accent); }
+  .kanit-metric strong { display: block; font-size: 1.55rem; line-height: 1.15; color: var(--accent); letter-spacing: -0.01em; }
+  .kanit-metric span { display: block; font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.15rem; line-height: 1.4; }
+  .kanit-card .kanit-verified { font-size: 0.9rem; line-height: 1.5; }
+  .kanit-card .card-actions { margin-top: auto !important; padding-top: 0.6rem; }
+  .kanit-card .kanit-open { font-size: 0.82rem; border-top: 1px dashed var(--line); padding-top: 0.5rem; margin-top: 0.3rem; }
+  .kanit-open span { font-weight: 600; }
+  .kanit-not { font-size: 0.85rem; color: var(--ink-soft); margin-top: 0.8rem; }
 </style>
