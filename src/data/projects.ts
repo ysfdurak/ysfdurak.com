@@ -714,6 +714,7 @@ export const PROJECTS: Project[] = [
     turkishOnly: {
       en: 'Built for Turkish-speaking managers: the characters answer in Turkish and the questions are scored on Turkish phrasing, so the app stays in Turkish. “Watch the sample session” shows a finished report without an AI call.',
     },
+    featured: true,
     hosting: 'vps',
     env: 'session',
     url: 'https://diyalog.ysfdurak.com/',
