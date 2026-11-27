@@ -141,8 +141,8 @@
         "en": "Kesit"
       },
       "aciklama": {
-        "tr": "SQL, Power BI (DAX), Python ve istatistiği gerçekçi iş verisi üzerinde, adım adım alıştırmalarla öğreten dört uygulamalık paket. Tarayıcıda kurulumsuz çalışır.",
-        "en": "A four-app package that teaches SQL, Power BI (DAX), Python and statistics through step-by-step exercises on realistic business data. Runs in the browser, no install."
+        "tr": "Excel, SQL, Power BI (DAX), Python ve istatistiği gerçekçi iş verisi üzerinde, adım adım alıştırmalarla öğreten beş uygulamalık paket. Tarayıcıda kurulumsuz çalışır.",
+        "en": "A five-app package that teaches Excel, SQL, Power BI (DAX), Python and statistics through step-by-step exercises on realistic business data. Runs in the browser, no install."
       },
       "durum": "canli",
       "yayinda": true,

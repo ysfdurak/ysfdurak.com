@@ -1142,7 +1142,7 @@ export const PROJECTS: Project[] = [
     nameEn: 'Kesit (SQL, Power BI, Python, Statistics, Excel)',
     category: 'ogrenme',
     turkishOnly: {
-      en: 'Built for Turkish speakers: Kesit’s whole point is teaching data skills in Turkish, so the apps, lessons and exercises stay in Turkish. “Try it” opens an English guide that explains each app and screen; it stays on across all four apps.',
+      en: 'Built for Turkish speakers: Kesit’s whole point is teaching data skills in Turkish, so the apps, lessons and exercises stay in Turkish. “Try it” opens an English guide that explains each app and screen; it stays on across all five apps.',
     },
     featured: true,
     hosting: 'external',
@@ -1194,7 +1194,7 @@ export const PROJECTS: Project[] = [
       en: 'No account or setup: pick an app on the Kesit page, take the placement test or start the learning path for your role. Progress stays in your browser and can be backed up to a file and loaded on another device; after the first visit the apps also work offline. The interface is in Turkish.',
     },
     tr: {
-      tagline: 'Veri işinin dört temel becerisini (SQL, Power BI, Python, istatistik) Türkçe ve yaparak öğreten, tarayıcıda çalışan eğitim paketi.',
+      tagline: 'Veri işinin temel becerilerini (Excel, SQL, Power BI, Python, istatistik) Türkçe ve yaparak öğreten, tarayıcıda çalışan eğitim paketi.',
       problem:
         'Veri alanına geçmek isteyenler araçları dağınık, çoğu İngilizce kaynaklardan öğreniyor; kurulum ve hesap engeline takılıyor, yazdıkları kodun doğru olup olmadığını göremiyor. Dört aracı aynı iş senaryosu üzerinde birbirine bağlayan bir çalışma alanı da yok.',
       solution: [
@@ -1202,21 +1202,23 @@ export const PROJECTS: Project[] = [
         'Kesit Power BI: 150 ders ve 1.250 alıştırma; DAX’ı benzeten 206 fonksiyonlu motor, adım adım anlatılan 24 örnek rapor, PL-300 ve DP-600 hazırlığı',
         'Kesit Python: 156 ders ve 3.240 alıştırma; tarayıcıda gerçek Python (Pyodide), otomasyondan makine öğrenmesine ve LLM uygulamalarına, 250 Arena problemi',
         'Kesit İstatistik: 30 modülde 120 ders; formülden önce veri, sonucu iş kararına çevirme, her açılışta yeni sayı üreten alıştırma atölyesi',
-        'Dört uygulamada ortak kurgusal veri setleri (Anadolu Market, Ilgaz Bank, Kanat Havayolları, Lezzet Kurye, Pusula İK, Pedal İzmir); aynı soru farklı araçlarla çözülür',
+        'Kesit Excel: 111 ders ve 250 alıştırma; tarayıcıdaki Excel ızgarasında Türkçe formül adları, özet tablo, Power Query, grafik, makro ve Çözücü; işlev adları gerçek Türkçe Excel’de doğrulandı',
+        'SQL, Power BI, Python ve İstatistik’te ortak kurgusal veri setleri (Anadolu Market, Ilgaz Bank, Kanat Havayolları, Lezzet Kurye, Pusula İK, Pedal İzmir); aynı soru farklı araçlarla çözülür',
         'Role göre öğrenme yolları, seviye testi, aralıklı tekrar, sınavlar ve mülakat soruları',
         'Sunucu ve hesap yok: ilerleme tarayıcıda, dosyaya yedeklenir; çevrimdışı çalışır. Alıştırma çözümleri otomatik denetimlerle doğrulanır',
       ],
     },
     en: {
-      tagline: 'A browser-based training suite that teaches the four core data skills (SQL, Power BI, Python, statistics) hands-on, in Turkish.',
+      tagline: 'A browser-based training suite that teaches the core data skills (Excel, SQL, Power BI, Python, statistics) hands-on, in Turkish.',
       problem:
-        'People moving into data roles learn the tools from scattered, mostly English sources, get stuck on setup and sign-ups, and cannot tell whether their code is right. There is also no workspace that ties the four tools together on the same business scenario.',
+        'People moving into data roles learn the tools from scattered, mostly English sources, get stuck on setup and sign-ups, and cannot tell whether their code is right. There is also no workspace that ties these tools together on the same business scenario.',
       solution: [
         'Kesit SQL: 296 lessons and 1,949 exercises; an in-browser database, six SQL dialects (SQL Server, PostgreSQL, MySQL, Oracle, BigQuery, SQLite), SQL Arena and detective cases',
         'Kesit Power BI: 150 lessons and 1,250 exercises; a DAX-emulating engine with 206 functions, 24 sample reports explained step by step, PL-300 and DP-600 prep',
         'Kesit Python: 156 lessons and 3,240 exercises; real Python in the browser (Pyodide), from automation to machine learning and LLM apps, 250 Arena problems',
         'Kesit Statistics: 120 lessons in 30 modules; data before formulas, turning results into business decisions, a practice workshop that generates new numbers each time',
-        'Shared fictional datasets across all four apps (Anadolu Market, Ilgaz Bank, Kanat Airlines, Lezzet Kurye, Pusula HR, Pedal İzmir); the same question is solved with different tools',
+        'Kesit Excel: 111 lessons and 250 exercises; Turkish formula names, pivots, Power Query, charts, macros and Solver on an in-browser Excel grid; function names verified in real Turkish Excel',
+        'Shared fictional datasets across the SQL, Power BI, Python and Statistics apps (Anadolu Market, Ilgaz Bank, Kanat Airlines, Lezzet Kurye, Pusula HR, Pedal İzmir); the same question is solved with different tools',
         'Role-based learning paths, placement tests, spaced review, exams and interview questions',
         'No server or account: progress stays in the browser, backs up to a file and works offline. Exercise solutions are verified by automated checks',
       ],
