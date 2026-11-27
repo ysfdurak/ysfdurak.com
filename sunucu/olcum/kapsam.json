@@ -22,10 +22,11 @@
     "kesit-sql": "Kesit: 'geri bildirim bağlantısını açmadıkça dış sunucuya istek gitmez' sözü",
     "kiyas": "Karşılaştırılan dosyalar cihazdan çıkmaz sözü",
     "measure-sieve": "Sayfada 'no analytics, dosya tarayıcıdan çıkmaz' yazıyor",
+    "sentetik-veri-atolyesi": "Veri tarayıcıda üretilir, cihazdan çıkmaz sözü; analitik yok",
     "sirdas": "Maskelenecek veri cihazdan çıkmaz sözü",
     "sorgu-haritasi": "Sorgu ve şema cihazdan çıkmaz sözü; analitik yok",
-    "ysfdurak.github.io": "Kesit merkez sayfası ve eski adres yönlendirmeleri: Kesit'in sözü",
-    "sentetik-veri-atolyesi": "Veri tarayıcıda üretilir, cihazdan çıkmaz sözü; analitik yok"
+    "tesvik-laboratuvari": "Hesap tarayıcıda yapılır, yüklenen döküm cihazdan çıkmaz sözü; analitik yok",
+    "ysfdurak.github.io": "Kesit merkez sayfası ve eski adres yönlendirmeleri: Kesit'in sözü"
   },
   "diger": {
     "ysfdurak.com": "Ölçüm servisinin kendisi burada; site Cloudflare Web Analytics kullanır",
