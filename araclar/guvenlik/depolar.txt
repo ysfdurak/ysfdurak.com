@@ -7,7 +7,6 @@ durus-ergonomi
 emanet
 ingilizce-ogrenme-atolyesi
 ivme-oneri-kaizen
-kesit-excel
 kesit-istatistik
 kesit-powerbi
 kesit-python
