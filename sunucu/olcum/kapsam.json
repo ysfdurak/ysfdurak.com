@@ -18,6 +18,7 @@
     "sirdas": "Maskelenecek veri cihazdan çıkmaz sözü",
     "measure-sieve": "Sayfada 'no analytics, dosya tarayıcıdan çıkmaz' yazıyor",
     "ShiftFlow": "Demo 'veri tarayıcınızdan çıkmaz, dış adrese istek yok' diyor; uçtan uca test dış isteği hata sayar",
+    "kesit-excel": "Kesit ailesi: formüller ve ilerleme tarayıcıda kalır, veri cihazdan çıkmaz sözü; analitik yok",
     "kesit-sql": "Kesit: 'geri bildirim bağlantısını açmadıkça dış sunucuya istek gitmez' sözü",
     "kesit-powerbi": "Kesit: aynı söz",
     "kesit-python": "Kesit: aynı söz",
