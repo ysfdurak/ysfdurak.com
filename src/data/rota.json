@@ -591,25 +591,6 @@
       "repo": "ysfdurak/nabiz"
     },
     {
-      "id": "forum-nabzi",
-      "ad": {
-        "tr": "Forum Nabzı",
-        "en": "Forum Pulse"
-      },
-      "aciklama": {
-        "tr": "Power BI topluluk forumundaki “çalışmıyor” sorularını toplar ve kök nedenlerine göre sınıflar; en sık sorunların Pareto’sunu çıkarır.",
-        "en": "Collects “not working” questions from the Power BI community forum and classifies them by root cause, producing a Pareto of the most common problems."
-      },
-      "durum": "gelistiriliyor",
-      "yayinda": false,
-      "son_guncelleme": "2026-11-26",
-      "durum_notu": {
-        "tr": "Plan ve toplayıcının ilk sürümü (0.1) hazır",
-        "en": "Plan and first collector version (0.1) ready"
-      },
-      "ozel_not": ""
-    },
-    {
       "id": "kalkan",
       "ad": {
         "tr": "Kalkan",
