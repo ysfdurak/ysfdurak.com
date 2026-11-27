@@ -141,17 +141,17 @@
         "en": "Kesit"
       },
       "aciklama": {
-        "tr": "SQL, Power BI (DAX), Python ve istatistiği gerçekçi iş verisi üzerinde, adım adım alıştırmalarla öğreten dört uygulamalık paket. Tarayıcıda kurulumsuz çalışır.",
-        "en": "A four-app package that teaches SQL, Power BI (DAX), Python and statistics through step-by-step exercises on realistic business data. Runs in the browser, no install."
+        "tr": "Excel, SQL, Power BI (DAX), Python ve istatistiği gerçekçi iş verisi üzerinde, adım adım alıştırmalarla öğreten beş uygulamalık paket. Tarayıcıda kurulumsuz çalışır.",
+        "en": "A five-app package that teaches Excel, SQL, Power BI (DAX), Python and statistics through step-by-step exercises on realistic business data. Runs in the browser, no install."
       },
       "durum": "canli",
       "yayinda": true,
       "canli_url": "https://ysfdurak.github.io/",
       "repo": "ysfdurak/kesit-sql",
-      "son_guncelleme": "2026-11-23",
+      "son_guncelleme": "2026-11-27",
       "durum_notu": {
-        "tr": "Yayında; Kesit SQL MySQL ve PostgreSQL’de gerçek sunucuyla doğrulandı; kullanıcı hesapları planlanıyor",
-        "en": "Live; Kesit SQL verified against real MySQL and PostgreSQL servers; user accounts being planned"
+        "tr": "Yayında; Kesit Excel eklendi (işlev adları gerçek Türkçe Excel’de doğrulandı); Kesit SQL MySQL ve PostgreSQL’de gerçek sunucuyla doğrulandı; kullanıcı hesapları planlanıyor",
+        "en": "Live; Kesit Excel added (function names verified in real Turkish Excel); Kesit SQL verified against real MySQL and PostgreSQL servers; user accounts being planned"
       },
       "ozel_not": "Hesap öncelikleri: cihazlar arası ilerleme ve kullanım istatistikleri."
     },
@@ -798,24 +798,6 @@
       "aciklama": {
         "tr": "Gerçek veriyi paylaşmadan, aynı yapıda ve gerçekçi dağılımlarda örnek veri seti üretir; eğitim ve demo için.",
         "en": "Produces realistic sample datasets with the same structure and distributions as real data, without sharing it; for training and demos."
-      },
-      "durum": "fikir",
-      "yayinda": true,
-      "son_guncelleme": "2026-11-26",
-      "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
-      }
-    },
-    {
-      "id": "kesit-excel",
-      "ad": {
-        "tr": "Kesit Excel",
-        "en": "Kesit Excel"
-      },
-      "aciklama": {
-        "tr": "Kesit ailesinin Excel kardeşi: iş verisiyle formül, pivot ve Power Query öğrenme.",
-        "en": "The Excel sibling of the Kesit apps: learning formulas, pivots and Power Query on business data."
       },
       "durum": "fikir",
       "yayinda": true,
