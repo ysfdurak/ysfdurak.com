@@ -150,7 +150,7 @@
       "repo": "ysfdurak/kesit-sql",
       "son_guncelleme": "2026-11-27",
       "durum_notu": {
-        "tr": "Yayında; Kesit Excel eklendi (işlev adları gerçek Türkçe Excel'de doğrulandı); Kesit SQL MySQL ve PostgreSQL'de gerçek sunucuyla doğrulandı; kullanıcı hesapları planlanıyor",
+        "tr": "Yayında; Kesit Excel eklendi (işlev adları gerçek Türkçe Excel’de doğrulandı); Kesit SQL MySQL ve PostgreSQL’de gerçek sunucuyla doğrulandı; kullanıcı hesapları planlanıyor",
         "en": "Live; Kesit Excel added (function names verified in real Turkish Excel); Kesit SQL verified against real MySQL and PostgreSQL servers; user accounts being planned"
       },
       "ozel_not": "Hesap öncelikleri: cihazlar arası ilerleme ve kullanım istatistikleri."
