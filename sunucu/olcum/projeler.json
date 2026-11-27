@@ -192,6 +192,7 @@
       "geri_bildirim": "Geri bildirim gönderdi"
     }
   },
+  "zimmet": {"ad": "Zimmet (ekipman)", "adres": "https://zimmet.ysfdurak.com", "huni": [["Açtı", "ekran:baslangic"], ["Kioskta ekipman seçti", "ekran:e"], ["Amir: vardiya ekranına baktı", "ekran:vardiya"], ["Hasar siciline baktı", "ekran:hasar"], ["Panoya baktı", "ekran:pano"], ["Geri bildirim verdi", "geri_bildirim"]], "ekranlar": {"baslangic": "Başlangıç / rol seçimi", "kiosk": "Kiosk", "e": "Ekipman (QR) sayfası", "benim": "Üzerimdekiler", "vardiya": "Amir: Vardiya", "envanter": "Envanter", "ekipman": "Ekipman geçmişi", "hasar": "Hasar sicili", "belgeler": "Belgeler", "kalici": "Kalıcı zimmet", "tutanak": "Tutanak", "etiketler": "QR etiketleri", "pano": "Yönetici: Pano", "denetim": "Denetim kaydı"}},
   "butce": {
     "ad": "Bütçe Sapması (tarayıcı demosu)",
     "adres": "https://ysfdurak.github.io",
