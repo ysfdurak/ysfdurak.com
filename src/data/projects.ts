@@ -1135,11 +1135,11 @@ export const PROJECTS: Project[] = [
   {
     slug: 'kesit',
     caseStudy: {
-      tr: { role: "SQL, Power BI ve Python uygulamalarını önce kendi çalışmam için yaptım, sonra kapsamı genişletip Kesit paketi olarak yayımladım; istatistik uygulaması sonradan eklendi. Hangi konuların, ortak veri setlerinin ve rol yollarının olacağına ben karar verdim; ders içeriği ve kod yapay zekâ (Claude) ile yazıldı." },
-      en: { role: "I first built the SQL, Power BI and Python apps for my own study, then widened the scope and published them as the Kesit suite; the statistics app came later. I decided the topics, the shared datasets and the role paths; the lesson content and the code were written with AI (Claude)." },
+      tr: { role: "SQL, Power BI ve Python uygulamalarını önce kendi çalışmam için yaptım, sonra kapsamı genişletip Kesit paketi olarak yayımladım; istatistik ve Excel uygulamaları sonradan eklendi. Hangi konuların, ortak veri setlerinin ve rol yollarının olacağına ben karar verdim; ders içeriği ve kod yapay zekâ (Claude) ile yazıldı." },
+      en: { role: "I first built the SQL, Power BI and Python apps for my own study, then widened the scope and published them as the Kesit suite; the statistics and Excel apps came later. I decided the topics, the shared datasets and the role paths; the lesson content and the code were written with AI (Claude)." },
     },
-    name: 'Kesit (SQL, Power BI, Python, İstatistik)',
-    nameEn: 'Kesit (SQL, Power BI, Python, Statistics)',
+    name: 'Kesit (SQL, Power BI, Python, İstatistik, Excel)',
+    nameEn: 'Kesit (SQL, Power BI, Python, Statistics, Excel)',
     category: 'ogrenme',
     turkishOnly: {
       en: 'Built for Turkish speakers: Kesit’s whole point is teaching data skills in Turkish, so the apps, lessons and exercises stay in Turkish. “Try it” opens an English guide that explains each app and screen; it stays on across all four apps.',
@@ -1155,6 +1155,7 @@ export const PROJECTS: Project[] = [
       { label: 'Power BI', url: GH + 'kesit-powerbi' },
       { label: 'Python', url: GH + 'kesit-python' },
       { label: 'İstatistik', labelEn: 'Statistics', url: GH + 'kesit-istatistik' },
+      { label: 'Excel', url: GH + 'kesit-excel' },
     ],
     tech: ['JavaScript', 'SQLite (sql.js)', 'Pyodide', 'DAX benzetim motoru', 'PWA'],
     og: '/img/kesit/og.jpg',

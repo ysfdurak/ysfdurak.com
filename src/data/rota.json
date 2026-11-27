@@ -809,20 +809,23 @@
     },
     {
       "id": "kesit-excel",
+      "proje": "kesit",
       "ad": {
         "tr": "Kesit Excel",
         "en": "Kesit Excel"
       },
       "aciklama": {
-        "tr": "Kesit ailesinin Excel kardeşi: iş verisiyle formül, pivot ve Power Query öğrenme.",
-        "en": "The Excel sibling of the Kesit apps: learning formulas, pivots and Power Query on business data."
+        "tr": "Kesit ailesinin Excel kardeşi: tarayıcıdaki Excel ızgarasında Türkçe formül, özet tablo, Power Query, grafik ve makro; 111 ders, 250 denetlenen alıştırma.",
+        "en": "The Excel sibling of the Kesit apps: Turkish formulas, pivots, Power Query, charts and macros on an in-browser Excel grid; 111 lessons, 250 checked exercises."
       },
-      "durum": "fikir",
+      "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-26",
+      "canli_url": "https://ysfdurak.github.io/kesit-excel/",
+      "repo": "ysfdurak/kesit-excel",
+      "son_guncelleme": "2026-11-27",
       "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
+        "tr": "Yayında; formül adları ve sonuçlar gerçek Excel'de (masaüstü ve Türkçe web Excel 365) doğrulandı",
+        "en": "Live; function names and results verified in real Excel (desktop and Turkish Excel for the web)"
       }
     }
   ]
