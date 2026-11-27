@@ -1217,7 +1217,7 @@ export const PROJECTS: Project[] = [
         'Kesit Power BI: 150 lessons and 1,250 exercises; a DAX-emulating engine with 206 functions, 24 sample reports explained step by step, PL-300 and DP-600 prep',
         'Kesit Python: 156 lessons and 3,240 exercises; real Python in the browser (Pyodide), from automation to machine learning and LLM apps, 250 Arena problems',
         'Kesit Statistics: 120 lessons in 30 modules; data before formulas, turning results into business decisions, a practice workshop that generates new numbers each time',
-        'Kesit Excel: 152 lessons and 492 exercises; Turkish formula names, pivots, Power Query, database functions, charts, macros and Solver on an in-browser Excel grid; each lesson's exercises also download as an Excel workbook; function names verified in real Turkish Excel',
+        'Kesit Excel: 152 lessons and 492 exercises; Turkish formula names, pivots, Power Query, database functions, charts, macros and Solver on an in-browser Excel grid; each lesson’s exercises also download as an Excel workbook; function names verified in real Turkish Excel',
         'Shared fictional datasets across the SQL, Power BI, Python and Statistics apps (Anadolu Market, Ilgaz Bank, Kanat Airlines, Lezzet Kurye, Pusula HR, Pedal İzmir); the same question is solved with different tools',
         'Role-based learning paths, placement tests, spaced review, exams and interview questions',
         'No server or account: progress stays in the browser, backs up to a file and works offline. Exercise solutions are verified by automated checks',
