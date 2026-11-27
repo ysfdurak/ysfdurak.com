@@ -16,6 +16,7 @@
   "soz": {
     "ShiftFlow": "Demo 'veri tarayıcınızdan çıkmaz, dış adrese istek yok' diyor; uçtan uca test dış isteği hata sayar",
     "durus-ergonomi": "Video ve analiz cihazdan çıkmaz sözü",
+    "kesit-excel": "Kesit ailesi: formüller ve ilerleme tarayıcıda kalır, veri cihazdan çıkmaz sözü; analitik yok",
     "kesit-istatistik": "Kesit: aynı söz",
     "kesit-powerbi": "Kesit: aynı söz",
     "kesit-python": "Kesit: aynı söz",
