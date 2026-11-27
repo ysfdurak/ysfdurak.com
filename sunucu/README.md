@@ -75,6 +75,7 @@ Her proje kendi deposunda durur. Konteyneri `web` ağına katılır, dışarıya
 | Nabız | nabiz.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-nabiz.sh` (önce Arıza Defteri; soru sormaz) | SQLite; demo modunda ziyaretçi alanları 72 saatte silinir, vitrin her gün yeniden üretilir, yedek yok |
 | Nabız Analiz (Python) | yalnız iç ağ (`http://nabiz-analiz:8000`) | `bash ~/ysfdurak.com/sunucu/kurulum-nabiz-analiz.sh` | Veri tutmaz; Arıza Defteri'nden okur; Caddy bloğu yok, Claude'a Nabız MCP'si üzerinden |
 | Emanet + Usta (Python) | emanet.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-emanet.sh` | SQLite; demo her gece yeniden üretilir, ziyaretçi kopyaları 24 saatte silinir, yedek yok; MCP anahtarı `.env`'de |
+| Kalkan (İSG) | kalkan.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-kalkan.sh` | SQLite; ziyaretçi demo alanları 24 saatte silinir, MCP vitrini her gün yeniden üretilir, yedek yok; MCP anahtarı `.env`'de |
 | Ortak ölçüm ve geri bildirim | olcum.ysfdurak.com | `bash ~/ysfdurak.com/sunucu/kurulum-olcum.sh` | PostgreSQL `olcum`, gece R2'ye yedeklenir; ayrıntı `olcum/README.md` |
 
 Yeni bir alt alan adı için önce Cloudflare DNS'te A kaydı açılır (sunucu IP'si, proxy açık). Ardından `altyapi/Caddyfile` dosyasına bir blok eklenir.

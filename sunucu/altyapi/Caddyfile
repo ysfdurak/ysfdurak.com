@@ -63,6 +63,11 @@ ariza.ysfdurak.com {
 	import uygulama ariza-defteri:8080
 }
 
+# Kalkan: yaşayan İSG risk değerlendirmesi, ziyaretçi demosu, anahtarlı MCP (github.com/ysfdurak/kalkan)
+kalkan.ysfdurak.com {
+	import uygulama kalkan:8080
+}
+
 # Nabız: depo ekipmanı TPM (QR, otonom bakım kontrolü, etiket takibi), MCP (github.com/ysfdurak/nabiz)
 nabiz.ysfdurak.com {
 	import uygulama nabiz:8080
