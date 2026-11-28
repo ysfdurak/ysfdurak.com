@@ -23,5 +23,6 @@ sirdas
 sorgu-haritasi
 video-zaman-etudu
 ysfdurak.github.io
+kalkan
 sentetik-veri-atolyesi
 tesvik-laboratuvari
