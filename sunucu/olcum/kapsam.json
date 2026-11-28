@@ -14,15 +14,19 @@
     "video-zaman-etudu": "is-etudu"
   },
   "soz": {
-    "durus-ergonomi": "Video ve analiz cihazdan çıkmaz sözü",
-    "sirdas": "Maskelenecek veri cihazdan çıkmaz sözü",
-    "measure-sieve": "Sayfada 'no analytics, dosya tarayıcıdan çıkmaz' yazıyor",
     "ShiftFlow": "Demo 'veri tarayıcınızdan çıkmaz, dış adrese istek yok' diyor; uçtan uca test dış isteği hata sayar",
+    "durus-ergonomi": "Video ve analiz cihazdan çıkmaz sözü",
+    "kesit-istatistik": "Kesit: aynı söz",
     "kesit-excel": "Kesit ailesi: formüller ve ilerleme tarayıcıda kalır, veri cihazdan çıkmaz sözü; analitik yok",
     "kesit-sql": "Kesit: 'geri bildirim bağlantısını açmadıkça dış sunucuya istek gitmez' sözü",
     "kesit-powerbi": "Kesit: aynı söz",
     "kesit-python": "Kesit: aynı söz",
-    "kesit-istatistik": "Kesit: aynı söz",
+    "kiyas": "Karşılaştırılan dosyalar cihazdan çıkmaz sözü",
+    "measure-sieve": "Sayfada 'no analytics, dosya tarayıcıdan çıkmaz' yazıyor",
+    "sentetik-veri-atolyesi": "Veri tarayıcıda üretilir, cihazdan çıkmaz sözü; analitik yok",
+    "sirdas": "Maskelenecek veri cihazdan çıkmaz sözü",
+    "sorgu-haritasi": "Sorgu ve şema cihazdan çıkmaz sözü; analitik yok",
+    "tesvik-laboratuvari": "Hesap tarayıcıda yapılır, yüklenen döküm cihazdan çıkmaz sözü; analitik yok",
     "ysfdurak.github.io": "Kesit merkez sayfası ve eski adres yönlendirmeleri: Kesit'in sözü"
   },
   "diger": {

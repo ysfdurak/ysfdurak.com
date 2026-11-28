@@ -13,11 +13,15 @@ kesit-powerbi
 kesit-python
 kesit-sql
 kivilcim-zihin-oyunlari
+kiyas
 measure-sieve
 nabiz
 nabiz-analiz
 pusula-is-takip
 ShiftFlow
 sirdas
+sorgu-haritasi
 video-zaman-etudu
 ysfdurak.github.io
+sentetik-veri-atolyesi
+tesvik-laboratuvari
