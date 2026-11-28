@@ -247,14 +247,17 @@
         "tr": "Proje bitiş tarihini tek bir tarih yerine olasılıklarla verir (ör. %80 ihtimalle şu tarih). Geçmiş tahmin sapmalarından öğrenir ve Monte Carlo simülasyonuyla çalışır; isteğe bağlı olarak Pusula'ya bağlanır.",
         "en": "Gives project finish dates as probabilities rather than a single date (e.g. 80% by this date). Learns from past estimate errors and runs Monte Carlo simulation; optionally links to Pusula."
       },
-      "durum": "fikir",
+      "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-16",
+      "son_guncelleme": "2026-11-28",
       "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
+        "tr": "Yayında (0.1.0); kendi sunucumda, Claude’a bağlanabilir (MCP)",
+        "en": "Live (0.1.0); on my own server, can be connected to Claude (MCP)"
       },
-      "ozel_not": "Pusula'ya isteğe bağlı bağlantı."
+      "ozel_not": "Pusula'ya isteğe bağlı bağlantı.",
+      "proje": "termin-olasiligi",
+      "canli_url": "https://termin.ysfdurak.com/",
+      "repo": "ysfdurak/termin-olasiligi"
     },
     {
       "id": "yalin-oyun",
@@ -600,13 +603,15 @@
         "tr": "Yaşayan İSG risk değerlendirmesi: ramak kala bildirimleri, saha fotoğrafları ve kaza kayıtları uzman onayıyla risk kaydını günceller. Yerleşim planında canlı risk haritası, düzeltici faaliyetler \"sonra\" fotoğrafıyla doğrulanır; periyodik kontroller (raf, forklift, yangın tüpü) ve kök neden analizi modülleri var.",
         "en": "A living occupational-safety risk assessment: near-miss reports, site photos and accident records update the risk register with expert approval. Live risk map on the layout, corrective actions verified by an after-photo, plus periodic inspections (racking, forklifts, extinguishers) and root-cause analysis modules."
       },
-      "durum": "fikir",
+      "durum": "pilot",
       "yayinda": true,
-      "son_guncelleme": "2026-11-26",
+      "son_guncelleme": "2026-11-28",
       "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
-      }
+        "tr": "Pilot: demo kendi sunucumda yayında; İSG uzmanı onayı bekleniyor",
+        "en": "Pilot: the demo is live on my own server; awaiting review by an occupational safety expert"
+      },
+      "canli_url": "https://kalkan.ysfdurak.com/",
+      "repo": "ysfdurak/kalkan"
     },
     {
       "id": "kagitsiz",
@@ -636,13 +641,15 @@
         "tr": "QR ile ekipman alma ve iade: yetki belgesi ve günlük kontrol listesi tamamlanmadan teslim yok; kayıp ve hasar geçmişi ekipman bazında tutulur.",
         "en": "QR-based equipment checkout and return: no handover without a valid certificate and the daily checklist; loss and damage history kept per item."
       },
-      "durum": "fikir",
+      "durum": "pilot",
       "yayinda": true,
-      "son_guncelleme": "2026-11-26",
+      "son_guncelleme": "2026-11-28",
       "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
-      }
+        "tr": "Pilot: demo kendi sunucumda yayında; saha ve İK/İSG görüşü bekleniyor",
+        "en": "Pilot: the demo is live on my own server; awaiting feedback from the floor and HR/safety"
+      },
+      "canli_url": "https://zimmet.ysfdurak.com/",
+      "repo": "ysfdurak/zimmet"
     },
     {
       "id": "yordam",
@@ -726,13 +733,16 @@
         "tr": "Prim ve teşvik kurallarını tasarlama laboratuvarı: farklı çalışan tipleri simülasyonda kuralları kendi lehine kullanmaya çalışır, kuralın açıkları ortaya çıkar (oyun teorisi).",
         "en": "A lab for designing bonus and incentive rules: simulated worker types try to game the rules, exposing their loopholes (game theory)."
       },
-      "durum": "fikir",
+      "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-26",
+      "son_guncelleme": "2026-11-28",
       "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
-      }
+        "tr": "Yayında (0.1.0)",
+        "en": "Live (0.1.0)"
+      },
+      "proje": "tesvik-laboratuvari",
+      "canli_url": "https://tesvik.ysfdurak.com/",
+      "repo": "ysfdurak/tesvik-laboratuvari"
     },
     {
       "id": "sorgu-haritasi",
@@ -744,13 +754,16 @@
         "tr": "Uzun bir SQL sorgusunu tablolar, birleştirmeler ve filtrelerden oluşan görsel bir haritaya çevirir; sorguyu okumayı ve hatayı bulmayı kolaylaştırır.",
         "en": "Turns a long SQL query into a visual map of tables, joins and filters, making it easier to read and debug."
       },
-      "durum": "fikir",
+      "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-26",
+      "son_guncelleme": "2026-11-28",
       "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
-      }
+        "tr": "Yayında (0.1.0); altı SQL diyalekti, 23 risk kuralı",
+        "en": "Live (0.1.0); six SQL dialects, 23 risk rules"
+      },
+      "proje": "sorgu-haritasi",
+      "canli_url": "https://sorgu-haritasi.ysfdurak.com/",
+      "repo": "ysfdurak/sorgu-haritasi"
     },
     {
       "id": "kiyas",
@@ -762,13 +775,16 @@
         "tr": "Aynı raporun iki sürümünü karşılaştırır: hangi satır ve sütun değişti, toplamlar neden tutmuyor.",
         "en": "Compares two versions of the same report: which rows and columns changed and why the totals differ."
       },
-      "durum": "fikir",
+      "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-26",
+      "son_guncelleme": "2026-11-28",
       "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
-      }
+        "tr": "Yayında (0.1.0)",
+        "en": "Live (0.1.0)"
+      },
+      "proje": "kiyas",
+      "canli_url": "https://kiyas.ysfdurak.com/",
+      "repo": "ysfdurak/kiyas"
     },
     {
       "id": "sentetik-veri",
@@ -780,13 +796,16 @@
         "tr": "Gerçek veriyi paylaşmadan, aynı yapıda ve gerçekçi dağılımlarda örnek veri seti üretir; eğitim ve demo için.",
         "en": "Produces realistic sample datasets with the same structure and distributions as real data, without sharing it; for training and demos."
       },
-      "durum": "fikir",
+      "durum": "canli",
       "yayinda": true,
-      "son_guncelleme": "2026-11-26",
+      "son_guncelleme": "2026-11-28",
       "durum_notu": {
-        "tr": "Kapsam belgesi hazırlandı",
-        "en": "Scope document drafted"
-      }
+        "tr": "Yayında (0.1.0); e-ticaret, depo ve İK senaryoları",
+        "en": "Live (0.1.0); e-commerce, warehouse and HR scenarios"
+      },
+      "proje": "sentetik-veri-atolyesi",
+      "canli_url": "https://sentetik.ysfdurak.com/",
+      "repo": "ysfdurak/sentetik-veri-atolyesi"
     }
   ]
 }
