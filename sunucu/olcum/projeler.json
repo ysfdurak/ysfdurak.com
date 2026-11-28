@@ -156,6 +156,7 @@
       "pano": "Pano"
     }
   },
+  "kalkan": {"ad": "Kalkan (İSG)", "adres": "https://kalkan.ysfdurak.com", "huni": [["Açtı", "ekran:baslangic"], ["Ramak kala formunu açtı", "ekran:bildir"], ["Uzman masasına baktı", "ekran:masa"], ["Risk kartını açtı", "ekran:risk"], ["Panoya baktı", "ekran:pano"], ["Geri bildirim verdi", "geri_bildirim"]], "ekranlar": {"baslangic": "Başlangıç / rol seçimi", "bildir": "Bildir", "takip": "Takip kodu", "bugun": "Amir: Bugün", "masa": "Uzman: Masam", "riskler": "Risk kaydı", "risk": "Risk kartı", "dof": "DÖF", "kontroller": "Kontroller", "harita": "Risk haritası", "pano": "Müdür: Pano", "denetim": "Denetim kaydı"}},
   "nabiz": {
     "ad": "Nabız (TPM)",
     "adres": "https://nabiz.ysfdurak.com",

@@ -63,6 +63,11 @@ ariza.ysfdurak.com {
 	import uygulama ariza-defteri:8080
 }
 
+# Kalkan: yaşayan İSG risk değerlendirmesi, ziyaretçi demosu, anahtarlı MCP (github.com/ysfdurak/kalkan)
+kalkan.ysfdurak.com {
+	import uygulama kalkan:8080
+}
+
 # Zimmet: paylaşımlı ekipmanın teslim ve iadesi, ziyaretçi demosu, anahtarlı MCP (github.com/ysfdurak/zimmet)
 zimmet.ysfdurak.com {
 	import uygulama zimmet:8080
