@@ -1075,16 +1075,18 @@ export const PROJECTS: Project[] = [
     shots: [
       { src: '/img/measure-sieve/sonuc.webp', srcEn: '/img/measure-sieve/sonuc-en.webp', w: 1440, h: 900, alt: { tr: 'Sonuç: 16 measure içinden 5 tanesi kullanılmıyor gibi; aynı formüle sahip measure grubu ve durumlara göre renkli özet', en: 'Result: 5 of 16 measures look unused; a group of measures with the same formula and a colour summary by status' } },
       { src: '/img/measure-sieve/liste.webp', srcEn: '/img/measure-sieve/liste-en.webp', w: 1440, h: 900, alt: { tr: 'Liste: her measure’ın durumu ve nedeni (görselde, formülde, gizli sayfada); sağda güvenli silme sırasıyla temizlik listesi', en: 'List: each measure’s status and reason (in a visual, in a formula, on a hidden page); on the right, the cleanup list in a safe removal order' } },
+      { src: '/img/measure-sieve/belgele-soyagaci.webp', srcEn: '/img/measure-sieve/belgele-soyagaci-en.webp', w: 1440, h: 900, alt: { tr: 'Belgele, soyağacı: Ürün Tablosu görselinin sayıları bir Excel dosyası ve bir SQL sunucusundan, iki sorgu ve iki tablo üzerinden geliyor', en: 'Document, lineage: the Product Table visual’s numbers come from an Excel file and a SQL server through two queries and two tables' } },
+      { src: '/img/measure-sieve/belgele-iliskiler.webp', srcEn: '/img/measure-sieve/belgele-iliskiler-en.webp', w: 1440, h: 900, alt: { tr: 'Belgele, tablolar ve ilişkiler: ilişki diyagramı, çift yönlü filtre ve ilişkisiz tablo uyarısı, tablo listesi; altta devir belgesi', en: 'Document, tables and relationships: the relationship diagram, a bidirectional filter and an unrelated table warning, the table list; the handover document below' } },
       { src: '/img/measure-sieve/dogrulama.webp', srcEn: '/img/measure-sieve/dogrulama-en.webp', w: 1440, h: 900, alt: { tr: 'Temizlenmiş kopya: seçilenler çıkarılmış yeni dosya yeniden taranıp aslıyla karşılaştırılır; doğrulama geçti', en: 'Cleaned copy: the new file without the selected items is scanned again and compared with the original; verification passed' } },
     ],
     demo: {
-      tr: 'Hesap gerekmez, dosyan bilgisayarından çıkmaz. Sayfa örnek bir satış raporuyla açılır: kullanılmayan measure’ları ve nedenlerini gör, “Kopyayı oluştur ve doğrula” ile temizlenmiş kopyayı üret. Kendi PBIX, PBIT ya da PBIP dosyanı da bırakabilirsin; veri satırları hiç okunmaz, yalnızca model tanımı.',
-      en: 'No account, and your file never leaves your computer. The page opens with a sample sales report: see the unused measures and the reasons, then use “Build and verify the copy” to produce a cleaned copy. You can also drop your own PBIX, PBIT or PBIP file; no data rows are read, only the model definition.',
+      tr: 'Hesap gerekmez, dosyan bilgisayarından çıkmaz. Sayfa örnek bir satış raporuyla açılır: kullanılmayan measure’ları ve nedenlerini gör, “Kopyayı oluştur ve doğrula” ile temizlenmiş kopyayı üret. Üstten Belgele’ye geçince aynı rapor için veri soyağacını, ilişkileri ve measure açıklamalarını görür, devir belgesini indirirsin. Kendi PBIX, PBIT ya da PBIP dosyanı da bırakabilirsin; veri satırları hiç okunmaz, yalnızca model tanımı.',
+      en: 'No account, and your file never leaves your computer. The page opens with a sample sales report: see the unused measures and the reasons, then use “Build and verify the copy” to produce a cleaned copy. Switch to Document at the top to see the same report’s data lineage, relationships and measure explanations, and download the handover document. You can also drop your own PBIX, PBIT or PBIP file; no data rows are read, only the model definition.',
     },
     tr: {
-      tagline: 'Power BI modelinde hangi measure, sütun ve tabloların gerçekten kullanıldığını bulan; kullanılmayanları nedenleriyle listeleyip temizlenmiş kopyayı doğrulayan araç.',
+      tagline: 'Power BI modelinde hangi measure, sütun ve tabloların gerçekten kullanıldığını bulan, kullanılmayanları temizleyip kopyayı doğrulayan; modelin ne yaptığını da soyağacı, ilişkiler ve devir belgesiyle anlatan araç.',
       problem:
-        'Power BI raporları büyüdükçe modelde kimsenin kullanmadığı measure’lar birikir: eski denemeler, aynı hesabı yapan iki ayrı measure, artık hiçbir görselde olmayan alanlar. Bunlar raporu açanın kafasını karıştırır, hangisinin doğru olduğu sorulur. Elle temizlemek riskli: bir measure başka bir formülün, gizli bir sayfanın ya da güvenlik rolünün içinde kullanılıyor olabilir ve silinince rapor bozulur.',
+        'Power BI raporları büyüdükçe modelde kimsenin kullanmadığı measure’lar birikir: eski denemeler, aynı hesabı yapan iki ayrı measure, artık hiçbir görselde olmayan alanlar. Bunlar raporu açanın kafasını karıştırır, hangisinin doğru olduğu sorulur. Elle temizlemek riskli: bir measure başka bir formülün, gizli bir sayfanın ya da güvenlik rolünün içinde kullanılıyor olabilir ve silinince rapor bozulur. Raporu devralan kişi de aynı soruyla başlar: bu sayı hangi dosyadan geliyor, hangi measure ne hesaplıyor?',
       solution: [
         'PBIX, PBIT, PBIP (TMSL ve TMDL; eski ve PBIR rapor biçimi) ve model.bim okunur; PBIX’in sıkıştırılmış modeli tarayıcıda açılır',
         'Her öğe için durum ve neden: kullanılıyor, dolaylı kullanım, kontrol et (gizli sayfa, yer imi), zincirleme ve kullanılmıyor gibi',
@@ -1093,14 +1095,16 @@ export const PROJECTS: Project[] = [
         'Temizlenmiş kopya (PBIT ve PBIP): seçilenler çıkarılmış yeni dosya; aslına dokunulmaz',
         'Yapısal doğrulama: kopya yeniden taranır, rapor alanları ve formül başvuruları aslıyla karşılaştırılır',
         'Sayısal doğrulama (MCP, Windows): açık Power BI Desktop’ta görsellerin değerleri temizlikten önce ve sonra hesaplanıp karşılaştırılır',
-        'Aynı çekirdek bir MCP sunucusu olarak da çalışır; Claude’a “bu raporda kullanılmayan measure’lar hangileri?” diye sorulabilir',
+        'Belgele: veri soyağacı (kaynak → Power Query → tablo → measure → görsel, iki yönde; M kodu çalıştırılmadan okunur), ilişki diyagramı ve riskli ilişki uyarıları',
+        'Belgele: measure açıklamaları (modeldeki açıklama ya da formülden kural tabanlı Türkçe cümle) ve devir belgesi (Markdown ya da yazdırılabilir sayfa, elle doldurulacak kontrol listesiyle)',
+        'Aynı çekirdek bir MCP sunucusu olarak da çalışır; Claude’a “bu raporda kullanılmayan measure’lar hangileri?” ya da “bu kartın sayısı nereden geliyor?” diye sorulabilir',
         'Türkçe ve İngilizce arayüz; sunucu yok, analiz tarayıcıda',
       ],
     },
     en: {
-      tagline: 'A tool that finds which measures, columns and tables in a Power BI model are really used, lists the unused ones with reasons and verifies the cleaned copy.',
+      tagline: 'A tool that finds which measures, columns and tables in a Power BI model are really used, cleans up the unused ones and verifies the copy; it also explains what the model does with lineage, relationships and a handover document.',
       problem:
-        'As Power BI reports grow, measures nobody uses pile up in the model: old experiments, two measures doing the same sum, fields no visual shows any more. They confuse whoever opens the report, and people start asking which one is right. Cleaning by hand is risky: a measure may be used inside another formula, on a hidden page or in a security role, and the report breaks when it is deleted.',
+        'As Power BI reports grow, measures nobody uses pile up in the model: old experiments, two measures doing the same sum, fields no visual shows any more. They confuse whoever opens the report, and people start asking which one is right. Cleaning by hand is risky: a measure may be used inside another formula, on a hidden page or in a security role, and the report breaks when it is deleted. Whoever takes over the report starts with the same question: which file does this number come from, and what does each measure calculate?',
       solution: [
         'Reads PBIX, PBIT, PBIP (TMSL and TMDL; legacy and PBIR reports) and model.bim; the compressed PBIX model is opened in the browser',
         'A status and a reason for every item: used, indirect use, check (hidden page, bookmark), chained and looks unused',
@@ -1109,7 +1113,9 @@ export const PROJECTS: Project[] = [
         'Cleaned copy (PBIT and PBIP): a new file without the selected items; the original is untouched',
         'Structural verification: the copy is scanned again and its report fields and formula references are compared with the original',
         'Numeric verification (MCP, Windows): visual values are computed in an open Power BI Desktop before and after cleanup and compared',
-        'The same core runs as an MCP server; you can ask Claude “which measures are unused in this report?”',
+        'Document: data lineage (source → Power Query → table → measure → visual, in both directions; the M code is read, never run), a relationship diagram and risky-relationship warnings',
+        'Document: measure explanations (the model’s own description, or a rule-based sentence from the formula) and a handover document (Markdown or a printable page, with a checklist to fill in)',
+        'The same core runs as an MCP server; you can ask Claude “which measures are unused in this report?” or “where does this card’s number come from?”',
         'English and Turkish interface; no server, the analysis runs in the browser',
       ],
     },

@@ -467,8 +467,8 @@
       "yayinda": true,
       "son_guncelleme": "2026-11-26",
       "durum_notu": {
-        "tr": "Yayında; Windows’ta Power BI Desktop ile uçtan uca test edildi. PBIX dosyalarını tarayıcıda okuyor, temizlenmiş kopya ve sayısal doğrulama var. Sırada: modeli belgeleyen Belgele modu (veri soyağacı, ilişki diyagramı, devir belgesi)",
-        "en": "Live; tested end to end with Power BI Desktop on Windows. Reads PBIX files in the browser, with a cleaned copy and numeric verification. Next: a Document mode (data lineage, relationship diagram, handover document)"
+        "tr": "Yayında (1.2.0): Temizle ve Belgele modları. Kullanılmayan measure’ları bulup temizlenmiş kopyayı doğruluyor; veri soyağacı, ilişki diyagramı, measure açıklamaları ve devir belgesi üretiyor. PBIX dosyalarını tarayıcıda okuyor",
+        "en": "Live (1.2.0): Clean up and Document modes. Finds unused measures and verifies the cleaned copy; produces data lineage, a relationship diagram, measure explanations and a handover document. Reads PBIX files in the browser"
       },
       "ozel_not": "",
       "canli_url": "https://measure-sieve.ysfdurak.com/",
