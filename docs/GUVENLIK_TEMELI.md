@@ -76,7 +76,7 @@ Başlangıç: `sablonlar/python-servis` (`yeni.sh <ad>`). İlk kullanıcı: Nab�
 | Önlem | Neden |
 | --- | --- |
 | Dockerfile: sabit sürümlü taban imaj, çok aşamalı derleme, `npm ci --omit=dev`, `USER node` (root değil), `HEALTHCHECK`. Python: 3b | Saldırı yüzeyi küçük |
-| Compose: `name:` açık (aynı klasördeki başka uygulamayla çakışmasın), `read_only: true` + `tmpfs: /tmp`, `cap_drop: [ALL]`, `security_opt: [no-new-privileges:true]`, `mem_limit`, `pids_limit`, kayıt boyutu sınırı | Bir konteynerdeki sorun ötekileri ve sunucuyu etkilemez |
+| Compose: `name:` açık (aynı klasördeki başka uygulamayla çakışmasın), `read_only: true` + `tmpfs: /tmp`, `cap_drop: [ALL]`, `security_opt: [no-new-privileges:true]`, `mem_limit`, `pids_limit`, kayıt boyutu sınırı, `init: true` (uygulama servislerinde; Caddy ve PostgreSQL hariç) | Bir konteynerdeki sorun ötekileri ve sunucuyu etkilemez; `init: true` ile PID 1 tini olur, bitmiş alt süreçler toplanır (Kasım 2026'da Destek'te zombie süreç görüldü) |
 | Uygulama portu dışarı açılmaz; yalnız Caddy 80/443 dinler, uygulamalar `web` ağında | Doğrudan erişim yok |
 | Caddy: otomatik HTTPS (DNS doğrulaması), HSTS, `-Server`, Cloudflare `trusted_proxies`, istemci IP başlıklarını kendisi yazar | |
 | 80/443 yalnız Cloudflare'den (`sunucu/cloudflare-kaynak.sh`, Docker'ın `DOCKER-USER` zinciri; ufw Docker portlarını süzmez) | Cloudflare'i atlayan doğrudan saldırı |
