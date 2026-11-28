@@ -270,5 +270,35 @@
       "bk": "PDF kitaplar",
       "hosgeldin": "Hoş geldin"
     }
+    },
+  "termin": {
+    "ad": "Termin Olasılığı",
+    "adres": "https://termin.ysfdurak.com",
+    "huni": [
+      ["Açtı", "ekran:projeler"],
+      ["Bir sonuç gördü", "ekran:sonuc"],
+      ["İşlere baktı", "ekran:isler"],
+      ["Senaryo denedi", "islem:senaryo"],
+      ["Kendi dosyasını yükledi", "islem:excel_yukle"],
+      ["Geri bildirim verdi", "geri_bildirim"]
+    ],
+    "ekranlar": {
+      "projeler": "Projeler",
+      "sonuc": "Sonuç",
+      "isler": "İşler",
+      "senaryo": "Senaryo",
+      "nasil": "Nasıl hesaplandı?"
+    },
+    "olaylar": {
+      "islem:simulasyon": "Simülasyon çalıştı",
+      "islem:senaryo": "Senaryo denedi",
+      "islem:excel_yukle": "Excel/CSV yükledi",
+      "islem:yeni_proje": "Boş proje açtı",
+      "islem:is_ekle": "İş ekledi",
+      "islem:disa_aktar": "Dışa aktardı",
+      "islem:sablon_indir": "Şablonu indirdi",
+      "islem:yedek_yukle": "Yedek yükledi",
+      "islem:dil_degisti": "Dili değiştirdi"
+    }
   }
 }
