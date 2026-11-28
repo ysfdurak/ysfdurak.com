@@ -83,6 +83,11 @@ emanet.ysfdurak.com {
 	import uygulama emanet:8000
 }
 
+# Termin Olasılığı: Monte Carlo ile olasılıklı proje bitişi, durumsuz (veri saklamaz), açık salt okunur MCP (github.com/ysfdurak/termin-olasiligi)
+termin.ysfdurak.com {
+	import uygulama termin:8080
+}
+
 # Ortak ölçüm ve geri bildirim: tüm uygulamalar olayları buraya gönderir, yönetim /yonetim (sunucu/olcum)
 olcum.ysfdurak.com {
 	import uygulama olcum:8080

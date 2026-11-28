@@ -21,6 +21,7 @@ pusula-is-takip
 ShiftFlow
 sirdas
 sorgu-haritasi
+termin-olasiligi
 video-zaman-etudu
 zimmet
 ysfdurak.github.io

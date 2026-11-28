@@ -20,6 +20,10 @@
       "neden": "Sayfalar Node sunucusundan CSP başlığıyla verilir (server/app.js)."
     }
   ],
+  "termin-olasiligi": [
+    {"kural": "csp", "yer": "^index\\.html$", "neden": "Sayfa Node sunucusundan CSP başlığıyla verilir (server/guvenlik.ts → CSP_UYGULAMA; tests/sunucu.test.ts denetler)."},
+    {"kural": "csp", "yer": "^src/mcp-app/egri\\.html$", "neden": "MCP App: Claude'un korumalı çerçevesinde, ev sahibinin CSP'siyle çalışır; kendi meta etiketi ev sahibiyle çakışır."}
+  ],
   "pusula-is-takip": [
     {
       "kural": "csp",
