@@ -162,6 +162,8 @@ def tara(d, audit=False):
                 b('orta', 'compose-cap', f'{ad}: cap_drop ALL yok', dc)
             if not (vekil or veritabani) and not s.get('read_only'):
                 b('düşük', 'compose-ro', f'{ad}: salt okunur kök dosya sistemi (read_only) yok', dc)
+            if not (vekil or veritabani) and not s.get('init'):
+                b('düşük', 'compose-init', f'{ad}: init: true yok (uygulama PID 1 olur, bitmiş alt süreçler zombie olarak birikir)', dc)
             if not (s.get('mem_limit') or (s.get('deploy') or {}).get('resources')):
                 b('düşük', 'compose-bellek', f'{ad}: bellek sınırı yok', dc)
             if not (s.get('logging') or {}).get('options', {}).get('max-size'):

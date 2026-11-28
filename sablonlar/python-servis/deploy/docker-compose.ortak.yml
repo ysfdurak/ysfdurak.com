@@ -5,6 +5,7 @@
 name: PROJE_ADI
 services:
   PROJE_ADI:
+    init: true  # PID 1 olarak tini: alt süreçleri toplar (zombie birikmez), sinyalleri düzgün iletir
     build: ..
     container_name: PROJE_ADI
     env_file: ../.env

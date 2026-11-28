@@ -3,6 +3,7 @@
 # Dışarıya port açmaz: Caddy "web" ağından, servis de PostgreSQL'e "db" ağından ulaşır.
 services:
   olcum:
+    init: true  # PID 1 olarak tini: alt süreçleri toplar (zombie birikmez), sinyalleri düzgün iletir
     build: .
     container_name: olcum
     env_file: .env
